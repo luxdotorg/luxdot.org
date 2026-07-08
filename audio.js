@@ -154,6 +154,66 @@ class LuxdotAudioEngine {
     source.stop(time + duration + 0.05);
   }
 
+
+  playWhisperLogos() {
+    if (!this.started) return;
+
+    const now = this.context.currentTime;
+
+    // A soft air layer around the spoken word to make it feel whispered.
+    this.playWhisperAir(now, 1.25, 0.34);
+
+    // Browser speech gives the word clarity; settings make it low, slow, and intimate.
+    if ("speechSynthesis" in window) {
+      window.speechSynthesis.cancel();
+
+      const voice = new SpeechSynthesisUtterance("Logos");
+      voice.lang = "en-US";
+      voice.volume = 0.58;
+      voice.rate = 0.62;
+      voice.pitch = 0.28;
+
+      setTimeout(() => window.speechSynthesis.speak(voice), 90);
+    } else {
+      // Fallback if speech synthesis is unavailable.
+      this.playLogosToneFallback(now + 0.08);
+    }
+  }
+
+  playWhisperAir(time, duration, volume) {
+    const source = this.context.createBufferSource();
+    const highpass = this.context.createBiquadFilter();
+    const bandpass = this.context.createBiquadFilter();
+    const gain = this.context.createGain();
+
+    source.buffer = this.makeNoiseBuffer(duration + 0.2);
+
+    highpass.type = "highpass";
+    highpass.frequency.setValueAtTime(1200, time);
+
+    bandpass.type = "bandpass";
+    bandpass.frequency.setValueAtTime(3100, time);
+    bandpass.Q.value = 0.8;
+
+    gain.gain.setValueAtTime(0.0001, time);
+    gain.gain.linearRampToValueAtTime(volume, time + 0.18);
+    gain.gain.linearRampToValueAtTime(volume * 0.72, time + duration * 0.65);
+    gain.gain.exponentialRampToValueAtTime(0.0001, time + duration);
+
+    source.connect(highpass);
+    highpass.connect(bandpass);
+    bandpass.connect(gain);
+    gain.connect(this.effectGain);
+
+    source.start(time);
+    source.stop(time + duration + 0.05);
+  }
+
+  playLogosToneFallback(time) {
+    this.playCryTone(time, 180, 0.42, 0.18);
+    this.playCryTone(time + 0.34, 140, 0.58, 0.15);
+  }
+
   playMutedChildCry() {
     if (!this.started) return;
 
