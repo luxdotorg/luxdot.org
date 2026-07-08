@@ -7,92 +7,199 @@
 
 <style>
   :root {
-    --shake-x: 0px;
-    --shake-y: 0px;
+    --energy: 0;
+    --shakeX: 0px;
+    --shakeY: 0px;
     --blur: 0px;
-    --opacity: 1;
+    --fade: 1;
+    --staticOpacity: 0;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 
   body {
     margin: 0;
     height: 100vh;
-    background: #000;
-    color: #fff;
     overflow: hidden;
+    background: #000;
+    cursor: default;
     font-family: Arial, Helvetica, sans-serif;
-    cursor: crosshair;
   }
 
-  .page {
-    height: 100vh;
+  .scene {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    background: #000;
+  }
+
+  /* الخلفية الأساسية */
+  .background {
+    position: absolute;
+    inset: -3%;
+    background-image: url("images/luxdot-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translate(var(--shakeX), var(--shakeY)) scale(1.04);
+    filter: blur(var(--blur)) brightness(calc(0.75 + var(--fade) * 0.25));
+    opacity: 0.95;
+  }
+
+  /* طبقة تشويش أبيض وأسود */
+  .static-noise {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: var(--staticOpacity);
+    mix-blend-mode: screen;
+    background:
+      repeating-radial-gradient(circle, rgba(255,255,255,0.22) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 5px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.07) 0 1px, transparent 1px 4px);
+    animation: staticMove 0.12s infinite steps(2);
+  }
+
+  @keyframes staticMove {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-2%, 1%); }
+    50% { transform: translate(1%, -2%); }
+    75% { transform: translate(2%, 2%); }
+    100% { transform: translate(-1%, -1%); }
+  }
+
+  /* خطوط شاشة تلفزيون قديم */
+  .scanlines {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.22;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.08) 0px,
+      rgba(255,255,255,0.08) 1px,
+      transparent 2px,
+      transparent 5px
+    );
+    animation: scanMove 5s linear infinite;
+  }
+
+  @keyframes scanMove {
+    from { transform: translateY(0); }
+    to { transform: translateY(20px); }
+  }
+
+  /* تداخل صور/أشباح */
+  .ghost-layer {
+    position: absolute;
+    inset: -3%;
+    background-image: url("images/luxdot-bg.png");
+    background-size: cover;
+    background-position: center;
+    opacity: calc(var(--energy) * 0.28);
+    filter: contrast(1.8) grayscale(1);
+    mix-blend-mode: screen;
+    transform:
+      translate(
+        calc(var(--shakeX) * -2),
+        calc(var(--shakeY) * 2)
+      )
+      scale(1.06);
+  }
+
+  /* النص الرئيسي مستقل عن الخلفية */
+  .content {
+    position: absolute;
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    transform: translate(var(--shake-x), var(--shake-y));
+    color: white;
+    transform: translate(
+      calc(var(--shakeX) * 0.6),
+      calc(var(--shakeY) * 0.6)
+    );
+    filter: blur(calc(var(--blur) * 0.8));
+    opacity: calc(1 - var(--energy) * 0.35);
+    z-index: 5;
+    pointer-events: none;
   }
 
-  .content {
-    filter: blur(var(--blur));
-    opacity: var(--opacity);
-    transition: filter 0.25s ease, opacity 0.25s ease;
+  .content-inner {
+    padding: 24px;
+    text-shadow:
+      0 0 12px rgba(255,255,255,0.65),
+      0 0 35px rgba(255,255,255,0.25);
   }
 
   h1 {
     margin: 0;
-    font-size: clamp(42px, 8vw, 110px);
+    font-size: clamp(46px, 8vw, 118px);
     letter-spacing: 0.06em;
     font-weight: 700;
   }
 
   .subtitle {
-    margin-top: 20px;
-    font-size: clamp(18px, 2.5vw, 34px);
-    letter-spacing: 0.05em;
+    margin-top: 18px;
+    font-size: clamp(16px, 2.1vw, 31px);
+    letter-spacing: 0.06em;
     font-weight: 300;
   }
 
   .status {
-    margin-top: 40px;
-    font-size: clamp(15px, 1.6vw, 22px);
-    letter-spacing: 0.12em;
-    opacity: 0.75;
+    margin-top: 34px;
+    font-size: clamp(14px, 1.4vw, 20px);
+    letter-spacing: 0.13em;
+    opacity: 0.8;
   }
 
+  /* نقطة الضوء */
   .light-dot {
     position: fixed;
-    width: 9px;
-    height: 9px;
+    width: 3px;
+    height: 3px;
     border-radius: 50%;
     background: #fff;
     pointer-events: none;
-    left: 50%;
-    top: 50%;
+    z-index: 10;
     box-shadow:
-      0 0 8px #fff,
-      0 0 18px #fff,
-      0 0 40px rgba(255,255,255,0.8);
-    transform: translate(-50%, -50%);
+      0 0 6px #fff,
+      0 0 14px #fff,
+      0 0 32px #fff,
+      0 0 70px rgba(255,255,255,0.95),
+      0 0 120px rgba(255,255,255,0.55);
   }
 
   .hint {
     position: fixed;
-    bottom: 24px;
+    bottom: 20px;
     width: 100%;
     text-align: center;
-    font-size: 12px;
+    color: white;
+    font-size: 11px;
     letter-spacing: 0.18em;
     opacity: 0.35;
+    z-index: 20;
   }
 </style>
 </head>
 
 <body>
-  <div class="page" id="page">
-    <main class="content" id="content">
-      <h1>LuxDot</h1>
-      <div class="subtitle">The First Point of Light .. Where Understanding Begins</div>
-      <div class="status">Our website is under construction.</div>
+  <div class="scene">
+    <div class="background" id="background"></div>
+    <div class="ghost-layer"></div>
+    <div class="static-noise"></div>
+    <div class="scanlines"></div>
+
+    <main class="content">
+      <div class="content-inner">
+        <h1>LuxDot</h1>
+        <div class="subtitle">The First Point of Light .. Where Understanding Begins</div>
+        <div class="status">Our website is under construction.</div>
+      </div>
     </main>
   </div>
 
@@ -100,61 +207,66 @@
   <div class="hint">click once to enable sound · move the mouse</div>
 
 <script>
-  const page = document.getElementById("page");
-  const content = document.getElementById("content");
+  const root = document.documentElement;
   const dot = document.getElementById("dot");
 
-  let mouseX = window.innerWidth / 2;
-  let mouseY = window.innerHeight / 2;
-  let dotX = mouseX + 80;
-  let dotY = mouseY - 60;
-
+  let mouseX = innerWidth / 2;
+  let mouseY = innerHeight / 2;
   let lastX = mouseX;
   let lastY = mouseY;
-  let movementEnergy = 0;
-  let chaos = 0;
+
+  let dotX = mouseX + 120;
+  let dotY = mouseY - 80;
+
+  let energy = 0;
+  let longMovement = 0;
 
   let audioStarted = false;
   let audioContext;
   let noiseGain;
-  let radioFilter;
-  let staticSource;
+  let filter1;
+  let filter2;
 
-  function startRadioStatic() {
+  function startTVStaticSound() {
     if (audioStarted) return;
 
     audioContext = new AudioContext();
 
     const bufferSize = audioContext.sampleRate * 2;
-    const noiseBuffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
-    const data = noiseBuffer.getChannelData(0);
+    const buffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
+    const data = buffer.getChannelData(0);
 
     for (let i = 0; i < bufferSize; i++) {
       data[i] = Math.random() * 2 - 1;
     }
 
-    staticSource = audioContext.createBufferSource();
-    staticSource.buffer = noiseBuffer;
-    staticSource.loop = true;
+    const source = audioContext.createBufferSource();
+    source.buffer = buffer;
+    source.loop = true;
 
-    radioFilter = audioContext.createBiquadFilter();
-    radioFilter.type = "bandpass";
-    radioFilter.frequency.value = 1400;
-    radioFilter.Q.value = 0.9;
+    filter1 = audioContext.createBiquadFilter();
+    filter1.type = "highpass";
+    filter1.frequency.value = 700;
+
+    filter2 = audioContext.createBiquadFilter();
+    filter2.type = "bandpass";
+    filter2.frequency.value = 2400;
+    filter2.Q.value = 0.7;
 
     noiseGain = audioContext.createGain();
     noiseGain.gain.value = 0;
 
-    staticSource.connect(radioFilter);
-    radioFilter.connect(noiseGain);
+    source.connect(filter1);
+    filter1.connect(filter2);
+    filter2.connect(noiseGain);
     noiseGain.connect(audioContext.destination);
 
-    staticSource.start();
+    source.start();
     audioStarted = true;
   }
 
-  document.body.addEventListener("click", startRadioStatic);
-  document.body.addEventListener("touchstart", startRadioStatic);
+  document.body.addEventListener("click", startTVStaticSound);
+  document.body.addEventListener("touchstart", startTVStaticSound);
 
   document.addEventListener("mousemove", (e) => {
     const dx = e.clientX - lastX;
@@ -164,19 +276,19 @@
     mouseX = e.clientX;
     mouseY = e.clientY;
 
-    movementEnergy = Math.min(1, movementEnergy + speed / 350);
-    chaos = Math.min(1, chaos + speed / 500);
+    energy = Math.min(1, energy + speed / 320);
+    longMovement = Math.min(1, longMovement + speed / 900);
 
-    const distanceX = dotX - mouseX;
-    const distanceY = dotY - mouseY;
-    const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+    const distX = dotX - mouseX;
+    const distY = dotY - mouseY;
+    const dist = Math.sqrt(distX * distX + distY * distY);
 
-    if (distance < 160) {
-      const angle = Math.atan2(distanceY, distanceX) + (Math.random() - 0.5) * 2.2;
-      const escape = 70 + Math.random() * 120;
+    if (dist < 150) {
+      const escapeAngle = Math.atan2(distY, distX) + (Math.random() - 0.5) * 2.4;
+      const escapePower = 80 + Math.random() * 160;
 
-      dotX += Math.cos(angle) * escape;
-      dotY += Math.sin(angle) * escape;
+      dotX += Math.cos(escapeAngle) * escapePower;
+      dotY += Math.sin(escapeAngle) * escapePower;
     }
 
     lastX = e.clientX;
@@ -184,45 +296,57 @@
   });
 
   function animate() {
-    movementEnergy *= 0.94;
-    chaos *= 0.965;
+    energy *= 0.945;
+    longMovement *= 0.985;
 
-    const calmOrbitX = Math.cos(Date.now() * 0.0014) * 75;
-    const calmOrbitY = Math.sin(Date.now() * 0.0019) * 45;
+    const finalEnergy = Math.min(1, energy + longMovement * 0.55);
 
-    const targetX = mouseX + calmOrbitX + (Math.random() - 0.5) * chaos * 140;
-    const targetY = mouseY + calmOrbitY + (Math.random() - 0.5) * chaos * 140;
+    const shake = finalEnergy * 22;
 
-    dotX += (targetX - dotX) * 0.025;
-    dotY += (targetY - dotY) * 0.025;
+    root.style.setProperty("--energy", finalEnergy);
+    root.style.setProperty("--shakeX", `${(Math.random() - 0.5) * shake}px`);
+    root.style.setProperty("--shakeY", `${(Math.random() - 0.5) * shake}px`);
+    root.style.setProperty("--blur", `${finalEnergy * 3.8}px`);
+    root.style.setProperty("--fade", `${1 - finalEnergy * 0.4}`);
+    root.style.setProperty("--staticOpacity", `${finalEnergy * 0.75}`);
 
-    dotX = Math.max(20, Math.min(window.innerWidth - 20, dotX));
-    dotY = Math.max(20, Math.min(window.innerHeight - 20, dotY));
+    const orbitX = Math.cos(Date.now() * 0.0014) * 85;
+    const orbitY = Math.sin(Date.now() * 0.0019) * 55;
+
+    const chaosX = (Math.random() - 0.5) * finalEnergy * 170;
+    const chaosY = (Math.random() - 0.5) * finalEnergy * 170;
+
+    const targetX = mouseX + orbitX + chaosX;
+    const targetY = mouseY + orbitY + chaosY;
+
+    dotX += (targetX - dotX) * 0.024;
+    dotY += (targetY - dotY) * 0.024;
+
+    dotX = Math.max(12, Math.min(innerWidth - 12, dotX));
+    dotY = Math.max(12, Math.min(innerHeight - 12, dotY));
 
     dot.style.left = dotX + "px";
     dot.style.top = dotY + "px";
 
-    const shake = movementEnergy * 18;
-    const shakeX = (Math.random() - 0.5) * shake;
-    const shakeY = (Math.random() - 0.5) * shake;
+    if (audioStarted && noiseGain && filter1 && filter2) {
+      const targetVolume = finalEnergy * 0.22;
 
-    page.style.setProperty("--shake-x", shakeX + "px");
-    page.style.setProperty("--shake-y", shakeY + "px");
-    content.style.setProperty("--blur", movementEnergy * 4 + "px");
-    content.style.setProperty("--opacity", 1 - movementEnergy * 0.45);
+      noiseGain.gain.value += (targetVolume - noiseGain.gain.value) * 0.06;
 
-    if (audioStarted && noiseGain && radioFilter) {
-      const targetVolume = movementEnergy * 0.16;
-      noiseGain.gain.value += (targetVolume - noiseGain.gain.value) * 0.08;
-
-      radioFilter.frequency.value =
-        700 + Math.random() * 2600 + movementEnergy * 1200;
+      filter1.frequency.value = 500 + finalEnergy * 1200;
+      filter2.frequency.value = 1800 + Math.random() * 3500;
+      filter2.Q.value = 0.4 + finalEnergy * 2.2;
     }
 
     requestAnimationFrame(animate);
   }
 
   animate();
+
+  window.addEventListener("resize", () => {
+    mouseX = innerWidth / 2;
+    mouseY = innerHeight / 2;
+  });
 </script>
 </body>
 </html>
