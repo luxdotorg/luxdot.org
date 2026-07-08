@@ -10,12 +10,9 @@
     --energy: 0;
     --shakeX: 0px;
     --shakeY: 0px;
-    --blur: 0px;
   }
 
-  * {
-    box-sizing: border-box;
-  }
+  * { box-sizing: border-box; }
 
   body {
     margin: 0;
@@ -33,102 +30,113 @@
     background: #000;
   }
 
+  /* الخلفية واضحة وثابتة */
   .background {
     position: absolute;
-    inset: -3%;
+    inset: 0;
     background-image: url("images/luxdot-bg.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transform: translate(var(--shakeX), var(--shakeY)) scale(1.04);
-    filter:
-      blur(calc(var(--energy) * 3.5px))
-      brightness(calc(1 - var(--energy) * 0.35))
-      contrast(calc(1 + var(--energy) * 1.2));
+    filter: contrast(1.25) brightness(1.08) grayscale(1);
     opacity: 1;
   }
 
-  .ghost-layer {
+  /* توهج ثابت فوق الرموز، كأن الضوء خارج من الخلف */
+  .light-rays {
     position: absolute;
-    inset: -3%;
-    background-image: url("images/luxdot-bg.png");
-    background-size: cover;
-    background-position: center;
-    opacity: calc(var(--energy) * 0.35);
-    filter: contrast(2) grayscale(1) blur(calc(var(--energy) * 2px));
+    inset: -20%;
+    background:
+      radial-gradient(circle at center,
+        rgba(255,255,255,0.34) 0%,
+        rgba(255,255,255,0.16) 14%,
+        rgba(255,255,255,0.05) 32%,
+        transparent 58%
+      ),
+      conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        rgba(255,255,255,0.12) 18deg,
+        transparent 35deg,
+        transparent 70deg,
+        rgba(255,255,255,0.08) 95deg,
+        transparent 120deg,
+        transparent 170deg,
+        rgba(255,255,255,0.1) 200deg,
+        transparent 235deg,
+        transparent 290deg,
+        rgba(255,255,255,0.08) 315deg,
+        transparent 360deg
+      );
     mix-blend-mode: screen;
-    transform:
-      translate(
-        calc(var(--shakeX) * -2),
-        calc(var(--shakeY) * 2)
-      )
-      scale(1.08);
+    opacity: 0.65;
+    filter: blur(22px);
+    animation: slowGlow 12s linear infinite;
   }
 
+  @keyframes slowGlow {
+    from { transform: rotate(0deg) scale(1.05); }
+    to { transform: rotate(360deg) scale(1.05); }
+  }
+
+  /* تشويش خفيف فقط فوق الشاشة */
   .static-noise {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: calc(var(--energy) * 0.75);
+    opacity: calc(var(--energy) * 0.28);
     mix-blend-mode: screen;
     background:
-      repeating-radial-gradient(circle, rgba(255,255,255,0.22) 0 1px, transparent 1px 3px),
-      repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 5px),
-      repeating-linear-gradient(0deg, rgba(255,255,255,0.07) 0 1px, transparent 1px 4px);
+      repeating-radial-gradient(circle, rgba(255,255,255,0.14) 0 1px, transparent 1px 3px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.06) 0 1px, transparent 1px 5px);
     animation: staticMove 0.12s infinite steps(2);
   }
 
   @keyframes staticMove {
     0% { transform: translate(0, 0); }
-    25% { transform: translate(-2%, 1%); }
-    50% { transform: translate(1%, -2%); }
-    75% { transform: translate(2%, 2%); }
-    100% { transform: translate(-1%, -1%); }
+    50% { transform: translate(1%, -1%); }
+    100% { transform: translate(-1%, 1%); }
   }
 
   .scanlines {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: calc(0.12 + var(--energy) * 0.2);
+    opacity: 0.14;
     background: repeating-linear-gradient(
       0deg,
-      rgba(255,255,255,0.08) 0px,
-      rgba(255,255,255,0.08) 1px,
+      rgba(255,255,255,0.06) 0px,
+      rgba(255,255,255,0.06) 1px,
       transparent 2px,
       transparent 5px
     );
-    animation: scanMove 5s linear infinite;
   }
 
-  @keyframes scanMove {
-    from { transform: translateY(0); }
-    to { transform: translateY(20px); }
-  }
-
+  /* النص فقط يتشوش ويهتز */
   .content {
     position: absolute;
     inset: 0;
+    z-index: 5;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
-    transform: translate(
-      calc(var(--shakeX) * 0.6),
-      calc(var(--shakeY) * 0.6)
-    );
-    filter: blur(calc(var(--energy) * 3px));
-    opacity: calc(1 - var(--energy) * 0.42);
-    z-index: 5;
     pointer-events: none;
+    transform: translate(var(--shakeX), var(--shakeY));
+    filter:
+      blur(calc(var(--energy) * 4px))
+      brightness(calc(1 - var(--energy) * 0.25));
+    opacity: calc(1 - var(--energy) * 0.35);
   }
 
   .content-inner {
-    padding: 24px;
+    padding: 26px;
     text-shadow:
-      0 0 12px rgba(255,255,255,0.65),
-      0 0 35px rgba(255,255,255,0.25);
+      0 0 12px rgba(255,255,255,0.8),
+      0 0 36px rgba(255,255,255,0.35),
+      calc(var(--energy) * 10px) 0 rgba(255,255,255,0.25),
+      calc(var(--energy) * -10px) 0 rgba(255,255,255,0.2);
   }
 
   h1 {
@@ -149,7 +157,7 @@
     margin-top: 34px;
     font-size: clamp(14px, 1.4vw, 20px);
     letter-spacing: 0.13em;
-    opacity: 0.8;
+    opacity: 0.82;
   }
 
   .light-dot {
@@ -161,11 +169,11 @@
     pointer-events: none;
     z-index: 10;
     box-shadow:
-      0 0 6px #fff,
-      0 0 14px #fff,
-      0 0 32px #fff,
-      0 0 70px rgba(255,255,255,0.95),
-      0 0 120px rgba(255,255,255,0.55);
+      0 0 8px #fff,
+      0 0 18px #fff,
+      0 0 40px #fff,
+      0 0 90px rgba(255,255,255,0.9),
+      0 0 150px rgba(255,255,255,0.45);
   }
 
   .hint {
@@ -185,7 +193,7 @@
 <body>
   <div class="scene">
     <div class="background"></div>
-    <div class="ghost-layer"></div>
+    <div class="light-rays"></div>
     <div class="static-noise"></div>
     <div class="scanlines"></div>
 
@@ -217,11 +225,7 @@
   let longMovement = 0;
 
   let audioStarted = false;
-  let audioContext;
-  let noiseGain;
-  let filter1;
-  let filter2;
-  let source;
+  let audioContext, noiseGain, filter1, filter2, source;
 
   function startTVStaticSound() {
     if (audioStarted) return;
@@ -273,18 +277,18 @@
     mouseY = e.clientY;
 
     energy = Math.min(1, energy + speed / 330);
-    longMovement = Math.min(1, longMovement + speed / 950);
+    longMovement = Math.min(1, longMovement + speed / 1000);
 
     const distX = dotX - mouseX;
     const distY = dotY - mouseY;
     const dist = Math.sqrt(distX * distX + distY * distY);
 
     if (dist < 150) {
-      const escapeAngle = Math.atan2(distY, distX) + (Math.random() - 0.5) * 2.4;
-      const escapePower = 80 + Math.random() * 160;
+      const angle = Math.atan2(distY, distX) + (Math.random() - 0.5) * 2.4;
+      const power = 80 + Math.random() * 160;
 
-      dotX += Math.cos(escapeAngle) * escapePower;
-      dotY += Math.sin(escapeAngle) * escapePower;
+      dotX += Math.cos(angle) * power;
+      dotY += Math.sin(angle) * power;
     }
 
     lastX = e.clientX;
@@ -308,11 +312,8 @@
     const chaosX = (Math.random() - 0.5) * finalEnergy * 170;
     const chaosY = (Math.random() - 0.5) * finalEnergy * 170;
 
-    const targetX = mouseX + orbitX + chaosX;
-    const targetY = mouseY + orbitY + chaosY;
-
-    dotX += (targetX - dotX) * 0.024;
-    dotY += (targetY - dotY) * 0.024;
+    dotX += (mouseX + orbitX + chaosX - dotX) * 0.024;
+    dotY += (mouseY + orbitY + chaosY - dotY) * 0.024;
 
     dotX = Math.max(12, Math.min(innerWidth - 12, dotX));
     dotY = Math.max(12, Math.min(innerHeight - 12, dotY));
@@ -322,7 +323,6 @@
 
     if (audioStarted && noiseGain && filter1 && filter2) {
       const targetVolume = finalEnergy * 0.22;
-
       noiseGain.gain.value += (targetVolume - noiseGain.gain.value) * 0.06;
 
       filter1.frequency.value = 500 + finalEnergy * 1400;
@@ -334,11 +334,6 @@
   }
 
   animate();
-
-  window.addEventListener("resize", () => {
-    mouseX = innerWidth / 2;
-    mouseY = innerHeight / 2;
-  });
 </script>
 </body>
 </html>
