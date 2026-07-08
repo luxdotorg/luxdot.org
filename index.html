@@ -27,8 +27,7 @@
     position: fixed;
     inset: 0;
     overflow: hidden;
-    background:
-      radial-gradient(circle at center, #101010 0%, #000 58%);
+    background: radial-gradient(circle at center, #101010 0%, #000 58%);
   }
 
   .symbol-layer {
@@ -48,12 +47,10 @@
       0 0 8px rgba(255,255,255,0.9),
       0 0 22px rgba(255,255,255,0.75),
       0 0 55px rgba(255,255,255,0.45);
-    transition:
-      opacity 0.45s ease,
-      transform 0.45s ease,
-      filter 0.45s ease;
+    transition: opacity 0.45s ease, transform 0.45s ease, filter 0.45s ease;
     filter: blur(3px);
     user-select: none;
+    white-space: nowrap;
   }
 
   .symbol.visible {
@@ -180,13 +177,25 @@
 
   .hint {
     position: fixed;
-    bottom: 20px;
+    bottom: 34px;
     width: 100%;
     text-align: center;
     color: white;
     font-size: 11px;
     letter-spacing: 0.18em;
     opacity: 0.35;
+    z-index: 20;
+  }
+
+  .visitor-counter {
+    position: fixed;
+    bottom: 14px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    opacity: 0.5;
     z-index: 20;
   }
 </style>
@@ -210,25 +219,48 @@
 
   <div class="light-dot" id="dot"></div>
   <div class="hint">click once to enable sound · move the mouse</div>
+  <div class="visitor-counter" id="visitorCounter">Visitor number: —</div>
 
 <script>
   const root = document.documentElement;
   const dot = document.getElementById("dot");
   const aura = document.getElementById("aura");
   const symbolLayer = document.getElementById("symbolLayer");
+  const visitorCounter = document.getElementById("visitorCounter");
 
   const symbols = [
-    "نور", "عقل", "وعي", "لغة", "معنى", "نقطة", "لوغوس",
-    "אור", "חכמה", "דעת", "אין", "סוד", "אמת",
-    "☉", "☽", "☿", "♀", "♂", "♃", "♄",
-    "∞", "Δ", "Σ", "π", "λ", "φ", "Ω", "∴", "∵",
-    "E=mc²", "F=ma", "ψ", "∫", "∂", "√", "log", "AI",
-    "ॐ", "☸", "☯", "✦", "✧", "𓂀", "𓆣", "𓋹",
-    "⟁", "⌬", "⟡", "⊙", "⟐", "⧫"
+    "Signal", "Noise", "Clarity", "Precision", "Meaning", "Understanding",
+    "Light", "Point", "Focus", "Depth", "Essence", "Pattern", "Truth",
+    "Question", "Insight", "Awareness", "Language", "Logos", "Mind",
+    "Order", "Less noise", "More signal", "Reduce noise", "Increase signal",
+    "The First Point", "Where Understanding Begins", "LuxDotation",
+    "Every addition should increase signal or reduce noise",
+
+    "نور", "عقل", "وعي", "معنى", "لغة", "نقطة", "دقة", "صفاء",
+    "فهم", "حقيقة", "إشارة", "ضجيج", "بصيرة", "سؤال", "منطق", "نظام",
+
+    "אור", "דעת", "חכמה", "אמת", "סוד", "אין", "נקודה", "שפה",
+
+    "λόγος", "ἀλήθεια", "gnōthi seauton", "Ego", "Id", "Superego",
+    "Observer", "The map is not the territory", "As above, so below",
+
+    "E=mc²", "F=ma", "ΔS ≥ 0", "∇·E=ρ/ε₀", "∇·B=0",
+    "iℏ∂ψ/∂t=Hψ", "a²+b²=c²", "φ=(1+√5)/2",
+    "e^{iπ}+1=0", "PV=nRT", "S=k ln Ω", "pV=nRT",
+    "∑", "∫", "∂", "√", "∞", "π", "λ", "Ω", "Δ", "Σ", "ψ", "θ", "μ", "α", "β",
+
+    "H₂O", "CO₂", "O₂", "NH₃", "CH₄", "C₆H₁₂O₆", "NaCl",
+    "C₈H₁₀N₄O₂", "C₉H₁₃NO₃", "DNA", "RNA", "C₂H₅OH",
+
+    "AI", "LLM", "Neural Net", "Token", "Pattern Recognition",
+    "Learning", "Reasoning", "Adaptation", "Attention", "Emergence",
+
+    "☉", "☽", "☿", "♀", "♂", "♃", "♄", "☄", "✦", "✧", "⊙",
+    "𓂀", "𓋹", "☯", "☸", "ॐ", "⟁", "⟡", "⌬", "⧫", "∴", "∵"
   ];
 
   const symbolElements = [];
-  const symbolCount = 95;
+  const symbolCount = 180;
 
   function createSymbols() {
     symbolLayer.innerHTML = "";
@@ -241,7 +273,7 @@
 
       const x = Math.random() * innerWidth;
       const y = Math.random() * innerHeight;
-      const size = 14 + Math.random() * 36;
+      const size = 8 + Math.random() * 18;
 
       el.style.left = x + "px";
       el.style.top = y + "px";
@@ -250,12 +282,7 @@
 
       symbolLayer.appendChild(el);
 
-      symbolElements.push({
-        el,
-        x,
-        y,
-        life: Math.random()
-      });
+      symbolElements.push({ el, x, y });
     }
   }
 
@@ -356,8 +383,8 @@
         item.el.classList.add("visible");
         item.el.style.opacity = Math.min(1, strength * 1.2);
         item.el.style.textShadow = `
-          0 0 ${10 + strength * 20}px rgba(255,255,255,1),
-          0 0 ${35 + strength * 70}px rgba(255,255,255,0.75)
+          0 0 ${8 + strength * 18}px rgba(255,255,255,1),
+          0 0 ${26 + strength * 60}px rgba(255,255,255,0.75)
         `;
       } else {
         item.el.classList.remove("visible");
@@ -410,6 +437,22 @@
   }
 
   animate();
+
+  async function updateVisitorCounter() {
+    try {
+      const namespace = "luxdot-org";
+      const key = "homepage-visits";
+      const response = await fetch(`https://countapi.mileshilliard.com/api/v1/hit/${namespace}/${key}`);
+      const data = await response.json();
+
+      const number = data.value || data.count || data.result || "—";
+      visitorCounter.textContent = `You are visitor number: ${number}`;
+    } catch (error) {
+      visitorCounter.textContent = "Visitor number: —";
+    }
+  }
+
+  updateVisitorCounter();
 
   window.addEventListener("resize", () => {
     createSymbols();
