@@ -177,25 +177,13 @@
 
   .hint {
     position: fixed;
-    bottom: 34px;
+    bottom: 18px;
     width: 100%;
     text-align: center;
     color: white;
     font-size: 11px;
     letter-spacing: 0.18em;
     opacity: 0.35;
-    z-index: 20;
-  }
-
-  .visitor-counter {
-    position: fixed;
-    bottom: 14px;
-    width: 100%;
-    text-align: center;
-    color: white;
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    opacity: 0.5;
     z-index: 20;
   }
 </style>
@@ -218,15 +206,13 @@
   </div>
 
   <div class="light-dot" id="dot"></div>
-  <div class="hint">click once to enable sound · move the mouse</div>
-  <div class="visitor-counter" id="visitorCounter">Visitor number: —</div>
+  <div class="hint">click once to awaken sound · move the mouse</div>
 
 <script>
   const root = document.documentElement;
   const dot = document.getElementById("dot");
   const aura = document.getElementById("aura");
   const symbolLayer = document.getElementById("symbolLayer");
-  const visitorCounter = document.getElementById("visitorCounter");
 
   const symbols = [
     "Signal", "Noise", "Clarity", "Precision", "Meaning", "Understanding",
@@ -234,7 +220,6 @@
     "Question", "Insight", "Awareness", "Language", "Logos", "Mind",
     "Order", "Less noise", "More signal", "Reduce noise", "Increase signal",
     "The First Point", "Where Understanding Begins", "LuxDotation",
-    "Every addition should increase signal or reduce noise",
 
     "نور", "عقل", "وعي", "معنى", "لغة", "نقطة", "دقة", "صفاء",
     "فهم", "حقيقة", "إشارة", "ضجيج", "بصيرة", "سؤال", "منطق", "نظام",
@@ -246,7 +231,7 @@
 
     "E=mc²", "F=ma", "ΔS ≥ 0", "∇·E=ρ/ε₀", "∇·B=0",
     "iℏ∂ψ/∂t=Hψ", "a²+b²=c²", "φ=(1+√5)/2",
-    "e^{iπ}+1=0", "PV=nRT", "S=k ln Ω", "pV=nRT",
+    "e^{iπ}+1=0", "PV=nRT", "S=k ln Ω",
     "∑", "∫", "∂", "√", "∞", "π", "λ", "Ω", "Δ", "Σ", "ψ", "θ", "μ", "α", "β",
 
     "H₂O", "CO₂", "O₂", "NH₃", "CH₄", "C₆H₁₂O₆", "NaCl",
@@ -281,7 +266,6 @@
       el.style.setProperty("--symbolOpacity", 0.45 + Math.random() * 0.55);
 
       symbolLayer.appendChild(el);
-
       symbolElements.push({ el, x, y });
     }
   }
@@ -300,48 +284,66 @@
   let longMovement = 0;
 
   let audioStarted = false;
-  let audioContext, noiseGain, filter1, filter2, source;
+  let audioContext;
+  let masterGain;
+  let heartbeatTimer = null;
+  let currentInterval = 900;
 
-  function startTVStaticSound() {
+  function startHeartbeatSound() {
     if (audioStarted) return;
 
     audioContext = new AudioContext();
+    masterGain = audioContext.createGain();
+    masterGain.gain.value = 0.18;
+    masterGain.connect(audioContext.destination);
 
-    const bufferSize = audioContext.sampleRate * 2;
-    const buffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
-    const data = buffer.getChannelData(0);
-
-    for (let i = 0; i < bufferSize; i++) {
-      data[i] = Math.random() * 2 - 1;
-    }
-
-    source = audioContext.createBufferSource();
-    source.buffer = buffer;
-    source.loop = true;
-
-    filter1 = audioContext.createBiquadFilter();
-    filter1.type = "highpass";
-    filter1.frequency.value = 700;
-
-    filter2 = audioContext.createBiquadFilter();
-    filter2.type = "bandpass";
-    filter2.frequency.value = 2600;
-    filter2.Q.value = 0.9;
-
-    noiseGain = audioContext.createGain();
-    noiseGain.gain.value = 0;
-
-    source.connect(filter1);
-    filter1.connect(filter2);
-    filter2.connect(noiseGain);
-    noiseGain.connect(audioContext.destination);
-
-    source.start();
     audioStarted = true;
+    scheduleHeartbeat();
   }
 
-  document.body.addEventListener("click", startTVStaticSound);
-  document.body.addEventListener("touchstart", startTVStaticSound);
+  function playHeartbeat() {
+    if (!audioStarted || !audioContext) return;
+
+    const now = audioContext.currentTime;
+
+    playThump(now, 70, 0.55);
+    playThump(now + 0.16, 55, 0.38);
+  }
+
+  function playThump(time, frequency, strength) {
+    const osc = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+    const filter = audioContext.createBiquadFilter();
+
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(frequency, time);
+    osc.frequency.exponentialRampToValueAtTime(frequency * 0.55, time + 0.16);
+
+    filter.type = "lowpass";
+    filter.frequency.setValueAtTime(140, time);
+
+    gain.gain.setValueAtTime(0.0001, time);
+    gain.gain.exponentialRampToValueAtTime(strength, time + 0.025);
+    gain.gain.exponentialRampToValueAtTime(0.0001, time + 0.22);
+
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(masterGain);
+
+    osc.start(time);
+    osc.stop(time + 0.24);
+  }
+
+  function scheduleHeartbeat() {
+    if (!audioStarted) return;
+
+    playHeartbeat();
+
+    heartbeatTimer = setTimeout(scheduleHeartbeat, currentInterval);
+  }
+
+  document.body.addEventListener("click", startHeartbeatSound);
+  document.body.addEventListener("touchstart", startHeartbeatSound);
 
   document.addEventListener("mousemove", (e) => {
     const dx = e.clientX - lastX;
@@ -424,35 +426,15 @@
 
     revealSymbols(finalEnergy);
 
-    if (audioStarted && noiseGain && filter1 && filter2) {
-      const targetVolume = finalEnergy * 0.22;
-      noiseGain.gain.value += (targetVolume - noiseGain.gain.value) * 0.06;
-
-      filter1.frequency.value = 500 + finalEnergy * 1400;
-      filter2.frequency.value = 1800 + Math.random() * 4200;
-      filter2.Q.value = 0.5 + finalEnergy * 2.4;
+    if (audioStarted && masterGain) {
+      currentInterval = 1050 - finalEnergy * 620;
+      masterGain.gain.value += ((0.12 + finalEnergy * 0.18) - masterGain.gain.value) * 0.04;
     }
 
     requestAnimationFrame(animate);
   }
 
   animate();
-
-  async function updateVisitorCounter() {
-    try {
-      const namespace = "luxdot-org";
-      const key = "homepage-visits";
-      const response = await fetch(`https://countapi.mileshilliard.com/api/v1/hit/${namespace}/${key}`);
-      const data = await response.json();
-
-      const number = data.value || data.count || data.result || "—";
-      visitorCounter.textContent = `You are visitor number: ${number}`;
-    } catch (error) {
-      visitorCounter.textContent = "Visitor number: —";
-    }
-  }
-
-  updateVisitorCounter();
 
   window.addEventListener("resize", () => {
     createSymbols();
