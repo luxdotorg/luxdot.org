@@ -1,6 +1,33 @@
-index.html
-style.css
-script.js
-audio.js
-symbols.js
-images/
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LuxDot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="scene" id="scene">
+    <div class="depth-grid"></div>
+    <canvas id="symbolCanvas"></canvas>
+    <canvas id="staticCanvas"></canvas>
+
+    <div class="light-aura" id="aura"></div>
+
+    <main class="content" id="content">
+      <div class="content-inner">
+        <h1>LuxDot</h1>
+        <div class="subtitle">The First Point of Light .. Where Understanding Begins</div>
+        <div class="status">Our website is under construction.</div>
+      </div>
+    </main>
+  </div>
+
+  <div class="light-dot" id="dot"></div>
+  <div class="hint">click once to awaken sound · move the mouse</div>
+
+  <script src="symbols.js"></script>
+  <script src="audio.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
