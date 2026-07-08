@@ -27,64 +27,66 @@
     position: fixed;
     inset: 0;
     overflow: hidden;
-    background: #000;
+    background:
+      radial-gradient(circle at center, #101010 0%, #000 58%);
   }
 
-  /* الخلفية واضحة وثابتة */
-  .background {
+  .symbol-layer {
     position: absolute;
     inset: 0;
-    background-image: url("images/luxdot-bg.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: contrast(1.45) brightness(1.2) grayscale(1);
-    opacity: 1;
+    z-index: 2;
+    pointer-events: none;
   }
 
-  /* توهج ثابت فوق الرموز، كأن الضوء خارج من الخلف */
-  .light-rays {
+  .symbol {
     position: absolute;
-    inset: -20%;
-    background:
-      radial-gradient(circle at center,
-        rgba(255,255,255,0.34) 0%,
-        rgba(255,255,255,0.16) 14%,
-        rgba(255,255,255,0.05) 32%,
-        transparent 58%
-      ),
-      conic-gradient(
-        from 0deg,
-        transparent 0deg,
-        rgba(255,255,255,0.12) 18deg,
-        transparent 35deg,
-        transparent 70deg,
-        rgba(255,255,255,0.08) 95deg,
-        transparent 120deg,
-        transparent 170deg,
-        rgba(255,255,255,0.1) 200deg,
-        transparent 235deg,
-        transparent 290deg,
-        rgba(255,255,255,0.08) 315deg,
-        transparent 360deg
-      );
+    color: white;
+    opacity: 0;
+    font-size: var(--size);
+    transform: translate(-50%, -50%) scale(0.7);
+    text-shadow:
+      0 0 8px rgba(255,255,255,0.9),
+      0 0 22px rgba(255,255,255,0.75),
+      0 0 55px rgba(255,255,255,0.45);
+    transition:
+      opacity 0.45s ease,
+      transform 0.45s ease,
+      filter 0.45s ease;
+    filter: blur(3px);
+    user-select: none;
+  }
+
+  .symbol.visible {
+    opacity: var(--symbolOpacity);
+    transform: translate(-50%, -50%) scale(1);
+    filter: blur(0);
+  }
+
+  .light-aura {
+    position: fixed;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 3;
+    background: radial-gradient(
+      circle,
+      rgba(255,255,255,0.22) 0%,
+      rgba(255,255,255,0.11) 18%,
+      rgba(255,255,255,0.045) 38%,
+      transparent 70%
+    );
+    filter: blur(18px);
+    transform: translate(-50%, -50%);
     mix-blend-mode: screen;
-    opacity: 0.65;
-    filter: blur(22px);
-    animation: slowGlow 12s linear infinite;
   }
 
-  @keyframes slowGlow {
-    from { transform: rotate(0deg) scale(1.05); }
-    to { transform: rotate(360deg) scale(1.05); }
-  }
-
-  /* تشويش خفيف فقط فوق الشاشة */
   .static-noise {
     position: absolute;
     inset: 0;
+    z-index: 4;
     pointer-events: none;
-    opacity: calc(var(--energy) * 0.28);
+    opacity: calc(var(--energy) * 0.32);
     mix-blend-mode: screen;
     background:
       repeating-radial-gradient(circle, rgba(255,255,255,0.14) 0 1px, transparent 1px 3px),
@@ -101,6 +103,7 @@
   .scanlines {
     position: absolute;
     inset: 0;
+    z-index: 4;
     pointer-events: none;
     opacity: 0.14;
     background: repeating-linear-gradient(
@@ -112,11 +115,10 @@
     );
   }
 
-  /* النص فقط يتشوش ويهتز */
   .content {
     position: absolute;
     inset: 0;
-    z-index: 5;
+    z-index: 6;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -192,8 +194,8 @@
 
 <body>
   <div class="scene">
-    <div class="background"></div>
-    <div class="light-rays"></div>
+    <div class="symbol-layer" id="symbolLayer"></div>
+    <div class="light-aura" id="aura"></div>
     <div class="static-noise"></div>
     <div class="scanlines"></div>
 
@@ -212,6 +214,52 @@
 <script>
   const root = document.documentElement;
   const dot = document.getElementById("dot");
+  const aura = document.getElementById("aura");
+  const symbolLayer = document.getElementById("symbolLayer");
+
+  const symbols = [
+    "نور", "عقل", "وعي", "لغة", "معنى", "نقطة", "لوغوس",
+    "אור", "חכמה", "דעת", "אין", "סוד", "אמת",
+    "☉", "☽", "☿", "♀", "♂", "♃", "♄",
+    "∞", "Δ", "Σ", "π", "λ", "φ", "Ω", "∴", "∵",
+    "E=mc²", "F=ma", "ψ", "∫", "∂", "√", "log", "AI",
+    "ॐ", "☸", "☯", "✦", "✧", "𓂀", "𓆣", "𓋹",
+    "⟁", "⌬", "⟡", "⊙", "⟐", "⧫"
+  ];
+
+  const symbolElements = [];
+  const symbolCount = 95;
+
+  function createSymbols() {
+    symbolLayer.innerHTML = "";
+    symbolElements.length = 0;
+
+    for (let i = 0; i < symbolCount; i++) {
+      const el = document.createElement("div");
+      el.className = "symbol";
+      el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+
+      const x = Math.random() * innerWidth;
+      const y = Math.random() * innerHeight;
+      const size = 14 + Math.random() * 36;
+
+      el.style.left = x + "px";
+      el.style.top = y + "px";
+      el.style.setProperty("--size", size + "px");
+      el.style.setProperty("--symbolOpacity", 0.45 + Math.random() * 0.55);
+
+      symbolLayer.appendChild(el);
+
+      symbolElements.push({
+        el,
+        x,
+        y,
+        life: Math.random()
+      });
+    }
+  }
+
+  createSymbols();
 
   let mouseX = innerWidth / 2;
   let mouseY = innerHeight / 2;
@@ -295,6 +343,29 @@
     lastY = e.clientY;
   });
 
+  function revealSymbols(finalEnergy) {
+    const revealRadius = 190 + finalEnergy * 90;
+
+    for (const item of symbolElements) {
+      const dx = item.x - dotX;
+      const dy = item.y - dotY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < revealRadius) {
+        const strength = 1 - distance / revealRadius;
+        item.el.classList.add("visible");
+        item.el.style.opacity = Math.min(1, strength * 1.2);
+        item.el.style.textShadow = `
+          0 0 ${10 + strength * 20}px rgba(255,255,255,1),
+          0 0 ${35 + strength * 70}px rgba(255,255,255,0.75)
+        `;
+      } else {
+        item.el.classList.remove("visible");
+        item.el.style.opacity = 0;
+      }
+    }
+  }
+
   function animate() {
     energy *= 0.945;
     longMovement *= 0.985;
@@ -321,6 +392,11 @@
     dot.style.left = dotX + "px";
     dot.style.top = dotY + "px";
 
+    aura.style.left = dotX + "px";
+    aura.style.top = dotY + "px";
+
+    revealSymbols(finalEnergy);
+
     if (audioStarted && noiseGain && filter1 && filter2) {
       const targetVolume = finalEnergy * 0.22;
       noiseGain.gain.value += (targetVolume - noiseGain.gain.value) * 0.06;
@@ -334,6 +410,12 @@
   }
 
   animate();
+
+  window.addEventListener("resize", () => {
+    createSymbols();
+    mouseX = innerWidth / 2;
+    mouseY = innerHeight / 2;
+  });
 </script>
 </body>
 </html>
