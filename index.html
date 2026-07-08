@@ -1,55 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>LuxDot</title>
 
 <style>
-body{
-    margin:0;
-    background:#ffffff;
-    color:#111;
-    font-family:Arial,Helvetica,sans-serif;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    text-align:center;
-}
+  :root {
+    --shake-x: 0px;
+    --shake-y: 0px;
+    --blur: 0px;
+    --opacity: 1;
+  }
 
-h1{
-    font-size:64px;
-    margin:0;
-    letter-spacing:2px;
-}
+  body {
+    margin: 0;
+    height: 100vh;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: crosshair;
+  }
 
-p{
-    font-size:22px;
-    color:#666;
-}
+  .page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: translate(var(--shake-x), var(--shake-y));
+  }
 
-small{
-    display:block;
-    margin-top:40px;
-    color:#999;
-}
+  .content {
+    filter: blur(var(--blur));
+    opacity: var(--opacity);
+    transition: filter 0.25s ease, opacity 0.25s ease;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(42px, 8vw, 110px);
+    letter-spacing: 0.06em;
+    font-weight: 700;
+  }
+
+  .subtitle {
+    margin-top: 20px;
+    font-size: clamp(18px, 2.5vw, 34px);
+    letter-spacing: 0.05em;
+    font-weight: 300;
+  }
+
+  .status {
+    margin-top: 40px;
+    font-size: clamp(15px, 1.6vw, 22px);
+    letter-spacing: 0.12em;
+    opacity: 0.75;
+  }
+
+  .light-dot {
+    position: fixed;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #fff;
+    pointer-events: none;
+    left: 50%;
+    top: 50%;
+    box-shadow:
+      0 0 8px #fff,
+      0 0 18px #fff,
+      0 0 40px rgba(255,255,255,0.8);
+    transform: translate(-50%, -50%);
+  }
+
+  .hint {
+    position: fixed;
+    bottom: 24px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    opacity: 0.35;
+  }
 </style>
-
 </head>
 
 <body>
+  <div class="page" id="page">
+    <main class="content" id="content">
+      <h1>LuxDot</h1>
+      <div class="subtitle">The First Point of Light .. Where Understanding Begins</div>
+      <div class="status">Our website is under construction.</div>
+    </main>
+  </div>
 
-<div>
+  <div class="light-dot" id="dot"></div>
+  <div class="hint">click once to enable sound · move the mouse</div>
 
-<h1>LuxDot</h1>
+<script>
+  const page = document.getElementById("page");
+  const content = document.getElementById("content");
+  const dot = document.getElementById("dot");
 
-<p>The First Point of Light .. Where Understanding Begins</p>
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let dotX = mouseX + 80;
+  let dotY = mouseY - 60;
 
-<small>Our website is under construction.</small>
+  let lastX = mouseX;
+  let lastY = mouseY;
+  let movementEnergy = 0;
+  let chaos = 0;
 
-</div>
+  let audioStarted = false;
+  let audioContext;
+  let noiseGain;
+  let radioFilter;
+  let staticSource;
 
+  function startRadioStatic() {
+    if (audioStarted) return;
+
+    audioContext = new AudioContext();
+
+    const bufferSize = audioContext.sampleRate * 2;
+    const noiseBuffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
+    const data = noiseBuffer.getChannelData(0);
+
+    for (let i = 0; i < bufferSize; i++) {
+      data[i] = Math.random() * 2 - 1;
+    }
+
+    staticSource = audioContext.createBufferSource();
+    staticSource.buffer = noiseBuffer;
+    staticSource.loop = true;
+
+    radioFilter = audioContext.createBiquadFilter();
+    radioFilter.type = "bandpass";
+    radioFilter.frequency.value = 1400;
+    radioFilter.Q.value = 0.9;
+
+    noiseGain = audioContext.createGain();
+    noiseGain.gain.value = 0;
+
+    staticSource.connect(radioFilter);
+    radioFilter.connect(noiseGain);
+    noiseGain.connect(audioContext.destination);
+
+    staticSource.start();
+    audioStarted = true;
+  }
+
+  document.body.addEventListener("click", startRadioStatic);
+  document.body.addEventListener("touchstart", startRadioStatic);
+
+  document.addEventListener("mousemove", (e) => {
+    const dx = e.clientX - lastX;
+    const dy = e.clientY - lastY;
+    const speed = Math.sqrt(dx * dx + dy * dy);
+
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    movementEnergy = Math.min(1, movementEnergy + speed / 350);
+    chaos = Math.min(1, chaos + speed / 500);
+
+    const distanceX = dotX - mouseX;
+    const distanceY = dotY - mouseY;
+    const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+
+    if (distance < 160) {
+      const angle = Math.atan2(distanceY, distanceX) + (Math.random() - 0.5) * 2.2;
+      const escape = 70 + Math.random() * 120;
+
+      dotX += Math.cos(angle) * escape;
+      dotY += Math.sin(angle) * escape;
+    }
+
+    lastX = e.clientX;
+    lastY = e.clientY;
+  });
+
+  function animate() {
+    movementEnergy *= 0.94;
+    chaos *= 0.965;
+
+    const calmOrbitX = Math.cos(Date.now() * 0.0014) * 75;
+    const calmOrbitY = Math.sin(Date.now() * 0.0019) * 45;
+
+    const targetX = mouseX + calmOrbitX + (Math.random() - 0.5) * chaos * 140;
+    const targetY = mouseY + calmOrbitY + (Math.random() - 0.5) * chaos * 140;
+
+    dotX += (targetX - dotX) * 0.025;
+    dotY += (targetY - dotY) * 0.025;
+
+    dotX = Math.max(20, Math.min(window.innerWidth - 20, dotX));
+    dotY = Math.max(20, Math.min(window.innerHeight - 20, dotY));
+
+    dot.style.left = dotX + "px";
+    dot.style.top = dotY + "px";
+
+    const shake = movementEnergy * 18;
+    const shakeX = (Math.random() - 0.5) * shake;
+    const shakeY = (Math.random() - 0.5) * shake;
+
+    page.style.setProperty("--shake-x", shakeX + "px");
+    page.style.setProperty("--shake-y", shakeY + "px");
+    content.style.setProperty("--blur", movementEnergy * 4 + "px");
+    content.style.setProperty("--opacity", 1 - movementEnergy * 0.45);
+
+    if (audioStarted && noiseGain && radioFilter) {
+      const targetVolume = movementEnergy * 0.16;
+      noiseGain.gain.value += (targetVolume - noiseGain.gain.value) * 0.08;
+
+      radioFilter.frequency.value =
+        700 + Math.random() * 2600 + movementEnergy * 1200;
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+</script>
 </body>
-
 </html>
