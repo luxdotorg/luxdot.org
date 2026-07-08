@@ -11,8 +11,6 @@
     --shakeX: 0px;
     --shakeY: 0px;
     --blur: 0px;
-    --fade: 1;
-    --staticOpacity: 0;
   }
 
   * {
@@ -35,7 +33,6 @@
     background: #000;
   }
 
-  /* الخلفية الأساسية */
   .background {
     position: absolute;
     inset: -3%;
@@ -44,16 +41,35 @@
     background-position: center;
     background-repeat: no-repeat;
     transform: translate(var(--shakeX), var(--shakeY)) scale(1.04);
-    filter: blur(var(--blur)) brightness(calc(0.75 + var(--fade) * 0.25));
-    opacity: 0.95;
+    filter:
+      blur(calc(var(--energy) * 3.5px))
+      brightness(calc(1 - var(--energy) * 0.35))
+      contrast(calc(1 + var(--energy) * 1.2));
+    opacity: 1;
   }
 
-  /* طبقة تشويش أبيض وأسود */
+  .ghost-layer {
+    position: absolute;
+    inset: -3%;
+    background-image: url("images/luxdot-bg.png");
+    background-size: cover;
+    background-position: center;
+    opacity: calc(var(--energy) * 0.35);
+    filter: contrast(2) grayscale(1) blur(calc(var(--energy) * 2px));
+    mix-blend-mode: screen;
+    transform:
+      translate(
+        calc(var(--shakeX) * -2),
+        calc(var(--shakeY) * 2)
+      )
+      scale(1.08);
+  }
+
   .static-noise {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: var(--staticOpacity);
+    opacity: calc(var(--energy) * 0.75);
     mix-blend-mode: screen;
     background:
       repeating-radial-gradient(circle, rgba(255,255,255,0.22) 0 1px, transparent 1px 3px),
@@ -70,12 +86,11 @@
     100% { transform: translate(-1%, -1%); }
   }
 
-  /* خطوط شاشة تلفزيون قديم */
   .scanlines {
     position: absolute;
     inset: 0;
     pointer-events: none;
-    opacity: 0.22;
+    opacity: calc(0.12 + var(--energy) * 0.2);
     background: repeating-linear-gradient(
       0deg,
       rgba(255,255,255,0.08) 0px,
@@ -91,25 +106,6 @@
     to { transform: translateY(20px); }
   }
 
-  /* تداخل صور/أشباح */
-  .ghost-layer {
-    position: absolute;
-    inset: -3%;
-    background-image: url("images/luxdot-bg.png");
-    background-size: cover;
-    background-position: center;
-    opacity: calc(var(--energy) * 0.28);
-    filter: contrast(1.8) grayscale(1);
-    mix-blend-mode: screen;
-    transform:
-      translate(
-        calc(var(--shakeX) * -2),
-        calc(var(--shakeY) * 2)
-      )
-      scale(1.06);
-  }
-
-  /* النص الرئيسي مستقل عن الخلفية */
   .content {
     position: absolute;
     inset: 0;
@@ -122,8 +118,8 @@
       calc(var(--shakeX) * 0.6),
       calc(var(--shakeY) * 0.6)
     );
-    filter: blur(calc(var(--blur) * 0.8));
-    opacity: calc(1 - var(--energy) * 0.35);
+    filter: blur(calc(var(--energy) * 3px));
+    opacity: calc(1 - var(--energy) * 0.42);
     z-index: 5;
     pointer-events: none;
   }
@@ -156,7 +152,6 @@
     opacity: 0.8;
   }
 
-  /* نقطة الضوء */
   .light-dot {
     position: fixed;
     width: 3px;
@@ -189,7 +184,7 @@
 
 <body>
   <div class="scene">
-    <div class="background" id="background"></div>
+    <div class="background"></div>
     <div class="ghost-layer"></div>
     <div class="static-noise"></div>
     <div class="scanlines"></div>
@@ -226,6 +221,7 @@
   let noiseGain;
   let filter1;
   let filter2;
+  let source;
 
   function startTVStaticSound() {
     if (audioStarted) return;
@@ -240,7 +236,7 @@
       data[i] = Math.random() * 2 - 1;
     }
 
-    const source = audioContext.createBufferSource();
+    source = audioContext.createBufferSource();
     source.buffer = buffer;
     source.loop = true;
 
@@ -250,8 +246,8 @@
 
     filter2 = audioContext.createBiquadFilter();
     filter2.type = "bandpass";
-    filter2.frequency.value = 2400;
-    filter2.Q.value = 0.7;
+    filter2.frequency.value = 2600;
+    filter2.Q.value = 0.9;
 
     noiseGain = audioContext.createGain();
     noiseGain.gain.value = 0;
@@ -276,8 +272,8 @@
     mouseX = e.clientX;
     mouseY = e.clientY;
 
-    energy = Math.min(1, energy + speed / 320);
-    longMovement = Math.min(1, longMovement + speed / 900);
+    energy = Math.min(1, energy + speed / 330);
+    longMovement = Math.min(1, longMovement + speed / 950);
 
     const distX = dotX - mouseX;
     const distY = dotY - mouseY;
@@ -300,15 +296,11 @@
     longMovement *= 0.985;
 
     const finalEnergy = Math.min(1, energy + longMovement * 0.55);
-
     const shake = finalEnergy * 22;
 
     root.style.setProperty("--energy", finalEnergy);
     root.style.setProperty("--shakeX", `${(Math.random() - 0.5) * shake}px`);
     root.style.setProperty("--shakeY", `${(Math.random() - 0.5) * shake}px`);
-    root.style.setProperty("--blur", `${finalEnergy * 3.8}px`);
-    root.style.setProperty("--fade", `${1 - finalEnergy * 0.4}`);
-    root.style.setProperty("--staticOpacity", `${finalEnergy * 0.75}`);
 
     const orbitX = Math.cos(Date.now() * 0.0014) * 85;
     const orbitY = Math.sin(Date.now() * 0.0019) * 55;
@@ -333,9 +325,9 @@
 
       noiseGain.gain.value += (targetVolume - noiseGain.gain.value) * 0.06;
 
-      filter1.frequency.value = 500 + finalEnergy * 1200;
-      filter2.frequency.value = 1800 + Math.random() * 3500;
-      filter2.Q.value = 0.4 + finalEnergy * 2.2;
+      filter1.frequency.value = 500 + finalEnergy * 1400;
+      filter2.frequency.value = 1800 + Math.random() * 4200;
+      filter2.Q.value = 0.5 + finalEnergy * 2.4;
     }
 
     requestAnimationFrame(animate);
