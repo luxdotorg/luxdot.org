@@ -1,6 +1,8 @@
 const root = document.documentElement;
+const matrixCanvas = document.getElementById("matrixCanvas");
 const symbolCanvas = document.getElementById("symbolCanvas");
 const staticCanvas = document.getElementById("staticCanvas");
+const matrixCtx = matrixCanvas.getContext("2d");
 const symbolCtx = symbolCanvas.getContext("2d");
 const staticCtx = staticCanvas.getContext("2d");
 
@@ -19,30 +21,108 @@ let dotY = mouseY - 80;
 let energy = 0;
 let longMovement = 0;
 let symbols = [];
+let matrixColumns = [];
+let matrixFrame = 0;
 
 const symbolCount = 230;
 const symbolList = window.LUXDOT_SYMBOLS || ["LuxDot", "Signal", "Noise", "Light"];
+const matrixValues = window.LUXDOT_MATRIX_VALUES || [
+  "0", "1", "01", "10", "101", "404", "777", "999", "666",
+  "π", "3.14159", "φ", "1.61803", "e", "2.71828",
+  "c", "299792458", "G", "6.67430e-11", "h", "6.62607015e-34",
+  "ℏ", "1.054571817e-34", "kB", "1.380649e-23",
+  "NA", "6.02214076e23", "R", "8.314462618", "α", "1/137",
+  "ε0", "8.854e-12", "μ0", "4π×10⁻⁷", "Λ", "Ω", "Δ", "Σ"
+];
 
 function resizeCanvas() {
   width = window.innerWidth;
   height = window.innerHeight;
   dpr = Math.min(window.devicePixelRatio || 1, 2);
 
-  for (const canvas of [symbolCanvas, staticCanvas]) {
+  for (const canvas of [matrixCanvas, symbolCanvas, staticCanvas]) {
     canvas.width = width * dpr;
     canvas.height = height * dpr;
     canvas.style.width = width + "px";
     canvas.style.height = height + "px";
   }
 
+  matrixCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
   symbolCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
   staticCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
   createSymbols();
+  createMatrixRain();
 }
 
 function randomSymbol() {
   return symbolList[Math.floor(Math.random() * symbolList.length)];
+}
+
+function randomMatrixValue() {
+  return matrixValues[Math.floor(Math.random() * matrixValues.length)];
+}
+
+function createMatrixRain() {
+  matrixColumns = [];
+  const columnWidth = 24;
+  const count = Math.ceil(width / columnWidth);
+
+  for (let i = 0; i < count; i++) {
+    matrixColumns.push({
+      x: i * columnWidth + Math.random() * 10,
+      y: Math.random() * -height,
+      speed: 0.6 + Math.random() * 2.3,
+      length: 6 + Math.floor(Math.random() * 18),
+      size: 10 + Math.random() * 7,
+      gap: 18 + Math.random() * 10,
+      glow: 0.35 + Math.random() * 0.65
+    });
+  }
+}
+
+function drawMatrixRain(finalEnergy) {
+  matrixFrame++;
+
+  matrixCtx.fillStyle = `rgba(0, 0, 0, ${0.16 - finalEnergy * 0.05})`;
+  matrixCtx.fillRect(0, 0, width, height);
+
+  for (const column of matrixColumns) {
+    column.y += column.speed * (0.7 + finalEnergy * 2.4);
+
+    if (column.y - column.length * column.gap > height + 80) {
+      column.y = -Math.random() * height * 0.7;
+      column.speed = 0.6 + Math.random() * 2.3;
+      column.length = 6 + Math.floor(Math.random() * 18);
+      column.size = 10 + Math.random() * 7;
+    }
+
+    for (let i = 0; i < column.length; i++) {
+      const y = column.y - i * column.gap;
+      if (y < -30 || y > height + 30) continue;
+
+      const alpha = Math.max(0, 1 - i / column.length) * (0.18 + finalEnergy * 0.72) * column.glow;
+      const value = randomMatrixValue();
+
+      matrixCtx.save();
+      matrixCtx.font = `${column.size}px monospace`;
+      matrixCtx.textAlign = "center";
+      matrixCtx.textBaseline = "middle";
+
+      if (i === 0) {
+        matrixCtx.fillStyle = `rgba(210,255,210,${Math.min(1, alpha + 0.45)})`;
+        matrixCtx.shadowColor = "rgba(120,255,120,0.95)";
+        matrixCtx.shadowBlur = 18;
+      } else {
+        matrixCtx.fillStyle = `rgba(0,255,95,${alpha})`;
+        matrixCtx.shadowColor = "rgba(0,255,95,0.75)";
+        matrixCtx.shadowBlur = 8;
+      }
+
+      matrixCtx.fillText(value, column.x, y);
+      matrixCtx.restore();
+    }
+  }
 }
 
 function createSymbols() {
@@ -173,6 +253,7 @@ function animate() {
   root.style.setProperty("--shake-y", `${(Math.random() - 0.5) * shake}px`);
 
   moveDot(finalEnergy);
+  drawMatrixRain(finalEnergy);
   drawSymbols(finalEnergy);
   drawStatic(finalEnergy);
 
@@ -210,13 +291,39 @@ document.addEventListener("mousemove", (event) => {
   lastY = event.clientY;
 });
 
+let clickTimes = [];
+let breathCooldown = false;
+let cryCooldown = false;
+
 function awakenAudio() {
   if (window.luxdotAudio) {
     window.luxdotAudio.start();
   }
 }
 
-document.body.addEventListener("click", awakenAudio);
+function registerClickPattern() {
+  awakenAudio();
+
+  const now = Date.now();
+  clickTimes = clickTimes.filter((time) => now - time < 650);
+  clickTimes.push(now);
+
+  if (clickTimes.length >= 3 && !cryCooldown) {
+    cryCooldown = true;
+    clickTimes = [];
+    window.luxdotAudio?.playMutedChildCry();
+    setTimeout(() => { cryCooldown = false; }, 1800);
+    return;
+  }
+
+  if (clickTimes.length === 2 && !breathCooldown) {
+    breathCooldown = true;
+    window.luxdotAudio?.playBreath();
+    setTimeout(() => { breathCooldown = false; }, 900);
+  }
+}
+
+document.body.addEventListener("click", registerClickPattern);
 document.body.addEventListener("touchstart", awakenAudio);
 window.addEventListener("resize", resizeCanvas);
 

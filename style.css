@@ -6,9 +6,7 @@
   --dot-y: 50vh;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html,
 body {
@@ -43,6 +41,7 @@ body {
   pointer-events: none;
 }
 
+#matrixCanvas,
 #symbolCanvas,
 #staticCanvas {
   position: absolute;
@@ -53,9 +52,13 @@ body {
   pointer-events: none;
 }
 
-#symbolCanvas {
-  z-index: 2;
+#matrixCanvas {
+  z-index: 1;
+  opacity: calc(0.24 + var(--energy) * 0.42);
+  mix-blend-mode: screen;
 }
+
+#symbolCanvas { z-index: 2; }
 
 #staticCanvas {
   z-index: 4;
@@ -166,6 +169,7 @@ h1 {
   .hint {
     font-size: 9px;
     letter-spacing: 0.12em;
+    padding: 0 14px;
   }
 
   .light-aura {
