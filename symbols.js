@@ -27,9 +27,14 @@ window.LUXDOT_SYMBOLS = [
   "PV=nRT", "S=k ln Ω", "∑", "∫", "∂", "√", "∞", "π", "λ", "Ω",
   "Δ", "Σ", "ψ", "θ", "μ", "α", "β", "γ", "∴", "∵", "≈", "≠", "≤", "≥",
 
-  // Chemistry / biology
-  "H₂O", "CO₂", "O₂", "NH₃", "CH₄", "C₆H₁₂O₆", "NaCl", "C₂H₅OH",
-  "C₈H₁₀N₄O₂", "C₉H₁₃NO₃", "DNA", "RNA", "ATP", "pH", "H⁺", "OH⁻",
+  // Chemistry / molecular structures - simplified visual structures, not synthesis instructions
+  "H–O–H", "O=C=O", "O=O", "H–N–H", "H–C–H", "Na⁺···Cl⁻",
+  "HO–CH₂–(CHOH)₄–CHO", "CH₃–CH₂–OH", "ATP", "DNA", "RNA", "pH", "H⁺", "OH⁻",
+  "benzene ⌬", "indole ⌬–N", "tryptamine core", "phenethylamine core",
+  "Ketamine: Ar–C(=O)–C(NHCH₃)–cyclohexyl",
+  "DMT: indole–CH₂–CH₂–N(CH₃)₂",
+  "3-MMC: 3-Me–Ph–C(=O)–CH(CH₃)–NHCH₃",
+  "caffeine: purine–(CH₃)₃", "adrenaline: catechol–CH(OH)–CH₂–NHCH₃",
 
   // AI / cognition
   "AI", "LLM", "Neural Net", "Token", "Vector", "Embedding", "Attention",
