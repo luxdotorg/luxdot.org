@@ -35,6 +35,32 @@ const matrixValues = window.LUXDOT_MATRIX_VALUES || [
   "ε0", "8.854e-12", "μ0", "4π×10⁻⁷", "Λ", "Ω", "Δ", "Σ"
 ];
 
+const claritySymbols = new Set([
+  "π", "φ", "E=mc²", "DNA", "Logos", "Signal", "Truth", "نور", "وعي", "Δ", "AI",
+  "Clarity", "Precision", "Meaning", "Understanding", "LuxDotation", "Reduce noise", "Increase signal"
+]);
+
+function getLuxdotationPhase() {
+  const cycle = 18;
+  const t = (performance.now() * 0.001) % cycle;
+
+  if (t < 4) {
+    return { name: "noise", noise: 1, discovery: 0.25, clarity: 0, matrix: 1 };
+  }
+
+  if (t < 10) {
+    const k = (t - 4) / 6;
+    return { name: "discovery", noise: 1 - k * 0.65, discovery: 1, clarity: k * 0.35, matrix: 0.75 - k * 0.35 };
+  }
+
+  if (t < 14) {
+    return { name: "clarity", noise: 0.12, discovery: 0.45, clarity: 1, matrix: 0.22 };
+  }
+
+  const k = (t - 14) / 4;
+  return { name: "return", noise: 0.12 + k * 0.88, discovery: 0.65 - k * 0.4, clarity: 1 - k, matrix: 0.22 + k * 0.78 };
+}
+
 function resizeCanvas() {
   width = window.innerWidth;
   height = window.innerHeight;
@@ -81,14 +107,14 @@ function createMatrixRain() {
   }
 }
 
-function drawMatrixRain(finalEnergy) {
+function drawMatrixRain(finalEnergy, luxPhase) {
   matrixFrame++;
 
-  matrixCtx.fillStyle = `rgba(0, 0, 0, ${0.16 - finalEnergy * 0.05})`;
+  matrixCtx.fillStyle = `rgba(0, 0, 0, ${0.18 - finalEnergy * 0.05})`;
   matrixCtx.fillRect(0, 0, width, height);
 
   for (const column of matrixColumns) {
-    column.y += column.speed * (0.7 + finalEnergy * 2.4);
+    column.y += column.speed * (0.45 + finalEnergy * 2.2 + luxPhase.matrix * 1.4);
 
     if (column.y - column.length * column.gap > height + 80) {
       column.y = -Math.random() * height * 0.7;
@@ -101,7 +127,7 @@ function drawMatrixRain(finalEnergy) {
       const y = column.y - i * column.gap;
       if (y < -30 || y > height + 30) continue;
 
-      const alpha = Math.max(0, 1 - i / column.length) * (0.18 + finalEnergy * 0.72) * column.glow;
+      const alpha = Math.max(0, 1 - i / column.length) * (0.08 + finalEnergy * 0.48 + luxPhase.matrix * 0.44) * column.glow;
       const value = randomMatrixValue();
 
       matrixCtx.save();
@@ -146,15 +172,16 @@ function createSymbols() {
   }
 }
 
-function drawSymbols(finalEnergy) {
+function drawSymbols(finalEnergy, luxPhase) {
   symbolCtx.clearRect(0, 0, width, height);
 
-  const revealRadius = 190 + finalEnergy * 120;
+  const revealRadius = 150 + luxPhase.discovery * 190 + finalEnergy * 100;
+  const clarityRadius = Math.max(width, height) * 0.55;
   const time = performance.now() * 0.001;
 
   for (const symbol of symbols) {
-    symbol.x += symbol.driftX * symbol.depth;
-    symbol.y += symbol.driftY * symbol.depth;
+    symbol.x += symbol.driftX * symbol.depth * (0.4 + luxPhase.noise * 1.5);
+    symbol.y += symbol.driftY * symbol.depth * (0.4 + luxPhase.noise * 1.5);
 
     if (symbol.x < -120) symbol.x = width + 120;
     if (symbol.x > width + 120) symbol.x = -120;
@@ -164,23 +191,42 @@ function drawSymbols(finalEnergy) {
     const parallaxX = (mouseX - width / 2) * 0.012 * symbol.depth;
     const parallaxY = (mouseY - height / 2) * 0.012 * symbol.depth;
 
-    const x = symbol.x + parallaxX + Math.sin(time + symbol.phase) * 1.8;
-    const y = symbol.y + parallaxY + Math.cos(time * 0.8 + symbol.phase) * 1.8;
+    const x = symbol.x + parallaxX + Math.sin(time + symbol.phase) * (1.2 + luxPhase.noise * 2.8);
+    const y = symbol.y + parallaxY + Math.cos(time * 0.8 + symbol.phase) * (1.2 + luxPhase.noise * 2.8);
 
     const dx = x - dotX;
     const dy = y - dotY;
     const distance = Math.sqrt(dx * dx + dy * dy);
 
-    if (distance > revealRadius) continue;
+    const isClaritySymbol = claritySymbols.has(symbol.text);
+    let strength = 0;
 
-    const strength = 1 - distance / revealRadius;
-    const alpha = Math.min(1, strength * 1.35) * symbol.opacity;
-    const glow = 10 + strength * 46;
+    if (distance < revealRadius) {
+      strength = Math.max(strength, 1 - distance / revealRadius);
+    }
+
+    if (luxPhase.clarity > 0.05 && isClaritySymbol) {
+      const cx = x - width / 2;
+      const cy = y - height / 2;
+      const centerDistance = Math.sqrt(cx * cx + cy * cy);
+      const centerStrength = Math.max(0, 1 - centerDistance / clarityRadius);
+      strength = Math.max(strength, centerStrength * luxPhase.clarity * 1.15);
+    }
+
+    if (luxPhase.name === "clarity" && !isClaritySymbol) {
+      strength *= 0.12;
+    }
+
+    if (strength <= 0.01) continue;
+
+    const alpha = Math.min(1, strength * 1.35) * symbol.opacity * (0.42 + luxPhase.discovery * 0.38 + luxPhase.clarity * 0.45);
+    const glow = 8 + strength * 52 + luxPhase.clarity * 16;
+    const blurShake = luxPhase.noise * finalEnergy * 2.5;
 
     symbolCtx.save();
-    symbolCtx.translate(x, y);
+    symbolCtx.translate(x + (Math.random() - 0.5) * blurShake, y + (Math.random() - 0.5) * blurShake);
     symbolCtx.rotate(symbol.rotation + Math.sin(time + symbol.phase) * 0.03);
-    symbolCtx.font = `${symbol.size}px Arial, Helvetica, sans-serif`;
+    symbolCtx.font = `${symbol.size * (isClaritySymbol ? 1.12 : 1)}px Arial, Helvetica, sans-serif`;
     symbolCtx.textAlign = "center";
     symbolCtx.textBaseline = "middle";
     symbolCtx.fillStyle = `rgba(255,255,255,${alpha})`;
@@ -191,12 +237,12 @@ function drawSymbols(finalEnergy) {
   }
 }
 
-function drawStatic(finalEnergy) {
+function drawStatic(finalEnergy, luxPhase) {
   staticCtx.clearRect(0, 0, width, height);
 
   if (finalEnergy < 0.01) return;
 
-  const alpha = finalEnergy * 0.42;
+  const alpha = (finalEnergy * 0.28 + luxPhase.noise * 0.22);
   const blockSize = 3;
   const rows = Math.ceil(height / blockSize);
   const cols = Math.ceil(width / blockSize);
@@ -213,7 +259,7 @@ function drawStatic(finalEnergy) {
     }
   }
 
-  staticCtx.globalAlpha = finalEnergy * 0.22;
+  staticCtx.globalAlpha = finalEnergy * 0.14 + luxPhase.noise * 0.10;
   staticCtx.fillStyle = "white";
 
   for (let i = 0; i < 12; i++) {
@@ -245,17 +291,18 @@ function animate() {
   energy *= 0.945;
   longMovement *= 0.985;
 
-  const finalEnergy = Math.min(1, energy + longMovement * 0.55);
-  const shake = finalEnergy * 22;
+  const luxPhase = getLuxdotationPhase();
+  const finalEnergy = Math.min(1, energy + longMovement * 0.55 + luxPhase.noise * 0.12);
+  const shake = finalEnergy * 22 * (0.55 + luxPhase.noise * 0.75);
 
   root.style.setProperty("--energy", finalEnergy);
   root.style.setProperty("--shake-x", `${(Math.random() - 0.5) * shake}px`);
   root.style.setProperty("--shake-y", `${(Math.random() - 0.5) * shake}px`);
 
   moveDot(finalEnergy);
-  drawMatrixRain(finalEnergy);
-  drawSymbols(finalEnergy);
-  drawStatic(finalEnergy);
+  drawMatrixRain(finalEnergy, luxPhase);
+  drawSymbols(finalEnergy, luxPhase);
+  drawStatic(finalEnergy, luxPhase);
 
   if (window.luxdotAudio) {
     window.luxdotAudio.update(finalEnergy);
