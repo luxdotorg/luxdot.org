@@ -340,7 +340,7 @@ document.addEventListener("mousemove", (event) => {
 
 let clickTimes = [];
 let breathCooldown = false;
-let logosCooldown = false;
+let whisperCooldown = false;
 
 function awakenAudio() {
   if (window.luxdotAudio) {
@@ -355,11 +355,11 @@ function registerClickPattern() {
   clickTimes = clickTimes.filter((time) => now - time < 650);
   clickTimes.push(now);
 
-  if (clickTimes.length >= 3 && !logosCooldown) {
-    logosCooldown = true;
+  if (clickTimes.length >= 3 && !whisperCooldown) {
+    whisperCooldown = true;
     clickTimes = [];
-    window.luxdotAudio?.playWhisperLogos();
-    setTimeout(() => { logosCooldown = false; }, 1800);
+    window.luxdotAudio?.playWhisperWord();
+    setTimeout(() => { whisperCooldown = false; }, 2400);
     return;
   }
 

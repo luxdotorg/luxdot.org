@@ -155,29 +155,76 @@ class LuxdotAudioEngine {
   }
 
 
-  playWhisperLogos() {
+  playWhisperWord() {
     if (!this.started) return;
 
+    const whisperWords = [
+      { text: "Logos", lang: "en-US" },
+      { text: "LuxDot", lang: "en-US" },
+      { text: "Luxdotation", lang: "en-US" },
+      { text: "Signal", lang: "en-US" },
+      { text: "Clarity", lang: "en-US" },
+      { text: "Precision", lang: "en-US" },
+      { text: "Meaning", lang: "en-US" },
+      { text: "Understanding", lang: "en-US" },
+      { text: "Noise", lang: "en-US" },
+      { text: "Light", lang: "en-US" },
+      { text: "Point", lang: "en-US" },
+      { text: "Truth", lang: "en-US" },
+      { text: "Awareness", lang: "en-US" },
+      { text: "Mind", lang: "en-US" },
+      { text: "Observer", lang: "en-US" },
+      { text: "Ketamine", lang: "en-US" },
+
+      { text: "λόγος", lang: "el-GR" },
+      { text: "ἀλήθεια", lang: "el-GR" },
+      { text: "γνῶθι σεαυτόν", lang: "el-GR" },
+
+      { text: "نور", lang: "ar" },
+      { text: "وعي", lang: "ar" },
+      { text: "معنى", lang: "ar" },
+      { text: "نقطة", lang: "ar" },
+      { text: "إشارة", lang: "ar" },
+      { text: "صفاء", lang: "ar" },
+      { text: "دقة", lang: "ar" },
+      { text: "بصيرة", lang: "ar" },
+
+      { text: "אור", lang: "he-IL" },
+      { text: "דעת", lang: "he-IL" },
+      { text: "חכמה", lang: "he-IL" },
+      { text: "אמת", lang: "he-IL" },
+      { text: "נקודה", lang: "he-IL" },
+
+      { text: "Veritas", lang: "la" },
+      { text: "Lux", lang: "la" },
+      { text: "Ratio", lang: "la" },
+      { text: "Scientia", lang: "la" }
+    ];
+
+    const selected = whisperWords[Math.floor(Math.random() * whisperWords.length)];
     const now = this.context.currentTime;
 
-    // A soft air layer around the spoken word to make it feel whispered.
-    this.playWhisperAir(now, 1.25, 0.34);
+    // Longer air layer for a slower, deeper whisper than the old Logos whisper.
+    this.playWhisperAir(now, 1.75, 0.42);
 
-    // Browser speech gives the word clarity; settings make it low, slow, and intimate.
     if ("speechSynthesis" in window) {
       window.speechSynthesis.cancel();
 
-      const voice = new SpeechSynthesisUtterance("Logos");
-      voice.lang = "en-US";
-      voice.volume = 0.58;
-      voice.rate = 0.62;
-      voice.pitch = 0.28;
+      const voice = new SpeechSynthesisUtterance(selected.text);
+      voice.lang = selected.lang;
+      voice.volume = 0.44;
+      voice.rate = 0.38;
+      voice.pitch = 0.18;
 
-      setTimeout(() => window.speechSynthesis.speak(voice), 90);
+      setTimeout(() => window.speechSynthesis.speak(voice), 140);
     } else {
-      // Fallback if speech synthesis is unavailable.
-      this.playLogosToneFallback(now + 0.08);
+      this.playLogosToneFallback(now + 0.12);
     }
+  }
+
+  playWhisperLogos() {
+    // Kept for compatibility with older script.js versions.
+    this.playWhisperWord();
   }
 
   playWhisperAir(time, duration, volume) {

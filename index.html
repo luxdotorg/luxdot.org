@@ -6,63 +6,7 @@
   <title>LuxDot</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<script>
-const luxWords = [
-  { text: "نور", lang: "ar" },
-  { text: "نقطة", lang: "ar" },
-  { text: "Signal", lang: "en-US" },
-  { text: "Noise", lang: "en-US" },
-  { text: "Clarity", lang: "en-US" },
-  { text: "Logos", lang: "el-GR" },
-  { text: "Precision", lang: "en-US" },
-  { text: "Luxdotation", lang: "en-US" },
-  { text: "Veritas", lang: "la" },
-  { text: "Lumen", lang: "la" },
-  { text: "Ratio", lang: "la" },
-  { text: "אור", lang: "he-IL" },
-  { text: "חכמה", lang: "he-IL" },
-  { text: "Ketamine", lang: "en-US" }
-];
-
-let luxClickCount = 0;
-let lastLuxClickTime = 0;
-
-document.addEventListener("click", () => {
-  const now = Date.now();
-
-  // يعيد العد إذا كان بين الضغطات وقت طويل
-  if (now - lastLuxClickTime > 1400) {
-    luxClickCount = 0;
-  }
-
-  lastLuxClickTime = now;
-  luxClickCount++;
-
-  if (luxClickCount >= 3) {
-    luxClickCount = 0;
-    whisperRandomLuxWord();
-  }
-});
-
-function whisperRandomLuxWord() {
-  if (!window.speechSynthesis) return;
-
-  speechSynthesis.cancel();
-
-  const item = luxWords[Math.floor(Math.random() * luxWords.length)];
-
-  const utterance = new SpeechSynthesisUtterance(item.text);
-  utterance.lang = item.lang;
-
-  // همس / بطء / انخفاض
-  utterance.volume = 0.18;
-  utterance.rate = 0.45;
-  utterance.pitch = 0.35;
-
-  speechSynthesis.speak(utterance);
-}
-</script>
-  <body>
+<body>
   <div class="scene" id="scene">
     <div class="depth-grid"></div>
     <canvas id="matrixCanvas"></canvas>
