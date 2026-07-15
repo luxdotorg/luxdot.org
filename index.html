@@ -3,32 +3,455 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LuxDot</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="LuxDot — Reducing noise. Increasing signal." />
+  <title>LuxDot — Where Understanding Begins</title>
+  <style>
+    :root {
+      --matrix: 0, 255, 102;
+      --white: 244, 255, 248;
+      --energy: 0;
+      --shake-x: 0px;
+      --shake-y: 0px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+    body { font-family: Inter, Arial, Helvetica, sans-serif; color: white; }
+
+    .scene {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 48%, rgba(6, 28, 14, .42) 0%, rgba(0, 0, 0, .82) 48%, #000 78%),
+        #000;
+    }
+
+    #matrixCanvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: .9;
+      filter: contrast(1.16) saturate(1.08);
+    }
+
+    .vignette {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 50% 48%, transparent 0%, transparent 28%, rgba(0,0,0,.25) 56%, rgba(0,0,0,.88) 100%),
+        linear-gradient(to bottom, rgba(0,0,0,.08), transparent 14%, transparent 82%, rgba(0,0,0,.52));
+    }
+
+    .scanlines {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+      opacity: .075;
+      background: repeating-linear-gradient(0deg, rgba(170,255,195,.10) 0, rgba(170,255,195,.10) 1px, transparent 2px, transparent 5px);
+    }
+
+    .symbol-layer { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
+
+    .symbol {
+      position: absolute;
+      transform: translate(-50%, -50%) scale(.92);
+      opacity: 0;
+      color: rgba(var(--white), .96);
+      font: 500 var(--size)/1.15 "Courier New", monospace;
+      white-space: nowrap;
+      filter: blur(2px);
+      text-shadow: 0 0 6px rgba(var(--matrix), .9), 0 0 20px rgba(var(--matrix), .52);
+      transition: opacity .22s ease, transform .22s ease, filter .22s ease;
+    }
+
+    .symbol.visible { transform: translate(-50%, -50%) scale(1); filter: blur(0); }
+
+    .aura {
+      position: fixed;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      z-index: 5;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(255,255,255,.20) 0%, rgba(178,255,205,.10) 20%, rgba(0,255,102,.06) 42%, transparent 72%);
+      filter: blur(18px);
+      mix-blend-mode: screen;
+    }
+
+    .content {
+      position: absolute;
+      inset: 0;
+      z-index: 7;
+      display: grid;
+      place-items: center;
+      pointer-events: none;
+      text-align: center;
+      transform: translate(var(--shake-x), var(--shake-y));
+      filter: blur(calc(var(--energy) * 1.8px));
+    }
+
+    .content-inner {
+      padding: 24px;
+      text-shadow: 0 0 18px rgba(255,255,255,.88), 0 0 56px rgba(0,255,102,.18);
+    }
+
+    .eyebrow {
+      margin-bottom: 16px;
+      font-size: clamp(9px, .75vw, 12px);
+      letter-spacing: .42em;
+      text-transform: uppercase;
+      color: rgba(206,255,220,.68);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(56px, 8.5vw, 132px);
+      letter-spacing: .055em;
+      line-height: .95;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      margin-top: 20px;
+      font-size: clamp(14px, 1.65vw, 25px);
+      letter-spacing: .075em;
+      font-weight: 300;
+      color: rgba(255,255,255,.92);
+    }
+
+    .status {
+      margin-top: 30px;
+      font-size: clamp(10px, 1vw, 14px);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(184,255,205,.68);
+    }
+
+    .signal-state {
+      position: fixed;
+      top: 20px;
+      left: 22px;
+      z-index: 10;
+      font: 500 10px/1.5 "Courier New", monospace;
+      letter-spacing: .12em;
+      color: rgba(175,255,198,.55);
+      text-transform: uppercase;
+      pointer-events: none;
+    }
+
+    .signal-state b { color: rgba(225,255,233,.94); font-weight: 700; }
+
+    .dot {
+      position: fixed;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: #fff;
+      z-index: 12;
+      pointer-events: none;
+      box-shadow: 0 0 8px #fff, 0 0 20px #fff, 0 0 48px rgba(255,255,255,.92), 0 0 100px rgba(0,255,102,.88), 0 0 180px rgba(0,255,102,.34);
+    }
+
+    .hint {
+      position: fixed;
+      bottom: 16px;
+      left: 0;
+      right: 0;
+      z-index: 12;
+      text-align: center;
+      font-size: 9px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(185,255,205,.36);
+      pointer-events: none;
+    }
+
+    @media (max-width: 720px) {
+      .signal-state { top: 14px; left: 14px; font-size: 8px; }
+      .hint { font-size: 8px; letter-spacing: .14em; }
+      .eyebrow { letter-spacing: .28em; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #matrixCanvas { opacity: .48; }
+      .scanlines { display: none; }
+    }
+  </style>
 </head>
 <body>
-  <div class="scene" id="scene">
-    <div class="depth-grid"></div>
+  <div class="scene">
     <canvas id="matrixCanvas"></canvas>
-    <canvas id="symbolCanvas"></canvas>
-    <canvas id="staticCanvas"></canvas>
+    <div class="vignette"></div>
+    <div class="scanlines"></div>
+    <div class="symbol-layer" id="symbolLayer"></div>
+    <div class="aura" id="aura"></div>
 
-    <div class="light-aura" id="aura"></div>
+    <div class="signal-state" id="signalState">system: <b>listening</b><br>signal: latent</div>
 
-    <main class="content" id="content">
+    <main class="content">
       <div class="content-inner">
+        <div class="eyebrow">Reducing noise · Increasing signal</div>
         <h1>LuxDot</h1>
-        <div class="subtitle">The First Point of Light .. Where Understanding Begins</div>
-        <div class="status">Our website is currently under Luxdotation.</div>
-        <div class="signal-line">Reducing noise. Increasing signal.</div>
+        <div class="subtitle">The First Point of Light · Where Understanding Begins</div>
+        <div class="status">Our website is under Luxdotation</div>
       </div>
     </main>
   </div>
 
-  <div class="light-dot" id="dot"></div>
+  <div class="dot" id="dot"></div>
+  <div class="hint">move to reveal · click once to awaken sound</div>
 
-  <script src="symbols.js"></script>
-  <script src="audio.js"></script>
-  <script src="script.js"></script>
+  <script>
+    const canvas = document.getElementById('matrixCanvas');
+    const ctx = canvas.getContext('2d', { alpha: true });
+    const root = document.documentElement;
+    const dot = document.getElementById('dot');
+    const aura = document.getElementById('aura');
+    const symbolLayer = document.getElementById('symbolLayer');
+    const signalState = document.getElementById('signalState');
+
+    const ordinaryGlyphs = ['0','1','2','3','4','5','6','7','8','9','ｱ','ｲ','ｳ','ｴ','ｵ','ｶ','ｷ','ｸ','ｹ','ｺ','ｻ','ｼ','ｽ','ｾ','ｿ','ﾀ','ﾁ','ﾂ','ﾃ','ﾄ','ﾅ','ﾆ','ﾇ','ﾈ','ﾉ','ﾊ','ﾋ','ﾌ','ﾍ','ﾎ','ﾏ','ﾐ','ﾑ','ﾒ','ﾓ','ﾔ','ﾕ','ﾖ','ﾗ','ﾘ','ﾙ','ﾚ','ﾛ','ﾜ','ﾝ',':','+','-','=','*','/','<','>','·','•'];
+    const signalGlyphs = ['ΛΟΓΟΣ','نور','عقل','وعي','معنى','لغة','فهم','حقيقة','إشارة','אור','אמת','λόγος','ἀλήθεια','LUX','DOT','SIGNAL','CLARITY','NOISE','MEANING','MIND','∑','∫','∞','π','φ','ψ','Ω','Δ','Σ','λ','∴','∵','⊙','⟡','⟁','E=mc²','ΔS≥0','DNA','RNA','AI','LLM','H₂O','CO₂','𓂀','𓋹','☯','☸','ॐ'];
+    const fieldSymbols = ['Signal','Noise','Clarity','Precision','Meaning','Understanding','Light','Point','Focus','Depth','Essence','Pattern','Truth','Question','Insight','Awareness','Language','Logos','Mind','Order','Less noise','More signal','LuxDotation','نور','عقل','وعي','معنى','لغة','نقطة','دقة','صفاء','فهم','حقيقة','إشارة','ضجيج','بصيرة','سؤال','منطق','אור','דעת','חכמה','אמת','סוד','אין','נקודה','שפה','λόγος','ἀλήθεια','E=mc²','F=ma','ΔS ≥ 0','iℏ∂ψ/∂t=Hψ','a²+b²=c²','φ=(1+√5)/2','e^{iπ}+1=0','PV=nRT','∑','∫','∂','√','∞','π','λ','Ω','Δ','Σ','ψ','H₂O','CO₂','DNA','RNA','AI','LLM','Token','Attention','Emergence','☉','☽','✦','✧','⊙','𓂀','𓋹','☯','☸','ॐ','⟁','⟡','∴','∵'];
+
+    let dpr = 1;
+    let fontSize = 17;
+    let columns = 0;
+    let streams = [];
+    let frame = 0;
+    let pausedZones = [];
+
+    function resizeMatrix() {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.floor(innerWidth * dpr);
+      canvas.height = Math.floor(innerHeight * dpr);
+      canvas.style.width = innerWidth + 'px';
+      canvas.style.height = innerHeight + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      fontSize = innerWidth < 720 ? 14 : 17;
+      columns = Math.ceil(innerWidth / fontSize);
+      streams = Array.from({ length: columns }, (_, i) => ({
+        x: i * fontSize,
+        y: Math.random() * innerHeight,
+        speed: .55 + Math.random() * 1.9,
+        baseSpeed: .55 + Math.random() * 1.9,
+        length: 9 + Math.floor(Math.random() * 28),
+        cooldown: 40 + Math.floor(Math.random() * 180),
+        signal: null,
+        drift: Math.random() * Math.PI * 2
+      }));
+    }
+
+    const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+
+    function isPaused(x, y) {
+      return pausedZones.some(z => Math.hypot(x - z.x, y - z.y) < z.radius && z.life > 0);
+    }
+
+    function drawMatrix() {
+      frame++;
+      ctx.fillStyle = 'rgba(0,0,0,.105)';
+      ctx.fillRect(0, 0, innerWidth, innerHeight);
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+
+      pausedZones.forEach(z => z.life--);
+      pausedZones = pausedZones.filter(z => z.life > 0);
+
+      for (const s of streams) {
+        const frozen = isPaused(s.x, s.y);
+        s.speed += (s.baseSpeed - s.speed) * .02;
+        if (!frozen) s.y += s.speed * fontSize * .48;
+        s.cooldown--;
+
+        if (s.cooldown <= 0 && Math.random() < .02) {
+          s.signal = { text: pick(signalGlyphs), y: s.y - Math.random() * s.length * fontSize, life: 38 + Math.floor(Math.random() * 50) };
+          s.cooldown = 100 + Math.floor(Math.random() * 240);
+        }
+
+        for (let j = 0; j < s.length; j++) {
+          const y = s.y - j * fontSize;
+          if (y < -fontSize || y > innerHeight + fontSize) continue;
+          const alpha = Math.max(.035, 1 - j / s.length);
+          const head = j === 0;
+          ctx.font = `${head ? 700 : 500} ${fontSize}px "Courier New", monospace`;
+          ctx.fillStyle = head ? `rgba(226,255,236,${Math.min(1, alpha + .22)})` : `rgba(0,255,102,${alpha * .72})`;
+          ctx.shadowBlur = head ? 14 : 4;
+          ctx.shadowColor = head ? 'rgba(226,255,236,.95)' : 'rgba(0,255,102,.7)';
+          ctx.fillText(pick(ordinaryGlyphs), s.x + Math.sin(frame * .004 + s.drift) * .8, y);
+        }
+
+        if (s.signal) {
+          const pulse = .72 + Math.sin(performance.now() * .013 + s.x) * .24;
+          ctx.font = `700 ${fontSize + 1}px "Courier New", monospace`;
+          ctx.fillStyle = `rgba(232,255,240,${pulse})`;
+          ctx.shadowBlur = 26;
+          ctx.shadowColor = 'rgba(0,255,102,1)';
+          ctx.fillText(s.signal.text, s.x, s.signal.y);
+          s.signal.life--;
+          if (s.signal.life <= 0) s.signal = null;
+        }
+
+        if (s.y - s.length * fontSize > innerHeight) {
+          s.y = -Math.random() * innerHeight * .65;
+          s.baseSpeed = .55 + Math.random() * 1.9;
+          s.speed = s.baseSpeed;
+          s.length = 9 + Math.floor(Math.random() * 28);
+        }
+      }
+
+      ctx.shadowBlur = 0;
+      requestAnimationFrame(drawMatrix);
+    }
+
+    let symbolElements = [];
+    function createSymbols() {
+      symbolLayer.innerHTML = '';
+      symbolElements = [];
+      const count = innerWidth < 720 ? 95 : 150;
+      for (let i = 0; i < count; i++) {
+        const el = document.createElement('div');
+        el.className = 'symbol';
+        el.textContent = pick(fieldSymbols);
+        const x = Math.random() * innerWidth;
+        const y = Math.random() * innerHeight;
+        const size = 8 + Math.random() * 15;
+        el.style.left = x + 'px';
+        el.style.top = y + 'px';
+        el.style.setProperty('--size', size + 'px');
+        symbolLayer.appendChild(el);
+        symbolElements.push({ el, x, y, active: false });
+      }
+    }
+
+    let mouseX = innerWidth / 2, mouseY = innerHeight / 2;
+    let lastX = mouseX, lastY = mouseY;
+    let dotX = mouseX + 120, dotY = mouseY - 80;
+    let energy = 0, movement = 0, lastSignalTime = 0;
+
+    document.addEventListener('mousemove', e => {
+      const dx = e.clientX - lastX, dy = e.clientY - lastY;
+      const speed = Math.hypot(dx, dy);
+      mouseX = e.clientX; mouseY = e.clientY;
+      energy = Math.min(1, energy + speed / 400);
+      movement = Math.min(1, movement + speed / 1250);
+      lastX = e.clientX; lastY = e.clientY;
+
+      if (Math.hypot(dotX - mouseX, dotY - mouseY) < 145) {
+        const angle = Math.atan2(dotY - mouseY, dotX - mouseX) + (Math.random() - .5) * 1.7;
+        const power = 60 + Math.random() * 120;
+        dotX += Math.cos(angle) * power;
+        dotY += Math.sin(angle) * power;
+      }
+    });
+
+    function revealSymbols(finalEnergy) {
+      const radius = 168 + finalEnergy * 125;
+      let nearest = null;
+      let nearestDist = Infinity;
+
+      for (const item of symbolElements) {
+        const d = Math.hypot(item.x - dotX, item.y - dotY);
+        if (d < nearestDist) { nearestDist = d; nearest = item; }
+        if (d < radius) {
+          const strength = 1 - d / radius;
+          item.el.classList.add('visible');
+          item.el.style.opacity = Math.min(.98, strength * 1.2);
+          item.el.style.textShadow = `0 0 ${6 + strength * 16}px rgba(225,255,234,1),0 0 ${20 + strength * 54}px rgba(0,255,102,.88)`;
+        } else {
+          item.el.classList.remove('visible');
+          item.el.style.opacity = 0;
+        }
+      }
+
+      const now = performance.now();
+      if (nearest && nearestDist < 42 && now - lastSignalTime > 1200) {
+        lastSignalTime = now;
+        pausedZones.push({ x: nearest.x, y: nearest.y, radius: 120, life: 28 });
+        nearest.el.style.opacity = 1;
+        nearest.el.style.transform = 'translate(-50%, -50%) scale(1.12)';
+        signalState.innerHTML = `system: <b>signal detected</b><br>signal: ${nearest.el.textContent}`;
+        setTimeout(() => {
+          nearest.el.style.transform = '';
+          signalState.innerHTML = 'system: <b>listening</b><br>signal: latent';
+        }, 850);
+      }
+    }
+
+    function animate() {
+      energy *= .95;
+      movement *= .987;
+      const e = Math.min(1, energy + movement * .46);
+      const shake = e * 5.5;
+      root.style.setProperty('--energy', e);
+      root.style.setProperty('--shake-x', `${(Math.random() - .5) * shake}px`);
+      root.style.setProperty('--shake-y', `${(Math.random() - .5) * shake}px`);
+
+      const orbitX = Math.cos(Date.now() * .0013) * 78;
+      const orbitY = Math.sin(Date.now() * .0018) * 50;
+      const chaosX = (Math.random() - .5) * e * 90;
+      const chaosY = (Math.random() - .5) * e * 90;
+      dotX += (mouseX + orbitX + chaosX - dotX) * .024;
+      dotY += (mouseY + orbitY + chaosY - dotY) * .024;
+      dotX = Math.max(10, Math.min(innerWidth - 10, dotX));
+      dotY = Math.max(10, Math.min(innerHeight - 10, dotY));
+
+      dot.style.left = dotX + 'px'; dot.style.top = dotY + 'px';
+      aura.style.left = dotX + 'px'; aura.style.top = dotY + 'px';
+      revealSymbols(e);
+      requestAnimationFrame(animate);
+    }
+
+    let audioStarted = false, audioContext, masterGain;
+    function startAudio() {
+      if (audioStarted) return;
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      masterGain = audioContext.createGain();
+      masterGain.gain.value = .10;
+      masterGain.connect(audioContext.destination);
+      audioStarted = true;
+      heartbeat();
+    }
+
+    function thump(time, frequency, strength) {
+      const osc = audioContext.createOscillator();
+      const gain = audioContext.createGain();
+      const filter = audioContext.createBiquadFilter();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(frequency, time);
+      osc.frequency.exponentialRampToValueAtTime(frequency * .55, time + .16);
+      filter.type = 'lowpass'; filter.frequency.setValueAtTime(140, time);
+      gain.gain.setValueAtTime(.0001, time);
+      gain.gain.exponentialRampToValueAtTime(strength, time + .025);
+      gain.gain.exponentialRampToValueAtTime(.0001, time + .22);
+      osc.connect(filter); filter.connect(gain); gain.connect(masterGain);
+      osc.start(time); osc.stop(time + .24);
+    }
+
+    function heartbeat() {
+      if (!audioStarted) return;
+      const now = audioContext.currentTime;
+      thump(now, 68, .40); thump(now + .16, 54, .26);
+      setTimeout(heartbeat, 1020);
+    }
+
+    document.body.addEventListener('click', startAudio, { once: true });
+    document.body.addEventListener('touchstart', startAudio, { once: true });
+
+    resizeMatrix();
+    createSymbols();
+    drawMatrix();
+    animate();
+
+    window.addEventListener('resize', () => { resizeMatrix(); createSymbols(); });
+  </script>
 </body>
 </html>
