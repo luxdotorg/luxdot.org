@@ -160,23 +160,10 @@
       box-shadow: 0 0 8px #fff, 0 0 20px #fff, 0 0 48px rgba(255,255,255,.92), 0 0 100px rgba(0,255,102,.88), 0 0 180px rgba(0,255,102,.34);
     }
 
-    .hint {
-      position: fixed;
-      bottom: 16px;
-      left: 0;
-      right: 0;
-      z-index: 12;
-      text-align: center;
-      font-size: 9px;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: rgba(185,255,205,.36);
-      pointer-events: none;
-    }
+
 
     @media (max-width: 720px) {
       .signal-state { top: 14px; left: 14px; font-size: 8px; }
-      .hint { font-size: 8px; letter-spacing: .14em; }
       .eyebrow { letter-spacing: .28em; }
     }
 
@@ -207,7 +194,6 @@
   </div>
 
   <div class="dot" id="dot"></div>
-  <div class="hint">move to reveal · click once to awaken sound</div>
 
   <script>
     const canvas = document.getElementById('matrixCanvas');
@@ -411,14 +397,99 @@
     }
 
     let audioStarted = false, audioContext, masterGain;
+    let noiseSource, noiseGain, humGain;
+    let speechTimer = null, toneTimer = null;
+
+    const spokenSignals = [
+      { text: 'LuxDot', lang: 'en-US' },
+      { text: 'Logos', lang: 'en-US' },
+      { text: 'Signal', lang: 'en-US' },
+      { text: 'Clarity', lang: 'en-US' },
+      { text: 'Meaning', lang: 'en-US' },
+      { text: 'Understanding', lang: 'en-US' },
+      { text: 'Awareness', lang: 'en-US' },
+      { text: 'Reduce noise', lang: 'en-US' },
+      { text: 'Increase signal', lang: 'en-US' },
+      { text: 'Where understanding begins', lang: 'en-US' },
+      { text: 'The first point of light', lang: 'en-US' },
+      { text: 'نور', lang: 'ar-SA' },
+      { text: 'وعي', lang: 'ar-SA' },
+      { text: 'معنى', lang: 'ar-SA' },
+      { text: 'فهم', lang: 'ar-SA' },
+      { text: 'إشارة', lang: 'ar-SA' },
+      { text: 'حقيقة', lang: 'ar-SA' },
+      { text: 'λόγος', lang: 'el-GR' },
+      { text: 'ἀλήθεια', lang: 'el-GR' }
+    ];
+
     function startAudio() {
       if (audioStarted) return;
       audioContext = new (window.AudioContext || window.webkitAudioContext)();
       masterGain = audioContext.createGain();
-      masterGain.gain.value = .10;
+      masterGain.gain.value = .22;
       masterGain.connect(audioContext.destination);
+
+      createNoiseBed();
+      createLowHum();
       audioStarted = true;
+
       heartbeat();
+      scheduleRandomTone();
+      scheduleSpokenSignal();
+    }
+
+    function createNoiseBed() {
+      const seconds = 2;
+      const buffer = audioContext.createBuffer(1, audioContext.sampleRate * seconds, audioContext.sampleRate);
+      const data = buffer.getChannelData(0);
+      let brown = 0;
+
+      for (let i = 0; i < data.length; i++) {
+        const white = Math.random() * 2 - 1;
+        brown = (brown + .018 * white) / 1.018;
+        data[i] = brown * 3.1;
+      }
+
+      noiseSource = audioContext.createBufferSource();
+      noiseSource.buffer = buffer;
+      noiseSource.loop = true;
+
+      const highpass = audioContext.createBiquadFilter();
+      highpass.type = 'highpass';
+      highpass.frequency.value = 75;
+
+      const lowpass = audioContext.createBiquadFilter();
+      lowpass.type = 'lowpass';
+      lowpass.frequency.value = 5200;
+
+      noiseGain = audioContext.createGain();
+      noiseGain.gain.value = .036;
+
+      noiseSource.connect(highpass);
+      highpass.connect(lowpass);
+      lowpass.connect(noiseGain);
+      noiseGain.connect(masterGain);
+      noiseSource.start();
+    }
+
+    function createLowHum() {
+      humGain = audioContext.createGain();
+      humGain.gain.value = .0001;
+      humGain.connect(masterGain);
+
+      [43, 57, 86].forEach((frequency, index) => {
+        const osc = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+        osc.type = index === 1 ? 'triangle' : 'sine';
+        osc.frequency.value = frequency;
+        gain.gain.value = index === 0 ? .038 : .012;
+        osc.connect(gain);
+        gain.connect(humGain);
+        osc.start();
+      });
+
+      const now = audioContext.currentTime;
+      humGain.gain.exponentialRampToValueAtTime(.32, now + 5);
     }
 
     function thump(time, frequency, strength) {
@@ -439,8 +510,70 @@
     function heartbeat() {
       if (!audioStarted) return;
       const now = audioContext.currentTime;
-      thump(now, 68, .40); thump(now + .16, 54, .26);
-      setTimeout(heartbeat, 1020);
+      thump(now, 68, .18); thump(now + .16, 54, .11);
+      setTimeout(heartbeat, 1320 + Math.random() * 420);
+    }
+
+    function playRandomTone() {
+      if (!audioStarted) return;
+      const now = audioContext.currentTime;
+      const osc = audioContext.createOscillator();
+      const gain = audioContext.createGain();
+      const filter = audioContext.createBiquadFilter();
+
+      const frequencies = [108, 144, 216, 288, 432, 528, 864];
+      osc.type = Math.random() > .72 ? 'triangle' : 'sine';
+      osc.frequency.setValueAtTime(pick(frequencies), now);
+      osc.detune.setValueAtTime((Math.random() - .5) * 18, now);
+
+      filter.type = 'bandpass';
+      filter.frequency.value = 320 + Math.random() * 1200;
+      filter.Q.value = 1.6 + Math.random() * 3.2;
+
+      const duration = 1.8 + Math.random() * 5.2;
+      gain.gain.setValueAtTime(.0001, now);
+      gain.gain.exponentialRampToValueAtTime(.018 + Math.random() * .032, now + .4);
+      gain.gain.exponentialRampToValueAtTime(.0001, now + duration);
+
+      osc.connect(filter);
+      filter.connect(gain);
+      gain.connect(masterGain);
+      osc.start(now);
+      osc.stop(now + duration + .1);
+    }
+
+    function scheduleRandomTone() {
+      clearTimeout(toneTimer);
+      toneTimer = setTimeout(() => {
+        playRandomTone();
+        scheduleRandomTone();
+      }, 2500 + Math.random() * 9000);
+    }
+
+    function speakSignal() {
+      if (!('speechSynthesis' in window) || document.hidden) return;
+      const item = pick(spokenSignals);
+      const utterance = new SpeechSynthesisUtterance(item.text);
+      utterance.lang = item.lang;
+      utterance.volume = .10 + Math.random() * .10;
+      utterance.rate = .48 + Math.random() * .26;
+      utterance.pitch = .38 + Math.random() * .32;
+
+      const voices = speechSynthesis.getVoices();
+      const languageRoot = item.lang.split('-')[0].toLowerCase();
+      const matching = voices.filter(v => v.lang.toLowerCase().startsWith(languageRoot));
+      if (matching.length) utterance.voice = pick(matching);
+
+      speechSynthesis.cancel();
+      speechSynthesis.speak(utterance);
+    }
+
+    function scheduleSpokenSignal() {
+      clearTimeout(speechTimer);
+      speechTimer = setTimeout(() => {
+        speakSignal();
+        scheduleSpokenSignal();
+      }, 7500 + Math.random() * 18000);
     }
 
     document.body.addEventListener('click', startAudio, { once: true });
