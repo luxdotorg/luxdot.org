@@ -1,590 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="LuxDot — Reducing noise. Increasing signal." />
-  <title>LuxDot — Where Understanding Begins</title>
-  <style>
-    :root {
-      --matrix: 0, 255, 102;
-      --white: 244, 255, 248;
-      --energy: 0;
-      --shake-x: 0px;
-      --shake-y: 0px;
-    }
-
-    * { box-sizing: border-box; }
-    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
-    body { font-family: Inter, Arial, Helvetica, sans-serif; color: white; }
-
-    .scene {
-      position: fixed;
-      inset: 0;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 50% 48%, rgba(6, 28, 14, .42) 0%, rgba(0, 0, 0, .82) 48%, #000 78%),
-        #000;
-    }
-
-    #matrixCanvas {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      opacity: .9;
-      filter: contrast(1.16) saturate(1.08);
-    }
-
-    .vignette {
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      pointer-events: none;
-      background:
-        radial-gradient(circle at 50% 48%, transparent 0%, transparent 28%, rgba(0,0,0,.25) 56%, rgba(0,0,0,.88) 100%),
-        linear-gradient(to bottom, rgba(0,0,0,.08), transparent 14%, transparent 82%, rgba(0,0,0,.52));
-    }
-
-    .scanlines {
-      position: absolute;
-      inset: 0;
-      z-index: 3;
-      pointer-events: none;
-      opacity: .075;
-      background: repeating-linear-gradient(0deg, rgba(170,255,195,.10) 0, rgba(170,255,195,.10) 1px, transparent 2px, transparent 5px);
-    }
-
-    .symbol-layer { position: absolute; inset: 0; z-index: 4; pointer-events: none; }
-
-    .symbol {
-      position: absolute;
-      transform: translate(-50%, -50%) scale(.92);
-      opacity: 0;
-      color: rgba(var(--white), .96);
-      font: 500 var(--size)/1.15 "Courier New", monospace;
-      white-space: nowrap;
-      filter: blur(2px);
-      text-shadow: 0 0 6px rgba(var(--matrix), .9), 0 0 20px rgba(var(--matrix), .52);
-      transition: opacity .22s ease, transform .22s ease, filter .22s ease;
-    }
-
-    .symbol.visible { transform: translate(-50%, -50%) scale(1); filter: blur(0); }
-
-    .aura {
-      position: fixed;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      z-index: 5;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      background: radial-gradient(circle, rgba(255,255,255,.20) 0%, rgba(178,255,205,.10) 20%, rgba(0,255,102,.06) 42%, transparent 72%);
-      filter: blur(18px);
-      mix-blend-mode: screen;
-    }
-
-    .content {
-      position: absolute;
-      inset: 0;
-      z-index: 7;
-      display: grid;
-      place-items: center;
-      pointer-events: none;
-      text-align: center;
-      transform: translate(var(--shake-x), var(--shake-y));
-      filter: blur(calc(var(--energy) * 1.8px));
-    }
-
-    .content-inner {
-      padding: 24px;
-      text-shadow: 0 0 18px rgba(255,255,255,.88), 0 0 56px rgba(0,255,102,.18);
-    }
-
-    .eyebrow {
-      margin-bottom: 16px;
-      font-size: clamp(9px, .75vw, 12px);
-      letter-spacing: .42em;
-      text-transform: uppercase;
-      color: rgba(206,255,220,.68);
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(56px, 8.5vw, 132px);
-      letter-spacing: .055em;
-      line-height: .95;
-      font-weight: 700;
-    }
-
-    .subtitle {
-      margin-top: 20px;
-      font-size: clamp(14px, 1.65vw, 25px);
-      letter-spacing: .075em;
-      font-weight: 300;
-      color: rgba(255,255,255,.92);
-    }
-
-    .status {
-      margin-top: 30px;
-      font-size: clamp(10px, 1vw, 14px);
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: rgba(184,255,205,.68);
-    }
-
-    .signal-state {
-      position: fixed;
-      top: 20px;
-      left: 22px;
-      z-index: 10;
-      font: 500 10px/1.5 "Courier New", monospace;
-      letter-spacing: .12em;
-      color: rgba(175,255,198,.55);
-      text-transform: uppercase;
-      pointer-events: none;
-    }
-
-    .signal-state b { color: rgba(225,255,233,.94); font-weight: 700; }
-
-    .dot {
-      position: fixed;
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
-      background: #fff;
-      z-index: 12;
-      pointer-events: none;
-      box-shadow: 0 0 8px #fff, 0 0 20px #fff, 0 0 48px rgba(255,255,255,.92), 0 0 100px rgba(0,255,102,.88), 0 0 180px rgba(0,255,102,.34);
-    }
-
-
-
-    @media (max-width: 720px) {
-      .signal-state { top: 14px; left: 14px; font-size: 8px; }
-      .eyebrow { letter-spacing: .28em; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      #matrixCanvas { opacity: .48; }
-      .scanlines { display: none; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>LuxDot — Where Understanding Begins</title>
+<style>
+:root{
+  --green:0,255,102;
+  --energy:0;
+  --mx:50%;
+  --my:50%;
+}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#000}
+body{font-family:Inter,Arial,Helvetica,sans-serif;color:#fff}
+.scene{position:fixed;inset:0;overflow:hidden;background:
+  radial-gradient(circle at 50% 50%,rgba(0,30,14,.35),rgba(0,0,0,.9) 54%,#000 82%)}
+#matrix{position:absolute;inset:0;width:100%;height:100%;z-index:1;filter:contrast(1.2) brightness(1.05)}
+.vignette{position:absolute;inset:0;z-index:2;pointer-events:none;background:
+  radial-gradient(circle at center,transparent 0 30%,rgba(0,0,0,.25) 55%,rgba(0,0,0,.92) 100%)}
+.scan{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.08;background:
+  repeating-linear-gradient(0deg,rgba(180,255,205,.12) 0 1px,transparent 1px 4px)}
+#symbolLayer{position:absolute;inset:0;z-index:4;pointer-events:none}
+.symbol{position:absolute;transform:translate(-50%,-50%) scale(.88);opacity:0;color:#e9fff0;
+  font:500 var(--s)/1 "Courier New",monospace;white-space:nowrap;filter:blur(2px);
+  text-shadow:0 0 6px rgba(var(--green),1),0 0 24px rgba(var(--green),.75),0 0 60px rgba(var(--green),.35);
+  transition:opacity .22s ease,transform .22s ease,filter .22s ease}
+.symbol.on{filter:none;transform:translate(-50%,-50%) scale(1)}
+.aura{position:fixed;width:320px;height:320px;border-radius:50%;z-index:5;pointer-events:none;
+  transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(255,255,255,.19),rgba(0,255,102,.08) 28%,transparent 70%);
+  filter:blur(16px);mix-blend-mode:screen}
+.dot{position:fixed;width:4px;height:4px;border-radius:50%;z-index:8;pointer-events:none;background:#fff;
+  box-shadow:0 0 8px #fff,0 0 22px #fff,0 0 60px rgba(0,255,102,1),0 0 150px rgba(0,255,102,.55)}
+.content{position:absolute;inset:0;z-index:6;display:grid;place-items:center;text-align:center;pointer-events:none}
+.inner{padding:26px;text-shadow:0 0 12px rgba(255,255,255,.95),0 0 45px rgba(255,255,255,.28)}
+h1{margin:0;font-size:clamp(52px,8vw,124px);letter-spacing:.055em}
+.sub{margin-top:18px;font-size:clamp(14px,2vw,28px);letter-spacing:.07em;font-weight:300}
+.status{margin-top:32px;font-size:clamp(11px,1.2vw,16px);letter-spacing:.18em;color:rgba(220,255,230,.78)}
+.signal-state{position:fixed;top:20px;left:50%;z-index:9;transform:translateX(-50%);
+  font:10px/1.2 "Courier New",monospace;letter-spacing:.2em;color:rgba(180,255,205,.6);opacity:0;transition:opacity .3s}
+.signal-state.show{opacity:1}
+#gate{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:
+  radial-gradient(circle at center,rgba(0,30,14,.32),rgba(0,0,0,.94) 58%,#000 100%);
+  transition:opacity .8s ease,visibility .8s ease}
+#gate.hidden{opacity:0;visibility:hidden}
+.gate-wrap{text-align:center;padding:30px}
+.gate-mark{width:5px;height:5px;margin:0 auto 28px;border-radius:50%;background:#fff;
+  box-shadow:0 0 10px #fff,0 0 35px #fff,0 0 100px rgba(0,255,102,.95)}
+#enter{appearance:none;border:1px solid rgba(120,255,165,.36);background:rgba(0,10,5,.36);color:#eaffef;
+  padding:14px 22px;border-radius:999px;font:11px "Courier New",monospace;letter-spacing:.24em;cursor:pointer;
+  box-shadow:0 0 28px rgba(0,255,102,.08);transition:.25s}
+#enter:hover,#enter:focus{border-color:rgba(180,255,205,.85);box-shadow:0 0 34px rgba(0,255,102,.22);outline:none}
+.audio-toggle{position:fixed;right:18px;bottom:18px;z-index:20;width:38px;height:38px;border-radius:50%;
+  border:1px solid rgba(100,255,150,.25);background:rgba(0,10,5,.35);color:rgba(220,255,230,.8);
+  cursor:pointer;font-size:14px;display:none;place-items:center}
+.audio-toggle.show{display:grid}
+@media(max-width:700px){.status{margin-top:26px}.audio-toggle{right:12px;bottom:12px}}
+@media(prefers-reduced-motion:reduce){.scan{display:none}}
+</style>
 </head>
 <body>
-  <div class="scene">
-    <canvas id="matrixCanvas"></canvas>
-    <div class="vignette"></div>
-    <div class="scanlines"></div>
-    <div class="symbol-layer" id="symbolLayer"></div>
-    <div class="aura" id="aura"></div>
-
-    <div class="signal-state" id="signalState">system: <b>listening</b><br>signal: latent</div>
-
-    <main class="content">
-      <div class="content-inner">
-        <div class="eyebrow">Reducing noise · Increasing signal</div>
-        <h1>LuxDot</h1>
-        <div class="subtitle">The First Point of Light · Where Understanding Begins</div>
-        <div class="status">Our website is under Luxdotation</div>
-      </div>
-    </main>
+<div class="scene">
+  <canvas id="matrix"></canvas>
+  <div class="vignette"></div>
+  <div class="scan"></div>
+  <div id="symbolLayer"></div>
+  <div class="aura" id="aura"></div>
+  <div class="content">
+    <div class="inner">
+      <h1>LuxDot</h1>
+      <div class="sub">The First Point of Light · Where Understanding Begins</div>
+      <div class="status">Our website is under Luxdotation.</div>
+    </div>
   </div>
+</div>
+<div class="dot" id="dot"></div>
+<div class="signal-state" id="signalState">SIGNAL DETECTED</div>
 
-  <div class="dot" id="dot"></div>
+<div id="gate">
+  <div class="gate-wrap">
+    <div class="gate-mark"></div>
+    <button id="enter" type="button">ENTER SIGNAL</button>
+  </div>
+</div>
+<button id="audioToggle" class="audio-toggle" aria-label="Toggle sound">◉</button>
 
-  <script>
-    const canvas = document.getElementById('matrixCanvas');
-    const ctx = canvas.getContext('2d', { alpha: true });
-    const root = document.documentElement;
-    const dot = document.getElementById('dot');
-    const aura = document.getElementById('aura');
-    const symbolLayer = document.getElementById('symbolLayer');
-    const signalState = document.getElementById('signalState');
+<script>
+(() => {
+"use strict";
 
-    const ordinaryGlyphs = ['0','1','2','3','4','5','6','7','8','9','ｱ','ｲ','ｳ','ｴ','ｵ','ｶ','ｷ','ｸ','ｹ','ｺ','ｻ','ｼ','ｽ','ｾ','ｿ','ﾀ','ﾁ','ﾂ','ﾃ','ﾄ','ﾅ','ﾆ','ﾇ','ﾈ','ﾉ','ﾊ','ﾋ','ﾌ','ﾍ','ﾎ','ﾏ','ﾐ','ﾑ','ﾒ','ﾓ','ﾔ','ﾕ','ﾖ','ﾗ','ﾘ','ﾙ','ﾚ','ﾛ','ﾜ','ﾝ',':','+','-','=','*','/','<','>','·','•'];
-    const signalGlyphs = ['ΛΟΓΟΣ','نور','عقل','وعي','معنى','لغة','فهم','حقيقة','إشارة','אור','אמת','λόγος','ἀλήθεια','LUX','DOT','SIGNAL','CLARITY','NOISE','MEANING','MIND','∑','∫','∞','π','φ','ψ','Ω','Δ','Σ','λ','∴','∵','⊙','⟡','⟁','E=mc²','ΔS≥0','DNA','RNA','AI','LLM','H₂O','CO₂','𓂀','𓋹','☯','☸','ॐ'];
-    const fieldSymbols = ['Signal','Noise','Clarity','Precision','Meaning','Understanding','Light','Point','Focus','Depth','Essence','Pattern','Truth','Question','Insight','Awareness','Language','Logos','Mind','Order','Less noise','More signal','LuxDotation','نور','عقل','وعي','معنى','لغة','نقطة','دقة','صفاء','فهم','حقيقة','إشارة','ضجيج','بصيرة','سؤال','منطق','אור','דעת','חכמה','אמת','סוד','אין','נקודה','שפה','λόγος','ἀλήθεια','E=mc²','F=ma','ΔS ≥ 0','iℏ∂ψ/∂t=Hψ','a²+b²=c²','φ=(1+√5)/2','e^{iπ}+1=0','PV=nRT','∑','∫','∂','√','∞','π','λ','Ω','Δ','Σ','ψ','H₂O','CO₂','DNA','RNA','AI','LLM','Token','Attention','Emergence','☉','☽','✦','✧','⊙','𓂀','𓋹','☯','☸','ॐ','⟁','⟡','∴','∵'];
+/* ---------- MATRIX ---------- */
+const canvas=document.getElementById("matrix"),ctx=canvas.getContext("2d");
+let dpr=1,fontSize=16,cols=[],W=0,H=0,last=0;
+const glyphs=[..."0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ","ｱ","ｲ","ｳ","ｴ","ｵ","ｶ","ｷ","ｸ","ｹ","ｺ","ｻ","ｼ","ｽ","ｾ","ｿ","ﾀ","ﾁ","ﾂ","ﾃ","ﾄ","ﾅ","ﾆ","ﾇ","ﾈ","ﾉ","ﾊ","ﾋ","ﾌ","ﾍ","ﾎ","ﾏ","ﾐ","ﾑ","ﾒ","ﾓ","ﾔ","ﾕ","ﾖ","ﾗ","ﾘ","ﾙ","ﾚ","ﾛ","ﾜ","ﾝ","+","-","=","∴","∵","•"];
+const signals=["LUX","DOT","LOGOS","SIGNAL","CLARITY","MEANING","نور","وعي","فهم","معنى","אור","אמת","λόγος","∞","∑","Δ","Ω","φ","ψ","E=mc²","DNA","AI"];
 
-    let dpr = 1;
-    let fontSize = 17;
-    let columns = 0;
-    let streams = [];
-    let frame = 0;
-    let pausedZones = [];
+function resize(){
+ dpr=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;
+ canvas.width=W*dpr;canvas.height=H*dpr;canvas.style.width=W+"px";canvas.style.height=H+"px";
+ ctx.setTransform(dpr,0,0,dpr,0,0);fontSize=W<700?14:17;
+ const count=Math.ceil(W/fontSize);
+ cols=Array.from({length:count},(_,i)=>({x:i*fontSize,y:Math.random()*H,s:.45+Math.random()*1.55,l:10+Math.floor(Math.random()*25),sig:null,cd:50+Math.random()*180}));
+}
+function rnd(a){return a[Math.floor(Math.random()*a.length)]}
+function draw(t){
+ const dt=Math.min(40,t-last||16.7);last=t;
+ ctx.fillStyle="rgba(0,0,0,.115)";ctx.fillRect(0,0,W,H);
+ ctx.textAlign="center";ctx.textBaseline="middle";
+ for(const c of cols){
+  c.y+=c.s*fontSize*(dt/30);c.cd-=dt/16.7;
+  if(c.cd<=0&&Math.random()<.022){c.sig={text:rnd(signals),y:c.y-Math.random()*c.l*fontSize,life:45+Math.random()*55};c.cd=120+Math.random()*240}
+  for(let j=0;j<c.l;j++){
+    const y=c.y-j*fontSize;if(y<-fontSize||y>H+fontSize)continue;
+    const a=Math.max(.035,1-j/c.l),head=j===0;
+    ctx.font=`${head?700:500} ${fontSize}px Courier New`;
+    ctx.fillStyle=head?`rgba(225,255,235,${Math.min(1,a+.25)})`:`rgba(0,255,102,${a*.68})`;
+    ctx.shadowBlur=head?13:5;ctx.shadowColor=head?"rgba(220,255,230,.95)":"rgba(0,255,102,.75)";
+    ctx.fillText(rnd(glyphs),c.x,y);
+  }
+  if(c.sig){
+    c.sig.life-=dt/16.7;ctx.font=`700 ${fontSize+1}px Courier New`;ctx.fillStyle="rgba(235,255,240,.94)";
+    ctx.shadowBlur=24;ctx.shadowColor="rgba(0,255,102,1)";ctx.fillText(c.sig.text,c.x,c.sig.y);
+    if(c.sig.life<=0)c.sig=null;
+  }
+  if(c.y-c.l*fontSize>H){c.y=-Math.random()*H*.55;c.s=.45+Math.random()*1.55;c.l=10+Math.floor(Math.random()*25)}
+ }
+ ctx.shadowBlur=0;requestAnimationFrame(draw);
+}
+resize();requestAnimationFrame(draw);addEventListener("resize",resize);
 
-    function resizeMatrix() {
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = Math.floor(innerWidth * dpr);
-      canvas.height = Math.floor(innerHeight * dpr);
-      canvas.style.width = innerWidth + 'px';
-      canvas.style.height = innerHeight + 'px';
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      fontSize = innerWidth < 720 ? 14 : 17;
-      columns = Math.ceil(innerWidth / fontSize);
-      streams = Array.from({ length: columns }, (_, i) => ({
-        x: i * fontSize,
-        y: Math.random() * innerHeight,
-        speed: .55 + Math.random() * 1.9,
-        baseSpeed: .55 + Math.random() * 1.9,
-        length: 9 + Math.floor(Math.random() * 28),
-        cooldown: 40 + Math.floor(Math.random() * 180),
-        signal: null,
-        drift: Math.random() * Math.PI * 2
-      }));
-    }
+/* ---------- SYMBOL FIELD ---------- */
+const layer=document.getElementById("symbolLayer"),dot=document.getElementById("dot"),aura=document.getElementById("aura"),state=document.getElementById("signalState");
+const words=["Signal","Noise","Clarity","Precision","Meaning","Understanding","Light","Point","Focus","Depth","Truth","Question","Insight","Awareness","Language","Logos","Mind","Order","LuxDotation","نور","وعي","معنى","لغة","فهم","حقيقة","إشارة","אור","אמת","λόγος","ἀλήθεια","E=mc²","ΔS≥0","∞","π","φ","ψ","Ω","Δ","Σ","AI","DNA","𓂀","☯","∴","∵"];
+let items=[],mx=innerWidth/2,my=innerHeight/2,dx=mx+120,dy=my-80;
+function build(){
+ layer.innerHTML="";items=[];
+ const n=innerWidth<700?90:145;
+ for(let i=0;i<n;i++){const e=document.createElement("div");e.className="symbol";e.textContent=rnd(words);
+  const x=Math.random()*innerWidth,y=Math.random()*innerHeight;e.style.left=x+"px";e.style.top=y+"px";e.style.setProperty("--s",(8+Math.random()*15)+"px");
+  layer.appendChild(e);items.push({e,x,y})}
+}
+build();addEventListener("resize",build);
+addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY});
+addEventListener("touchmove",e=>{if(e.touches[0]){mx=e.touches[0].clientX;my=e.touches[0].clientY}},{passive:true});
+let detected=false,detectTimer=0;
+function motion(){
+ dx+=(mx+Math.cos(performance.now()*.0014)*80-dx)*.028;dy+=(my+Math.sin(performance.now()*.0018)*50-dy)*.028;
+ dot.style.left=dx+"px";dot.style.top=dy+"px";aura.style.left=dx+"px";aura.style.top=dy+"px";
+ let near=false;
+ for(const it of items){const d=Math.hypot(it.x-dx,it.y-dy),r=205;
+  if(d<r){const p=1-d/r;it.e.classList.add("on");it.e.style.opacity=Math.min(.95,p*1.2);if(p>.72)near=true}
+  else{it.e.classList.remove("on");it.e.style.opacity=0}
+ }
+ if(near&&!detected){detected=true;state.classList.add("show");clearTimeout(detectTimer);detectTimer=setTimeout(()=>state.classList.remove("show"),900)}
+ if(!near)detected=false;
+ requestAnimationFrame(motion)
+}
+motion();
 
-    const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+/* ---------- AUDIO ENGINE ---------- */
+let ac=null,master=null,noiseGain=null,humGain=null,started=false,muted=false,voiceTimer=null,toneTimer=null,heartbeatTimer=null;
+const enter=document.getElementById("enter"),gate=document.getElementById("gate"),toggle=document.getElementById("audioToggle");
 
-    function isPaused(x, y) {
-      return pausedZones.some(z => Math.hypot(x - z.x, y - z.y) < z.radius && z.life > 0);
-    }
+function makeNoiseBuffer(ctx){
+ const len=ctx.sampleRate*2,b=ctx.createBuffer(1,len,ctx.sampleRate),d=b.getChannelData(0);
+ let last=0;
+ for(let i=0;i<len;i++){const white=Math.random()*2-1;last=.985*last+.015*white;d[i]=white*.16+last*.84}
+ return b;
+}
+function setupAudio(){
+ if(started)return;
+ ac=new (window.AudioContext||window.webkitAudioContext)();
+ master=ac.createGain();master.gain.value=.38;master.connect(ac.destination);
 
-    function drawMatrix() {
-      frame++;
-      ctx.fillStyle = 'rgba(0,0,0,.105)';
-      ctx.fillRect(0, 0, innerWidth, innerHeight);
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
+ // continuous filtered noise
+ const noise=ac.createBufferSource();noise.buffer=makeNoiseBuffer(ac);noise.loop=true;
+ const nf=ac.createBiquadFilter();nf.type="bandpass";nf.frequency.value=850;nf.Q.value=.38;
+ noiseGain=ac.createGain();noiseGain.gain.value=.08;
+ noise.connect(nf);nf.connect(noiseGain);noiseGain.connect(master);noise.start();
 
-      pausedZones.forEach(z => z.life--);
-      pausedZones = pausedZones.filter(z => z.life > 0);
+ // deep hum
+ const hum=ac.createOscillator(),hum2=ac.createOscillator();
+ hum.type="sine";hum.frequency.value=43;hum2.type="sine";hum2.frequency.value=86.3;
+ humGain=ac.createGain();humGain.gain.value=.035;
+ hum.connect(humGain);hum2.connect(humGain);humGain.connect(master);hum.start();hum2.start();
 
-      for (const s of streams) {
-        const frozen = isPaused(s.x, s.y);
-        s.speed += (s.baseSpeed - s.speed) * .02;
-        if (!frozen) s.y += s.speed * fontSize * .48;
-        s.cooldown--;
+ // subtle modulation
+ const lfo=ac.createOscillator(),lg=ac.createGain();lfo.frequency.value=.09;lg.gain.value=.02;
+ lfo.connect(lg);lg.connect(humGain.gain);lfo.start();
 
-        if (s.cooldown <= 0 && Math.random() < .02) {
-          s.signal = { text: pick(signalGlyphs), y: s.y - Math.random() * s.length * fontSize, life: 38 + Math.floor(Math.random() * 50) };
-          s.cooldown = 100 + Math.floor(Math.random() * 240);
-        }
-
-        for (let j = 0; j < s.length; j++) {
-          const y = s.y - j * fontSize;
-          if (y < -fontSize || y > innerHeight + fontSize) continue;
-          const alpha = Math.max(.035, 1 - j / s.length);
-          const head = j === 0;
-          ctx.font = `${head ? 700 : 500} ${fontSize}px "Courier New", monospace`;
-          ctx.fillStyle = head ? `rgba(226,255,236,${Math.min(1, alpha + .22)})` : `rgba(0,255,102,${alpha * .72})`;
-          ctx.shadowBlur = head ? 14 : 4;
-          ctx.shadowColor = head ? 'rgba(226,255,236,.95)' : 'rgba(0,255,102,.7)';
-          ctx.fillText(pick(ordinaryGlyphs), s.x + Math.sin(frame * .004 + s.drift) * .8, y);
-        }
-
-        if (s.signal) {
-          const pulse = .72 + Math.sin(performance.now() * .013 + s.x) * .24;
-          ctx.font = `700 ${fontSize + 1}px "Courier New", monospace`;
-          ctx.fillStyle = `rgba(232,255,240,${pulse})`;
-          ctx.shadowBlur = 26;
-          ctx.shadowColor = 'rgba(0,255,102,1)';
-          ctx.fillText(s.signal.text, s.x, s.signal.y);
-          s.signal.life--;
-          if (s.signal.life <= 0) s.signal = null;
-        }
-
-        if (s.y - s.length * fontSize > innerHeight) {
-          s.y = -Math.random() * innerHeight * .65;
-          s.baseSpeed = .55 + Math.random() * 1.9;
-          s.speed = s.baseSpeed;
-          s.length = 9 + Math.floor(Math.random() * 28);
-        }
-      }
-
-      ctx.shadowBlur = 0;
-      requestAnimationFrame(drawMatrix);
-    }
-
-    let symbolElements = [];
-    function createSymbols() {
-      symbolLayer.innerHTML = '';
-      symbolElements = [];
-      const count = innerWidth < 720 ? 95 : 150;
-      for (let i = 0; i < count; i++) {
-        const el = document.createElement('div');
-        el.className = 'symbol';
-        el.textContent = pick(fieldSymbols);
-        const x = Math.random() * innerWidth;
-        const y = Math.random() * innerHeight;
-        const size = 8 + Math.random() * 15;
-        el.style.left = x + 'px';
-        el.style.top = y + 'px';
-        el.style.setProperty('--size', size + 'px');
-        symbolLayer.appendChild(el);
-        symbolElements.push({ el, x, y, active: false });
-      }
-    }
-
-    let mouseX = innerWidth / 2, mouseY = innerHeight / 2;
-    let lastX = mouseX, lastY = mouseY;
-    let dotX = mouseX + 120, dotY = mouseY - 80;
-    let energy = 0, movement = 0, lastSignalTime = 0;
-
-    document.addEventListener('mousemove', e => {
-      const dx = e.clientX - lastX, dy = e.clientY - lastY;
-      const speed = Math.hypot(dx, dy);
-      mouseX = e.clientX; mouseY = e.clientY;
-      energy = Math.min(1, energy + speed / 400);
-      movement = Math.min(1, movement + speed / 1250);
-      lastX = e.clientX; lastY = e.clientY;
-
-      if (Math.hypot(dotX - mouseX, dotY - mouseY) < 145) {
-        const angle = Math.atan2(dotY - mouseY, dotX - mouseX) + (Math.random() - .5) * 1.7;
-        const power = 60 + Math.random() * 120;
-        dotX += Math.cos(angle) * power;
-        dotY += Math.sin(angle) * power;
-      }
-    });
-
-    function revealSymbols(finalEnergy) {
-      const radius = 168 + finalEnergy * 125;
-      let nearest = null;
-      let nearestDist = Infinity;
-
-      for (const item of symbolElements) {
-        const d = Math.hypot(item.x - dotX, item.y - dotY);
-        if (d < nearestDist) { nearestDist = d; nearest = item; }
-        if (d < radius) {
-          const strength = 1 - d / radius;
-          item.el.classList.add('visible');
-          item.el.style.opacity = Math.min(.98, strength * 1.2);
-          item.el.style.textShadow = `0 0 ${6 + strength * 16}px rgba(225,255,234,1),0 0 ${20 + strength * 54}px rgba(0,255,102,.88)`;
-        } else {
-          item.el.classList.remove('visible');
-          item.el.style.opacity = 0;
-        }
-      }
-
-      const now = performance.now();
-      if (nearest && nearestDist < 42 && now - lastSignalTime > 1200) {
-        lastSignalTime = now;
-        pausedZones.push({ x: nearest.x, y: nearest.y, radius: 120, life: 28 });
-        nearest.el.style.opacity = 1;
-        nearest.el.style.transform = 'translate(-50%, -50%) scale(1.12)';
-        signalState.innerHTML = `system: <b>signal detected</b><br>signal: ${nearest.el.textContent}`;
-        setTimeout(() => {
-          nearest.el.style.transform = '';
-          signalState.innerHTML = 'system: <b>listening</b><br>signal: latent';
-        }, 850);
-      }
-    }
-
-    function animate() {
-      energy *= .95;
-      movement *= .987;
-      const e = Math.min(1, energy + movement * .46);
-      const shake = e * 5.5;
-      root.style.setProperty('--energy', e);
-      root.style.setProperty('--shake-x', `${(Math.random() - .5) * shake}px`);
-      root.style.setProperty('--shake-y', `${(Math.random() - .5) * shake}px`);
-
-      const orbitX = Math.cos(Date.now() * .0013) * 78;
-      const orbitY = Math.sin(Date.now() * .0018) * 50;
-      const chaosX = (Math.random() - .5) * e * 90;
-      const chaosY = (Math.random() - .5) * e * 90;
-      dotX += (mouseX + orbitX + chaosX - dotX) * .024;
-      dotY += (mouseY + orbitY + chaosY - dotY) * .024;
-      dotX = Math.max(10, Math.min(innerWidth - 10, dotX));
-      dotY = Math.max(10, Math.min(innerHeight - 10, dotY));
-
-      dot.style.left = dotX + 'px'; dot.style.top = dotY + 'px';
-      aura.style.left = dotX + 'px'; aura.style.top = dotY + 'px';
-      revealSymbols(e);
-      requestAnimationFrame(animate);
-    }
-
-    let audioStarted = false, audioContext, masterGain;
-    let noiseSource, noiseGain, humGain;
-    let speechTimer = null, toneTimer = null;
-
-    const spokenSignals = [
-      { text: 'LuxDot', lang: 'en-US' },
-      { text: 'Logos', lang: 'en-US' },
-      { text: 'Signal', lang: 'en-US' },
-      { text: 'Clarity', lang: 'en-US' },
-      { text: 'Meaning', lang: 'en-US' },
-      { text: 'Understanding', lang: 'en-US' },
-      { text: 'Awareness', lang: 'en-US' },
-      { text: 'Reduce noise', lang: 'en-US' },
-      { text: 'Increase signal', lang: 'en-US' },
-      { text: 'Where understanding begins', lang: 'en-US' },
-      { text: 'The first point of light', lang: 'en-US' },
-      { text: 'نور', lang: 'ar-SA' },
-      { text: 'وعي', lang: 'ar-SA' },
-      { text: 'معنى', lang: 'ar-SA' },
-      { text: 'فهم', lang: 'ar-SA' },
-      { text: 'إشارة', lang: 'ar-SA' },
-      { text: 'حقيقة', lang: 'ar-SA' },
-      { text: 'λόγος', lang: 'el-GR' },
-      { text: 'ἀλήθεια', lang: 'el-GR' }
-    ];
-
-    function startAudio() {
-      if (audioStarted) return;
-      audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      masterGain = audioContext.createGain();
-      masterGain.gain.value = .22;
-      masterGain.connect(audioContext.destination);
-
-      createNoiseBed();
-      createLowHum();
-      audioStarted = true;
-
-      heartbeat();
-      scheduleRandomTone();
-      scheduleSpokenSignal();
-    }
-
-    function createNoiseBed() {
-      const seconds = 2;
-      const buffer = audioContext.createBuffer(1, audioContext.sampleRate * seconds, audioContext.sampleRate);
-      const data = buffer.getChannelData(0);
-      let brown = 0;
-
-      for (let i = 0; i < data.length; i++) {
-        const white = Math.random() * 2 - 1;
-        brown = (brown + .018 * white) / 1.018;
-        data[i] = brown * 3.1;
-      }
-
-      noiseSource = audioContext.createBufferSource();
-      noiseSource.buffer = buffer;
-      noiseSource.loop = true;
-
-      const highpass = audioContext.createBiquadFilter();
-      highpass.type = 'highpass';
-      highpass.frequency.value = 75;
-
-      const lowpass = audioContext.createBiquadFilter();
-      lowpass.type = 'lowpass';
-      lowpass.frequency.value = 5200;
-
-      noiseGain = audioContext.createGain();
-      noiseGain.gain.value = .036;
-
-      noiseSource.connect(highpass);
-      highpass.connect(lowpass);
-      lowpass.connect(noiseGain);
-      noiseGain.connect(masterGain);
-      noiseSource.start();
-    }
-
-    function createLowHum() {
-      humGain = audioContext.createGain();
-      humGain.gain.value = .0001;
-      humGain.connect(masterGain);
-
-      [43, 57, 86].forEach((frequency, index) => {
-        const osc = audioContext.createOscillator();
-        const gain = audioContext.createGain();
-        osc.type = index === 1 ? 'triangle' : 'sine';
-        osc.frequency.value = frequency;
-        gain.gain.value = index === 0 ? .038 : .012;
-        osc.connect(gain);
-        gain.connect(humGain);
-        osc.start();
-      });
-
-      const now = audioContext.currentTime;
-      humGain.gain.exponentialRampToValueAtTime(.32, now + 5);
-    }
-
-    function thump(time, frequency, strength) {
-      const osc = audioContext.createOscillator();
-      const gain = audioContext.createGain();
-      const filter = audioContext.createBiquadFilter();
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(frequency, time);
-      osc.frequency.exponentialRampToValueAtTime(frequency * .55, time + .16);
-      filter.type = 'lowpass'; filter.frequency.setValueAtTime(140, time);
-      gain.gain.setValueAtTime(.0001, time);
-      gain.gain.exponentialRampToValueAtTime(strength, time + .025);
-      gain.gain.exponentialRampToValueAtTime(.0001, time + .22);
-      osc.connect(filter); filter.connect(gain); gain.connect(masterGain);
-      osc.start(time); osc.stop(time + .24);
-    }
-
-    function heartbeat() {
-      if (!audioStarted) return;
-      const now = audioContext.currentTime;
-      thump(now, 68, .18); thump(now + .16, 54, .11);
-      setTimeout(heartbeat, 1320 + Math.random() * 420);
-    }
-
-    function playRandomTone() {
-      if (!audioStarted) return;
-      const now = audioContext.currentTime;
-      const osc = audioContext.createOscillator();
-      const gain = audioContext.createGain();
-      const filter = audioContext.createBiquadFilter();
-
-      const frequencies = [108, 144, 216, 288, 432, 528, 864];
-      osc.type = Math.random() > .72 ? 'triangle' : 'sine';
-      osc.frequency.setValueAtTime(pick(frequencies), now);
-      osc.detune.setValueAtTime((Math.random() - .5) * 18, now);
-
-      filter.type = 'bandpass';
-      filter.frequency.value = 320 + Math.random() * 1200;
-      filter.Q.value = 1.6 + Math.random() * 3.2;
-
-      const duration = 1.8 + Math.random() * 5.2;
-      gain.gain.setValueAtTime(.0001, now);
-      gain.gain.exponentialRampToValueAtTime(.018 + Math.random() * .032, now + .4);
-      gain.gain.exponentialRampToValueAtTime(.0001, now + duration);
-
-      osc.connect(filter);
-      filter.connect(gain);
-      gain.connect(masterGain);
-      osc.start(now);
-      osc.stop(now + duration + .1);
-    }
-
-    function scheduleRandomTone() {
-      clearTimeout(toneTimer);
-      toneTimer = setTimeout(() => {
-        playRandomTone();
-        scheduleRandomTone();
-      }, 2500 + Math.random() * 9000);
-    }
-
-    function speakSignal() {
-      if (!('speechSynthesis' in window) || document.hidden) return;
-      const item = pick(spokenSignals);
-      const utterance = new SpeechSynthesisUtterance(item.text);
-      utterance.lang = item.lang;
-      utterance.volume = .10 + Math.random() * .10;
-      utterance.rate = .48 + Math.random() * .26;
-      utterance.pitch = .38 + Math.random() * .32;
-
-      const voices = speechSynthesis.getVoices();
-      const languageRoot = item.lang.split('-')[0].toLowerCase();
-      const matching = voices.filter(v => v.lang.toLowerCase().startsWith(languageRoot));
-      if (matching.length) utterance.voice = pick(matching);
-
-      speechSynthesis.cancel();
-      speechSynthesis.speak(utterance);
-    }
-
-    function scheduleSpokenSignal() {
-      clearTimeout(speechTimer);
-      speechTimer = setTimeout(() => {
-        speakSignal();
-        scheduleSpokenSignal();
-      }, 7500 + Math.random() * 18000);
-    }
-
-    document.body.addEventListener('click', startAudio, { once: true });
-    document.body.addEventListener('touchstart', startAudio, { once: true });
-
-    resizeMatrix();
-    createSymbols();
-    drawMatrix();
-    animate();
-
-    window.addEventListener('resize', () => { resizeMatrix(); createSymbols(); });
-  </script>
+ started=true;toggle.classList.add("show");
+ scheduleTone();scheduleVoice();scheduleHeartbeat();
+}
+function blip(){
+ if(!ac||muted)return;
+ const now=ac.currentTime,o=ac.createOscillator(),g=ac.createGain(),f=ac.createBiquadFilter();
+ o.type=Math.random()<.5?"sine":"triangle";o.frequency.setValueAtTime(120+Math.random()*680,now);o.frequency.exponentialRampToValueAtTime(45+Math.random()*130,now+.35+Math.random()*.5);
+ f.type="bandpass";f.frequency.value=600+Math.random()*1500;f.Q.value=2.5;
+ g.gain.setValueAtTime(.0001,now);g.gain.exponentialRampToValueAtTime(.035+Math.random()*.035,now+.025);g.gain.exponentialRampToValueAtTime(.0001,now+.5+Math.random()*.55);
+ o.connect(f);f.connect(g);g.connect(master);o.start(now);o.stop(now+1.2)
+}
+function heartbeat(){
+ if(!ac||muted)return;
+ const now=ac.currentTime;
+ [0,.16].forEach((off,i)=>{const o=ac.createOscillator(),g=ac.createGain();o.type="sine";o.frequency.setValueAtTime(i?52:68,now+off);o.frequency.exponentialRampToValueAtTime(i?34:42,now+off+.18);g.gain.setValueAtTime(.0001,now+off);g.gain.exponentialRampToValueAtTime(i?.025:.04,now+off+.02);g.gain.exponentialRampToValueAtTime(.0001,now+off+.22);o.connect(g);g.connect(master);o.start(now+off);o.stop(now+off+.25)})
+}
+const voiceWords=["LuxDot","Logos","Signal","Clarity","Meaning","Awareness","Understanding","Reduce noise","Increase signal","The first point of light","نور","وعي","معنى","فهم","إشارة","حقيقة"];
+function speak(){
+ if(muted||!started||!("speechSynthesis" in window))return;
+ speechSynthesis.cancel();
+ const u=new SpeechSynthesisUtterance(rnd(voiceWords));
+ const arabic=/[\u0600-\u06FF]/.test(u.text);
+ u.lang=arabic?"ar-SA":"en-US";u.volume=.16+Math.random()*.12;u.rate=.58+Math.random()*.22;u.pitch=.55+Math.random()*.35;
+ const voices=speechSynthesis.getVoices();
+ const pool=voices.filter(v=>arabic?v.lang.toLowerCase().startsWith("ar"):v.lang.toLowerCase().startsWith("en"));
+ if(pool.length)u.voice=rnd(pool);
+ speechSynthesis.speak(u)
+}
+function scheduleTone(){toneTimer=setTimeout(()=>{blip();scheduleTone()},1800+Math.random()*6000)}
+function scheduleVoice(){voiceTimer=setTimeout(()=>{speak();scheduleVoice()},6500+Math.random()*14000)}
+function scheduleHeartbeat(){heartbeatTimer=setTimeout(()=>{heartbeat();scheduleHeartbeat()},900+Math.random()*420)}
+async function start(){
+ setupAudio();
+ if(ac.state==="suspended")await ac.resume();
+ gate.classList.add("hidden");
+ setTimeout(speak,1200);
+}
+enter.addEventListener("click",start);
+enter.addEventListener("touchend",e=>{e.preventDefault();start()},{passive:false});
+toggle.addEventListener("click",async()=>{
+ if(!started)return;
+ muted=!muted;
+ if(muted){master.gain.setTargetAtTime(0,ac.currentTime,.05);speechSynthesis.cancel();toggle.textContent="○"}
+ else{if(ac.state==="suspended")await ac.resume();master.gain.setTargetAtTime(.38,ac.currentTime,.05);toggle.textContent="◉"}
+});
+document.addEventListener("visibilitychange",()=>{if(ac&&document.hidden)ac.suspend();else if(ac&&!muted)ac.resume()});
+})();
+</script>
 </body>
 </html>
