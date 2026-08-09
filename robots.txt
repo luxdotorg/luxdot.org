@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://luxdot.org/sitemap.xml
