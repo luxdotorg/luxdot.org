@@ -77,6 +77,11 @@ button.node:hover,button.node:focus-visible{border-color:rgba(125,255,174,.45);b
 
 .sacred-focus{position:fixed;inset:0;z-index:80;background:rgba(2,4,3,.96);backdrop-filter:blur(16px);display:none;align-items:center;justify-content:center;padding:20px}.sacred-focus.on{display:flex}.sacred-panel{width:min(820px,100%);max-height:90vh;overflow:auto;text-align:center;padding:30px 24px;border:1px solid rgba(125,255,174,.22);border-radius:24px;background:#070b09}.sacred-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}.sacred-close,.sacred-play{border:1px solid var(--line);background:transparent;color:var(--text);border-radius:999px;padding:9px 14px;cursor:pointer}.sacred-tradition{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}.sacred-title{font-size:clamp(26px,4vw,40px);margin:8px 0 4px}.sacred-reference{font-size:12px;color:var(--muted)}.sacred-original{font-family:Georgia,'Times New Roman',serif;font-size:clamp(21px,3vw,30px);line-height:1.7;margin:25px auto 12px;max-width:720px}.sacred-translation{font-size:15px;color:var(--muted);max-width:680px;margin:auto;line-height:1.7}.sacred-concept{display:inline-block;margin-top:20px;border:1px solid var(--line);border-radius:999px;padding:6px 11px;font-size:10px;letter-spacing:.15em;color:var(--accent2)}.sacred-source{font-size:10px;color:var(--muted);margin-top:14px}.sacred-audio-status{font-size:11px;color:var(--muted);margin-top:16px}.sacred-focus[data-dir="rtl"] .sacred-original{direction:rtl}.sacred-note{max-width:700px;margin:18px auto 0;color:var(--muted);font-size:11px;text-align:center}
 
+
+.voice-badge{display:inline-flex;align-items:center;gap:6px;margin-top:8px;padding:5px 8px;border:1px solid var(--line);border-radius:999px;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.voice-badge.live{color:var(--accent2)}
+.voice-badge .voice-dot{width:5px;height:5px;border-radius:50%;background:var(--accent)}
+
 </style>
 <script src="analytics-config.js"></script>
 <script>
@@ -174,12 +179,12 @@ button.node:hover,button.node:focus-visible{border-color:rgba(125,255,174,.45);b
 <p class="muted">Five foundational voices on guidance, light, life, discernment and the Way — presented with equal dignity, without erasing real theological differences.</p>
 </div>
 <div class="grid5">
-<button class="node sacred source" data-title="Qur’an" data-domain="Foundational text" data-audio="https://cdn.islamic.network/quran/audio/128/ar.alafasy/9.mp3" data-audio-label="Al-Baqarah 2:2 · Mishary Rashid Alafasy" data-ayah="ذَٰلِكَ الْكِتَابُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًى لِّلْمُتَّقِينَ" data-q="How does the Qur’an frame the human relationship with God, justice, mercy and responsibility?"><div class="symbol">☾</div><strong>Qur’an</strong><span class="small">القرآن الكريم</span></button>
-<button class="node sacred source" data-title="Tanakh" data-domain="Foundational text" data-audio="audio/tanakh.wav" data-audio-label="LuxDot original ambient study theme" data-q="How do creation, covenant, prophecy, law and hope shape a view of history and humanity?"><div class="symbol">✡</div><strong>Tanakh</strong><span class="small">التناخ</span></button>
-<button class="node sacred source" data-title="New Testament" data-domain="Foundational text" data-audio="audio/new-testament.wav" data-audio-label="LuxDot original ambient study theme" data-q="What do love, forgiveness, sacrifice and salvation mean in the Christian experience?"><div class="symbol">✝</div><strong>New Testament</strong><span class="small">العهد الجديد</span></button>
-<button class="node sacred source" data-title="Bhagavad Gita" data-domain="Foundational text" data-audio="audio/gita.wav" data-audio-label="LuxDot original ambient study theme" data-q="What is the relationship between duty, action, self and liberation?"><div class="symbol">ॐ</div><strong>Bhagavad Gita</strong><span class="small">البهاغافاد غيتا</span></button>
-<button class="node sacred source" data-title="Tao Te Ching" data-domain="Foundational text" data-audio="audio/tao.wav" data-audio-label="LuxDot original ambient study theme" data-q="What can simplicity, softness, balance and non-excess teach us about the good life?"><div class="symbol">☯</div><strong>Tao Te Ching</strong><span class="small">كتاب الطريق والفضيلة</span></button>
-</div><p class="sacred-note">Sacred texts are heard through recitation, reading, chant or silence. No sacred voice is presented as authentic unless its provenance is verified.</p>
+<button class="node sacred source" data-title="Qur’an" data-cue="full" data-domain="Foundational text" data-audio="https://cdn.islamic.network/quran/audio/128/ar.alafasy/9.mp3" data-audio-label="Al-Baqarah 2:2 · Mishary Rashid Alafasy" data-ayah="ذَٰلِكَ الْكِتَابُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًى لِّلْمُتَّقِينَ" data-q="How does the Qur’an frame the human relationship with God, justice, mercy and responsibility?"><div class="symbol">☾</div><strong>Qur’an</strong><span class="small">القرآن الكريم</span><span class="voice-badge live"><span class="voice-dot"></span>Arabic recitation</span></button>
+<button class="node sacred source" data-title="Tanakh" data-domain="Foundational text" data-audio="https://archive.org/download/the_book_of_proverbs_asv_ss_librivox/proverbs_2_asv_64kb.mp3" data-audio-label="Human reading · Proverbs 6–9 · Sam Stinson · LibriVox / Internet Archive" data-cue="absolute" data-start="105" data-end="145" data-q="How do creation, covenant, prophecy, law and hope shape a view of history and humanity?"><div class="symbol">✡</div><strong>Tanakh</strong><span class="small">التناخ</span><span class="voice-badge live"><span class="voice-dot"></span>Human voice</span></button>
+<button class="node sacred source" data-title="New Testament" data-domain="Foundational text" data-audio="https://archive.org/download/the_gospel_according_to_saint_john_asv_ss_librivox/john_20_asv_64kb.mp3" data-audio-label="Human reading · John 20 · Sam Stinson · LibriVox / Internet Archive" data-cue="from-end" data-from-end="34" data-stop-before-end="2" data-q="What do love, forgiveness, sacrifice and salvation mean in the Christian experience?"><div class="symbol">✝</div><strong>New Testament</strong><span class="small">العهد الجديد</span><span class="voice-badge live"><span class="voice-dot"></span>Human voice</span></button>
+<button class="node sacred source" data-title="Bhagavad Gita" data-domain="Foundational text" data-audio="https://archive.org/download/bhagavad_gita_0803_librivox/bhagavadgita_16_64kb.mp3" data-audio-label="Human reading · Bhagavad Gita 16 · Raju Venkateswaran · LibriVox / Internet Archive" data-cue="from-end" data-from-end="38" data-stop-before-end="2" data-q="What is the relationship between duty, action, self and liberation?"><div class="symbol">ॐ</div><strong>Bhagavad Gita</strong><span class="small">البهاغافاد غيتا</span><span class="voice-badge live"><span class="voice-dot"></span>Human voice</span></button>
+<button class="node sacred source" data-title="Tao Te Ching" data-domain="Foundational text" data-audio="https://archive.org/download/tao_teh_king_librivox/tao_teh_king_01-09_lao-tze_64kb.mp3" data-audio-label="Human reading · Tao Teh King 1–9 · Eric S. Piotrowski · LibriVox / Internet Archive" data-cue="absolute" data-start="0" data-end="70" data-q="What can simplicity, softness, balance and non-excess teach us about the good life?"><div class="symbol">☯</div><strong>Tao Te Ching</strong><span class="small">كتاب الطريق والفضيلة</span><span class="voice-badge live"><span class="voice-dot"></span>Human voice</span></button>
+</div><p class="sacred-note">Sacred texts use human voice, not synthetic mystical tones. Qur’an is heard in Arabic recitation; the other four currently use real public-domain human readings while original-language performances remain a future upgrade.</p>
 </section>
 
 <div class="divider"></div>
@@ -239,7 +244,7 @@ button.node:hover,button.node:focus-visible{border-color:rgba(125,255,174,.45);b
 <footer class="shell footer"><span>LuxDot Common Library · Level I</span><span>Read deeply · Question honestly · Understand before you judge.</span></footer>
 
 <script>
-const sacredCanon={"Qur’an": {"tradition": "ISLAM · القرآن", "ref": "Al-Baqarah 2:2", "concept": "GUIDANCE · هدى", "dir": "rtl", "original": "ذَٰلِكَ الْكِتَابُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًى لِّلْمُتَّقِينَ", "translation": "This is the Book in which there is no doubt — a guidance for the God-conscious.", "status": "Authentic Qur’anic recitation · Mishary Rashid Alafasy", "source": "Audio: Al Quran Cloud / Islamic Network."}, "Tanakh": {"tradition": "TANAKH · תנ״ך", "ref": "Proverbs 6:23", "concept": "LIGHT · אור", "dir": "rtl", "original": "כִּי נֵר מִצְוָה וְתוֹרָה אוֹר וְדֶרֶךְ חַיִּים תּוֹכְחוֹת מוּסָר", "translation": "For the commandment is a lamp, and Torah is light; and the reproofs of discipline are the way of life.", "status": "LuxDot contemplative prelude · authentic cantillation slot reserved", "source": "A rights-cleared Sephardic cantillation recording will replace this prelude."}, "New Testament": {"tradition": "NEW TESTAMENT · ΚΑΙΝΗ ΔΙΑΘΗΚΗ", "ref": "John 20:31", "concept": "LIFE · ζωή", "dir": "ltr", "original": "ταῦτα δὲ γέγραπται ἵνα πιστεύητε ... καὶ ἵνα πιστεύοντες ζωὴν ἔχητε ἐν τῷ ὀνόματι αὐτοῦ.", "translation": "These things are written so that you may believe ... and that by believing you may have life in his name.", "status": "LuxDot contemplative prelude · Koine Greek proclamation slot reserved", "source": "Greek text basis: SBL Greek New Testament (CC BY 4.0)."}, "Bhagavad Gita": {"tradition": "BHAGAVAD GITA · भगवद्गीता", "ref": "16:24", "concept": "DISCERNMENT · ACTION", "dir": "ltr", "original": "तस्माच्छास्त्रं प्रमाणं ते कार्याकार्यव्यवस्थितौ। ज्ञात्वा शास्त्रविधानोक्तं कर्म कर्तुमिहार्हसि॥", "translation": "Therefore let scripture be your authority in determining what ought to be done and what ought not to be done; knowing its teaching, act accordingly.", "status": "LuxDot contemplative prelude · Sanskrit śloka slot reserved", "source": "A rights-cleared exact verse recording will replace this prelude."}, "Tao Te Ching": {"tradition": "TAO TE CHING · 道德經", "ref": "Chapter 1", "concept": "THE WAY · 道", "dir": "ltr", "original": "道可道，非常道。名可名，非常名。", "translation": "The way that can be spoken is not the constant Way; the name that can be named is not the constant name.", "status": "LuxDot contemplative prelude · Classical Chinese reading slot reserved", "source": "The silence after the reading is part of the LuxDot presentation."}};
+const sacredCanon={"Qur’an": {"tradition": "ISLAM · القرآن", "ref": "Al-Baqarah 2:2", "concept": "GUIDANCE · هدى", "dir": "rtl", "original": "ذَٰلِكَ الْكِتَابُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًى لِّلْمُتَّقِينَ", "translation": "This is the Book in which there is no doubt — a guidance for the God-conscious.", "status": "Authentic Qur’anic recitation · Mishary Rashid Alafasy", "source": "Audio: Al Quran Cloud / Islamic Network."}, "Tanakh": {"tradition": "TANAKH · תנ״ך", "ref": "Proverbs 6:23", "concept": "LIGHT · אור", "dir": "rtl", "original": "כִּי נֵר מִצְוָה וְתוֹרָה אוֹר וְדֶרֶךְ חַיִּים תּוֹכְחוֹת מוּסָר", "translation": "For the commandment is a lamp, and Torah is light; and the reproofs of discipline are the way of life.", "status": "Real human reading · English · Sam Stinson", "source": "Audio: LibriVox / Internet Archive · public-domain recording in the USA. Original Hebrew remains displayed."}, "New Testament": {"tradition": "NEW TESTAMENT · ΚΑΙΝΗ ΔΙΑΘΗΚΗ", "ref": "John 20:31", "concept": "LIFE · ζωή", "dir": "ltr", "original": "ταῦτα δὲ γέγραπται ἵνα πιστεύητε ... καὶ ἵνα πιστεύοντες ζωὴν ἔχητε ἐν τῷ ὀνόματι αὐτοῦ.", "translation": "These things are written so that you may believe ... and that by believing you may have life in his name.", "status": "Real human reading · English · Sam Stinson", "source": "Audio: LibriVox / Internet Archive · public-domain recording in the USA. Original Greek remains displayed."}, "Bhagavad Gita": {"tradition": "BHAGAVAD GITA · भगवद्गीता", "ref": "16:24", "concept": "DISCERNMENT · ACTION", "dir": "ltr", "original": "तस्माच्छास्त्रं प्रमाणं ते कार्याकार्यव्यवस्थितौ। ज्ञात्वा शास्त्रविधानोक्तं कर्म कर्तुमिहार्हसि॥", "translation": "Therefore let scripture be your authority in determining what ought to be done and what ought not to be done; knowing its teaching, act accordingly.", "status": "Real human reading · English · Raju Venkateswaran", "source": "Audio: LibriVox / Internet Archive · public-domain recording in the USA. Original Sanskrit remains displayed."}, "Tao Te Ching": {"tradition": "TAO TE CHING · 道德經", "ref": "Chapter 1", "concept": "THE WAY · 道", "dir": "ltr", "original": "道可道，非常道。名可名，非常名。", "translation": "The way that can be spoken is not the constant Way; the name that can be named is not the constant name.", "status": "Real human reading · English · Eric S. Piotrowski", "source": "Audio: LibriVox / Internet Archive · public-domain recording in the USA. Classical Chinese remains displayed."}};
 const books=[
 ['01','Sophie’s World','Jostein Gaarder','The map','How did humanity learn to ask?','audio/sophies-world.wav'],
 ['02','The Republic','Plato','Justice','Do we see reality, or only its shadows?','audio/republic.wav'],
@@ -256,7 +261,7 @@ const host=document.getElementById('books'),detail=document.getElementById('deta
 const audio=document.getElementById('bookAudio'), dock=document.getElementById('audioDock');
 const audioTitle=document.getElementById('audioTitle'), audioSub=document.getElementById('audioSub');
 const audioAyah=document.getElementById('audioAyah'), toggle=document.getElementById('audioToggle'), mute=document.getElementById('audioMute');
-let currentAudioKey="";
+let currentAudioKey=""; let cueStopAt=null;
 
 function slug(v){ return String(v).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''); }
 
@@ -265,15 +270,19 @@ function show(t,d,q,a=''){
  detail.scrollIntoView({behavior:'smooth',block:'center'});
 }
 
-function playBookAudio(src,title,label,ayah=''){
+function playBookAudio(src,title,label,ayah='',sourceEl=null){
   if (!src) return;
   currentAudioKey = slug(title);
-  if (audio.src !== new URL(src, document.baseURI).href) {
-    audio.pause();
-    audio.src = src;
-  }
+  cueStopAt = null;
+
+  audio.pause();
+  audio.removeAttribute('src');
+  audio.src = src;
+  audio.load();
+
   audioTitle.textContent = title;
   audioSub.textContent = label || "LuxDot listening layer";
+
   if (ayah) {
     audioAyah.textContent = ayah;
     audioAyah.hidden = false;
@@ -281,14 +290,40 @@ function playBookAudio(src,title,label,ayah=''){
     audioAyah.hidden = true;
     audioAyah.textContent = "";
   }
+
   dock.classList.add('on');
-  audio.volume = 0.72;
-  audio.play().then(()=>{
-    toggle.textContent='Ⅱ';
-    window.luxTrack && window.luxTrack('audio-play', currentAudioKey);
-  }).catch(()=>{
-    toggle.textContent='▶';
-  });
+  audio.muted = false;
+  audio.volume = 0.82;
+
+  const begin = () => {
+    const mode = sourceEl?.dataset.cue || "full";
+    if (mode === "absolute") {
+      const s = Number(sourceEl.dataset.start || 0);
+      const e = Number(sourceEl.dataset.end || 0);
+      if (Number.isFinite(s) && s >= 0 && s < audio.duration) audio.currentTime = s;
+      if (Number.isFinite(e) && e > s) cueStopAt = Math.min(e, audio.duration);
+    } else if (mode === "from-end") {
+      const back = Number(sourceEl.dataset.fromEnd || 30);
+      const before = Number(sourceEl.dataset.stopBeforeEnd || 2);
+      if (Number.isFinite(audio.duration)) {
+        audio.currentTime = Math.max(0, audio.duration - back);
+        cueStopAt = Math.max(audio.currentTime + 2, audio.duration - before);
+      }
+    }
+
+    const p = audio.play();
+    if (p && typeof p.then === "function") {
+      p.then(()=>{
+        toggle.textContent='Ⅱ';
+        window.luxTrack && window.luxTrack('audio-play', currentAudioKey);
+      }).catch(()=>{
+        toggle.textContent='▶';
+      });
+    }
+  };
+
+  if (audio.readyState >= 1 && Number.isFinite(audio.duration)) begin();
+  else audio.addEventListener('loadedmetadata', begin, {once:true});
 }
 
 toggle.addEventListener('click',()=>{
@@ -308,7 +343,14 @@ mute.addEventListener('click',()=>{
   mute.textContent=audio.muted?'×':'♪';
   window.luxTrack && window.luxTrack(audio.muted?'audio-mute':'audio-unmute', currentAudioKey);
 });
-audio.addEventListener('ended',()=>{toggle.textContent='▶';});
+audio.addEventListener('ended',()=>{toggle.textContent='▶'; cueStopAt=null;});
+audio.addEventListener('timeupdate',()=>{
+  if(cueStopAt !== null && audio.currentTime >= cueStopAt){
+    audio.pause();
+    toggle.textContent='▶';
+    cueStopAt=null;
+  }
+});
 
 books.forEach(b=>{
  const el=document.createElement('button');el.className='node book';el.type='button';
@@ -343,7 +385,7 @@ function closeSacred(){sf.classList.remove('on');sf.setAttribute('aria-hidden','
 sfClose.addEventListener('click',closeSacred);
 sf.addEventListener('click',e=>{if(e.target===sf)closeSacred();});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&sf.classList.contains('on'))closeSacred();});
-sfPlay.addEventListener('click',()=>{if(sfCurrentEl)playBookAudio(sfCurrentEl.dataset.audio,sfCurrentEl.dataset.title,sfCurrentEl.dataset.audioLabel,sfCurrentEl.dataset.ayah||'');});
+sfPlay.addEventListener('click',()=>{if(sfCurrentEl)playBookAudio(sfCurrentEl.dataset.audio,sfCurrentEl.dataset.title,sfCurrentEl.dataset.audioLabel,sfCurrentEl.dataset.ayah||'',sfCurrentEl);});
 document.querySelectorAll('.source').forEach(el=>el.addEventListener('click',()=>openSacred(el)));
 window.addEventListener("load", function(){ window.luxLoadVisitorCount && window.luxLoadVisitorCount(); });
 </script>
