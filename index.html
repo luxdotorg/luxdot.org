@@ -148,21 +148,21 @@
 
   h1 {
     margin: 0;
-    font-size: clamp(48px, 8vw, 120px);
+    font-size: clamp(42px, 6.6vw, 88px);
     letter-spacing: .06em;
     font-weight: 700;
   }
 
   .subtitle {
     margin-top: 18px;
-    font-size: clamp(15px, 2.05vw, 30px);
+    font-size: clamp(14px, 1.65vw, 22px);
     letter-spacing: .065em;
     font-weight: 300;
   }
 
   .status {
     margin-top: 34px;
-    font-size: clamp(13px, 1.35vw, 19px);
+    font-size: clamp(11px, 1.05vw, 15px);
     letter-spacing: .14em;
     opacity: .84;
   }
@@ -239,11 +239,90 @@
     line-height: 1;
   }
 
+
+  .visitor-pill{
+    position:fixed;right:18px;top:18px;z-index:30;
+    display:flex;align-items:center;gap:8px;padding:8px 11px;
+    border:1px solid rgba(140,255,175,.22);border-radius:999px;
+    color:rgba(210,255,224,.72);background:rgba(0,10,4,.38);
+    backdrop-filter:blur(8px);font-size:10px;letter-spacing:.08em;
+    pointer-events:none;
+  }
+  .visitor-pill strong{color:#ecfff2;font-weight:500}
+  .pulse-dot{width:6px;height:6px;border-radius:50%;background:rgba(0,255,102,.85);box-shadow:0 0 10px rgba(0,255,102,.6)}
+
   @media (prefers-reduced-motion: reduce) {
     #matrixCanvas { opacity: .46; }
     .scanlines { display: none; }
   }
 </style>
+
+<script src="analytics-config.js"></script>
+<script>
+(function(){
+  const cfg = window.LUXDOT_ANALYTICS || {};
+  const code = (cfg.goatCounterCode || "").trim();
+
+  window.luxTrack = function(name, label){
+    if (!code) return;
+    const send = () => {
+      if (window.goatcounter && typeof window.goatcounter.count === "function") {
+        window.goatcounter.count({
+          path: name + (label ? ":" + String(label).toLowerCase().replace(/[^a-z0-9_-]+/g,"-") : ""),
+          title: label || name,
+          event: true,
+          no_session: true
+        });
+        return true;
+      }
+      return false;
+    };
+    if (!send()) {
+      let tries = 0;
+      const t = setInterval(() => {
+        tries++;
+        if (send() || tries > 30) clearInterval(t);
+      }, 150);
+    }
+  };
+
+  window.luxLoadVisitorCount = function(){
+    const target = document.getElementById("visitor-count");
+    if (!target) return;
+    if (!code) {
+      target.textContent = "—";
+      target.title = "Analytics is ready; add the GoatCounter site code in analytics-config.js";
+      return;
+    }
+    let tries = 0;
+    const t = setInterval(() => {
+      tries++;
+      if (window.goatcounter && typeof window.goatcounter.visit_count === "function") {
+        clearInterval(t);
+        target.textContent = "";
+        window.goatcounter.visit_count({
+          append: "#visitor-count",
+          path: "TOTAL",
+          no_branding: true,
+          attr: {style:"font:inherit;color:inherit;text-decoration:none"}
+        });
+      } else if (tries > 40) {
+        clearInterval(t);
+        target.textContent = "—";
+      }
+    }, 150);
+  };
+
+  if (!code) return;
+  const s = document.createElement("script");
+  s.src = "https://gc.zgo.at/count.js";
+  s.async = true;
+  s.dataset.goatcounter = "https://" + code + ".goatcounter.com/count";
+  s.addEventListener("load", () => window.luxLoadVisitorCount && window.luxLoadVisitorCount());
+  document.head.appendChild(s);
+})();
+</script>
+
 </head>
 
 <body>
@@ -260,7 +339,7 @@
         <div class="subtitle">The First Point of Light · Where Understanding Begins</div>
         <div class="status">A Common Language for a Diverse Humanity.</div>
         <div class="enter-wrap">
-          <a class="enter-button" href="home.html" aria-label="Enter LuxDot">
+          <a class="enter-button" href="home.html" aria-label="Enter LuxDot" id="enterLuxDot">
             Enter LuxDot <span class="arrow">→</span>
           </a>
         </div>
@@ -269,6 +348,13 @@
   </div>
 
   <div class="light-dot" id="dot"></div>
+  
+<div class="visitor-pill" title="Total LuxDot visits">
+  <span class="pulse-dot" aria-hidden="true"></span>
+  <span>Visitors</span>
+  <strong id="visitor-count">—</strong>
+</div>
+
   <div class="hint">click once to awaken sound · move the mouse</div>
 
 <script>
@@ -608,6 +694,10 @@
     mouseX = innerWidth / 2;
     mouseY = innerHeight / 2;
   });
+</script>
+<script>
+document.getElementById("enterLuxDot")?.addEventListener("click", function(){ window.luxTrack && window.luxTrack("enter-luxdot","Matrix entry"); });
+window.addEventListener("load", function(){ window.luxLoadVisitorCount && window.luxLoadVisitorCount(); });
 </script>
 </body>
 </html>

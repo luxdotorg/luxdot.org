@@ -25,10 +25,10 @@ a{color:inherit}
 .menu span.disabled{opacity:.38;cursor:not-allowed}
 .hero{padding:100px 0 68px;text-align:center}
 .eyebrow{display:inline-block;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:7px 11px}
-h1{font-size:clamp(42px,7vw,82px);line-height:1.02;margin:24px 0 18px;letter-spacing:-.035em}
-h2{font-size:clamp(27px,4vw,46px);line-height:1.12;margin:0 0 14px}
+h1{font-size:clamp(34px,5.2vw,62px);line-height:1.02;margin:24px 0 18px;letter-spacing:-.035em}
+h2{font-size:clamp(23px,3.2vw,38px);line-height:1.12;margin:0 0 14px}
 h3{font-size:18px;margin:0 0 8px}
-.lead{font-size:clamp(17px,2vw,22px);color:var(--muted);max-width:780px;margin:0 auto}
+.lead{font-size:clamp(15px,1.65vw,19px);color:var(--muted);max-width:780px;margin:0 auto}
 .flow{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:34px;color:var(--muted);font-size:12px;letter-spacing:.11em;text-transform:uppercase}
 .flow b{color:var(--accent);font-weight:500}
 .section{padding:54px 0}
@@ -63,7 +63,78 @@ button.node:hover,button.node:focus-visible{border-color:rgba(125,255,174,.45);b
 .back{font-size:12px;color:var(--muted);text-decoration:none}
 @media(max-width:900px){.grid3{grid-template-columns:1fr}.grid5{grid-template-columns:repeat(2,1fr)}.books{grid-template-columns:1fr}.nav-inner{height:auto;padding:14px 0;align-items:flex-start}.menu{gap:3px}}
 @media(max-width:520px){.shell{width:min(100% - 24px,1180px)}.hero{padding-top:66px}.grid5{grid-template-columns:1fr}.menu span,.menu a{padding:7px 8px;font-size:11px}.human{border-radius:26px}}
-</style></head>
+
+.visitor-pill{display:inline-flex;align-items:center;gap:7px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;font-size:11px;color:var(--muted);margin-left:8px}
+.visitor-pill strong{color:var(--text);font-weight:500}.pulse-dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+</style>
+<script src="analytics-config.js"></script>
+<script>
+(function(){
+  const cfg = window.LUXDOT_ANALYTICS || {};
+  const code = (cfg.goatCounterCode || "").trim();
+
+  window.luxTrack = function(name, label){
+    if (!code) return;
+    const send = () => {
+      if (window.goatcounter && typeof window.goatcounter.count === "function") {
+        window.goatcounter.count({
+          path: name + (label ? ":" + String(label).toLowerCase().replace(/[^a-z0-9_-]+/g,"-") : ""),
+          title: label || name,
+          event: true,
+          no_session: true
+        });
+        return true;
+      }
+      return false;
+    };
+    if (!send()) {
+      let tries = 0;
+      const t = setInterval(() => {
+        tries++;
+        if (send() || tries > 30) clearInterval(t);
+      }, 150);
+    }
+  };
+
+  window.luxLoadVisitorCount = function(){
+    const target = document.getElementById("visitor-count");
+    if (!target) return;
+    if (!code) {
+      target.textContent = "—";
+      target.title = "Analytics is ready; add the GoatCounter site code in analytics-config.js";
+      return;
+    }
+    let tries = 0;
+    const t = setInterval(() => {
+      tries++;
+      if (window.goatcounter && typeof window.goatcounter.visit_count === "function") {
+        clearInterval(t);
+        target.textContent = "";
+        window.goatcounter.visit_count({
+          append: "#visitor-count",
+          path: "TOTAL",
+          no_branding: true,
+          attr: {style:"font:inherit;color:inherit;text-decoration:none"}
+        });
+      } else if (tries > 40) {
+        clearInterval(t);
+        target.textContent = "—";
+      }
+    }, 150);
+  };
+
+  if (!code) return;
+  const s = document.createElement("script");
+  s.src = "https://gc.zgo.at/count.js";
+  s.async = true;
+  s.dataset.goatcounter = "https://" + code + ".goatcounter.com/count";
+  s.addEventListener("load", () => window.luxLoadVisitorCount && window.luxLoadVisitorCount());
+  document.head.appendChild(s);
+})();
+</script>
+
+</head>
 <body>
 <nav class="nav"><div class="shell nav-inner">
 <a class="brand" href="index.html">LUX<span class="brand-dot">•</span>DOT</a>
@@ -74,6 +145,12 @@ button.node:hover,button.node:focus-visible{border-color:rgba(125,255,174,.45);b
 <span class="disabled">Living Book</span>
 <span class="disabled">Projects</span>
 <span class="disabled">Participate</span>
+<div class="visitor-pill" title="Total LuxDot visits">
+  <span class="pulse-dot" aria-hidden="true"></span>
+  <span>Visitors</span>
+  <strong id="visitor-count">—</strong>
+</div>
+
 </div></div></nav>
 
 <main>
@@ -89,7 +166,7 @@ button.node:hover,button.node:focus-visible{border-color:rgba(125,255,174,.45);b
 <article class="card active">
 <div class="kicker">01 · Active</div><h3>Common Library</h3>
 <p>What humanity has thought. Foundational texts, essential books, and the questions connecting them.</p>
-<a class="btn" href="library.html">Enter the Library →</a>
+<a class="btn" href="library.html" id="openLibrary">Enter the Library →</a>
 </article>
 <article class="card disabled">
 <div class="kicker">02 · Growing</div><h3>Living Book</h3>
@@ -114,4 +191,8 @@ button.node:hover,button.node:focus-visible{border-color:rgba(125,255,174,.45);b
 </main>
 
 <footer class="shell footer"><span>© LuxDot</span><span>A Common Language for a Diverse Humanity.</span></footer>
+<script>
+document.getElementById("openLibrary")?.addEventListener("click", function(){ window.luxTrack && window.luxTrack("open-library","Home library CTA"); });
+window.addEventListener("load", function(){ window.luxLoadVisitorCount && window.luxLoadVisitorCount(); });
+</script>
 </body></html>

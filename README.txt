@@ -1,21 +1,20 @@
-LUXDOT WEBSITE v1
-==================
+LUXDOT WEBSITE v2.1 — AUDIO FIX
+================================
 
-Files:
-- index.html    : Existing Matrix landing page, now with ENTER LUXDOT button.
-- home.html     : Main LuxDot website shell. Only Library is active.
-- library.html  : LuxDot Common Library — Level I.
-- README.txt    : This file.
+Fixed:
+- Correct Qur'an Al-Baqarah 2:2 recitation URL:
+  https://cdn.islamic.network/quran/audio/128/ar.alafasy/9.mp3
+- All non-Qur'an LuxDot listening tracks are embedded directly inside library.html.
+- No /audio directory is required anymore.
+- Audio playback is triggered directly by the book/text click.
+- Native audio controls are visible as a fallback.
+- If a browser blocks automatic play, a clear message asks the visitor to press ▶.
+- Existing analytics configuration remains in analytics-config.js.
 
-Deployment:
-Upload index.html, home.html, and library.html to the SAME public web directory.
-If replacing an existing LuxDot site, back up the current index.html first.
-The site uses no external libraries, fonts, APIs, or assets.
+Upload:
+index.html
+home.html
+library.html
+analytics-config.js
 
-Current navigation:
-ACTIVE: Home, Library
-DISABLED / COMING SOON: Discover, Living Book, Projects, Participate
-
-Architecture:
-READ → UNDERSTAND → SYNTHESIZE → ACT
-Library → Living Book → Projects
+Replace the corresponding old files with these four.
