@@ -1,42 +1,18 @@
-LUXDOT v5 VALIDATION REPORT
-==============================
+LUXDOT v5.1 STABILITY TEST
+==========================
+PASS — all local href/src references resolve.
+PASS — i18n.js JavaScript syntax.
+PASS — quran.js JavaScript syntax.
+PASS — reset-cache.js JavaScript syntax.
+PASS — 114-surah local index retained.
+PASS — primary + fallback Quran text providers configured.
+PASS — primary + fallback Alafasy audio providers configured.
+PASS — stale Service Worker removed.
+PASS — old LuxDot cache cleanup included.
+PASS — version.html deployment diagnostic included.
 
-[PASS] file:index.html
-[PASS] file:home.html
-[PASS] file:library.html
-[PASS] file:quran.html
-[PASS] file:assets/styles.css
-[PASS] file:assets/quran.css
-[PASS] file:assets/i18n.js
-[PASS] file:assets/quran.js
-[PASS] file:data/surah-index.js
-[PASS] file:data/quran-fallback.js
-[PASS] file:sw.js
-[PASS] file:README.txt
-[PASS] local references — []
-[PASS] surah count — 114
-[PASS] ayah total — 6236
-[PASS] 2:2 audio index — 9
-[PASS] An-Nas final — {'id': 114, 'name': 'الناس', 'transliteration': 'An-Nas', 'verses': 6, 'type': 'meccan'}
-[PASS] pinned Quran chapter CDN
-[PASS] Alafasy audio
-[PASS] Quran search
-[PASS] auto advance
-[PASS] ayah auto scroll
-[PASS] i18n keys — []
-[PASS] language persistence
-[PASS] RTL support
-[PASS] translation optional
-[PASS] no matrix Quran
-[PASS] no background audio Quran
-[PASS] service worker cache
-
-JavaScript syntax was separately checked with Node.js for:
-- assets/i18n.js
-- assets/quran.js
-- sw.js
-
-Browser note:
-Chromium is installed in the build environment, but administrator policy blocks navigation to localhost and file:// URLs.
-Therefore this report does not claim a full end-to-end browser click test inside the sandbox.
-Production should be served over HTTPS (luxdot.org).
+LIVE-SITE DIAGNOSIS BEFORE THIS BUILD:
+- luxdot.org index page was new enough to show Arabic/English selection.
+- Enter LuxDot still opened old Home content labeled Website v1.
+- library.html was still the previous >4 MB build.
+Conclusion: the production root contained a mixture of old and new files.

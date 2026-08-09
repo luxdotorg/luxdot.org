@@ -1,0 +1,8 @@
+{
+  "build": "5.1-STABLE",
+  "quran": "114 surahs",
+  "languages": [
+    "ar",
+    "en"
+  ]
+}
