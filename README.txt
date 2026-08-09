@@ -18,3 +18,31 @@ library.html
 analytics-config.js
 
 Replace the corresponding old files with these four.
+
+
+LUXDOT SONIC LIBRARY — CURATORIAL STANDARD
+------------------------------------------
+v3 establishes the sonic identity of the Common Library.
+
+1. Sacred/foundational texts:
+   - Qur'an: authentic recitation (Al-Baqarah 2:2).
+   - Tanakh / New Testament / Bhagavad Gita / Tao Te Ching:
+     current audio is explicitly labeled "LuxDot contemplative prelude".
+     It must NOT be presented as authentic liturgical/cantillation audio.
+     Replace only with recordings whose tradition, performer and reuse rights are verified.
+
+2. Human Library:
+   Original LuxDot soundscapes are conceptual rather than pseudo-liturgical:
+   Sophie’s World — Question · Wonder
+   Republic — Cave · Ascent · Light
+   Meditations — Breath · Interior · Stillness
+   Ibn Arabi — Multiplicity · Unity
+   Ibn Khaldun — City · Ascent · Decline
+   Brothers Karamazov — Conscience · Bell · Silence
+   Nietzsche — Impact · Question · Silence
+   Darwin — Life · Variation · Time
+   Arendt — Mass · Machine · Rupture
+   Kuhn — Pattern · Crisis · Shift
+
+3. Design rule:
+   Sound follows meaning. Sacred material is never treated as decorative background music.
