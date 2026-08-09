@@ -46,3 +46,6 @@ v3 establishes the sonic identity of the Common Library.
 
 3. Design rule:
    Sound follows meaning. Sacred material is never treated as decorative background music.
+
+
+v4 adds a full-screen Sacred Focus experience for the five foundational texts, with original-script passages, English meanings, concepts, provenance notes, and respectful audio status.
