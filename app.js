@@ -10,7 +10,9 @@ libTitle:"Common Library",libLead:"Foundational texts and essential works. The Q
 quran:"Qur'an",tanakh:"Tanakh",nt:"New Testament",gita:"Bhagavad Gita",tao:"Tao Te Ching",
 quranOpen:"Open the Qur'an",building:"Building next",surahs:"Surahs",translation:"Translation",
 loading:"Loading…",error:"Could not load this surah. Please try again.",reciter:"Mishary Rashid Alafasy",
-verses:"verses",meccan:"Meccan",medinan:"Medinan",search:"Search surah…",humanLib:"Human Library · Level I",humanLead:"Ten books that open ten different doors into the human condition.",sonicReady:"Audio research ready",quranLive:"Qur'an reader active",map:"The map",justice:"Justice",selfmastery:"Self-mastery",meaning:"Meaning",civilization:"Civilization",conscience:"Conscience",values:"Values",life2:"Life",power:"Power",knowledge:"Knowledge"
+verses:"verses",meccan:"Meccan",medinan:"Medinan",search:"Search surah…",humanLib:"Human Library · Level I",humanLead:"Ten books that open ten different doors into the human condition.",sonicReady:"Audio research ready",quranLive:"Qur'an reader active",map:"The map",justice:"Justice",selfmastery:"Self-mastery",meaning:"Meaning",civilization:"Civilization",conscience:"Conscience",values:"Values",life2:"Life",power:"Power",knowledge:"Knowledge",
+openTanakh:"Open Tanakh",tanakhTitle:"Tanakh",tanakhLead:"Read the selected passage in Hebrew and listen without background music.",
+selectedPassage:"Selected passage",listenPassage:"Listen to the opening passage",introWillPlay:"The selected passage may play once after 5 seconds.",autoplayBlocked:"Your browser blocked automatic sound. Listen when you are ready.",stopIntro:"Stop",proverbs623:"Proverbs 6:23",lightWay:"Torah · Light · Way of Life"
 },
 ar:{
 home:"الرئيسية",library:"المكتبة",discover:"اكتشف",living:"الكتاب الحي",projects:"المشاريع",participate:"شارك",
@@ -22,7 +24,9 @@ libTitle:"المكتبة المشتركة",libLead:"النصوص المؤسسة 
 quran:"القرآن الكريم",tanakh:"التناخ",nt:"العهد الجديد",gita:"البهاغافاد غيتا",tao:"كتاب الطريق والفضيلة",
 quranOpen:"افتح القرآن",building:"نبنيه تالياً",surahs:"السور",translation:"الترجمة",
 loading:"جارٍ التحميل…",error:"تعذر تحميل السورة. حاول مرة أخرى.",reciter:"مشاري راشد العفاسي",
-verses:"آية",meccan:"مكية",medinan:"مدنية",search:"ابحث عن سورة…",humanLib:"المكتبة الإنسانية · المستوى الأول",humanLead:"عشرة كتب تفتح عشرة أبواب مختلفة لفهم الإنسان والعالم.",sonicReady:"المصدر الصوتي قيد الإعداد",quranLive:"قارئ القرآن مفعّل",map:"الخريطة",justice:"العدالة",selfmastery:"السيادة على النفس",meaning:"المعنى",civilization:"الحضارة",conscience:"الضمير",values:"القيم",life2:"الحياة",power:"السلطة",knowledge:"المعرفة"
+verses:"آية",meccan:"مكية",medinan:"مدنية",search:"ابحث عن سورة…",humanLib:"المكتبة الإنسانية · المستوى الأول",humanLead:"عشرة كتب تفتح عشرة أبواب مختلفة لفهم الإنسان والعالم.",sonicReady:"المصدر الصوتي قيد الإعداد",quranLive:"قارئ القرآن مفعّل",map:"الخريطة",justice:"العدالة",selfmastery:"السيادة على النفس",meaning:"المعنى",civilization:"الحضارة",conscience:"الضمير",values:"القيم",life2:"الحياة",power:"السلطة",knowledge:"المعرفة",
+openTanakh:"افتح التناخ",tanakhTitle:"التناخ",tanakhLead:"اقرأ المقطع المختار بالعبرية واستمع إليه بلا موسيقى خلفية.",
+selectedPassage:"المقطع المختار",listenPassage:"استمع للمقطع الافتتاحي",introWillPlay:"قد يعمل المقطع المختار مرة واحدة بعد 5 ثوانٍ.",autoplayBlocked:"منع المتصفح التشغيل التلقائي. استمع عندما تكون مستعداً.",stopIntro:"إيقاف",proverbs623:"أمثال 6:23",lightWay:"التوراة · النور · طريق الحياة"
 }};
 let LANG=localStorage.getItem("luxdot.lang")||((navigator.language||"").startsWith("ar")?"ar":"en");
 function t(k){return TX[LANG][k]||k}

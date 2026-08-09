@@ -4,6 +4,7 @@ const QAPI="https://api.alquran.cloud/v1/surah/";
 const AUDIO="https://cdn.islamic.network/quran/audio/128/ar.alafasy/";
 const offsets=(()=>{let x=0;return SURAHS.map(s=>{const o=x;x+=s.n;return o})})();
 let state={s:2,a:2,en:false,playing:false,data:null};
+let introTimer=null,introAttempted=false;
 const $=x=>document.querySelector(x);
 function gidx(s,a){return offsets[s-1]+a}
 function list(filter=""){
@@ -11,6 +12,25 @@ function list(filter=""){
   SURAHS.filter(s=>!f||s.ar.includes(f)||s.en.toLowerCase().includes(f)||String(s.id)===f).forEach(s=>{
     const b=document.createElement("button");b.className="surah"+(state.s===s.id?" on":"");b.textContent=`${s.id}. ${s.ar} · ${s.en}`;b.onclick=()=>loadSurah(s.id,1);$("#surahList").appendChild(b)
   })
+}
+function scheduleOpeningAyah(){
+  if(introAttempted)return;
+  introAttempted=true;
+  introTimer=setTimeout(()=>{
+    if(state.s===2 && state.a===2){
+      play(2);
+      setTimeout(()=>{
+        const a=$("#audio");
+        if(a && a.paused){
+          const p=$("#player");
+          if(p){
+            p.classList.add("on");
+            $("#pref").textContent=LANG==="ar"?"البقرة · 2:2 · اضغط ▶ للاستماع":"Al-Baqarah · 2:2 · Press ▶ to listen";
+          }
+        }
+      },700);
+    }
+  },5000);
 }
 async function loadSurah(s,a=1){
   state.s=s;state.a=a;$("#verses").innerHTML=`<div class="status">${t("loading")}</div>`;
@@ -49,4 +69,4 @@ $("#pp").onclick=()=>{const a=$("#audio");if(a.paused){if(!a.src)play(state.a);e
 $("#trans").onclick=()=>{state.en=!state.en;$("#verses").classList.toggle("show-en",state.en);$("#trans").classList.toggle("on",state.en)};
 $("#sfilter").oninput=e=>list(e.target.value);
 document.addEventListener("luxlang",()=>{list($("#sfilter").value||"");const m=SURAHS[state.s-1];$("#qmeta").textContent=`${m.en} · ${t(m.type)} · ${m.n} ${t("verses")}`});
-document.addEventListener("DOMContentLoaded",()=>{list();loadSurah(2,2)});
+document.addEventListener("DOMContentLoaded",()=>{list();loadSurah(2,2).then(()=>scheduleOpeningAyah())});
