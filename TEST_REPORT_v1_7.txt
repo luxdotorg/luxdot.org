@@ -1,0 +1,11 @@
+LuxDot v1.7 QA
+
+PASS  Core sacred/library HTML files preserved byte-for-byte from v1.6
+PASS  quran.js preserved byte-for-byte
+PASS  70-record 25 km care dataset preserved
+PASS  app.js syntax
+PASS  research.js syntax
+PASS  Projects remains inside the existing LuxDot site shell
+PASS  Research rebuilt in black / signal-green with controlled gold / white illumination
+PASS  Living-tree cartouches, confidence illumination and cross-branch knowledge links enabled
+PASS  Runtime terminal-dot cleanup affects visible text nodes only, excluding script/style/code/pre

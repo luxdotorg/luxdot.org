@@ -187,3 +187,10 @@ html[dir="rtl"] .ayahtop{direction:rtl}
   color:var(--muted);
   text-align:center;
 }
+
+/* LuxDot v1.7 signal palette — preserves the sacred/library dark system */
+:root{--gold:#d2b15b;--gold-dim:#8b6b24;--white-glow:#f2fff6}
+body{background:radial-gradient(circle at 50% 0,rgba(125,255,174,.035),transparent 28%),radial-gradient(circle at 85% 22%,rgba(210,177,91,.018),transparent 18%),var(--bg)}
+.logo,.hero h1,.sacred-card h1,.section-title h2{text-shadow:0 0 26px rgba(125,255,174,.035)}
+.card,.book,.hbook,.sacred-card{box-shadow:inset 0 0 0 1px rgba(210,177,91,.015)}
+.card:hover,.book.live:hover{border-color:rgba(210,177,91,.22);box-shadow:0 0 28px rgba(125,255,174,.03),inset 0 0 0 1px rgba(210,177,91,.03)}
