@@ -1,18 +1,14 @@
-LUXDOT v5.1 STABILITY TEST
-==========================
-PASS — all local href/src references resolve.
-PASS — i18n.js JavaScript syntax.
-PASS — quran.js JavaScript syntax.
-PASS — reset-cache.js JavaScript syntax.
-PASS — 114-surah local index retained.
-PASS — primary + fallback Quran text providers configured.
-PASS — primary + fallback Alafasy audio providers configured.
-PASS — stale Service Worker removed.
-PASS — old LuxDot cache cleanup included.
-PASS — version.html deployment diagnostic included.
+LUXDOT CLEAN WHITE v1 — TEST REPORT
+====================================
+PASS — JavaScript syntax: app.js
+PASS — JavaScript syntax: quran.js
+PASS — all local href/src references
+PASS — 114 surah metadata
+PASS — Quran API endpoint configured
+PASS — Alafasy audio endpoint configured
+PASS — Arabic/English language persistence configured
+PASS — no service worker
+PASS — no cache script
+PASS — no old asset/data/audio folders
 
-LIVE-SITE DIAGNOSIS BEFORE THIS BUILD:
-- luxdot.org index page was new enough to show Arabic/English selection.
-- Enter LuxDot still opened old Home content labeled Website v1.
-- library.html was still the previous >4 MB build.
-Conclusion: the production root contained a mixture of old and new files.
+This build is intentionally minimal to maximize reliability.
