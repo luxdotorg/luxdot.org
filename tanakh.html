@@ -5,42 +5,90 @@
 </head><body>
 <header class="top"><div class="wrap topin"><a class="logo" href="home.html">LUXDOT</a>
 <nav class="nav"><a href="home.html" data-t="home"></a><span data-t="discover"></span><a href="library.html" data-t="library"></a><span data-t="living"></span><span data-t="projects"></span><span data-t="participate"></span><button class="lang" data-lang>ع</button></nav></div></header>
+
 <main class="sacred-page">
 <section class="sacred-card">
 <div class="sacred-kicker" data-t="selectedPassage"></div>
 <h1 data-t="tanakhTitle"></h1>
 <p class="sacred-lead" data-t="tanakhLead"></p>
 <div class="sacred-kicker" data-t="proverbs623"></div>
-<div class="hebrew" lang="he" dir="rtl">כִּי נֵר מִצְוָה וְתוֹרָה אוֹר וְדֶרֶךְ חַיִּים תּוֹכְחוֹת מוּסָר</div>
-<div class="sacred-translation" lang="en" dir="ltr">For the commandment is a lamp and the Torah is light and reproofs of discipline are the way of life</div>
-<div class="sacred-kicker" style="margin-top:22px" data-t="lightWay"></div>
+
+<div id="tanakhAr" class="lang-sacred">
+  <div class="arabic-sacred" lang="ar" dir="rtl">لأَنَّ الْوَصِيَّةَ مِصْبَاحٌ وَالشَّرِيعَةَ نُورٌ وَتَوْبِيخَاتِ الأَدَبِ طَرِيقُ الْحَيَاةِ</div>
+  <div class="sacred-kicker" style="margin-top:22px" data-t="lightWay"></div>
+</div>
+
+<div id="tanakhEn" class="lang-sacred">
+  <div class="hebrew" lang="he" dir="rtl">כִּי נֵר מִצְוָה וְתוֹרָה אוֹר וְדֶרֶךְ חַיִּים תּוֹכְחוֹת מוּסָר</div>
+  <div class="sacred-translation" lang="en" dir="ltr">For the commandment is a lamp and the Torah is light and reproofs of discipline are the way of life</div>
+  <div class="sacred-kicker" style="margin-top:22px" data-t="lightWay"></div>
+</div>
+
 <div class="intro-note" data-t="introWillPlay"></div>
 <div class="intro-player">
-<button id="listen" type="button">▶ <span data-t="listenPassage"></span></button>
-<button id="stop" type="button" data-t="stopIntro"></button>
+  <button id="listen" type="button">▶ <span data-t="listenPassage"></span></button>
+  <button id="stop" type="button" data-t="stopIntro"></button>
 </div>
 <div class="audio-msg" id="msg"></div>
-<audio id="tanakhAudio" preload="metadata" src="https://archive.org/download/the_book_of_proverbs_asv_ss_librivox/proverbs_2_asv_64kb.mp3"></audio>
+
+<audio id="tanakhAudio" preload="metadata"></audio>
 </section>
 </main>
+
 <script>
 document.addEventListener("DOMContentLoaded",()=>{
- const audio=document.getElementById("tanakhAudio"),listen=document.getElementById("listen"),stop=document.getElementById("stop"),msg=document.getElementById("msg");
- let timer=null,started=false,stopAt=145;
- function start(){
-   if(started && !audio.paused){return}
-   const go=()=>{
-     // Track begins at Proverbs 6. Cue near verse 23.
-     if(audio.duration && audio.currentTime<100) audio.currentTime=118;
-     const p=audio.play();
-     if(p&&p.then)p.then(()=>{started=true;msg.textContent=""}).catch(()=>{msg.textContent=t("autoplayBlocked")});
-   };
-   if(audio.readyState>=1)go(); else audio.addEventListener("loadedmetadata",go,{once:true});
+ const audio=document.getElementById("tanakhAudio")
+ const ar=document.getElementById("tanakhAr")
+ const en=document.getElementById("tanakhEn")
+ const listen=document.getElementById("listen")
+ const stop=document.getElementById("stop")
+ const msg=document.getElementById("msg")
+ let timer=null
+
+ const SOURCES={
+   ar:"https://audio.arabicbible.com/archive/audio/bible/ot/proverbs/Proverb06.mp3",
+   en:"https://archive.org/download/the_book_of_proverbs_asv_ss_librivox/proverbs_2_asv_64kb.mp3"
  }
- listen.addEventListener("click",start);
- stop.addEventListener("click",()=>{audio.pause();msg.textContent=""});
- audio.addEventListener("timeupdate",()=>{if(audio.currentTime>=stopAt){audio.pause();}});
- timer=setTimeout(start,5000);
-});
+
+ function configure(){
+   audio.pause()
+   audio.removeAttribute("src")
+   msg.textContent=""
+   const isAr=LANG==="ar"
+   ar.classList.toggle("active",isAr)
+   en.classList.toggle("active",!isAr)
+   audio.src=isAr?SOURCES.ar:SOURCES.en
+   audio.load()
+ }
+
+ function seekAndPlay(){
+   const isAr=LANG==="ar"
+   const go=()=>{
+     if(Number.isFinite(audio.duration)){
+       if(isAr){
+         // Proverbs 6:23 lies in the latter half of the chapter
+         audio.currentTime=Math.max(0,audio.duration*0.58)
+       }else{
+         audio.currentTime=Math.min(118,Math.max(0,audio.duration-20))
+       }
+     }
+     const p=audio.play()
+     if(p&&p.then)p.then(()=>{msg.textContent=""}).catch(()=>{msg.textContent=t("autoplayBlocked")})
+   }
+   if(audio.readyState>=1)go()
+   else audio.addEventListener("loadedmetadata",go,{once:true})
+ }
+
+ function schedule(){
+   clearTimeout(timer)
+   timer=setTimeout(seekAndPlay,5000)
+ }
+
+ listen.addEventListener("click",seekAndPlay)
+ stop.addEventListener("click",()=>{audio.pause();msg.textContent=""})
+ document.addEventListener("luxlang",()=>{configure();schedule()})
+ configure()
+ schedule()
+})
 </script>
 </body></html>

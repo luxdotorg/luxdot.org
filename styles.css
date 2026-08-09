@@ -165,3 +165,25 @@ html[dir="rtl"] .ayahtop{direction:rtl}
 .sonic{letter-spacing:.03em}
 .status{letter-spacing:.04em}
 .sacred-kicker{letter-spacing:.06em}
+
+.lang-sacred{display:none}
+.lang-sacred.active{display:block}
+.arabic-sacred{
+  direction:rtl !important;
+  text-align:right !important;
+  unicode-bidi:isolate;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(25px,3.6vw,36px);
+  line-height:2;
+  max-width:720px;
+  margin:0 auto;
+  padding:26px 8px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.original-note{
+  margin-top:16px;
+  font-size:10px;
+  color:var(--muted);
+  text-align:center;
+}

@@ -11,53 +11,79 @@
 <div class="sacred-kicker" data-t="selectedPassage"></div>
 <h1 data-t="ntTitle"></h1>
 <p class="sacred-lead" data-t="ntLead"></p>
-
 <div class="sacred-kicker" data-t="john2031"></div>
-<div class="greek" lang="grc" dir="ltr">ταῦτα δὲ γέγραπται ἵνα πιστεύσητε ὅτι Ἰησοῦς ἐστιν ὁ Χριστὸς ὁ υἱὸς τοῦ θεοῦ, καὶ ἵνα πιστεύοντες ζωὴν ἔχητε ἐν τῷ ὀνόματι αὐτοῦ.</div>
 
-<div class="sacred-translation" lang="en" dir="ltr">But these are written that ye may believe that Jesus is the Christ the Son of God and that believing ye may have life in his name</div>
+<div id="ntAr" class="lang-sacred">
+  <div class="arabic-sacred" lang="ar" dir="rtl">وَأَمَّا هذِهِ فَقَدْ كُتِبَتْ لِتُؤْمِنُوا أَنَّ يَسُوعَ هُوَ الْمَسِيحُ ابْنُ اللهِ وَلِكَيْ تَكُونَ لَكُمْ إِذَا آمَنْتُمْ حَيَاةٌ بِاسْمِهِ</div>
+  <div class="sacred-kicker" style="margin-top:22px" data-t="writtenLife"></div>
+</div>
 
-<div class="sacred-kicker" style="margin-top:22px" data-t="writtenLife"></div>
+<div id="ntEn" class="lang-sacred">
+  <div class="greek" lang="grc" dir="ltr">ταῦτα δὲ γέγραπται ἵνα πιστεύσητε ὅτι Ἰησοῦς ἐστιν ὁ Χριστὸς ὁ υἱὸς τοῦ θεοῦ καὶ ἵνα πιστεύοντες ζωὴν ἔχητε ἐν τῷ ὀνόματι αὐτοῦ</div>
+  <div class="sacred-translation" lang="en" dir="ltr">But these are written that ye may believe that Jesus is the Christ the Son of God and that believing ye may have life in his name</div>
+  <div class="sacred-kicker" style="margin-top:22px" data-t="writtenLife"></div>
+</div>
+
 <div class="intro-note" data-t="ntAudioNote"></div>
-
 <div class="intro-player">
-<button id="listen" type="button">▶ <span data-t="listenPassage"></span></button>
-<button id="stop" type="button" data-t="stopIntro"></button>
+  <button id="listen" type="button">▶ <span data-t="listenPassage"></span></button>
+  <button id="stop" type="button" data-t="stopIntro"></button>
 </div>
 <div class="audio-msg" id="msg"></div>
 
-<audio id="ntAudio" preload="metadata" src="https://archive.org/download/the_gospel_according_to_saint_john_asv_ss_librivox/john_20_asv_64kb.mp3"></audio>
+<audio id="ntAudio" preload="metadata"></audio>
 </section>
 </main>
 
 <script>
 document.addEventListener("DOMContentLoaded",()=>{
- const audio=document.getElementById("ntAudio");
- const listen=document.getElementById("listen");
- const stop=document.getElementById("stop");
- const msg=document.getElementById("msg");
- let started=false;
+ const audio=document.getElementById("ntAudio")
+ const ar=document.getElementById("ntAr")
+ const en=document.getElementById("ntEn")
+ const listen=document.getElementById("listen")
+ const stop=document.getElementById("stop")
+ const msg=document.getElementById("msg")
+ let timer=null
 
- function start(){
-   const go=()=>{
-     // John 20:31 is at the end of the chapter. Start near the final verses.
-     if(Number.isFinite(audio.duration) && audio.duration>35){
-       audio.currentTime=Math.max(0,audio.duration-32);
-     }
-     const p=audio.play();
-     if(p&&p.then){
-       p.then(()=>{started=true;msg.textContent=""})
-        .catch(()=>{msg.textContent=t("autoplayBlocked")});
-     }
-   };
-   if(audio.readyState>=1) go();
-   else audio.addEventListener("loadedmetadata",go,{once:true});
+ const SOURCES={
+   ar:"https://audio.arabicbible.com/archive/cd/Bible/04-John/20-John-a.mp3",
+   en:"https://archive.org/download/the_gospel_according_to_saint_john_asv_ss_librivox/john_20_asv_64kb.mp3"
  }
 
- listen.addEventListener("click",start);
- stop.addEventListener("click",()=>{audio.pause();msg.textContent=""});
- audio.addEventListener("ended",()=>{started=false;});
- setTimeout(start,5000);
-});
+ function configure(){
+   audio.pause()
+   audio.removeAttribute("src")
+   msg.textContent=""
+   const isAr=LANG==="ar"
+   ar.classList.toggle("active",isAr)
+   en.classList.toggle("active",!isAr)
+   audio.src=isAr?SOURCES.ar:SOURCES.en
+   audio.load()
+ }
+
+ function seekAndPlay(){
+   const go=()=>{
+     if(Number.isFinite(audio.duration)&&audio.duration>30){
+       // John 20:31 is the final verse
+       audio.currentTime=Math.max(0,audio.duration-28)
+     }
+     const p=audio.play()
+     if(p&&p.then)p.then(()=>{msg.textContent=""}).catch(()=>{msg.textContent=t("autoplayBlocked")})
+   }
+   if(audio.readyState>=1)go()
+   else audio.addEventListener("loadedmetadata",go,{once:true})
+ }
+
+ function schedule(){
+   clearTimeout(timer)
+   timer=setTimeout(seekAndPlay,5000)
+ }
+
+ listen.addEventListener("click",seekAndPlay)
+ stop.addEventListener("click",()=>{audio.pause();msg.textContent=""})
+ document.addEventListener("luxlang",()=>{configure();schedule()})
+ configure()
+ schedule()
+})
 </script>
 </body></html>
