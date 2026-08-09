@@ -1,21 +1,22 @@
-LUXDOT CLEAN WHITE v1.5
+LUXDOT LIVING RESEARCH WEB v1
+================================
+Open index.html through a web server (not file://) because the research page fetches data/care-points.json.
+Recommended local test:
+  python -m http.server 8000
+then visit http://localhost:8000
 
-Arabic sacred-language release
+Structure
+- index.html                         Projects / Research landing page
+- research/shaam-breda.html         Living Research 001 (Arabic + English)
+- data/care-points.json             Latest preserved 25 km / 70-record care dataset
+- README.txt
 
-When interface language is Arabic
-Tanakh shows Proverbs 6:23 in Arabic and uses an Arabic Proverbs 6 recording
-New Testament shows John 20:31 in Arabic and uses an Arabic John 20 recording
+External runtime dependencies
+- Leaflet 1.9.4 from unpkg
+- OpenStreetMap tiles
 
-When interface language is English
-Tanakh shows Hebrew plus English meaning and uses the existing English reading
-New Testament shows Greek plus English meaning and uses the existing English reading
-
-No background music
-One delayed opening-audio attempt after five seconds
-Manual listen and stop controls remain available
-
-Arabic text
-Smith Van Dyck public-domain Arabic Bible
-
-Arabic audio
-Arabic Bible Outreach Ministry chapter recordings
+Editorial design
+- Arabic public label uses شام; geographic source data retains Chaam where precision/search requires it.
+- Knowledge statuses are visibly distinct.
+- Unsupported symbolic matches are hypotheses or pruned branches, not facts.
+- Map is privacy-by-design and contains organizations/public partners rather than vulnerable individuals.
