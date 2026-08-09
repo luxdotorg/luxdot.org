@@ -12,7 +12,10 @@ quranOpen:"Open the Qur'an",building:"Building next",surahs:"Surahs",translation
 loading:"Loading…",error:"Could not load this surah. Please try again.",reciter:"Mishary Rashid Alafasy",
 verses:"verses",meccan:"Meccan",medinan:"Medinan",search:"Search surah…",humanLib:"Human Library · Level I",humanLead:"Ten books that open ten different doors into the human condition.",sonicReady:"Audio research ready",quranLive:"Qur'an reader active",map:"The map",justice:"Justice",selfmastery:"Self-mastery",meaning:"Meaning",civilization:"Civilization",conscience:"Conscience",values:"Values",life2:"Life",power:"Power",knowledge:"Knowledge",
 openTanakh:"Open Tanakh",tanakhTitle:"Tanakh",tanakhLead:"Read the selected passage in Hebrew and listen without background music.",
-selectedPassage:"Selected passage",listenPassage:"Listen to the opening passage",introWillPlay:"The selected passage may play once after 5 seconds.",autoplayBlocked:"Your browser blocked automatic sound. Listen when you are ready.",stopIntro:"Stop",proverbs623:"Proverbs 6:23",lightWay:"Torah · Light · Way of Life"
+selectedPassage:"Selected passage",listenPassage:"Listen to the opening passage",introWillPlay:"The selected passage may play once after 5 seconds.",autoplayBlocked:"Your browser blocked automatic sound. Listen when you are ready.",stopIntro:"Stop",proverbs623:"Proverbs 6:23",lightWay:"Torah · Light · Way of Life",
+openNT:"Open New Testament",ntTitle:"New Testament",ntLead:"Read the selected passage in Greek and listen without background music.",
+john2031:"John 20:31",writtenLife:"Written · Belief · Life",
+ntAudioNote:"The selected passage may play once after 5 seconds."
 },
 ar:{
 home:"الرئيسية",library:"المكتبة",discover:"اكتشف",living:"الكتاب الحي",projects:"المشاريع",participate:"شارك",
@@ -26,7 +29,10 @@ quranOpen:"افتح القرآن",building:"نبنيه تالياً",surahs:"ا�
 loading:"جارٍ التحميل…",error:"تعذر تحميل السورة. حاول مرة أخرى.",reciter:"مشاري راشد العفاسي",
 verses:"آية",meccan:"مكية",medinan:"مدنية",search:"ابحث عن سورة…",humanLib:"المكتبة الإنسانية · المستوى الأول",humanLead:"عشرة كتب تفتح عشرة أبواب مختلفة لفهم الإنسان والعالم.",sonicReady:"المصدر الصوتي قيد الإعداد",quranLive:"قارئ القرآن مفعّل",map:"الخريطة",justice:"العدالة",selfmastery:"السيادة على النفس",meaning:"المعنى",civilization:"الحضارة",conscience:"الضمير",values:"القيم",life2:"الحياة",power:"السلطة",knowledge:"المعرفة",
 openTanakh:"افتح التناخ",tanakhTitle:"التناخ",tanakhLead:"اقرأ المقطع المختار بالعبرية واستمع إليه بلا موسيقى خلفية.",
-selectedPassage:"المقطع المختار",listenPassage:"استمع للمقطع الافتتاحي",introWillPlay:"قد يعمل المقطع المختار مرة واحدة بعد 5 ثوانٍ.",autoplayBlocked:"منع المتصفح التشغيل التلقائي. استمع عندما تكون مستعداً.",stopIntro:"إيقاف",proverbs623:"أمثال 6:23",lightWay:"التوراة · النور · طريق الحياة"
+selectedPassage:"المقطع المختار",listenPassage:"استمع للمقطع الافتتاحي",introWillPlay:"قد يعمل المقطع المختار مرة واحدة بعد 5 ثوانٍ.",autoplayBlocked:"منع المتصفح التشغيل التلقائي. استمع عندما تكون مستعداً.",stopIntro:"إيقاف",proverbs623:"أمثال 6:23",lightWay:"التوراة · النور · طريق الحياة",
+openNT:"افتح العهد الجديد",ntTitle:"العهد الجديد",ntLead:"اقرأ المقطع المختار باليونانية واستمع إليه بلا موسيقى خلفية.",
+john2031:"يوحنا 20:31",writtenLife:"مكتوب · إيمان · حياة",
+ntAudioNote:"قد يعمل المقطع المختار مرة واحدة بعد 5 ثوانٍ."
 }};
 let LANG=localStorage.getItem("luxdot.lang")||((navigator.language||"").startsWith("ar")?"ar":"en");
 function t(k){return TX[LANG][k]||k}

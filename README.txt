@@ -11,3 +11,12 @@ v1.2
 - Tanakh attempts its selected opening passage after 5 seconds; blocked autoplay becomes a user-controlled Listen button.
 - Qur'an now attempts Al-Baqarah 2:2 once, after 5 seconds. If blocked, the existing player remains available.
 - No background music is used for sacred texts.
+
+v1.3
+- New Testament is now active.
+- Selected passage: John 20:31.
+- Greek original and English meaning are displayed.
+- Audio: Sam Stinson, LibriVox / Internet Archive, John chapter 20.
+- After 5 seconds LuxDot attempts the selected closing passage once.
+- If autoplay is blocked, the visitor can use the Listen button.
+- No background music is used.
