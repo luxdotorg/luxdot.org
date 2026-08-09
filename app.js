@@ -15,7 +15,7 @@ openTanakh:"Open Tanakh",tanakhTitle:"Tanakh",tanakhLead:"Read the selected pass
 selectedPassage:"Selected passage",listenPassage:"Listen to the opening passage",introWillPlay:"The selected passage may play once after 5 seconds",autoplayBlocked:"Your browser blocked automatic sound — listen when you are ready",stopIntro:"Stop",proverbs623:"Proverbs 6:23",lightWay:"Torah · Light · Way of Life",
 openNT:"Open New Testament",ntTitle:"New Testament",ntLead:"Read the selected passage in Greek and listen without background music",
 john2031:"John 20:31",writtenLife:"Written · Belief · Life",
-ntAudioNote:"The selected passage may play once after 5 seconds"
+ntAudioNote:"The selected passage may play once after 5 seconds",projectsTitle:"Projects",projectsLead:"Ideas translated into action — research, care and living knowledge",research:"Research",livingResearch:"Living Research",researchLead:"Research that can grow, branch, correct itself and remain traceable",openResearch:"Open Living Research 001",circleCare:"Circle of Care",circleCareLead:"A 25 km care intelligence map around Chaam and Breda"
 },
 ar:{
 home:"الرئيسية",library:"المكتبة",discover:"اكتشف",living:"الكتاب الحي",projects:"المشاريع",participate:"شارك",
@@ -32,7 +32,7 @@ openTanakh:"افتح التناخ",tanakhTitle:"التناخ",tanakhLead:"اقر
 selectedPassage:"المقطع المختار",listenPassage:"استمع للمقطع الافتتاحي",introWillPlay:"قد يعمل المقطع المختار مرة واحدة بعد 5 ثوانٍ",autoplayBlocked:"منع المتصفح التشغيل التلقائي — استمع عندما تكون مستعداً",stopIntro:"إيقاف",proverbs623:"أمثال 6:23",lightWay:"التوراة · النور · طريق الحياة",
 openNT:"افتح العهد الجديد",ntTitle:"العهد الجديد",ntLead:"اقرأ المقطع المختار باليونانية واستمع إليه بلا موسيقى خلفية",
 john2031:"يوحنا 20:31",writtenLife:"مكتوب · إيمان · حياة",
-ntAudioNote:"قد يعمل المقطع المختار مرة واحدة بعد 5 ثوانٍ"
+ntAudioNote:"قد يعمل المقطع المختار مرة واحدة بعد 5 ثوانٍ",projectsTitle:"المشاريع",projectsLead:"أفكار تتحول إلى فعل — أبحاث ورعاية ومعرفة حيّة",research:"الأبحاث",livingResearch:"البحث الحي",researchLead:"بحث ينمو ويتفرع ويصحح نفسه ويبقى قابلاً للتتبع",openResearch:"افتح البحث الحي 001",circleCare:"دائرة الرعاية",circleCareLead:"خريطة رعاية تفاعلية ضمن 25 كم حول شام وبريدا"
 }};
 let LANG=localStorage.getItem("luxdot.lang")||((navigator.language||"").startsWith("ar")?"ar":"en");
 function t(k){return TX[LANG][k]||k}
