@@ -92,3 +92,76 @@ button,input,select{font:inherit}
 .audio-msg{font-size:10px;color:var(--muted);margin-top:8px;min-height:16px}
 
 .greek{direction:ltr;text-align:left;font-family:Georgia,'Times New Roman',serif;font-size:clamp(24px,3.6vw,36px);line-height:1.8;padding:26px 8px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+
+/* LuxDot v1.4 multilingual alignment */
+html[dir="rtl"] body{direction:rtl;text-align:right}
+html[dir="ltr"] body{direction:ltr;text-align:left}
+
+.logo{direction:ltr;unicode-bidi:isolate}
+.topin,.nav{direction:inherit}
+
+.hero,.section-title,.card,.book,.sacred-card,.reader-head{text-align:center}
+
+.hbook{direction:ltr;text-align:left}
+html[dir="rtl"] .hbook{direction:rtl;text-align:right}
+
+.sacred-card{direction:inherit}
+
+.hebrew{
+  direction:rtl !important;
+  text-align:right !important;
+  unicode-bidi:isolate;
+  max-width:720px;
+  margin:0 auto;
+  letter-spacing:0;
+  word-spacing:.04em;
+}
+
+.greek{
+  direction:ltr !important;
+  text-align:left !important;
+  unicode-bidi:isolate;
+  max-width:720px;
+  margin:0 auto;
+}
+
+.sacred-translation{
+  max-width:720px;
+  margin:0 auto;
+  unicode-bidi:isolate;
+}
+
+.sacred-translation[dir="ltr"]{
+  direction:ltr !important;
+  text-align:left !important;
+}
+
+.sacred-translation[dir="rtl"]{
+  direction:rtl !important;
+  text-align:right !important;
+}
+
+.intro-player,.intro-note,.audio-msg{text-align:center}
+
+.quran-layout{direction:inherit}
+.side,.reader{direction:inherit}
+.surah{text-align:start}
+.ayahtop{direction:ltr}
+html[dir="rtl"] .ayahtop{direction:rtl}
+
+.ar{
+  direction:rtl !important;
+  text-align:right !important;
+  unicode-bidi:isolate;
+}
+
+.en{
+  direction:ltr !important;
+  text-align:left !important;
+  unicode-bidi:isolate;
+}
+
+.sonic{letter-spacing:.03em}
+.status{letter-spacing:.04em}
+.sacred-kicker{letter-spacing:.06em}

@@ -10,7 +10,7 @@ function gidx(s,a){return offsets[s-1]+a}
 function list(filter=""){
   const f=filter.trim().toLowerCase();$("#surahList").innerHTML="";
   SURAHS.filter(s=>!f||s.ar.includes(f)||s.en.toLowerCase().includes(f)||String(s.id)===f).forEach(s=>{
-    const b=document.createElement("button");b.className="surah"+(state.s===s.id?" on":"");b.textContent=`${s.id}. ${s.ar} · ${s.en}`;b.onclick=()=>loadSurah(s.id,1);$("#surahList").appendChild(b)
+    const b=document.createElement("button");b.className="surah"+(state.s===s.id?" on":"");b.textContent=`${s.id}. ${s.ar} — ${s.en}`;b.onclick=()=>loadSurah(s.id,1);$("#surahList").appendChild(b)
   })
 }
 function scheduleOpeningAyah(){
@@ -25,7 +25,7 @@ function scheduleOpeningAyah(){
           const p=$("#player");
           if(p){
             p.classList.add("on");
-            $("#pref").textContent=LANG==="ar"?"البقرة · 2:2 · اضغط ▶ للاستماع":"Al-Baqarah · 2:2 · Press ▶ to listen";
+            $("#pref").textContent=LANG==="ar"?"البقرة — 2:2 — اضغط ▶ للاستماع":"Al-Baqarah — 2:2 — Press ▶ to listen";
           }
         }
       },700);
@@ -34,7 +34,7 @@ function scheduleOpeningAyah(){
 }
 async function loadSurah(s,a=1){
   state.s=s;state.a=a;$("#verses").innerHTML=`<div class="status">${t("loading")}</div>`;
-  const m=SURAHS[s-1];$("#qtitle").textContent=m.ar;$("#qmeta").textContent=`${m.en} · ${t(m.type)} · ${m.n} ${t("verses")}`;
+  const m=SURAHS[s-1];$("#qtitle").textContent=m.ar;$("#qmeta").textContent=`${m.en} — ${t(m.type)} — ${m.n} ${t("verses")}`;
   list($("#sfilter").value||"");
   try{
     const r=await fetch(`${QAPI}${s}/editions/quran-uthmani,en.sahih`,{cache:"no-store"});
@@ -59,7 +59,7 @@ function render(){
 }
 function mark(){
   document.querySelectorAll(".ayah").forEach(x=>x.classList.remove("current"));const el=$("#a-"+state.a);if(el){el.classList.add("current");if(state.playing)el.scrollIntoView({behavior:"smooth",block:"center"})}
-  $("#pref").textContent=`${SURAHS[state.s-1].ar} · ${state.s}:${state.a}`;
+  $("#pref").textContent=`${SURAHS[state.s-1].ar} — ${state.s}:${state.a}`;
 }
 function play(a){
   state.a=a;mark();$("#player").classList.add("on");const audio=$("#audio");audio.src=`${AUDIO}${gidx(state.s,a)}.mp3`;audio.play().then(()=>{state.playing=true;$("#pp").textContent="Ⅱ";mark()}).catch(()=>{$("#pp").textContent="▶"})
@@ -68,5 +68,5 @@ $("#audio").addEventListener("ended",()=>{state.playing=false;$("#pp").textConte
 $("#pp").onclick=()=>{const a=$("#audio");if(a.paused){if(!a.src)play(state.a);else a.play()}else a.pause()};
 $("#trans").onclick=()=>{state.en=!state.en;$("#verses").classList.toggle("show-en",state.en);$("#trans").classList.toggle("on",state.en)};
 $("#sfilter").oninput=e=>list(e.target.value);
-document.addEventListener("luxlang",()=>{list($("#sfilter").value||"");const m=SURAHS[state.s-1];$("#qmeta").textContent=`${m.en} · ${t(m.type)} · ${m.n} ${t("verses")}`});
+document.addEventListener("luxlang",()=>{list($("#sfilter").value||"");const m=SURAHS[state.s-1];$("#qmeta").textContent=`${m.en} — ${t(m.type)} — ${m.n} ${t("verses")}`});
 document.addEventListener("DOMContentLoaded",()=>{list();loadSurah(2,2).then(()=>scheduleOpeningAyah())});
