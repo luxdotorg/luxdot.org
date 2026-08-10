@@ -1,1 +1,17 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LuxDot</title><link rel="stylesheet" href="styles.css"></head><body><main class="landing"><div class="landbox"><h1>LUX<b>•</b>DOT</h1><p id="landsub">A Common Language for a Diverse Humanity · لغة مشتركة لإنسانية متنوعة</p><div class="langpick"><button onclick="pick('ar')">العربية</button><button onclick="pick('en')">English</button></div><a id="enter" class="btn enterlink" href="home.html">Enter LuxDot</a></div></main><script>function pick(l){localStorage.setItem('luxdot.lang',l);document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';const e=document.getElementById('enter');e.textContent=l==='ar'?'الدخول إلى لوكسدوت':'Enter LuxDot';e.classList.add('on')}const s=localStorage.getItem('luxdot.lang');if(s)pick(s);</script></body></html>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LuxDot</title><link rel="stylesheet" href="styles.css"></head><body>
+<main class="landing"><div class="landbox"><h1>LUX<b>•</b>DOT</h1>
+<p id="landsub">A Common Language for a Diverse Humanity</p>
+<div class="langpick">
+<button onclick="pick('ar')">العربية</button><button onclick="pick('en')">English</button><button onclick="pick('nl')">Nederlands</button><button onclick="pick('es')">Español</button><button onclick="pick('he')">עברית</button>
+</div><a id="enter" class="btn enterlink" href="home.html">Enter LuxDot</a></div></main>
+<script>
+const L={
+ar:["لغة مشتركة لإنسانية متنوعة","الدخول إلى لوكسدوت","rtl"],
+en:["A Common Language for a Diverse Humanity","Enter LuxDot","ltr"],
+nl:["Een gemeenschappelijke taal voor een diverse mensheid","LuxDot binnengaan","ltr"],
+es:["Un lenguaje común para una humanidad diversa","Entrar en LuxDot","ltr"],
+he:["שפה משותפת לאנושות מגוונת","כניסה ל-LuxDot","rtl"]}
+function pick(l){localStorage.setItem("luxdot.lang",l);document.documentElement.lang=l;document.documentElement.dir=L[l][2];landsub.textContent=L[l][0];enter.textContent=L[l][1];enter.classList.add("on")}
+const s=localStorage.getItem("luxdot.lang");if(L[s])pick(s)
+</script></body></html>

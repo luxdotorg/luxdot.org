@@ -4,7 +4,8 @@
 <link rel="stylesheet" href="styles.css"><script src="app.js" defer></script>
 </head><body>
 <header class="top"><div class="wrap topin"><a class="logo" href="home.html">LUXDOT</a>
-<nav class="nav"><a href="home.html" data-t="home"></a><span data-t="discover"></span><a href="library.html" data-t="library"></a><span data-t="living"></span><a href="projects.html" data-t="projects"></a><span data-t="participate"></span><button class="lang" data-lang>ع</button></nav></div></header>
+<nav class="nav"><a href="home.html" data-t="home"></a><span data-t="discover"></span><a href="library.html" data-t="library"></a><span data-t="living"></span><a href="projects.html" data-t="projects"></a><span data-t="participate"></span><select class="lang lang-select" data-lang-select>
+<option value="ar">العربية</option><option value="en">English</option><option value="nl">Nederlands</option><option value="es">Español</option><option value="he">עברית</option></select></nav></div></header>
 
 <main class="sacred-page">
 <section class="sacred-card">
@@ -13,16 +14,11 @@
 <p class="sacred-lead" data-t="tanakhLead"></p>
 <div class="sacred-kicker" data-t="proverbs623"></div>
 
-<div id="tanakhAr" class="lang-sacred">
-  <div class="arabic-sacred" lang="ar" dir="rtl">لأَنَّ الْوَصِيَّةَ مِصْبَاحٌ وَالشَّرِيعَةَ نُورٌ وَتَوْبِيخَاتِ الأَدَبِ طَرِيقُ الْحَيَاةِ</div>
-  <div class="sacred-kicker" style="margin-top:22px" data-t="lightWay"></div>
-</div>
-
-<div id="tanakhEn" class="lang-sacred">
-  <div class="hebrew" lang="he" dir="rtl">כִּי נֵר מִצְוָה וְתוֹרָה אוֹר וְדֶרֶךְ חַיִּים תּוֹכְחוֹת מוּסָר</div>
-  <div class="sacred-translation" lang="en" dir="ltr">For the commandment is a lamp and the Torah is light and reproofs of discipline are the way of life</div>
-  <div class="sacred-kicker" style="margin-top:22px" data-t="lightWay"></div>
-</div>
+<div id="tanakhAr" class="lang-sacred" data-sacred-lang="ar"><div class="arabic-sacred" lang="ar" dir="rtl">لأَنَّ الْوَصِيَّةَ مِصْبَاحٌ وَالشَّرِيعَةَ نُورٌ وَتَوْبِيخَاتِ الأَدَبِ طَرِيقُ الْحَيَاةِ</div><div class="sacred-kicker" style="margin-top:22px" data-t="lightWay"></div></div>
+<div id="tanakhEn" class="lang-sacred" data-sacred-lang="en"><div class="hebrew" lang="he" dir="rtl">כִּי נֵר מִצְוָה וְתוֹרָה אוֹר וְדֶרֶךְ חַיִּים תּוֹכְחוֹת מוּסָר</div><div class="sacred-translation" lang="en" dir="ltr" data-voice-text>For the commandment is a lamp and the Torah is light and reproofs of discipline are the way of life</div><div class="sacred-kicker" style="margin-top:22px" data-t="lightWay"></div></div>
+<div id="tanakhNl" class="lang-sacred" data-sacred-lang="nl"><div class="hebrew" lang="he" dir="rtl">כִּי נֵר מִצְוָה וְתוֹרָה אוֹר וְדֶרֶךְ חַיִּים תּוֹכְחוֹת מוּסָר</div><div class="sacred-translation" lang="nl" dir="ltr" data-voice-text>Want het gebod is een lamp, de onderwijzing is licht, en terechtwijzingen die onderrichten zijn de weg van het leven</div><div class="sacred-kicker" style="margin-top:22px" data-t="lightWay"></div></div>
+<div id="tanakhEs" class="lang-sacred" data-sacred-lang="es"><div class="hebrew" lang="he" dir="rtl">כִּי נֵר מִצְוָה וְתוֹרָה אוֹר וְדֶרֶךְ חַיִּים תּוֹכְחוֹת מוּסָר</div><div class="sacred-translation" lang="es" dir="ltr" data-voice-text>Porque el mandamiento es una lámpara, la enseñanza es luz, y las correcciones de la disciplina son camino de vida</div><div class="sacred-kicker" style="margin-top:22px" data-t="lightWay"></div></div>
+<div id="tanakhHe" class="lang-sacred" data-sacred-lang="he"><div class="hebrew" lang="he" dir="rtl" data-voice-text>כִּי נֵר מִצְוָה וְתוֹרָה אוֹר וְדֶרֶךְ חַיִּים תּוֹכְחוֹת מוּסָר</div><div class="sacred-kicker" style="margin-top:22px" data-t="lightWay"></div></div>
 
 <div class="intro-note" data-t="introWillPlay"></div>
 <div class="intro-player">
@@ -37,58 +33,22 @@
 
 <script>
 document.addEventListener("DOMContentLoaded",()=>{
- const audio=document.getElementById("tanakhAudio")
- const ar=document.getElementById("tanakhAr")
- const en=document.getElementById("tanakhEn")
- const listen=document.getElementById("listen")
- const stop=document.getElementById("stop")
- const msg=document.getElementById("msg")
+ const audio=document.getElementById("tanakhAudio"),listen=document.getElementById("listen"),stop=document.getElementById("stop"),msg=document.getElementById("msg")
  let timer=null
-
- const SOURCES={
-   ar:"https://audio.arabicbible.com/archive/audio/bible/ot/proverbs/Proverb06.mp3",
-   en:"https://archive.org/download/the_book_of_proverbs_asv_ss_librivox/proverbs_2_asv_64kb.mp3"
+ const SOURCES={ar:"https://audio.arabicbible.com/archive/audio/bible/ot/proverbs/Proverb06.mp3",en:"https://archive.org/download/the_book_of_proverbs_asv_ss_librivox/proverbs_2_asv_64kb.mp3"}
+ function activeBlock(){return document.querySelector(`[data-sacred-lang="${LANG}"]`)}
+ function configure(){audio.pause();stopSpeech();audio.removeAttribute("src");msg.textContent="";document.querySelectorAll("[data-sacred-lang]").forEach(x=>x.classList.toggle("active",x.dataset.sacredLang===LANG));if(SOURCES[LANG]){audio.src=SOURCES[LANG];audio.load()}}
+ function playSelected(){
+  if(SOURCES[LANG]){
+   const go=()=>{if(Number.isFinite(audio.duration)){audio.currentTime=LANG==="ar"?Math.max(0,audio.duration*.58):Math.min(118,Math.max(0,audio.duration-20))}const p=audio.play();if(p&&p.catch)p.catch(()=>msg.textContent=t("autoplayBlocked"))}
+   if(audio.readyState>=1)go();else audio.addEventListener("loadedmetadata",go,{once:true})
+  }else{
+   const el=activeBlock()?.querySelector("[data-voice-text]");if(el&&!speakText(el.textContent,LANG))msg.textContent=t("voiceUnavailable")
+  }
  }
-
- function configure(){
-   audio.pause()
-   audio.removeAttribute("src")
-   msg.textContent=""
-   const isAr=LANG==="ar"
-   ar.classList.toggle("active",isAr)
-   en.classList.toggle("active",!isAr)
-   audio.src=isAr?SOURCES.ar:SOURCES.en
-   audio.load()
- }
-
- function seekAndPlay(){
-   const isAr=LANG==="ar"
-   const go=()=>{
-     if(Number.isFinite(audio.duration)){
-       if(isAr){
-         // Proverbs 6:23 lies in the latter half of the chapter
-         audio.currentTime=Math.max(0,audio.duration*0.58)
-       }else{
-         audio.currentTime=Math.min(118,Math.max(0,audio.duration-20))
-       }
-     }
-     const p=audio.play()
-     if(p&&p.then)p.then(()=>{msg.textContent=""}).catch(()=>{msg.textContent=t("autoplayBlocked")})
-   }
-   if(audio.readyState>=1)go()
-   else audio.addEventListener("loadedmetadata",go,{once:true})
- }
-
- function schedule(){
-   clearTimeout(timer)
-   timer=setTimeout(seekAndPlay,5000)
- }
-
- listen.addEventListener("click",seekAndPlay)
- stop.addEventListener("click",()=>{audio.pause();msg.textContent=""})
- document.addEventListener("luxlang",()=>{configure();schedule()})
- configure()
- schedule()
+ function schedule(){clearTimeout(timer);timer=setTimeout(playSelected,5000)}
+ listen.onclick=playSelected;stop.onclick=()=>{audio.pause();stopSpeech();msg.textContent=""}
+ document.addEventListener("luxlang",()=>{configure();schedule()});configure();schedule()
 })
 </script>
 </body></html>

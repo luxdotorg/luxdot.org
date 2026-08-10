@@ -4,7 +4,8 @@
 <link rel="stylesheet" href="styles.css"><script src="app.js" defer></script>
 </head><body>
 <header class="top"><div class="wrap topin"><a class="logo" href="home.html">LUXDOT</a>
-<nav class="nav"><a href="home.html" data-t="home"></a><span data-t="discover"></span><a href="library.html" data-t="library"></a><span data-t="living"></span><a href="projects.html" data-t="projects"></a><span data-t="participate"></span><button class="lang" data-lang>ع</button></nav></div></header>
+<nav class="nav"><a href="home.html" data-t="home"></a><span data-t="discover"></span><a href="library.html" data-t="library"></a><span data-t="living"></span><a href="projects.html" data-t="projects"></a><span data-t="participate"></span><select class="lang lang-select" data-lang-select>
+<option value="ar">العربية</option><option value="en">English</option><option value="nl">Nederlands</option><option value="es">Español</option><option value="he">עברית</option></select></nav></div></header>
 
 <main class="sacred-page">
 <section class="sacred-card">
@@ -13,16 +14,11 @@
 <p class="sacred-lead" data-t="ntLead"></p>
 <div class="sacred-kicker" data-t="john2031"></div>
 
-<div id="ntAr" class="lang-sacred">
-  <div class="arabic-sacred" lang="ar" dir="rtl">وَأَمَّا هذِهِ فَقَدْ كُتِبَتْ لِتُؤْمِنُوا أَنَّ يَسُوعَ هُوَ الْمَسِيحُ ابْنُ اللهِ وَلِكَيْ تَكُونَ لَكُمْ إِذَا آمَنْتُمْ حَيَاةٌ بِاسْمِهِ</div>
-  <div class="sacred-kicker" style="margin-top:22px" data-t="writtenLife"></div>
-</div>
-
-<div id="ntEn" class="lang-sacred">
-  <div class="greek" lang="grc" dir="ltr">ταῦτα δὲ γέγραπται ἵνα πιστεύσητε ὅτι Ἰησοῦς ἐστιν ὁ Χριστὸς ὁ υἱὸς τοῦ θεοῦ καὶ ἵνα πιστεύοντες ζωὴν ἔχητε ἐν τῷ ὀνόματι αὐτοῦ</div>
-  <div class="sacred-translation" lang="en" dir="ltr">But these are written that ye may believe that Jesus is the Christ the Son of God and that believing ye may have life in his name</div>
-  <div class="sacred-kicker" style="margin-top:22px" data-t="writtenLife"></div>
-</div>
+<div id="ntAr" class="lang-sacred" data-sacred-lang="ar"><div class="arabic-sacred" lang="ar" dir="rtl">وَأَمَّا هذِهِ فَقَدْ كُتِبَتْ لِتُؤْمِنُوا أَنَّ يَسُوعَ هُوَ الْمَسِيحُ ابْنُ اللهِ وَلِكَيْ تَكُونَ لَكُمْ إِذَا آمَنْتُمْ حَيَاةٌ بِاسْمِهِ</div><div class="sacred-kicker" style="margin-top:22px" data-t="writtenLife"></div></div>
+<div id="ntEn" class="lang-sacred" data-sacred-lang="en"><div class="greek" lang="grc" dir="ltr">ταῦτα δὲ γέγραπται ἵνα πιστεύσητε ὅτι Ἰησοῦς ἐστιν ὁ Χριστὸς ὁ υἱὸς τοῦ θεοῦ καὶ ἵνα πιστεύοντες ζωὴν ἔχητε ἐν τῷ ὀνόματι αὐτοῦ</div><div class="sacred-translation" lang="en" dir="ltr" data-voice-text>These are written so that you may believe that Jesus is the Christ, the Son of God, and that by believing you may have life in his name</div><div class="sacred-kicker" style="margin-top:22px" data-t="writtenLife"></div></div>
+<div id="ntNl" class="lang-sacred" data-sacred-lang="nl"><div class="greek" lang="grc" dir="ltr">ταῦτα δὲ γέγραπται ἵνα πιστεύσητε ὅτι Ἰησοῦς ἐστιν ὁ Χριστὸς ὁ υἱὸς τοῦ θεοῦ καὶ ἵνα πιστεύοντες ζωὴν ἔχητε ἐν τῷ ὀνόματι αὐτοῦ</div><div class="sacred-translation" lang="nl" dir="ltr" data-voice-text>Deze dingen zijn geschreven opdat u gelooft dat Jezus de Christus is, de Zoon van God, en opdat u door te geloven leven hebt in zijn naam</div><div class="sacred-kicker" style="margin-top:22px" data-t="writtenLife"></div></div>
+<div id="ntEs" class="lang-sacred" data-sacred-lang="es"><div class="greek" lang="grc" dir="ltr">ταῦτα δὲ γέγραπται ἵνα πιστεύσητε ὅτι Ἰησοῦς ἐστιν ὁ Χριστὸς ὁ υἱὸς τοῦ θεοῦ καὶ ἵνα πιστεύοντες ζωὴν ἔχητε ἐν τῷ ὀνόματι αὐτοῦ</div><div class="sacred-translation" lang="es" dir="ltr" data-voice-text>Estas cosas han sido escritas para que crean que Jesús es el Cristo, el Hijo de Dios, y para que, creyendo, tengan vida en su nombre</div><div class="sacred-kicker" style="margin-top:22px" data-t="writtenLife"></div></div>
+<div id="ntHe" class="lang-sacred" data-sacred-lang="he"><div class="greek" lang="grc" dir="ltr">ταῦτα δὲ γέγραπται ἵνα πιστεύσητε ὅτι Ἰησοῦς ἐστιν ὁ Χριστὸς ὁ υἱὸς τοῦ θεοῦ καὶ ἵνα πιστεύοντες ζωὴν ἔχητε ἐν τῷ ὀνόματι αὐτοῦ</div><div class="sacred-translation" lang="he" dir="rtl" data-voice-text>אך אלה נכתבו כדי שתאמינו שישוע הוא המשיח בן האלוהים וכדי שבהאמינכם יהיו לכם חיים בשמו</div><div class="sacred-kicker" style="margin-top:22px" data-t="writtenLife"></div></div>
 
 <div class="intro-note" data-t="ntAudioNote"></div>
 <div class="intro-player">
@@ -37,53 +33,18 @@
 
 <script>
 document.addEventListener("DOMContentLoaded",()=>{
- const audio=document.getElementById("ntAudio")
- const ar=document.getElementById("ntAr")
- const en=document.getElementById("ntEn")
- const listen=document.getElementById("listen")
- const stop=document.getElementById("stop")
- const msg=document.getElementById("msg")
+ const audio=document.getElementById("ntAudio"),listen=document.getElementById("listen"),stop=document.getElementById("stop"),msg=document.getElementById("msg")
  let timer=null
-
- const SOURCES={
-   ar:"https://audio.arabicbible.com/archive/cd/Bible/04-John/20-John-a.mp3",
-   en:"https://archive.org/download/the_gospel_according_to_saint_john_asv_ss_librivox/john_20_asv_64kb.mp3"
+ const SOURCES={ar:"https://audio.arabicbible.com/archive/cd/Bible/04-John/20-John-a.mp3",en:"https://archive.org/download/the_gospel_according_to_saint_john_asv_ss_librivox/john_20_asv_64kb.mp3"}
+ function activeBlock(){return document.querySelector(`[data-sacred-lang="${LANG}"]`)}
+ function configure(){audio.pause();stopSpeech();audio.removeAttribute("src");msg.textContent="";document.querySelectorAll("[data-sacred-lang]").forEach(x=>x.classList.toggle("active",x.dataset.sacredLang===LANG));if(SOURCES[LANG]){audio.src=SOURCES[LANG];audio.load()}}
+ function playSelected(){
+  if(SOURCES[LANG]){const go=()=>{if(Number.isFinite(audio.duration)&&audio.duration>30)audio.currentTime=Math.max(0,audio.duration-28);const p=audio.play();if(p&&p.catch)p.catch(()=>msg.textContent=t("autoplayBlocked"))};if(audio.readyState>=1)go();else audio.addEventListener("loadedmetadata",go,{once:true})}
+  else{const el=activeBlock()?.querySelector("[data-voice-text]");if(el&&!speakText(el.textContent,LANG))msg.textContent=t("voiceUnavailable")}
  }
-
- function configure(){
-   audio.pause()
-   audio.removeAttribute("src")
-   msg.textContent=""
-   const isAr=LANG==="ar"
-   ar.classList.toggle("active",isAr)
-   en.classList.toggle("active",!isAr)
-   audio.src=isAr?SOURCES.ar:SOURCES.en
-   audio.load()
- }
-
- function seekAndPlay(){
-   const go=()=>{
-     if(Number.isFinite(audio.duration)&&audio.duration>30){
-       // John 20:31 is the final verse
-       audio.currentTime=Math.max(0,audio.duration-28)
-     }
-     const p=audio.play()
-     if(p&&p.then)p.then(()=>{msg.textContent=""}).catch(()=>{msg.textContent=t("autoplayBlocked")})
-   }
-   if(audio.readyState>=1)go()
-   else audio.addEventListener("loadedmetadata",go,{once:true})
- }
-
- function schedule(){
-   clearTimeout(timer)
-   timer=setTimeout(seekAndPlay,5000)
- }
-
- listen.addEventListener("click",seekAndPlay)
- stop.addEventListener("click",()=>{audio.pause();msg.textContent=""})
- document.addEventListener("luxlang",()=>{configure();schedule()})
- configure()
- schedule()
+ function schedule(){clearTimeout(timer);timer=setTimeout(playSelected,5000)}
+ listen.onclick=playSelected;stop.onclick=()=>{audio.pause();stopSpeech();msg.textContent=""}
+ document.addEventListener("luxlang",()=>{configure();schedule()});configure();schedule()
 })
 </script>
 </body></html>

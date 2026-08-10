@@ -25,7 +25,7 @@ function scheduleOpeningAyah(){
           const p=$("#player");
           if(p){
             p.classList.add("on");
-            $("#pref").textContent=LANG==="ar"?"البقرة — 2:2 — اضغط ▶ للاستماع":"Al-Baqarah — 2:2 — Press ▶ to listen";
+            $("#pref").textContent=({ar:"البقرة — 2:2 — اضغط ▶ للاستماع",en:"Al-Baqarah — 2:2 — Press ▶ to listen",nl:"Al-Baqarah — 2:2 — druk ▶ om te luisteren",es:"Al-Baqarah — 2:2 — pulsa ▶ para escuchar",he:"אל-בקרה — 2:2 — לחצו ▶ להאזנה"}[LANG]||"Al-Baqarah — 2:2 — Press ▶ to listen");
           }
         }
       },700);

@@ -1,0 +1,30 @@
+LuxDot v1.9 — Five Core Languages
+Arabic · English · Dutch · Spanish · Hebrew
+
+Built directly on v1.8 RESEARCH_ROUTE_FIXED
+
+Preserved:
+- dark LuxDot signal palette
+- Library
+- Qur'an reader and recitation logic
+- Tanakh / New Testament sacred pages
+- Projects
+- Living Research tree
+- 25 km / 70-record care map
+- direct /shaam-breda.html route
+
+Added:
+- five-language selector persisted across the whole site
+- proper RTL for Arabic and Hebrew
+- Dutch and Spanish UI throughout core pages
+- Hebrew UI throughout core pages
+- multilingual Living Research node labels and descriptions
+- language-aware passage audio:
+  * Arabic/English use existing recorded sources where available
+  * Dutch/Spanish/Hebrew use the browser's local voice for the displayed translation when a matching voice exists
+  * original sacred-language text remains visible
+- terminal-dot cleanup remains active
+
+Audio principle:
+Recorded original recitation is not replaced by a synthetic translation
+Translation speech is a separate language-aware accessibility layer
