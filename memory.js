@@ -1,67 +1,62 @@
 (()=>{
 "use strict";
 let DB=null,view='tree';
-const V=document.getElementById('memoryView');
-const D=document.getElementById('nodeDialog');
-const titleEl=document.getElementById('memTitle');
-const leadEl=document.getElementById('memLead');
+const V=document.getElementById('memoryView'),D=document.getElementById('nodeDialog'),titleEl=document.getElementById('memTitle'),leadEl=document.getElementById('memLead');
 if(!V||!D||!titleEl||!leadEl){console.error('LuxDot Memory: required DOM nodes missing');return}
-
 const UI={
- en:['Memory is not a list of dates','A living atlas of people, places, crimes, rescue, resistance and reconciliation — sourced, versioned and open to correction'],
- ar:['الذاكرة ليست قائمة تواريخ','أطلس حي للأشخاص والأماكن والجرائم والإنقاذ والمقاومة والمصالحة — موثّق، مؤرشف بالإصدارات، وقابل للتصحيح'],
- nl:['Herinnering is geen lijst met data','Een levende atlas van mensen, plaatsen, misdaden, redding, verzet en verzoening — met bronnen, versies en ruimte voor correctie'],
- es:['La memoria no es una lista de fechas','Un atlas vivo de personas, lugares, crímenes, rescate, resistencia y reconciliación — con fuentes, versiones y abierto a corrección'],
- he:['זיכרון אינו רשימת תאריכים','אטלס חי של אנשים, מקומות, פשעים, הצלה, התנגדות ופיוס — מתועד, בגרסאות ופתוח לתיקון']
+ en:{title:'Memory is not a list of dates',lead:'A living atlas of people, places, crimes, rescue, resistance and reconciliation — sourced, versioned and open to correction',loading:'Loading living memory…',error:'Memory data could not be loaded',center:'LIVING MEMORY',documented:'Documented'},
+ ar:{title:'الذاكرة ليست قائمة تواريخ',lead:'أطلس حي للأشخاص والأماكن والجرائم والإنقاذ والمقاومة والمصالحة — موثّق، مؤرشف بالإصدارات، وقابل للتصحيح',loading:'جارٍ تحميل الذاكرة الحيّة…',error:'تعذر تحميل بيانات الذاكرة',center:'الذاكرة الحيّة',documented:'موثّق'},
+ nl:{title:'Herinnering is geen lijst met data',lead:'Een levende atlas van mensen, plaatsen, misdaden, redding, verzet en verzoening — met bronnen, versies en ruimte voor correctie',loading:'Levend geheugen laden…',error:'Geheugengegevens konden niet worden geladen',center:'LEVEND GEHEUGEN',documented:'Gedocumenteerd'}
 };
-function lang(){return localStorage.getItem('luxdot.lang')||document.documentElement.lang||'en'}
-function translateHead(){const a=UI[lang()]||UI.en;titleEl.textContent=a[0];leadEl.textContent=a[1]}
-function esc(v=''){const s=String(v??'');return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+const I18N={
+ westerweel:{
+  ar:{theme:'إنقاذ',title:'يوب فيسترفيل',place:'كامب فوخت · هولندا',summary:'مدرس هولندي، مسالم ومنظم في المقاومة. ساعد يهودًا وشبانًا من رواد فلسطين على الاختباء والهرب. أُعدم في كامب فوخت في 11 أغسطس 1944',question:'ماذا تتطلب الحماية عندما يتحول القانون نفسه إلى أداة اضطهاد؟'},
+  nl:{theme:'REDDING',title:'Joop Westerweel',place:'Kamp Vught · Nederland',summary:'Nederlandse leraar, pacifist en verzetsorganisator. Hij hielp Joden en jonge Palestinapioniers onderduiken en ontsnappen. Op 11 augustus 1944 werd hij in Kamp Vught geëxecuteerd',question:'Wat vraagt bescherming van ons wanneer de wet zelf vervolging is geworden?'}},
+ stazzema:{ar:{theme:'مدنيون',title:'سانت آنا دي ستاتسيما',place:'توسكانا · إيطاليا',summary:'في 12 أغسطس 1944 قُتل مدنيون في سانت آنا دي ستاتسيما والقرى المجاورة على يد قوات ألمانية من الإس إس مع متعاونين فاشيين. أصبح الموقع لاحقًا حديقة وطنية للسلام',question:'كيف يمكن لمكان مجزرة أن يعلّم السلام من دون محو ما حدث؟'},nl:{theme:'BURGERS',title:'Sant’Anna di Stazzema',place:'Toscane · Italië',summary:'Op 12 augustus 1944 werden burgers in Sant’Anna di Stazzema en omliggende gehuchten vermoord door Duitse SS-troepen met fascistische collaborateurs. De plek werd later een Nationaal Vredespark',question:'Hoe kan een plaats van massamoord vrede onderwijzen zonder uit te wissen wat er gebeurde?'}},
+ deportation:{ar:{theme:'ترحيل',title:'آلة الترحيل',place:'أوروبا · 1942',summary:'يكشف أغسطس 1942 كيف يتحول الاضطهاد إلى لوجستيات: غيتوات ونقل وتنسيق إداري وترحيل. نستخدم ريمانوف ورادوم هنا كنوافذ موثقة لا كرمزين لكل التجارب',question:'متى تتحول البيروقراطية إلى مشاركة في العنف؟'},nl:{theme:'DEPORTATIE',title:'De machine van deportatie',place:'Europa · 1942',summary:'Augustus 1942 laat zien hoe vervolging logistiek wordt: getto’s, transporten, administratieve coördinatie en deportatie. Rymanów en Radom dienen hier als gedocumenteerde vensters, niet als symbool voor alle ervaringen',question:'Wanneer wordt bureaucratie deelname aan geweld?'}},
+ kolbe:{ar:{theme:'تضحية',title:'ماكسيميليان كولبه',place:'أوشفيتز 1 · بولندا',summary:'تطوع كولبه ليأخذ مكان فرانتشيشك غايوفنيتشيك الذي اختير للموت جوعًا. قُتل كولبه بحقنة سامة في 14 أغسطس 1941 داخل المبنى 11',question:'كيف نحفظ نور التضحية من دون تحويل المعاناة إلى استعراض؟'},nl:{theme:'OPOFFERING',title:'Maximilian Kolbe',place:'Auschwitz I · Polen',summary:'Kolbe bood aan de plaats in te nemen van Franciszek Gajowniczek, die was uitgekozen om van honger te sterven. Kolbe werd op 14 augustus 1941 in Blok 11 met een gifinjectie gedood',question:'Hoe vertellen we over opoffering zonder lijden tot spektakel te maken?'}},
+ indies:{ar:{theme:'ذاكرة',title:'15 أغسطس — هولندا تتذكر',place:'بريدا · لاهاي · هولندا',summary:'تحيي هولندا ذكرى نهاية الحرب العالمية الثانية بالنسبة للمملكة وضحايا الحرب ضد اليابان والاحتلال الياباني لجزر الهند الشرقية الهولندية السابقة. ويضم النصب الهندي في لاهاي جرسًا برونزيًا للذاكرة',question:'كيف تصبح الذاكرة العامة شيئًا يرثه الجيل التالي بدل أن يكتفي بمشاهدته؟'},nl:{theme:'HERDENKING',title:'15 augustus — Nederland herdenkt',place:'Breda · Den Haag · Nederland',summary:'Nederland herdenkt het einde van de Tweede Wereldoorlog voor het Koninkrijk en de slachtoffers van de oorlog tegen Japan en de Japanse bezetting van voormalig Nederlands-Indië. Bij het Indisch Monument in Den Haag staat een bronzen herdenkingsklok',question:'Hoe wordt openbare herdenking iets dat een volgende generatie kan erven in plaats van alleen bekijken?'}},
+ 'roger-bialystok':{ar:{theme:'مقاومة / مصالحة',title:'الأخ روجيه · بياويستوك',place:'تيزيه / بياويستوك',summary:'نضع ذاكرتين منفصلتين جنبًا إلى جنب من دون دمجهما: المقاومة اليهودية المسلحة أثناء تصفية غيتو بياويستوك سنة 1943، وحياة الأخ روجيه من تيزيه الذي قُتل أثناء صلاة المساء في 16 أغسطس 2005 بعد حياة كرّسها للمصالحة والتضامن',question:'متى تتطلب حماية الحياة مقاومة، ومتى يتطلب الشفاء مصالحة؟'},nl:{theme:'VERZET / VERZOENING',title:'Broeder Roger · Białystok',place:'Taizé / Białystok',summary:'Twee verschillende herinneringen staan naast elkaar, zonder ze samen te voegen: het Joodse gewapende verzet tijdens de liquidatie van het getto van Białystok in 1943, en het leven van broeder Roger van Taizé, die op 16 augustus 2005 tijdens het avondgebed werd gedood na een leven van verzoening en solidariteit',question:'Wanneer vraagt bescherming van leven om verzet, en wanneer vraagt genezing om verzoening?'}},
+ 'name-truth':{ar:{theme:'هوية / حقيقة',title:'الاسم والكذبة',place:'ألمانيا / لندن',summary:'في 17 أغسطس 1938 فرضت ألمانيا النازية أسماء إضافية، «إسرائيل» على كثير من الرجال اليهود و«سارا» على كثير من النساء اليهوديات، كعلامة إدارية. وفي 17 أغسطس 1921 نشرت صحيفة التايمز تحقيق فيليب غريفز الذي كشف سرقة النصوص التي بُني عليها تزوير «البروتوكولات» المعادي لليهود',question:'كيف تسهّل التصنيفات الاضطهاد، وكيف يفكك التحقق الصارم من المصادر كذبةً مسلّحة؟'},nl:{theme:'IDENTITEIT / WAARHEID',title:'De naam en de leugen',place:'Duitsland / Londen',summary:'Op 17 augustus 1938 legde nazi-Duitsland extra namen op: Israel voor veel Joodse mannen en Sara voor veel Joodse vrouwen, als administratief kenmerk. Op 17 augustus 1921 publiceerde The Times Philip Graves’ onthulling van het plagiaat achter de antisemitische vervalsing van de Protocollen',question:'Hoe maken etiketten vervolging gemakkelijker, en wat doet grondige broncontrole met een bewapende leugen?'}}
+};
+const FIELD={
+ ar:{visit:'زيارة',official:'رسمي',titles:{'Vught':'النصب الوطني كامب فوخت','Sant’Anna di Stazzema':'الذكرى 82 لمجزرة سانت آنا دي ستاتسيما','Oświęcim / Harmęże':'الذكرى 85 لوفاة ماكسيميليان كولبه','Breda':'إحياء ذكرى الهند الشرقية في رافي','Den Haag':'الذكرى الوطنية لـ15 أغسطس 1945','Bergen op Zoom':'إحياء ذكرى الهند الشرقية — الوعد'},notes:{
+  '2026-08-11':'لم نجد فعالية سنوية خاصة منشورة؛ المتحف وأرض المعسكر السابق مفتوحان. تُعامل الزيارة كمحطة ذكرى موثقة',
+  '2026-08-12':'قداس 08:30، أكاليل، مراسم رسمية عند النصب من 09:45، كلمات من 10:00، ومعرض ألوان من أجل السلام 11:30',
+  '2026-08-14':'طقس تذكاري 08:00، مسيرات، زهور 10:00، قداس مركزي قرب المبنى 11 الساعة 10:30، وصلوات إضافية',
+  'Breda':'تبدأ 14:00 ويُطلب الجلوس قبل 13:45؛ مرور تذكاري ووضع الزهور 15:30',
+  'Den Haag':'يفتح الميدان 17:00؛ المراسم 18:45–20:00. مقاعد إضافية وفق أسبقية الوصول من دون تذكرة',
+  'Bergen op Zoom':'ذكرى إقليمية مع شهادات أربعة أجيال وموسيقى ولقاء بعد المراسم'}},
+ nl:{visit:'bezoek',official:'officieel',titles:{'Vught':'Nationaal Monument Kamp Vught','Sant’Anna di Stazzema':'82e herdenking van de massamoord','Oświęcim / Harmęże':'85e herdenking van de dood van Maximilian Kolbe','Breda':'Indië-herdenking bij Raffy','Den Haag':'Nationale Herdenking 15 augustus 1945','Bergen op Zoom':'Indië-herdenking — De belofte'},notes:{
+  '2026-08-11':'Geen specifieke jaarlijkse Westerweel-herdenking gevonden; museum en voormalig kampterrein zijn open. Behandel het bezoek als een gedocumenteerde herdenkingsstop',
+  '2026-08-12':'Mis 08:30; kranslegging; officiële ceremonie bij het Ossuarium vanaf 09:45; toespraken vanaf 10:00; Colors for Peace om 11:30',
+  '2026-08-14':'Transitus 08:00; pelgrimstochten; bloemen 10:00; centrale mis bij Blok 11 om 10:30; verdere diensten later op de dag',
+  'Breda':'Start 14:00; bezoekers worden gevraagd om 13:45 te zitten; defilé en bloemenlegging om 15:30',
+  'Den Haag':'Veld open 17:00; ceremonie 18:45–20:00. Extra zitplaatsen op volgorde van aankomst, zonder ticket',
+  'Bergen op Zoom':'Regionale herdenking met verhalen van vier generaties, muziek en ontmoeting na afloop'}}
+};
+function lang(){const l=localStorage.getItem('luxdot.lang')||document.documentElement.lang||'en';return ['ar','en','nl'].includes(l)?l:'en'}
+function ui(){return UI[lang()]||UI.en}
+function trNode(n){const z=I18N[n.id]?.[lang()];return z?{...n,...z}:n}
+function esc(v=''){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function fmt(d){try{return new Intl.DateTimeFormat(lang(),{weekday:'short',day:'2-digit',month:'short'}).format(new Date(d+'T12:00:00'))}catch{return d}}
-function openNode(id){
- const n=DB?.nodes?.find(x=>x.id===id); if(!n)return;
- D.innerHTML=`<article class="node-panel"><button class="closex" aria-label="Close">×</button><div class="node-meta">${fmt(n.date)} / ${esc(n.theme)} / ${esc(n.status)}</div><h2>${esc(n.title)}</h2><div class="node-meta">${esc(n.place)}</div>${n.image?`<img src="${esc(n.image)}" alt="${esc(n.title)}" loading="lazy" referrerpolicy="no-referrer"><div class="credit">${esc(n.imageCredit||'')}</div>`:''}<p>${esc(n.summary)}</p><p class="question">${esc(n.question)}</p><div class="link-row">${[...(n.sources||[]),...(n.media||[])].map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)} ↗</a>`).join('')}</div></article>`;
- D.classList.add('on');D.setAttribute('aria-hidden','false');D.querySelector('.closex')?.addEventListener('click',close)
-}
+function translateHead(){titleEl.textContent=ui().title;leadEl.textContent=ui().lead}
+function fieldNote(f){if(lang()==='en')return f.note;const x=FIELD[lang()];return x?.notes?.[f.city]||x?.notes?.[f.date]||f.note}
+function fieldKind(f){if(lang()==='en')return String(f.kind||'').toUpperCase();return (FIELD[lang()]?.[f.kind]||f.kind||'').toUpperCase()}
+function fieldTitle(f){if(lang()==='en')return f.title;return FIELD[lang()]?.titles?.[f.city]||f.title}
+function openNode(id){const raw=DB?.nodes?.find(x=>x.id===id);if(!raw)return;const n=trNode(raw);D.innerHTML=`<article class="node-panel"><button class="closex" aria-label="${esc(lang()==='ar'?'إغلاق':lang()==='nl'?'Sluiten':'Close')}">×</button><div class="node-meta">${fmt(n.date)} / ${esc(n.theme)} / ${esc(lang()==='en'?n.status:ui().documented)}</div><h2>${esc(n.title)}</h2><div class="node-meta">${esc(n.place)}</div>${n.image?`<img src="${esc(n.image)}" alt="${esc(n.title)}" loading="lazy" referrerpolicy="no-referrer"><div class="credit">${esc(n.imageCredit||'')}</div>`:''}<p>${esc(n.summary)}</p><p class="question">${esc(n.question)}</p><div class="link-row">${[...(n.sources||[]),...(n.media||[])].map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)} ↗</a>`).join('')}</div></article>`;D.classList.add('on');D.setAttribute('aria-hidden','false');D.querySelector('.closex')?.addEventListener('click',close)}
 function close(){D.classList.remove('on');D.setAttribute('aria-hidden','true')}
-D.addEventListener('click',e=>{if(e.target===D)close()}); addEventListener('keydown',e=>{if(e.key==='Escape')close()});
-
-function radialPoints(count){
- if(count<=0)return[];
- const out=[];
- for(let i=0;i<count;i++){
-   const a=(-Math.PI/2)+(i/count)*Math.PI*2;
-   const rx=count>10?38:34, ry=count>10?37:34;
-   out.push([50+Math.cos(a)*rx,50+Math.sin(a)*ry]);
- }
- return out;
-}
-function tree(){
- const nodes=DB.nodes||[], pts=radialPoints(nodes.length);
- V.innerHTML=`<div class="tree-stage"><svg class="tree-lines" viewBox="0 0 100 100" preserveAspectRatio="none">${pts.map(p=>`<line x1="50" y1="50" x2="${p[0]}" y2="${p[1]}" stroke="rgba(125,255,174,.18)" stroke-width=".15"/>`).join('')}<circle cx="50" cy="50" r="24" fill="none" stroke="rgba(210,177,91,.12)" stroke-width=".12" stroke-dasharray="1 2"/></svg><div class="tree-center">LIVING<br>MEMORY</div>${nodes.map((n,i)=>`<button class="memory-node" data-id="${esc(n.id)}" style="left:${pts[i][0]}%;top:${pts[i][1]}%"><time>${fmt(n.date)}</time><b>${esc(n.title)}</b><small>${esc(n.theme)}</small></button>`).join('')}</div>`;
- bindNodes();
-}
-function timeline(){V.innerHTML=`<div class="timeline">${(DB.nodes||[]).map(n=>`<article class="time-row" data-id="${esc(n.id)}"><div class="time-date">${fmt(n.date)}</div><div><h3>${esc(n.title)}</h3><p>${esc(n.summary)}</p></div></article>`).join('')}</div>`;bindNodes()}
-function map(){
- const nodes=(DB.nodes||[]).filter(n=>Number.isFinite(n.lat)&&Number.isFinite(n.lon));
- const bounds={minLat:35,maxLat:58,minLon:-10,maxLon:30};
- const pos=n=>[(n.lon-bounds.minLon)/(bounds.maxLon-bounds.minLon)*84+8,(bounds.maxLat-n.lat)/(bounds.maxLat-bounds.minLat)*78+11];
- V.innerHTML=`<div class="map-wrap"><div class="map-canvas"><svg class="europe" viewBox="0 0 400 300" aria-hidden="true"><path d="M36 71L78 45l46 14 35-27 41 18 25-12 48 22 15 39 48 25 16 48-36 25-9 41-44 6-31-21-31 14-38-24-40-3-22-34-31-11-17-36z" fill="none" stroke="rgba(125,255,174,.5)" stroke-width="2"/><path d="M143 214l26 25-8 43-22 8-17-33zM206 216l25 17 4 50-17 7-17-38z" fill="none" stroke="rgba(125,255,174,.4)"/></svg>${nodes.map(n=>{const p=pos(n);return`<button title="${esc(n.title)}" data-id="${esc(n.id)}" class="map-dot" style="left:${p[0]}%;top:${p[1]}%"><span class="map-label">${esc(n.title)}</span></button>`}).join('')}</div><div class="map-list">${nodes.map(n=>`<article class="map-card" data-id="${esc(n.id)}"><b>${esc(n.title)}</b><small>${esc(n.place)} · ${fmt(n.date)}</small></article>`).join('')}</div></div>`;bindNodes()
-}
-function field(){V.innerHTML=`<div class="field-grid">${(DB.field||[]).map(f=>`<article class="field-card"><span class="badge">${fmt(f.date)} / ${esc(String(f.kind||'').toUpperCase())}</span><b>${esc(f.title)}</b><small>${esc(f.city)} · ${esc(f.time)}<br>${esc(f.address)}<br><br>${esc(f.note)}</small></article>`).join('')}</div>`}
-function sources(){let all=[];(DB.nodes||[]).forEach(n=>(n.sources||[]).forEach(s=>all.push({...s,node:n.title,date:n.date})));V.innerHTML=`<div class="source-grid">${all.map(s=>`<article class="source-card"><small>${fmt(s.date)} · ${esc(s.node)}</small><br><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)} ↗</a></article>`).join('')}</div>`}
+D.addEventListener('click',e=>{if(e.target===D)close()});addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+function radialPoints(count){if(count<=0)return[];return Array.from({length:count},(_,i)=>{const a=(-Math.PI/2)+(i/count)*Math.PI*2,rx=count>10?38:34,ry=count>10?37:34;return[50+Math.cos(a)*rx,50+Math.sin(a)*ry]})}
+function tree(){const nodes=(DB.nodes||[]).map(trNode),pts=radialPoints(nodes.length);V.innerHTML=`<div class="tree-stage"><svg class="tree-lines" viewBox="0 0 100 100" preserveAspectRatio="none">${pts.map(p=>`<line x1="50" y1="50" x2="${p[0]}" y2="${p[1]}" stroke="rgba(125,255,174,.18)" stroke-width=".15"/>`).join('')}<circle cx="50" cy="50" r="24" fill="none" stroke="rgba(210,177,91,.12)" stroke-width=".12" stroke-dasharray="1 2"/></svg><div class="tree-center">${esc(ui().center).replace(' ','<br>')}</div>${nodes.map((n,i)=>`<button class="memory-node" data-id="${esc(n.id)}" style="left:${pts[i][0]}%;top:${pts[i][1]}%"><time>${fmt(n.date)}</time><b>${esc(n.title)}</b><small>${esc(n.theme)}</small></button>`).join('')}</div>`;bindNodes()}
+function timeline(){V.innerHTML=`<div class="timeline">${(DB.nodes||[]).map(trNode).map(n=>`<article class="time-row" data-id="${esc(n.id)}"><div class="time-date">${fmt(n.date)}</div><div><h3>${esc(n.title)}</h3><p>${esc(n.summary)}</p></div></article>`).join('')}</div>`;bindNodes()}
+function map(){const nodes=(DB.nodes||[]).filter(n=>Number.isFinite(n.lat)&&Number.isFinite(n.lon)).map(trNode),bounds={minLat:35,maxLat:58,minLon:-10,maxLon:30},pos=n=>[(n.lon-bounds.minLon)/(bounds.maxLon-bounds.minLon)*84+8,(bounds.maxLat-n.lat)/(bounds.maxLat-bounds.minLat)*78+11];V.innerHTML=`<div class="map-wrap"><div class="map-canvas"><svg class="europe" viewBox="0 0 400 300" aria-hidden="true"><path d="M36 71L78 45l46 14 35-27 41 18 25-12 48 22 15 39 48 25 16 48-36 25-9 41-44 6-31-21-31 14-38-24-40-3-22-34-31-11-17-36z" fill="none" stroke="rgba(125,255,174,.5)" stroke-width="2"/></svg>${nodes.map(n=>{const p=pos(n);return`<button title="${esc(n.title)}" data-id="${esc(n.id)}" class="map-dot" style="left:${p[0]}%;top:${p[1]}%"><span class="map-label">${esc(n.title)}</span></button>`}).join('')}</div><div class="map-list">${nodes.map(n=>`<article class="map-card" data-id="${esc(n.id)}"><b>${esc(n.title)}</b><small>${esc(n.place)} · ${fmt(n.date)}</small></article>`).join('')}</div></div>`;bindNodes()}
+function field(){V.innerHTML=`<div class="field-grid">${(DB.field||[]).map(f=>`<article class="field-card"><span class="badge">${fmt(f.date)} / ${esc(fieldKind(f))}</span><b>${esc(fieldTitle(f))}</b><small>${esc(f.city)} · ${esc(f.time)}<br>${esc(f.address)}<br><br>${esc(fieldNote(f))}</small></article>`).join('')}</div>`}
+function sources(){let all=[];(DB.nodes||[]).forEach(raw=>{const n=trNode(raw);(n.sources||[]).forEach(s=>all.push({...s,node:n.title,date:n.date}))});V.innerHTML=`<div class="source-grid">${all.map(s=>`<article class="source-card"><small>${fmt(s.date)} · ${esc(s.node)}</small><br><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)} ↗</a></article>`).join('')}</div>`}
 function bindNodes(){V.querySelectorAll('[data-id]').forEach(el=>el.addEventListener('click',()=>openNode(el.dataset.id)))}
 function render(){if(!DB)return;({tree,timeline,map,field,sources}[view]||tree)()}
 document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{view=b.dataset.view;document.querySelectorAll('[data-view]').forEach(x=>x.classList.toggle('on',x===b));render()}));
 document.addEventListener('luxlang',()=>{translateHead();render()});
-
-async function boot(){
- translateHead(); V.innerHTML='<div class="status">Loading living memory…</div>';
- // Embedded copy makes the Atlas work on file://, static hosts and offline previews.
- if(window.LUXDOT_MEMORY_DB){DB=window.LUXDOT_MEMORY_DB;render();return}
- try{
-   const r=await fetch('data/memory-atlas.json',{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);DB=await r.json();render();
- }catch(err){console.error('LuxDot Memory load failed',err);V.innerHTML='<div class="status">Memory dataset could not be loaded</div>'}
-}
+function boot(){translateHead();V.innerHTML=`<div class="status">${esc(ui().loading)}</div>`;if(window.LUXDOT_MEMORY_DB&&Array.isArray(window.LUXDOT_MEMORY_DB.nodes)){DB=window.LUXDOT_MEMORY_DB;render();return}console.error('LuxDot Memory: embedded dataset missing');V.innerHTML=`<div class="status">${esc(ui().error)}</div>`}
 boot();
 })();

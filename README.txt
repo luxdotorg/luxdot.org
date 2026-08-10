@@ -19,3 +19,12 @@ Smith Van Dyck public-domain Arabic Bible
 
 Arabic audio
 Arabic Bible Outreach Ministry chapter recordings
+
+
+LuxDot v2.4 MEMORY SIGNAL — 10 Aug 2026
+- Replaced landing with immersive Matrix signal gate
+- Added five-language landing selector
+- Added Living Memory as a primary navigation layer
+- Added Memory Atlas data/tree/time/map/field/sources
+- Added Field Roadmap and 7 printable Arabic daily handouts
+- Preserved existing v2.3 site/research/library structure

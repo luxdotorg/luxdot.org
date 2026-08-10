@@ -13,3 +13,8 @@ body{position:relative}#matrix{position:fixed;inset:0;width:100%;height:100%;opa
 html[dir=rtl] .gate{direction:rtl}html[dir=rtl] .sig-status{direction:ltr}
 @media(max-width:700px){.sig-status{font-size:7px;top:12px;left:12px;right:12px}.gate h1{letter-spacing:.05em}.eyebrow{letter-spacing:.18em}.gate p{max-width:340px;line-height:1.7}.langpick{max-width:340px}.micro{display:none}}
 @media(prefers-reduced-motion:reduce){.noise,.scan{animation:none}.ghost{display:none}}
+
+/* v2.4.2 signal crossing */
+.burst{position:fixed;inset:0;z-index:50;pointer-events:none;opacity:0;background:radial-gradient(circle at var(--bx,50vw) var(--by,50vh),rgba(240,255,245,1) 0 2px,rgba(88,255,145,.96) 3px,rgba(27,215,92,.35) 8px,rgba(0,12,4,.98) 16px,#000 22px);clip-path:circle(0 at var(--bx,50vw) var(--by,50vh))}
+.burst.go{opacity:1;animation:signalBurst .82s cubic-bezier(.16,.84,.24,1) forwards}
+@keyframes signalBurst{0%{clip-path:circle(0 at var(--bx,50vw) var(--by,50vh));filter:brightness(2)}45%{filter:brightness(1.35)}100%{clip-path:circle(160vmax at var(--bx,50vw) var(--by,50vh));filter:brightness(1)}}

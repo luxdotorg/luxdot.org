@@ -1,17 +1,26 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>LuxDot</title><link rel="stylesheet" href="styles.css"></head><body>
-<main class="landing"><div class="landbox"><h1>LUX<b>•</b>DOT</h1>
-<p id="landsub">A Common Language for a Diverse Humanity</p>
-<div class="langpick">
-<button onclick="pick('ar')">العربية</button><button onclick="pick('en')">English</button><button onclick="pick('nl')">Nederlands</button><button onclick="pick('es')">Español</button><button onclick="pick('he')">עברית</button>
-</div><a id="enter" class="btn enterlink" href="home.html">Enter LuxDot</a></div></main>
-<script>
-const L={
-ar:["لغة مشتركة لإنسانية متنوعة","الدخول إلى لوكسدوت","rtl"],
-en:["A Common Language for a Diverse Humanity","Enter LuxDot","ltr"],
-nl:["Een gemeenschappelijke taal voor een diverse mensheid","LuxDot binnengaan","ltr"],
-es:["Un lenguaje común para una humanidad diversa","Entrar en LuxDot","ltr"],
-he:["שפה משותפת לאנושות מגוונת","כניסה ל-LuxDot","rtl"]}
-function pick(l){localStorage.setItem("luxdot.lang",l);document.documentElement.lang=l;document.documentElement.dir=L[l][2];landsub.textContent=L[l][0];enter.textContent=L[l][1];enter.classList.add("on")}
-const s=localStorage.getItem("luxdot.lang");if(L[s])pick(s)
-</script></body></html>
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#000000"><title>LuxDot — Signal</title>
+<link rel="stylesheet" href="intro.css">
+</head>
+<body>
+<canvas id="matrix" aria-hidden="true"></canvas>
+<div class="noise" aria-hidden="true"></div><div class="scan" aria-hidden="true"></div><div class="vignette" aria-hidden="true"></div>
+<div id="signals" class="signals" aria-hidden="true"></div>
+<div class="sig-status" aria-hidden="true"><span id="statusA"></span><span id="statusB"></span></div>
+<main class="gate" id="gate">
+  <div class="mark"><span></span></div>
+  <div class="eyebrow" id="eyebrow"></div>
+  <h1>LUX<span>•</span>DOT</h1>
+  <p id="sub"></p>
+  <div class="langpick" id="langpick" aria-label="Language">
+    <button data-lang="ar">العربية</button><button data-lang="en">English</button><button data-lang="nl">Nederlands</button>
+  </div>
+  <button id="enter" class="enter" type="button"></button>
+  <div class="micro" id="micro"></div><div id="burst" class="burst" aria-hidden="true"></div>
+</main>
+<button class="sound" id="sound" aria-label="Toggle ambient signal" title="Toggle ambient signal">◉</button>
+<script src="intro.js"></script>
+</body></html>

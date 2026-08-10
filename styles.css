@@ -208,3 +208,8 @@ rgba(0,12,5,.55)!important;padding-inline:28px 12px!important}
 html[lang="he"] body{font-family:Arial,"Noto Sans Hebrew",sans-serif}
 html[lang="ar"] body{font-family:Arial,"Noto Naskh Arabic","Amiri",sans-serif}
 .voice-option{margin-top:12px;font-size:11px;color:var(--muted)}
+
+/* v2.4.2 point-of-light arrival */
+body.home-arrival{clip-path:circle(0 at var(--entry-x,50vw) var(--entry-y,50vh));opacity:.15}
+body.home-arrival.home-arrival-go{animation:luxArrival .9s cubic-bezier(.18,.82,.22,1) forwards}
+@keyframes luxArrival{0%{clip-path:circle(0 at var(--entry-x,50vw) var(--entry-y,50vh));opacity:.15;filter:brightness(2)}35%{opacity:1;filter:brightness(1.45)}100%{clip-path:circle(160vmax at var(--entry-x,50vw) var(--entry-y,50vh));opacity:1;filter:none}}
