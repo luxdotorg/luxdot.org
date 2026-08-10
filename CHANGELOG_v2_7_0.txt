@@ -1,0 +1,9 @@
+LuxDot v2.7.0
+Base: v2.6
+
+- Replaced sacred-book grids with physical library shelves.
+- Added shelf extraction animation.
+- Added book-specific WebAudio chimes.
+- Added photon/light escape on book opening.
+- Added restrained Blood Mark semantic accent for tragic memory nodes.
+- Versioned core assets to force cache refresh and eliminate persistence of old Faith/Nusantara UI strings.
