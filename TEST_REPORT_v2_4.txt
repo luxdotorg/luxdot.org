@@ -1,0 +1,21 @@
+LuxDot v2.4 MEMORY SIGNAL — QA REPORT
+Date: 10 August 2026
+Base: LuxDot_CLEAN_DARK_v2_3_FULL_QA
+
+Checks completed
+- JavaScript syntax check: app.js, intro.js, memory.js, quran.js, erasmus.js, shaam-breda.js, research.js: PASS
+- Internal local href/src reference scan across root and research HTML: PASS (0 broken local references)
+- memory-atlas.json parses successfully: PASS
+- Five-language core selector restored in shared navigation: Arabic, English, Dutch, Spanish, Hebrew
+- RTL metadata preserved for Arabic and Hebrew
+- New landing is self-contained and does not require external libraries
+- Memory tree/time/map/field/source views have offline structural fallback; archival images/sources remain external links by design
+
+Visual note
+- Static CSS was reviewed for desktop/mobile breakpoints and overflow-sensitive tree cards
+- Automated Chromium screenshot rendering was attempted but local browser navigation is blocked by the execution environment administrator; no claim of pixel-level browser screenshot QA is made
+
+Content boundary
+- Historical claims in Memory Atlas are tied to authoritative memorial/archive source links
+- Symbolic questions are displayed as questions, not historical facts
+- Distinct events on the same date are kept separate unless a source establishes a direct relation
