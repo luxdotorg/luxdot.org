@@ -1,0 +1,12 @@
+LuxDot v2.7.2 — Native Language Gate
+
+- Entry page language buttons are permanently written in their own languages:
+  العربية · English · Nederlands · Basa Jawa · עברית
+- Replaced the Indonesian entry option with Javanese (Basa Jawa) as requested.
+- Added Hebrew as the fifth entry language.
+- Added Javanese and Hebrew text/RTL behavior to the Matrix entry experience.
+- Language-button names no longer change when another language is selected.
+- All v2.7.1 recovery/deploy-safe files are retained.
+
+Scope note:
+This change applies to the entry/Matrix page. The deeper site translation corpus remains the existing v2.7.1 corpus and will need a separate full Javanese/Hebrew localization pass before those languages can be considered complete site-wide translations.
