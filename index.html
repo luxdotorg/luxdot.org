@@ -9,9 +9,7 @@
 const L={
 ar:["لغة مشتركة لإنسانية متنوعة","الدخول إلى لوكسدوت","rtl"],
 en:["A Common Language for a Diverse Humanity","Enter LuxDot","ltr"],
-nl:["Een gemeenschappelijke taal voor een diverse mensheid","LuxDot binnengaan","ltr"],
-es:["Un lenguaje común para una humanidad diversa","Entrar en LuxDot","ltr"],
-he:["שפה משותפת לאנושות מגוונת","כניסה ל-LuxDot","rtl"]}
+nl:["Een gemeenschappelijke taal voor een diverse mensheid","LuxDot binnengaan","ltr"]}
 function pick(l){localStorage.setItem("luxdot.lang",l);document.documentElement.lang=l;document.documentElement.dir=L[l][2];landsub.textContent=L[l][0];enter.textContent=L[l][1];enter.classList.add("on")}
-const s=localStorage.getItem("luxdot.lang");if(L[s])pick(s)
+const s=localStorage.getItem("luxdot.lang");if(L[s])pick(s);else pick("ar")
 </script></body></html>
