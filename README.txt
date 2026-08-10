@@ -1,3 +1,12 @@
+LuxDot v2.5 — Faith + Nusantara + Bahasa Indonesia
+Base: v2.4.2 MEMORY_LANG_SIGNAL_FIXED
+
+NEW ENTRY POINTS
+- faith.html
+- nusantara.html
+
+See TEST_REPORT_v2_5.txt, LANGUAGE_POLICY_v2_5.txt and NUSANTARA_RESEARCH_NOTE_v1.txt
+
 LUXDOT CLEAN WHITE v1.5
 
 Arabic sacred-language release

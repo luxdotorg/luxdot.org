@@ -37,7 +37,8 @@ async function loadSurah(s,a=1){
   const m=SURAHS[s-1];$("#qtitle").textContent=m.ar;$("#qmeta").textContent=LANG==="ar"?`${t(m.type)} — ${m.n} ${t("verses")}`:`${m.en} — ${t(m.type)} — ${m.n} ${t("verses")}`;
   list($("#sfilter").value||"");
   try{
-    const r=await fetch(`${QAPI}${s}/editions/quran-uthmani,en.sahih`,{cache:"no-store"});
+    const edition=LANG==="id"?"id.indonesian":"en.sahih";
+    const r=await fetch(`${QAPI}${s}/editions/quran-uthmani,${edition}`,{cache:"no-store"});
     if(!r.ok)throw new Error("HTTP "+r.status);
     const j=await r.json();
     const ar=j.data[0].ayahs,en=j.data[1].ayahs;
@@ -68,5 +69,5 @@ $("#audio").addEventListener("ended",()=>{state.playing=false;$("#pp").textConte
 $("#pp").onclick=()=>{const a=$("#audio");if(a.paused){if(!a.src)play(state.a);else a.play()}else a.pause()};
 $("#trans").onclick=()=>{state.en=!state.en;$("#verses").classList.toggle("show-en",state.en);$("#trans").classList.toggle("on",state.en)};
 $("#sfilter").oninput=e=>list(e.target.value);
-document.addEventListener("luxlang",()=>{list($("#sfilter").value||"");const m=SURAHS[state.s-1];$("#qmeta").textContent=LANG==="ar"?`${t(m.type)} — ${m.n} ${t("verses")}`:`${m.en} — ${t(m.type)} — ${m.n} ${t("verses")}`});
+document.addEventListener("luxlang",()=>{list($("#sfilter").value||"");loadSurah(state.s,state.a)});
 document.addEventListener("DOMContentLoaded",()=>{list();loadSurah(2,2).then(()=>scheduleOpeningAyah())});

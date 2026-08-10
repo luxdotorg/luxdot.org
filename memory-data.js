@@ -1,6 +1,6 @@
 window.LUXDOT_MEMORY_DB = {
   "meta": {
-    "version": "2026.08.10-1",
+    "version": "2026.08.10-2",
     "range": "2026-08-11/2026-08-17",
     "principle": "Document first. Interpretation second. Counter-evidence always visible."
   },
@@ -122,17 +122,21 @@ window.LUXDOT_MEMORY_DB = {
       "id": "indies",
       "date": "2026-08-15",
       "theme": "REMEMBRANCE",
-      "title": "15 August — Netherlands remembers",
-      "place": "Breda · Den Haag · Netherlands",
-      "lat": 52.091,
-      "lon": 4.309,
+      "title": "15 August — Breda remembers",
+      "place": "Raffy · Breda · Netherlands",
+      "lat": 51.604,
+      "lon": 4.807,
       "status": "documented",
-      "summary": "The Netherlands commemorates the end of the Second World War for the Kingdom and victims of the war against Japan and the Japanese occupation of the former Dutch East Indies. The Indisch Monument in The Hague includes a bronze memorial bell.",
-      "question": "How does public remembrance become something a later generation can inherit rather than merely observe?",
+      "summary": "On 15 August 2026 the Indië commemoration at the Indië Monument in Raffy’s garden in Breda carries the theme ‘De geschiedenis leren begrijpen’ — learning to understand history. The programme begins at 14:00 with music by Raffykoor, speeches, the Indisch Our Father, one minute of silence, flag raising, wreath and flower laying, followed by a defilé at 15:30.",
+      "question": "How can later generations inherit a complex memory without flattening the differences between Indisch, Indonesian and Moluccan histories?",
       "sources": [
         {
-          "label": "National Commemoration — 2026 programme",
-          "url": "https://15augustus1945.nl/nationale-herdenking-15-augustus/"
+          "label": "Arjati — Breda 2026 programme",
+          "url": "https://arjati.nl/2026/08/01/indie-herdenking-15-augustus-2026/"
+        },
+        {
+          "label": "National 15 August foundation — Breda 2026",
+          "url": "https://15augustus1945.nl/herdenkingen-en-monumenten/herdenking-breda/"
         },
         {
           "label": "Indies Bell",

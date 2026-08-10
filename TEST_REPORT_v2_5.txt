@@ -1,0 +1,50 @@
+LuxDot v2.5 — FAITH + NUSANTARA + BAHASA INDONESIA QA
+Date: 10 August 2026
+Base: LuxDot_CLEAN_DARK_v2_4_2_MEMORY_LANG_SIGNAL_FIXED
+
+ARCHITECTURE ADDED
+- Faith is now a first-class layer above individual religious traditions
+- Faith page links active source-text readers for Qur'an, Tanakh and New Testament
+- Hinduism and Buddhism are represented as traditions with plural textual canons, not reduced to one universal book
+- Kepercayaan / ancestral belief traditions explicitly avoid being presented as one standardized religion with one sacred book
+- Nusantara portal contains five layers: Faith / Iman, Wisdom / Kawruh, Memory / Memori, Prophecy / Ramalan, Language / Bahasa
+- Kejawen, Ratu Adil, Jangka Jayabaya, Serat and Suluk are separated by source/tradition/interpretation status
+- No claim is made that Ratu Adil has one fixed religion or that a specific 2026 event is prophetically predicted
+
+LANGUAGE
+- Core UI access: Arabic, English, Dutch, Bahasa Indonesia
+- Arabic RTL remains preserved
+- Bahasa Indonesia is present on the signal gate and all shared page selectors
+- All data-t keys used by top-level HTML pages have Indonesian values (0 Indonesian data-t fallbacks detected)
+- Qur'an reader switches its translation edition to id.indonesian when Bahasa Indonesia is selected
+- Tanakh and New Testament selected passages now include Indonesian meaning translations with system TTS fallback
+- Basa Jawa remains a source/cultural layer; Aksara Jawa is not used decoratively without verified source spelling
+
+MEMORY
+- 15 August node upgraded to Raffy/Breda 2026 specificity
+- Theme recorded: De geschiedenis leren begrijpen
+- Official field timing retained: seating 13:45, start 14:00, defile/flower laying 15:30
+- Primary embedded dataset and JSON fallback are synchronized at version 2026.08.10-2
+
+SOURCES ADDED TO NUSANTARA PAGE
+- Arjati 2026 Breda commemoration programme
+- Nationale Herdenking 15 Augustus — Breda
+- Perpustakaan Nasional RI scholarship referencing Jangka Jayabaya textual layers
+- GARUDA/Kemdikbud-hosted Ratu Adil scholarship
+- Constitutional Court of Indonesia material on Penghayat Kepercayaan
+- UNESCO material on Indonesian indigenous language scripts online
+
+TESTS
+- JavaScript syntax: PASS (app.js, intro.js, memory.js, quran.js, erasmus.js, shaam-breda.js, research/research.js)
+- Local href/src existence: PASS, 0 missing local files
+- data/memory-atlas.json parse: PASS
+- Embedded memory DB / JSON mirror sync: PASS
+- Indonesian data-t coverage on top-level HTML: PASS, 0 missing keys
+- New pages present: faith.html, nusantara.html
+
+VISUAL QA LIMITATION
+- Headless Chromium was attempted for desktop/mobile screenshots but did not complete in this container because the browser process stalled on environment/system-service constraints (DBus/zygote). No pixel-perfect browser-render claim is made
+- CSS was reviewed for responsive grids at <=900px and <=620px and for RTL-safe logical properties
+
+DESIGN PRINCIPLE
+Source first. Context first. Difference is not erased. Tradition is not silently promoted into fact
