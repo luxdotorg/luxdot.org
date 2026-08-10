@@ -7,3 +7,9 @@ Added only:
 - Living Research 002 card in projects.html
 Preserved: Arabic, English, Dutch, Spanish, Hebrew; RTL for Arabic/Hebrew; existing library, sacred pages, Shaam–Breda tree, research routes, styles and data.
 Erasmus v0.1 method: verified / probable / symbolic / open / rejected; current-report snapshot generated from tree data.
+
+ERASMUS CONTENT UPDATE — v0.2
+- Embedded Al Jazeera Arabic collision video
+- Added verified event / open bridge / 22 July-Mary Magdalene / LuxDot thesis evidence panel
+- Al Jazeera node moved OPEN → VERIFIED; exact second remains unverified
+- Five-language content preserved (AR/EN/NL/ES/HE), RTL preserved
