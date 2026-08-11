@@ -398,3 +398,6 @@ body.home-arrival.home-arrival-go{animation:luxArrival .9s cubic-bezier(.18,.82,
 }
 
 .canon-link{color:inherit;text-decoration:none}.canon-link:hover{border-color:rgba(99,255,155,.38);transform:translateY(-2px)}
+
+/* v2.8.3 Java sacred/revered shelf */
+.java-sacred-title{margin-top:42px}.java-sacred-shelf{min-height:330px}.shelf-centhini{--spine:#173f2d;--foil:#efd171}.shelf-suluk{--spine:#102c22;--foil:#e7d28b}.shelf-rama{--spine:#4a3420;--foil:#f0d48a}.shelf-wedhatama{--spine:#263b31;--foil:#d8c788}.shelf-primbon{--spine:#2f2920;--foil:#d8bd79}
