@@ -1,0 +1,37 @@
+LuxDot v2.8.5 — NATIVE-LANGUAGE SACRED READERS
+Date: 11 August 2026
+Base: LuxDot v2.8.4 ACTIVE GLOBAL SACRED LIBRARY
+
+CORE CHANGE
+- Active sacred/foundational readers now default to the visitor's selected interface language.
+- Original scripts are hidden by default and revealed only by an explicit “show original” control.
+- Reader explanations, context, labels, source-language descriptions, and source buttons are localized in Arabic, English, Dutch, and Bahasa Indonesia.
+- Arabic keeps RTL; all other supported UI languages remain LTR.
+- Speech synthesis reads the reader-language explanation, not the unfamiliar source script.
+
+UPGRADED READERS
+- Guru Granth Sahib
+- Avesta / Gathas
+- Jain Agamas / Tattvartha Sutra
+- Dao De Jing / Zhuangzi
+- Analects / Four Books
+- Kitab-i-Aqdas / Kitab-i-Iqan
+- Kojiki / Nihon Shoki
+- Bhagavad Gita
+- Early Buddhist texts
+- Serat Centhini
+- Javanese Suluk
+- Kakawin Ramayana
+- Serat Wedhatama
+- Javanese Primbon
+
+LIBRARY LANGUAGE ISOLATION
+- Global sacred shelf title, description, and all book labels localize as one block.
+- Javanese shelf title, description, book labels, and portal button localize as one block.
+- Removed obsolete proposed-books localization script from the active library page.
+- Updated library lead so it no longer says only the Qur'an is active.
+
+EDITORIAL BOUNDARY
+- Traditions are not forced into one concept of scripture.
+- Foundational chronicles, mystical corpora, and folk manuscript families remain labeled according to their actual status.
+- Original-language passages are optional source layers, not prerequisites for comprehension.

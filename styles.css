@@ -401,3 +401,6 @@ body.home-arrival.home-arrival-go{animation:luxArrival .9s cubic-bezier(.18,.82,
 
 /* v2.8.3 Java sacred/revered shelf */
 .java-sacred-title{margin-top:42px}.java-sacred-shelf{min-height:330px}.shelf-centhini{--spine:#173f2d;--foil:#efd171}.shelf-suluk{--spine:#102c22;--foil:#e7d28b}.shelf-rama{--spine:#4a3420;--foil:#f0d48a}.shelf-wedhatama{--spine:#263b31;--foil:#d8c788}.shelf-primbon{--spine:#2f2920;--foil:#d8bd79}
+
+/* v2.8.4 active global sacred shelf */
+.shelf-sikh{--spine:#5a3416;--foil:#f0c66c}.shelf-avesta{--spine:#50251f;--foil:#f1b56c}.shelf-jain{--spine:#49345f;--foil:#e7cf85}.shelf-dao{--spine:#183c37;--foil:#d4e6bc}.shelf-analects{--spine:#4a241d;--foil:#e6c77b}.shelf-bahai{--spine:#283b63;--foil:#d8dff7}.shelf-kojiki{--spine:#51242d;--foil:#f0c7cf}.global-sacred-shelf{margin-top:10px}
