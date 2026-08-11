@@ -1,0 +1,6 @@
+LuxDot v2.7.9 — CLEAN LANGUAGE + QURAN + MOBILE CARE MAP
+
+- Quran reader: dual online providers (Al Quran Cloud + quran-json CDN), AbortController timeouts, local bootstrap cache for Al-Fatihah and Al-Baqarah 1-5, graceful fallback and localized metadata.
+- Language architecture: corrected Arabic leakage in EN/NL/ID translation dictionary; localized Global Canon section; all 15 Savior investigation dossiers now render their body in the selected language (AR/EN/NL/ID). The requested personal test name remains Arabic: رافي عبد السميع الحجي.
+- Savior Atlas: previously static Arabic status badges now localized.
+- Care map mobile: map layout rebuilt as a flex column, explicit viewport height, enlarged touch targets, bottom-sheet popup and touch/pointer handling. No Leaflet/CDN dependency for map rendering.

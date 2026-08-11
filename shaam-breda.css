@@ -37,3 +37,16 @@ body.research-body:before{content:"";position:fixed;inset:0;pointer-events:none;
 
 /* v2.7.8 care-map hardening */
 #map.map-canvas{position:relative;min-width:0;min-height:520px;filter:none}.offline-map{width:100%;height:100%;min-height:520px}.offline-map #careSvg{position:absolute;inset:0;width:100%;height:100%}.omap-bg{fill:#020805}.omap-hit{fill:transparent;pointer-events:all;cursor:pointer}.care-pin:focus .omap-point{stroke:#fff;stroke-width:3}.omap-error{fill:#9fb0a6;font:16px Arial,sans-serif}.map-item{display:block;width:100%;background:transparent;color:inherit;text-align:start;border:0;border-bottom:1px solid rgba(99,255,155,.08);padding:10px 2px;cursor:pointer}.map-item:hover,.map-item:focus{background:rgba(99,255,155,.05);outline:none}.map-meta{display:block}.map-empty{padding:20px;text-align:center;color:#718279}@media(max-width:850px){.map-shell{height:auto;grid-template-columns:1fr}.map-side{max-height:440px;border-inline-end:0;border-bottom:1px solid var(--r-line)}#map.map-canvas,.offline-map{min-height:560px;height:70vh}}
+
+/* v2.7.9 mobile care map rebuild */
+.quran-source-note{font:10px Arial,sans-serif;color:#6f8277;padding:8px 0 4px}
+@media(max-width:850px){
+  .map-shell{display:flex!important;flex-direction:column!important;height:auto!important;overflow:visible!important}
+  #map.map-canvas{order:1!important;width:100%!important;height:58vh!important;min-height:420px!important;max-height:620px!important;overflow:hidden!important;position:relative!important}
+  .offline-map{position:relative!important;width:100%!important;height:100%!important;min-height:0!important;overflow:hidden!important}
+  .offline-map #careSvg{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;touch-action:manipulation!important}
+  .map-side{order:2!important;width:100%!important;max-height:none!important;overflow:visible!important;border:0!important;border-top:1px solid var(--r-line)!important}
+  .omap-hit{r:20;pointer-events:all!important;touch-action:manipulation}
+  .omap-popup{position:absolute!important;inset-inline:10px!important;left:10px!important;right:10px!important;top:auto!important;bottom:10px!important;max-width:none!important;width:auto!important}
+  .map-item{min-height:48px;padding:12px 4px!important}
+}

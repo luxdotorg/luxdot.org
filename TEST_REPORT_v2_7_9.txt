@@ -1,0 +1,33 @@
+LuxDot v2.7.9 — CLEAN LANGUAGE + QURAN + MOBILE CARE MAP QA
+Date: 11 August 2026
+
+QURAN
+- quran.js syntax: PASS
+- Mock DOM/API success-path render: PASS (surah title + ayat rendered)
+- Mock offline-path render: PASS (local Al-Baqarah bootstrap cache rendered instead of blank reader)
+- Primary provider: Al Quran Cloud
+- Secondary provider: quran-json 3.1.2 CDN
+- Fetch timeout / failover: PASS by code-path test
+
+LANGUAGE
+- Core languages: Arabic / English / Dutch / Bahasa Indonesia
+- Non-Arabic values containing accidental Arabic in shared app dictionary: 0
+- 15/15 Global Savior investigation pages wired to selected-language dossier renderer
+- Global Canon expansion localized in all four core languages
+- Savior Atlas static protocol badges localized
+- Requested personal test spelling remains Arabic by design: رافي عبد السميع الحجي
+
+CARE MAP
+- 70 records loaded
+- 70 valid coordinate pairs
+- DOM simulation: 70 SVG pins + 70 searchable list entries: PASS
+- Mobile CSS: explicit flex-column layout, 58vh map viewport, 420px minimum height, enlarged 20-unit SVG touch targets, bottom-sheet popup
+- No Leaflet / tile server dependency required for drawing the map
+
+CACHE / DEPLOYMENT
+- All local HTML asset version query strings bumped to v279 to defeat stale mobile/browser caches
+- Local href/src scan: 0 broken local references
+- JavaScript syntax scan: PASS for all .js files
+
+BROWSER LIMITATION
+- Chromium in this execution environment still stalls on missing DBus/system services, so no claim of a real iOS/Android browser-device screenshot test is made. Mobile behavior was tested structurally and through DOM simulation, not on physical hardware.
