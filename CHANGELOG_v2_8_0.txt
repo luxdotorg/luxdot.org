@@ -1,0 +1,8 @@
+LuxDot v2.8.0
+- Rebuilt 25 km care map as pre-rendered self-contained SVG + pre-rendered organization list; interaction is progressive enhancement.
+- Added ten source readers: Bhagavad Gita, Early Buddhist Texts, Guru Granth Sahib, Avesta, Tattvartha Sutra, Dao De Jing, Analects, Kitab-i-Aqdas/Iqan, Kojiki/Nihon Shoki, Javanese Serat/Suluk.
+- Linked Gita and Buddhist books from both Library and Faith.
+- Converted Global Canon proposals into working links.
+- Localized tested personal name: Arabic original in AR; readable Latin transliteration in EN/NL/ID.
+- Added reader-language name meaning notes, explicitly excluded from prophecy scoring.
+- Cache version bumped to v280.

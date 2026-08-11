@@ -396,3 +396,5 @@ body.home-arrival.home-arrival-go{animation:luxArrival .9s cubic-bezier(.18,.82,
  .shelf-book{flex:0 0 64px;height:230px!important;scroll-snap-align:center}.shelf-spine strong{font-size:14px}
  .shelf-title{display:block}.shelf-title p{margin-top:8px}
 }
+
+.canon-link{color:inherit;text-decoration:none}.canon-link:hover{border-color:rgba(99,255,155,.38);transform:translateY(-2px)}
