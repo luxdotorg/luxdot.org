@@ -95,21 +95,25 @@ document.querySelectorAll(".r-tabs button").forEach(b=>b.onclick=()=>{document.q
 function renderTimeline(){const lang=currentLang();timeline.innerHTML=EVENTS.map(e=>`<div class="timeline-event"><div class="year">${e[0]}</div><h3>${e[1][lang]||e[1].en}</h3><p>${lang==="ar"?e[2]:lang==="nl"?e[4]:e[3]}</p></div>`).join("")}
 function renderSources(){const lang=currentLang();sourcesList.innerHTML=SOURCES.map(s=>`<div class="source-row"><b>${s[0]} · ${s[1]}</b><small>${s[2]}</small><a href="${s[3]}" target="_blank" rel="noopener">${t("openSource")} ↗</a></div>`).join("")}
 nodeStat.textContent=N.length;sourceStat.textContent=SOURCES.length
-let P=[],layer=null,map=null
-function initMap(){
- if(!window.L){
-   const el=document.getElementById("map");
-   if(el)el.innerHTML=`<div style="height:100%;display:grid;place-items:center;padding:30px;color:#718279;text-align:center">${t("mapNeeds")}</div>`;
-   return
- }
- map=L.map("map",{zoomControl:true}).setView([51.506,4.862],10)
- L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",{maxZoom:19,attribution:"© OpenStreetMap © CARTO"}).addTo(map)
- L.circle([51.506,4.862],{radius:25000,color:"#63ff9b",weight:1.5,fillOpacity:.012,dashArray:"7 8"}).addTo(map)
- L.circleMarker([51.506,4.862],{radius:6,color:"#f3fff7",weight:1,fillColor:"#63ff9b",fillOpacity:1}).addTo(map).bindPopup("<b>شام / Chaam</b>")
- layer=L.layerGroup().addTo(map)
- fetch("data/care-points.json").then(r=>r.json()).then(x=>{P=x;[...new Set(P.map(x=>x.category))].sort().forEach(x=>mapCat.add(new Option(x,x)));[...new Set(P.map(x=>x.town))].sort().forEach(x=>mapTown.add(new Option(x,x)));renderMap()}).catch(()=>{})
-}
+let P=Array.isArray(window.CARE_POINTS)?window.CARE_POINTS:[],map=null,activePoint=null
+const MAP_BOUNDS={minLat:51.455,maxLat:51.635,minLon:4.64,maxLon:4.965}
+function projectPoint(lat,lon,w=1000,h=650){const pad=55;return [pad+(lon-MAP_BOUNDS.minLon)/(MAP_BOUNDS.maxLon-MAP_BOUNDS.minLon)*(w-pad*2),h-pad-(lat-MAP_BOUNDS.minLat)/(MAP_BOUNDS.maxLat-MAP_BOUNDS.minLat)*(h-pad*2)]}
 function esc(s){return String(s||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
-function renderMap(){if(!P.length||!layer)return;const lang=currentLang(),z=mapSearch.value.toLowerCase(),f=P.filter(p=>(!mapCat.value||p.category===mapCat.value)&&(!mapTown.value||p.town===mapTown.value)&&(!z||JSON.stringify(p).toLowerCase().includes(z)));mapCount.textContent=t("visiblePoints")+"  "+f.length;mapList.innerHTML=f.map(p=>`<div class="map-item"><b>${esc(p.name)}</b><div class="map-meta">${esc(lang==="ar"?p.displayTownAR:p.displayTownEN)} · ${p.distance.toFixed(1)} km · ${esc(p.category)}</div></div>`).join("");layer.clearLayers();f.forEach(p=>L.circleMarker([p.lat,p.lon],{radius:5,weight:1,color:"#001006",fillColor:"#63ff9b",fillOpacity:.72}).addTo(layer).bindPopup(`<b>${esc(p.name)}</b><br>${esc(p.category)}<br><small>${esc(p.location)} · ${p.distance.toFixed(1)} km</small>${p.url?`<br><a target="_blank" rel="noopener" href="${esc(p.url)}">${lang==="ar"?"المصدر / الموقع":lang==="nl"?"Bron / website":"Source / website"}</a>`:""}`))}
+function townLabel(p,lang){return lang==="ar"?(p.displayTownAR||p.town):lang==="nl"?(p.displayTownNL||p.town):lang==="id"?(p.displayTownEN||p.town):(p.displayTownEN||p.town)}
+function initMap(){
+ const el=document.getElementById("map");if(!el)return
+ el.innerHTML='<div class="offline-map" id="offlineMap"><svg id="careSvg" viewBox="0 0 1000 650" role="img" aria-label="LuxDot care network map"></svg><div id="carePopup" class="omap-popup"></div></div>'
+ map={invalidateSize(){renderMap()}}
+ if(P.length){
+   const cats=[...new Set(P.map(x=>x.category))].sort(), towns=[...new Set(P.map(x=>x.town))].sort();
+   cats.forEach(x=>mapCat.add(new Option(x,x)));towns.forEach(x=>mapTown.add(new Option(x,x)))
+ }
+ renderMap()
+}
+function showCarePopup(p,evt){const pop=document.getElementById('carePopup'),box=document.getElementById('offlineMap');if(!pop||!box)return;const lang=currentLang();pop.innerHTML=`<b>${esc(p.name)}</b><br><small>${esc(townLabel(p,lang))} · ${p.distance.toFixed(1)} km</small><br>${esc(p.category)}<br>${esc(p.serves||'')}${p.location?`<br><small>${esc(p.location)}</small>`:''}${p.phone?`<br>${esc(p.phone)}`:''}${p.url?`<br><a target="_blank" rel="noopener" href="${esc(p.url)}">${lang==='ar'?'المصدر / الموقع':lang==='nl'?'Bron / website':lang==='id'?'Sumber / situs':'Source / website'}</a>`:''}`;let r=box.getBoundingClientRect(),x=(evt?.clientX||r.left+r.width/2)-r.left+12,y=(evt?.clientY||r.top+r.height/2)-r.top+12;pop.style.left=Math.min(x,Math.max(10,r.width-320))+'px';pop.style.top=Math.min(y,Math.max(10,r.height-210))+'px';pop.classList.add('show');activePoint=p.id}
+function renderMap(){if(!P.length)return;const lang=currentLang(),z=(mapSearch.value||'').toLowerCase(),f=P.filter(p=>(!mapCat.value||p.category===mapCat.value)&&(!mapTown.value||p.town===mapTown.value)&&(!z||JSON.stringify(p).toLowerCase().includes(z)));mapCount.textContent=t("visiblePoints")+"  "+f.length;mapList.innerHTML=f.map(p=>`<div class="map-item" data-care-id="${p.id}"><b>${esc(p.name)}</b><div class="map-meta">${esc(townLabel(p,lang))} · ${p.distance.toFixed(1)} km · ${esc(p.category)}</div></div>`).join("");
+ const svg=document.getElementById('careSvg');if(svg){let out='';for(let x=100;x<1000;x+=100)out+=`<line class="omap-grid" x1="${x}" y1="0" x2="${x}" y2="650"/>`;for(let y=100;y<650;y+=100)out+=`<line class="omap-grid" x1="0" y1="${y}" x2="1000" y2="${y}"/>`;const [cx,cy]=projectPoint(51.506,4.862);const kmPerLon=69.2*Math.cos(51.506*Math.PI/180),rx=25/(kmPerLon)*(890/(MAP_BOUNDS.maxLon-MAP_BOUNDS.minLon)),ry=25/111*(540/(MAP_BOUNDS.maxLat-MAP_BOUNDS.minLat));out+=`<ellipse class="omap-ring" cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}"/><text class="omap-label" x="${cx+12}" y="${cy-12}">${lang==='ar'?'شام': 'Chaam'}</text><circle class="omap-anchor" cx="${cx}" cy="${cy}" r="7"/>`;f.forEach(p=>{const [x,y]=projectPoint(p.lat,p.lon);out+=`<circle class="omap-point${activePoint===p.id?' active':''}" data-care-id="${p.id}" cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="4.6"><title>${esc(p.name)}</title></circle>`});svg.innerHTML=out;svg.querySelectorAll('[data-care-id]').forEach(n=>n.addEventListener('click',e=>{const p=P.find(x=>x.id===+n.dataset.careId);if(p)showCarePopup(p,e)}))}
+ document.querySelectorAll('.map-item[data-care-id]').forEach(n=>n.onclick=e=>{const p=P.find(x=>x.id===+n.dataset.careId);if(p)showCarePopup(p,e)})
+}
 ;[mapSearch,mapCat,mapTown].forEach(e=>e.addEventListener(e.tagName==="INPUT"?"input":"change",renderMap))
 window.addEventListener("DOMContentLoaded",()=>{translateLocal();initMap();if(location.hash==="#mapView"){const b=document.querySelector('.r-tabs button[data-view="mapView"]');if(b)b.click()}})
