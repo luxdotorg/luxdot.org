@@ -2,7 +2,7 @@ LuxDot v2.7.7 — LANGUAGE + CARE MAP STABILITY FIX
 11 August 2026
 
 Critical fixes
-- Removed all remaining "Rafi Alhaji" references from the active project; Savior Atlas personal test now uses: رافي عبد السميع الحجي
+- Removed all remaining "رافي عبد السميع الحجي" references from the active project; Savior Atlas personal test now uses: رافي عبد السميع الحجي
 - Reworked Living Research 001 shell so language switching no longer leaves the atlas controls/method page hard-coded in Arabic
 - Projects page now localizes its research cards and keeps the order: 001 Global Savior Atlas, 002 Shaam, 003 Erasmus
 - Standard active language selector remains Arabic / English / Dutch / Indonesian
@@ -19,7 +19,7 @@ QA
 - 70 care records parsed: 0 invalid coordinates
 - 15 Savior Atlas independent investigations present
 - JavaScript syntax check passed for active root/research JS files
-- No remaining literal "Rafi Alhaji" string found
+- No remaining literal "رافي عبد السميع الحجي" string found
 - No external script/style dependency remains in active HTML pages
 
 Note

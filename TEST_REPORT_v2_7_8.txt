@@ -1,0 +1,28 @@
+LuxDot v2.7.8 — CLEAN QA REPORT
+Date: 11 August 2026
+
+Care map
+- Runtime rewritten without implicit DOM globals: PASS
+- No required Leaflet / tile / CDN dependency: PASS
+- Local care dataset loaded: 70 records
+- DOM simulation: 70 visible points + 70 searchable list items: PASS
+- Mobile fallback height and list fallback: PASS
+
+Savior Atlas
+- Exact English-form personal name "Rafi" in project text: 0
+- Personal test identity: رافي عبد السميع الحجي
+
+Living Memory
+- Embedded DB and JSON version: 2026.08.11-3
+- Archive expanded backward to 10 July 2026
+- Added: Rufina & Secunda; Justa & Rufina; Edith Stein; Lawrence of Rome
+- Joop Westerweel cartridge expanded with Dutch LuxDot memorial text
+- Joop primary sources retained: Nationaal Monument Kamp Vught + Yad Vashem
+
+Integrity
+- JavaScript syntax across project: PASS
+- Local href/src reference scan: 0 missing
+- memory-atlas.json parse: PASS
+
+Visual QA note
+- Chromium remains blocked/stalled by container DBus/zygote restrictions, so no unsupported claim of pixel-perfect headless screenshot QA is made.

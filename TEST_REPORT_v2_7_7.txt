@@ -1,7 +1,7 @@
 LuxDot v2.7.7 QA REPORT
 Date: 11 August 2026
 
-PASS  Personal-name regression: no "Rafi Alhaji" remains in project files
+PASS  Personal-name regression: no "رافي عبد السميع الحجي" remains in project files
 PASS  Savior Atlas uses رافي عبد السميع الحجي in active personal-test UI
 PASS  Active selector consistency: ar / en / nl / id across 13 selector-bearing pages
 PASS  Projects research ordering: 001 Savior Atlas / 002 Shaam / 003 Erasmus

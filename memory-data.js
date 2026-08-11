@@ -1,10 +1,98 @@
 window.LUXDOT_MEMORY_DB = {
   "meta": {
-    "version": "2026.08.10-2",
-    "range": "2026-08-11/2026-08-17",
+    "version": "2026.08.11-3",
+    "range": "2026-07-10/2026-08-17",
     "principle": "Document first. Interpretation second. Counter-evidence always visible."
   },
   "nodes": [
+    {
+      "id": "rufina-secunda",
+      "date": "2026-07-10",
+      "theme": "MARTYRDOM / TRADITION",
+      "title": "Rufina & Secunda",
+      "place": "Rome · Via Cornelia",
+      "lat": 41.9028,
+      "lon": 12.4964,
+      "status": "documented-tradition",
+      "summary": "The Roman Martyrology commemorates Rufina and Secunda on 10 July. Vatican sources place their martyrdom near Rome around the mid-third century; the detailed passion narrative is later and should be distinguished from the older cult and commemoration.",
+      "question": "How do we honor an old tradition while separating early evidence from later narrative detail?",
+      "sources": [
+        {
+          "label": "Vatican State — Saints Rufina and Secunda, 10 July",
+          "url": "https://www.vaticanstate.va/en/state-and-government/general-informations/saint-of-the-day/2254-july-10-saints-rufina-and-secunda-martyrs.html"
+        },
+        {
+          "label": "Vatican News — Rufina and Secunda",
+          "url": "https://www.vaticannews.va/en/saints/07/10/sts--rufina-and-secunda--martyrs-on-the--via-cornelia.html"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "justa-rufina",
+      "date": "2026-07-17",
+      "theme": "MARTYRDOM / MEMORY",
+      "title": "Justa & Rufina of Seville",
+      "place": "Seville · Spain",
+      "lat": 37.3891,
+      "lon": -5.9845,
+      "status": "documented-tradition",
+      "summary": "Seville Cathedral commemorates Justa and Rufina on 17 July. Their cult is ancient, while the cathedral itself notes that the first written references to their lives and martyrdom come centuries later. Their identity as potters and patrons of Seville became a powerful artistic memory.",
+      "question": "When memory survives through art and devotion, how do we preserve both its meaning and its historical uncertainty?",
+      "sources": [
+        {
+          "label": "Seville Cathedral — Justa & Rufina, 17 July 2026",
+          "url": "https://www.catedraldesevilla.es/santas-justa-y-rufina-fe-arte-y-memoria-de-sevilla/"
+        },
+        {
+          "label": "Museo del Prado — Saints Justa and Rufina",
+          "url": "https://www.museodelprado.es/en/the-collection/art-work/saints-justa-and-rufina/d5b49bdb-febd-4f18-96c4-9dae562b2683"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "edith-stein",
+      "date": "2026-08-09",
+      "theme": "EMPATHY / DIGNITY",
+      "title": "Edith Stein · Teresa Benedicta of the Cross",
+      "place": "Echt → Westerbork → Auschwitz-Birkenau",
+      "lat": 50.0359,
+      "lon": 19.1783,
+      "status": "documented",
+      "summary": "Edith Stein (1891–1942), a German-Jewish philosopher who became a Carmelite nun, was deported from the Netherlands and killed at Auschwitz-Birkenau on 9 August 1942. LuxDot remembers her through the question that shaped our 9 August research: can empathy become responsibility before a person is reduced to a label?",
+      "question": "Can we learn to see the person before the label — and let recognition become responsibility?",
+      "sources": [
+        {
+          "label": "Vatican — Teresa Benedicta of the Cross (Edith Stein)",
+          "url": "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19981011_edith_stein_en.html"
+        },
+        {
+          "label": "Vatican News — Edith Stein, 9 August",
+          "url": "https://www.vaticannews.va/en/saints/08/09/st--theresa-benedicta-of-the-cross--edith-stein---carmelitan--vi.html"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "lawrence-rome",
+      "date": "2026-08-10",
+      "theme": "SERVICE / VULNERABLE",
+      "title": "Lawrence of Rome",
+      "place": "Rome · Italy",
+      "lat": 41.9028,
+      "lon": 12.4964,
+      "status": "documented-tradition",
+      "summary": "Lawrence, deacon and martyr of Rome, is commemorated on 10 August. Vatican sources emphasize his responsibility for charitable service to orphans, widows and the poor. LuxDot’s 10 August investigation used his memory to ask what a community calls its true treasure.",
+      "question": "If the vulnerable are the true treasure of a community, what should its institutions protect first?",
+      "sources": [
+        {
+          "label": "Vatican News — St Lawrence, Deacon and Martyr",
+          "url": "https://www.vaticannews.va/en/saints/08/10/st--lawrence-deacon--and-martyr.html"
+        }
+      ],
+      "media": []
+    },
     {
       "id": "westerweel",
       "date": "2026-08-11",
@@ -14,8 +102,8 @@ window.LUXDOT_MEMORY_DB = {
       "lat": 51.665,
       "lon": 5.258,
       "status": "documented",
-      "summary": "Dutch teacher, pacifist and resistance organizer. He helped Jews and young Palestine Pioneers hide and escape. He was executed at Kamp Vught on 11 August 1944.",
-      "question": "What does protection demand when law itself has become persecution?",
+      "summary": "Dutch teacher, pacifist and resistance organizer Joop Westerweel helped Jewish refugees and young Palestine Pioneers hide and escape. Nationaal Monument Kamp Vught records that he built escape routes, was arrested returning from France, imprisoned in Vught and executed there on 11 August 1944.",
+      "question": "Wat vraagt bescherming van ons wanneer zwijgen veiliger is, maar minder menselijk?",
       "image": "https://encyclopedia.ushmm.org/images/large/04c73735-d3e3-4e08-a98e-a6b5fca94d8a.jpeg",
       "imageCredit": "USHMM archival portrait",
       "sources": [
@@ -33,7 +121,8 @@ window.LUXDOT_MEMORY_DB = {
           "label": "NM Kamp Vught video/podcast with Bart Westerweel",
           "url": "https://www.nmkampvught.nl/bezoeken/actueel/nieuws/2025/05/podcast-bevrijding-toen-en-nu/"
         }
-      ]
+      ],
+      "dossier": "De bewaker die niet wegkeek — Joop Westerweel was leraar, pacifist en verzetsman. Hij hielp Joodse vluchtelingen en jongeren onderduiken en ontsnappen. Voor LuxDot ligt de kern niet in heldenverering, maar in zijn keuze om bescherming praktisch te maken toen wegkijken veiliger was. Zijn eigen gevangenisbrieven waarschuwen bovendien tegen idealisering: ook moed blijft menselijk."
     },
     {
       "id": "stazzema",
