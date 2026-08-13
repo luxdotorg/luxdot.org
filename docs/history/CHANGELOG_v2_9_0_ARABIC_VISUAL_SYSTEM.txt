@@ -1,0 +1,25 @@
+LuxDot v2.9.0 — Arabic Visual System Pass
+13 August 2026
+
+SCOPE
+- No new research expansion.
+- Arabic-first typography, language cleanup, RTL/layout refinement and visual system work only.
+
+ARABIC TYPOGRAPHY
+- Noto Kufi Arabic adopted as the primary Arabic UI/content family through Google Fonts, with local fallbacks.
+- Arabic headings, cards, body copy, sacred translation surfaces and SVG labels normalized.
+- RTL, line-height, wrapping and mobile readability strengthened.
+
+ARABIC CONTENT
+- Foreign names in Arabic content normalized to Arabic first.
+- Original spellings retained parenthetically only where useful for search/disambiguation.
+- Key research pages manually cleaned for mixed-script labels.
+
+VISUAL SYSTEM
+- Cartouches receive precision-circuit terminals.
+- Golden directional connections use small circular endpoints and moving signal treatment.
+- Knowledge trees use brown-to-green branch language to distinguish organic growth from evidence circuitry.
+- Urania and Breda pages receive contextual visual enrichment.
+
+BOUNDARY
+- Other language copy was not editorially revised in this pass.

@@ -1,0 +1,37 @@
+LuxDot v2.7.0 — IMMERSIVE SACRED LIBRARY
+Date: 2026-08-10
+
+LANGUAGE / CACHE
+- UI assets renamed to versioned filenames (app-v27.js, styles-v27.css, etc.) to break stale browser/GitHub cache.
+- Arabic dictionary remains strict: Arabic UI does not fall back to English.
+- Static grep finds no Faith/Nusantara English headings in HTML.
+- Faith -> الإيمان; Nusantara -> الأرخبيل الإندونيسي.
+
+SACRED LIBRARY EXPERIENCE
+- Sacred text selection is now a physical shelf, not a card/grid menu.
+- Books stand by their spines on a dark green-black lacquer shelf with restrained gold trim.
+- Hover/focus lifts a book from the shelf; click animates removal before navigation.
+- Qur'an, Tanakh and New Testament still open into two-page reading spreads.
+- Clicking/opening a book releases a brief bright photon/flash.
+- Each book has a distinct synthesized chime profile using WebAudio; no external sound asset is required.
+- Shelf-to-book continuity is preserved with session state so a selected book opens upon arrival.
+
+COLOR SYSTEM
+- White: clarity / page / witness
+- Gold: sacred knowledge / source
+- Green range: life / signal / living memory
+- Black: depth / unknown / silence
+- Blood red: tragedy/crime marker only; never general navigation color
+
+TRAGEDY MARK
+- Added a restrained blood-red marginal mark to Memory nodes documenting killing, massacre, persecution or violent loss.
+- Mark is intentionally small and non-graphic.
+
+QA
+- app-v27.js: PASS node --check
+- sacred-book-v27.js: PASS node --check
+- quran-v27.js: PASS node --check
+- memory-v27.js: PASS node --check
+- intro-v27.js: PASS node --check
+- Local href/src scan: 0 missing assets
+- ZIP integrity: tested at packaging

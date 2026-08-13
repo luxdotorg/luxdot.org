@@ -1,0 +1,18 @@
+LuxDot v2.8.8 — RESEARCH AUDIT + URANIA/NASSAU
+Date: 12 August 2026
+Base: v2.8.7 FULL LANGUAGE QA CLEAN
+
+ADDED
+- Living Research 006: Urania × Nassau
+- Living Research 007: Kevelaer ↔ Chaam audited timeline
+
+CORRECTED
+- Removed unsupported claim that “Princess Urania” was born in Chaam in 1858.
+- Preserved the error transparently as a correction record, not a historical event.
+
+VERIFIED ANCHORS
+- Nassau–Breda connection: 1403 marriage Engelbrecht I / Johanna van Polanen
+- Vondel, 1626: Urania appears and prophesies inside Geboortklock van Willem van Nassav (literary layer)
+- Kevelaer: Busman 1641; image/shrine 1642; inquiry 1647; Gnadenkapelle 1654
+- Breda–Kevelaer organised pilgrimage documented since 1719
+- 2026 pilgrimage: 11–12 August

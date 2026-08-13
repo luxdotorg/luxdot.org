@@ -1,0 +1,27 @@
+LuxDot v2.7.1 — DEPLOY-SAFE RECOVERY
+Date: 2026-08-10
+
+WHAT BROKE IN v2.7
+The immersive build renamed the critical CSS/JS assets. A mixed deployment/cache state can make new HTML request files that are not yet present, causing an unstyled white page and a dead Matrix.
+
+WHAT THIS BUILD CHANGES
+- Restores standard production names: styles.css, app.js, intro.css, intro.js, sacred-book.js, quran.js, memory.js.
+- Keeps all v2.7 aliases too, so old and new references both remain valid.
+- Uses ?v=271 only for cache-busting; it does not change filesystem names.
+- Adds a dark inline safety fallback to HTML. Even if external CSS fails, the page stays black/dark rather than white.
+- Keeps the v2.7 immersive sacred shelves, photon, book-removal animation, chimes, Blood Mark, and strict Arabic work.
+
+CHECKS
+- Matrix canvas present: PASS
+- Matrix standard CSS wired: PASS
+- Matrix standard JS wired: PASS
+- Inline dark fallback present: PASS
+- Dark global theme present: PASS
+- Library shelf present: PASS
+- Faith shelf present: PASS
+- Book photon present: PASS
+- Book chimes present: PASS
+- Missing local file references: 0
+
+DEPLOYMENT
+Extract and replace ALL files in the repository root. Do not copy only index.html or the HTML files.

@@ -1,0 +1,22 @@
+LuxDot v2.8.7 — FULL LANGUAGE / RESEARCH QA
+Date: 11 August 2026
+Base: v2.8.6 Living Research Busman
+
+Corrections
+- Living Research index rebuilt as full page-localized content in Arabic, English, Dutch and Indonesian.
+- Projects index rebuilt as full page-localized content in all four active UI languages.
+- Hendrick Busman dossier rebuilt as full page-localized content in all four active UI languages.
+- Dutch Busman view no longer inherits Arabic body content.
+- Arabic Busman view uses Arabic-script renderings for person/place/concept names wherever practical: هندريك بوسمان، كيفيلار، خيلدرن، فينلو، صليب هاغل، مصلى النعمة، ميخل.
+- Original spellings remain available only where needed for source identity / archival retrieval, not embedded through Arabic prose.
+- RTL is driven by the document language; Arabic uses RTL, other active languages use LTR.
+- Living Research and Projects remain separate navigation/content domains.
+
+QA
+- JavaScript syntax: PASS across root, research, and savior research scripts.
+- Internal local href/src scan: PASS, zero broken local references.
+- New full-locale pages checked for Arabic-character leakage in EN/NL/ID content blocks: PASS (0).
+- Source-language sacred text is intentionally exempt from UI-language purity where the page is explicitly a source reader.
+
+Scope note
+- Historical/source names may remain in original script inside explicit source-text/source-metadata contexts. This is intentional provenance, not untranslated UI.

@@ -1,0 +1,22 @@
+LuxDot v2.8.8 — QA REPORT
+Date: 12 August 2026
+Base: LuxDot_v2_8_7_FULL_LANGUAGE_QA_CLEAN
+
+CONTENT AUDIT
+PASS — unsupported “Princess Urania born in Chaam, 1858” removed as a historical claim
+PASS — correction is explicitly preserved in Research 006/007
+PASS — Kevelaer anchors checked against Kevelaer pilgrimage sources
+PASS — Breda–Kevelaer 1719 checked against Erfgoed Breda
+PASS — Nassau–Breda 1403 checked against Koninklijk Huis
+PASS — Urania/Vondel 1626 checked against DBNL; explicitly classified as literary, not genealogical
+
+SITE
+PASS — Research 006 added in AR/EN/NL/ID
+PASS — Research 007 added in AR/EN/NL/ID
+PASS — research index links both new dossiers
+PASS — existing v2.8.7 structure retained; no language set removed or reset
+PASS — app.js syntax
+PASS — local file reference scan (URL fragments normalized)
+
+NOTE
+No claim is made that symbolic parallels establish prophecy, causation, or genealogy.

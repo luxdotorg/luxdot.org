@@ -1,0 +1,18 @@
+LuxDot v2.8.5 — NATIVE-LANGUAGE SACRED READERS QA
+Date: 11 August 2026
+
+PASS
+- 14 upgraded non-Abrahamic / Javanese readers use the shared native-language reader system.
+- Each upgraded reader contains Arabic, English, Dutch, and Bahasa Indonesia interface/meaning/context data.
+- Arabic direction is RTL; EN/NL/ID are LTR.
+- Original-script panels are hidden by default and require explicit user action.
+- Reader-language speech synthesis is separated from source-script display.
+- Library global and Javanese shelves localize titles/descriptions/book labels as complete blocks.
+- Wrong-language shelf flash is guarded by visibility until localized shelf data is applied.
+- Obsolete “proposed books” localization script removed from library page.
+- JavaScript syntax: PASS (app.js, source-reader-v2.js, library-active-i18n.js).
+- Local HTML href/src reference scan: PASS (0 missing local files).
+- Reader structure assertion: PASS (14/14 pages include language selector, original toggle, and shared reader script).
+
+LIMITATION
+- No claim of pixel-perfect browser screenshot QA: this environment does not provide a reliable browser rendering service. Structural, syntax, localization-data, and local-reference checks passed.

@@ -1,0 +1,26 @@
+LuxDot v2.7.7 — LANGUAGE + CARE MAP STABILITY FIX
+11 August 2026
+
+Critical fixes
+- Removed all remaining "رافي عبد السميع الحجي" references from the active project; Savior Atlas personal test now uses: رافي عبد السميع الحجي
+- Reworked Living Research 001 shell so language switching no longer leaves the atlas controls/method page hard-coded in Arabic
+- Projects page now localizes its research cards and keeps the order: 001 Global Savior Atlas, 002 Shaam, 003 Erasmus
+- Standard active language selector remains Arabic / English / Dutch / Indonesian
+
+Care map
+- Replaced mandatory Leaflet/CDN map dependency inside Shaam research with a local SVG interactive map
+- Added data/care-points.js as offline runtime copy of the 70-record care dataset
+- Search, category filter, town filter, point click, organization popup and source links work without map tiles or an external mapping library
+- Rebuilt research/circle-of-care-25km-original.html as a local four-language interactive care map
+- Added a visible Circle of Care entry to Projects
+
+QA
+- 34 HTML files scanned: 0 broken local href/src references
+- 70 care records parsed: 0 invalid coordinates
+- 15 Savior Atlas independent investigations present
+- JavaScript syntax check passed for active root/research JS files
+- No remaining literal "رافي عبد السميع الحجي" string found
+- No external script/style dependency remains in active HTML pages
+
+Note
+- Legacy unreferenced research/research.js remains archival only and is not loaded by any HTML page.

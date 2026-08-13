@@ -1,0 +1,19 @@
+LuxDot v1.7 — Living Tree Interface
+Base: v1.6 Projects + Living Research, itself based on CLEAN WHITE v1.5 ARABIC SACRED
+
+Preserved
+- Library
+- Qur'an reader and quran.js
+- Tanakh
+- New Testament
+- Existing bilingual/RTL logic
+
+Updated
+- Projects page remains in the same black/green LuxDot design language
+- Research page fully rebuilt in black/green/gold/white signal palette
+- Living Research opens on an organic knowledge-tree interface
+- Royal cartouche nodes replace plain circles
+- Confidence controls branch brightness and leaf illumination
+- Cross-branch 'knowledge anastomoses' show support/tension between independent paths
+- 25 km / 70-record care map retained and restyled with a dark map base
+- Terminal visual full stops are removed from visible website text at runtime without touching URLs/code/data

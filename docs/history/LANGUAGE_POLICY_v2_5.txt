@@ -1,0 +1,15 @@
+LUXDOT v2.5 LANGUAGE POLICY
+
+CORE UI ACCESS
+- Arabic (RTL)
+- English (LTR)
+- Dutch (LTR)
+- Bahasa Indonesia (LTR)
+
+SOURCE-LANGUAGE LAYERS
+- Basa Jawa is preserved for Javanese terms, literary sources and verified source-script display
+- Aksara Jawa is not used decoratively when spelling cannot be verified
+- Sacred/source texts may retain original languages regardless of UI language
+
+PRINCIPLE
+A visitor should not need English to understand the primary navigation or the Nusantara/Faith architecture. Source-language material remains visible where meaningful, with context and translation.
