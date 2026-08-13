@@ -18,3 +18,13 @@ html[dir=rtl] .gate{direction:rtl}html[dir=rtl] .sig-status{direction:ltr}
 .burst{position:fixed;inset:0;z-index:50;pointer-events:none;opacity:0;background:radial-gradient(circle at var(--bx,50vw) var(--by,50vh),rgba(240,255,245,1) 0 2px,rgba(88,255,145,.96) 3px,rgba(27,215,92,.35) 8px,rgba(0,12,4,.98) 16px,#000 22px);clip-path:circle(0 at var(--bx,50vw) var(--by,50vh))}
 .burst.go{opacity:1;animation:signalBurst .82s cubic-bezier(.16,.84,.24,1) forwards}
 @keyframes signalBurst{0%{clip-path:circle(0 at var(--bx,50vw) var(--by,50vh));filter:brightness(2)}45%{filter:brightness(1.35)}100%{clip-path:circle(160vmax at var(--bx,50vw) var(--by,50vh));filter:brightness(1)}}
+
+/* v2.9.3 CRT receive-signal transition */
+body::after{content:"";position:fixed;left:var(--crt-x,50vw);top:var(--crt-y,50vh);width:2px;height:2px;border-radius:50%;background:#f8fff9;box-shadow:0 0 12px #fff,0 0 34px #62ff9a;opacity:0;pointer-events:none;z-index:99999}
+.crt-out #gate,.crt-out .signals,.crt-out .sig-status,.crt-out .sound{animation:crtContentOff .38s ease forwards}
+.crt-out #matrix,.crt-out .noise,.crt-out .scan,.crt-out .vignette{transform-origin:var(--crt-x,50vw) var(--crt-y,50vh);animation:crtCollapse .72s cubic-bezier(.7,0,.3,1) forwards}
+.crt-out::after{animation:crtDot 1.05s ease forwards}
+@keyframes crtContentOff{to{opacity:0}}
+@keyframes crtCollapse{0%{transform:scale(1,1);filter:brightness(1)}42%{transform:scale(1,.012);filter:brightness(2.2)}72%{transform:scale(.025,.008);filter:brightness(4)}100%{transform:scale(0,0);opacity:0}}
+@keyframes crtDot{0%,54%{opacity:0;transform:scale(.3)}68%{opacity:1;transform:scale(1.8)}88%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(10)}}
+@media(prefers-reduced-motion:reduce){.crt-out #matrix,.crt-out .noise,.crt-out .scan,.crt-out .vignette{animation:crtFade .5s ease forwards}.crt-out::after{display:none}@keyframes crtFade{to{opacity:0}}}

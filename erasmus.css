@@ -48,3 +48,5 @@ body.research-body:before{content:"";position:fixed;inset:0;pointer-events:none;
 .depth-synthesis{margin-top:14px;padding:22px;border-inline-start:2px solid var(--r-gold);background:rgba(217,186,113,.035)}
 .depth-synthesis h3{font:400 24px Georgia,serif;color:#f1f7f3;margin:0 0 8px}.depth-synthesis p{color:#8ea198;line-height:1.85;margin:0}
 @media(max-width:720px){.depth-grid{grid-template-columns:1fr}.erasmus-depth{padding:18px}}
+
+.comparison-shell{position:relative;min-height:680px;border:1px solid rgba(214,180,90,.18);border-radius:24px;background:radial-gradient(circle at 50% 50%,rgba(28,77,45,.12),transparent 35%),#020604;overflow:hidden}.comparison-shell #livingTree{width:100%;height:auto;min-height:680px}.comparison-shell .node-drawer{z-index:5}

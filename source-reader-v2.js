@@ -16,7 +16,7 @@ function apply(){const l=current(),u=UI[l];document.documentElement.lang=l;docum
  document.getElementById('readerTitle').textContent=t(D.title,l);
  document.getElementById('readerDeck').textContent=t(D.intro,l);
  document.getElementById('readerNote').textContent=u.readerNote;
- document.getElementById('originalToggle').textContent=document.body.classList.contains('show-original')?u.hideOriginal:u.original;
+ const ot=document.getElementById('originalToggle'),hasOriginal=(D.sections||[]).some(s=>String(s.original||'').trim());if(ot){ot.hidden=!hasOriginal;ot.textContent=document.body.classList.contains('show-original')?u.hideOriginal:u.original;ot.setAttribute('aria-pressed',document.body.classList.contains('show-original')?'true':'false')}
  document.getElementById('listenButton').textContent=u.listen;
  document.getElementById('sectionsLabel').textContent=u.sections;
  document.getElementById('sourceLink').textContent=u.source;

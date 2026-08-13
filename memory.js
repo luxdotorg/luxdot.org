@@ -58,14 +58,44 @@ function openNode(id){const raw=DB?.nodes?.find(x=>x.id===id);if(!raw)return;con
 function close(){D.classList.remove('on');D.setAttribute('aria-hidden','true')}
 D.addEventListener('click',e=>{if(e.target===D)close()});addEventListener('keydown',e=>{if(e.key==='Escape')close()});
 function tree(){
- const nodes=(DB.nodes||[]).map(trNode), left=nodes.filter((_,i)=>i%2===0), right=nodes.filter((_,i)=>i%2===1);
+ const nodes=(DB.nodes||[]).map(trNode);
+ const left=nodes.filter((_,i)=>i%2===0), right=nodes.filter((_,i)=>i%2===1);
  const positions={};
- const place=(arr,side)=>arr.forEach((n,i)=>{const level=i%4;const y=19+level*15+Math.floor(i/4)*5;const spread=level*3;positions[n.id]=[side==='left'?25-spread:75+spread,y]});
- place(left,'left');place(right,'right');
- const pathFor=n=>{const[x,y]=positions[n.id], side=x<50?-1:1, jx=50+side*(10+(y-15)*.13), jy=Math.min(72,y+13);return `M50,88 C50,80 ${50+side*5},76 ${50+side*7},70 L${50+side*7},${jy} Q${50+side*7},${y} ${jx},${y} L${x},${y}`};
- const roots=['M50,88 C49,94 42,95 36,99','M50,88 C51,94 58,95 64,99','M50,88 C47,93 45,97 45,100','M50,88 C53,93 55,97 55,100','M50,88 C44,92 33,94 27,98','M50,88 C56,92 67,94 73,98'];
- const defs='<defs><linearGradient id="treeGradient" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#654325"/><stop offset=".45" stop-color="#778b4a"/><stop offset="1" stop-color="#63b779"/></linearGradient></defs>';
- V.innerHTML=`<div class="lux-living-tree"><svg viewBox="0 0 100 100" preserveAspectRatio="none">${defs}<path class="branch trunk" d="M50,89 C49,77 50,68 50,58 C50,48 49,40 50,31 C50,24 50,17 50,10"/>${roots.map(d=>`<path class="branch root" d="${d}"/>`).join('')}${nodes.map(n=>`<path class="branch major" d="${pathFor(n)}"/><path class="tree-signal" d="${pathFor(n)}"/>`).join('')}</svg>${nodes.map(n=>{const p=positions[n.id];const img=n.image||'assets/thumbs/event.svg';return`<button class="lux-tree-node ${tragedy(n.id)?'has-tragedy':''}" data-id="${esc(n.id)}" style="left:${p[0]}%;top:${p[1]}%"><span class="node-port"></span><img src="${esc(img)}" alt="" loading="lazy"><b>${esc(n.title)}</b><small>${fmt(n.date)} · ${esc(n.theme)}</small></button>`}).join('')}</div>`;bindNodes()
+ const distribute=(arr,side)=>arr.forEach((n,i)=>{
+   const count=Math.max(arr.length,1);
+   const y=12+(i+1)*(74/(count+1));
+   const tier=i%3;
+   const x=side==='left'?(24-tier*2):(76+tier*2);
+   positions[n.id]=[x,y];
+ });
+ distribute(left,'left');distribute(right,'right');
+ const branchPath=n=>{
+   const [x,y]=positions[n.id]; const side=x<50?-1:1;
+   const trunkX=50+side*(2.8+Math.abs(y-50)*.025);
+   const elbow1=50+side*8.5, elbow2=x-side*5.2;
+   return `M50,86 L50,${Math.max(49,Math.min(65,y+8))} L${trunkX},${Math.max(44,Math.min(68,y+5))} L${elbow1},${y} L${elbow2},${y} L${x},${y}`;
+ };
+ const roots=[
+  'M50,86 L50,91 L43,97 L38,97','M50,86 L50,92 L46,99 L42,99','M50,86 L50,93 L49,100',
+  'M50,86 L50,93 L51,100','M50,86 L50,92 L54,99 L58,99','M50,86 L50,91 L57,97 L62,97'
+ ];
+ const minorRoots=[36,40,44,47,53,56,60,64].map((x,i)=>`M50,88 L${50+(x<50?-1:1)*(2+i%3)},${93+i%2} L${x},100`);
+ const defs=`<defs>
+   <linearGradient id="treeTrunkGradient" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#5b3a20"/><stop offset=".42" stop-color="#8b6f35"/><stop offset=".72" stop-color="#a88938"/><stop offset="1" stop-color="#6f9d49"/></linearGradient>
+   <filter id="treeGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation=".45" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>`;
+ V.innerHTML=`<div class="memory-circuit-tree" role="img" aria-label="شجرة أطلس الذاكرة">
+   <svg class="memory-circuit-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${defs}
+    <path class="circuit-trunk" d="M50,87 L50,15"/>
+    <path class="circuit-trunk-core" d="M49.25,87 L49.25,18 M50.75,87 L50.75,18"/>
+    ${roots.concat(minorRoots).map(d=>`<path class="circuit-root" d="${d}"/>`).join('')}
+    ${nodes.map(n=>`<path class="circuit-branch" d="${branchPath(n)}"/><path class="circuit-pulse" d="${branchPath(n)}"/>`).join('')}
+   </svg>
+   <div class="tree-heart" aria-hidden="true"><span>✦</span></div>
+   ${nodes.map(n=>{const [x,y]=positions[n.id];const img=n.image||'assets/thumbs/event.svg';return `<button class="memory-circuit-node ${tragedy(n.id)?'has-tragedy':''}" data-id="${esc(n.id)}" style="left:${x}%;top:${y}%"><span class="circuit-port" aria-hidden="true"></span><span class="node-thumb"><img src="${esc(img)}" alt="" loading="lazy" onerror="this.style.display='none'"></span><span class="node-copy"><b>${esc(n.title)}</b><small>${fmt(n.date)} · ${esc(n.theme)}</small></span></button>`}).join('')}
+   <div class="tree-caption">كل ذاكرة غصن من شجرة واحدة، والجذور تحفظ ما لا ينبغي أن يُنسى</div>
+  </div>`;
+ bindNodes();
 }
 function timeline(){V.innerHTML=`<div class="timeline">${(DB.nodes||[]).map(trNode).map(n=>`<article class="time-row ${tragedy(n.id)?'has-tragedy':''}" data-id="${esc(n.id)}">${bloodMark(n.id)}<div class="time-date">${fmt(n.date)}</div><div><h3>${esc(n.title)}</h3><p>${esc(n.summary)}</p></div></article>`).join('')}</div>`;bindNodes()}
 function map(){
@@ -74,7 +104,7 @@ function map(){
  if(!window.L){document.getElementById('memoryLeafletMap').innerHTML='<div class="status">تعذر تحميل خادم الخريطة. تبقى بيانات الأطلس متاحة في القائمة والشجرة</div>';return}
  const m=L.map('memoryLeafletMap',{zoomControl:true,worldCopyJump:true}).setView([50.6,8.0],4);
  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(m);
- const icon=L.divIcon({className:'',html:'<span class="lux-map-marker"></span>',iconSize:[16,16],iconAnchor:[8,8]});
+ const icon=L.divIcon({className:'lux-pin-wrap',html:'<span class="lux-map-pin"><span class="lux-map-pin-core"></span></span>',iconSize:[30,42],iconAnchor:[15,39],popupAnchor:[0,-38],tooltipAnchor:[0,-34]});
  const group=[];nodes.forEach(n=>{const mk=L.marker([n.lat,n.lon],{icon}).addTo(m);mk.bindTooltip(esc(n.title),{direction:'top'});mk.on('click',()=>openNode(n.id));group.push(mk)});if(group.length){const fg=L.featureGroup(group);m.fitBounds(fg.getBounds().pad(.22),{maxZoom:6})}
 }
 function field(){V.innerHTML=`<div class="field-grid">${(DB.field||[]).map(f=>`<article class="field-card"><span class="badge">${fmt(f.date)} / ${esc(fieldKind(f))}</span><b>${esc(fieldTitle(f))}</b><small>${esc(f.city)} · ${esc(f.time)}<br>${esc(f.address)}<br><br>${esc(fieldNote(f))}</small></article>`).join('')}</div>`}
