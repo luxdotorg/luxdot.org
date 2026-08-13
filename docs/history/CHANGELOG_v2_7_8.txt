@@ -1,8 +1,0 @@
-LuxDot v2.7.8 — CLEAN MAP + MEMORY ARCHIVE FIX
-Date: 11 August 2026
-- Rebuilt Circle of Care runtime with explicit DOM references and zero required mapping CDN dependencies.
-- Care map draws from local care-points.js; searchable list remains available even if SVG drawing fails.
-- Purged visible English-form personal naming; savior investigations use رافي عبد السميع الحجي.
-- Expanded Living Memory backwards: Rufina & Secunda (10 Jul), Justa & Rufina (17 Jul), Edith Stein (9 Aug), Lawrence of Rome (10 Aug).
-- Expanded Joop Westerweel cartridge with the Dutch LuxDot memorial text and authoritative Kamp Vught/Yad Vashem sources.
-- Memory JSON and embedded JS synchronized at 2026.08.11-3.

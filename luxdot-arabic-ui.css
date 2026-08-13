@@ -42,9 +42,8 @@ html[lang="ar"] .logo::after,html[lang="ar"] .r-logo::after{content:""}
 .lux-blank-page{background:radial-gradient(circle at 50% 15%,#fffef9,#f3edde 80%,#e4d9c3);box-shadow:inset 0 0 28px rgba(96,75,44,.08)}.lux-blank-page:first-child{border-radius:14px 2px 2px 14px}.lux-blank-page:last-child{border-radius:2px 14px 14px 2px}.lux-blank-spread::after{content:"";position:absolute;left:50%;top:8px;bottom:8px;width:18px;transform:translateX(-50%);background:linear-gradient(90deg,rgba(0,0,0,.12),rgba(255,255,255,.5),rgba(0,0,0,.08));filter:blur(2px)}
 .lux-book-close{position:fixed;top:84px;inset-inline-end:18px;z-index:130;border:1px solid rgba(214,180,90,.5);background:rgba(5,8,6,.94);color:#fff;border-radius:999px;padding:10px 14px;cursor:pointer;font-family:inherit;box-shadow:0 0 18px rgba(214,180,90,.08)}
 
-/* Photon swarm */
-.lux-photon{position:fixed;width:4px;height:4px;border-radius:50%;background:#fff5bd;box-shadow:0 0 7px #ffe99a,0 0 16px rgba(125,255,174,.45);pointer-events:none;z-index:200;animation:luxPhotonSwarm var(--pd,2.7s) cubic-bezier(.22,.7,.25,1) forwards;opacity:0}
-@keyframes luxPhotonSwarm{0%{transform:translate(0,0) scale(.35);opacity:0}10%{opacity:var(--po,.9)}65%{opacity:calc(var(--po,.9) * .72)}100%{transform:translate(var(--px2),var(--py2)) scale(var(--ps,.65));opacity:0}}
+/* Book-light system replaces the old photon swarm completely */
+.lux-photon{display:none!important}
 
 /* Living tree — based on user's drawn topology */
 .lux-living-tree{position:relative;min-height:760px;border:1px solid rgba(214,180,90,.18);border-radius:26px;background:radial-gradient(circle at 50% 68%,rgba(101,67,37,.09),transparent 24%),radial-gradient(circle at 50% 42%,rgba(99,183,121,.055),transparent 35%),#030705;overflow:hidden}
@@ -85,9 +84,15 @@ html[lang="ar"] [data-sacred-lang]:not([data-sacred-lang="ar"]){display:none!imp
 .lux-simple-tree>.tree-side-right .node-port{inset-inline-start:auto;inset-inline-end:-6px}.lux-simple-tree>.tree-side-left .node-port{inset-inline-start:-6px}
 @media(max-width:720px){.lux-simple-tree>.node{width:78%}.lux-simple-tree>.tree-side-right{align-self:flex-start}.lux-simple-tree>.tree-side-left{align-self:flex-end}.dual-tree{grid-template-columns:1fr!important}}
 
-/* v2.9.3 book light: rays + airborne dust */
-.lux-photon{display:none!important}.lux-book-rays{position:fixed;width:1px;height:1px;z-index:10000;pointer-events:none}.lux-light-ray{position:absolute;left:0;bottom:0;width:clamp(90px,18vw,250px);height:2px;transform-origin:0 50%;transform:rotate(var(--ra));background:linear-gradient(90deg,rgba(255,248,205,.75),rgba(139,255,180,.18),transparent);filter:blur(.6px);opacity:0;animation:luxRay var(--rd) ease-out forwards}.lux-light-ray::after{content:"";position:absolute;inset:-20px 0;background:linear-gradient(90deg,rgba(255,248,205,.10),transparent);filter:blur(10px)}@keyframes luxRay{0%{opacity:0;scale:.15 1}22%{opacity:.8}100%{opacity:0;scale:1.1 1}}
-.lux-dust{position:fixed;width:2px;height:2px;border-radius:50%;background:#fff4c6;box-shadow:0 0 5px rgba(255,240,177,.8);z-index:10001;pointer-events:none;opacity:0;animation:luxDust var(--dd) ease-in-out forwards}@keyframes luxDust{0%{opacity:0;transform:translate(0,0)}16%{opacity:.7}58%{transform:translate(calc(var(--dx)*.55),calc(var(--dy)*.52)) rotate(var(--dr));opacity:.5}100%{transform:translate(var(--dx),var(--dy)) rotate(calc(var(--dr)*2));opacity:0}}
+/* v2.9.4 book opening: soft rays + seven drifting dust motes */
+.lux-photon{display:none!important}
+.lux-book-rays{position:fixed;width:1px;height:1px;z-index:10000;pointer-events:none}
+.lux-light-ray{position:absolute;left:0;bottom:0;width:clamp(120px,22vw,310px);height:2px;transform-origin:0 50%;transform:rotate(var(--ra));background:linear-gradient(90deg,rgba(255,249,220,.64),rgba(173,255,202,.12) 48%,transparent);filter:blur(.7px);opacity:0;animation:luxRay var(--rd) ease-out forwards}
+.lux-light-ray::after{content:"";position:absolute;inset:-24px 0;background:linear-gradient(90deg,rgba(255,248,205,.08),transparent 72%);filter:blur(12px)}
+@keyframes luxRay{0%{opacity:0;scale:.12 1}24%{opacity:.66}100%{opacity:0;scale:1.08 1}}
+.lux-dust{position:fixed;width:1px;height:7px;border-radius:999px;background:linear-gradient(#fff8d8,rgba(255,245,196,.22));box-shadow:0 0 3px rgba(255,240,177,.34);z-index:10001;pointer-events:none;opacity:0;transform-origin:center;animation:luxDust var(--dd) ease-in-out forwards}
+@keyframes luxDust{0%{opacity:0;transform:translate(0,0) rotate(0) scale(var(--ds))}18%{opacity:.42}56%{opacity:.32;transform:translate(calc(var(--dx)*.52),calc(var(--dy)*.48)) rotate(var(--dr)) scale(var(--ds))}100%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(calc(var(--dr)*1.7)) scale(calc(var(--ds)*.78))}}
+.lux-image-fallback{object-fit:contain!important;padding:7px!important;filter:none!important}
 .human-books{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:clamp(18px,2.4vw,34px)!important}.human-book.blank{grid-column:1/-1;justify-self:center;margin-top:34px}.lux-future-page{display:grid;place-items:center}.lux-future-note{max-width:76%;text-align:center;color:#8b7d66;display:grid;gap:12px;font-size:clamp(13px,1.5vw,18px);animation:futureNote 7s ease forwards}.lux-future-note strong{color:#594d3d;font-size:1.15em}.lux-future-note em{font-style:normal;color:#6d5e48;margin-top:8px}@keyframes futureNote{0%,8%{opacity:0}22%,72%{opacity:1}100%{opacity:0}}
 @media(max-width:900px){.human-books{grid-template-columns:repeat(3,1fr)!important}}@media(max-width:620px){.human-books{grid-template-columns:repeat(2,1fr)!important}.human-book.blank{grid-column:1/-1}}
 

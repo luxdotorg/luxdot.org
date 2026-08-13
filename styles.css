@@ -377,9 +377,7 @@ body.home-arrival.home-arrival-go{animation:luxArrival .9s cubic-bezier(.18,.82,
 .book-quran{--cover:#0d5a39;--gold:#f0cf72}.book-tanakh{--cover:#07150e;--gold:#e3c578}.book-nt{--cover:#133d2a;--gold:#efd088}.book-gita{--cover:#286946;--gold:#f0d48b}.book-buddhist{--cover:#183724;--gold:#d8bf79}.book-kepercayaan{--cover:#181c18;--gold:#c8b982}
 
 /* Photon released from a book */
-.lux-photon{position:fixed;z-index:9999;width:7px;height:7px;border-radius:50%;pointer-events:none;background:#fffbe7;box-shadow:0 0 6px #fff,0 0 16px var(--lux-gold-hi),0 0 36px #69e89f,0 0 70px rgba(255,255,255,.85);transform:translate(-50%,-50%);animation:photonEscape 980ms cubic-bezier(.13,.82,.24,1) forwards}
-.lux-photon::after{content:"";position:absolute;right:2px;top:50%;width:74px;height:2px;transform:translateY(-50%);transform-origin:right;background:linear-gradient(90deg,transparent,rgba(255,255,255,.92));filter:blur(.4px)}
-@keyframes photonEscape{0%{opacity:0;transform:translate(-50%,-50%) scale(.2)}12%{opacity:1;transform:translate(-50%,-50%) scale(1.5)}52%{opacity:1;transform:translate(calc(-50% + var(--px1)),calc(-50% + var(--py1))) scale(.85)}100%{opacity:0;transform:translate(calc(-50% + var(--px2)),calc(-50% + var(--py2))) scale(.18)}}
+12%{opacity:1;transform:translate(-50%,-50%) scale(1.5)}52%{opacity:1;transform:translate(calc(-50% + var(--px1)),calc(-50% + var(--py1))) scale(.85)}100%{opacity:0;transform:translate(calc(-50% + var(--px2)),calc(-50% + var(--py2))) scale(.18)}}
 .sacred-flash{position:fixed;inset:0;z-index:9998;pointer-events:none;background:radial-gradient(circle at var(--fx) var(--fy),rgba(255,255,245,.94) 0 1%,rgba(228,198,108,.32) 4%,rgba(57,175,105,.11) 13%,transparent 34%);animation:sacredFlash .66s ease-out forwards}
 @keyframes sacredFlash{0%{opacity:0}12%{opacity:1}100%{opacity:0}}
 

@@ -1,5 +1,0 @@
-LuxDot v2.8.3 — JAVA SACRED & REVERED LIBRARY
-- Added a Java sacred/revered shelf immediately beside the primary sacred library
-- Added working source-reader pages: Serat Centhini, Suluk Jawa, Kakawin Ramayana, Serat Wedhatama, Primbon Jawa
-- Preserved distinctions of canonical status; no invented single Javanese holy book
-- Upgraded Javanese texts portal to a constellation of traditions

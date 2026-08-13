@@ -1,7 +1,8 @@
 (()=>{
 'use strict';
 const AR=()=>document.documentElement.lang==='ar'||localStorage.getItem('luxdot.lang')==='ar';
-const asset=(n)=>`assets/thumbs/${n}.svg`;
+const UI_SCRIPT_BASE=(()=>{const s=[...document.scripts].find(x=>/luxdot-arabic-ui\.js(?:\?|$)/.test(x.src));return s?new URL('.',s.src):new URL('.',location.href)})();
+const asset=(n)=>new URL(`assets/thumbs-png/${n}.png`,UI_SCRIPT_BASE).href;
 function stopAllAudio(){
   document.querySelectorAll('audio,video').forEach(m=>{try{m.pause();m.currentTime=0}catch{}});
   try{speechSynthesis.cancel()}catch{}
@@ -19,7 +20,25 @@ function enhanceCartouches(){if(!AR())return;document.querySelectorAll('main art
   const hint=document.createElement('span');hint.className='lux-action-hint';el.appendChild(hint);
   const go=()=>{if(el.dataset.href)location.href=el.dataset.href};el.addEventListener('click',e=>{if(e.target.closest('a[href^="http"]'))return;go()});el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}});
 });}
-function photonSwarm(el){if(!el)return;const r=el.getBoundingClientRect(),x=r.left+r.width*.5,y=r.top+r.height*.44;const rays=document.createElement('div');rays.className='lux-book-rays';rays.style.left=x+'px';rays.style.top=y+'px';document.body.appendChild(rays);for(let i=0;i<3;i++){const q=document.createElement('i');q.className='lux-light-ray';q.style.setProperty('--ra',`${-32+i*32}deg`);q.style.setProperty('--rd',`${.9+i*.12}s`);rays.appendChild(q)}for(let i=0;i<24;i++){setTimeout(()=>{const d=document.createElement('i');d.className='lux-dust';d.style.left=(x+(Math.random()-.5)*42)+'px';d.style.top=(y+(Math.random()-.5)*22)+'px';d.style.setProperty('--dx',`${(Math.random()-.5)*180}px`);d.style.setProperty('--dy',`${-45-Math.random()*170}px`);d.style.setProperty('--dr',`${(Math.random()-.5)*70}px`);d.style.setProperty('--dd',`${2.8+Math.random()*3.8}s`);document.body.appendChild(d);setTimeout(()=>d.remove(),7200)},Math.random()*700)}setTimeout(()=>rays.remove(),1800)}
+function photonSwarm(el){
+  if(!el)return;
+  const r=el.getBoundingClientRect(),x=r.left+r.width*.5,y=r.top+r.height*.44;
+  const rays=document.createElement('div');rays.className='lux-book-rays';rays.style.left=x+'px';rays.style.top=y+'px';document.body.appendChild(rays);
+  [-26,0,26].forEach((a,i)=>{const q=document.createElement('i');q.className='lux-light-ray';q.style.setProperty('--ra',`${a}deg`);q.style.setProperty('--rd',`${1.05+i*.14}s`);rays.appendChild(q)});
+  for(let i=0;i<7;i++){
+    setTimeout(()=>{
+      const d=document.createElement('i');d.className='lux-dust';
+      d.style.left=(x+(Math.random()-.5)*34)+'px';d.style.top=(y+(Math.random()-.5)*18)+'px';
+      d.style.setProperty('--dx',`${(Math.random()-.5)*115}px`);
+      d.style.setProperty('--dy',`${-38-Math.random()*115}px`);
+      d.style.setProperty('--dr',`${(Math.random()-.5)*40}deg`);
+      d.style.setProperty('--dd',`${4.1+Math.random()*3.6}s`);
+      d.style.setProperty('--ds',`${.65+Math.random()*.75}`);
+      document.body.appendChild(d);setTimeout(()=>d.remove(),8200);
+    },180+Math.random()*780);
+  }
+  setTimeout(()=>rays.remove(),2200);
+}
 window.LuxDotPhotonSwarm=photonSwarm;
 function bookBehavior(){
   const path=location.pathname.split('/').pop();const bookPages=new Set(['quran.html','tanakh.html','new-testament.html','gita.html','buddhist.html','guru-granth.html','avesta.html','jain.html','dao.html','analects.html','bahai.html','kojiki.html','serat-centhini.html','suluk-java.html','kakawin-ramayana.html','serat-wedhatama.html','primbon-java.html']);
@@ -30,7 +49,7 @@ function bookBehavior(){
   document.querySelectorAll('[data-close-sacred]').forEach(b=>b.addEventListener('click',()=>stopAllAudio(),{capture:true}));
   addEventListener('pagehide',stopAllAudio);addEventListener('beforeunload',stopAllAudio);
 }
-function blankBook(){const trigger=document.querySelector('[data-blank-book]');if(!trigger)return;const ov=document.createElement('div');ov.className='lux-blank-overlay';ov.innerHTML='<button type="button" class="lux-book-close">إغلاق الكتاب والعودة إلى المكتبة</button><div class="lux-blank-spread" aria-label="كتاب للأجيال القادمة"><div class="lux-blank-page"></div><div class="lux-blank-page lux-future-page"><div class="lux-future-note"><strong>تُرك هذا الكتاب فارغاً عمداً.</strong><span>ليس لأن الحكاية انتهت، بل لأنها لم تُكتب بعد.</span><span>هذه الصفحات للأجيال القادمة؛ لتكتب ما عرفته، وما صححته، وما رأت أننا لم نره.</span><em>لا ترثوا أجوبتنا فقط. اتركوا مكاناً لأجوبتكم.</em></div></div></div>';document.body.appendChild(ov);const close=ov.querySelector('button');trigger.addEventListener('click',()=>{photonSwarm(trigger,50);ov.classList.add('on')});close.addEventListener('click',()=>{stopAllAudio();ov.classList.remove('on');trigger.focus()});ov.addEventListener('click',e=>{if(e.target===ov){stopAllAudio();ov.classList.remove('on')}})}
+function blankBook(){const trigger=document.querySelector('[data-blank-book]');if(!trigger)return;const ov=document.createElement('div');ov.className='lux-blank-overlay';ov.innerHTML='<button type="button" class="lux-book-close">إغلاق الكتاب والعودة إلى المكتبة</button><div class="lux-blank-spread" aria-label="كتاب للأجيال القادمة"><div class="lux-blank-page"></div><div class="lux-blank-page lux-future-page"><div class="lux-future-note"><strong>تُرك هذا الكتاب فارغاً عمداً.</strong><span>ليس لأن الحكاية انتهت، بل لأنها لم تُكتب بعد.</span><span>هذه الصفحات للأجيال القادمة؛ لتكتب ما عرفته، وما صححته، وما رأت أننا لم نره.</span><em>لا ترثوا أجوبتنا فقط. اتركوا مكاناً لأجوبتكم.</em></div></div></div>';document.body.appendChild(ov);const close=ov.querySelector('button');trigger.addEventListener('click',()=>{photonSwarm(trigger);ov.classList.add('on')});close.addEventListener('click',()=>{stopAllAudio();ov.classList.remove('on');trigger.focus()});ov.addEventListener('click',e=>{if(e.target===ov){stopAllAudio();ov.classList.remove('on')}})}
 
 
 function localizeLanguageOptions(){
@@ -64,11 +83,22 @@ function enhanceLegacyTrees(){
   });
 }
 
+function repairImages(){
+  document.querySelectorAll('img').forEach(img=>{
+    if(img.dataset.luxRepair==='1')return;
+    img.dataset.luxRepair='1';
+    img.addEventListener('error',()=>{
+      const fallback=asset('default');
+      if(img.src!==fallback){img.src=fallback;img.classList.add('lux-image-fallback')}
+    },{once:true});
+  });
+}
+
 function drawCircuits(){
  document.querySelectorAll('.lux-circuit-layer').forEach(x=>x.remove());const pairs=[...document.querySelectorAll('[data-connect-to]')];if(!pairs.length)return;const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.classList.add('lux-circuit-layer','lux-circuit');svg.style.cssText=`position:absolute;left:0;top:0;width:${document.documentElement.scrollWidth}px;height:${document.documentElement.scrollHeight}px`;svg.setAttribute('width',document.documentElement.scrollWidth);svg.setAttribute('height',document.documentElement.scrollHeight);document.body.appendChild(svg);
  pairs.forEach(src=>{const dst=document.getElementById(src.dataset.connectTo);if(!dst)return;let a=src.querySelector(':scope > .lux-port.out');if(!a){a=document.createElement('i');a.className='lux-port out';src.appendChild(a)}let b=dst.querySelector(':scope > .lux-port.in');if(!b){b=document.createElement('i');b.className='lux-port in';dst.appendChild(b)}const ra=a.getBoundingClientRect(),rb=b.getBoundingClientRect(),x1=ra.left+ra.width/2+scrollX,y1=ra.top+ra.height/2+scrollY,x2=rb.left+rb.width/2+scrollX,y2=rb.top+rb.height/2+scrollY,mx=x1+(x2-x1)*.5,d=`M${x1},${y1} H${mx} V${y2} H${x2}`;['base','signal'].forEach(c=>{const p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('d',d);if(c==='signal')p.setAttribute('class','signal');svg.appendChild(p)})
  });
 }
-function init(){arabizeBrand();localizeLanguageOptions();polishArabicVisibleText();enhanceCartouches();enhanceLegacyTrees();bookBehavior();blankBook();setTimeout(drawCircuits,80);addEventListener('resize',()=>setTimeout(drawCircuits,80))}
-document.addEventListener('DOMContentLoaded',init);document.addEventListener('luxlang',()=>setTimeout(()=>{arabizeBrand();localizeLanguageOptions();polishArabicVisibleText();enhanceCartouches();enhanceLegacyTrees();drawCircuits()},0));
+function init(){arabizeBrand();localizeLanguageOptions();polishArabicVisibleText();enhanceCartouches();enhanceLegacyTrees();bookBehavior();blankBook();repairImages();setTimeout(drawCircuits,80);addEventListener('resize',()=>setTimeout(drawCircuits,80))}
+document.addEventListener('DOMContentLoaded',init);document.addEventListener('luxlang',()=>setTimeout(()=>{arabizeBrand();localizeLanguageOptions();polishArabicVisibleText();enhanceCartouches();enhanceLegacyTrees();repairImages();drawCircuits()},0));
 })();

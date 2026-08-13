@@ -92,7 +92,7 @@ function tree(){
     ${nodes.map(n=>`<path class="circuit-branch" d="${branchPath(n)}"/><path class="circuit-pulse" d="${branchPath(n)}"/>`).join('')}
    </svg>
    <div class="tree-heart" aria-hidden="true"><span>✦</span></div>
-   ${nodes.map(n=>{const [x,y]=positions[n.id];const img=n.image||'assets/thumbs/event.svg';return `<button class="memory-circuit-node ${tragedy(n.id)?'has-tragedy':''}" data-id="${esc(n.id)}" style="left:${x}%;top:${y}%"><span class="circuit-port" aria-hidden="true"></span><span class="node-thumb"><img src="${esc(img)}" alt="" loading="lazy" onerror="this.style.display='none'"></span><span class="node-copy"><b>${esc(n.title)}</b><small>${fmt(n.date)} · ${esc(n.theme)}</small></span></button>`}).join('')}
+   ${nodes.map(n=>{const [x,y]=positions[n.id];const img=n.image||'assets/thumbs-png/event.png';return `<button class="memory-circuit-node ${tragedy(n.id)?'has-tragedy':''}" data-id="${esc(n.id)}" style="left:${x}%;top:${y}%"><span class="circuit-port" aria-hidden="true"></span><span class="node-thumb"><img src="${esc(img)}" alt="" loading="lazy" onerror="this.style.display='none'"></span><span class="node-copy"><b>${esc(n.title)}</b><small>${fmt(n.date)} · ${esc(n.theme)}</small></span></button>`}).join('')}
    <div class="tree-caption">كل ذاكرة غصن من شجرة واحدة، والجذور تحفظ ما لا ينبغي أن يُنسى</div>
   </div>`;
  bindNodes();
