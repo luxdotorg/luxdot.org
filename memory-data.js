@@ -1,28 +1,28 @@
 window.LUXDOT_MEMORY_DB = {
   "meta": {
-    "version": "2026.08.11-3",
+    "version": "2026.08.13-ar-master-1",
     "range": "2026-07-10/2026-08-17",
-    "principle": "Document first. Interpretation second. Counter-evidence always visible."
+    "principle": "الوثيقة أولاً، ثم التفسير. الدليل المضاد يبقى ظاهراً دائماً."
   },
   "nodes": [
     {
       "id": "rufina-secunda",
       "date": "2026-07-10",
-      "theme": "MARTYRDOM / TRADITION",
-      "title": "Rufina & Secunda",
-      "place": "Rome · Via Cornelia",
+      "theme": "الاستشهاد • التقليد",
+      "title": "روفينا وسيكوندا (Rufina & Secunda)",
+      "place": "روما • طريق كورنيليا (Via Cornelia)",
       "lat": 41.9028,
       "lon": 12.4964,
       "status": "documented-tradition",
-      "summary": "The Roman Martyrology commemorates Rufina and Secunda on 10 July. Vatican sources place their martyrdom near Rome around the mid-third century; the detailed passion narrative is later and should be distinguished from the older cult and commemoration.",
-      "question": "How do we honor an old tradition while separating early evidence from later narrative detail?",
+      "summary": "يحيي الاستشهاد الروماني ذكرى القديستين روفينا وسيكوندا في 10 يوليو. وتضع مصادر الفاتيكان استشهادهما قرب روما في منتصف القرن 3 تقريباً؛ أما تفاصيل قصة الآلام المتداولة فهي أحدث زمناً، لذلك نفصل بين قدم العبادة والتذكار وبين التفاصيل السردية اللاحقة.",
+      "question": "كيف نكرّم تقليداً قديماً مع الفصل بين الشواهد المبكرة والتفاصيل التي أضافتها الروايات اللاحقة؟",
       "sources": [
         {
-          "label": "Vatican State — Saints Rufina and Secunda, 10 July",
+          "label": "الفاتيكان State — Saints Rufina and Secunda, 10 July",
           "url": "https://www.vaticanstate.va/en/state-and-government/general-informations/saint-of-the-day/2254-july-10-saints-rufina-and-secunda-martyrs.html"
         },
         {
-          "label": "Vatican News — Rufina and Secunda",
+          "label": "الفاتيكان News — Rufina and Secunda",
           "url": "https://www.vaticannews.va/en/saints/07/10/sts--rufina-and-secunda--martyrs-on-the--via-cornelia.html"
         }
       ],
@@ -31,21 +31,21 @@ window.LUXDOT_MEMORY_DB = {
     {
       "id": "justa-rufina",
       "date": "2026-07-17",
-      "theme": "MARTYRDOM / MEMORY",
-      "title": "Justa & Rufina of Seville",
-      "place": "Seville · Spain",
+      "theme": "الاستشهاد • الذاكرة",
+      "title": "يوستا وروفينا الإشبيليتان (Justa & Rufina)",
+      "place": "إشبيلية • إسبانيا (Sevilla)",
       "lat": 37.3891,
       "lon": -5.9845,
       "status": "documented-tradition",
-      "summary": "Seville Cathedral commemorates Justa and Rufina on 17 July. Their cult is ancient, while the cathedral itself notes that the first written references to their lives and martyrdom come centuries later. Their identity as potters and patrons of Seville became a powerful artistic memory.",
-      "question": "When memory survives through art and devotion, how do we preserve both its meaning and its historical uncertainty?",
+      "summary": "تحيي كاتدرائية إشبيلية ذكرى يوستا وروفينا في 17 يوليو. عبادتهما قديمة، بينما تشير الكاتدرائية نفسها إلى أن أقدم الإشارات المكتوبة المفصلة إلى حياتهما واستشهادهما جاءت بعد ذلك بقرون. وصارت مهنتهما كصانعتَي فخار وصلتهما بإشبيلية جزءاً بارزاً من الذاكرة الفنية للمدينة.",
+      "question": "حين تبقى الذاكرة حيّة عبر الفن والتدين، كيف نحفظ معناها وفي الوقت نفسه نُظهر حدود اليقين التاريخي؟",
       "sources": [
         {
-          "label": "Seville Cathedral — Justa & Rufina, 17 July 2026",
+          "label": "كاتدرائية إشبيلية — Justa & Rufina, 17 July 2026",
           "url": "https://www.catedraldesevilla.es/santas-justa-y-rufina-fe-arte-y-memoria-de-sevilla/"
         },
         {
-          "label": "Museo del Prado — Saints Justa and Rufina",
+          "label": "متحف برادو — Saints Justa and Rufina",
           "url": "https://www.museodelprado.es/en/the-collection/art-work/saints-justa-and-rufina/d5b49bdb-febd-4f18-96c4-9dae562b2683"
         }
       ],
@@ -54,21 +54,21 @@ window.LUXDOT_MEMORY_DB = {
     {
       "id": "edith-stein",
       "date": "2026-08-09",
-      "theme": "EMPATHY / DIGNITY",
-      "title": "Edith Stein · Teresa Benedicta of the Cross",
-      "place": "Echt → Westerbork → Auschwitz-Birkenau",
+      "theme": "التعاطف • الكرامة",
+      "title": "إديث شتاين • تريزا بندكتا للصليب (Edith Stein)",
+      "place": "إيخت → فيستربورك → أوشفيتز–بيركيناو",
       "lat": 50.0359,
       "lon": 19.1783,
       "status": "documented",
-      "summary": "Edith Stein (1891–1942), a German-Jewish philosopher who became a Carmelite nun, was deported from the Netherlands and killed at Auschwitz-Birkenau on 9 August 1942. LuxDot remembers her through the question that shaped our 9 August research: can empathy become responsibility before a person is reduced to a label?",
-      "question": "Can we learn to see the person before the label — and let recognition become responsibility?",
+      "summary": "إديث شتاين (1891–1942) فيلسوفة ألمانية يهودية الأصل اعتنقت الكاثوليكية وأصبحت راهبة كرملية. رُحّلت من هولندا وقُتلت في أوشفيتز–بيركيناو في 9 أغسطس 1942. تحفظ نقطة نور ذكراها عبر سؤال رافق بحث 9 أغسطس: هل يمكن أن يتحول التعاطف إلى مسؤولية قبل أن يُختزل الإنسان إلى تصنيف؟",
+      "question": "هل نستطيع أن نرى الإنسان قبل التصنيف، وأن نجعل هذا الإدراك مسؤولية عملية؟",
       "sources": [
         {
-          "label": "Vatican — Teresa Benedicta of the Cross (Edith Stein)",
+          "label": "الفاتيكان — Teresa Benedicta of the Cross (Edith Stein)",
           "url": "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19981011_edith_stein_en.html"
         },
         {
-          "label": "Vatican News — Edith Stein, 9 August",
+          "label": "الفاتيكان News — Edith Stein, 9 August",
           "url": "https://www.vaticannews.va/en/saints/08/09/st--theresa-benedicta-of-the-cross--edith-stein---carmelitan--vi.html"
         }
       ],
@@ -77,17 +77,17 @@ window.LUXDOT_MEMORY_DB = {
     {
       "id": "lawrence-rome",
       "date": "2026-08-10",
-      "theme": "SERVICE / VULNERABLE",
-      "title": "Lawrence of Rome",
-      "place": "Rome · Italy",
+      "theme": "الخدمة • المستضعفون",
+      "title": "لورنس الروماني (Saint Lawrence)",
+      "place": "روما • إيطاليا",
       "lat": 41.9028,
       "lon": 12.4964,
       "status": "documented-tradition",
-      "summary": "Lawrence, deacon and martyr of Rome, is commemorated on 10 August. Vatican sources emphasize his responsibility for charitable service to orphans, widows and the poor. LuxDot’s 10 August investigation used his memory to ask what a community calls its true treasure.",
-      "question": "If the vulnerable are the true treasure of a community, what should its institutions protect first?",
+      "summary": "يُحيى تذكار لورنس، شماس روما وشهيدها، في 10 أغسطس. تركز مصادر الفاتيكان على مسؤوليته في خدمة الأيتام والأرامل والفقراء. استخدم بحث نقطة نور في 10 أغسطس ذكراه لطرح سؤال: من أو ما الذي تعدّه الجماعة كنزها الحقيقي؟",
+      "question": "إذا كان المستضعفون هم كنز المجتمع الحقيقي، فما الذي يجب أن تحميه مؤسساته أولاً؟",
       "sources": [
         {
-          "label": "Vatican News — St Lawrence, Deacon and Martyr",
+          "label": "الفاتيكان News — St Lawrence, Deacon and Martyr",
           "url": "https://www.vaticannews.va/en/saints/08/10/st--lawrence-deacon--and-martyr.html"
         }
       ],
@@ -96,23 +96,23 @@ window.LUXDOT_MEMORY_DB = {
     {
       "id": "westerweel",
       "date": "2026-08-11",
-      "theme": "RESCUE",
-      "title": "Joop Westerweel",
-      "place": "Kamp Vught · Netherlands",
+      "theme": "الإنقاذ",
+      "title": "يوب فيسترفيل (Joop Westerweel)",
+      "place": "معسكر فوخت • هولندا (Kamp Vught)",
       "lat": 51.665,
       "lon": 5.258,
       "status": "documented",
-      "summary": "Dutch teacher, pacifist and resistance organizer Joop Westerweel helped Jewish refugees and young Palestine Pioneers hide and escape. Nationaal Monument Kamp Vught records that he built escape routes, was arrested returning from France, imprisoned in Vught and executed there on 11 August 1944.",
-      "question": "Wat vraagt bescherming van ons wanneer zwijgen veiliger is, maar minder menselijk?",
+      "summary": "كان يوب فيسترفيل معلماً هولندياً ومسالمًا ومنظماً في المقاومة. ساعد لاجئين يهوداً وشباناً من رواد فلسطين على الاختباء والهروب. يوثق النصب الوطني لمعسكر فوخت أنه بنى طرقاً للهروب، واعتُقل أثناء عودته من فرنسا، وسُجن في فوخت وأُعدم هناك في 11 أغسطس 1944.",
+      "question": "ماذا تتطلب الحماية منا عندما يكون الصمت أكثر أماناً، لكنه أقل إنسانية؟",
       "image": "https://encyclopedia.ushmm.org/images/large/04c73735-d3e3-4e08-a98e-a6b5fca94d8a.jpeg",
       "imageCredit": "USHMM archival portrait",
       "sources": [
         {
-          "label": "NM Kamp Vught — Westerweel",
+          "label": "النصب الوطني لمعسكر فوخت — Westerweel",
           "url": "https://www.nmkampvught.nl/ontdekken/het-verhaal/vermoord-in-vught/westerweel-johan-gerard/"
         },
         {
-          "label": "Yad Vashem — Westerweel",
+          "label": "ياد فاشيم — Westerweel",
           "url": "https://wwv.yadvashem.org/YV/en/exhibitions/righteous-teachers/westerweel.asp"
         }
       ],
@@ -122,28 +122,28 @@ window.LUXDOT_MEMORY_DB = {
           "url": "https://www.nmkampvught.nl/bezoeken/actueel/nieuws/2025/05/podcast-bevrijding-toen-en-nu/"
         }
       ],
-      "dossier": "De bewaker die niet wegkeek — Joop Westerweel was leraar, pacifist en verzetsman. Hij hielp Joodse vluchtelingen en jongeren onderduiken en ontsnappen. Voor LuxDot ligt de kern niet in heldenverering, maar in zijn keuze om bescherming praktisch te maken toen wegkijken veiliger was. Zijn eigen gevangenisbrieven waarschuwen bovendien tegen idealisering: ook moed blijft menselijk."
+      "dossier": "الحارس الذي لم ينظر بعيداً — كان يوب فيسترفيل معلماً ومسالمًا ومقاوماً، وساعد لاجئين يهوداً وشباناً على الاختباء والهروب. في نقطة نور لا تكمن القيمة في صناعة بطل، بل في اختياره أن يجعل الحماية فعلاً عملياً عندما كان تجاهل الخطر أكثر أماناً. وتمنعنا رسائله من السجن من تحويل الشجاعة إلى أسطورة: حتى الشجاعة تبقى إنسانية."
     },
     {
       "id": "stazzema",
       "date": "2026-08-12",
-      "theme": "CIVILIANS",
-      "title": "Sant’Anna di Stazzema",
-      "place": "Tuscany · Italy",
+      "theme": "المدنيون",
+      "title": "سانت آنا دي ستاتزيما (Sant’Anna di Stazzema)",
+      "place": "توسكانا • إيطاليا",
       "lat": 43.972,
       "lon": 10.273,
       "status": "documented",
-      "summary": "On 12 August 1944, civilians in Sant’Anna di Stazzema and nearby hamlets were massacred by German SS troops with fascist collaborators. The site later became a National Park of Peace.",
-      "question": "How can a place of massacre become a place that teaches peace without erasing what happened?",
+      "summary": "في 12 أغسطس 1944 قُتل مئات المدنيين في سانت آنا دي ستاتزيما والقرى القريبة على يد قوات من إس إس الألمانية وبمشاركة متعاونين فاشيين. وأصبح الموقع لاحقاً حديقة وطنية للسلام.",
+      "question": "كيف يمكن لمكان مجزرة أن يصبح مكاناً يعلّم السلام من دون محو ما حدث؟",
       "image": "https://museiprovincialucca.it/sites/default/files/styles/fluid/public/media/2021-08/MONUMENTO-OSSARIO-06.jpg?itok=-wPhzMGI",
       "imageCredit": "Musei Provincia di Lucca — Ossuary Memorial",
       "sources": [
         {
-          "label": "ANPI — 82nd anniversary programme 2026",
+          "label": "الرابطة الوطنية للأنصار الإيطاليين — 82nd anniversary programme 2026",
           "url": "https://www.anpi.it/82deg-anniversario-strage-santanna-di-stazzema"
         },
         {
-          "label": "Sant’Anna memory archive",
+          "label": "أرشيف ذاكرة سانت آنا",
           "url": "https://www.santannadistazzema.org/"
         }
       ],
@@ -157,14 +157,14 @@ window.LUXDOT_MEMORY_DB = {
     {
       "id": "deportation",
       "date": "2026-08-13",
-      "theme": "DEPORTATION",
-      "title": "The machinery of deportation",
-      "place": "Europe · 1942",
+      "theme": "الترحيل",
+      "title": "آلة الترحيل",
+      "place": "أوروبا • 1942",
       "lat": 50.2,
       "lon": 19.8,
       "status": "documented",
-      "summary": "August 1942 shows persecution becoming logistics: ghettos, transports, administrative coordination and deportation. Rymanów and Radom are used here as documented case windows, not as symbols for all experiences.",
-      "question": "At what point does bureaucracy become participation in violence?",
+      "summary": "لم يكن الترحيل حدثاً واحداً، بل منظومة من التسجيل والعزل والنقل والسجن والقتل. في أطلس الذاكرة نقرأ الأشخاص والأماكن ضمن هذه المنظومة من دون اختزال الضحايا إلى أرقام.",
+      "question": "متى تتحول البيروقراطية من تنظيم إلى أداة أذى، وكيف نلاحظ ذلك قبل فوات الأوان؟",
       "sources": [
         {
           "label": "USHMM — 1942 key dates",
@@ -180,14 +180,14 @@ window.LUXDOT_MEMORY_DB = {
     {
       "id": "kolbe",
       "date": "2026-08-14",
-      "theme": "SACRIFICE",
-      "title": "Maximilian Kolbe",
-      "place": "Auschwitz I · Poland",
+      "theme": "التضحية",
+      "title": "ماكسيميليان كولبه (Maximilian Kolbe)",
+      "place": "أوشفيتز 1 • بولندا",
       "lat": 50.027,
       "lon": 19.204,
       "status": "documented",
-      "summary": "Kolbe volunteered to take the place of Franciszek Gajowniczek, who had been selected for death by starvation. Kolbe was killed by poison injection on 14 August 1941 in Block 11.",
-      "question": "What makes an act of sacrifice morally luminous without turning suffering into spectacle?",
+      "summary": "كان ماكسيميليان كولبه راهباً فرنسيسكانياً بولندياً سُجن في أوشفيتز. تُحيى ذكراه في 14 أغسطس، ويرتبط اسمه بتطوعه للموت بدلاً من سجين آخر كان له أسرة. يعرض الأطلس القصة في سياقها التاريخي والديني من دون تحويلها إلى مقياس يُطلب من الآخرين تقليده.",
+      "question": "كيف نكرّم التضحية من دون أن نحولها إلى مطالبة أخلاقية مفروضة على الآخرين؟",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Maksymilian_Maria_Kolbe_-_1939.jpg/640px-Maksymilian_Maria_Kolbe_-_1939.jpg",
       "imageCredit": "Wikimedia Commons — archival portrait",
       "sources": [
@@ -210,14 +210,14 @@ window.LUXDOT_MEMORY_DB = {
     {
       "id": "indies",
       "date": "2026-08-15",
-      "theme": "REMEMBRANCE",
-      "title": "15 August — Breda remembers",
-      "place": "Raffy · Breda · Netherlands",
+      "theme": "التذكار",
+      "title": "15 أغسطس — بريدا تتذكر",
+      "place": "حديقة رافي • بريدا • هولندا (Raffy)",
       "lat": 51.604,
       "lon": 4.807,
       "status": "documented",
-      "summary": "On 15 August 2026 the Indië commemoration at the Indië Monument in Raffy’s garden in Breda carries the theme ‘De geschiedenis leren begrijpen’ — learning to understand history. The programme begins at 14:00 with music by Raffykoor, speeches, the Indisch Our Father, one minute of silence, flag raising, wreath and flower laying, followed by a defilé at 15:30.",
-      "question": "How can later generations inherit a complex memory without flattening the differences between Indisch, Indonesian and Moluccan histories?",
+      "summary": "يُحيى في بريدا يوم 15 أغسطس ذكرى نهاية الحرب في آسيا وضحايا الحرب والاحتلال وما تلاهما في جزر الهند الشرقية الهولندية. تحفظ نقطة نور الفرق بين الذاكرة الهندية الهولندية والإندونيسية والمولوكية، وتتعامل مع المشاركين بوصفهم أصحاب قصتهم.",
+      "question": "كيف نستمع إلى ذاكرة جماعة من دون أن نستبدل كلماتها بتفسيرنا نحن؟",
       "sources": [
         {
           "label": "Arjati — Breda 2026 programme",
@@ -241,21 +241,21 @@ window.LUXDOT_MEMORY_DB = {
     {
       "id": "roger-bialystok",
       "date": "2026-08-16",
-      "theme": "RESISTANCE / RECONCILIATION",
-      "title": "Brother Roger · Białystok",
-      "place": "Taizé / Białystok",
+      "theme": "المقاومة • المصالحة",
+      "title": "الأخ روجيه • بياويستوك (Brother Roger • Białystok)",
+      "place": "تيزيه / بياويستوك",
       "lat": 46.514,
       "lon": 4.677,
       "status": "documented",
-      "summary": "Two distinct memories are kept side by side, not merged: Jewish armed resistance during the liquidation of the Białystok ghetto in 1943, and the life of Brother Roger of Taizé, killed during evening prayer on 16 August 2005 after a life devoted to reconciliation and solidarity.",
-      "question": "When does protecting life call for resistance, and when does healing call for reconciliation?",
+      "summary": "يربط هذا الفرع بين ذاكرة المقاومة المسيحية وأعمال المصالحة التي ارتبطت لاحقاً بجماعة تيزيه. تُعرض الروابط عندما تكون موثقة، وتبقى الاختلافات بين الأشخاص والأزمنة واضحة.",
+      "question": "كيف تنتقل الذاكرة من مقاومة الظلم إلى بناء مصالحة لا تمحو الحقيقة؟",
       "sources": [
         {
           "label": "Taizé — Brother Roger",
           "url": "https://www.taize.fr/en/brother-roger"
         },
         {
-          "label": "Yad Vashem — armed resistance in Białystok",
+          "label": "ياد فاشيم — armed resistance in Białystok",
           "url": "https://www.yadvashem.org/articles/general/armed-resistance-in-krakow-and-bialystok.html"
         },
         {
@@ -273,14 +273,14 @@ window.LUXDOT_MEMORY_DB = {
     {
       "id": "name-truth",
       "date": "2026-08-17",
-      "theme": "IDENTITY / TRUTH",
-      "title": "The name and the lie",
-      "place": "Germany / London",
+      "theme": "الهوية • الحقيقة",
+      "title": "الاسم والكذبة",
+      "place": "ألمانيا / لندن",
       "lat": 52.52,
       "lon": 13.405,
       "status": "documented",
-      "summary": "On 17 August 1938 Nazi Germany imposed additional names, Israel for many Jewish men and Sara for many Jewish women, as an administrative marker. On 17 August 1921 The Times published Philip Graves’s exposure of the plagiarism behind the antisemitic Protocols forgery.",
-      "question": "How do labels make persecution easier — and what does rigorous source-checking do to a weaponized lie?",
+      "summary": "فرع يختبر كيف يمكن للاسم والهوية والوثيقة أن تصبح أدوات حماية أو تضليل أو اضطهاد، وكيف نحافظ على الدقة حين تكون حياة الإنسان مرتبطة بما كُتب عنه.",
+      "question": "متى يحمي الاسم صاحبه، ومتى يصبح التصنيف المكتوب عنه سجناً؟",
       "sources": [
         {
           "label": "USHMM — Law on alteration of names",
