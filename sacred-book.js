@@ -23,8 +23,12 @@ document.addEventListener('DOMContentLoaded',()=>{
    link.addEventListener('click',e=>{
      if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
      const href=link.getAttribute('href');if(!href)return;e.preventDefault();
-     ctx();playChime(toneOf(link));photonFrom(link);link.classList.add('is-taking');markOpen(href);
-     setTimeout(()=>location.href=href,620);
+     ctx();playChime(toneOf(link));link.classList.add('is-taking');markOpen(href);
+     const ov=document.createElement('div');ov.className='lux-book-flight';
+     const clone=link.cloneNode(true);clone.removeAttribute('href');clone.classList.add('lux-book-flight-object');clone.querySelectorAll('[id]').forEach(x=>x.removeAttribute('id'));ov.appendChild(clone);document.body.appendChild(ov);
+     requestAnimationFrame(()=>requestAnimationFrame(()=>ov.classList.add('on')));
+     setTimeout(()=>{ov.classList.add('opening');photonFrom(clone)},720);
+     setTimeout(()=>location.href=href,2000);
    });
  });
  const opener=document.querySelector('[data-open-sacred]'),stage=document.querySelector('[data-sacred-stage]'),reader=document.querySelector('[data-sacred-reader]'),closer=document.querySelector('[data-close-sacred]');

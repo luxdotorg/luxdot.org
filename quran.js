@@ -39,7 +39,7 @@ function scheduleOpeningAyah(){
         }
       },700);
     }
-  },5000);
+  },3000);
 }
 async function fetchJson(url,ms=9000){
   const c=new AbortController(),timer=setTimeout(()=>c.abort(),ms);

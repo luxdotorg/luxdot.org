@@ -28,7 +28,23 @@ function apply(){const l=current(),u=UI[l];document.documentElement.lang=l;docum
  document.getElementById('sourceLink').href=D.sourceUrl||'#';
  document.querySelectorAll('[data-lang-select]').forEach(s=>s.value=l)
 }
-function speak(){if(!('speechSynthesis' in window))return;const l=current();speechSynthesis.cancel();const all=[t(D.title,l),t(D.intro,l),...(D.sections||[]).flatMap(s=>[t(s.heading,l),t(s.meaning,l),t(s.context,l)])].filter(Boolean).join('. ');const u=new SpeechSynthesisUtterance(all);u.lang={ar:'ar',en:'en-US',nl:'nl-NL',id:'id-ID'}[l];u.rate=.9;speechSynthesis.speak(u)}
-document.addEventListener('DOMContentLoaded',()=>{apply();document.getElementById('originalToggle')?.addEventListener('click',()=>{document.body.classList.toggle('show-original');apply()});document.getElementById('listenButton')?.addEventListener('click',speak);document.getElementById('stopButton')?.addEventListener('click',()=>speechSynthesis?.cancel());document.querySelectorAll('[data-lang-select]').forEach(s=>s.addEventListener('change',e=>{localStorage.setItem('luxdot.lang',e.target.value);apply()}))});
+let speaking=false,autoTimer=null;
+function speak(){
+ const b=document.getElementById('listenButton');
+ if(!('speechSynthesis' in window)){if(b)b.textContent=current()==='ar'?'الصوت غير متاح':'Audio unavailable';return}
+ const l=current(),ui=UI[l];
+ if(speaking||speechSynthesis.speaking){speechSynthesis.cancel();speaking=false;if(b)b.textContent=ui.listen;return}
+ speechSynthesis.cancel();
+ const all=[t(D.title,l),t(D.intro,l),...(D.sections||[]).flatMap(s=>[t(s.heading,l),t(s.meaning,l),t(s.context,l)])].filter(Boolean).join('. ');
+ if(!all.trim())return;
+ const u=new SpeechSynthesisUtterance(all);u.lang={ar:'ar-SA',en:'en-US',nl:'nl-NL',id:'id-ID'}[l];u.rate=.88;
+ u.onstart=()=>{speaking=true;if(b)b.textContent=ui.stop};
+ const done=()=>{speaking=false;if(b)b.textContent=ui.listen};u.onend=done;u.onerror=done;
+ speechSynthesis.speak(u)
+}
+function scheduleAuto(){clearTimeout(autoTimer);autoTimer=setTimeout(()=>{if(!document.hidden&&!speaking&&!(window.speechSynthesis&&speechSynthesis.speaking))speak()},3000)}
+document.addEventListener('DOMContentLoaded',()=>{apply();document.getElementById('originalToggle')?.addEventListener('click',()=>{document.body.classList.toggle('show-original');apply()});document.getElementById('listenButton')?.addEventListener('click',speak);document.getElementById('stopButton')?.addEventListener('click',()=>{try{speechSynthesis.cancel()}catch{};speaking=false;apply()});document.querySelectorAll('[data-lang-select]').forEach(s=>s.addEventListener('change',e=>{localStorage.setItem('luxdot.lang',e.target.value);apply()}));scheduleAuto()});
+document.addEventListener('bookopened',scheduleAuto);
+document.addEventListener('luxdot:stop-audio',()=>{clearTimeout(autoTimer);try{speechSynthesis.cancel()}catch{};speaking=false;apply()});
 document.addEventListener('luxlang',apply);
 })();
