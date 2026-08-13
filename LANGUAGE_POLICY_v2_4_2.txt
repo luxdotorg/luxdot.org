@@ -1,6 +1,0 @@
-LuxDot UI language policy — v2.4.2
-
-Core interface languages: Arabic, English, Dutch only.
-Arabic uses RTL. English and Dutch use LTR.
-A foreign original term or proper name may appear when historically necessary, but the visitor must also receive the title, meaning, explanation and action in the selected interface language.
-No primary heading/button/navigation label may depend on the visitor reading another script.

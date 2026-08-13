@@ -1,8 +1,0 @@
-LuxDot v2.7.6 — Savior Atlas Layer 2
-11 Aug 2026
-- Research 001 remains first; Shaam 002; Erasmus 003
-- Personal test name standardized to Arabic: رافي عبد السميع الحجي
-- Added second-layer behavioral/reform-role test to every Savior investigation
-- Kept identity-disconfirmation rule above ethical resemblance
-- Added proposed Global Canon expansion to Library: Sikh, Zoroastrian, Jain, Daoist, Confucian, Baha’i, Shinto, and documented Javanese corpora
-- Atlas version advanced to v0.3
