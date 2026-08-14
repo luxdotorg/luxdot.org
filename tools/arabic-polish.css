@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap');
+
+/* LuxDot Arabic visual pass v2.9.0 — Arabic first */
+html[lang="ar"] body,
+body[data-lang="ar"]{font-family:"Noto Kufi Arabic",Tahoma,Arial,sans-serif;direction:rtl;text-align:right;line-height:1.95;text-rendering:optimizeLegibility}
+html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] h4,
+html[lang="ar"] .logo,html[lang="ar"] .brand,html[lang="ar"] .r-kicker,
+body[data-lang="ar"] h1,body[data-lang="ar"] h2,body[data-lang="ar"] h3{font-family:"Noto Kufi Arabic",Tahoma,Arial,sans-serif;letter-spacing:0;line-height:1.55}
+html[lang="ar"] p,html[lang="ar"] li,html[lang="ar"] .lead,html[lang="ar"] .card,
+body[data-lang="ar"] p,body[data-lang="ar"] li{overflow-wrap:anywhere;word-break:normal;hyphens:none}
+html[lang="ar"] .ar,html[lang="ar"] .arabic-sacred,html[lang="ar"] .sacred-translation{font-family:"Noto Kufi Arabic",Tahoma,Arial,sans-serif;line-height:2.15}
+html[lang="ar"] [dir="ltr"],html[lang="ar"] .latin-name{font-family:Arial,sans-serif;unicode-bidi:isolate;direction:ltr;display:inline-block;font-size:.9em;opacity:.78}
+
+/* Cartouches: precision-circuit language */
+html[lang="ar"] .card,html[lang="ar"] article,html[lang="ar"] .event,html[lang="ar"] .node-card,
+body[data-lang="ar"] .card,body[data-lang="ar"] article{position:relative;border:1px solid rgba(198,158,70,.34);border-radius:18px;background:linear-gradient(145deg,rgba(7,20,14,.92),rgba(2,8,6,.78));box-shadow:inset 0 0 0 1px rgba(112,255,160,.025),0 14px 40px rgba(0,0,0,.22)}
+html[lang="ar"] .card::after,html[lang="ar"] article::after,html[lang="ar"] .event::after{content:"";position:absolute;inset-inline-end:-15px;top:30px;width:15px;height:1px;background:linear-gradient(90deg,#8b6a2b,#e1bd64)}
+html[lang="ar"] .card::before,html[lang="ar"] article::before,html[lang="ar"] .event::before{content:"";position:absolute;inset-inline-end:-19px;top:27px;width:7px;height:7px;border:1px solid #d6ad51;border-radius:50%;background:#07100b;box-shadow:0 0 8px rgba(214,173,81,.45)}
+
+/* Trees: organic knowledge carried by engineered geometry */
+html[lang="ar"] svg .edge,html[lang="ar"] svg path.branch,html[lang="ar"] svg line.branch{stroke:url(#luxBranchGradient);stroke-width:1.65;fill:none;stroke-linecap:round;stroke-linejoin:round}
+html[lang="ar"] svg .cross,html[lang="ar"] svg .cross-link{stroke:#c9a34b;stroke-width:1.35;stroke-dasharray:8 5;animation:luxSignal 2.8s linear infinite}
+html[lang="ar"] svg text,body[data-lang="ar"] svg text{font-family:"Noto Kufi Arabic",Tahoma,Arial,sans-serif!important}
+@keyframes luxSignal{to{stroke-dashoffset:-26}}
+
+/* Generic circuit connectors for grids/timelines */
+html[lang="ar"] .timeline,html[lang="ar"] .grid,html[lang="ar"] .cards{position:relative}
+html[lang="ar"] .timeline::before{content:"";position:absolute;inset-inline-start:18px;top:12px;bottom:12px;width:1px;background:linear-gradient(#6e4b27,#b08b43 36%,#5c9b58 72%,#65d789);box-shadow:0 0 9px rgba(202,164,77,.16)}
+html[lang="ar"] .timeline .event{margin-inline-start:42px}
+
+/* Visual enrichment */
+.lux-visual{margin:28px 0;border:1px solid rgba(199,160,72,.32);border-radius:22px;overflow:hidden;background:#06100b;position:relative}
+.lux-visual img{display:block;width:100%;max-height:440px;object-fit:cover;filter:saturate(.78) contrast(1.05)}
+.lux-visual figcaption{padding:12px 16px;color:#b9c8bf;font-size:12px;line-height:1.8}
+html[lang="ar"] .lux-visual figcaption{font-family:"Noto Kufi Arabic",Tahoma,Arial,sans-serif;text-align:right}
+
+@media(max-width:720px){html[lang="ar"] body{font-size:15px;line-height:1.9}html[lang="ar"] h1{font-size:clamp(25px,8vw,38px)}html[lang="ar"] .card::after,html[lang="ar"] article::after,html[lang="ar"] .event::after,html[lang="ar"] .card::before,html[lang="ar"] article::before,html[lang="ar"] .event::before{display:none}}
+[data-ar-visual]{display:none}html[lang="ar"] [data-ar-visual],body[data-lang="ar"] [data-ar-visual]{display:block}
+/* Knowledge-tree refinement */
+html[lang="ar"] .dual-tree{gap:34px;position:relative}
+html[lang="ar"] .tree-lane{border-color:rgba(121,171,101,.24);background:radial-gradient(circle at 50% 0,rgba(81,122,65,.08),transparent 45%),linear-gradient(180deg,rgba(9,17,10,.97),rgba(3,8,5,.94))}
+html[lang="ar"] .tree-node{margin-inline-start:22px}
+html[lang="ar"] .tree-node::after{content:"";position:absolute;inset-inline-start:-23px;top:50%;width:22px;height:2px;background:linear-gradient(90deg,#70502e,#718d46,#59ad68);box-shadow:0 0 7px rgba(89,173,104,.16)}
+html[lang="ar"] .tree-node::before{content:""!important;position:absolute!important;inset-inline-start:-27px!important;top:calc(50% - 4px)!important;width:7px!important;height:7px!important;border:1px solid #77a760!important;border-radius:50%!important;background:#07100a!important;box-shadow:0 0 8px rgba(101,187,110,.35)!important}
+html[lang="ar"] .tree-node+.tree-node{margin-top:26px}
+html[lang="ar"] .tree-node+.tree-node:after{background:linear-gradient(90deg,#6b492c,#788849,#58b16d)}
+html[lang="ar"] .bridge{position:relative;border-style:solid;border-color:rgba(212,176,85,.42);background:linear-gradient(90deg,rgba(89,62,22,.05),rgba(212,176,85,.10),rgba(89,62,22,.05));overflow:hidden}
+html[lang="ar"] .bridge::before{content:"";position:absolute;top:0;inset-inline-start:-30%;width:30%;height:1px;background:linear-gradient(90deg,transparent,#ffe08b,transparent);animation:luxElectron 3.4s linear infinite;box-shadow:0 0 8px #d7b45d}
+html[lang="ar"] .bridge::after{content:"";position:absolute;top:-4px;inset-inline-end:10px;width:7px;height:7px;border:1px solid #d8b35a;border-radius:50%;background:#07100a}
+@keyframes luxElectron{to{inset-inline-start:110%}}
