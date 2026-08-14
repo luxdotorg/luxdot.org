@@ -1,0 +1,11 @@
+(()=>{const p=location.pathname.split('/').pop();const M={
+'savior-atlas.html':['001','الإنسان والمعنى','Human & Meaning','Mens & Betekenis','Manusia & Makna'],
+'java-script.html':['002','الإنسان والمعنى · رحلات المعرفة','Human & Meaning · Knowledge Journeys','Mens & Betekenis · Kennisreizen','Manusia & Makna · Perjalanan Pengetahuan'],
+'shaam-breda.html':['003','الأرض والحدود','Land & Borders','Land & Grenzen','Tanah & Batas'],
+'erasmus.html':['004','الاختيار والمسؤولية','Choice & Responsibility','Keuze & Verantwoordelijkheid','Pilihan & Tanggung Jawab'],
+'hendrick-busman.html':['005','الحج والإشارة','Pilgrimage & Signal','Bedevaart & Signaal','Ziarah & Sinyal'],
+'urania-nassau.html':['006','الأرض والحدود','Land & Borders','Land & Grenzen','Tanah & Batas'],
+'kevelaer-chaam-timeline.html':['007','الحج والإشارة · الأرض والحدود','Pilgrimage & Signal · Land & Borders','Bedevaart & Signaal · Land & Grenzen','Ziarah & Sinyal · Tanah & Batas'],
+'hoogstraten.html':['008','الأرض والحدود · الحج والإشارة','Land & Borders · Pilgrimage & Signal','Land & Grenzen · Bedevaart & Signaal','Tanah & Batas · Ziarah & Sinyal'],
+'sacred-25km-atlas.html':['009','الأرض والحدود · الحج والإشارة','Land & Borders · Pilgrimage & Signal','Land & Grenzen · Bedevaart & Signaal','Tanah & Batas · Ziarah & Sinyal']};
+const d=M[p];if(!d)return;const l=localStorage.getItem('luxdot.lang')||document.documentElement.lang||'ar',i=l==='ar'?1:l==='nl'?3:l==='id'?4:2;const label=l==='ar'?'العودة إلى أطلس الأبحاث':l==='nl'?'Terug naar Onderzoeksatlas':l==='id'?'Kembali ke Atlas Riset':'Back to Research Atlas';const legacy=l==='ar'?'المعرّف القديم':l==='nl'?'oude ID':l==='id'?'ID lama':'legacy ID';const bar=document.createElement('div');bar.className='rg-context-bar';bar.innerHTML=`<span class="rg-context-meta">${legacy} ${d[0]} · ${d[i]}</span><a href="research.html">${label} ↗</a>`;const main=document.querySelector('main')||document.body;main.insertBefore(bar,main.firstChild);const st=document.createElement('style');st.textContent='.rg-context-bar{max-width:1180px;margin:14px auto;border:1px solid rgba(99,255,155,.2);background:#041008;border-radius:14px;padding:10px 13px;display:flex;gap:10px;align-items:center;justify-content:space-between;font-size:12px}.rg-context-bar a{color:#63ff9b}.rg-context-meta{color:#9cb0a2}';document.head.append(st)})();
