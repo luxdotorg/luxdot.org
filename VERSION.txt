@@ -1,3 +1,1 @@
-LuxDot v2.9.8
-Edith Stein dossier + Kolbe local image deployment fix
-2026-08-14
+2.9.9
