@@ -6,7 +6,7 @@ const E={k:$('careKicker'),title:$('careTitle'),lead:$('careLead'),count:$('coun
 const raw=Array.isArray(window.CARE_POINTS)?window.CARE_POINTS:[];
 const P=raw.map((p,i)=>({...p,id:Number(p.id)||i+1,lat:Number(p.lat),lon:Number(p.lon),distance:Number(p.distance)||0})).filter(p=>Number.isFinite(p.lat)&&Number.isFinite(p.lon));
 const B={minLat:51.44,maxLat:51.66,minLon:4.61,maxLon:5.02}; let active=null;
-function language(){return localStorage.getItem('luxdot.lang')||document.documentElement.lang||'ar'}
+function language(){const raw=(window.LuxLang&&window.LuxLang.get())||'en';return raw==='jv'?'id':raw==='he'?'en':raw}
 function L(){return I[language()]||I.en}
 function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
 function project(lat,lon){const w=1000,h=650,p=50;return [p+(lon-B.minLon)/(B.maxLon-B.minLon)*(w-2*p), h-p-(lat-B.minLat)/(B.maxLat-B.minLat)*(h-2*p)]}
@@ -22,7 +22,7 @@ function draw(){const f=current();E.count.textContent=String(f.length);E.list.in
 }
 function bind(){document.querySelectorAll('[data-care-id]').forEach(n=>{const act=e=>{const p=P.find(x=>x.id===Number(n.dataset.careId));if(p)popupFor(p,e)};n.addEventListener('click',act);n.addEventListener('pointerup',e=>{if(e.pointerType==='touch'){e.preventDefault();act(e)}});n.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();act(e)}})})}
 function fill(){for(const x of [...new Set(P.map(p=>p.category).filter(Boolean))].sort())E.cat.add(new Option(x,x));for(const x of [...new Set(P.map(p=>p.town).filter(Boolean))].sort())E.town.add(new Option(x,x))}
-function apply(){const x=L();document.documentElement.lang=language();document.documentElement.dir=language()==='ar'?'rtl':'ltr';E.k.textContent=x.k;E.title.textContent=x.title;E.lead.textContent=x.lead;E.points.textContent=x.points;E.records.textContent=x.records;E.q.placeholder=x.search;E.cat.options[0].text=x.allcat;E.town.options[0].text=x.alltown;E.privacy.textContent=x.privacy;draw()}
+function apply(){const x=L();const actual=(window.LuxLang&&window.LuxLang.get())||'en';document.documentElement.lang=actual;document.documentElement.dir=(actual==='ar'||actual==='he')?'rtl':'ltr';E.k.textContent=x.k;E.title.textContent=x.title;E.lead.textContent=x.lead;E.points.textContent=x.points;E.records.textContent=x.records;E.q.placeholder=x.search;E.cat.options[0].text=x.allcat;E.town.options[0].text=x.alltown;E.privacy.textContent=x.privacy;draw()}
 function boot(){if(Object.values(E).some(x=>!x)){console.error('LuxDot Care Map: missing DOM node',E);return}fill();E.q.addEventListener('input',draw);E.cat.addEventListener('change',draw);E.town.addEventListener('change',draw);document.addEventListener('luxlang',apply);window.addEventListener('storage',e=>{if(e.key==='luxdot.lang')apply()});apply(); if(!P.length){E.svg.innerHTML=`<text x="500" y="325" text-anchor="middle" class="omap-error">${esc(L().nomap)}</text>`}}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
 })();

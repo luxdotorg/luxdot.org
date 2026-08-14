@@ -1,3 +1,1 @@
-LuxDot v4.1.0
-Research Graph · Knowledge Journeys · Five-Language Core
-14 August 2026
+v4.2.0

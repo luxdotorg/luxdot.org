@@ -41,7 +41,7 @@ const FIELD={
   'Den Haag':'Veld open 17:00; ceremonie 18:45–20:00. Extra zitplaatsen op volgorde van aankomst, zonder ticket',
   'Bergen op Zoom':'Regionale herdenking met verhalen van vier generaties, muziek en ontmoeting na afloop'}}
 };
-function lang(){const l=localStorage.getItem('luxdot.lang')||document.documentElement.lang||'en';return ['ar','en','nl','id'].includes(l)?l:'en'}
+function lang(){const raw=(window.LuxLang&&window.LuxLang.get())||'en';return raw==='jv'?'id':raw==='he'?'en':(['ar','en','nl','id'].includes(raw)?raw:'en')}
 function ui(){return UI[lang()]||UI.en}
 function trNode(n){const z=I18N[n.id]?.[lang()];return z?{...n,...z}:n}
 function esc(v=''){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}

@@ -55,7 +55,7 @@ const JH={
 DATA.nodes.forEach(n=>{const x=JH[n.id];if(x){n.label.jv=x.jv[0];n.sub.jv=x.jv[1];n.desc.jv=x.jv[2];n.label.he=x.he[0];n.sub.he=x.he[1];n.desc.he=x.he[2]}});
 const FJH={meaning:{jv:['Manungsa lan Makna','kawilujengan, tradhisi, teks, Jawa'],he:['אדם ומשמעות','גאולה, מסורות, טקסטים, ג׳אווה']},land:{jv:['Tanah lan Wates','Chaam, Breda, Baarle, Hoogstraten, Nassau'],he:['ארץ וגבולות','שאם, ברדה, בארלה, הוחסטראטן, נאסאו']},pilgrimage:{jv:['Ziarah lan Tandha','Kevelaer, Busman, relik, dalan'],he:['עלייה לרגל ואות','קבלאר, בוסמן, שרידים, דרכים']},choice:{jv:['Pilihan lan Tanggung Jawab','Erasmus, jembatan, sistem, mandheg'],he:['בחירה ואחריות','ארסמוס, גשר, מערכת, עצירה']},journeys:{jv:['Lelakon Kawruh','pindhahing kawruh, basa, eksplorasi'],he:['מסעות ידע','העברת ידע, שפה, חקר']}};
 DATA.families.forEach(f=>{const x=FJH[f.id];if(x){f.jv=x.jv[0];f.he=x.he[0];f.desc.jv=x.jv[1];f.desc.he=x.he[1]}});
-const L=()=>localStorage.getItem('luxdot.lang')||document.documentElement.lang||'ar';
+const L=()=>((window.LuxLang&&window.LuxLang.get())||'en');
 const langKey=()=>{const l=L();return ['ar','en','nl','jv','he'].includes(l)?l:'en'};
 const t=(obj)=>obj?.[langKey()]||obj?.en||obj?.ar||'';
 const root=document.querySelector('[data-research-graph]'); if(!root)return;

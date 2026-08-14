@@ -8,9 +8,9 @@ const UI={
  nl:{library:'Bibliotheek',original:'Toon oorspronkelijke tekst',hideOriginal:'Verberg oorspronkelijke tekst',listen:'Luister naar de uitleg',stop:'Stop audio',source:'Open volledige bron ↗',sourceLanguage:'Taal van de oorspronkelijke tekst',readerNote:'De uitleg blijft volledig in jouw taal. Het oorspronkelijke schrift is standaard verborgen zodat een onbekend alfabet nooit wordt opgedrongen',context:'Context',sections:'Leesfragmenten'},
  id:{library:'Perpustakaan',original:'Tampilkan teks asli',hideOriginal:'Sembunyikan teks asli',listen:'Dengarkan penjelasan',stop:'Hentikan audio',source:'Buka sumber lengkap ↗',sourceLanguage:'Bahasa teks asli',readerNote:'Penjelasan tetap sepenuhnya dalam bahasa Anda. Aksara asli disembunyikan secara bawaan agar pembaca tidak dipaksa membaca alfabet yang tidak dikenalnya',context:'Konteks',sections:'Bagian bacaan'}
 };
-function current(){let l=localStorage.getItem('luxdot.lang')||document.documentElement.lang||'ar';return LANGS.includes(l)?l:'en'}
+function current(){let raw=(window.LuxLang&&window.LuxLang.get())||'en';let l=raw==='jv'?'id':raw==='he'?'en':raw;return LANGS.includes(l)?l:'en'}
 function t(obj,l){return obj?.[l]??obj?.en??''}
-function apply(){const l=current(),u=UI[l];document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';document.title='LuxDot · '+t(D.title,l);
+function apply(){const l=current(),u=UI[l];const actual=(window.LuxLang&&window.LuxLang.get())||'en';document.documentElement.lang=actual;document.documentElement.dir=(actual==='ar'||actual==='he')?'rtl':'ltr';document.title='LuxDot · '+t(D.title,l);
  document.querySelectorAll('[data-local="library"]').forEach(e=>e.textContent=u.library);
  document.getElementById('readerKicker').textContent=t(D.tradition,l);
  document.getElementById('readerTitle').textContent=t(D.title,l);
