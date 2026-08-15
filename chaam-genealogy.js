@@ -5,7 +5,7 @@
  const T=L[lang]||L.en;
  try{
   const data=await fetch('data/chaam-genealogy.json').then(r=>r.json());
-  root.innerHTML=`<div class="cg-head"><div><div class="cg-kicker">GENEALOGY · 4.3.13</div><h2>${T.title}</h2><p>${T.sub}</p></div><div class="cg-controls"><button data-mode="kin" class="active">${T.kin}</button><button data-mode="all">${T.archive}</button></div></div><svg class="cg-svg" viewBox="0 0 1500 940" role="img"></svg><aside class="cg-detail"><div class="cg-empty">${T.all}</div></aside>`;
+  root.innerHTML=`<div class="cg-head"><div><div class="cg-kicker">GENEALOGY · 4.3.15</div><h2>${T.title}</h2><p>${T.sub}</p></div><div class="cg-controls"><button data-mode="kin" class="active">${T.kin}</button><button data-mode="all">${T.archive}</button></div></div><svg class="cg-svg" viewBox="0 0 1500 940" role="img"></svg><aside class="cg-detail"><div class="cg-empty">${T.all}</div></aside><section class="cg-records" data-records></section>`;
   const svg=root.querySelector('svg'), detail=root.querySelector('.cg-detail');
   const NS='http://www.w3.org/2000/svg';
   const positions={
@@ -15,16 +15,26 @@
    'cornelia-jansen-kin':[1040,330],'adrianus-erven-gool':[1290,330],'petronilla-erven-1659':[980,500],'joanna-erven-1660':[1080,500],'joannes-erven-1662':[1180,500],'nicolaus-erven-1666':[1280,500],'catarina-erven-1666':[1380,570],'josina-erven-1666':[1190,610],
    'antonius-jansse':[250,670],'maria-jacobs':[490,670],'joannes-antonius-1671':[250,830],'jacobus-antonius-1675':[370,830],'adrianus-antonius-1678':[490,830],
    'jan-janssen-kin':[760,650],'anneken-janssen-kin':[700,790],'jenneken-janssen-kin':[840,790],'willem-janssen-kin':[770,900],
-   'chaam-church-land':[1080,760],'tongerlo':[1320,760]
+   'chaam-church-land':[1080,760],'tongerlo':[1320,760],
+   'joannes-simons-kin-sr':[760,110],'wilhelmus-joannis-kin-1633':[760,240],'dymphna-thomae-van-gils':[980,240],
+   'joannes-wilhelmus-kin-1654':[630,370],'maria-wilhelmus-kin-1657':[720,410],'cornelia-wilhelmus-kin-1658':[810,440],'thomas-wilhelmus-kin-1660':[900,410],'joanna-wilhelmus-kin-1663':[990,370],
+   'josina-wilhelmus-kin-1665':[650,560],'adriana-wilhelmus-kin-1668':[760,580],'anna-wilhelmus-kin-1671':[870,580],'catharina-wilhelmus-kin-1675':[980,560],
+   'henricus-thomae-van-gils':[1180,170],'cornelia-commers-bedaf':[1380,170]
   };
   const kinTypes=new Set(['spouse','parent','sibling-stated']); let mode='kin';
   function draw(){svg.innerHTML='';
    const eg=document.createElementNS(NS,'g'), ng=document.createElementNS(NS,'g'); svg.append(eg,ng);
    data.edges.forEach(e=>{if(mode==='kin'&&!kinTypes.has(e.type))return;const a=positions[e.from],b=positions[e.to];if(!a||!b)return;const l=document.createElementNS(NS,'line');l.setAttribute('x1',a[0]);l.setAttribute('y1',a[1]);l.setAttribute('x2',b[0]);l.setAttribute('y2',b[1]);l.setAttribute('class',`cg-edge ${e.type}`);l.dataset.from=e.from;l.dataset.to=e.to;eg.append(l)});
-   data.nodes.forEach(n=>{const p=positions[n.id];if(!p)return;if(mode==='kin'&&n.type!=='person')return;const g=document.createElementNS(NS,'g');g.setAttribute('class',`cg-node ${n.type}`);g.setAttribute('transform',`translate(${p[0]} ${p[1]})`);g.dataset.id=n.id;const r=n.type==='person'?33:40;g.innerHTML=`<circle r="${r}"></circle><text y="-2">${esc(n.name)}</text><text class="sub" y="15">${esc(n.baptism||n.period||n.place||'')}</text>`;g.addEventListener('click',()=>show(n));ng.append(g)});
+   data.nodes.forEach(n=>{const p=positions[n.id];if(!p)return;if(mode==='kin'&&n.type!=='person')return;const g=document.createElementNS(NS,'g');g.setAttribute('class',`cg-node ${n.type}`);g.setAttribute('transform',`translate(${p[0]} ${p[1]})`);g.dataset.id=n.id;const r=n.type==='person'?33:40;g.innerHTML=`<circle r="${r}"></circle><text y="-2">${esc(n.name)}</text><text class="sub" y="15">${esc(n.baptism||n.death||n.period||n.place||'')}</text>`;g.addEventListener('click',()=>show(n));ng.append(g)});
   }
-  function show(n){const links=data.edges.filter(e=>e.from===n.id||e.to===n.id);const sids=[...new Set(links.map(e=>e.source).filter(Boolean))];const srcs=data.sources.filter(s=>sids.includes(s.id));detail.innerHTML=`<div class="cg-kicker">${T[n.type]||n.type}</div><h3>${esc(n.name)}</h3><p>${esc(n.baptism?`Baptism: ${n.baptism}`:(n.period||''))}${n.place?` · ${esc(n.place)}`:''}</p><div class="cg-tags"><span>${T.conf}: ${n.confidence||'—'}</span>${n.religion?`<span>${esc(n.religion)}</span>`:''}</div><h4>${T.source}</h4>${srcs.map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${esc(s.title)}</a>`).join('')||'—'}`}
+  function show(n){const links=data.edges.filter(e=>e.from===n.id||e.to===n.id);const sids=[...new Set(links.map(e=>e.source).filter(Boolean))];const srcs=data.sources.filter(s=>sids.includes(s.id));detail.innerHTML=`<div class="cg-kicker">${T[n.type]||n.type}</div><h3>${esc(n.name)}</h3><p>${esc(n.baptism?`Baptism: ${n.baptism}`:(n.death?`Death: ${n.death}`:(n.period||'')))}${n.place?` · ${esc(n.place)}`:''}</p><div class="cg-tags"><span>${T.conf}: ${n.confidence||'—'}</span>${n.religion?`<span>${esc(n.religion)}</span>`:''}</div><h4>${T.source}</h4>${srcs.map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${esc(s.title)}</a>`).join('')||'—'}`}
   function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+  const recBox=root.querySelector('[data-records]');
+  if(recBox&&Array.isArray(data.records)){
+   const kindLabel={ar:{baptism:'تعميد',marriage:'زواج',death:'وفاة',archive:'وثيقة أرشيفية'},en:{baptism:'Baptism',marriage:'Marriage',death:'Death',archive:'Archive record'},nl:{baptism:'Doop',marriage:'Huwelijk',death:'Overlijden',archive:'Archiefstuk'},jv:{baptism:'Baptis',marriage:'Nikah',death:'Pati',archive:'Arsip'},he:{baptism:'טבילה',marriage:'נישואין',death:'פטירה',archive:'רשומה ארכיונית'}}[lang]||{};
+   const head={ar:'السجلات المستخرجة',en:'Extracted records',nl:'Uitgehaalde registers',jv:'Cathetan sing dijupuk',he:'רשומות שחולצו'}[lang]||'Extracted records';
+   recBox.innerHTML=`<div class="cg-kicker">1633–1694</div><h3>${head}</h3><div class="cg-record-grid">${data.records.map(r=>`<article class="cg-record"><time>${esc(r.date)}</time><b>${esc(r.person)}</b><span>${esc(kindLabel[r.kind]||r.kind)} · ${esc(r.confidence||'—')}</span>${r.parents?`<small>${esc(r.parents)}</small>`:''}</article>`).join('')}</div>`;
+  }
   root.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{mode=b.dataset.mode;root.querySelectorAll('[data-mode]').forEach(x=>x.classList.toggle('active',x===b));draw()});draw();
  }catch(e){root.innerHTML=`<p>${T.empty}</p>`}
 })();
