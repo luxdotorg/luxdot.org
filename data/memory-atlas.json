@@ -1,9 +1,8 @@
 {
   "meta": {
-    "version": "2026.08.15-v4.2.0-memory-current",
+    "version": "2026.08.13-ar-master-1",
     "range": "2026-07-10/2026-08-17",
-    "principle": "الوثيقة أولاً، ثم التفسير. الدليل المضاد يبقى ظاهراً دائماً.",
-    "updated": "2026-08-15"
+    "principle": "الوثيقة أولاً، ثم التفسير. الدليل المضاد يبقى ظاهراً دائماً."
   },
   "nodes": [
     {
@@ -111,8 +110,8 @@
       "lat": 51.665,
       "lon": 5.258,
       "status": "documented",
-      "summary": "كان يوب فيسترفيل معلماً هولندياً ومسالمًا ومنظماً في المقاومة، وساعد لاجئين يهوداً وشباناً على الاختباء والهروب. أُعدم في معسكر فوخت في 11 أغسطس 1944. ويبيّن سجل النصب الوطني لمعسكر فوخت أن يوم 11 أغسطس 1944 شهد أيضاً إعدام هندريكوس فيخلينغ، صاحب مطبعة استُخدمت لطباعة صحيفة Trouw السرية، وخيراردوس فيرسون، طالب دلفت الذي شارك في المقاومة وتوزيع الأخبار.",
-      "question": "كيف نحفظ أسماء المقاومين كأشخاص لا كأرقام، ونفهم اختلاف أدوار الإنقاذ والطباعة ونقل الأخبار داخل مقاومة واحدة؟",
+      "summary": "كان يوب فيسترفيل معلماً هولندياً ومسالمًا ومنظماً في المقاومة. ساعد لاجئين يهوداً وشباناً من رواد فلسطين على الاختباء والهروب. يوثق النصب الوطني لمعسكر فوخت أنه بنى طرقاً للهروب، واعتُقل أثناء عودته من فرنسا، وسُجن في فوخت وأُعدم هناك في 11 أغسطس 1944.",
+      "question": "ماذا تتطلب الحماية منا عندما يكون الصمت أكثر أماناً، لكنه أقل إنسانية؟",
       "image": "assets/images/memory/edith-stein.jpeg",
       "imageCredit": "USHMM archival portrait",
       "sources": [
@@ -123,10 +122,6 @@
         {
           "label": "ياد فاشيم — Westerweel",
           "url": "https://wwv.yadvashem.org/YV/en/exhibitions/righteous-teachers/westerweel.asp"
-        },
-        {
-          "label": "Nationaal Monument Kamp Vught — Vermoord in Vught",
-          "url": "https://www.nmkampvught.nl/ontdekken/het-verhaal/vermoord-in-vught/resultaat/?letter=W"
         }
       ],
       "media": [
@@ -226,13 +221,13 @@
       "id": "indies",
       "date": "2026-08-15",
       "theme": "التذكار",
-      "title": "15 أغسطس — ذاكرة نهاية الحرب في آسيا",
-      "place": "هولندا • لاهاي ومدن متعددة",
-      "lat": 52.083,
-      "lon": 4.3,
+      "title": "15 أغسطس — بريدا تتذكر",
+      "place": "حديقة رافي • بريدا • هولندا (Raffy)",
+      "lat": 51.604,
+      "lon": 4.807,
       "status": "documented",
-      "summary": "يُحيى في هولندا يوم 15 أغسطس ذكرى نهاية الحرب في آسيا وضحايا الاحتلال الياباني والحرب وما تلاهما في جزر الهند الشرقية الهولندية. في 2026 أُلغيت فعالية Raffy في بريدا بسبب الحر، بينما استمرت الذكرى الوطنية عند النصب الهندي في لاهاي، إلى جانب فعاليات محلية في خرونينغن وأمستردام. تحفظ نقطة نور اختلاف الذاكرات الهندية الهولندية والإندونيسية والمولوكية، وتعرض كل رواية في سياقها.",
-      "question": "كيف نحفظ ذاكرات متعددة للحرب والاستعمار وإنهاء الاستعمار من دون دمجها في رواية واحدة؟",
+      "summary": "يُحيى في بريدا يوم 15 أغسطس ذكرى نهاية الحرب في آسيا وضحايا الحرب والاحتلال وما تلاهما في جزر الهند الشرقية الهولندية. تحفظ نقطة نور الفرق بين الذاكرة الهندية الهولندية والإندونيسية والمولوكية، وتتعامل مع المشاركين بوصفهم أصحاب قصتهم.",
+      "question": "كيف نستمع إلى ذاكرة جماعة من دون أن نستبدل كلماتها بتفسيرنا نحن؟",
       "sources": [
         {
           "label": "Arjati — Breda 2026 programme",
@@ -307,44 +302,6 @@
         }
       ],
       "media": []
-    },
-    {
-      "id": "indonesia-independence",
-      "date": "2026-08-17",
-      "theme": "الاستقلال • إنهاء الاستعمار",
-      "title": "17 أغسطس — إعلان استقلال إندونيسيا",
-      "place": "جاكرتا • إندونيسيا",
-      "lat": -6.2088,
-      "lon": 106.8456,
-      "status": "documented",
-      "summary": "في 17 أغسطس 1945 أُعلن استقلال إندونيسيا. تأتي هذه الذكرى بعد يومين من 15 أغسطس، ما يجعل أطلس الذاكرة يعرض الانتقال من نهاية الحرب والاحتلال الياباني إلى الثورة والاستقلال وإنهاء الاستعمار، مع إبقاء تجارب الضحايا المختلفة مستقلة وواضحة.",
-      "question": "كيف نضع نهاية الحرب وبداية الاستقلال جنباً إلى جنب من دون أن تمحو ذاكرةٌ ذاكرةً أخرى؟",
-      "sources": [
-        {
-          "label": "Government of the Netherlands — Indonesia / historical context",
-          "url": "https://www.government.nl/topics/indonesia"
-        }
-      ],
-      "media": []
-    },
-    {
-      "id": "tula",
-      "date": "2026-08-17",
-      "theme": "العبودية • المقاومة • إعادة الاعتبار",
-      "title": "تولا — انتفاضة 17 أغسطس 1795",
-      "place": "كوراساو",
-      "lat": 12.1696,
-      "lon": -68.99,
-      "status": "documented",
-      "summary": "في 17 أغسطس 1795 بدأت في كوراساو انتفاضة كبيرة للمستعبَدين بقيادة تولا ضد النظام الاستعماري الهولندي. عُذّب تولا وأُعدم لاحقاً، وفي 3 أكتوبر 2023 أعادت الدولة الهولندية اعتباره رسمياً. تضيف هذه العقدة إلى الأطلس مسار العبودية والمقاومة والاعتراف المتأخر بالظلم.",
-      "question": "ماذا يعني أن تعيد دولة بعد قرون اعتبار شخص عاقبته لأنه طالب بالحرية؟",
-      "sources": [
-        {
-          "label": "Government / Dutch public commemoration sources — Tula rehabilitation",
-          "url": "https://www.rijksoverheid.nl/onderwerpen/discriminatie-en-racisme/nieuws/2023/10/03/eerherstel-voor-tula"
-        }
-      ],
-      "media": []
     }
   ],
   "field": [
@@ -377,57 +334,21 @@
     },
     {
       "date": "2026-08-15",
-      "city": "Amsterdam",
-      "time": "10:00–11:30",
-      "title": "Commemoration at Anton de Kom monument",
+      "city": "Breda",
+      "time": "13:45–15:30+",
+      "title": "Indië commemoration at Raffy",
       "kind": "official",
-      "address": "Anton de Kom monument, Amsterdam-Zuidoost",
-      "note": "Remembrance programme with speeches, Taptoe and wreath/flower laying, linking victims and resistance across several regions."
+      "address": "Bernard de Wildestraat 400, 4827 EG Breda",
+      "note": "Starts 14:00; visitors asked to be seated by 13:45; defilé and flower laying at 15:30."
     },
     {
       "date": "2026-08-15",
       "city": "Den Haag",
-      "time": "12:00–20:00",
+      "time": "17:00–20:00",
       "title": "National Commemoration 15 August 1945",
       "kind": "official",
       "address": "Indisch Monument, Den Haag",
-      "note": "Indische Generatietafels: entry 12:00, programme 12:30–14:45. Main remembrance field opens 17:00; be seated by 18:30; national ceremony 18:45–20:00."
-    },
-    {
-      "date": "2026-08-15",
-      "city": "Amsterdam",
-      "time": "13:00–17:00",
-      "title": "Heroes of Color — NoLimit",
-      "kind": "programme",
-      "address": "NoLimit, Geldershoofd 80, Amsterdam",
-      "note": "Film, conversations and music focused on war memory, resistance and decolonisation."
-    },
-    {
-      "date": "2026-08-15",
-      "city": "Groningen",
-      "time": "17:00–evening",
-      "title": "Indië commemoration — Martinikerkhof",
-      "kind": "official",
-      "address": "Martinikerkhof, Groningen",
-      "note": "Entry 17:00; programme 17:30 with mayor Roelien Kamminga, testimonies from first, second and third generations, music and songs remembered from a women’s internment camp in Sumatra; gathering afterwards in Martinikerk."
-    },
-    {
-      "date": "2026-08-15",
-      "city": "Breda",
-      "time": "CANCELLED",
-      "title": "Indië commemoration at Raffy — cancelled",
-      "kind": "cancelled",
-      "address": "Bernard de Wildestraat 400, 4827 EG Breda",
-      "note": "Cancelled because of the heat. Do not travel to Raffy for this event."
-    },
-    {
-      "date": "2026-08-16",
-      "city": "Groningen",
-      "time": "12:00–16:00",
-      "title": "Dia di Tula — Forum Groningen",
-      "kind": "official",
-      "address": "Forum Groningen, Nieuwe Markt 1, Groningen",
-      "note": "Free programme about Tula, the Curaçao slave revolt, resistance, historical trauma and resilience; talks, poetry, music and Afro-Caribbean traditions."
+      "note": "Field opens 17:00; ceremony 18:45–20:00. Approx. 2,000 unreserved seats available first-come, no ticket required."
     },
     {
       "date": "2026-08-16",
@@ -437,15 +358,6 @@
       "kind": "official",
       "address": "Thaliaplein, 4611 MK Bergen op Zoom",
       "note": "Regional commemoration with four generations’ stories, music and nasi bungkus gathering."
-    },
-    {
-      "date": "2026-08-17",
-      "city": "Amsterdam",
-      "time": "13:00–17:00",
-      "title": "Memory and liberation programme — NoLimit",
-      "kind": "programme",
-      "address": "NoLimit, Geldershoofd 80, Amsterdam",
-      "note": "Lectures, conversations and music linked to liberation, decolonisation and the memory of 17 August."
     }
   ]
 }
