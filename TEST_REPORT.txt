@@ -1,0 +1,14 @@
+LUXDOT CLEAN WHITE v1 — TEST REPORT
+====================================
+PASS — JavaScript syntax: app.js
+PASS — JavaScript syntax: quran.js
+PASS — all local href/src references
+PASS — 114 surah metadata
+PASS — Quran API endpoint configured
+PASS — Alafasy audio endpoint configured
+PASS — Arabic/English language persistence configured
+PASS — no service worker
+PASS — no cache script
+PASS — no old asset/data/audio folders
+
+This build is intentionally minimal to maximize reliability.

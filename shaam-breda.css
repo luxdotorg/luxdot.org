@@ -30,23 +30,3 @@ body.research-body:before{content:"";position:fixed;inset:0;pointer-events:none;
 .sources-list{max-width:920px;margin:auto}.source-row{padding:15px 0;border-bottom:1px solid rgba(99,255,155,.08)}.source-row b{color:#dfffea}.source-row small{display:block;color:#6e8176;line-height:1.55;margin:4px 0}.source-row a{font:10px Arial,sans-serif;color:var(--r-gold);text-decoration:none}
 .r-footer{text-align:center;color:#506158;border-top:1px solid var(--r-line);padding:32px;font:9px Arial,sans-serif;letter-spacing:.14em}
 @media(max-width:850px){.r-nav a:not(.active){display:none}.tree-shell{height:720px}.map-shell{grid-template-columns:1fr;grid-template-rows:320px 520px;height:auto}.map-side{order:2;border-inline-end:0;border-top:1px solid var(--r-line)}.tree-note{width:100%;margin:4px 0 0}.r-tabs{gap:16px}}
-
-/* v2.7.7 offline care map: no CDN required */
-.offline-map{position:relative;height:100%;min-height:460px;background:radial-gradient(circle at 55% 48%,rgba(99,255,155,.055),transparent 36%),linear-gradient(180deg,#020805,#010403);overflow:hidden}
-.offline-map svg{width:100%;height:100%;display:block}.omap-grid{stroke:rgba(99,255,155,.06);stroke-width:1}.omap-ring{fill:none;stroke:rgba(99,255,155,.28);stroke-width:1.5;stroke-dasharray:7 8}.omap-point{fill:#63ff9b;stroke:#031108;stroke-width:1;cursor:pointer;transition:.15s}.omap-point:hover,.omap-point.active{r:7;fill:#effff4}.omap-anchor{fill:#d2b15b;stroke:#fff;stroke-width:1.5}.omap-label{fill:#7d9185;font:11px Arial,sans-serif}.omap-popup{position:absolute;max-width:300px;background:rgba(3,12,7,.97);border:1px solid rgba(99,255,155,.35);border-radius:12px;padding:12px;color:#dfffea;font-size:12px;line-height:1.5;box-shadow:0 12px 40px #000;z-index:4;display:none}.omap-popup.show{display:block}.omap-popup b{color:#fff}.omap-popup a{color:#8dffb8}.map-item{cursor:pointer}.map-item:hover{background:rgba(99,255,155,.035)}
-
-/* v2.7.8 care-map hardening */
-#map.map-canvas{position:relative;min-width:0;min-height:520px;filter:none}.offline-map{width:100%;height:100%;min-height:520px}.offline-map #careSvg{position:absolute;inset:0;width:100%;height:100%}.omap-bg{fill:#020805}.omap-hit{fill:transparent;pointer-events:all;cursor:pointer}.care-pin:focus .omap-point{stroke:#fff;stroke-width:3}.omap-error{fill:#9fb0a6;font:16px Arial,sans-serif}.map-item{display:block;width:100%;background:transparent;color:inherit;text-align:start;border:0;border-bottom:1px solid rgba(99,255,155,.08);padding:10px 2px;cursor:pointer}.map-item:hover,.map-item:focus{background:rgba(99,255,155,.05);outline:none}.map-meta{display:block}.map-empty{padding:20px;text-align:center;color:#718279}@media(max-width:850px){.map-shell{height:auto;grid-template-columns:1fr}.map-side{max-height:440px;border-inline-end:0;border-bottom:1px solid var(--r-line)}#map.map-canvas,.offline-map{min-height:560px;height:70vh}}
-
-/* v2.7.9 mobile care map rebuild */
-.quran-source-note{font:10px Arial,sans-serif;color:#6f8277;padding:8px 0 4px}
-@media(max-width:850px){
-  .map-shell{display:flex!important;flex-direction:column!important;height:auto!important;overflow:visible!important}
-  #map.map-canvas{order:1!important;width:100%!important;height:58vh!important;min-height:420px!important;max-height:620px!important;overflow:hidden!important;position:relative!important}
-  .offline-map{position:relative!important;width:100%!important;height:100%!important;min-height:0!important;overflow:hidden!important}
-  .offline-map #careSvg{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;touch-action:manipulation!important}
-  .map-side{order:2!important;width:100%!important;max-height:none!important;overflow:visible!important;border:0!important;border-top:1px solid var(--r-line)!important}
-  .omap-hit{r:20;pointer-events:all!important;touch-action:manipulation}
-  .omap-popup{position:absolute!important;inset-inline:10px!important;left:10px!important;right:10px!important;top:auto!important;bottom:10px!important;max-width:none!important;width:auto!important}
-  .map-item{min-height:48px;padding:12px 4px!important}
-}

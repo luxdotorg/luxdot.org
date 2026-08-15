@@ -1,127 +1,35 @@
 window.LUXDOT_MEMORY_DB = {
   "meta": {
-    "version": "2026.08.13-ar-master-1",
-    "range": "2026-07-10/2026-08-17",
-    "principle": "الوثيقة أولاً، ثم التفسير. الدليل المضاد يبقى ظاهراً دائماً."
+    "version": "2026.08.15-2",
+    "range": "2026-08-11/2026-08-17",
+    "principle": "Document first. Interpretation second. Counter-evidence always visible."
   },
   "nodes": [
     {
-      "id": "rufina-secunda",
-      "date": "2026-07-10",
-      "theme": "الاستشهاد • التقليد",
-      "title": "روفينا وسيكوندا (Rufina & Secunda)",
-      "place": "روما • طريق كورنيليا (Via Cornelia)",
-      "lat": 41.9028,
-      "lon": 12.4964,
-      "status": "documented-tradition",
-      "summary": "يحيي الاستشهاد الروماني ذكرى القديستين روفينا وسيكوندا في 10 يوليو. وتضع مصادر الفاتيكان استشهادهما قرب روما في منتصف القرن 3 تقريباً؛ أما تفاصيل قصة الآلام المتداولة فهي أحدث زمناً، لذلك نفصل بين قدم العبادة والتذكار وبين التفاصيل السردية اللاحقة.",
-      "question": "كيف نكرّم تقليداً قديماً مع الفصل بين الشواهد المبكرة والتفاصيل التي أضافتها الروايات اللاحقة؟",
-      "sources": [
-        {
-          "label": "الفاتيكان State — Saints Rufina and Secunda, 10 July",
-          "url": "https://www.vaticanstate.va/en/state-and-government/general-informations/saint-of-the-day/2254-july-10-saints-rufina-and-secunda-martyrs.html"
-        },
-        {
-          "label": "الفاتيكان News — Rufina and Secunda",
-          "url": "https://www.vaticannews.va/en/saints/07/10/sts--rufina-and-secunda--martyrs-on-the--via-cornelia.html"
-        }
-      ],
-      "media": []
-    },
-    {
-      "id": "justa-rufina",
-      "date": "2026-07-17",
-      "theme": "الاستشهاد • الذاكرة",
-      "title": "يوستا وروفينا الإشبيليتان (Justa & Rufina)",
-      "place": "إشبيلية • إسبانيا (Sevilla)",
-      "lat": 37.3891,
-      "lon": -5.9845,
-      "status": "documented-tradition",
-      "summary": "تحيي كاتدرائية إشبيلية ذكرى يوستا وروفينا في 17 يوليو. عبادتهما قديمة، بينما تشير الكاتدرائية نفسها إلى أن أقدم الإشارات المكتوبة المفصلة إلى حياتهما واستشهادهما جاءت بعد ذلك بقرون. وصارت مهنتهما كصانعتَي فخار وصلتهما بإشبيلية جزءاً بارزاً من الذاكرة الفنية للمدينة.",
-      "question": "حين تبقى الذاكرة حيّة عبر الفن والتدين، كيف نحفظ معناها وفي الوقت نفسه نُظهر حدود اليقين التاريخي؟",
-      "sources": [
-        {
-          "label": "كاتدرائية إشبيلية — Justa & Rufina, 17 July 2026",
-          "url": "https://www.catedraldesevilla.es/santas-justa-y-rufina-fe-arte-y-memoria-de-sevilla/"
-        },
-        {
-          "label": "متحف برادو — Saints Justa and Rufina",
-          "url": "https://www.museodelprado.es/en/the-collection/art-work/saints-justa-and-rufina/d5b49bdb-febd-4f18-96c4-9dae562b2683"
-        }
-      ],
-      "media": []
-    },
-    {
-      "id": "edith-stein",
-      "date": "2026-08-09",
-      "theme": "التعاطف • الكرامة • الحقيقة",
-      "title": "إديث شتاين • تريزا بندكتا للصليب (Edith Stein)",
-      "place": "بريسلاو → كولونيا → إيخت → فيستربورك → أوشفيتز–بيركيناو",
-      "lat": 50.0359,
-      "lon": 19.1783,
-      "status": "documented",
-      "summary": "إديث شتاين (1891–1942) فيلسوفة ألمانية يهودية الأصل، من تلامذة إدموند هوسرل وصاحبة أطروحة «مشكلة التعاطف». خدمت ممرضة في الحرب العالمية الأولى، ودرّست وكتبت وترجمت في الفلسفة والتربية وقضايا المرأة، ثم اعتنقت الكاثوليكية ودخلت الرهبنة الكرملية باسم تريزا بندكتا للصليب. اعتقلها النازيون في إيخت بهولندا ورُحّلت مع أختها روزا عبر فيستربورك إلى أوشفيتز–بيركيناو، حيث قُتلتا في 9 أغسطس 1942.",
-      "question": "كيف يتحول إدراك الآخر بوصفه إنساناً حقيقياً — وهو السؤال الذي درستْه فلسفياً — إلى مسؤولية عندما تحاول الدولة اختزاله إلى فئة أو رقم؟",
-      "image": "assets/images/memory/edith-stein-carmel.jpg",
-      "imageCredit": "صورة محلية محفوظة في الموقع — Wikimedia Commons",
-      "sources": [
-        {
-          "label": "الفاتيكان — السيرة الرسمية لإديث شتاين",
-          "url": "https://www.vatican.va/news_services/liturgy/saints/ns_lit_doc_19981011_edith_stein_en.html"
-        },
-        {
-          "label": "Auschwitz Memorial — 80th anniversary of Edith Stein",
-          "url": "https://www.auschwitz.org/en/museum/news/80th-anniversary-of-the-death-of-edith-stein%2C1570.html"
-        },
-        {
-          "label": "Edith-Stein-Archiv Köln",
-          "url": "https://www.edith-stein-archiv.de/"
-        }
-      ],
-      "media": [],
-      "page": "edith-stein.html?v=2.9.8",
-      "dossier": "لا تبدأ ذاكرة إديث شتاين عند القطار إلى أوشفيتز. قبل ذلك كانت باحثة في معنى التعاطف، مساعدة لهوسرل، ممرضة حرب، مدرّسة ومحاضرة في قضايا المرأة، مترجمة لتوما الأكويني ونيومان، وصاحبة أعمال فلسفية كبرى. افتح الملف الكامل لقراءة حياتها وإنجازاتها وصورها ومسار اعتقالها ومقتلها، مع الحفاظ على هويتها اليهودية والكاثوليكية معاً من دون محو أي منهما."
-    },
-    {
-      "id": "lawrence-rome",
-      "date": "2026-08-10",
-      "theme": "الخدمة • المستضعفون",
-      "title": "لورنس الروماني (Saint Lawrence)",
-      "place": "روما • إيطاليا",
-      "lat": 41.9028,
-      "lon": 12.4964,
-      "status": "documented-tradition",
-      "summary": "يُحيى تذكار لورنس، شماس روما وشهيدها، في 10 أغسطس. تركز مصادر الفاتيكان على مسؤوليته في خدمة الأيتام والأرامل والفقراء. استخدم بحث نقطة نور في 10 أغسطس ذكراه لطرح سؤال: من أو ما الذي تعدّه الجماعة كنزها الحقيقي؟",
-      "question": "إذا كان المستضعفون هم كنز المجتمع الحقيقي، فما الذي يجب أن تحميه مؤسساته أولاً؟",
-      "sources": [
-        {
-          "label": "الفاتيكان News — St Lawrence, Deacon and Martyr",
-          "url": "https://www.vaticannews.va/en/saints/08/10/st--lawrence-deacon--and-martyr.html"
-        }
-      ],
-      "media": []
-    },
-    {
       "id": "westerweel",
       "date": "2026-08-11",
-      "theme": "الإنقاذ",
-      "title": "يوب فيسترفيل (Joop Westerweel)",
-      "place": "معسكر فوخت • هولندا (Kamp Vught)",
+      "theme": "RESCUE",
+      "title": "Joop Westerweel",
+      "place": "Kamp Vught · Netherlands",
       "lat": 51.665,
       "lon": 5.258,
       "status": "documented",
-      "summary": "كان يوب فيسترفيل معلماً هولندياً ومسالمًا ومنظماً في المقاومة. ساعد لاجئين يهوداً وشباناً من رواد فلسطين على الاختباء والهروب. يوثق النصب الوطني لمعسكر فوخت أنه بنى طرقاً للهروب، واعتُقل أثناء عودته من فرنسا، وسُجن في فوخت وأُعدم هناك في 11 أغسطس 1944.",
-      "question": "ماذا تتطلب الحماية منا عندما يكون الصمت أكثر أماناً، لكنه أقل إنسانية؟",
-      "image": "assets/images/memory/edith-stein.jpeg",
+      "summary": "Dutch teacher, pacifist and resistance organizer Joop Westerweel helped people escape persecution and was executed at Kamp Vught on 11 August 1944. The same date at Vught also marks the executions of resistance members Hendricus Wegeling, whose printing press was used for the illegal newspaper Trouw, and Gerardus Werson, a Delft student involved in distributing resistance news.",
+      "question": "What does protection demand when law itself has become persecution?",
+      "image": "https://encyclopedia.ushmm.org/images/large/04c73735-d3e3-4e08-a98e-a6b5fca94d8a.jpeg",
       "imageCredit": "USHMM archival portrait",
       "sources": [
         {
-          "label": "النصب الوطني لمعسكر فوخت — Westerweel",
+          "label": "NM Kamp Vught — Westerweel",
           "url": "https://www.nmkampvught.nl/ontdekken/het-verhaal/vermoord-in-vught/westerweel-johan-gerard/"
         },
         {
-          "label": "ياد فاشيم — Westerweel",
+          "label": "Yad Vashem — Westerweel",
           "url": "https://wwv.yadvashem.org/YV/en/exhibitions/righteous-teachers/westerweel.asp"
+        },
+        {
+          "label": "NM Kamp Vught — people murdered on 11 August 1944",
+          "url": "https://www.nmkampvught.nl/ontdekken/het-verhaal/vermoord-in-vught/resultaat/?letter=W"
         }
       ],
       "media": [
@@ -129,29 +37,28 @@ window.LUXDOT_MEMORY_DB = {
           "label": "NM Kamp Vught video/podcast with Bart Westerweel",
           "url": "https://www.nmkampvught.nl/bezoeken/actueel/nieuws/2025/05/podcast-bevrijding-toen-en-nu/"
         }
-      ],
-      "dossier": "الحارس الذي لم ينظر بعيداً — كان يوب فيسترفيل معلماً ومسالمًا ومقاوماً، وساعد لاجئين يهوداً وشباناً على الاختباء والهروب. في نقطة نور لا تكمن القيمة في صناعة بطل، بل في اختياره أن يجعل الحماية فعلاً عملياً عندما كان تجاهل الخطر أكثر أماناً. وتمنعنا رسائله من السجن من تحويل الشجاعة إلى أسطورة: حتى الشجاعة تبقى إنسانية."
+      ]
     },
     {
       "id": "stazzema",
       "date": "2026-08-12",
-      "theme": "المدنيون",
-      "title": "سانت آنا دي ستاتزيما (Sant’Anna di Stazzema)",
-      "place": "توسكانا • إيطاليا",
+      "theme": "CIVILIANS",
+      "title": "Sant’Anna di Stazzema",
+      "place": "Tuscany · Italy",
       "lat": 43.972,
       "lon": 10.273,
       "status": "documented",
-      "summary": "في 12 أغسطس 1944 قُتل مئات المدنيين في سانت آنا دي ستاتزيما والقرى القريبة على يد قوات من إس إس الألمانية وبمشاركة متعاونين فاشيين. وأصبح الموقع لاحقاً حديقة وطنية للسلام.",
-      "question": "كيف يمكن لمكان مجزرة أن يصبح مكاناً يعلّم السلام من دون محو ما حدث؟",
-      "image": "assets/images/memory/santanna-monument.jpg",
+      "summary": "On 12 August 1944, civilians in Sant’Anna di Stazzema and nearby hamlets were massacred by German SS troops with fascist collaborators. The site later became a National Park of Peace.",
+      "question": "How can a place of massacre become a place that teaches peace without erasing what happened?",
+      "image": "https://museiprovincialucca.it/sites/default/files/styles/fluid/public/media/2021-08/MONUMENTO-OSSARIO-06.jpg?itok=-wPhzMGI",
       "imageCredit": "Musei Provincia di Lucca — Ossuary Memorial",
       "sources": [
         {
-          "label": "الرابطة الوطنية للأنصار الإيطاليين — 82nd anniversary programme 2026",
+          "label": "ANPI — 82nd anniversary programme 2026",
           "url": "https://www.anpi.it/82deg-anniversario-strage-santanna-di-stazzema"
         },
         {
-          "label": "أرشيف ذاكرة سانت آنا",
+          "label": "Sant’Anna memory archive",
           "url": "https://www.santannadistazzema.org/"
         }
       ],
@@ -165,14 +72,14 @@ window.LUXDOT_MEMORY_DB = {
     {
       "id": "deportation",
       "date": "2026-08-13",
-      "theme": "الترحيل",
-      "title": "آلة الترحيل",
-      "place": "أوروبا • 1942",
+      "theme": "DEPORTATION",
+      "title": "The machinery of deportation",
+      "place": "Europe · 1942",
       "lat": 50.2,
       "lon": 19.8,
       "status": "documented",
-      "summary": "لم يكن الترحيل حدثاً واحداً، بل منظومة من التسجيل والعزل والنقل والسجن والقتل. في أطلس الذاكرة نقرأ الأشخاص والأماكن ضمن هذه المنظومة من دون اختزال الضحايا إلى أرقام.",
-      "question": "متى تتحول البيروقراطية من تنظيم إلى أداة أذى، وكيف نلاحظ ذلك قبل فوات الأوان؟",
+      "summary": "August 1942 shows persecution becoming logistics: ghettos, transports, administrative coordination and deportation. Rymanów and Radom are used here as documented case windows, not as symbols for all experiences.",
+      "question": "At what point does bureaucracy become participation in violence?",
       "sources": [
         {
           "label": "USHMM — 1942 key dates",
@@ -188,16 +95,16 @@ window.LUXDOT_MEMORY_DB = {
     {
       "id": "kolbe",
       "date": "2026-08-14",
-      "theme": "التضحية",
-      "title": "ماكسيميليان ماريا كولبة (Maximilian Maria Kolbe)",
-      "place": "أوشفيتز 1 • بولندا",
+      "theme": "SACRIFICE",
+      "title": "Maximilian Kolbe",
+      "place": "Auschwitz I · Poland",
       "lat": 50.027,
       "lon": 19.204,
       "status": "documented",
-      "summary": "ماكسيميليان كولبة (1894–1941) راهب فرنسيسكاني بولندي جمع بين الدراسة الفلسفية واللاهوتية والنشر والتنظيم والعمل التبشيري. أسس نيبُوكالانوف ودار نشر، وعمل في اليابان قرب ناغاساكي، ثم اعتقله الاحتلال النازي ونُقل إلى أوشفيتز حيث حمل الرقم 16670. في يوليو 1941 تطوع ليأخذ مكان فرانتشيشك غايونيتشيك المحكوم بالموت جوعاً، وقُتل في 14 أغسطس 1941.",
-      "question": "ماذا تخبرنا حياة كولبة كلها — لا لحظة موته وحدها — عن العلاقة بين الفكرة والعمل والمسؤولية تجاه إنسان غريب؟",
-      "image": "assets/images/memory/maximilian-kolbe.jpg",
-      "imageCredit": "صورة محلية محفوظة داخل حزمة الموقع",
+      "summary": "Kolbe volunteered to take the place of Franciszek Gajowniczek, who had been selected for death by starvation. Kolbe was killed by poison injection on 14 August 1941 in Block 11.",
+      "question": "What makes an act of sacrifice morally luminous without turning suffering into spectacle?",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Maksymilian_Maria_Kolbe_-_1939.jpg/640px-Maksymilian_Maria_Kolbe_-_1939.jpg",
+      "imageCredit": "Wikimedia Commons — archival portrait",
       "sources": [
         {
           "label": "Auschwitz Memorial — Kolbe podcast",
@@ -213,37 +120,39 @@ window.LUXDOT_MEMORY_DB = {
           "label": "Auschwitz Memorial — Block 11 podcast",
           "url": "https://www.auschwitz.org/en/education/e-learning/podcast/block-no-11-in-auschwitz/"
         }
-      ],
-      "page": "maximilian-kolbe.html?v=2.9.8",
-      "dossier": "لم تبدأ قصة كولبة في زنزانة التجويع. قبل أوشفيتز كان طالب فلسفة ولاهوت، مؤسساً لمركز نيبُوكالانوف ودار نشر، ومبشراً في اليابان. تحفظ الذاكرة أيضاً الأسئلة النقدية حول خطاب عصره ومنشوراته، إلى جانب ما توثقه المصادر عن مساعدة النازحين خلال الحرب. افتح الملف الكامل لقراءة السيرة والوثائق والصور."
+      ]
     },
     {
       "id": "indies",
       "date": "2026-08-15",
-      "theme": "التذكار",
-      "title": "15 أغسطس — بريدا تتذكر",
-      "place": "حديقة رافي • بريدا • هولندا (Raffy)",
-      "lat": 51.604,
-      "lon": 4.807,
+      "theme": "REMEMBRANCE",
+      "title": "15 August — Netherlands remembers",
+      "place": "Den Haag · Groningen · Netherlands",
+      "lat": 52.091,
+      "lon": 4.309,
       "status": "documented",
-      "summary": "يُحيى في بريدا يوم 15 أغسطس ذكرى نهاية الحرب في آسيا وضحايا الحرب والاحتلال وما تلاهما في جزر الهند الشرقية الهولندية. تحفظ نقطة نور الفرق بين الذاكرة الهندية الهولندية والإندونيسية والمولوكية، وتتعامل مع المشاركين بوصفهم أصحاب قصتهم.",
-      "question": "كيف نستمع إلى ذاكرة جماعة من دون أن نستبدل كلماتها بتفسيرنا نحن؟",
+      "summary": "On 15 August the Netherlands commemorates the formal end of the Second World War for the Kingdom and all victims of the war against Japan and the Japanese occupation of the former Dutch East Indies. In 2026 the national ceremony is at the Indisch Monument in The Hague; the Breda/Raffy ceremony was cancelled because of the heat. Groningen holds a local commemoration with testimony across generations and songs remembered from a women’s camp on Sumatra.",
+      "question": "How does public remembrance become something a later generation can inherit rather than merely observe?",
       "sources": [
         {
-          "label": "Arjati — Breda 2026 programme",
-          "url": "https://arjati.nl/2026/08/01/indie-herdenking-15-augustus-2026/"
+          "label": "National Commemoration — 2026 programme",
+          "url": "https://15augustus1945.nl/nationale-herdenking-15-augustus/"
         },
         {
-          "label": "National 15 August foundation — Breda 2026",
-          "url": "https://15augustus1945.nl/herdenkingen-en-monumenten/herdenking-breda/"
+          "label": "2026 practical attendance information",
+          "url": "https://15augustus1945.nl/veelgestelde-vragen-2/"
         },
         {
-          "label": "Indies Bell",
-          "url": "https://15augustus1945.nl/en/indies-bell/"
+          "label": "Indische Generatietafels — 2026",
+          "url": "https://15augustus1945.nl/generatietafels-2/"
         },
         {
-          "label": "Breda — Raffy 2026",
-          "url": "https://15augustus1945.nl/herdenkingen-en-monumenten/herdenking-breda/"
+          "label": "Groningen — Martinikerkhof 2026",
+          "url": "https://15augustus1945.nl/herdenkingen-en-monumenten/herdenking-groningen/"
+        },
+        {
+          "label": "Local commemorations — Breda cancellation notice",
+          "url": "https://15augustus1945.nl/overzicht-van-lokale-herdenkingen/"
         }
       ],
       "media": []
@@ -251,21 +160,21 @@ window.LUXDOT_MEMORY_DB = {
     {
       "id": "roger-bialystok",
       "date": "2026-08-16",
-      "theme": "المقاومة • المصالحة",
-      "title": "الأخ روجيه • بياويستوك (Brother Roger • Białystok)",
-      "place": "تيزيه / بياويستوك",
+      "theme": "RESISTANCE / RECONCILIATION",
+      "title": "Brother Roger · Białystok",
+      "place": "Taizé / Białystok",
       "lat": 46.514,
       "lon": 4.677,
       "status": "documented",
-      "summary": "يربط هذا الفرع بين ذاكرة المقاومة المسيحية وأعمال المصالحة التي ارتبطت لاحقاً بجماعة تيزيه. تُعرض الروابط عندما تكون موثقة، وتبقى الاختلافات بين الأشخاص والأزمنة واضحة.",
-      "question": "كيف تنتقل الذاكرة من مقاومة الظلم إلى بناء مصالحة لا تمحو الحقيقة؟",
+      "summary": "Two distinct memories are kept side by side, not merged: Jewish armed resistance during the liquidation of the Białystok ghetto in 1943, and the life of Brother Roger of Taizé, killed during evening prayer on 16 August 2005 after a life devoted to reconciliation and solidarity.",
+      "question": "When does protecting life call for resistance, and when does healing call for reconciliation?",
       "sources": [
         {
           "label": "Taizé — Brother Roger",
           "url": "https://www.taize.fr/en/brother-roger"
         },
         {
-          "label": "ياد فاشيم — armed resistance in Białystok",
+          "label": "Yad Vashem — armed resistance in Białystok",
           "url": "https://www.yadvashem.org/articles/general/armed-resistance-in-krakow-and-bialystok.html"
         },
         {
@@ -283,14 +192,14 @@ window.LUXDOT_MEMORY_DB = {
     {
       "id": "name-truth",
       "date": "2026-08-17",
-      "theme": "الهوية • الحقيقة",
-      "title": "الاسم والكذبة",
-      "place": "ألمانيا / لندن",
+      "theme": "IDENTITY / TRUTH",
+      "title": "The name and the lie",
+      "place": "Germany / London",
       "lat": 52.52,
       "lon": 13.405,
       "status": "documented",
-      "summary": "فرع يختبر كيف يمكن للاسم والهوية والوثيقة أن تصبح أدوات حماية أو تضليل أو اضطهاد، وكيف نحافظ على الدقة حين تكون حياة الإنسان مرتبطة بما كُتب عنه.",
-      "question": "متى يحمي الاسم صاحبه، ومتى يصبح التصنيف المكتوب عنه سجناً؟",
+      "summary": "On 17 August 1938 Nazi Germany imposed additional names, Israel for many Jewish men and Sara for many Jewish women, as an administrative marker. On 17 August 1921 The Times published Philip Graves’s exposure of the plagiarism behind the antisemitic Protocols forgery.",
+      "question": "How do labels make persecution easier — and what does rigorous source-checking do to a weaponized lie?",
       "sources": [
         {
           "label": "USHMM — Law on alteration of names",
@@ -299,6 +208,48 @@ window.LUXDOT_MEMORY_DB = {
         {
           "label": "USHMM — The Times, 17 August 1921",
           "url": "https://encyclopedia.ushmm.org/content/en/gallery/the-times-august-17-1921"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "indonesia-independence",
+      "date": "2026-08-17",
+      "theme": "DECOLONISATION / MEMORY",
+      "title": "17 August — Indonesian independence",
+      "place": "Indonesia / Netherlands",
+      "lat": -6.2,
+      "lon": 106.816,
+      "status": "documented",
+      "summary": "Indonesia proclaimed independence on 17 August 1945. The Netherlands did not accept the Republic at the time, and the following years became a violent war of independence and decolonisation. This memory is kept beside, not instead of, the memories of 15 August and of the many communities affected by the war and its aftermath.",
+      "question": "How can a shared memory hold liberation, displacement, colonial violence and different communities’ losses without erasing one another?",
+      "sources": [
+        {
+          "label": "Government.nl — Indonesia national day: 17 August",
+          "url": "https://www.government.nl/themes/migration-and-travel/embassies-consulates-and-other-representations/overview-countries-and-regions/indonesia"
+        },
+        {
+          "label": "Government.nl — post-proclamation war and summary executions",
+          "url": "https://www.government.nl/documents/regulations/2021/06/01/translations-outlines-for-civil-law-settlements-mass-executions-in-former-dutch-east-indies"
+        }
+      ],
+      "media": []
+    },
+    {
+      "id": "tula",
+      "date": "2026-08-17",
+      "theme": "FREEDOM / RESISTANCE",
+      "title": "Tula — revolt against slavery",
+      "place": "Curaçao · 1795",
+      "lat": 12.1696,
+      "lon": -68.99,
+      "status": "documented",
+      "summary": "On 17 August 1795 Tula led a revolt of enslaved people on Curaçao, driven by freedom and equality. The Dutch colonial system suppressed the revolt; Tula was tortured and publicly executed on 3 October 1795. The Netherlands formally rehabilitated Tula in 2023, revoking the sentence that preceded his execution.",
+      "question": "What does remembrance owe to people once criminalised for demanding freedom?",
+      "sources": [
+        {
+          "label": "City of Amsterdam / National Slavery Museum — Tula and rehabilitation",
+          "url": "https://assets.amsterdam.nl/publish/pages/1048977/participatieverslag_slavernijmuseum.pdf"
         }
       ],
       "media": []
@@ -312,7 +263,7 @@ window.LUXDOT_MEMORY_DB = {
       "title": "Nationaal Monument Kamp Vught",
       "kind": "visit",
       "address": "Lunettenlaan 600, 5263 NT Vught",
-      "note": "No specific Westerweel anniversary event found; museum and former camp grounds are open. Use the visit as a documented remembrance stop."
+      "note": "Museum visit / documented remembrance stop for Joop Westerweel and other resistance members murdered at Vught."
     },
     {
       "date": "2026-08-12",
@@ -321,25 +272,34 @@ window.LUXDOT_MEMORY_DB = {
       "title": "82nd anniversary of the massacre",
       "kind": "official",
       "address": "Sant’Anna di Stazzema, Lucca, Italy",
-      "note": "Mass 08:30; wreaths; official ceremony at Ossuary from 09:45; speeches from 10:00; Colors for Peace exhibition 11:30."
+      "note": "Mass 08:30; wreaths; official ceremony at the Ossuary from 09:45; speeches from 10:00; Colors for Peace exhibition 11:30."
     },
     {
       "date": "2026-08-14",
       "city": "Oświęcim / Harmęże",
-      "time": "08:00–18:30",
+      "time": "08:00–18:00",
       "title": "85th anniversary of Maximilian Kolbe’s death",
       "kind": "official",
       "address": "Auschwitz I / Harmęże, Poland",
-      "note": "Transitus 08:00; pilgrimages; flowers 10:00; central Mass at Block 11 at 10:30; further services at Harmęże and Oświęcim."
+      "note": "Transitus 08:00; pilgrimage from Birkenau 08:45; flowers 10:00; central Mass by Block 11 at 10:30; further services at Harmęże."
     },
     {
       "date": "2026-08-15",
       "city": "Breda",
-      "time": "13:45–15:30+",
-      "title": "Indië commemoration at Raffy",
-      "kind": "official",
+      "time": "CANCELLED",
+      "title": "Raffy Indië commemoration",
+      "kind": "cancelled",
       "address": "Bernard de Wildestraat 400, 4827 EG Breda",
-      "note": "Starts 14:00; visitors asked to be seated by 13:45; defilé and flower laying at 15:30."
+      "note": "CANCELLED by the organisers because of the heat. Do not travel to Breda for this ceremony."
+    },
+    {
+      "date": "2026-08-15",
+      "city": "Den Haag — Generatietafels",
+      "time": "12:00–14:45",
+      "title": "Indische Generatietafels",
+      "kind": "official",
+      "address": "Herdenkingsveld / Bar Bungkus, Indisch Monument, Den Haag",
+      "note": "Inloop 12:00; conversations begin 12:30; finish 14:45. Registration is requested by the organiser."
     },
     {
       "date": "2026-08-15",
@@ -347,8 +307,17 @@ window.LUXDOT_MEMORY_DB = {
       "time": "17:00–20:00",
       "title": "National Commemoration 15 August 1945",
       "kind": "official",
-      "address": "Indisch Monument, Den Haag",
-      "note": "Field opens 17:00; ceremony 18:45–20:00. Approx. 2,000 unreserved seats available first-come, no ticket required."
+      "address": "Indisch Monument, Scheveningse Bosjes, Den Haag",
+      "note": "Field opens 17:00; be seated by 18:30; ceremony 18:45–20:00. Non-donors can use unreserved seating from 17:00, subject to availability."
+    },
+    {
+      "date": "2026-08-15",
+      "city": "Groningen",
+      "time": "17:00–evening",
+      "title": "Groningen — Martinikerkhof commemoration",
+      "kind": "official",
+      "address": "Martinikerkhof, Groningen",
+      "note": "Inloop 17:00; opening dance/poem 17:20; programme 17:30. Includes first-, second- and third-generation testimony, a post-event gathering in Martinikerk, an exhibition, and songs remembered from a women’s camp on Sumatra."
     },
     {
       "date": "2026-08-16",
@@ -357,7 +326,16 @@ window.LUXDOT_MEMORY_DB = {
       "title": "Indië commemoration — De belofte",
       "kind": "official",
       "address": "Thaliaplein, 4611 MK Bergen op Zoom",
-      "note": "Regional commemoration with four generations’ stories, music and nasi bungkus gathering."
+      "note": "Regional commemoration themed “De belofte”, with four generations’ stories, music and a nasi bungkus gathering."
+    },
+    {
+      "date": "2026-08-16",
+      "city": "Den Haag — Duinzichtkerk",
+      "time": "16:30",
+      "title": "Church remembrance of the end of WWII in Asia",
+      "kind": "official",
+      "address": "Duinzichtkerk, Den Haag",
+      "note": "Annual church remembrance organised by the Haagse Gemeenschap van Kerken with the Duinzichtkerk community."
     }
   ]
 };

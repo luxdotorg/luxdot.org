@@ -1,0 +1,27 @@
+LuxDot CLEAN WHITE v1.6 — PROJECTS + LIVING RESEARCH
+10 Aug 2026
+
+BASE PRESERVED:
+LuxDot_CLEAN_WHITE_v1_5_ARABIC_SACRED.zip
+
+UNCHANGED CORE:
+- Landing experience
+- Common Library
+- Qur'an reader + quran.js
+- Tanakh page + sacred audio logic
+- New Testament page + sacred audio logic
+- Existing CSS / multilingual alignment system
+
+EXISTING-SITE PATCHES ONLY:
+- Projects nav item activated
+- Home Projects card activated
+- Projects/Research translation labels added
+
+NEW:
+- projects.html
+- research/shaam-breda.html
+- research/circle-of-care-25km-original.html
+- data/care-points.json (70 records)
+
+Arabic display convention: شام
+Geographic/raw data retains Chaam where precision requires it.
