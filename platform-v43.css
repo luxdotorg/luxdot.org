@@ -12,3 +12,11 @@ html[lang="he"] body{direction:rtl}html[lang="en"] body,html[lang="nl"] body,htm
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
 
 .lux-lang-pending{visibility:hidden}.lux-lang-pending.lux-lang-ready{visibility:visible}
+
+/* v4.3.5 home parity: Arabic master behavior across every locale */
+.home-arrival .cards .card{position:relative;cursor:pointer;padding-inline-start:82px!important;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+.home-arrival .cards .card .btn{display:none!important}
+.home-arrival .cards .card:hover,.home-arrival .cards .card:focus-visible{border-color:rgba(120,230,153,.55);box-shadow:0 0 0 1px rgba(120,230,153,.08),0 12px 34px rgba(0,0,0,.22);transform:translateY(-1px)}
+.home-arrival .cards .card>.lux-thumb{display:none!important}
+.home-arrival .cards .card>.lux-semantic-icon~.lux-semantic-icon{display:none!important}
+@media(max-width:760px){.home-arrival .cards .card{padding-inline-start:72px!important}}

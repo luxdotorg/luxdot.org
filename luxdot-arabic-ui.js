@@ -138,21 +138,41 @@ const icon=(kind)=>{
  };
  return P[kind]||P.default;
 };
-function semanticKind(el,area){const t=(el.textContent||'').toLowerCase();
- if(area==='home'){if(/مكتبة/.test(t))return'library';if(/إيمان|حكمة/.test(t))return'faith';if(/أرخبيل/.test(t))return'nusantara';if(/ذاكرة/.test(t))return'memory';if(/بحث/.test(t))return'research';if(/مشروع/.test(t))return'projects'}
- if(area==='research'){if(/أورانيا|ناسو/.test(t))return'crown';if(/هندريك|كيفلار|حج/.test(t))return'pilgrimage';if(/إيراسموس/.test(t))return'bridge';if(/مخلّص|مقارن/.test(t))return'network';if(/جاو|إندونيس/.test(t))return'nusantara';if(/شام|بريدا/.test(t))return'bridge';return'research'}
- if(area==='projects'){if(/رعاية/.test(t))return'care';if(/استماع/.test(t))return'ear';if(/بحث.*فعل|الفعل/.test(t))return'network';return'projects'}
+function semanticKind(el,area){
+ const href=(el.dataset.href||el.querySelector('a[href]')?.getAttribute('href')||'').toLowerCase();
+ const id=(el.id||'').toLowerCase();
+ const t=(el.textContent||'').toLowerCase();
+ if(area==='home'){
+   if(/library\.html/.test(href))return'library';
+   if(/faith\.html/.test(href)||id==='home-faith')return'faith';
+   if(/nusantara\.html/.test(href)||id==='home-nusantara')return'nusantara';
+   if(/memory\.html/.test(href))return'memory';
+   if(/research\.html/.test(href))return'research';
+   if(/projects\.html/.test(href))return'projects';
+ }
+ if(area==='research'){if(/urania|nassau/.test(href+t))return'crown';if(/hendrick|kevelaer/.test(href+t))return'pilgrimage';if(/erasmus/.test(href+t))return'bridge';if(/savior|mخل|penyelamat|גאולה/.test(href+t))return'network';if(/java|nusantara|indones/.test(href+t))return'nusantara';if(/shaam|breda/.test(href+t))return'bridge';return'research'}
+ if(area==='projects'){if(/circle-of-care|care|rعاية|zorg|perawatan|דאגה/.test(href+t))return'care';if(/listen|استماع|luister|rungok|הקשב/.test(href+t))return'ear';return'projects'}
  return'default'}
 function traditionSymbol(t){if(/الإسلام/.test(t))return'☾';if(/اليهود/.test(t))return'✡';if(/المسيح/.test(t))return'✝';if(/الهندوس/.test(t))return'ॐ';if(/البوذ/.test(t))return'☸';if(/السيخ/.test(t))return'☬';if(/الزرادشت/.test(t))return'🔥';if(/البهائ/.test(t))return'✹';if(/الجايني/.test(t))return'☸';if(/الطاوي/.test(t))return'☯';if(/الكونفوش/.test(t))return'仁';if(/الشنتو/.test(t))return'神';if(/الجاوي|الإندونيسي/.test(t))return'ꦗ';return'•'}
-function replaceSymbols(){if(!isAR())return;
- document.querySelectorAll('.cards .card').forEach(el=>{el.querySelector(':scope > .lux-thumb')?.remove();let i=el.querySelector(':scope > .lux-semantic-icon');if(!i){i=document.createElement('span');i.className='lux-semantic-icon';el.prepend(i)}i.innerHTML=icon(semanticKind(el,'home'))});
- document.querySelectorAll('.faith-tradition').forEach(el=>{el.querySelector(':scope > .lux-thumb')?.remove();let i=el.querySelector(':scope > .lux-tradition-icon');if(!i){i=document.createElement('span');i.className='lux-tradition-icon';el.prepend(i)}i.textContent=traditionSymbol(el.textContent)});
- const researchPage=/research\.html$/.test(location.pathname); if(researchPage)document.querySelectorAll('main article,.r-card').forEach(el=>{el.querySelector(':scope > .lux-thumb')?.remove();let i=el.querySelector(':scope > .lux-semantic-icon');if(!i){i=document.createElement('span');i.className='lux-semantic-icon';el.prepend(i)}i.innerHTML=icon(semanticKind(el,'research'))});
- const projectPage=/projects\.html$/.test(location.pathname); if(projectPage)document.querySelectorAll('article.p,main article').forEach(el=>{el.querySelector(':scope > .lux-thumb')?.remove();let i=el.querySelector(':scope > .lux-semantic-icon');if(!i){i=document.createElement('span');i.className='lux-semantic-icon';el.prepend(i)}i.innerHTML=icon(semanticKind(el,'projects'))});
+function replaceSymbols(){
+ document.querySelectorAll('.cards .card').forEach(el=>{el.querySelectorAll(':scope > .lux-thumb,:scope > .lux-semantic-icon').forEach((n,i)=>{if(i===0&&n.classList.contains('lux-semantic-icon'))return;n.remove()});let i=el.querySelector(':scope > .lux-semantic-icon');if(!i){i=document.createElement('span');i.className='lux-semantic-icon';el.prepend(i)}i.innerHTML=icon(semanticKind(el,'home'))});
+ if(isAR())document.querySelectorAll('.faith-tradition').forEach(el=>{el.querySelector(':scope > .lux-thumb')?.remove();let i=el.querySelector(':scope > .lux-tradition-icon');if(!i){i=document.createElement('span');i.className='lux-tradition-icon';el.prepend(i)}i.textContent=traditionSymbol(el.textContent)});
+ const researchPage=/research\.html$/.test(location.pathname); if(researchPage)document.querySelectorAll('main article,.r-card').forEach(el=>{el.querySelectorAll(':scope > .lux-thumb,:scope > .lux-semantic-icon').forEach(n=>n.remove());let i=document.createElement('span');i.className='lux-semantic-icon';i.innerHTML=icon(semanticKind(el,'research'));el.prepend(i)});
+ const projectPage=/projects\.html$/.test(location.pathname); if(projectPage)document.querySelectorAll('article.p,main article').forEach(el=>{el.querySelectorAll(':scope > .lux-thumb,:scope > .lux-semantic-icon').forEach(n=>n.remove());let i=document.createElement('span');i.className='lux-semantic-icon';i.innerHTML=icon(semanticKind(el,'projects'));el.prepend(i)});
+}
+function unifyHomeCartouches(){
+ if(!/home\.html$/.test(location.pathname))return;
+ document.querySelectorAll('.cards .card').forEach(el=>{
+   const link=el.querySelector('a[href]'); const href=el.dataset.href||link?.getAttribute('href'); if(!href)return;
+   el.dataset.href=href; el.classList.add('lux-cartouche','lux-home-cartouche'); el.setAttribute('role','link'); el.tabIndex=0;
+   el.querySelectorAll(':scope > .btn').forEach(b=>b.remove());
+   const go=()=>{location.href=el.dataset.href};
+   if(!el.dataset.luxHomeBound){el.dataset.luxHomeBound='1';el.addEventListener('click',e=>{if(e.target.closest('a[href^="http"]'))return;go()});el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}})}
+ });
 }
 function fallbackImages(){document.querySelectorAll('img[data-fallback-src]').forEach(img=>img.addEventListener('error',()=>{if(img.dataset.didFallback)return;img.dataset.didFallback='1';img.src=img.dataset.fallbackSrc},{once:true}))}
 function oneLineHero(){const x=document.querySelector('.hero-one-line');if(x)x.setAttribute('aria-label',x.textContent.trim())}
-function boot295(){fullHeader();replaceSymbols();fallbackImages();oneLineHero()}
+function boot295(){fullHeader();replaceSymbols();unifyHomeCartouches();fallbackImages();oneLineHero()}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot295);else boot295();
 document.addEventListener('luxlang',()=>setTimeout(boot295,0));
 })();

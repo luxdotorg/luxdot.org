@@ -4,11 +4,11 @@ const SUP=['ar','en','nl','jv','he'];
 const DIR={ar:'rtl',en:'ltr',nl:'ltr',jv:'ltr',he:'rtl'};
 const B={ar:'نقطة نور',en:'LuxDot',nl:'Lichtpunt',jv:'Titik Cahya',he:'נקודת אור'};
 const N={
- ar:{home:'الرئيسية',library:'المكتبة',memory:'الذاكرة',research:'الأبحاث',projects:'المشاريع',back:'عودة',lang:'اللغة'},
- en:{home:'Home',library:'Library',memory:'Memory',research:'Research',projects:'Projects',back:'Back',lang:'Language'},
- nl:{home:'Home',library:'Bibliotheek',memory:'Geheugen',research:'Onderzoek',projects:'Projecten',back:'Terug',lang:'Taal'},
- jv:{home:'Ngarep',library:'Pustaka',memory:'Pangeling',research:'Panliten',projects:'Proyek',back:'Bali',lang:'Basa'},
- he:{home:'ראשי',library:'ספרייה',memory:'זיכרון',research:'מחקר',projects:'פרויקטים',back:'חזרה',lang:'שפה'}
+ ar:{home:'الرئيسية',library:'المكتبة',faith:'الإيمان والحكمة',nusantara:'الأرخبيل الإندونيسي',memory:'الذاكرة',research:'الأبحاث',projects:'المشاريع',back:'عودة',lang:'اللغة'},
+ en:{home:'Home',library:'Library',faith:'Faith & Wisdom',nusantara:'Nusantara',memory:'Memory',research:'Research',projects:'Projects',back:'Back',lang:'Language'},
+ nl:{home:'Home',library:'Bibliotheek',faith:'Geloof & wijsheid',nusantara:'Nusantara',memory:'Geheugen',research:'Onderzoek',projects:'Projecten',back:'Terug',lang:'Taal'},
+ jv:{home:'Ngarep',library:'Pustaka',faith:'Iman lan kawicaksanan',nusantara:'Nusantara',memory:'Pangeling',research:'Panliten',projects:'Proyek',back:'Bali',lang:'Basa'},
+ he:{home:'ראשי',library:'ספרייה',faith:'אמונה וחכמה',nusantara:'נוסנטרה',memory:'זיכרון',research:'מחקר',projects:'פרויקטים',back:'חזרה',lang:'שפה'}
 };
 const LANGNAME={ar:'العربية',en:'English',nl:'Nederlands',jv:'Basa Jawa',he:'עברית'};
 function lang(){const x=(window.LuxLang&&window.LuxLang.get())||document.documentElement.lang||'en';return SUP.includes(x)?x:'en'}
@@ -16,7 +16,7 @@ function rootPrefix(){return location.pathname.includes('/research/savior/')?'..
 function rebuildHeader(){
  let h=document.querySelector('header.top'); if(!h){h=document.createElement('header');h.className='top';document.body.prepend(h)}
  const l=lang(),n=N[l],p=rootPrefix();
- h.innerHTML=`<div class="wrap topin lux-shell-topin"><a class="logo" data-lux-brand href="${p}home.html">${B[l]}</a><nav class="nav lux-shell-nav" aria-label="${n.lang}"><a href="${p}home.html">${n.home}</a><a href="${p}library.html">${n.library}</a><a href="${p}memory.html">${n.memory}</a><a href="${p}research.html">${n.research}</a><a href="${p}projects.html">${n.projects}</a><select class="lang lang-select" data-lang-select aria-label="${n.lang}">${SUP.map(x=>`<option value="${x}"${x===l?' selected':''}>${LANGNAME[x]}</option>`).join('')}</select></nav></div>`;
+ h.innerHTML=`<div class="wrap topin lux-shell-topin"><a class="logo" data-lux-brand href="${p}home.html">${B[l]}</a><nav class="nav lux-shell-nav" aria-label="${n.lang}"><a href="${p}home.html">${n.home}</a><a href="${p}library.html">${n.library}</a><a href="${p}faith.html">${n.faith}</a><a href="${p}nusantara.html">${n.nusantara}</a><a href="${p}memory.html">${n.memory}</a><a href="${p}research.html">${n.research}</a><a href="${p}projects.html">${n.projects}</a><select class="lang lang-select" data-lang-select aria-label="${n.lang}">${SUP.map(x=>`<option value="${x}"${x===l?' selected':''}>${LANGNAME[x]}</option>`).join('')}</select></nav></div>`;
  const sel=h.querySelector('select');sel?.addEventListener('change',e=>{window.LuxLang?.set(e.target.value,true);location.reload()});
 }
 const SUM={
