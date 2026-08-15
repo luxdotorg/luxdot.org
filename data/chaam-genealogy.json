@@ -1,6 +1,6 @@
 {
   "schema": "luxdot.genealogy.v1",
-  "version": "4.3.13",
+  "version": "4.3.14",
   "scope": "Chaam first archival genealogy cohort",
   "method": "Only explicit kinship/marriage links are genealogical. Witness, land and archival co-occurrence are separate edge types.",
   "nodes": [
@@ -275,6 +275,87 @@
       "place": "Chaam",
       "period": "1658–1671",
       "confidence": "A"
+    },
+    {
+      "id": "joannes-jansen-kin-1656",
+      "type": "person",
+      "name": "Joannes Jansen Kin",
+      "sex": "M",
+      "baptism": "1656-05-18",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "B",
+      "note": "Baptism and later marriage/children are reported in a genealogical compilation that points back to Chaam parish records; retained as B pending image-level verification of each entry."
+    },
+    {
+      "id": "maria-anna-van-kempen-1670",
+      "type": "person",
+      "name": "Maria Anna van Kempen",
+      "sex": "F",
+      "baptism": "1670-03-25",
+      "place": "Breda",
+      "religion": "roman-catholic",
+      "confidence": "B"
+    },
+    {
+      "id": "joannes-kin-1695",
+      "type": "person",
+      "name": "Joannes Jansen Kin",
+      "sex": "M",
+      "baptism": "1695-04-02",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "B"
+    },
+    {
+      "id": "magdalena-kin-1696",
+      "type": "person",
+      "name": "Magdalena Jansen Kin",
+      "sex": "F",
+      "baptism": "1696-09-28",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "B"
+    },
+    {
+      "id": "joanna-kin-1698",
+      "type": "person",
+      "name": "Joanna Jansen Kin",
+      "sex": "F",
+      "baptism": "1698-08-05",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "B"
+    },
+    {
+      "id": "anna-kin-1701",
+      "type": "person",
+      "name": "Anna Jansen Kin",
+      "sex": "F",
+      "baptism": "1701-07-24",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "B"
+    },
+    {
+      "id": "joannes-kin-1703",
+      "type": "person",
+      "name": "Joannes Jansen Kin",
+      "sex": "M",
+      "baptism": "1703-04-21",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "B"
+    },
+    {
+      "id": "bernardus-kin-1712",
+      "type": "person",
+      "name": "Bernardus Jansen Kin",
+      "sex": "M",
+      "baptism": "1712-08-05",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "B"
     }
   ],
   "edges": [
@@ -515,6 +596,97 @@
       "type": "sibling-stated",
       "confidence": "B",
       "source": "vestbrieven-1671"
+    },
+    {
+      "from": "joannes-jansen-kin-1656",
+      "to": "maria-anna-van-kempen-1670",
+      "type": "spouse",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "joannes-jansen-kin-1656",
+      "to": "joannes-kin-1695",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "maria-anna-van-kempen-1670",
+      "to": "joannes-kin-1695",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "joannes-jansen-kin-1656",
+      "to": "magdalena-kin-1696",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "maria-anna-van-kempen-1670",
+      "to": "magdalena-kin-1696",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "joannes-jansen-kin-1656",
+      "to": "joanna-kin-1698",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "maria-anna-van-kempen-1670",
+      "to": "joanna-kin-1698",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "joannes-jansen-kin-1656",
+      "to": "anna-kin-1701",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "maria-anna-van-kempen-1670",
+      "to": "anna-kin-1701",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "joannes-jansen-kin-1656",
+      "to": "joannes-kin-1703",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "maria-anna-van-kempen-1670",
+      "to": "joannes-kin-1703",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "joannes-jansen-kin-1656",
+      "to": "bernardus-kin-1712",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "maria-anna-van-kempen-1670",
+      "to": "bernardus-kin-1712",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
     }
   ],
   "sources": [
@@ -541,6 +713,22 @@
       "title": "BHIC DTB Chaam inventory",
       "url": "https://www.bhic.nl/genealogie/dtb/8024.htm",
       "type": "archive-inventory"
+    },
+    {
+      "id": "familievaniersel-chaam-kin",
+      "title": "Kwartierstaat — Jansen Kin branch, Chaam",
+      "url": "https://www.familievaniersel.nl/genealogie/kwartierstaat/",
+      "type": "secondary genealogy cross-check",
+      "confidence": "B/C",
+      "note": "Used to extend the branch; dates should be checked against original parish scans before promotion to A."
+    },
+    {
+      "id": "bhic-dtb-chaam",
+      "title": "BHIC DTB inventory — Chaam",
+      "url": "https://www.bhic.nl/genealogie/dtb/8024.htm",
+      "type": "archive inventory",
+      "confidence": "A",
+      "note": "Confirms the surviving Catholic and Reformed baptism, marriage, death and burial series and date ranges."
     }
   ]
 }
