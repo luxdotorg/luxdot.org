@@ -74,7 +74,7 @@ function purity(){
  document.querySelectorAll('body *').forEach(el=>{
   if(el.closest('script,style,select,.original-text,[data-original-language],[lang="ar"]'))return;
   if(el.children.length===0&&foreign.test(el.textContent||'')){
-    if((el.textContent||'').includes('رافي عبد السميع الحجي'))el.textContent=(el.textContent||'').replaceAll('رافي عبد السميع الحجي','Rafi Abd al-Samiʿ al-Hajji');
+    if((el.textContent||'').includes('رافي عبد السميع الحجي'))el.textContent=(el.textContent||'').replaceAll('رافي عبد السميع الحجي',l==='he'?"ראפי עבד אל-סמיע אל-חאג'י":'Rafi Abdul Sami3 Alhaji');
   }
  });
 }

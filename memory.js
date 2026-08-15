@@ -7,7 +7,7 @@ const UI={
  en:{title:'Memory is not a list of dates',lead:'A living atlas of people, places, crimes, rescue, resistance and reconciliation — sourced, versioned and open to correction',loading:'Loading living memory…',error:'Memory data could not be loaded',center:'LIVING MEMORY',documented:'Documented'},
  ar:{title:'الذاكرة ليست قائمة تواريخ',lead:'أطلس حي للأشخاص والأماكن والجرائم والإنقاذ والمقاومة والمصالحة — موثّق، مؤرشف بالإصدارات، وقابل للتصحيح',loading:'جارٍ تحميل الذاكرة الحيّة…',error:'تعذر تحميل بيانات الذاكرة',center:'الذاكرة الحيّة',documented:'موثّق'},
  nl:{title:'Herinnering is geen lijst met data',lead:'Een levende atlas van mensen, plaatsen, misdaden, redding, verzet en verzoening — met bronnen, versies en ruimte voor correctie',loading:'Levend geheugen laden…',error:'Geheugengegevens konden niet worden geladen',center:'LEVEND GEHEUGEN',documented:'Gedocumenteerd'},
- id:{title:'Memori bukan daftar tanggal',lead:'Atlas hidup tentang manusia, tempat, kejahatan, penyelamatan, perlawanan dan rekonsiliasi — bersumber, berversi dan terbuka untuk koreksi',loading:'Memuat memori hidup…',error:'Data memori tidak dapat dimuat',center:'MEMORI HIDUP',documented:'Terdokumentasi'}
+ id:{title:'Memori bukan daftar tanggal',lead:'Atlas hidup tentang manusia, tempat, kejahatan, penyelamatan, perlawanan dan rekonsiliasi — bersumber, berversi dan terbuka untuk koreksi',loading:'Memuat memori hidup…',error:'Data memori tidak dapat dimuat',center:'MEMORI HIDUP',documented:'Terdokumentasi'},jv:{title:'Pangeling dudu mung dhaptar tanggal',lead:'Atlas urip bab wong, papan, kadurjanan, pitulungan, perlawanan lan rekonsiliasi — nganggo sumber lan bisa didandani',loading:'Muat pangeling urip…',error:'Data pangeling ora bisa dimuat',center:'PANGELING URIP',documented:'Kacathet'},he:{title:'זיכרון אינו רשימת תאריכים',lead:'אטלס חי של אנשים, מקומות, פשעים, הצלה, התנגדות ופיוס — מבוסס מקורות, מנוהל בגרסאות ופתוח לתיקון',loading:'טוען זיכרון חי…',error:'לא ניתן לטעון את נתוני הזיכרון',center:'זיכרון חי',documented:'מתועד'}
 };
 const I18N={
  'rufina-secunda':{ar:{theme:'استشهاد / تقليد',title:'روفينا وسيكوندا',place:'روما · طريق كورنيليا',summary:'يحيي الاستشهاد الروماني ذكرى روفينا وسيكوندا في 10 يوليو. تؤكد مصادر الفاتيكان قدم التذكار واستشهادهما قرب روما، بينما تعود الرواية التفصيلية عن آلامهما إلى طبقة لاحقة يجب تمييزها عن النواة الأقدم',question:'كيف نكرّم تقليداً قديماً ونفصل في الوقت نفسه بين الدليل المبكر والتفاصيل اللاحقة؟'},nl:{theme:'MARTELAARSCHAP / TRADITIE',title:'Rufina & Secunda',place:'Rome · Via Cornelia',summary:'Het Romeins Martyrologium gedenkt Rufina en Secunda op 10 juli. Vaticaanse bronnen plaatsen hun martelaarschap nabij Rome in de derde eeuw; het uitvoerige lijdensverhaal is later en wordt daarom apart gehouden van de oudere verering',question:'Hoe eren we een oude traditie en blijven we tegelijk eerlijk over de ouderdom van het bewijs?'}},
@@ -41,15 +41,15 @@ const FIELD={
   'Den Haag':'Veld open 17:00; ceremonie 18:45–20:00. Extra zitplaatsen op volgorde van aankomst, zonder ticket',
   'Bergen op Zoom':'Regionale herdenking met verhalen van vier generaties, muziek en ontmoeting na afloop'}}
 };
-function lang(){const raw=(window.LuxLang&&window.LuxLang.get())||'en';return raw==='jv'?'id':raw==='he'?'en':(['ar','en','nl','id'].includes(raw)?raw:'en')}
+function lang(){const raw=(window.LuxLang&&window.LuxLang.get())||'en';return ['ar','en','nl','jv','he'].includes(raw)?raw:'en'}
 function ui(){return UI[lang()]||UI.en}
-function trNode(n){const z=I18N[n.id]?.[lang()];return z?{...n,...z}:n}
+function trNode(n){const l=lang();const z=I18N[n.id]?.[l]||(l==='jv'?I18N[n.id]?.id:null);if(z)return {...n,...z};if(l!=='ar')return nonArabicFallback(n,l);return n}
 function esc(v=''){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function fmt(d){try{return new Intl.DateTimeFormat(lang(),{weekday:'short',day:'2-digit',month:'short'}).format(new Date(d+'T12:00:00'))}catch{return d}}
 function translateHead(){titleEl.textContent=ui().title;leadEl.textContent=ui().lead}
-function fieldNote(f){if(lang()==='en')return f.note;const x=FIELD[lang()];return x?.notes?.[f.city]||x?.notes?.[f.date]||f.note}
-function fieldKind(f){if(lang()==='en')return String(f.kind||'').toUpperCase();return (FIELD[lang()]?.[f.kind]||f.kind||'').toUpperCase()}
-function fieldTitle(f){if(lang()==='en')return f.title;return FIELD[lang()]?.titles?.[f.city]||f.title}
+function fieldNote(f){const l=lang();if(l==='ar')return f.note;const x=FIELD[l]||FIELD[l==='jv'?'id':'en'];return x?.notes?.[f.city]||x?.notes?.[f.date]||({en:'See official event source.',nl:'Zie de officiële evenementbron.',jv:'Delengen sumber acara resmi.',he:'ראו את מקור האירוע הרשמי.'}[l])}
+function fieldKind(f){const l=lang();if(l==='ar')return String(f.kind||'').toUpperCase();const x=FIELD[l]||FIELD[l==='jv'?'id':'en'];return (x?.[f.kind]||f.kind||'').toUpperCase()}
+function fieldTitle(f){const l=lang();if(l==='ar')return f.title;const x=FIELD[l]||FIELD[l==='jv'?'id':'en'];return x?.titles?.[f.city]||String(f.city||f.title||'')}
 
 const TRAGEDY_IDS=new Set(['rufina-secunda','justa-rufina','edith-stein','lawrence-rome','westerweel','stazzema','deportation','kolbe','indies','roger-bialystok','name-truth']);
 function tragedy(id){return TRAGEDY_IDS.has(id)}
@@ -100,8 +100,8 @@ function tree(){
 function timeline(){V.innerHTML=`<div class="timeline">${(DB.nodes||[]).map(trNode).map(n=>`<article class="time-row ${tragedy(n.id)?'has-tragedy':''}" data-id="${esc(n.id)}">${bloodMark(n.id)}<div class="time-date">${fmt(n.date)}</div><div><h3>${esc(n.title)}</h3><p>${esc(n.summary)}</p></div></article>`).join('')}</div>`;bindNodes()}
 function map(){
  const nodes=(DB.nodes||[]).filter(n=>Number.isFinite(n.lat)&&Number.isFinite(n.lon)).map(trNode);
- V.innerHTML=`<div class="map-wrap"><div id="memoryLeafletMap" aria-label="خريطة جغرافية لأطلس الذاكرة"></div><div class="map-list">${nodes.map(n=>`<article class="map-card ${tragedy(n.id)?'has-tragedy':''}" data-id="${esc(n.id)}">${bloodMark(n.id)}<b>${esc(n.title)}</b><small>${esc(n.place)} · ${fmt(n.date)}</small></article>`).join('')}</div></div>`;bindNodes();
- if(!window.L){document.getElementById('memoryLeafletMap').innerHTML='<div class="status">تعذر تحميل خادم الخريطة. تبقى بيانات الأطلس متاحة في القائمة والشجرة</div>';return}
+ V.innerHTML=`<div class="map-wrap"><div id="memoryLeafletMap" aria-label="Memory atlas map"></div><div class="map-list">${nodes.map(n=>`<article class="map-card ${tragedy(n.id)?'has-tragedy':''}" data-id="${esc(n.id)}">${bloodMark(n.id)}<b>${esc(n.title)}</b><small>${esc(n.place)} · ${fmt(n.date)}</small></article>`).join('')}</div></div>`;bindNodes();
+ if(!window.L){document.getElementById('memoryLeafletMap').innerHTML=`<div class="status">${esc(({ar:'تعذر تحميل خادم الخريطة. تبقى بيانات الأطلس متاحة في القائمة والشجرة',en:'Map service could not load. Atlas data remains available in the list and tree.',nl:'De kaartservice kon niet laden. De atlasgegevens blijven beschikbaar in lijst en boom.',jv:'Layanan peta ora bisa dimuat. Data atlas tetep ana ing dhaptar lan wit.',he:'שירות המפה לא נטען. נתוני האטלס נשארים זמינים ברשימה ובעץ.'})[lang()]||'Map unavailable')}</div>`;return}
  const m=L.map('memoryLeafletMap',{zoomControl:true,worldCopyJump:true}).setView([50.6,8.0],4);
  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(m);
  const icon=L.divIcon({className:'lux-pin-wrap',html:'<span class="lux-map-pin"><span class="lux-map-pin-core"></span></span>',iconSize:[30,42],iconAnchor:[15,39],popupAnchor:[0,-38],tooltipAnchor:[0,-34]});

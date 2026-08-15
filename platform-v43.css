@@ -20,3 +20,7 @@ html[lang="he"] body{direction:rtl}html[lang="en"] body,html[lang="nl"] body,htm
 .home-arrival .cards .card>.lux-thumb{display:none!important}
 .home-arrival .cards .card>.lux-semantic-icon~.lux-semantic-icon{display:none!important}
 @media(max-width:760px){.home-arrival .cards .card{padding-inline-start:72px!important}}
+
+/* v4.3.9 entry stability */
+html[dir=rtl] body.home-arrival{clip-path:none!important;opacity:1!important;animation:none!important}
+.cards .card[role=link]{cursor:pointer}
