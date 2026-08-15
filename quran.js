@@ -2,6 +2,15 @@ const SURAHS=[{"id": 1, "ar": "الفاتحة", "en": "Al-Fatihah", "n": 7, "typ
 
 const QAPI="https://api.alquran.cloud/v1/surah/";
 const AUDIO="https://cdn.islamic.network/quran/audio/128/ar.alafasy/";
+const QCDN="https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/";
+const LOCAL_QURAN={
+  1:[
+    "بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ","ٱلْحَمْدُ لِلَّهِ رَبِّ ٱلْعَـٰلَمِينَ","ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ","مَـٰلِكِ يَوْمِ ٱلدِّينِ","إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ","ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ","صِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ"
+  ],
+  2:["الٓمٓ","ذَٰلِكَ ٱلْكِتَـٰبُ لَا رَيْبَ فِيهِ هُدًى لِّلْمُتَّقِينَ","ٱلَّذِينَ يُؤْمِنُونَ بِٱلْغَيْبِ وَيُقِيمُونَ ٱلصَّلَوٰةَ وَمِمَّا رَزَقْنَـٰهُمْ يُنفِقُونَ","وَٱلَّذِينَ يُؤْمِنُونَ بِمَآ أُنزِلَ إِلَيْكَ وَمَآ أُنزِلَ مِن قَبْلِكَ وَبِٱلْـَٔاخِرَةِ هُمْ يُوقِنُونَ","أُو۟لَـٰٓئِكَ عَلَىٰ هُدًى مِّن رَّبِّهِمْ وَأُو۟لَـٰٓئِكَ هُمُ ٱلْمُفْلِحُونَ"]
+};
+const QLABEL={ar:{source:'المصدر: Al Quran Cloud · نسخة محلية احتياطية عند تعذر الشبكة',offline:'تعذر الاتصال بمصدر القرآن. أظهرنا النسخة المحلية المتاحة لهذه السورة.'},en:{source:'Source: Al Quran Cloud · local fallback when the network is unavailable',offline:'The Quran source could not be reached. The available local cache is shown.'},nl:{source:'Bron: Al Quran Cloud · lokale reservekopie bij netwerkstoring',offline:'De Koranbron kon niet worden bereikt. De beschikbare lokale cache wordt getoond.'},id:{source:'Sumber: Al Quran Cloud · cadangan lokal saat jaringan tidak tersedia',offline:'Sumber Al-Qur’an tidak dapat dijangkau. Cache lokal yang tersedia ditampilkan.'}};
+
 const offsets=(()=>{let x=0;return SURAHS.map(s=>{const o=x;x+=s.n;return o})})();
 let state={s:2,a:2,en:false,playing:false,data:null};
 let introTimer=null,introAttempted=false;
@@ -10,7 +19,7 @@ function gidx(s,a){return offsets[s-1]+a}
 function list(filter=""){
   const f=filter.trim().toLowerCase();$("#surahList").innerHTML="";
   SURAHS.filter(s=>!f||s.ar.includes(f)||s.en.toLowerCase().includes(f)||String(s.id)===f).forEach(s=>{
-    const b=document.createElement("button");b.className="surah"+(state.s===s.id?" on":"");b.textContent=`${s.id}. ${s.ar} — ${s.en}`;b.onclick=()=>loadSurah(s.id,1);$("#surahList").appendChild(b)
+    const b=document.createElement("button");b.className="surah"+(state.s===s.id?" on":"");b.textContent=LANG==="ar"?`${s.id}. ${s.ar}`:`${s.id}. ${s.ar} — ${s.en}`;b.onclick=()=>loadSurah(s.id,1);$("#surahList").appendChild(b)
   })
 }
 function scheduleOpeningAyah(){
@@ -30,22 +39,38 @@ function scheduleOpeningAyah(){
         }
       },700);
     }
-  },5000);
+  },3000);
+}
+async function fetchJson(url,ms=9000){
+  const c=new AbortController(),timer=setTimeout(()=>c.abort(),ms);
+  try{const r=await fetch(url,{cache:"no-store",signal:c.signal});if(!r.ok)throw new Error("HTTP "+r.status);return await r.json()}finally{clearTimeout(timer)}
+}
+function normalizeCdn(j){
+  const verses=j?.verses||j?.ayahs||[];
+  return verses.map((v,i)=>({n:v.id||v.verse||v.number||i+1,text:v.text||v.text_ar||v.arabic||'',en:v.translation||v.text_translation||v.translated||''}))
 }
 async function loadSurah(s,a=1){
   state.s=s;state.a=a;$("#verses").innerHTML=`<div class="status">${t("loading")}</div>`;
-  const m=SURAHS[s-1];$("#qtitle").textContent=m.ar;$("#qmeta").textContent=LANG==="ar"?`${t(m.type)} — ${m.n} ${t("verses")}`:`${m.en} — ${t(m.type)} — ${m.n} ${t("verses")}`;
+  const m=SURAHS[s-1];$("#qtitle").textContent=LANG==="ar"?m.ar:m.en;$("#qtitle").dir=LANG==="ar"?"rtl":"ltr";
+  $("#qmeta").textContent=LANG==="ar"?`${t(m.type)} — ${m.n} ${t("verses")}`:`${t(m.type)} — ${m.n} ${t("verses")}`;
   list($("#sfilter").value||"");
+  const edition=LANG==="en"?"en.sahih":LANG==="id"?"id.indonesian":null;
+  let rows=null, translated=false, lastErr=null;
   try{
-    const r=await fetch(`${QAPI}${s}/editions/quran-uthmani,en.sahih`,{cache:"no-store"});
-    if(!r.ok)throw new Error("HTTP "+r.status);
-    const j=await r.json();
-    const ar=j.data[0].ayahs,en=j.data[1].ayahs;
-    state.data=ar.map((v,i)=>({n:v.numberInSurah,text:v.text,en:en[i]?.text||""}));
-    render();
-  }catch(e){
-    $("#verses").innerHTML=`<div class="status">${t("error")}<br><br><a class="btn" href="https://quran.com/${s}" target="_blank" rel="noopener">Quran.com</a></div>`;
+    const url=edition?`${QAPI}${s}/editions/quran-uthmani,${edition}`:`${QAPI}${s}/quran-uthmani`;
+    const j=await fetchJson(url);const packet=Array.isArray(j.data)?j.data:[j.data];const ar=packet[0]?.ayahs||[],tr=packet[1]?.ayahs||[];
+    rows=ar.map((v,i)=>({n:v.numberInSurah,text:v.text,en:tr[i]?.text||""}));translated=!!packet[1];
+  }catch(e){lastErr=e}
+  if(!rows||!rows.length){
+    try{const langPath=LANG==="en"?"en/":LANG==="id"?"id/":"";const j=await fetchJson(`${QCDN}${langPath}${s}.json`);rows=normalizeCdn(j);translated=rows.some(x=>x.en)}catch(e){lastErr=e}
   }
+  if(!rows||!rows.length){
+    const local=LOCAL_QURAN[s];
+    if(local){rows=local.map((text,i)=>({n:i+1,text,en:""}));translated=false;state.data=rows;render();const note=document.createElement('div');note.className='status quran-offline-note';note.textContent=(QLABEL[LANG]||QLABEL.en).offline;$("#verses").prepend(note)}
+    else{$("#verses").innerHTML=`<div class="status">${t("error")}<br><small>${lastErr?String(lastErr.message||lastErr):''}</small><br><br><a class="btn" href="https://alquran.cloud/" target="_blank" rel="noopener">Al Quran Cloud</a></div>`}
+    return;
+  }
+  state.data=rows;const trans=$("#trans");if(trans){trans.hidden=!translated;if(!translated){state.en=false;trans.classList.remove("on")}}render();
 }
 function render(){
   $("#verses").innerHTML="";
@@ -56,6 +81,7 @@ function render(){
   });
   $("#verses").classList.toggle("show-en",state.en);
   const el=$("#a-"+state.a);if(el)el.scrollIntoView({block:"center"});
+  const src=document.getElementById("qsource");if(src)src.textContent=(QLABEL[LANG]||QLABEL.en).source;
 }
 function mark(){
   document.querySelectorAll(".ayah").forEach(x=>x.classList.remove("current"));const el=$("#a-"+state.a);if(el){el.classList.add("current");if(state.playing)el.scrollIntoView({behavior:"smooth",block:"center"})}
@@ -68,5 +94,6 @@ $("#audio").addEventListener("ended",()=>{state.playing=false;$("#pp").textConte
 $("#pp").onclick=()=>{const a=$("#audio");if(a.paused){if(!a.src)play(state.a);else a.play()}else a.pause()};
 $("#trans").onclick=()=>{state.en=!state.en;$("#verses").classList.toggle("show-en",state.en);$("#trans").classList.toggle("on",state.en)};
 $("#sfilter").oninput=e=>list(e.target.value);
-document.addEventListener("luxlang",()=>{list($("#sfilter").value||"");const m=SURAHS[state.s-1];$("#qmeta").textContent=LANG==="ar"?`${t(m.type)} — ${m.n} ${t("verses")}`:`${m.en} — ${t(m.type)} — ${m.n} ${t("verses")}`});
-document.addEventListener("DOMContentLoaded",()=>{list();loadSurah(2,2).then(()=>scheduleOpeningAyah())});
+document.addEventListener("luxlang",()=>{list($("#sfilter").value||"");loadSurah(state.s,state.a)});
+document.addEventListener("DOMContentLoaded",()=>{list();loadSurah(2,2)});
+document.addEventListener("bookopened",()=>scheduleOpeningAyah(),{once:true});
