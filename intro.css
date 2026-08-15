@@ -35,5 +35,6 @@ body::after{content:"";position:fixed;left:var(--crt-x,50vw);top:var(--crt-y,50v
 .langs button,[data-lang]{font-size:clamp(15px,1.6vw,20px)!important;font-weight:700!important;letter-spacing:.02em!important;padding:11px 15px!important;min-height:46px!important}
 @media(max-width:600px){.langs{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}.langs button,[data-lang]{width:100%!important;font-size:17px!important}.langs button:last-child{grid-column:1/-1}}
 
-/* v4.3.10 — native Arabic language label always uses LuxDot Kufi on the entry gate */
-.langpick button[data-lang="ar"]{font-family:"Noto Kufi Arabic","Kufam",Tahoma,Arial,sans-serif!important;letter-spacing:0!important;font-weight:600}
+/* v4.3.11 — entry gate language isolation */
+.langpick button[data-lang="ar"]{font-family:"Noto Kufi Arabic","Kufam",Tahoma,Arial,sans-serif!important;letter-spacing:0!important;direction:rtl}
+html[lang="ar"] .gate,html[lang="ar"] .gate p,html[lang="ar"] .enter{font-family:"Noto Kufi Arabic","Kufam",Tahoma,Arial,sans-serif}
