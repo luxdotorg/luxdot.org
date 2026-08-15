@@ -52,7 +52,7 @@ const TRAD={christianity:{jv:'Kristen',he:'נצרות'},'islam-sunni':{jv:'Islam
 function localizedLegacy(){
  const l=lang(); if(!['jv','he'].includes(l))return;
  const file=location.pathname.split('/').pop()||'';
- const FULL5=new Set(['home.html','library.html','research.html','burckhardt.html','african-association.html','faith.html','nusantara.html','index.html']);
+ const FULL5=new Set(['home.html','library.html','research.html','projects.html','circle-of-care-25km-original.html','burckhardt.html','african-association.html','faith.html','nusantara.html','index.html']);
  let entry=SUM[file]?.[l];
  if(location.pathname.includes('/research/savior/')){
    const id=file.replace('.html',''),name=TRAD[id]?.[l]||id;
