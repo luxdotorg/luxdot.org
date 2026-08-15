@@ -1,8 +1,0 @@
-LuxDot v1.8 — direct research route fix
-
-- Canonical research URL is now /shaam-breda.html at site root
-- Projects links directly to canonical research page
-- Old /research/shaam-breda.html redirects to canonical page
-- Research tree initializes independently of Leaflet/CDN availability
-- Map failure cannot block tree rendering
-- Library/Qur'an/Tanakh/New Testament core files are preserved from v1.7
