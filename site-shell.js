@@ -2,7 +2,7 @@
 'use strict';
 const SUP=['ar','en','nl','jv','he'];
 const DIR={ar:'rtl',en:'ltr',nl:'ltr',jv:'ltr',he:'rtl'};
-const B={ar:'نقطة نور',en:'Point of Light',nl:'Lichtpunt',jv:'Titik Cahya',he:'נקודת אור'};
+const B={ar:'نقطة نور',en:'LuxDot',nl:'Lichtpunt',jv:'Titik Cahya',he:'נקודת אור'};
 const N={
  ar:{home:'الرئيسية',library:'المكتبة',memory:'الذاكرة',research:'الأبحاث',projects:'المشاريع',back:'عودة',lang:'اللغة'},
  en:{home:'Home',library:'Library',memory:'Memory',research:'Research',projects:'Projects',back:'Back',lang:'Language'},
@@ -50,6 +50,7 @@ const SUM={
 };
 const TRAD={christianity:{jv:'Kristen',he:'נצרות'},'islam-sunni':{jv:'Islam Sunni',he:'אסלאם סוני'},'islam-twelver':{jv:'Islam Syiah Imam Rolas',he:'אסלאם שיעי תריסרי'},judaism:{jv:'Yudaisme',he:'יהדות'},hinduism:{jv:'Hindu',he:'הינדואיזם'},buddhism:{jv:'Buddha',he:'בודהיזם'},bahai:{jv:'Bahá’í',he:'בהאאיות'},zoroastrianism:{jv:'Zoroastrian',he:'זורואסטריות'},javanese:{jv:'Tradhisi Jawa',he:'מסורות ג׳אווניות'},caodai:{jv:'Cao Đài',he:'קאו דאי'},daesoon:{jv:'Daesoon Jinrihoe',he:'דאסון ג׳ינריהווה'},sikhism:{jv:'Sikh',he:'סיקיזם'},jainism:{jv:'Jain',he:'ג׳ייניזם'},'secular-humanism':{jv:'Humanisme sekuler',he:'הומניזם חילוני'},'confucian-daoist':{jv:'Konfusian lan Dao',he:'קונפוציאניזם ודאואיזם'}};
 function localizedLegacy(){
+ if(document.body?.dataset.noLegacySummary==='1'||document.body?.dataset.fullLocales==='1')return;
  const l=lang(); if(!['jv','he'].includes(l))return;
  const file=location.pathname.split('/').pop()||'';
  const FULL5=new Set(['home.html','library.html','research.html','projects.html','circle-of-care-25km-original.html','burckhardt.html','african-association.html','faith.html','nusantara.html','index.html']);

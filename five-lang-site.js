@@ -1,7 +1,7 @@
 (()=>{
 const N={ar:'العربية',en:'English',nl:'Nederlands',jv:'Basa Jawa',he:'עברית'};
 const D={ar:'rtl',en:'ltr',nl:'ltr',jv:'ltr',he:'rtl'};
-const B={ar:'نقطة نور',en:'Point of Light',nl:'Lichtpunt',jv:'Titik Cahya',he:'נקודת אור'};
+const B={ar:'نقطة نور',en:'LuxDot',nl:'Lichtpunt',jv:'Titik Cahya',he:'נקודת אור'};
 const langs=['ar','en','nl','jv','he'];
 function lang(){let l=(window.LuxLang&&window.LuxLang.get())||'en';return langs.includes(l)?l:'en'}
 function selectors(){document.querySelectorAll('[data-lang-select]').forEach(s=>{const cur=lang();s.innerHTML=langs.map(l=>`<option value="${l}">${N[l]}</option>`).join('');s.value=cur;if(!s.dataset.fiveBound){s.dataset.fiveBound='1';s.addEventListener('change',e=>{if(window.LuxLang)window.LuxLang.set(e.target.value,true);else{localStorage.setItem('luxdot.lang',e.target.value);localStorage.setItem('luxdot.lang.explicit','1')}document.dispatchEvent(new CustomEvent('luxlang',{detail:{lang:e.target.value}}));setTimeout(()=>location.reload(),40)})}})}

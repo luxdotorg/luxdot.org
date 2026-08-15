@@ -3,7 +3,7 @@
 const SUP=['ar','en','nl','jv','he'];
 const DIR={ar:'rtl',en:'ltr',nl:'ltr',jv:'ltr',he:'rtl'};
 const NAME={ar:'العربية',en:'English',nl:'Nederlands',jv:'Basa Jawa',he:'עברית'};
-const BRAND={ar:'نقطة نور',en:'Point of Light',nl:'Lichtpunt',jv:'Titik Cahya',he:'נקודת אור'};
+const BRAND={ar:'نقطة نور',en:'LuxDot',nl:'Lichtpunt',jv:'Titik Cahya',he:'נקודת אור'};
 const NAV={
  ar:{home:'الرئيسية',library:'المكتبة',memory:'الذاكرة',research:'الأبحاث',projects:'المشاريع',faith:'الإيمان والحكمة',nusantara:'نوسانتارا'},
  en:{home:'Home',library:'Library',memory:'Memory',research:'Research',projects:'Projects',faith:'Faith & Wisdom',nusantara:'Nusantara'},
@@ -12,11 +12,11 @@ const NAV={
  he:{home:'ראשי',library:'ספרייה',memory:'זיכרון',research:'מחקר',projects:'פרויקטים',faith:'אמונה וחכמה',nusantara:'נוסנטרה'}
 };
 const TITLES={
- 'home.html':{ar:'نقطة نور',en:'Point of Light',nl:'Lichtpunt',jv:'Titik Cahya',he:'נקודת אור'},
- 'library.html':{ar:'المكتبة · نقطة نور',en:'Library · Point of Light',nl:'Bibliotheek · Lichtpunt',jv:'Pustaka · Titik Cahya',he:'ספרייה · נקודת אור'},
- 'memory.html':{ar:'الذاكرة الحية · نقطة نور',en:'Living Memory · Point of Light',nl:'Levend geheugen · Lichtpunt',jv:'Pangeling Urip · Titik Cahya',he:'זיכרון חי · נקודת אור'},
- 'research.html':{ar:'أطلس الأبحاث · نقطة نور',en:'Research Atlas · Point of Light',nl:'Onderzoeksatlas · Lichtpunt',jv:'Atlas Panliten · Titik Cahya',he:'אטלס המחקר · נקודת אור'},
- 'projects.html':{ar:'المشاريع · نقطة نور',en:'Projects · Point of Light',nl:'Projecten · Lichtpunt',jv:'Proyek · Titik Cahya',he:'פרויקטים · נקודת אור'}
+ 'home.html':{ar:'نقطة نور',en:'LuxDot',nl:'Lichtpunt',jv:'Titik Cahya',he:'נקודת אור'},
+ 'library.html':{ar:'المكتبة · نقطة نور',en:'Library · LuxDot',nl:'Bibliotheek · Lichtpunt',jv:'Pustaka · Titik Cahya',he:'ספרייה · נקודת אור'},
+ 'memory.html':{ar:'الذاكرة الحية · نقطة نور',en:'Living Memory · LuxDot',nl:'Levend geheugen · Lichtpunt',jv:'Pangeling Urip · Titik Cahya',he:'זיכרון חי · נקודת אור'},
+ 'research.html':{ar:'أطلس الأبحاث · نقطة نور',en:'Research Atlas · LuxDot',nl:'Onderzoeksatlas · Lichtpunt',jv:'Atlas Panliten · Titik Cahya',he:'אטלס המחקר · נקודת אור'},
+ 'projects.html':{ar:'المشاريع · نقطة نور',en:'Projects · LuxDot',nl:'Projecten · Lichtpunt',jv:'Proyek · Titik Cahya',he:'פרויקטים · נקודת אור'}
 };
 function explicit(){return localStorage.getItem('luxdot.lang.explicit')==='1'}
 function saved(){const s=localStorage.getItem('luxdot.lang');return SUP.includes(s)?s:null}

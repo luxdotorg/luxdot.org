@@ -1,1 +1,2 @@
-4.3.1
+LuxDot v4.3.4
+Projects Indonesian/Hebrew visibility hardening + English LuxDot brand
