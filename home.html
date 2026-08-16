@@ -1,3 +1,61 @@
-<!DOCTYPE html>
-
-<html dir="rtl" lang="ar"><head><script src="arabic-master.js?v=4334"></script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/><title>الرئيسية · LuxDot</title><link href="styles.css?v=430" rel="stylesheet"/><script defer="" src="app.js?v=4328"></script><style id="luxdot-fallback">html,body{margin:0;min-height:100%;background:#020403;color:#eef8f1}body{font-family:Arial,Helvetica,sans-serif}a{color:inherit}#matrix{position:fixed;inset:0;width:100%;height:100%;background:#000}.top{background:#050806;color:#eef8f1}</style><script src="analytics-config.js?v=430"></script><script defer="" src="analytics.js?v=430"></script><link href="arabic-polish.css?v=430" rel="stylesheet"/><link href="luxdot-arabic-ui.css?v=430" rel="stylesheet"/><script defer="" src="luxdot-arabic-ui.js?v=4334"></script><link href="compat.css?v=430" rel="stylesheet"/><link href="platform-v43.css?v=4328" rel="stylesheet"/></head><body data-title-key="pageHome"><header class="top"><div class="wrap topin"><a class="logo" data-lux-brand="" href="home.html">LuxDot</a><nav class="nav"><a data-t="home" href="home.html"></a><span data-t="discover"></span><a data-t="library" href="library.html"></a><a data-t="memory" href="memory.html"></a><span data-t="living"></span><a data-t="research" href="research.html"></a><a data-t="projects" href="projects.html"></a><span data-t="participate"></span></nav></div></header><main class="wrap"><section class="hero"><h1><span class="hero-one-line"><span data-t="hero1"></span> <span data-t="hero2"></span></span><br/><span data-t="hero3" style="color:var(--accent)"></span></h1><p data-t="lead"></p></section><section class="cards"><a class="card home-card-link" href="library.html"><h2 data-t="common"></h2><p data-t="commonD"></p></a><a class="card home-card-link" href="faith.html" id="home-faith"><h2 data-t="faith"></h2><p data-t="faithLead"></p></a><a class="card home-card-link" href="nusantara.html" id="home-nusantara"><h2 data-t="nusantara"></h2><p data-t="nusantaraLead"></p></a><a class="card home-card-link" href="memory.html"><h2 data-t="memoryTitle"></h2><p data-t="memoryCardLead"></p></a><a class="card home-card-link" href="research.html"><h2 data-t="research"></h2><p data-t="researchLead"></p></a><a class="card home-card-link" href="projects.html"><h2 data-t="projects"></h2><p data-t="projectsD"></p></a></section></main><footer class="wrap foot" data-lux-brand="">LuxDot</footer><script>document.addEventListener('DOMContentLoaded',()=>document.querySelector('a[href="home.html"]').classList.add('active'))</script><script defer="" src="site-shell.js?v=4334"></script><script defer="" src="site-quality.js?v=4334"></script></body></html>
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>الرئيسية · نقطة نور</title>
+<link rel="stylesheet" href="styles.css?v=4350">
+<link rel="stylesheet" href="arabic-polish.css?v=4350">
+<link rel="stylesheet" href="luxdot-arabic-ui.css?v=4350">
+<link rel="stylesheet" href="compat.css?v=4350">
+<link rel="stylesheet" href="platform-v43.css?v=4350">
+<style>
+html,body{margin:0;min-height:100%;background:#020403;color:#eef8f1}
+body{font-family:"Noto Kufi Arabic",Arial,Helvetica,sans-serif;direction:rtl}
+.top{position:sticky;top:0;z-index:500;background:rgba(4,8,5,.97);border-bottom:1px solid rgba(125,255,174,.12)}
+.topin{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo,.nav a{position:relative;z-index:1001;pointer-events:auto!important}
+.nav{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.nav a{color:inherit;text-decoration:none;padding:8px 10px;border-radius:999px}
+.nav a:hover,.nav a:focus-visible{outline:none;background:rgba(125,255,174,.07);color:#dfffea}
+.hero{padding-top:56px}
+.home-static-cards{position:relative;z-index:100;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;padding:30px 0 70px}
+.home-static-card{position:relative!important;z-index:101!important;pointer-events:auto!important;display:block!important;color:inherit!important;text-decoration:none!important;border:1px solid rgba(125,255,174,.13);background:#07100b;border-radius:18px;padding:22px 22px 22px 82px;min-height:170px;cursor:pointer;transition:.2s}
+.home-static-card *{pointer-events:none!important}
+.home-static-card:hover,.home-static-card:focus-visible{border-color:rgba(120,230,153,.55);box-shadow:0 12px 34px rgba(0,0,0,.22);transform:translateY(-1px);outline:none}
+.home-static-card h2{margin:0 0 8px;font-size:21px}.home-static-card p{color:#91a197;line-height:1.9}
+.home-static-icon{position:absolute;inset-inline-start:16px;top:16px;width:48px;height:48px;display:grid;place-items:center;border:1px solid rgba(214,180,90,.28);border-radius:14px;background:rgba(7,16,11,.76);color:#d8b95d;font-size:25px}
+.foot{padding-bottom:32px;color:#7f9186}
+@media(max-width:900px){.topin{align-items:flex-start;flex-direction:column}.nav{width:100%;flex-wrap:nowrap;overflow-x:auto}.home-static-cards{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.home-static-cards{grid-template-columns:1fr}.home-static-card{padding-inline-start:72px}.home-static-icon{width:42px;height:42px}}
+</style>
+</head>
+<body class="home-arrival">
+<header class="top"><div class="wrap topin">
+<a class="logo" href="home.html">نقطة نور</a>
+<nav class="nav" aria-label="التنقل الرئيسي">
+<a class="active" href="home.html">الرئيسية</a>
+<a href="library.html">المكتبة</a>
+<a href="faith.html">الإيمان والحكمة</a>
+<a href="nusantara.html">الأرخبيل الإندونيسي</a>
+<a href="memory.html">الذاكرة</a>
+<a href="research.html">الأبحاث</a>
+<a href="projects.html">المشاريع</a>
+</nav></div></header>
+<main class="wrap">
+<section class="hero">
+<h1><span class="hero-one-line">إنسانية واحدة · تقاليد متعددة</span><br><span style="color:var(--accent)">بحث مشترك عن الحقيقة</span></h1>
+<p>تبدأ نقطة نور بوعد بسيط: افهم قبل أن تحكم، خفّف الضجيج لتتضح الإشارة، وابنِ ما يمكن أن نتشاركه.</p>
+</section>
+<section class="home-static-cards" aria-label="أقسام الموقع">
+<a class="home-static-card" href="library.html"><span class="home-static-icon">▤</span><h2>المكتبة المشتركة</h2><p>نصوص حيّة، أصول، ترجمات وسياقات.</p></a>
+<a class="home-static-card" href="faith.html"><span class="home-static-icon">✦</span><h2>الإيمان والحكمة</h2><p>قراءة التقاليد الدينية من مصادرها مع احترام الاختلاف الحقيقي.</p></a>
+<a class="home-static-card" href="nusantara.html"><span class="home-static-icon">ꦗ</span><h2>الأرخبيل الإندونيسي</h2><p>الإيمان والمعرفة والذاكرة واللغة والتقاليد الجاوية–الإندونيسية.</p></a>
+<a class="home-static-card" href="memory.html"><span class="home-static-icon">⌘</span><h2>الذاكرة</h2><p>ذاكرة حيّة تربط الأشخاص والأماكن والأحداث بالمصادر.</p></a>
+<a class="home-static-card" href="research.html"><span class="home-static-icon">⌕</span><h2>الأبحاث</h2><p>أبحاث تنمو وتتفرع وتصحح نفسها وتبقى قابلة للتتبع.</p></a>
+<a class="home-static-card" href="projects.html"><span class="home-static-icon">⚒</span><h2>المشاريع</h2><p>أفكار تتحول إلى فعل على الأرض.</p></a>
+</section>
+</main>
+<footer class="wrap foot">نقطة نور</footer>
+</body>
+</html>
