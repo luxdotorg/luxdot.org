@@ -243,11 +243,13 @@
   ],
   "jochem-van-velthoven.html": [
     {
-      "src": "assets/research-media/alphen-willibrordus.webp",
+      "src": "https://tse4.mm.bing.net/th/id/OIP.FxcnVuUXjDwWRmbXLdWrRgHaD4?r=0&pid=Api",
       "title": {
-        "ar": "كنيسة القديس فيليبرورد في ألفن، إحدى عقد مسار يوخيم الرعوي"
+        "ar": "يوخيم فان فيلتهوفن",
+        "en": "Jochem van Velthoven",
+        "nl": "Jochem van Velthoven"
       },
-      "credit": "أرشيف بصري محلي · كنيسة القديس فيليبرورد، ألفن",
+      "credit": "Oosterhout Nieuws · public article image",
       "link": "https://oosterhout.nieuws.nl/nieuws/jochem-van-velthoven-nieuwe-pastoor-van-de-catharinaparochie"
     },
     {
@@ -359,11 +361,13 @@
   ],
   "van-velthoven-family.html": [
     {
-      "src": "assets/research-media/grote-kerk-breda.png",
+      "src": "https://tse4.mm.bing.net/th/id/OIP.FxcnVuUXjDwWRmbXLdWrRgHaD4?r=0&pid=Api",
       "title": {
-        "ar": "الكنيسة الكبرى في بريدا ضمن مسار البحث التاريخي لاسم فان فيلتهوفن"
+        "ar": "يوخيم: الفرع المعاصر في دورست",
+        "en": "Jochem: modern Dorst branch",
+        "nl": "Jochem: moderne Dorst-tak"
       },
-      "credit": "أرشيف بصري محلي · الكنيسة الكبرى في بريدا",
+      "credit": "Oosterhout Nieuws",
       "link": "https://www.parochieheiligegeest.nl/mens-organisatie/pastoraal-team/jochem-van-velthoven/"
     },
     {
@@ -389,11 +393,13 @@
   ],
   "thijs-loss-consolation.html": [
     {
-      "src": "assets/research-media/media-stage.svg",
+      "src": "https://applications-media.feverup.com/image/upload/f_auto/fever2/plan/photo/544643b6-d293-11ef-9e83-7653649df55c.jpg",
       "title": {
-        "ar": "بطاقة ذاكرة بصرية؛ لا تُستخدم صورة شخصية غير موثقة"
+        "ar": "بريدا والتراث بوصفه ذاكرة قابلة لإعادة التفعيل",
+        "en": "Breda heritage as reactivated memory",
+        "nl": "Bredaas erfgoed als heractiveerbaar geheugen"
       },
-      "credit": "لوكسدوت · بطاقة ذاكرة بصرية غير تصويرية"
+      "credit": "Context image"
     }
   ],
   "savior-atlas.html": [

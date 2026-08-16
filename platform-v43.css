@@ -24,7 +24,3 @@ html[lang="he"] body{direction:rtl}html[lang="en"] body,html[lang="nl"] body,htm
 /* v4.3.9 entry stability */
 html[dir=rtl] body.home-arrival{clip-path:none!important;opacity:1!important;animation:none!important}
 .cards .card[role=link]{cursor:pointer}
-/* v4.3.34 Arabic Master navigation hardening */
-.home-card-link{display:block;color:inherit;text-decoration:none;position:relative;cursor:pointer}
-.home-card-link:focus-visible{outline:2px solid rgba(120,230,153,.72);outline-offset:3px}
-.home-card-link .btn{display:inline-flex!important}
