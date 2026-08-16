@@ -16,7 +16,7 @@ function enhanceCartouches(){if(!AR())return;document.querySelectorAll('main art
   if(el.dataset.luxEnhanced==='1')return;el.dataset.luxEnhanced='1';const link=el.querySelector('a[href]');const href=el.dataset.href||link?.getAttribute('href')||'';
   if(!el.querySelector(':scope > .lux-thumb')){const th=document.createElement('span');th.className='lux-thumb fallback';th.innerHTML=`<img alt="" src="${asset(classify(el))}">`;el.prepend(th)}
   el.style.position='relative';el.style.paddingInlineStart='82px';
-  if(!href)return;el.classList.add('lux-cartouche');el.setAttribute('role','link');el.tabIndex=0;el.dataset.href=href;el.querySelectorAll('.btn').forEach(b=>b.remove());if(link&&!/^https?:/i.test(link.getAttribute('href')||''))link.remove();
+  if(!href)return;el.classList.add('lux-cartouche');el.setAttribute('role','link');el.tabIndex=0;el.dataset.href=href;/* Arabic Master: preserve real anchors/buttons as navigation fallback. */
   const hint=document.createElement('span');hint.className='lux-action-hint';el.appendChild(hint);
   const go=()=>{if(el.dataset.href)location.href=el.dataset.href};el.addEventListener('click',e=>{if(e.target.closest('a[href^="http"]'))return;go()});el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}});
 });}
@@ -165,7 +165,7 @@ function unifyHomeCartouches(){
  document.querySelectorAll('.cards .card').forEach(el=>{
    const link=el.querySelector('a[href]'); const href=el.dataset.href||link?.getAttribute('href'); if(!href)return;
    el.dataset.href=href; el.classList.add('lux-cartouche','lux-home-cartouche'); el.setAttribute('role','link'); el.tabIndex=0;
-   el.querySelectorAll(':scope > .btn').forEach(b=>b.remove());
+   /* Arabic Master: preserve visible anchor button. */
    const go=()=>{location.href=el.dataset.href};
    if(!el.dataset.luxHomeBound){el.dataset.luxHomeBound='1';el.addEventListener('click',e=>{if(e.target.closest('a[href^="http"]'))return;go()});el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}})}
  });
