@@ -119,5 +119,5 @@ function openNode(id){const n=DATA.nodes.find(x=>x.id===id);if(!n)return;documen
 function tFamily(id){const f=DATA.families.find(x=>x.id===id);return f?t({ar:f.ar,en:f.en,nl:f.nl,jv:f.jv,he:f.he}):id}
 renderFamilies();renderGraph();familyBox.addEventListener('click',e=>{const b=e.target.closest('[data-family]');if(!b)return;activeFamily=b.dataset.family;familyBox.querySelectorAll('.rg-family').forEach(x=>x.classList.toggle('active',x===b));applyFilter()});search.addEventListener('input',()=>{query=search.value.trim().toLowerCase();applyFilter()});
 root.querySelectorAll('[data-conf]').forEach(b=>b.addEventListener('click',()=>{b.classList.toggle('active');const c=b.dataset.conf;document.querySelectorAll('.rg-edge').forEach(e=>{if(e.dataset.confidence===c)e.style.display=b.classList.contains('active')?'':'none'})}));
-window.addEventListener('storage',e=>{if(e.key==='luxdot.lang')location.reload()});document.querySelectorAll('[data-lang-select]').forEach(sel=>sel.addEventListener('change',()=>setTimeout(()=>location.reload(),80)));
+
 })();
