@@ -15,7 +15,7 @@ body{background:var(--bg);color:var(--txt)}.wrap{max-width:1180px;margin:auto;pa
 <main class="wrap">
 <a href="savior-atlas.html">← أطلس المُخلّص</a> · <a href="guardian-benefactor.html">عقدة الحارس المُحسن</a>
 <section class="hero">
-<div class="kicker">Numerical & Letter Systems Lab · v4.3.23</div>
+<div class="kicker">Numerical & Letter Systems Lab · v4.3.26</div>
 <h1>مختبر الأسماء والأعداد والحروف</h1>
 <p>عقدة مستقلة لتجربة أنظمة حساب الحروف عبر ثقافات مختلفة. لا تعتبر أي قيمة رقمية إثباتاً لنبوءة أو هوية؛ الهدف هو <b>إعادة إنتاج الحساب، مقارنة الأنظمة، وتسجيل الصيغة الدقيقة للاسم</b>.</p>
 </section>
@@ -77,15 +77,20 @@ body{background:var(--bg);color:var(--txt)}.wrap{max-width:1180px;margin:auto;pa
 <article class="card"><h2>كيف نضيف اسماً جديداً؟</h2><p>اكتب الاسم في الحاسبة واحفظ الصيغة التي تريد اختبارها. في الإصدارات القادمة يمكن تحويل بطاقة الاسم إلى سجل دائم مع أكثر من تهجئة ولغة ومصدر.</p></article>
 </section>
 
+
+<section class="card" style="margin-top:16px">
+<h2>الصيغة العبرية للاسم</h2>
+<p>للاختبار العبري نعتمد كتابة صوتية مباشرة مقترحة لـ <span dir="ltr">Rafy Alhajji</span>:</p>
+<p style="font-size:1.35rem"><b>ראפי אלחג׳י</b></p>
+<p class="muted">هذه كتابة صوتية وليست «ترجمة» للاسم. يمكن أيضاً أن تختلف كتابة حرف الجيم بحسب طريقة النقل، لذلك نحفظ التهجئة المستخدمة مع أي نتيجة جيماتريا ولا نخلطها مع Gematrix اللاتيني.</p>
+</section>
 <section class="card">
 <h2>سجل المقارنات الحالي</h2>
 <table><thead><tr><th>الاسم/الصيغة</th><th>Gematrix Jewish</th><th>English</th><th>Simple</th><th>الحالة</th></tr></thead>
 <tbody>
-<tr><td class="ltr">Rafy Alhajji</td><td>1726</td><td>606</td><td>101</td><td>متحقق من صفحة Gematrix</td></tr>
-<tr><td class="ltr">Elon Musk</td><td>445</td><td>660</td><td>110</td><td>صيغة الاسم الشائعة</td></tr>
-<tr><td class="ltr">Elon R Musk</td><td>525</td><td>768</td><td>128</td><td>اختصار تجريبي للاسم الأوسط</td></tr>
-<tr><td class="ltr">Elon Reeve Musk</td><td>1240</td><td>990</td><td>165</td><td>الاسم الكامل الموثق</td></tr>
-<tr><td class="ltr">Elon A Musk</td><td>446</td><td>666</td><td>111</td><td>صيغة تجريبية غير موثقة كاسمه</td></tr>
+<tr><td class="ltr">Rafy Alhajji</td><td>1726</td><td>606</td><td>101</td><td>الصيغة اللاتينية المعتمدة</td></tr>
+<tr><td class="ltr">Elon Musk</td><td>445</td><td>660</td><td>110</td><td>الصيغة الشائعة</td></tr>
+<tr><td class="ltr">Elon R Musk</td><td>525</td><td>768</td><td>128</td><td>R اختصار Reeve؛ للاختبار فقط</td></tr>
 </tbody></table>
 </section>
 </main>
@@ -116,11 +121,9 @@ function pyth(){let r=calc(document.getElementById('pythInput').value,A1);let va
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.method').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.method).classList.add('active')});
 [['gemInput',gem],['abjadInput',abj],['hebInput',heb],['greekInput',greek],['pythInput',pyth]].forEach(([id,fn])=>document.getElementById(id).addEventListener('input',fn));
 const people=[
- {name:'Rafy Alhajji',status:'الصيغة اللاتينية المعتمدة للاختبار',g:[1726,606,101],arabic:[['رافي الحجي',343,28],['رافي عبد السميع الحجي',630,63]]},
- {name:'Elon Reeve Musk',status:'الاسم الكامل الموثق',g:[1240,990,165]},
- {name:'Elon R Musk',status:'اختصار تجريبي للاسم الأوسط',g:[525,768,128]},
- {name:'Elon Musk',status:'الصيغة الشائعة',g:[445,660,110]},
- {name:'Elon A Musk',status:'فرضية تجريبية غير موثقة',g:[446,666,111]}
+ {name:'Rafy Alhajji',status:'الصيغة اللاتينية المعتمدة للاختبار',g:[1726,606,101],arabic:[['رافي الحجي',343,28]]},
+ {name:'Elon R Musk',status:'صيغة الاختبار المختصرة للاسم الأوسط Reeve',g:[525,768,128]},
+ {name:'Elon Musk',status:'الصيغة الشائعة',g:[445,660,110]}
 ];
 document.getElementById('savedPeople').innerHTML=people.map(p=>`<article class="person"><div class="ltr"><b>${p.name}</b></div><div class="muted">${p.status}</div><div class="chips"><span class="badge">J ${p.g[0]}</span><span class="badge">E ${p.g[1]}</span><span class="badge">S ${p.g[2]}</span></div>${p.arabic? p.arabic.map(a=>`<p>${a[0]} · كبير <b>${a[1]}</b> · صغير <b>${a[2]}</b></p>`).join(''):''}</article>`).join('');
 gem();abj();heb();greek();pyth();
