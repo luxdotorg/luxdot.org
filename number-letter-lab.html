@@ -1,131 +1,19 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>مختبر الأسماء والأعداد · LuxDot</title>
-<link rel="stylesheet" href="styles.css?v=4323">
-<link rel="stylesheet" href="arabic-polish.css?v=4323">
-<link rel="stylesheet" href="platform-v43.css?v=4323">
-<style>
-:root{--bg:#07100b;--panel:#0a1510;--line:#355840;--txt:#e9f4ea;--gold:#efd47b;--muted:#aeb9b0;--green:#7bc49a}
-body{background:var(--bg);color:var(--txt)}.wrap{max-width:1180px;margin:auto;padding:30px 18px 72px}.hero,.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:20px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;margin:16px 0}.kicker,.gold{color:var(--gold)}.muted{color:var(--muted)}.warn{border-inline-start:4px solid #b48a45;background:#12170f;padding:13px 16px;margin:16px 0}.tabs,.chips{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.tab,.chip,button{border:1px solid #4f7058;background:#0c1b12;color:var(--txt);border-radius:999px;padding:8px 12px;cursor:pointer}.tab.active,.chip.active{background:#173121;color:var(--gold)}input,textarea,select{width:100%;box-sizing:border-box;border:1px solid #4d6654;border-radius:12px;background:#08110c;color:var(--txt);padding:11px;margin:7px 0;font:inherit}.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:9px}.result{border:1px solid #304b38;border-radius:14px;padding:12px;background:#09130d}.num{font-size:1.65rem;color:var(--gold);font-weight:800;direction:ltr}.formula{font-size:.84rem;color:var(--muted);direction:ltr;overflow-wrap:anywhere}.person{border:1px solid #36543e;border-radius:17px;padding:15px}.badge{display:inline-block;padding:4px 8px;border:1px solid #617563;border-radius:99px;font-size:.78rem;margin:2px}.hidden{display:none}table{width:100%;border-collapse:collapse}th,td{border:1px solid var(--line);padding:10px;vertical-align:top}th{color:var(--gold);background:#0d1811}a{color:#e7ce78}.ltr{direction:ltr;text-align:left}.method{display:none}.method.active{display:block}@media(max-width:700px){table{display:block;overflow-x:auto}.wrap{padding:18px 10px 55px}}
-</style>
-</head>
-<body>
-<main class="wrap">
-<a href="savior-atlas.html">← أطلس المُخلّص</a> · <a href="guardian-benefactor.html">عقدة الحارس المُحسن</a>
-<section class="hero">
-<div class="kicker">Numerical & Letter Systems Lab · v4.3.26</div>
-<h1>مختبر الأسماء والأعداد والحروف</h1>
-<p>عقدة مستقلة لتجربة أنظمة حساب الحروف عبر ثقافات مختلفة. لا تعتبر أي قيمة رقمية إثباتاً لنبوءة أو هوية؛ الهدف هو <b>إعادة إنتاج الحساب، مقارنة الأنظمة، وتسجيل الصيغة الدقيقة للاسم</b>.</p>
-</section>
-<div class="warn"><b>قاعدة المختبر:</b> تغيير حرف واحد قد يغير النتيجة جذرياً. لذلك تُحفظ الصيغة، اللغة، النظام، وجدول القيم مع كل نتيجة. التشابه العددي وحده لا يثبت علاقة سببية أو دينية.</div>
-
-<section class="card">
-<h2>الأسماء المحفوظة حالياً</h2>
-<div class="grid" id="savedPeople"></div>
-</section>
-
-<section class="card" style="margin-top:16px">
-<h2>حاسبة حية</h2>
-<div class="tabs">
-<button class="tab active" data-method="gematrix">Gematrix</button>
-<button class="tab" data-method="abjad">الجمل العربي / الإطار الأكبري</button>
-<button class="tab" data-method="hebrew">الجيماتريا العبرية التقليدية</button>
-<button class="tab" data-method="greek">الإيزوبسيفي اليوناني</button>
-<button class="tab" data-method="pyth">العددية الغربية الحديثة</button>
-</div>
-
-<div class="method active" id="gematrix">
-<h3>Gematrix · للحروف اللاتينية</h3>
-<input id="gemInput" dir="ltr" value="Rafy Alhajji" placeholder="Type a Latin name">
-<div class="results" id="gemResults"></div>
-<p class="muted">Jewish/Hebrew هنا هو <b>cipher لاتيني خاص بـGematrix</b> وليس تحويل الاسم تلقائياً إلى العبرية التقليدية.</p>
-</div>
-
-<div class="method" id="abjad">
-<h3>حساب الجمل العربي</h3>
-<input id="abjadInput" value="رافي الحجي" placeholder="اكتب الاسم بالعربية">
-<div class="results" id="abjadResults"></div>
-<p class="muted">الكبير = مجموع قيم أبجد التقليدية. الصغير = القيمة 1–9 لكل حرف بحسب دورته العددية، وهو النمط الذي يشرحه ابن عربي ضمن حديثه عن الجزم الكبير والصغير.</p>
-</div>
-
-<div class="method" id="hebrew">
-<h3>الجيماتريا العبرية التقليدية</h3>
-<input id="hebInput" dir="rtl" placeholder="اكتب الاسم بحروف عبرية">
-<div class="results" id="hebResults"></div>
-<p class="muted">لا نحول الاسم اللاتيني آلياً إلى العبرية لأن اختيار التهجئة يغير القيمة. أدخل التهجئة العبرية المقصودة نفسها.</p>
-</div>
-
-<div class="method" id="greek">
-<h3>الإيزوبسيفي اليوناني</h3>
-<input id="greekInput" dir="ltr" placeholder="Γράψε το όνομα με ελληνικά γράμματα">
-<div class="results" id="greekResults"></div>
-<p class="muted">يُحسب فقط من الكتابة اليونانية المدخلة؛ لا توجد ترجمة صوتية تلقائية حتى لا نفرض تهجئة واحدة.</p>
-</div>
-
-<div class="method" id="pyth">
-<h3>العددية الغربية الحديثة · 1–9</h3>
-<input id="pythInput" dir="ltr" value="Rafy Alhajji" placeholder="Type a Latin name">
-<div class="results" id="pythResults"></div>
-<p class="muted">هذا نظام numerology حديث شائع، وليس «فيثاغورس التاريخي» بمعنى نص قديم يثبت هذا الجدول. أدرجناه للمقارنة التجريبية فقط.</p>
-</div>
-</section>
-
-<section class="grid">
-<article class="card"><h2>أنظمة نضيفها لاحقاً عند توفر مدخل مناسب</h2><p><b>Katapayadi الهندي:</b> يحتاج كتابة/نقل صوتي سنسكريتي أو مالايالامي مضبوطاً، فلا نطبقه على اسم لاتيني مباشرة.</p><p><b>حساب ضربات الحروف الصيني/الياباني:</b> يعتمد اختيار المحارف ونظام عدّ الضربات، لذلك نحتاج الاسم بالصينية/اليابانية قبل الحساب.</p></article>
-<article class="card"><h2>كيف نضيف اسماً جديداً؟</h2><p>اكتب الاسم في الحاسبة واحفظ الصيغة التي تريد اختبارها. في الإصدارات القادمة يمكن تحويل بطاقة الاسم إلى سجل دائم مع أكثر من تهجئة ولغة ومصدر.</p></article>
-</section>
-
-
-<section class="card" style="margin-top:16px">
-<h2>الصيغة العبرية للاسم</h2>
-<p>للاختبار العبري نعتمد كتابة صوتية مباشرة مقترحة لـ <span dir="ltr">Rafy Alhajji</span>:</p>
-<p style="font-size:1.35rem"><b>ראפי אלחג׳י</b></p>
-<p class="muted">هذه كتابة صوتية وليست «ترجمة» للاسم. يمكن أيضاً أن تختلف كتابة حرف الجيم بحسب طريقة النقل، لذلك نحفظ التهجئة المستخدمة مع أي نتيجة جيماتريا ولا نخلطها مع Gematrix اللاتيني.</p>
-</section>
-<section class="card">
-<h2>سجل المقارنات الحالي</h2>
-<table><thead><tr><th>الاسم/الصيغة</th><th>Gematrix Jewish</th><th>English</th><th>Simple</th><th>الحالة</th></tr></thead>
-<tbody>
-<tr><td class="ltr">Rafy Alhajji</td><td>1726</td><td>606</td><td>101</td><td>الصيغة اللاتينية المعتمدة</td></tr>
-<tr><td class="ltr">Elon Musk</td><td>445</td><td>660</td><td>110</td><td>الصيغة الشائعة</td></tr>
-<tr><td class="ltr">Elon R Musk</td><td>525</td><td>768</td><td>128</td><td>R اختصار Reeve؛ للاختبار فقط</td></tr>
-</tbody></table>
-</section>
-</main>
-
+<!doctype html><html lang="en" dir="ltr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Number & Letter Lab · LuxDot</title>
+<script src="language-core.js?v=4328"></script><link rel="stylesheet" href="styles.css?v=4328"><link rel="stylesheet" href="platform-v43.css?v=4328">
+<style>.lab{max-width:1060px;margin:auto;padding:36px 18px 80px}.lab-card{border:1px solid var(--line);background:var(--panel);border-radius:20px;padding:20px;margin:14px 0}.lab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.metric{border:1px solid var(--line);border-radius:15px;padding:16px;text-align:center}.metric b{display:block;color:var(--accent);font-size:28px}.formula{direction:ltr;unicode-bidi:plaintext;overflow-wrap:anywhere;color:var(--muted);font-size:12px}.arabic-source{font-family:"Noto Kufi Arabic",Tahoma,Arial,sans-serif;direction:rtl}.method-note{border-inline-start:3px solid var(--accent);padding-inline-start:14px;color:var(--muted)}.lab input{width:100%;border:1px solid var(--line);background:#09110c;color:var(--text);padding:12px;border-radius:12px;font:inherit}.tabrow{display:flex;flex-wrap:wrap;gap:8px}.tabrow button{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:999px;padding:8px 12px}.secondary{opacity:.85}</style>
+</head><body class="lux-lang-pending" data-full-locales="1"><header class="top"></header><main class="lab" id="lab"></main>
 <script>
+const COPY={
+ar:{title:'مختبر الأسماء والأعداد والحروف',lead:'عقدة حسابية مستقلة. الاسم الوحيد المختبَر حالياً هو رافي الحجي / Rafy Alhajji. التطابق العددي أداة مقارنة وليس دليلاً على هوية نبوئية.',gem:'Gematrix للاسم اللاتيني',gemLead:'نستخدم الصيغة اللاتينية الثابتة Rafy Alhajji ونفصل الأنظمة الثلاثة كما يعرضها Gematrix.',jew:'Jewish / Hebrew cipher اللاتيني',eng:'English ×6',simple:'Simple A1Z26',abj:'حساب الجمل في الإطار الأكبري',abjLead:'الصيغة العربية الوحيدة المستخدمة للحساب هي (رافي الحجي). الجمل الكبير والصغير يُعرضان كحساب حرفي قابل لإعادة الإنتاج، لا كتنبؤ.',big:'الجمل الكبير',small:'الجمل الصغير',other:'أنظمة أخرى للتجربة مستقبلاً',otherLead:'الجيماتريا العبرية التقليدية، الإيزوبسيفي اليوناني، وكاتابايادي الهندي تتطلب كتابة الاسم فعلياً بأبجدية النظام قبل الحساب. لن نفرض تهجئة تلقائية.',rule:'قاعدة المختبر',ruleText:'كل نتيجة تحفظ الصيغة الدقيقة للاسم، الأبجدية، جدول القيم وطريقة الحساب. تغيير حرف واحد قد يغيّر النتيجة.'},
+en:{title:'Number & Letter Systems Lab',lead:'An independent calculation node. The only name currently tested is Rafy Alhajji. Numeric coincidence is a comparison tool, not evidence of prophetic identity.',gem:'Gematrix · Latin form',gemLead:'We use the fixed Latin form Rafy Alhajji and keep Gematrix’s three ciphers separate.',jew:'Jewish / Hebrew Latin cipher',eng:'English ×6',simple:'Simple A1Z26',abj:'Arabic abjad · Ibn Arabi framework',abjLead:'The sole Arabic source form used for this calculation is (رافي الحجي). Large and small abjad are reproducible letter calculations, not prophecy.',big:'Large abjad',small:'Small abjad',other:'Other systems for future trials',otherLead:'Traditional Hebrew gematria, Greek isopsephy and Indian Katapayadi require the name to be deliberately written in the relevant script before calculation. No automatic spelling is imposed.',rule:'Lab rule',ruleText:'Every result keeps the exact spelling, script, value table and calculation method. One changed letter can change the result.'},
+nl:{title:'Lab voor namen, letters en getallen',lead:'Een zelfstandige rekenmodule. De enige naam die nu wordt getest is Rafy Alhajji. Een numerieke overeenkomst is een vergelijkingsmiddel, geen bewijs van profetische identiteit.',gem:'Gematrix · Latijnse vorm',gemLead:'We gebruiken de vaste Latijnse vorm Rafy Alhajji en houden de drie Gematrix-cijfersystemen gescheiden.',jew:'Jewish / Hebrew Latijnse cipher',eng:'English ×6',simple:'Simple A1Z26',abj:'Arabisch abjad · kader bij Ibn Arabi',abjLead:'De enige Arabische bronvorm voor deze berekening is (رافي الحجي). Groot en klein abjad zijn reproduceerbare letterberekeningen, geen profetie.',big:'Groot abjad',small:'Klein abjad',other:'Andere systemen voor latere proeven',otherLead:'Traditionele Hebreeuwse gematria, Griekse isopsefie en Indiase Katapayadi vereisen een bewuste spelling in het betreffende schrift. Er wordt geen automatische spelling opgelegd.',rule:'Regel van het lab',ruleText:'Elke uitkomst bewaart de exacte spelling, het schrift, de waardetabel en de rekenmethode. Eén gewijzigde letter kan de uitkomst veranderen.'},
+jv:{title:'Laboratorium Jeneng, Aksara lan Angka',lead:'Simpul petungan mandiri. Jeneng siji-sijine sing saiki diuji yaiku Rafy Alhajji. Pepadhan angka mung piranti mbandhingake, dudu bukti identitas ramalan.',gem:'Gematrix · wujud Latin',gemLead:'Kita nganggo wujud Latin tetep Rafy Alhajji lan misahake telung cipher Gematrix.',jew:'Cipher Latin Jewish / Hebrew',eng:'English ×6',simple:'Simple A1Z26',abj:'Abjad Arab · kerangka Ibn Arabi',abjLead:'Wujud sumber Arab siji-sijine kanggo petungan iki yaiku (رافي الحجي). Abjad gedhe lan cilik minangka petungan aksara sing bisa dibaleni, dudu ramalan.',big:'Abjad gedhe',small:'Abjad cilik',other:'Sistem liyane kanggo uji sabanjure',otherLead:'Gematria Ibrani tradisional, isopsephy Yunani lan Katapayadi India mbutuhake jeneng ditulis kanthi sengaja ing aksara sing cocog. Ora ana ejaan otomatis sing dipaksa.',rule:'Aturan laboratorium',ruleText:'Saben asil nyimpen ejaan persis, aksara, tabel nilai lan cara petungan. Owah siji aksara bisa ngganti asil.'},
+he:{title:'מעבדת שמות, אותיות ומספרים',lead:'צומת חישובי עצמאי. השם היחיד שנבדק כעת הוא Rafy Alhajji. התאמה מספרית היא כלי השוואתי ולא הוכחה לזהות נבואית.',gem:'Gematrix · צורה לטינית',gemLead:'אנו משתמשים בצורה הלטינית הקבועה Rafy Alhajji ומפרידים בין שלושת הצפנים של Gematrix.',jew:'צופן Latin Jewish / Hebrew',eng:'English ×6',simple:'Simple A1Z26',abj:'אבג׳ד ערבי · מסגרת אבן ערבי',abjLead:'צורת המקור הערבית היחידה לחישוב זה היא (رافي الحجي). האבג׳ד הגדול והקטן הם חישובי אותיות ניתנים לשחזור, לא נבואה.',big:'אבג׳ד גדול',small:'אבג׳ד קטן',other:'שיטות נוספות לניסויים עתידיים',otherLead:'גימטריה עברית מסורתית, איזופספיה יוונית וקטפאיאדי הודי מחייבות כתיבה מכוונת של השם בכתב המתאים. לא נכפית תעתיק אוטומטי.',rule:'כלל המעבדה',ruleText:'כל תוצאה שומרת את האיות המדויק, הכתב, טבלת הערכים ושיטת החישוב. שינוי אות אחת עשוי לשנות את התוצאה.'}}
 const GJ={a:1,b:2,c:3,d:4,e:5,f:6,g:7,h:8,i:9,j:600,k:10,l:20,m:30,n:40,o:50,p:60,q:70,r:80,s:90,t:100,u:200,v:700,w:900,x:300,y:400,z:500};
 const A1=Object.fromEntries('abcdefghijklmnopqrstuvwxyz'.split('').map((c,i)=>[c,i+1]));
-const ABJ={ا:1,أ:1,إ:1,آ:1,ء:1,ب:2,ج:3,د:4,ه:5,ة:5,و:6,ز:7,ح:8,ط:9,ي:10,ى:10,ك:20,ل:30,م:40,ن:50,س:60,ع:70,ف:80,ص:90,ق:100,ر:200,ش:300,ت:400,ث:500,خ:600,ذ:700,ض:800,ظ:900,غ:1000};
-const HEB={'א':1,'ב':2,'ג':3,'ד':4,'ה':5,'ו':6,'ז':7,'ח':8,'ט':9,'י':10,'כ':20,'ך':20,'ל':30,'מ':40,'ם':40,'נ':50,'ן':50,'ס':60,'ע':70,'פ':80,'ף':80,'צ':90,'ץ':90,'ק':100,'ר':200,'ש':300,'ת':400};
-const GR={'α':1,'β':2,'γ':3,'δ':4,'ε':5,'ϛ':6,'ζ':7,'η':8,'θ':9,'ι':10,'κ':20,'λ':30,'μ':40,'ν':50,'ξ':60,'ο':70,'π':80,'ϟ':90,'ρ':100,'σ':200,'ς':200,'τ':300,'υ':400,'φ':500,'χ':600,'ψ':700,'ω':800,'ϡ':900};
-
-function calc(text,map){let vals=[];for(const ch of text.toLowerCase()){if(map[ch]!=null) vals.push([ch,map[ch]])}return {sum:vals.reduce((a,x)=>a+x[1],0),vals}}
-function detail(vals){return vals.map(x=>x[0]+'='+x[1]).join(' + ')}
-function box(label,val,formula=''){return `<div class="result"><div>${label}</div><div class="num">${val}</div><div class="formula">${formula}</div></div>`}
-function gem(){
- let t=document.getElementById('gemInput').value;
- let j=calc(t,GJ), s=calc(t,A1), e={sum:s.sum*6, vals:s.vals.map(x=>[x[0],x[1]*6])};
- document.getElementById('gemResults').innerHTML=box('Jewish / Hebrew cipher',j.sum,detail(j.vals))+box('English ×6',e.sum,detail(e.vals))+box('Simple A1Z26',s.sum,detail(s.vals));
-}
-function abj(){
- let t=document.getElementById('abjadInput').value; let k=calc(t,ABJ);
- let sv=k.vals.map(x=>[x[0],((x[1]-1)%9)+1]); let small=sv.reduce((a,x)=>a+x[1],0);
- document.getElementById('abjadResults').innerHTML=box('الجمل الكبير',k.sum,detail(k.vals))+box('الجمل الصغير',small,detail(sv))+box('الجذر الرقمي للمجموع',k.sum?((k.sum-1)%9)+1:0,'اختزال نهائي للمقارنة فقط');
-}
-function heb(){let r=calc(document.getElementById('hebInput').value,HEB);document.getElementById('hebResults').innerHTML=box('Mispar Hechrechi',r.sum,detail(r.vals))}
-function greek(){let r=calc(document.getElementById('greekInput').value.normalize('NFD').replace(/[\u0300-\u036f]/g,''),GR);document.getElementById('greekResults').innerHTML=box('Greek isopsephy',r.sum,detail(r.vals))}
-function pyth(){let r=calc(document.getElementById('pythInput').value,A1);let vals=r.vals.map(x=>[x[0],((x[1]-1)%9)+1]);let sum=vals.reduce((a,x)=>a+x[1],0);document.getElementById('pythResults').innerHTML=box('1–9 cyclic',sum,detail(vals))+box('digital root',sum?((sum-1)%9)+1:0,'')}
-document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.method').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.method).classList.add('active')});
-[['gemInput',gem],['abjadInput',abj],['hebInput',heb],['greekInput',greek],['pythInput',pyth]].forEach(([id,fn])=>document.getElementById(id).addEventListener('input',fn));
-const people=[
- {name:'Rafy Alhajji',status:'الصيغة اللاتينية المعتمدة للاختبار',g:[1726,606,101],arabic:[['رافي الحجي',343,28]]},
- {name:'Elon R Musk',status:'صيغة الاختبار المختصرة للاسم الأوسط Reeve',g:[525,768,128]},
- {name:'Elon Musk',status:'الصيغة الشائعة',g:[445,660,110]}
-];
-document.getElementById('savedPeople').innerHTML=people.map(p=>`<article class="person"><div class="ltr"><b>${p.name}</b></div><div class="muted">${p.status}</div><div class="chips"><span class="badge">J ${p.g[0]}</span><span class="badge">E ${p.g[1]}</span><span class="badge">S ${p.g[2]}</span></div>${p.arabic? p.arabic.map(a=>`<p>${a[0]} · كبير <b>${a[1]}</b> · صغير <b>${a[2]}</b></p>`).join(''):''}</article>`).join('');
-gem();abj();heb();greek();pyth();
-</script>
-</body></html>
+const ABJ={ا:1,ب:2,ج:3,د:4,ه:5,و:6,ز:7,ح:8,ط:9,ي:10,ك:20,ل:30,م:40,ن:50,س:60,ع:70,ف:80,ص:90,ق:100,ر:200,ش:300,ت:400,ث:500,خ:600,ذ:700,ض:800,ظ:900,غ:1000};
+function sum(t,m){return [...t.toLowerCase()].reduce((a,c)=>a+(m[c]||0),0)}
+function render(){const l=(window.LuxLang&&LuxLang.get())||'en',d=COPY[l]||COPY.en;const name='Rafy Alhajji',simp=sum(name,A1),j=sum(name,GJ),eng=simp*6,ar='رافي الحجي';const big=sum(ar,ABJ),small=[...ar].reduce((a,c)=>{let v=ABJ[c]||0;return a+(v?((v-1)%9)+1:0)},0);document.getElementById('lab').innerHTML=`<section class="lab-card"><div class="lux-kicker">LUXDOT · NUMERICAL & LETTER SYSTEMS</div><h1>${d.title}</h1><p>${d.lead}</p></section><section class="lab-card"><h2>${d.gem}</h2><p>${d.gemLead}</p><div class="formula">Rafy Alhajji</div><div class="lab-grid"><div class="metric">${d.jew}<b>${j}</b></div><div class="metric">${d.eng}<b>${eng}</b></div><div class="metric">${d.simple}<b>${simp}</b></div></div></section><section class="lab-card"><h2>${d.abj}</h2><p>${d.abjLead}</p><div class="lab-grid"><div class="metric">${d.big}<b>${big}</b></div><div class="metric">${d.small}<b>${small}</b></div></div></section><section class="lab-card secondary"><h2>${d.other}</h2><p>${d.otherLead}</p></section><section class="lab-card method-note"><b>${d.rule}</b><p>${d.ruleText}</p></section>`}
+document.addEventListener('DOMContentLoaded',render);document.addEventListener('luxlang',render);
+</script><script defer src="site-shell.js?v=4328"></script><script defer src="site-quality.js?v=4328"></script></body></html>

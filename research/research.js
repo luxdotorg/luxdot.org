@@ -11,7 +11,6 @@ const N=[
 {id:"devil",p:"bell",s:"tradition",ar:"Duivelsbrug",en:"Duivelsbrug",arD:"فولكلور بريدا يربط الشيطان بجرس الكنيسة، بينما المصدر التراثي نفسه يميز الأسطورة عن التفسير التاريخي",enD:"Breda folklore links the devil to a church bell, while the heritage source itself separates legend from historical explanation",src:["S4"]},
 {id:"nassau",p:"place",s:"verified",ar:"ناسو والسلطة",en:"Nassau & power",arD:"بريدا مركز مبكر في تاريخ Nassau الهولندية، وتضم Grote Kerk قبور أسلاف الأسرة المالكة",enD:"Breda is an early center of Dutch Nassau history and the Grote Kerk contains tombs of royal ancestors",src:["S3"]},
 {id:"tombs",p:"nassau",s:"verified",ar:"القبور الأميرية",en:"Princely tombs",arD:"Prinsenkapel والقبور يحولان الكنيسة إلى أرشيف حجري لتاريخ ناسو",enD:"The Prinsenkapel and tombs turn the church into a stone archive of Nassau history",src:["S3"]},
-{id:"william",p:"nassau",s:"verified",ar:"وليام الصامت",en:"William the Silent",arD:"ترتبط بريدا بجذوره الأسرية والسياسية، بينما يرتبط اغتياله وقبره بدلفت",enD:"Breda belongs to his dynastic and political formation, while his assassination and tomb belong to Delft",src:["S13"]},
 {id:"cat",p:"nassau",s:"probable",ar:"Polleke",en:"Polleke",arD:"القطة المحنطة التي عُثر عليها في Grote Kerk مؤرخة تقريباً إلى 1440–1460، وتفسيرها كقربان بناء يبقى مرجحاً لا يقينياً",enD:"The mummified cat found in the Grote Kerk dates roughly to 1440–1460, while its interpretation as a building offering remains probable rather than certain",src:["S7"]},
 {id:"care",p:"place",s:"verified",ar:"رعاية المستضعفين",en:"Care for the vulnerable",arD:"شبكة عملية للمسنين والأطفال وذوي الإعاقة والفقراء واللاجئين والحيوانات والمتطوعين ضمن 25 كم",enD:"A practical 25 km network for older people, children, disability, poverty, refugees, animals and volunteers",src:["S8"]},
 {id:"refugees",p:"care",s:"verified",ar:"اللاجئون والضيافة",en:"Refugees & hospitality",arD:"الاستقبال المعاصر يُدرس كعمل مؤسسي قابل للقياس، لا كصفة رومانسية عامة للسكان",enD:"Contemporary reception is studied as measurable institutional action rather than a romanticized trait of local people",src:["S9"]},
@@ -24,7 +23,6 @@ const N=[
 {id:"ibnarabi",p:"prophecy",s:"hypothesis",ar:"ابن عربي",en:"Ibn ʿArabi",arD:"تُدرس موضوعات الإنسان الكامل والمهدي ووحدة المعنى من دون تحويل حساب الحروف إلى إثبات هوية شخصية",enD:"Themes of the Perfect Human, Mahdi and unity of meaning are explored without turning letter-number calculations into proof of personal identity",src:["S15"]},
 {id:"symbol",p:"place",s:"tradition",ar:"الرمز والغموض",en:"Symbol & mystery",arD:"فرع يدرس كيف تتحول الأشياء المادية والأخطاء والأساطير والأعداد إلى معنى جماعي",enD:"A branch studying how material objects, errors, legends and numbers become collective meaning",src:["S4","S7"]},
 {id:"six",p:"symbol",s:"verified",ar:"666 و616",en:"666 & 616",arD:"رؤيا 13:18 هي المعطى النصي، وربط العدد بـNeron Caesar تفسير تاريخي قوي، مع قيمة خاصة لشاهد 616 في بعض المخطوطات",enD:"Revelation 13:18 is the textual datum, while Neron Caesar is a strong historical reading, strengthened by the 616 manuscript variant",src:["S16"]},
-{id:"elon",p:"six",s:"pruned",ar:"Elon Musk = 666؟",en:"Elon Musk = 666?",arD:"المطابقات الرقمية الحديثة تتغير مع التهجئة ونظام الحساب، لذلك تُحفظ كدراسة في صناعة المطابقة العددية ولا تعتمد كدليل",enD:"Modern numerical matches vary with spelling and calculation system, so they are kept as a case study in manufactured numerical matching rather than evidence",src:["S17"]}
 ]
 const STATUS={verified:{c:"#63ff9b",ar:"موثّق",en:"Documented"},probable:{c:"#85ba68",ar:"مرجّح",en:"Probable"},tradition:{c:"#d2b15b",ar:"رواية أو تقليد",en:"Tradition"},hypothesis:{c:"#76648f",ar:"فرضية",en:"Hypothesis"},open:{c:"#57798a",ar:"قيد التحقيق",en:"Open inquiry"},pruned:{c:"#5e5a51",ar:"فرع موقوف",en:"Pruned branch"}}
 const SOURCES=[
@@ -56,7 +54,6 @@ const EVENTS=[
 ["1944","War & liberation","تدمير البرج وأجزاء من الكنيسة في سياق الحرب","Tower and parts of the church destroyed in wartime"],
 ["2026","Living Research 002","تحويل الأطلس إلى شجرة معرفة قابلة للتصحيح والنمو","The atlas becomes a revisionable living knowledge tree"]
 ]
-const POS={place:[600,692],memory:[270,514],church:[453,475],nassau:[660,464],care:[882,500],land:[1010,376],prophecy:[468,268],symbol:[766,270],rufina:[115,355],edith:[205,320],jewish:[295,342],liberation:[365,308],bell:[390,355],invert:[318,210],devil:[410,175],tombs:[615,335],william:[705,318],cat:[785,350],refugees:[885,365],animals:[975,405],isaiah:[430,125],sham:[530,134],minaret:[572,65],ibnarabi:[655,115],six:[785,145],elon:[895,105]}
 const CROSS=[
 ["edith","jewish","verified","ذاكرة اضطهاد مشتركة","shared persecution memory"],
 ["liberation","church","verified","الحرب تعيد تشكيل المكان","war reshapes place"],
@@ -64,7 +61,6 @@ const CROSS=[
 ["bell","devil","tradition","الجرس كرمز حدودي","bell as liminal symbol"],
 ["isaiah","care","hypothesis","إنصاف الضعيف كمعيار أخلاقي","care for the weak as ethical criterion"],
 ["sham","care","hypothesis","من بركة المكان إلى فعل الرعاية","from blessed place to caring action"],
-["six","elon","pruned","مطابقة عددية غير ثابتة","unstable numerical matching"],
 ["nassau","church","verified","تاريخ السلطة والمكان المقدس","power and sacred place"],
 ["symbol","invert","tradition","الخطأ المادي يولد معنى","material error becomes meaning"]
 ]

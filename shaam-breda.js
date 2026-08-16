@@ -24,7 +24,6 @@ const N=[
 {id:"ibnarabi",p:"prophecy",s:"hypothesis",ar:"ابن عربي",en:"Ibn ʿArabi",arD:"تُدرس موضوعات الإنسان الكامل والمهدي ووحدة المعنى من دون تحويل حساب الحروف إلى إثبات هوية شخصية",enD:"Themes of the Perfect Human, Mahdi and unity of meaning are explored without turning letter-number calculations into proof of personal identity",nl:"Ibn ʿArabi",nlD:"Thema's als de Volmaakte Mens, de Mahdi en eenheid van betekenis worden onderzocht zonder letter- of getallenrekening als bewijs voor persoonlijke identiteit te gebruiken",es:"Ibn ʿArabi",esD:"Se exploran el Hombre Perfecto, el Mahdi y la unidad de significado sin convertir cálculos de letras y números en prueba de identidad personal",he:"אבן ערבי",heD:"נושאי האדם השלם, המהדי ואחדות המשמעות נחקרים בלי להפוך חישובי אותיות ומספרים להוכחת זהות אישית",src:["S15"]},
 {id:"symbol",p:"place",s:"tradition",ar:"الرمز والغموض",en:"Symbol & mystery",arD:"فرع يدرس كيف تتحول الأشياء المادية والأخطاء والأساطير والأعداد إلى معنى جماعي",enD:"A branch studying how material objects, errors, legends and numbers become collective meaning",nl:"Symbool & mysterie",nlD:"Een tak die onderzoekt hoe materiële objecten, fouten, legendes en getallen collectieve betekenis krijgen",es:"Símbolo y misterio",esD:"Una rama que estudia cómo objetos materiales, errores, leyendas y números adquieren significado colectivo",he:"סמל ומסתורין",heD:"ענף הבוחן כיצד חפצים חומריים, טעויות, אגדות ומספרים מקבלים משמעות קולקטיבית",src:["S4","S7"]},
 {id:"six",p:"symbol",s:"verified",ar:"666 و616",en:"666 & 616",arD:"رؤيا 13:18 هي المعطى النصي، وربط العدد بـنيرون قيصر (Neron Caesar) تفسير تاريخي قوي، مع قيمة خاصة لشاهد 616 في بعض المخطوطات",enD:"Revelation 13:18 is the textual datum, while Neron Caesar is a strong historical reading, strengthened by the 616 manuscript variant",nl:"666 & 616",nlD:"Openbaring 13:18 is het tekstuele gegeven; Neron Caesar is een sterke historische lezing, mede door de manuscriptvariant 616",es:"666 y 616",esD:"Apocalipsis 13:18 es el dato textual; Neron Caesar es una lectura histórica fuerte, reforzada por la variante manuscrita 616",he:"666 ו-616",heD:"חזון יוחנן י״ג:י״ח הוא הנתון הטקסטואלי; Neron Caesar הוא פירוש היסטורי חזק, שנתמך גם בווריאנט 616 בכתבי יד",src:["S16"]},
-{id:"elon",p:"six",s:"pruned",ar:"إيلون ماسك (Elon Musk) = 666؟",en:"Elon Musk = 666?",arD:"المطابقات الرقمية الحديثة تتغير مع التهجئة ونظام الحساب، لذلك تُحفظ كدراسة في صناعة المطابقة العددية ولا تعتمد كدليل",enD:"Modern numerical matches vary with spelling and calculation system, so they are kept as a case study in manufactured numerical matching rather than evidence",nl:"Elon Musk = 666?",nlD:"Moderne numerieke matches veranderen met spelling en rekensysteem; ze blijven een casus over geconstrueerde numerologie, niet bewijs",es:"¿Elon Musk = 666?",esD:"Las coincidencias numéricas modernas cambian con la ortografía y el sistema de cálculo; se conservan como caso de numerología construida, no como evidencia",he:"Elon Musk = 666?",heD:"התאמות מספריות מודרניות משתנות לפי האיות ושיטת החישוב; הן נשמרות כמקרה מבחן בנומרולוגיה מיוצרת ולא כראיה",src:["S17"]}
 ]
 const STATUS={
 verified:{c:"#63ff9b",ar:"موثّق",en:"Documented",nl:"Gedocumenteerd",es:"Documentado",he:"מתועד"},
@@ -50,9 +49,7 @@ const SOURCES=[
 ["S13","Stedelijk Museum Breda — William of Orange","Breda and William of Orange","https://www.stedelijkmuseumbreda.nl/en/organisation/news/announcement-william"],
 ["S14","Sahih Muslim 2937a","White minaret east of Damascus","https://sunnah.com/muslim/54/134"],
 ["S15","Ibn ʿArabi — Futuhat research trail","Primary-text verification required before quotation","https://archive.org/"],
-["S16","Revelation 13:18","Textual datum for 666","https://www.biblegateway.com/passage/?search=Revelation%2013%3A18"],
-["S17","Internet numerology example","Preserved only as a claim, not evidentiary support","https://www.reddit.com/" ]
-]
+["S16","Revelation 13:18","Textual datum for 666","https://www.biblegateway.com/passage/?search=Revelation%2013%3A18"],]
 const EVENTS=[
 ["1392",{ar:"جرس ليدنارت",en:"Ledenaert bell",nl:"Ledenaert-klok"},"جرس Ledenaert يدخل الخط الزمني بوصفه شاهداً مادياً مبكراً","Ledenaert enters the timeline as an early material witness","Ledenaert verschijnt op de tijdlijn als vroege materiële getuige"],
 ["15th–16th c",{ar:"كنيسة ليديفارت",en:"Ledevaertkerk",nl:"Ledevaertkerk"},"بناء الكنيسة القوطية الحالية على موضع أقدم","Construction of the present Gothic church on an older site","Bouw van de huidige gotische kerk op een oudere locatie"],
@@ -63,7 +60,6 @@ const EVENTS=[
 ["1944",{ar:"الحرب والتحرير",en:"War & liberation",nl:"Oorlog & bevrijding"},"تدمير البرج وأجزاء من الكنيسة في سياق الحرب","Tower and parts of the church destroyed in wartime","Toren en delen van de kerk in oorlogstijd verwoest"],
 ["2026",{ar:"البحث الحي 002",en:"Living Research 002",nl:"Levend Onderzoek 002"},"تحويل الأطلس إلى شجرة معرفة قابلة للتصحيح والنمو","The atlas becomes a revisionable living knowledge tree","De atlas wordt een herzienbare levende kennisboom"]
 ]
-const POS={place:[600,692],memory:[270,514],church:[453,475],nassau:[660,464],care:[882,500],land:[1010,376],prophecy:[468,268],symbol:[766,270],rufina:[115,355],edith:[205,320],jewish:[295,342],liberation:[365,308],bell:[390,355],invert:[318,210],devil:[410,175],tombs:[615,335],william:[705,318],cat:[785,350],refugees:[885,365],animals:[975,405],isaiah:[430,125],sham:[530,134],minaret:[572,65],ibnarabi:[655,115],six:[785,145],elon:[895,105]}
 const CROSS=[
 ["edith","jewish","verified","ذاكرة اضطهاد مشتركة","shared persecution memory","gedeelde herinnering aan vervolging"],
 ["liberation","church","verified","الحرب تعيد تشكيل المكان","war reshapes place","oorlog hervormt plaats"],
@@ -71,7 +67,6 @@ const CROSS=[
 ["bell","devil","tradition","الجرس كرمز حدودي","bell as liminal symbol","de klok als grenssymbool"],
 ["isaiah","care","hypothesis","إنصاف الضعيف كمعيار أخلاقي","care for the weak as ethical criterion","zorg voor kwetsbaren als ethisch criterium"],
 ["sham","care","hypothesis","من بركة المكان إلى فعل الرعاية","from blessed place to caring action","van gezegende plaats naar zorgend handelen"],
-["six","elon","pruned","مطابقة عددية غير ثابتة","unstable numerical matching","instabiele numerieke overeenkomst"],
 ["nassau","church","verified","تاريخ السلطة والمكان المقدس","power and sacred place","macht en heilige plaats"],
 ["symbol","invert","tradition","الخطأ المادي يولد معنى","material error becomes meaning","materiële fout wordt betekenis"]
 ]

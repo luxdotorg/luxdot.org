@@ -403,3 +403,8 @@ body.home-arrival.home-arrival-go{animation:luxArrival .9s cubic-bezier(.18,.82,
 /* v2.8.4 active global sacred shelf */
 .shelf-sikh{--spine:#5a3416;--foil:#f0c66c}.shelf-avesta{--spine:#50251f;--foil:#f1b56c}.shelf-jain{--spine:#49345f;--foil:#e7cf85}.shelf-dao{--spine:#183c37;--foil:#d4e6bc}.shelf-analects{--spine:#4a241d;--foil:#e6c77b}.shelf-bahai{--spine:#283b63;--foil:#d8dff7}.shelf-kojiki{--spine:#51242d;--foil:#f0c7cf}.global-sacred-shelf{margin-top:10px}
 .five-lang-fallback{margin:12px 0 18px;padding:10px 13px;border:1px solid rgba(210,177,91,.35);border-radius:12px;color:#d8c47e;background:#0b0b06;font-size:12px;line-height:1.6}
+
+/* v4.3.28 — header breathing room and language stability */
+.topin{gap:24px}.nav,.lux-shell-nav{gap:10px 14px!important;row-gap:10px!important}.nav a,.nav span,.lang,.lux-shell-nav a,.lux-shell-nav select{font-size:12.5px;padding:8px 11px;white-space:nowrap}.logo{margin-inline-end:12px;flex:0 0 auto}.lang-select{min-width:118px}
+@media(min-width:1100px){.nav,.lux-shell-nav{gap:12px 18px!important}.nav a,.lux-shell-nav a{padding-inline:9px}}
+@media(max-width:900px){.topin{align-items:flex-start;padding-block:10px}.nav,.lux-shell-nav{justify-content:flex-end;gap:8px 10px!important}.nav a,.lux-shell-nav a,.lang-select{font-size:11.5px}}

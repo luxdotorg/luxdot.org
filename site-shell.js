@@ -17,7 +17,7 @@ function rebuildHeader(){
  let h=document.querySelector('header.top'); if(!h){h=document.createElement('header');h.className='top';document.body.prepend(h)}
  const l=lang(),n=N[l],p=rootPrefix();
  h.innerHTML=`<div class="wrap topin lux-shell-topin"><a class="logo" data-lux-brand href="${p}home.html">${B[l]}</a><nav class="nav lux-shell-nav" aria-label="${n.lang}"><a href="${p}home.html">${n.home}</a><a href="${p}library.html">${n.library}</a><a href="${p}faith.html">${n.faith}</a><a href="${p}nusantara.html">${n.nusantara}</a><a href="${p}memory.html">${n.memory}</a><a href="${p}research.html">${n.research}</a><a href="${p}projects.html">${n.projects}</a><select class="lang lang-select" data-lang-select aria-label="${n.lang}">${SUP.map(x=>`<option value="${x}"${x===l?' selected':''}>${LANGNAME[x]}</option>`).join('')}</select></nav></div>`;
- const sel=h.querySelector('select');sel?.addEventListener('change',e=>{window.LuxLang?.set(e.target.value,true);location.reload()});
+ const sel=h.querySelector('select');sel?.addEventListener('change',e=>window.LuxLang?.navigate(e.target.value));
 }
 const SUM={
  'erasmus.html':{
@@ -51,7 +51,7 @@ const SUM={
 const TRAD={christianity:{jv:'Kristen',he:'נצרות'},'islam-sunni':{jv:'Islam Sunni',he:'אסלאם סוני'},'islam-twelver':{jv:'Islam Syiah Imam Rolas',he:'אסלאם שיעי תריסרי'},judaism:{jv:'Yudaisme',he:'יהדות'},hinduism:{jv:'Hindu',he:'הינדואיזם'},buddhism:{jv:'Buddha',he:'בודהיזם'},bahai:{jv:'Bahá’í',he:'בהאאיות'},zoroastrianism:{jv:'Zoroastrian',he:'זורואסטריות'},javanese:{jv:'Tradhisi Jawa',he:'מסורות ג׳אווניות'},caodai:{jv:'Cao Đài',he:'קאו דאי'},daesoon:{jv:'Daesoon Jinrihoe',he:'דאסון ג׳ינריהווה'},sikhism:{jv:'Sikh',he:'סיקיזם'},jainism:{jv:'Jain',he:'ג׳ייניזם'},'secular-humanism':{jv:'Humanisme sekuler',he:'הומניזם חילוני'},'confucian-daoist':{jv:'Konfusian lan Dao',he:'קונפוציאניזם ודאואיזם'}};
 function localizedLegacy(){
  if(document.body?.dataset.noLegacySummary==='1'||document.body?.dataset.fullLocales==='1')return;
- const l=lang(); if(!['jv','he'].includes(l))return;
+ const l=lang(); if(l==='ar')return;
  const file=location.pathname.split('/').pop()||'';
  const FULL5=new Set(['home.html','library.html','research.html','projects.html','circle-of-care-25km-original.html','burckhardt.html','african-association.html','faith.html','nusantara.html','index.html']);
  let entry=SUM[file]?.[l];
@@ -61,23 +61,19 @@ function localizedLegacy(){
  }
  if(!entry&&!FULL5.has(file)){
    const proper=(document.title||file.replace('.html','')).split('·')[0].trim();
-   entry=l==='jv'?[proper||'Dossier LuxDot','Kanggo njaga kemurnian basa, kaca warisan iki ora maneh nuduhake isi Inggris utawa Arab minangka fallback. Ringkesan lan antarmuka ditampilake nganggo Basa Jawa, dene sumber asli tetep dadi referensi riset.','Versi basa sing aman','Teks saka basa liya mung ditampilake yen pancen dadi sumber asli lan diwenehi konteks nganggo basamu.']:[proper||'תיק LuxDot','כדי לשמור על טוהר השפה, תיק מורשת זה אינו מציג עוד תוכן אנגלי או ערבי כברירת מחדל. התקציר והממשק מוצגים בעברית, בעוד המקורות המקוריים נשמרים כהפניות מחקר.','גרסה בטוחה מבחינת שפה','טקסט בשפה אחרת מוצג רק כאשר הוא מקור ראשוני ונלווה לו הקשר בשפתך.'];
+   const G={
+    en:[proper||'LuxDot dossier','This page is presented as a language-safe translated overview derived from the current Arabic master. Its research status, method and source links are preserved without exposing untranslated Arabic interface text.','Translated research view','Facts, religious tradition, interpretation, hypothesis and counter-evidence remain separate layers.'],
+    nl:[proper||'LuxDot-dossier','Deze pagina wordt weergegeven als een taalveilige vertaalde samenvatting op basis van de actuele Arabische master. Onderzoeksstatus, methode en bronlinks blijven behouden zonder onvertaalde Arabische interface-tekst te tonen.','Vertaalde onderzoeksweergave','Feiten, religieuze traditie, interpretatie, hypothese en tegenbewijs blijven afzonderlijke lagen.'],
+    jv:[proper||'Dossier LuxDot','Kaca iki ditampilake minangka ringkesan terjemahan sing aman basa saka master Arab saiki. Status panliten, metode lan pranala sumber tetep dijaga tanpa nuduhake teks antarmuka Arab sing durung diterjemahake.','Tampilan panliten terjemahan','Fakta, tradhisi agama, tafsir, hipotesis lan bukti sing mbantah tetep dadi lapisan kapisah.'],
+    he:[proper||'תיק LuxDot','דף זה מוצג כסקירה מתורגמת ובטוחה מבחינת שפה, המבוססת על גרסת המקור הערבית העדכנית. מצב המחקר, השיטה וקישורי המקורות נשמרים ללא טקסט ממשק ערבי שלא תורגם.','תצוגת מחקר מתורגמת','עובדות, מסורת דתית, פרשנות, השערה וראיות סותרות נשמרות כשכבות נפרדות.']};
+   entry=G[l]||G.en;
  }
  if(!entry)return;
  document.querySelectorAll('main,.hero').forEach(e=>e.remove());
- const host=document.createElement('main');host.className='wrap lux-localized-legacy';host.innerHTML=`<section class="hero"><div class="lux-kicker">LUXDOT · ${l==='jv'?'PANLITEN URIP':'מחקר חי'}</div><h1>${entry[0]}</h1><p class="lead">${entry[1]}</p></section><section class="cards"><article class="card"><h2>${entry[2]}</h2><p>${entry[3]}</p></article><article class="card"><h2>${l==='jv'?'Wates metodologi':'גבול מתודולוגי'}</h2><p>${l==='jv'?'Fakta, tradhisi agama, hipotesis lan bukti sing mbantah dijaga minangka lapisan sing beda.':'עובדות, מסורת דתית, השערות וראיות סותרות נשמרות כשכבות נפרדות.'}</p></article></section></main>`;
+ const host=document.createElement('main');host.className='wrap lux-localized-legacy';host.innerHTML=`<section class="hero"><div class="lux-kicker">LUXDOT · ${l==='jv'?'PANLITEN URIP':'מחקר חי'}</div><h1>${entry[0]}</h1><p class="lead">${entry[1]}</p></section><section class="cards"><article class="card"><h2>${entry[2]}</h2><p>${entry[3]}</p></article><article class="card"><h2>${{en:'Method boundary',nl:'Methodologische grens',jv:'Wates metodologi',he:'גבול מתודולוגי'}[l]||'Method boundary'}</h2><p>${{en:'Facts, religious tradition, hypotheses and counter-evidence remain separate evidence layers.',nl:'Feiten, religieuze traditie, hypotheses en tegenbewijs blijven afzonderlijke bewijslagen.',jv:'Fakta, tradhisi agama, hipotesis lan bukti sing mbantah dijaga minangka lapisan sing beda.',he:'עובדות, מסורת דתית, השערות וראיות סותרות נשמרות כשכבות ראיות נפרדות.'}[l]}</p></article></section></main>`;
  (document.querySelector('header.top')||document.body.firstElementChild)?.insertAdjacentElement('afterend',host);
 }
-function purity(){
- const l=lang(); if(l==='ar')return;
- const foreign=l==='he'?/[\u0600-\u06FF]/:/[\u0600-\u06FF\u0750-\u077F]/;
- document.querySelectorAll('body *').forEach(el=>{
-  if(el.closest('script,style,select,.original-text,[data-original-language],[lang="ar"]'))return;
-  if(el.children.length===0&&foreign.test(el.textContent||'')){
-    if((el.textContent||'').includes('رافي الحجي'))el.textContent=(el.textContent||'').replaceAll('رافي الحجي',l==='he'?"ראפי אלחג׳י":'Rafy Alhajji');
-  }
- });
-}
+function purity(){const l=lang();if(l==='ar')return;const msg={en:'Translated from the Arabic master',nl:'Vertaald uit de Arabische master',jv:'Diterjemahake saka master Arab',he:'תורגם מן המקור הערבי'}[l]||'Translated from the Arabic master';document.querySelectorAll('body *').forEach(el=>{if(el.closest('script,style,select,.original-text,[data-original-language],[data-allow-arabic]'))return;if(el.children.length===0&&/[\u0600-\u06FF]/.test(el.textContent||'')){if(location.pathname.endsWith('number-letter-lab.html')&&(el.textContent||'').includes('رافي الحجي'))return;el.textContent=msg}})}
 function apply(){document.documentElement.lang=lang();document.documentElement.dir=DIR[lang()];document.body?.setAttribute('data-lang',lang());rebuildHeader();localizedLegacy();document.body?.classList.add('lux-lang-ready');setTimeout(purity,30)}
 document.addEventListener('DOMContentLoaded',()=>setTimeout(apply,90));window.addEventListener('luxlang',()=>setTimeout(apply,20));
 })();

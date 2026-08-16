@@ -9,12 +9,7 @@ function render(){let l=lang(),key=id(),r=D[key]?.[l];select().value=l;const act
 document.addEventListener('DOMContentLoaded',render);
 })();
 ;(()=>{
-const N={
- ar:{display:'رافي الحجي',note:'الاسم الأصلي بالعربية. ملاحظة لغوية فقط: «عبد السميع» تعني عبدَ/خادمَ السميع. أما «رافي» فيحتمل أكثر من قراءة عند نقله إلى الحروف اللاتينية، لذلك لا تُستخدم دلالته كدليل نبوئي. «الحجي» يُحفظ كاسم عائلة.'},
- en:{display:'Rafy Alhajji',note:'Linguistic note, not prophetic evidence: Abd al-Samiʿ means “servant of the All-Hearing.” The Latin spelling Rafi can represent more than one Arabic reading/etymology, so “raiser/elevated” is only a possible gloss. Al-Hajji is kept as the family name.'},
- nl:{display:'Rafy Alhajji',note:'Taalkundige notitie, geen profetisch bewijs: Abd al-Samiʿ betekent “dienaar van de Alhorende”. De Latijnse spelling Rafi kan meer dan één Arabische lezing/etymologie weergeven; “verheffend/verheven” is daarom slechts een mogelijke gloss. Al-Hajji blijft de familienaam.'},
- id:{display:'Rafy Alhajji',note:'Catatan linguistik, bukan bukti nubuat: Abd al-Samiʿ berarti “hamba Yang Maha Mendengar”. Ejaan Latin Rafi dapat mewakili lebih dari satu pembacaan/etimologi Arab; “yang mengangkat/tinggi” hanya gloss yang mungkin. Al-Hajji dipertahankan sebagai nama keluarga.'}
-};
+const N={ar:{display:'رافي الحجي',note:'ملاحظة لغوية فقط. الاسم المعتمد للاختبار هو رافي الحجي، ولا تُحسب دلالة الاسم كدليل نبوئي.'},en:{display:'Rafy Alhajji',note:'Linguistic note only. The approved test form is Rafy Alhajji; name meaning is not scored as prophetic evidence.'},nl:{display:'Rafy Alhajji',note:'Alleen een taalkundige notitie. De vastgestelde testvorm is Rafy Alhajji; de betekenis van de naam telt niet als profetisch bewijs.'},id:{display:'Rafy Alhajji',note:'Cathetan linguistik wae. Wujud tes sing ditetepake yaiku Rafy Alhajji; makna jeneng ora diitung minangka bukti ramalan.'}};
 function applyName(){
  const raw=(window.LuxLang&&window.LuxLang.get())||'en',l=raw==='jv'?'id':raw==='he'?'en':raw,n=N[l]||N.en;
  document.querySelectorAll('.who').forEach(el=>{if(/الاختبار الشخصي|personal test|persoonlijke test|uji pribadi/i.test(el.textContent)){const prefix={ar:'الاختبار الشخصي · ',en:'Personal test · ',nl:'Persoonlijke toets · ',id:'Uji pribadi · '}[l]||'Personal test · ';el.textContent=prefix+n.display;}});

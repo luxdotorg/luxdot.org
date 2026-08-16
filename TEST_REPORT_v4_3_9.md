@@ -22,8 +22,8 @@ Deep archival node-registry enrichment plus language and interaction stabilizati
 - All `[data-href]` cartridges receive the same click behavior independent of locale.
 
 ## Name policy
-- Arabic: رافي عبد السميع الحجي
-- English / Dutch / Javanese: Rafi Abdul Sami3 Alhaji
+- Arabic: رافي الحجي
+- English / Dutch / Javanese: Rafi  Alhaji
 - Hebrew: ראפי עבד אל-סמיע אל-חאג'י
 
 ## Archival registry enrichment

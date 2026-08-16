@@ -6,4 +6,4 @@
 - Added full five-language Faith & Wisdom rendering.
 - Added non-Arabic Memory fallback so untranslated nodes never leak Arabic text into EN/NL/JV/HE views.
 - Made home and data-href cartridges fully clickable and keyboard accessible in every language.
-- Standardized user-name rendering: Arabic unchanged; EN/NL/JV use “Rafi Abdul Sami3 Alhaji”; Hebrew uses Hebrew script.
+- Standardized user-name rendering: Arabic unchanged; EN/NL/JV use “Rafi  Alhaji”; Hebrew uses Hebrew script.
