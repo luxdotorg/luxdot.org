@@ -32,8 +32,7 @@ const LANG_META={
  ar:{dir:"rtl",voice:"ar-SA"}, en:{dir:"ltr",voice:"en-US"}, nl:{dir:"ltr",voice:"nl-NL"}, jv:{dir:"ltr",voice:"jv-ID"}, he:{dir:"rtl",voice:"he-IL"}
 };
 const CORE_LANGS=["ar","en","nl","jv","he"];
-let LANG=(window.LuxLang&&window.LuxLang.get())||"en";
-if(!CORE_LANGS.includes(LANG))LANG="en";
+let LANG="ar";
 function t(k){
  const own=TX[LANG]&&TX[LANG][k];
  if(own!==undefined&&own!==null&&own!=="")return own;
@@ -53,7 +52,7 @@ function applyLang(){
  const tk=document.body&&document.body.dataset.titleKey;document.title=tk?t(tk):"LuxDot";
  stripTerminalDots();
 }
-function setLang(l){if(!CORE_LANGS.includes(l))return;LANG=l;if(window.LuxLang)window.LuxLang.set(l,true);else{localStorage.setItem("luxdot.lang",LANG);localStorage.setItem("luxdot.lang.explicit","1")}applyLang();document.dispatchEvent(new CustomEvent("luxlang",{detail:{lang:LANG}}))}
+function setLang(){LANG="ar";applyLang()}
 function stripTerminalDots(root=document.body){
  if(!root)return;const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let n;
  while(n=w.nextNode()){if(n.parentElement&&/^(SCRIPT|STYLE|CODE|PRE)$/i.test(n.parentElement.tagName))continue;n.nodeValue=n.nodeValue.replace(/[.。]+(?=\s*$)/g,"")}
@@ -65,4 +64,4 @@ function speakText(text,lang=LANG){
  u.voice=voices.find(v=>v.lang&&v.lang.toLowerCase()===target)||voices.find(v=>v.lang&&v.lang.toLowerCase().startsWith(target.slice(0,2)))||null;
  u.lang=u.voice?.lang||target;u.rate=.92;u.pitch=1;window.speechSynthesis.speak(u);return true
 }
-document.addEventListener("DOMContentLoaded",()=>{applyLang();document.querySelectorAll("[data-lang-select]").forEach(s=>s.addEventListener("change",e=>setLang(e.target.value)))})
+document.addEventListener("DOMContentLoaded",()=>{LANG="ar";applyLang()})

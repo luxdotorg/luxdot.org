@@ -1,0 +1,13 @@
+
+html{direction:rtl} body{direction:rtl;text-align:right}
+.lang,.lang-select,[data-lang-select],#langpick,[data-lang]{display:none!important}
+.research-media-static{margin:28px 0 34px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.research-media-static figure{margin:0;border:1px solid rgba(99,255,155,.18);border-radius:18px;overflow:hidden;background:#050b07;box-shadow:0 14px 38px rgba(0,0,0,.22)}
+.research-media-static img{display:block;width:100%;height:260px;object-fit:cover;background:#071009}
+.research-media-static figcaption{padding:12px 14px 14px;line-height:1.7;color:#c9d8ce;font-size:13px}
+.research-media-static figcaption strong{display:block;color:#eef8f1;font-size:14px;margin-bottom:4px}
+.research-media-static .credit{opacity:.7;font-size:11px}
+.human-book-object.real-cover{background:linear-gradient(145deg,#101711,#050806)!important}
+.human-book-object.real-cover img{width:100%;height:100%;object-fit:cover;display:block}
+.human-book-object.real-cover.cover-missing:after{content:'الغلاف غير متاح دون اتصال';display:grid;place-items:center;position:absolute;inset:0;padding:18px;text-align:center;color:#d7e4db;font-size:12px}
+@media(max-width:700px){.research-media-static{grid-template-columns:1fr}.research-media-static img{height:auto;max-height:420px}}

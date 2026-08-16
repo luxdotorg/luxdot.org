@@ -1,0 +1,1 @@
+(()=>{try{localStorage.setItem('luxdot.lang','ar');localStorage.setItem('luxdot.lang.explicit','1')}catch{};document.documentElement.lang='ar';document.documentElement.dir='rtl';window.LUXDOT_ARABIC_MASTER=true;})();
