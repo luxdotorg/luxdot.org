@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded',render);
 })();
 ;(()=>{
 const N={
- ar:{display:'رافي عبد السميع الحجي',note:'الاسم الأصلي بالعربية. ملاحظة لغوية فقط: «عبد السميع» تعني عبدَ/خادمَ السميع. أما «رافي» فيحتمل أكثر من قراءة عند نقله إلى الحروف اللاتينية، لذلك لا تُستخدم دلالته كدليل نبوئي. «الحجي» يُحفظ كاسم عائلة.'},
+ ar:{display:'رافي الحجي',note:'الاسم الأصلي بالعربية. ملاحظة لغوية فقط: «عبد السميع» تعني عبدَ/خادمَ السميع. أما «رافي» فيحتمل أكثر من قراءة عند نقله إلى الحروف اللاتينية، لذلك لا تُستخدم دلالته كدليل نبوئي. «الحجي» يُحفظ كاسم عائلة.'},
  en:{display:'Rafy Alhajji',note:'Linguistic note, not prophetic evidence: Abd al-Samiʿ means “servant of the All-Hearing.” The Latin spelling Rafi can represent more than one Arabic reading/etymology, so “raiser/elevated” is only a possible gloss. Al-Hajji is kept as the family name.'},
  nl:{display:'Rafy Alhajji',note:'Taalkundige notitie, geen profetisch bewijs: Abd al-Samiʿ betekent “dienaar van de Alhorende”. De Latijnse spelling Rafi kan meer dan één Arabische lezing/etymologie weergeven; “verheffend/verheven” is daarom slechts een mogelijke gloss. Al-Hajji blijft de familienaam.'},
  id:{display:'Rafy Alhajji',note:'Catatan linguistik, bukan bukti nubuat: Abd al-Samiʿ berarti “hamba Yang Maha Mendengar”. Ejaan Latin Rafi dapat mewakili lebih dari satu pembacaan/etimologi Arab; “yang mengangkat/tinggi” hanya gloss yang mungkin. Al-Hajji dipertahankan sebagai nama keluarga.'}
@@ -18,7 +18,7 @@ const N={
 function applyName(){
  const raw=(window.LuxLang&&window.LuxLang.get())||'en',l=raw==='jv'?'id':raw==='he'?'en':raw,n=N[l]||N.en;
  document.querySelectorAll('.who').forEach(el=>{if(/الاختبار الشخصي|personal test|persoonlijke test|uji pribadi/i.test(el.textContent)){const prefix={ar:'الاختبار الشخصي · ',en:'Personal test · ',nl:'Persoonlijke toets · ',id:'Uji pribadi · '}[l]||'Personal test · ';el.textContent=prefix+n.display;}});
- document.querySelectorAll('main p, main li').forEach(el=>{if(el.textContent.includes('رافي عبد السميع الحجي')&&l!=='ar')el.textContent=el.textContent.replaceAll('رافي عبد السميع الحجي',n.display);});
+ document.querySelectorAll('main p, main li').forEach(el=>{if(el.textContent.includes('رافي الحجي')&&l!=='ar')el.textContent=el.textContent.replaceAll('رافي الحجي',n.display);});
  let box=document.getElementById('nameMeaningNote');
  if(!box){const tests=document.querySelector('.tests');if(tests){box=document.createElement('aside');box.id='nameMeaningNote';box.className='card name-note';tests.insertAdjacentElement('beforebegin',box);}}
  if(box){const k={ar:'قراءة الاسم',en:'Name reading',nl:'Naamlezing',id:'Pembacaan nama'}[l];const foot={ar:'لا تُحسب هذه الملاحظة كنقطة مطابقة في اختبار المخلّص',en:'This linguistic note is not scored as a savior-match criterion',nl:'Deze taalnotitie telt niet als criterium voor een verlosser-match',id:'Catatan linguistik ini tidak dihitung sebagai kriteria kecocokan penyelamat'}[l];box.innerHTML='<div class="kicker">'+k+'</div><p>'+n.note+'</p><small>'+foot+'</small>';}
