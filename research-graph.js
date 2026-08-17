@@ -118,10 +118,65 @@ const W=1500,H=860,cx=W/2,cy=H/2;
 const familyPos={meaning:[210,145],land:[980,150],pilgrimage:[1010,510],choice:[590,590],journeys:[170,515]};
 const positions={petgoat:[420,80],luxdot:[720,405],savior:[165,90],redheifer:[315,90],java:[285,205],shaam:[915,95],erasmus:[650,570],busman:[1040,440],nassau:[850,210],'kevelaer-chaam':[930,410],hoogstraten:[1080,260],shaamnet:[775,325],sacred25:[860,390],alphen:[720,95],y1648:[690,205],y1944:[765,485],memory:[485,120],library:[350,350],projects:[505,525],'knowledge-journeys':[170,500],burckhardt:[285,545],'african-association':[65,430],chaamdeep:[1110,90],janssen:[1260,210],tongerlo:[1010,300],lordsbreda:[1210,380],polanen:[1370,430],chaamgene:[1330,90],'jochem-velthoven':[1260,520],'velthoven-family':[1380,610],'jan-velthoven':[1320,720],polleke:[1110,720],'north-transept':[1120,610],'velthoven-grotekerk':[1240,650],'hank-war':[1430,720],'thijs-memory':[1390,510]};
 function renderFamilies(){familyBox.innerHTML='<button class="rg-family active" data-family="all"><strong>'+({ar:'الكل',en:'All research',nl:'Alles',jv:'Kabeh',he:'הכול'}[langKey()]||'All')+'</strong><small>'+({ar:'كل العائلات والعقد',en:'all families and nodes',nl:'alle families en knopen',jv:'kabeh kulawarga lan simpul',he:'כל המשפחות והצמתים'}[langKey()]||'')+'</small></button>'+DATA.families.map(f=>`<button class="rg-family" data-family="${f.id}"><strong>${t({ar:f.ar,en:f.en,nl:f.nl,jv:f.jv,he:f.he})}</strong><small>${t(f.desc)}</small></button>`).join('');}
-function renderGraph(){svg.setAttribute('viewBox',`0 0 ${W} ${H}`);svg.innerHTML=''; const eg=document.createElementNS('http://www.w3.org/2000/svg','g');const ng=document.createElementNS('http://www.w3.org/2000/svg','g');svg.append(eg,ng);
+const degreeMap=Object.fromEntries(DATA.nodes.map(n=>[n.id,0]));
+DATA.edges.forEach(([a,b])=>{if(a in degreeMap)degreeMap[a]++;if(b in degreeMap)degreeMap[b]++});
+const majorIds=new Set(['luxdot','savior','java','shaam','erasmus','busman']);
+function familyClass(n){
+ if(n.kind==='hub')return 'family-hub';
+ if(n.kind==='time')return 'family-time';
+ if(n.id==='memory')return 'family-memory';
+ if(n.id==='library')return 'family-library';
+ if(n.id==='projects')return 'family-projects';
+ const f=(n.families||[])[0]||'other';return 'family-'+f;
+}
+function addSkyDust(bg){
+ for(let i=0;i<190;i++){
+  const x=(i*137.508)%W, y=(i*83.731 + (i%7)*19)%H;
+  const r=.45+(i%5)*.18, o=.10+(i%9)*.018;
+  const c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+  c.setAttribute('cx',x.toFixed(1));c.setAttribute('cy',y.toFixed(1));c.setAttribute('r',r.toFixed(2));c.setAttribute('class','rg-dust');c.style.opacity=o.toFixed(2);bg.append(c);
+ }
+}
+let skyScale=1;
+function setSkyView(scale){
+ skyScale=Math.max(.62,Math.min(1.28,scale));
+ const vw=W*skyScale,vh=H*skyScale,x=(W-vw)/2,y=(H-vh)/2;
+ svg.setAttribute('viewBox',`${x} ${y} ${vw} ${vh}`);
+ const wrap=root.querySelector('.rg-canvas-wrap');
+ wrap?.classList.toggle('rg-zoom-near',skyScale<=.82);
+ wrap?.classList.toggle('rg-zoom-far',skyScale>=1.14);
+}
+function installSkyControls(){
+ const wrap=root.querySelector('.rg-canvas-wrap');if(!wrap||wrap.querySelector('.rg-sky-controls'))return;
+ const controls=document.createElement('div');controls.className='rg-sky-controls';
+ controls.innerHTML=`<button type="button" data-sky-zoom="in" aria-label="Zoom in">＋</button><button type="button" data-sky-zoom="reset" aria-label="Reset zoom">◎</button><button type="button" data-sky-zoom="out" aria-label="Zoom out">−</button>`;
+ controls.addEventListener('click',e=>{const b=e.target.closest('[data-sky-zoom]');if(!b)return;const a=b.dataset.skyZoom;if(a==='in')setSkyView(skyScale-.14);else if(a==='out')setSkyView(skyScale+.14);else setSkyView(1)});
+ wrap.append(controls);
+ const key=document.createElement('div');key.className='rg-sky-key';
+ key.innerHTML=DATA.families.map(f=>`<span class="${'family-'+f.id}"><i></i>${esc(t({ar:f.ar,en:f.en,nl:f.nl,jv:f.jv,he:f.he}))}</span>`).join('');
+ wrap.append(key);
+}
+function renderGraph(){
+ setSkyView(1);svg.innerHTML='';
+ const bg=document.createElementNS('http://www.w3.org/2000/svg','g');bg.setAttribute('class','rg-sky-dust');
+ const eg=document.createElementNS('http://www.w3.org/2000/svg','g');eg.setAttribute('class','rg-constellations');
+ const ng=document.createElementNS('http://www.w3.org/2000/svg','g');ng.setAttribute('class','rg-stars');
+ svg.append(bg,eg,ng);addSkyDust(bg);
  DATA.edges.forEach((e,i)=>{const [a,b,type,conf]=e,p1=positions[a],p2=positions[b];if(!p1||!p2)return;const line=document.createElementNS('http://www.w3.org/2000/svg','line');line.setAttribute('x1',p1[0]);line.setAttribute('y1',p1[1]);line.setAttribute('x2',p2[0]);line.setAttribute('y2',p2[1]);line.setAttribute('class','rg-edge');line.dataset.a=a;line.dataset.b=b;line.dataset.type=type;line.dataset.confidence=conf;eg.append(line)});
- DATA.nodes.forEach(n=>{const p=positions[n.id];if(!p)return;const g=document.createElementNS('http://www.w3.org/2000/svg','g');g.setAttribute('class','rg-node');g.dataset.id=n.id;g.dataset.kind=n.kind;g.dataset.families=n.families?.join(',')||'';g.setAttribute('transform',`translate(${p[0]} ${p[1]})`);const r=n.kind==='hub'?42:n.kind==='time'?30:34;g.innerHTML=`<circle r="${r}"></circle><text y="-2">${esc(t(n.label))}</text><text class="sub" y="13">${esc(t(n.sub)||n.legacy||'')}</text>`;g.addEventListener('click',()=>openNode(n.id));ng.append(g)});
- applyFilter();}
+ DATA.nodes.forEach(n=>{
+  const p=positions[n.id];if(!p)return;
+  const g=document.createElementNS('http://www.w3.org/2000/svg','g');
+  const fc=familyClass(n),conf=n.confidence||'B',deg=degreeMap[n.id]||0;
+  g.setAttribute('class',`rg-node rg-star ${fc} conf-${conf}${majorIds.has(n.id)?' major':''}`);
+  g.dataset.id=n.id;g.dataset.kind=n.kind;g.dataset.families=n.families?.join(',')||'';g.dataset.confidence=conf;
+  g.setAttribute('transform',`translate(${p[0]} ${p[1]})`);
+  const r=n.kind==='hub'?13:n.kind==='time'?7:Math.min(11,4.8+deg*1.15);
+  const ray=Math.max(10,r*1.85);
+  g.innerHTML=`<circle class="star-halo" r="${(r*2.8).toFixed(1)}"></circle><circle class="star-glow" r="${(r*1.65).toFixed(1)}"></circle><circle class="star-core" r="${r.toFixed(1)}"></circle><path class="star-ray" d="M0 ${-ray}V${ray} M${-ray} 0H${ray}"></path><path class="star-ray star-ray-diag" d="M${(-ray*.62).toFixed(1)} ${(-ray*.62).toFixed(1)}L${(ray*.62).toFixed(1)} ${(ray*.62).toFixed(1)} M${(-ray*.62).toFixed(1)} ${(ray*.62).toFixed(1)}L${(ray*.62).toFixed(1)} ${(-ray*.62).toFixed(1)}"></path><text class="rg-star-label" y="${(-ray-8).toFixed(1)}">${esc(t(n.label))}</text><title>${esc(t(n.label))}${t(n.sub)?' — '+esc(t(n.sub)):''}</title>`;
+  g.addEventListener('click',()=>openNode(n.id));ng.append(g)
+ });
+ installSkyControls();applyFilter();
+}
 function esc(s){return String(s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
 let activeFamily='all',query='';
 function applyFilter(){document.querySelectorAll('.rg-node').forEach(el=>{const n=DATA.nodes.find(x=>x.id===el.dataset.id);const fam=activeFamily==='all'||n?.families?.includes(activeFamily)||(n?.kind==='hub'&&n?.id==='luxdot');const q=!query||[t(n?.label),t(n?.sub),t(n?.desc),n?.legacy,JSON.stringify(n?.taxonomy||{})].join(' ').toLowerCase().includes(query);el.classList.toggle('dim',!(fam&&q));});document.querySelectorAll('.rg-edge').forEach(el=>{const a=document.querySelector(`.rg-node[data-id="${el.dataset.a}"]`),b=document.querySelector(`.rg-node[data-id="${el.dataset.b}"]`);el.classList.toggle('dim',a?.classList.contains('dim')||b?.classList.contains('dim'));});}
