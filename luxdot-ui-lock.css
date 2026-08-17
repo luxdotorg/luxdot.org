@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap');
+/* LuxDot v4.3.44 — final typography/navigation lock. Loaded LAST on every page. */
+:root{--lux-kufi:"Noto Kufi Arabic",Tahoma,Arial,sans-serif}
+/* Header identity is intentionally stable in every language/page. */
+header.top,header.top *, .topin,.topin *, .nav,.nav *, .logo,.brand-luxdot,.r-logo,
+.luxdot-breadcrumb,.luxdot-breadcrumb *, .luxdot-page-actions,.luxdot-page-actions *{
+  font-family:var(--lux-kufi)!important;
+  font-style:normal!important;
+}
+/* Every Arabic UI state is Kufi, regardless of legacy inline/page CSS. */
+html[lang="ar"] body,html[lang="ar"] body *,
+html[data-lux-lang="ar"] body,html[data-lux-lang="ar"] body *,
+body[data-lang="ar"],body[data-lang="ar"] *,.rtl-core,.rtl-core *{
+  font-family:var(--lux-kufi)!important;
+}
+html[lang="ar"] input,html[lang="ar"] button,html[lang="ar"] select,html[lang="ar"] textarea,
+html[data-lux-lang="ar"] input,html[data-lux-lang="ar"] button,html[data-lux-lang="ar"] select,html[data-lux-lang="ar"] textarea,
+body[data-lang="ar"] input,body[data-lang="ar"] button,body[data-lang="ar"] select,body[data-lang="ar"] textarea{
+  font-family:var(--lux-kufi)!important;
+}
+/* Common Arabic fragments that can live inside multilingual pages before language bootstrap. */
+[lang="ar"],[dir="rtl"][lang="ar"],.ar,.arabic,.ar-text,.care-ar-name,.care-popup-ar,.memory-ar,.lux-ar{
+  font-family:var(--lux-kufi)!important;
+}
+body{scroll-padding-top:112px}
+header.top{position:sticky!important;top:0!important;z-index:2147483000!important;background:rgba(2,6,4,.92)!important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(126,255,173,.13)!important}
+header.top .topin{min-height:58px!important}
+header.top .nav{display:flex!important;align-items:center!important;gap:12px!important;flex-wrap:wrap!important}
+header.top .nav a{display:inline-flex!important;align-items:center!important;text-decoration:none!important}
+.luxdot-breadcrumb{position:sticky;top:58px;z-index:2147482999;display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:8px 16px;margin:0 auto;background:rgba(3,9,6,.94);border-bottom:1px solid rgba(210,177,91,.14);color:#bfd3c4;font-size:11px}
+.luxdot-breadcrumb a{color:#e8d28d;text-decoration:none}.luxdot-breadcrumb .sep{opacity:.44}
+.luxdot-page-actions{position:fixed;inset-inline-end:16px;bottom:16px;z-index:2147483001;display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.luxdot-page-actions button,.luxdot-page-actions a{appearance:none;border:1px solid rgba(210,177,91,.48)!important;border-radius:999px!important;background:rgba(4,12,8,.95)!important;color:#f4df9c!important;text-decoration:none!important;padding:10px 13px!important;font-size:11px!important;cursor:pointer!important;box-shadow:0 8px 28px rgba(0,0,0,.3)!important}
+.luxdot-page-actions button:hover,.luxdot-page-actions a:hover{background:rgba(210,177,91,.14)!important}
+@media(max-width:760px){header.top .nav{gap:7px!important;font-size:11px!important}.luxdot-page-actions{inset-inline:8px;bottom:8px}.luxdot-page-actions button,.luxdot-page-actions a{padding:8px 10px!important;font-size:10px!important}.luxdot-breadcrumb{top:58px;font-size:10px;padding:7px 10px}}
