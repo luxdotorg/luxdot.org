@@ -1,6 +1,6 @@
 window.LUXDOT_MEMORY_DB = {
   "meta": {
-    "version": "2026.08.17-memory-week-4.3.41",
+    "version": "2026.08.17-memory-repair-4.3.42",
     "range": "2026-07-10/2026-08-24",
     "principle": "الوثيقة أولاً، ثم التفسير. الدليل المضاد يبقى ظاهراً دائماً."
   },
@@ -115,8 +115,7 @@ window.LUXDOT_MEMORY_DB = {
       "sources": [
         {
           "label": "النصب الوطني لمعسكر فوخت — Westerweel",
-          "url": "https://www.nmkampvught.nl/ontdekken/het-verhaal/vermoord-in-vught/westerweel-johan-gerard/",
-      "page": "westerweel-memory.html?v=4.3.40"
+          "url": "https://www.nmkampvught.nl/ontdekken/het-verhaal/vermoord-in-vught/westerweel-johan-gerard/"
         },
         {
           "label": "ياد فاشيم — Westerweel",
@@ -129,7 +128,8 @@ window.LUXDOT_MEMORY_DB = {
           "url": "https://www.nmkampvught.nl/bezoeken/actueel/nieuws/2025/05/podcast-bevrijding-toen-en-nu/"
         }
       ],
-      "dossier": "الحارس الذي لم ينظر بعيداً — كان يوب فيسترفيل معلماً ومسالمًا ومقاوماً، وساعد لاجئين يهوداً وشباناً على الاختباء والهروب. في نقطة نور لا تكمن القيمة في صناعة بطل، بل في اختياره أن يجعل الحماية فعلاً عملياً عندما كان تجاهل الخطر أكثر أماناً. وتمنعنا رسائله من السجن من تحويل الشجاعة إلى أسطورة: حتى الشجاعة تبقى إنسانية."
+      "dossier": "الحارس الذي لم ينظر بعيداً — كان يوب فيسترفيل معلماً ومسالمًا ومقاوماً، وساعد لاجئين يهوداً وشباناً على الاختباء والهروب. في نقطة نور لا تكمن القيمة في صناعة بطل، بل في اختياره أن يجعل الحماية فعلاً عملياً عندما كان تجاهل الخطر أكثر أماناً. وتمنعنا رسائله من السجن من تحويل الشجاعة إلى أسطورة: حتى الشجاعة تبقى إنسانية.",
+      "page": "westerweel-memory.html?v=4.3.42"
     },
     {
       "id": "stazzema",
@@ -147,8 +147,7 @@ window.LUXDOT_MEMORY_DB = {
       "sources": [
         {
           "label": "الرابطة الوطنية للأنصار الإيطاليين — 82nd anniversary programme 2026",
-          "url": "https://www.anpi.it/82deg-anniversario-strage-santanna-di-stazzema",
-      "page": "stazzema-memory.html?v=4.3.40"
+          "url": "https://www.anpi.it/82deg-anniversario-strage-santanna-di-stazzema"
         },
         {
           "label": "أرشيف ذاكرة سانت آنا",
@@ -160,7 +159,8 @@ window.LUXDOT_MEMORY_DB = {
           "label": "Sant’Anna archive — testimony & film material",
           "url": "https://www.santannadistazzema.org/sezioni/la%20memoria/elenco_documenti.asp?Box_ID=1062&Sez_ID=75"
         }
-      ]
+      ],
+      "page": "stazzema-memory.html?v=4.3.42"
     },
     {
       "id": "deportation",
@@ -176,15 +176,15 @@ window.LUXDOT_MEMORY_DB = {
       "sources": [
         {
           "label": "USHMM — 1942 key dates",
-          "url": "https://encyclopedia.ushmm.org/content/en/article/1942-key-dates",
-      "page": "deportation-memory.html?v=4.3.40"
+          "url": "https://encyclopedia.ushmm.org/content/en/article/1942-key-dates"
         },
         {
           "label": "USHMM — Days of Remembrance in Rymanów",
           "url": "https://www.ushmm.org/remember/holocaust-reflections-testimonies/echoes-of-memory/days-of-remembrance-in-rymanow"
         }
       ],
-      "media": []
+      "media": [],
+      "page": "deportation-memory.html?v=4.3.42"
     },
     {
       "id": "kolbe",
@@ -233,8 +233,7 @@ window.LUXDOT_MEMORY_DB = {
         {
           "label": "Arjati — Breda 2026 programme",
           "url": "https://arjati.nl/2026/08/01/indie-herdenking-15-augustus-2026/",
-      "image": "assets/images/memory/raffy-indies-commemoration.jpg",
-      "page": "indies-memory.html?v=4.3.40"
+          "image": "assets/images/memory/raffy-indies-commemoration.jpg"
         },
         {
           "label": "National 15 August foundation — Breda 2026",
@@ -249,7 +248,8 @@ window.LUXDOT_MEMORY_DB = {
           "url": "https://15augustus1945.nl/herdenkingen-en-monumenten/herdenking-breda/"
         }
       ],
-      "media": []
+      "media": [],
+      "page": "indies-memory.html?v=4.3.42"
     },
     {
       "id": "roger-bialystok",
@@ -265,8 +265,7 @@ window.LUXDOT_MEMORY_DB = {
       "sources": [
         {
           "label": "Taizé — Brother Roger",
-          "url": "https://www.taize.fr/en/brother-roger",
-      "page": "brother-roger-memory.html?v=4.3.40"
+          "url": "https://www.taize.fr/en/brother-roger"
         },
         {
           "label": "ياد فاشيم — armed resistance in Białystok",
@@ -282,7 +281,8 @@ window.LUXDOT_MEMORY_DB = {
           "label": "Taizé — Brother Roger unfinished letter",
           "url": "https://archives.taize.fr/en_article2964.html"
         }
-      ]
+      ],
+      "page": "brother-roger-memory.html?v=4.3.42"
     },
     {
       "id": "name-truth",
@@ -298,15 +298,137 @@ window.LUXDOT_MEMORY_DB = {
       "sources": [
         {
           "label": "USHMM — Law on alteration of names",
-          "url": "https://encyclopedia.ushmm.org/content/en/timeline-event/holocaust/1933-1938/law-on-alteration-of-family-and-personal-names",
-      "page": "name-truth-memory.html?v=4.3.40"
+          "url": "https://encyclopedia.ushmm.org/content/en/timeline-event/holocaust/1933-1938/law-on-alteration-of-family-and-personal-names"
         },
         {
           "label": "USHMM — The Times, 17 August 1921",
           "url": "https://encyclopedia.ushmm.org/content/en/gallery/the-times-august-17-1921"
         }
       ],
-      "media": []
+      "media": [],
+      "page": "name-truth-memory.html?v=4.3.42"
+    },
+    {
+      "id": "denhaag-deportation",
+      "date": "2026-08-18",
+      "theme": "ترحيل • بيروقراطية",
+      "title": "18 أغسطس — بداية الترحيل الجماعي من لاهاي",
+      "place": "لاهاي → فيستربورك",
+      "status": "documented",
+      "summary": "في 18 أغسطس 1942 بدأ نقل جماعي لليهود من لاهاي إلى فيستربورك. تحفظ العقدة سلسلة الاسم والعنوان والأمر والمحطة والمعسكر.",
+      "question": "كيف تتحول بنية مدنية عادية إلى جزء من آلة اضطهاد؟",
+      "page": "denhaag-deportation-memory.html?v=4.3.42",
+      "sources": [
+        {
+          "label": "Joods Erfgoed Den Haag",
+          "url": "https://www.joodserfgoeddenhaag.nl/75-jaar-geleden-augustus-1942-razzias-en-deportaties-in-den-haag/"
+        }
+      ]
+    },
+    {
+      "id": "humanitarian-day",
+      "date": "2026-08-19",
+      "theme": "رعاية • عاملون إنسانيون",
+      "title": "19 أغسطس — الذين يساعدون تحت الخطر",
+      "place": "بغداد • العراق",
+      "status": "documented",
+      "summary": "ذكرى تفجير فندق القناة سنة 2003 ومقتل 22 من العاملين الإنسانيين، ومنها ارتبط 19 أغسطس باليوم العالمي للعمل الإنساني.",
+      "question": "من يحمي الذين يحمون الآخرين؟",
+      "page": "humanitarian-day-memory.html?v=4.3.42",
+      "sources": [
+        {
+          "label": "United Nations — World Humanitarian Day",
+          "url": "https://www.un.org/en/observances/humanitarian-day"
+        }
+      ]
+    },
+    {
+      "id": "saint-genis",
+      "date": "2026-08-20",
+      "theme": "مدنيون • أسرى • حرب",
+      "title": "20 أغسطس — سان جيني لافال",
+      "place": "سان جيني لافال • فرنسا",
+      "status": "documented",
+      "summary": "في الأيام الأخيرة للاحتلال قرب ليون قُتل سجناء من مونلوك في حصن كوت لوريت. تحفظ العقدة عنف الأيام الأخيرة قبل التحرير.",
+      "question": "لماذا قد يزداد خطر الأسرى حتى عندما يصبح التحرير قريباً؟",
+      "page": "saint-genis-memory.html?v=4.3.42",
+      "sources": []
+    },
+    {
+      "id": "ghouta-chemical",
+      "date": "2026-08-21",
+      "theme": "سوريا • مدنيون • أسلحة كيميائية",
+      "title": "21 أغسطس — الغوطة: ذاكرة السارين",
+      "place": "الغوطة • دمشق • سوريا",
+      "lat": 33.52,
+      "lon": 36.4,
+      "status": "documented",
+      "summary": "في 21 أغسطس 2013 استُخدم السارين على نطاق واسع في مناطق مأهولة من الغوطة. تفصل العقدة بين إثبات الاستخدام، تحليل المسؤولية، اختلاف أعداد الضحايا، والتوثيق والعدالة.",
+      "question": "كيف نحفظ الضحايا والأدلة معاً من دون تحويل المجزرة إلى رقم أو جدل مجرد؟",
+      "page": "ghouta-chemical-memory.html?v=4.3.42",
+      "sources": [
+        {
+          "label": "United Nations Mission report",
+          "url": "https://digitallibrary.un.org/record/756814?ln=ar"
+        },
+        {
+          "label": "Human Rights Watch — Attacks on Ghouta",
+          "url": "https://www.hrw.org/report/2013/09/10/attacks-ghouta/analysis-alleged-use-chemical-weapons-syria"
+        }
+      ]
+    },
+    {
+      "id": "belief-violence",
+      "date": "2026-08-22",
+      "theme": "حرية المعتقد • ضحايا",
+      "title": "22 أغسطس — ضحايا العنف بسبب الدين أو المعتقد",
+      "place": "ذاكرة عالمية",
+      "status": "documented",
+      "summary": "يوم دولي لحفظ ذاكرة من استُهدفوا بسبب دينهم أو معتقدهم، وربطه بحماية الإنسان وأماكن العبادة والتعدد.",
+      "question": "كيف يصبح اختلاف المعتقد سبباً للحماية المتبادلة لا للاستهداف؟",
+      "page": "belief-violence-memory.html?v=4.3.42",
+      "sources": [
+        {
+          "label": "United Nations — 22 August",
+          "url": "https://www.un.org/en/observances/religious-based-violence-victims-day"
+        }
+      ]
+    },
+    {
+      "id": "totalitarian-victims",
+      "date": "2026-08-23",
+      "theme": "سلطة • ضحايا • حدود",
+      "title": "23 أغسطس — ضحايا الأنظمة الشمولية والاستبدادية",
+      "place": "أوروبا",
+      "status": "documented",
+      "summary": "ذاكرة أوروبية لضحايا الأنظمة الشمولية والاستبدادية مرتبطة بتاريخ 23 أغسطس 1939، مع إبقاء قصص البشر في المركز.",
+      "question": "كيف ندين القمع بمعيار كرامة الإنسان من دون تسطيح اختلاف السياقات التاريخية؟",
+      "page": "totalitarian-victims-memory.html?v=4.3.42",
+      "sources": [
+        {
+          "label": "European Parliament — 23 August",
+          "url": "https://www.europarl.europa.eu/thinktank/en/document/EPRS_ATA%282022%29733610"
+        }
+      ]
+    },
+    {
+      "id": "st-bartholomew",
+      "date": "2026-08-24",
+      "theme": "حروب دينية • مدنيون",
+      "title": "24 أغسطس — مجزرة سان بارتيليمي",
+      "place": "باريس • فرنسا",
+      "lat": 48.8566,
+      "lon": 2.3522,
+      "status": "documented",
+      "summary": "في 24 أغسطس 1572 انفجرت موجة قتل واسعة للهوغونوت في باريس ثم امتدت إلى مدن أخرى. ترتبط العقدة بالحروب الدينية وبأورانيه والأراضي المنخفضة.",
+      "question": "متى تتحول الهوية الدينية والسياسة والخوف إلى إذن بقتل الجار؟",
+      "page": "st-bartholomew-memory.html?v=4.3.42",
+      "sources": [
+        {
+          "label": "Musée protestant — Saint Bartholomew’s Day",
+          "url": "https://museeprotestant.org/en/notice/st-bartholomews-day-24th-august-1572/"
+        }
+      ]
     }
   ],
   "field": [
@@ -363,69 +485,6 @@ window.LUXDOT_MEMORY_DB = {
       "kind": "official",
       "address": "Thaliaplein, 4611 MK Bergen op Zoom",
       "note": "Regional commemoration with four generations’ stories, music and nasi bungkus gathering."
-    },
-    {
-      "id": "denhaag-deportation",
-      "date": "2026-08-18",
-      "type": "event",
-      "status": "confirmed",
-      "title": {"ar":"18 أغسطس — بداية الترحيل الجماعي من لاهاي","en":"18 أغسطس — بداية الترحيل الجماعي من لاهاي","nl":"18 أغسطس — بداية الترحيل الجماعي من لاهاي"},
-      "summary": {"ar":"ملف ذاكرة حية موثق مع سياق ومصادر وأسئلة بحثية.","en":"A sourced Living Memory dossier with context and research questions.","nl":"Een gedocumenteerd dossier met context en onderzoeksvragen."},
-      "page": "denhaag-deportation-memory.html?v=4.3.41"
-    },
-    {
-      "id": "humanitarian-day",
-      "date": "2026-08-19",
-      "type": "event",
-      "status": "confirmed",
-      "title": {"ar":"19 أغسطس — الذين يساعدون تحت الخطر","en":"19 أغسطس — الذين يساعدون تحت الخطر","nl":"19 أغسطس — الذين يساعدون تحت الخطر"},
-      "summary": {"ar":"ملف ذاكرة حية موثق مع سياق ومصادر وأسئلة بحثية.","en":"A sourced Living Memory dossier with context and research questions.","nl":"Een gedocumenteerd dossier met context en onderzoeksvragen."},
-      "page": "humanitarian-day-memory.html?v=4.3.41"
-    },
-    {
-      "id": "saint-genis",
-      "date": "2026-08-20",
-      "type": "event",
-      "status": "confirmed",
-      "title": {"ar":"20 أغسطس — سان جيني لافال: السجناء قبل التحرير","en":"20 أغسطس — سان جيني لافال: السجناء قبل التحرير","nl":"20 أغسطس — سان جيني لافال: السجناء قبل التحرير"},
-      "summary": {"ar":"ملف ذاكرة حية موثق مع سياق ومصادر وأسئلة بحثية.","en":"A sourced Living Memory dossier with context and research questions.","nl":"Een gedocumenteerd dossier met context en onderzoeksvragen."},
-      "page": "saint-genis-memory.html?v=4.3.41"
-    },
-    {
-      "id": "ghouta-chemical",
-      "date": "2026-08-21",
-      "type": "event",
-      "status": "confirmed",
-      "title": {"ar":"21 أغسطس — الغوطة: ذاكرة السارين","en":"21 أغسطس — الغوطة: ذاكرة السارين","nl":"21 أغسطس — الغوطة: ذاكرة السارين"},
-      "summary": {"ar":"ملف ذاكرة حية موثق مع سياق ومصادر وأسئلة بحثية.","en":"A sourced Living Memory dossier with context and research questions.","nl":"Een gedocumenteerd dossier met context en onderzoeksvragen."},
-      "page": "ghouta-chemical-memory.html?v=4.3.41"
-    },
-    {
-      "id": "belief-violence",
-      "date": "2026-08-22",
-      "type": "event",
-      "status": "confirmed",
-      "title": {"ar":"22 أغسطس — ضحايا العنف بسبب الدين أو المعتقد","en":"22 أغسطس — ضحايا العنف بسبب الدين أو المعتقد","nl":"22 أغسطس — ضحايا العنف بسبب الدين أو المعتقد"},
-      "summary": {"ar":"ملف ذاكرة حية موثق مع سياق ومصادر وأسئلة بحثية.","en":"A sourced Living Memory dossier with context and research questions.","nl":"Een gedocumenteerd dossier met context en onderzoeksvragen."},
-      "page": "belief-violence-memory.html?v=4.3.41"
-    },
-    {
-      "id": "totalitarian-victims",
-      "date": "2026-08-23",
-      "type": "event",
-      "status": "confirmed",
-      "title": {"ar":"23 أغسطس — ضحايا الأنظمة الشمولية والاستبدادية","en":"23 أغسطس — ضحايا الأنظمة الشمولية والاستبدادية","nl":"23 أغسطس — ضحايا الأنظمة الشمولية والاستبدادية"},
-      "summary": {"ar":"ملف ذاكرة حية موثق مع سياق ومصادر وأسئلة بحثية.","en":"A sourced Living Memory dossier with context and research questions.","nl":"Een gedocumenteerd dossier met context en onderzoeksvragen."},
-      "page": "totalitarian-victims-memory.html?v=4.3.41"
-    },
-    {
-      "id": "st-bartholomew",
-      "date": "2026-08-24",
-      "type": "event",
-      "status": "confirmed",
-      "title": {"ar":"24 أغسطس — سان بارتيليمي: حين صار الجار هدفاً","en":"24 أغسطس — سان بارتيليمي: حين صار الجار هدفاً","nl":"24 أغسطس — سان بارتيليمي: حين صار الجار هدفاً"},
-      "summary": {"ar":"ملف ذاكرة حية موثق مع سياق ومصادر وأسئلة بحثية.","en":"A sourced Living Memory dossier with context and research questions.","nl":"Een gedocumenteerd dossier met context en onderzoeksvragen."},
-      "page": "st-bartholomew-memory.html?v=4.3.41"
     }
   ]
 };
