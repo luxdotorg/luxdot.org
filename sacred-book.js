@@ -19,24 +19,13 @@ function markOpen(url){try{sessionStorage.setItem('luxdot.book.open',new URL(url
 function shouldAutoOpen(){try{const p=sessionStorage.getItem('luxdot.book.open');if(p&&p===location.pathname){sessionStorage.removeItem('luxdot.book.open');return true}}catch(e){}return new URLSearchParams(location.search).get('open')==='1'}
 
 document.addEventListener('DOMContentLoaded',()=>{
- document.querySelectorAll('[data-book-link]').forEach(link=>{
-   link.addEventListener('click',e=>{
-     if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
-     const href=link.getAttribute('href');if(!href)return;e.preventDefault();
-     ctx();playChime(toneOf(link));link.classList.add('is-taking');markOpen(href);
-     const ov=document.createElement('div');ov.className='lux-book-flight';
-     const clone=link.cloneNode(true);clone.removeAttribute('href');clone.classList.add('lux-book-flight-object');clone.querySelectorAll('[id]').forEach(x=>x.removeAttribute('id'));ov.appendChild(clone);document.body.appendChild(ov);
-     requestAnimationFrame(()=>requestAnimationFrame(()=>ov.classList.add('on')));
-     setTimeout(()=>{ov.classList.add('opening');photonFrom(clone)},720);
-     setTimeout(()=>location.href=href,2000);
-   });
- });
+ document.querySelectorAll('[data-book-link]').forEach(link=>{link.addEventListener('click',e=>{if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;const href=link.getAttribute('href');if(!href)return;e.preventDefault();markOpen(href);location.href=href})});
  const opener=document.querySelector('[data-open-sacred]'),stage=document.querySelector('[data-sacred-stage]'),reader=document.querySelector('[data-sacred-reader]'),closer=document.querySelector('[data-close-sacred]');
  const profile=toneOf(opener?.querySelector('.book-object')||opener);
  function openBook(withFx=true){if(!stage||!reader)return;if(stage.classList.contains('is-open'))return;ctx();if(withFx){playChime(profile);photonFrom(opener?.querySelector('.book-object')||opener)}stage.classList.add('is-open');reader.setAttribute('aria-hidden','false');setTimeout(()=>document.dispatchEvent(new CustomEvent('bookopened')),300)}
  function closeBook(){if(!stage||!reader)return;window.LuxDotStopAllAudio?.();stage.classList.remove('is-open');reader.setAttribute('aria-hidden','true');opener?.focus({preventScroll:true})}
  opener?.addEventListener('click',()=>openBook(true));closer?.addEventListener('click',closeBook);
- if(opener&&shouldAutoOpen())setTimeout(()=>openBook(true),260);
+ if(opener)setTimeout(()=>openBook(false),0);
 });
 window.LuxDotSacred={playChime,photonFrom};
 })();

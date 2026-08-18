@@ -49,3 +49,13 @@ html[lang="ar"] .gate,html[lang="ar"] .gate p,html[lang="ar"] .enter{font-family
 .micro{margin-top:16px;font-size:clamp(10px,1vw,14px);line-height:1.45;letter-spacing:.13em;color:rgba(203,235,214,.62);font-weight:600}
 .gate p{font-size:clamp(14px,1.5vw,19px);line-height:1.55;max-width:760px}
 @media(max-width:700px){.langpick{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:min(360px,92vw)}.langpick button{width:100%;min-width:0}.langpick button:last-child{grid-column:1/-1}.enter{font-size:14px;padding:16px 22px}.micro{display:block;font-size:10px}.gate{padding:18px}.mark{margin-bottom:18px}}
+
+/* v4.3.63 landing language stack and belief constellation */
+.langpick{display:grid!important;grid-template-columns:1fr!important;gap:7px!important;width:min(250px,78vw)!important;max-width:250px!important;margin:28px auto 0!important;direction:ltr!important}
+.langpick button{width:100%!important;min-width:0!important;min-height:42px!important;padding:9px 15px!important;font-size:14px!important}
+.langpick button[data-lang="ar"],.langpick button[data-lang="he"]{direction:rtl!important}
+.belief-stars{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.belief-star{position:absolute;color:rgba(94,255,143,.08);font-family:"Noto Kufi Arabic",Arial,sans-serif;font-size:clamp(18px,2.2vw,34px);text-shadow:0 0 5px rgba(57,255,118,.0);opacity:.05;animation:beliefTwinkle var(--dur,7s) ease-in-out infinite;animation-delay:var(--delay,0s);transform:translate(-50%,-50%) scale(.86)}
+@keyframes beliefTwinkle{0%,68%,100%{opacity:.035;filter:blur(.1px);text-shadow:0 0 2px rgba(57,255,118,0)}76%{opacity:.72;color:rgba(113,255,159,.82);text-shadow:0 0 12px rgba(57,255,118,.65),0 0 30px rgba(57,255,118,.24);transform:translate(-50%,-50%) scale(1.06)}84%{opacity:.14}}
+.gate{z-index:4!important}.sig-status,.sound{z-index:7!important}
+@media(max-width:700px){.langpick{width:min(230px,78vw)!important}.langpick button:last-child{grid-column:auto!important}.gate{padding-top:22px!important}.langpick{margin-top:22px!important}}

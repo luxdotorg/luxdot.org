@@ -12,8 +12,10 @@ function htmlText(txt,q=''){
  return h;
 }
 function showText(txt,title='النص الكامل',q=''){
- displayText=txt; $('#sectionTitle').textContent=title; $('#hikmaBody').innerHTML=htmlText(txt,q); $('#hikmaBody').hidden=false; $('#hikmaLoading').hidden=true; $('#hikmaBody').scrollTop=0;
- $('#textMode').click();
+ displayText=txt; $('#sectionTitle').textContent=title;
+ const chunks=txt.split(/\n\s*\n+/).map(x=>x.trim()).filter(Boolean);
+ $('#hikmaBody').innerHTML=chunks.map(x=>`<div class="hikma-paragraph">${htmlText(x,q)}</div>`).join('');
+ $('#hikmaBody').hidden=false; $('#hikmaLoading').hidden=true; $('#hikmaBody').scrollTop=0; $('#textMode').click(); bindParagraphObserver();
 }
 function contextAt(i,len=6200){const a=Math.max(0,i-700),b=Math.min(raw.length,i+len);return raw.slice(a,b)}
 function jump(term){if(!raw)return;const i=raw.indexOf(term);if(i<0){$('#hikmaStatus').textContent=`لم أعثر آلياً على «${term}» في OCR. جرّب البحث بصيغة أقصر.`;return}showText(contextAt(i),term,term);$('#hikmaStatus').textContent=`موضع تقريبي داخل OCR حول «${term}».`}
@@ -22,8 +24,10 @@ function buildAutoIndex(){const dest=$('#autoIndex');dest.innerHTML='';let lines
  items.slice(0,111).forEach(it=>{let b=document.createElement('button');b.textContent=it.t;b.onclick=()=>{let pos=raw.indexOf(lines[it.i]);if(pos>=0)showText(contextAt(pos),it.t)};dest.appendChild(b)});
  if(!dest.children.length)dest.textContent='تعذر بناء الفهرس الآلي من OCR؛ يبقى البحث والنص الكامل متاحين.';
 }
+let hikmaObs=null;
+function bindParagraphObserver(){if(hikmaObs)hikmaObs.disconnect();if(!('IntersectionObserver' in window))return;const ps=[...document.querySelectorAll('.hikma-paragraph')];hikmaObs=new IntersectionObserver(es=>{const v=es.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(!v)return;ps.forEach(p=>p.classList.remove('current'));v.target.classList.add('current')},{root:null,rootMargin:'-30% 0px -45% 0px',threshold:[.1,.35,.6]});ps.forEach(p=>hikmaObs.observe(p))}
 async function load(){if(raw)return;$('#hikmaLoading').hidden=false;try{let r=await fetch(DOWNLOAD,{mode:'cors'});if(!r.ok)throw new Error('HTTP '+r.status);raw=clean(await r.text());if(raw.length<50000)throw new Error('short text');$('#hikmaStatus').textContent=`تم تحميل النص: ${(raw.length/1000000).toFixed(1)} مليون محرف تقريباً. الفهرس آلي وقد يتأثر بأخطاء OCR.`;buildAutoIndex();showText(raw.slice(0,90000),'بداية النسخة الرقمية');}catch(e){raw='';$('#hikmaLoading').hidden=true;$('#hikmaBody').hidden=false;$('#hikmaBody').innerHTML='<div class="hikma-note"><strong>تعذر تحميل طبقة OCR مباشرة من المتصفح.</strong><br>يمكنك استخدام تبويب «المصوّرة الأصلية» لقراءة الكتاب كاملاً من Internet Archive. عند توفر الاتصال المتوافق سيعمل النص والبحث تلقائياً.</div>';$('#hikmaStatus').textContent='طبقة OCR غير متاحة حالياً؛ المصوّرة الأصلية متاحة.';}}
-$('#openReader').addEventListener('click',async()=>{$('#reader').hidden=false;$('#reader').scrollIntoView({behavior:'smooth',block:'start'});await load()});
+async function openReader(scroll=true){$('#reader').hidden=false;if(scroll)$('#reader').scrollIntoView({behavior:'smooth',block:'start'});await load()} $('#openReader').addEventListener('click',()=>openReader(true)); setTimeout(()=>openReader(false),0);
 $('#hikmaSearch').addEventListener('input',e=>search(e.target.value));document.querySelectorAll('[data-jump]').forEach(b=>b.onclick=()=>jump(b.dataset.jump));
 $('#textMode').onclick=()=>{$('#textMode').classList.add('active');$('#scanMode').classList.remove('active');$('#hikmaScan').style.display='none';$('#hikmaBody').style.display='block';$('#hikmaLoading').style.display='none'};
 $('#scanMode').onclick=()=>{$('#scanMode').classList.add('active');$('#textMode').classList.remove('active');$('#hikmaBody').style.display='none';$('#hikmaLoading').style.display='none';let f=$('#hikmaScan');if(!f.src)f.src=EMBED;f.style.display='block'};

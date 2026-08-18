@@ -28,23 +28,22 @@ function apply(){const l=current(),u=UI[l];const actual=(window.LuxLang&&window.
  document.getElementById('sourceLink').href=D.sourceUrl||'#';
  document.querySelectorAll('[data-lang-select]').forEach(s=>s.value=l)
 }
-let speaking=false,autoTimer=null;
+let speaking=false,autoTimer=null,sequenceToken=0;
+function clearReading(){document.querySelectorAll('.reader-section').forEach(x=>x.classList.remove('current','is-reading'))}
+function highlight(i){clearReading();const el=document.querySelectorAll('.reader-section')[i];if(el){el.classList.add('current','is-reading');el.scrollIntoView({behavior:'smooth',block:'center'})}}
 function speak(){
  const b=document.getElementById('listenButton');
  if(!('speechSynthesis' in window)){if(b)b.textContent=current()==='ar'?'الصوت غير متاح':'Audio unavailable';return}
  const l=current(),ui=UI[l];
- if(speaking||speechSynthesis.speaking){speechSynthesis.cancel();speaking=false;if(b)b.textContent=ui.listen;return}
- speechSynthesis.cancel();
- const all=[t(D.title,l),t(D.intro,l),...(D.sections||[]).flatMap(s=>[t(s.heading,l),t(s.meaning,l),t(s.context,l)])].filter(Boolean).join('. ');
- if(!all.trim())return;
- const u=new SpeechSynthesisUtterance(all);u.lang={ar:'ar-SA',en:'en-US',nl:'nl-NL',id:'id-ID'}[l];u.rate=.88;
- u.onstart=()=>{speaking=true;if(b)b.textContent=ui.stop};
- const done=()=>{speaking=false;if(b)b.textContent=ui.listen};u.onend=done;u.onerror=done;
- speechSynthesis.speak(u)
+ if(speaking||speechSynthesis.speaking){sequenceToken++;speechSynthesis.cancel();speaking=false;clearReading();if(b)b.textContent=ui.listen;return}
+ const chunks=(D.sections||[]).map(s=>[t(s.heading,l),t(s.meaning,l),t(s.context,l)].filter(Boolean).join('. ')).filter(Boolean);
+ if(!chunks.length)return; speaking=true;sequenceToken++;const token=sequenceToken;if(b)b.textContent=ui.stop;
+ const next=i=>{if(token!==sequenceToken)return;if(i>=chunks.length){speaking=false;clearReading();if(b)b.textContent=ui.listen;return}highlight(i);const u=new SpeechSynthesisUtterance(chunks[i]);u.lang={ar:'ar-SA',en:'en-US',nl:'nl-NL',id:'id-ID'}[l];u.rate=.88;u.onend=()=>next(i+1);u.onerror=()=>next(i+1);speechSynthesis.speak(u)};next(0)
 }
 function scheduleAuto(){clearTimeout(autoTimer);autoTimer=setTimeout(()=>{if(!document.hidden&&!speaking&&!(window.speechSynthesis&&speechSynthesis.speaking))speak()},3000)}
-document.addEventListener('DOMContentLoaded',()=>{apply();document.getElementById('originalToggle')?.addEventListener('click',()=>{document.body.classList.toggle('show-original');apply()});document.getElementById('listenButton')?.addEventListener('click',speak);document.getElementById('stopButton')?.addEventListener('click',()=>{try{speechSynthesis.cancel()}catch{};speaking=false;apply()});document.querySelectorAll('[data-lang-select]').forEach(s=>s.addEventListener('change',e=>{localStorage.setItem('luxdot.lang',e.target.value);apply()}));scheduleAuto()});
+function bindViewportHighlight(){if(!('IntersectionObserver' in window))return;const els=[...document.querySelectorAll('.reader-section')];const obs=new IntersectionObserver(entries=>{if(speaking)return;const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(visible){clearReading();visible.target.classList.add('current')}},{rootMargin:'-28% 0px -48% 0px',threshold:[.15,.35,.6]});els.forEach(e=>obs.observe(e))}
+document.addEventListener('DOMContentLoaded',()=>{apply();setTimeout(bindViewportHighlight,80);document.getElementById('originalToggle')?.addEventListener('click',()=>{document.body.classList.toggle('show-original');apply()});document.getElementById('listenButton')?.addEventListener('click',speak);document.getElementById('stopButton')?.addEventListener('click',()=>{sequenceToken++;try{speechSynthesis.cancel()}catch{};speaking=false;clearReading();apply()});document.querySelectorAll('[data-lang-select]').forEach(s=>s.addEventListener('change',e=>{localStorage.setItem('luxdot.lang',e.target.value);apply()}));scheduleAuto()});
 document.addEventListener('bookopened',scheduleAuto);
-document.addEventListener('luxdot:stop-audio',()=>{clearTimeout(autoTimer);try{speechSynthesis.cancel()}catch{};speaking=false;apply()});
+document.addEventListener('luxdot:stop-audio',()=>{clearTimeout(autoTimer);sequenceToken++;try{speechSynthesis.cancel()}catch{};speaking=false;clearReading();apply()});
 document.addEventListener('luxlang',apply);
 })();
