@@ -1,5 +1,5 @@
 (()=>{'use strict';
-const SUP=['ar','en','nl','jv','he'];
+const SUP=['ar','en','nl'];
 const DIR={ar:'rtl',en:'ltr',nl:'ltr',jv:'ltr',he:'rtl'};
 const NAME={ar:'العربية',en:'English',nl:'Nederlands',jv:'Basa Jawa',he:'עברית'};
 const BRAND={ar:'نقطة نور',en:'LuxDot',nl:'LuxDot',jv:'LuxDot',he:'LuxDot'};

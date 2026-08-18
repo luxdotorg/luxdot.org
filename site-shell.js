@@ -21,7 +21,7 @@
   const nav=h.querySelector('.nav');
   const defs=[['home.html','home'],['library.html','library'],['faith.html','faith'],['nusantara.html','nusantara'],['memory.html','memory'],['research.html','research'],['projects.html','projects']];
   defs.forEach(([href,key])=>{const a=d.createElement('a');a.href=withLang(href);a.textContent=t[key];if(file()===href)a.classList.add('active');nav.appendChild(a)});
-  const s=d.createElement('select');s.className='lang lang-select';s.setAttribute('data-lang-select','');s.setAttribute('aria-label',t.language);s.innerHTML='<option value="ar">العربية</option><option value="en">English</option><option value="nl">Nederlands</option><option value="jv">Basa Jawa</option><option value="he">עברית</option>';s.value=lang();
+  const s=d.createElement('select');s.className='lang lang-select';s.setAttribute('data-lang-select','');s.setAttribute('aria-label',t.language);s.innerHTML='<option value="ar">العربية</option><option value="en">English</option><option value="nl">Nederlands</option>';s.value=lang();
   s.addEventListener('change',e=>{ if(window.LuxLang?.navigate) LuxLang.navigate(e.target.value); else {localStorage.setItem('luxdot.lang',e.target.value);const u=new URL(location.href);u.searchParams.set('lang',e.target.value);location.assign(u.pathname+u.search+u.hash)} });nav.appendChild(s);
   requestAnimationFrame(()=>d.documentElement.style.setProperty('--lux-header-h',Math.ceil(h.getBoundingClientRect().height)+'px'));
  }
