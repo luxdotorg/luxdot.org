@@ -9,3 +9,5 @@ html[dir="rtl"] .reader-kicker{letter-spacing:.04em;text-transform:none}
 .reader-hero,.reader-section{background:linear-gradient(160deg,#07120c,#030906);border-color:#27583a}
 .reader-title,.reader-meaning{color:#f2fff6!important;opacity:1!important}.reader-deck{color:#e1eee5!important}.reader-context{color:#bed0c3!important}.reader-note{color:#c4d7c9!important}
 .original-panel{background:#07110b;border-color:#397c51}.original-text{color:#f5fff8!important;opacity:1!important;text-shadow:0 0 12px rgba(116,255,164,.08)}
+
+.full-source-panel{margin:28px 0;padding:22px;border:1px solid rgba(160,220,170,.28);border-radius:20px;background:rgba(5,20,10,.72)}.full-source-panel h2{margin-top:0}.full-source-open{font-weight:700}
