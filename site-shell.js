@@ -2,6 +2,7 @@
 (function(){
  'use strict';
  const d=document;
+ const SHELL_BASE=(()=>{try{const src=d.currentScript?.src||[...d.scripts].find(x=>/site-shell\.js(?:\?|$)/.test(x.src))?.src;return src?new URL('.',src):new URL('./',location.href)}catch(_){return new URL('./',location.href)}})();
  const file=()=>location.pathname.split('/').pop().toLowerCase()||'index.html';
  if(file()==='index.html') return;
  const lang=()=>((d.documentElement.dataset.luxLang||d.documentElement.lang||'en').toLowerCase());
@@ -13,7 +14,7 @@
   he:{home:'ראשי',library:'ספרייה',faith:'אמונה וחכמה',nusantara:'נוסנטרה',memory:'זיכרון',research:'מחקר',projects:'פרויקטים',language:'שפה',back:'אחורה',forward:'קדימה'}
  };
  const txt=()=>T[lang()]||T.en;
- const withLang=(href)=>{const u=new URL(href,location.href),q=new URLSearchParams(location.search).get('lang');if(q)u.searchParams.set('lang',q);return u.pathname.split('/').pop()+u.search+u.hash};
+ const withLang=(href)=>{const u=new URL(href,SHELL_BASE),q=new URLSearchParams(location.search).get('lang');if(q)u.searchParams.set('lang',q);return u.pathname+u.search+u.hash};
  function header(){
   let h=d.querySelector('header.top'); if(!h){h=d.createElement('header');h.className='top';d.body.prepend(h)}
   const t=txt();
