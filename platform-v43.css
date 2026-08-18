@@ -11,7 +11,7 @@ html[lang="he"] body{direction:rtl}html[lang="en"] body,html[lang="nl"] body,htm
 @media(pointer:coarse){a,button,select,input{min-height:44px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
 
-.lux-lang-pending{visibility:hidden}.lux-lang-pending.lux-lang-ready{visibility:visible}
+.lux-lang-pending{visibility:visible}.lux-lang-pending.lux-lang-ready{visibility:visible}
 
 /* v4.3.5 home parity: Arabic master behavior across every locale */
 .home-arrival .cards .card{position:relative;cursor:pointer;padding-inline-start:82px!important;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}
