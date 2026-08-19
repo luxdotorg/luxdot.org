@@ -19,7 +19,7 @@
  }
  function localeBlocks(l){
   const bs=[...document.querySelectorAll('[data-locale]')];if(!bs.length)return false;
-  bs.forEach(b=>b.hidden=true);let hit=bs.find(b=>b.dataset.locale===l)||bs.find(b=>b.dataset.locale==='en');if(hit)hit.hidden=false;
+  bs.forEach(b=>b.hidden=true);let hit=bs.find(b=>b.dataset.locale===l)||bs.find(b=>b.dataset.locale==='en');if(hit){hit.hidden=false;const h=hit.querySelector('h1');if(h&&h.textContent.trim())document.title=h.textContent.trim()+' · LuxDot'}
   return !!hit;
  }
  function notice(l){
