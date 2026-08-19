@@ -358,6 +358,7 @@ window.LUXDOT_MEMORY_DB = {
     },
     {
       "id": "ghouta-chemical",
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Syria%20-%20Damascus%20Areas%20of%20Influence%20and%20Areas%20Reportedly%20Affected%20by%2021%20August%20Chemical%20Attack.jpg",
       "date": "2026-08-21",
       "theme": "سوريا • مدنيون • أسلحة كيميائية",
       "title": "21 أغسطس — الغوطة: ذاكرة السارين",
@@ -367,7 +368,7 @@ window.LUXDOT_MEMORY_DB = {
       "status": "documented",
       "summary": "في 21 أغسطس 2013 استُخدم السارين على نطاق واسع في مناطق مأهولة من الغوطة. تفصل العقدة بين إثبات الاستخدام، تحليل المسؤولية، اختلاف أعداد الضحايا، والتوثيق والعدالة.",
       "question": "كيف نحفظ الضحايا والأدلة معاً من دون تحويل المجزرة إلى رقم أو جدل مجرد؟",
-      "page": "ghouta-chemical-memory.html?v=4.3.42",
+      "page": "ghouta-chemical-memory.html?v=4.3.89",
       "sources": [
         {
           "label": "United Nations Mission report",
@@ -388,7 +389,7 @@ window.LUXDOT_MEMORY_DB = {
       "status": "documented",
       "summary": "يوم دولي لحفظ ذاكرة من استُهدفوا بسبب دينهم أو معتقدهم، وربطه بحماية الإنسان وأماكن العبادة والتعدد.",
       "question": "كيف يصبح اختلاف المعتقد سبباً للحماية المتبادلة لا للاستهداف؟",
-      "page": "belief-violence-memory.html?v=4.3.42",
+      "page": "belief-violence-memory.html?v=4.3.89",
       "sources": [
         {
           "label": "United Nations — 22 August",
@@ -398,6 +399,7 @@ window.LUXDOT_MEMORY_DB = {
     },
     {
       "id": "totalitarian-victims",
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ribbentrop-Molotov_paktum.jpg",
       "date": "2026-08-23",
       "theme": "سلطة • ضحايا • حدود",
       "title": "23 أغسطس — ضحايا الأنظمة الشمولية والاستبدادية",
@@ -405,7 +407,7 @@ window.LUXDOT_MEMORY_DB = {
       "status": "documented",
       "summary": "ذاكرة أوروبية لضحايا الأنظمة الشمولية والاستبدادية مرتبطة بتاريخ 23 أغسطس 1939، مع إبقاء قصص البشر في المركز.",
       "question": "كيف ندين القمع بمعيار كرامة الإنسان من دون تسطيح اختلاف السياقات التاريخية؟",
-      "page": "totalitarian-victims-memory.html?v=4.3.42",
+      "page": "totalitarian-victims-memory.html?v=4.3.89",
       "sources": [
         {
           "label": "European Parliament — 23 August",
@@ -415,6 +417,7 @@ window.LUXDOT_MEMORY_DB = {
     },
     {
       "id": "st-bartholomew",
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/La_masacre_de_San_Bartolom%C3%A9%2C_por_Fran%C3%A7ois_Dubois.jpg",
       "date": "2026-08-24",
       "theme": "حروب دينية • مدنيون",
       "title": "24 أغسطس — مجزرة سان بارتيليمي",
@@ -424,7 +427,7 @@ window.LUXDOT_MEMORY_DB = {
       "status": "documented",
       "summary": "في 24 أغسطس 1572 انفجرت موجة قتل واسعة للهوغونوت في باريس ثم امتدت إلى مدن أخرى. ترتبط العقدة بالحروب الدينية وبأورانيه والأراضي المنخفضة.",
       "question": "متى تتحول الهوية الدينية والسياسة والخوف إلى إذن بقتل الجار؟",
-      "page": "st-bartholomew-memory.html?v=4.3.42",
+      "page": "st-bartholomew-memory.html?v=4.3.89",
       "sources": [
         {
           "label": "Musée protestant — Saint Bartholomew’s Day",
