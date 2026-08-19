@@ -1,6 +1,6 @@
 window.LUXDOT_MEMORY_DB = {
   "meta": {
-    "version": "2026.08.17-memory-repair-4.3.42",
+    "version": "2026.08.19-memory-dossiers-4.3.88",
     "range": "2026-07-10/2026-08-24",
     "principle": "الوثيقة أولاً، ثم التفسير. الدليل المضاد يبقى ظاهراً دائماً."
   },
@@ -334,7 +334,8 @@ window.LUXDOT_MEMORY_DB = {
       "status": "documented",
       "summary": "ذكرى تفجير فندق القناة سنة 2003 ومقتل 22 من العاملين الإنسانيين، ومنها ارتبط 19 أغسطس باليوم العالمي للعمل الإنساني.",
       "question": "من يحمي الذين يحمون الآخرين؟",
-      "page": "humanitarian-day-memory.html?v=4.3.42",
+      "image": "assets/images/memory/canal-hotel-2003.jpg",
+      "page": "humanitarian-day-memory.html?v=4.3.88",
       "sources": [
         {
           "label": "United Nations — World Humanitarian Day",
@@ -351,7 +352,8 @@ window.LUXDOT_MEMORY_DB = {
       "status": "documented",
       "summary": "في الأيام الأخيرة للاحتلال قرب ليون قُتل سجناء من مونلوك في حصن كوت لوريت. تحفظ العقدة عنف الأيام الأخيرة قبل التحرير.",
       "question": "لماذا قد يزداد خطر الأسرى حتى عندما يصبح التحرير قريباً؟",
-      "page": "saint-genis-memory.html?v=4.3.42",
+      "image": "assets/images/memory/saint-genis-memorial.jpg",
+      "page": "saint-genis-memory.html?v=4.3.88",
       "sources": []
     },
     {

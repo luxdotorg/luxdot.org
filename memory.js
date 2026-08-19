@@ -82,9 +82,30 @@ function fieldNote(f){const l=lang();if(l==='ar')return f.note;const x=FIELD[l]|
 function fieldKind(f){const l=lang();if(l==='ar')return String(f.kind||'').toUpperCase();const x=FIELD[l]||FIELD[l==='jv'?'id':'en'];return (x?.[f.kind]||f.kind||'').toUpperCase()}
 function fieldTitle(f){const l=lang();if(l==='ar')return f.title;const x=FIELD[l]||FIELD[l==='jv'?'id':'en'];return x?.titles?.[f.city]||String(f.city||f.title||'')}
 
-const TRAGEDY_IDS=new Set(['rufina-secunda','justa-rufina','edith-stein','lawrence-rome','westerweel','stazzema','deportation','kolbe','indies','roger-bialystok','name-truth']);
+const MEMORY_SYMBOLS={
+ 'rufina-secunda':[['✝','faith'],['⚔','violence']],
+ 'justa-rufina':[['✝','faith'],['⚔','violence']],
+ 'edith-stein':[['✡','faith'],['▣','detention'],['☠','death']],
+ 'lawrence-rome':[['✝','faith'],['🔥','fire'],['☠','death']],
+ 'westerweel':[['⛓','detention'],['⚖','justice'],['☠','death']],
+ 'stazzema':[['⌖','civilian'],['⚔','violence'],['☠','death']],
+ 'deportation':[['⛓','detention'],['➜','transport'],['☠','death']],
+ 'kolbe':[['⛓','detention'],['☠','toxic'],['✝','faith']],
+ 'indies':[['⚔','violence'],['⌖','civilian'],['🕯','memory']],
+ 'roger-bialystok':[['⚔','violence'],['✝','faith'],['🕊','peace']],
+ 'name-truth':[['▤','document'],['⚠','persecution']],
+ 'denhaag-deportation':[['⛓','detention'],['➜','transport']],
+ 'humanitarian-day':[['✚','aid'],['💥','explosion'],['☠','death']],
+ 'saint-genis':[['⛓','detention'],['⚔','violence'],['☠','death']],
+ 'ghouta-chemical':[['☠','chemical'],['≋','gas'],['◉','nerve']],
+ 'belief-violence':[['☸','belief'],['⚔','violence'],['🕯','memory']],
+ 'totalitarian-victims':[['⚠','oppression'],['⛓','detention'],['🕯','memory']],
+ 'st-bartholomew':[['✝','faith'],['⚔','violence'],['☠','death']]
+};
+const TRAGEDY_IDS=new Set(Object.keys(MEMORY_SYMBOLS));
 function tragedy(id){return TRAGEDY_IDS.has(id)}
-function bloodMark(id){if(id==='ghouta-chemical')return '<i class="chemical-mark" aria-hidden="true" title="Chemical attack memory"></i>';return tragedy(id)?'<i class="tragedy-mark" aria-hidden="true"></i>':''}
+function symbolCartouche(id){const a=MEMORY_SYMBOLS[id];if(!a?.length)return '';return `<span class="sls-memory-cartouche" aria-hidden="true">${a.map(([g,c])=>`<i class="sls-symbol sls-${c}">${g}</i>`).join('')}</span>`}
+function bloodMark(id){return symbolCartouche(id)}
 function openNode(id){const raw=DB?.nodes?.find(x=>x.id===id);if(!raw)return;const n=trNode(raw);D.innerHTML=`<article class="node-panel ${tragedy(n.id)?'has-tragedy':''}">${bloodMark(n.id)}<button class="closex" aria-label="${esc(lang()==='ar'?'إغلاق':lang()==='nl'?'Sluiten':'Close')}">×</button><div class="node-meta">${fmt(n.date)} / ${esc(n.theme)} / ${esc(lang()==='en'?n.status:ui().documented)}</div><h2>${esc(n.title)}</h2><div class="node-meta">${esc(n.place)}</div>${n.image?`<img src="${esc(n.image)}" alt="${esc(n.title)}" loading="lazy" referrerpolicy="no-referrer"><div class="credit">${esc(n.imageCredit||'')}</div>`:''}<p>${esc(n.summary)}</p>${n.dossier?`<div class="memory-dossier"><p>${esc(n.dossier)}</p></div>`:''}${n.page?`<div class="memory-dossier-link"><a href="${esc(localPage(n.page))}">${esc(lang()==='ar'?'فتح ملف الذاكرة الكامل':lang()==='nl'?'Open volledig geheugendossier':'Open full memory dossier')} →</a></div>`:''}<p class="question">${esc(n.question)}</p><div class="link-row">${[...(n.sources||[]),...(n.media||[])].map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)} ↗</a>`).join('')}</div></article>`;D.classList.add('on');D.setAttribute('aria-hidden','false');D.querySelector('.closex')?.addEventListener('click',close)}
 function close(){D.classList.remove('on');D.setAttribute('aria-hidden','true')}
 D.addEventListener('click',e=>{if(e.target===D)close()});addEventListener('keydown',e=>{if(e.key==='Escape')close()});

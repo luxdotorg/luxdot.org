@@ -48,3 +48,13 @@
 
 /* v4.3.42 dossier CTA */
 .memory-dossier-link a{display:inline-flex;margin-top:14px;padding:12px 18px;border:1px solid rgba(210,177,91,.55);border-radius:999px;color:#f3d889!important;text-decoration:none;background:rgba(210,177,91,.08);font-weight:700}.memory-dossier-link a:hover{background:rgba(210,177,91,.16);box-shadow:0 0 22px rgba(210,177,91,.12)}
+
+/* v4.3.87 — SLS-inspired memory cartouches (display only; SLS itself remains inactive) */
+.time-row{position:relative;padding-top:42px!important}
+.sls-memory-cartouche{position:absolute;z-index:8;top:10px;inset-inline-end:14px;display:inline-flex;align-items:center;gap:2px;min-height:27px;padding:2px 7px;border:1px solid rgba(220,235,224,.42);border-radius:999px;background:rgba(3,8,5,.94);box-shadow:0 3px 14px rgba(0,0,0,.28);direction:ltr;unicode-bidi:isolate;pointer-events:none}
+.sls-symbol{width:22px;height:22px;display:grid;place-items:center;font-style:normal;font-family:"Segoe UI Symbol","Noto Sans Symbols 2","Noto Sans Symbols",sans-serif;font-size:16px;line-height:1;border-radius:50%;text-shadow:0 0 9px currentColor}
+.sls-faith,.sls-belief{color:#d7b85b}.sls-violence{color:#df625b}.sls-death{color:#f0f0ea}.sls-toxic,.sls-chemical{color:#d9ef65}.sls-gas{color:#9bd8d0}.sls-nerve{color:#bba4ff}.sls-detention{color:#aeb8c2}.sls-justice{color:#e3c778}.sls-civilian{color:#78c9ff}.sls-transport{color:#9fc6e7}.sls-memory{color:#f2cc71}.sls-fire{color:#ff9a54}.sls-peace{color:#91d9a5}.sls-document{color:#9fc8a8}.sls-persecution,.sls-oppression{color:#e08080}.sls-aid{color:#85d9a2}.sls-explosion{color:#ffad5c}
+/* suppress legacy blood/chemical marks wherever the new cartouche is rendered */
+.time-row>.tragedy-mark,.time-row>.chemical-mark,.node-panel>.tragedy-mark,.node-panel>.chemical-mark,.map-card>.tragedy-mark,.map-card>.chemical-mark{display:none!important}
+.node-panel .sls-memory-cartouche,.map-card .sls-memory-cartouche{top:12px}
+@media(max-width:560px){.time-row{padding-top:40px!important}.sls-memory-cartouche{inset-inline-end:9px}.sls-symbol{width:20px;height:20px;font-size:14px}}
