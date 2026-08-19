@@ -1,19 +1,7 @@
 (()=>{
 'use strict';
-const NAMES={ar:'رافي الحجي',en:'Rafy Alhajji',nl:'Rafy Alhajji',jv:'Rafy Alhajji',he:"ראפי אלחג׳י"};
 function lang(){return (window.LuxLang&&window.LuxLang.get())||document.documentElement.lang||'en'}
-function replaceNames(){
- const l=lang(),want=NAMES[l]||NAMES.en;
- const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;
- while(n=w.nextNode()){
-   const parent=n.parentElement;if(!parent||/SCRIPT|STYLE|TEXTAREA|OPTION/.test(parent.tagName))continue;
-   if(parent.closest('[data-allow-arabic],[data-original-language],.original-text'))continue;
-   if(location.pathname.endsWith('number-letter-lab.html')&&(n.nodeValue||'').includes('رافي الحجي'))continue;
-   let t=n.nodeValue;
-   for(const s of Object.values(NAMES))if(s!==want&&t.includes(s))t=t.split(s).join(want);
-   if(t!==n.nodeValue)n.nodeValue=t;
- }
-}
+function replaceNames(){/* v4.3.77: canonical name spellings are immutable; no cross-script rewriting. */}
 function clickParity(){
  document.querySelectorAll('[data-href]').forEach(c=>{if(c.dataset.clickParity)return;c.dataset.clickParity='1';c.tabIndex=c.tabIndex<0?0:c.tabIndex;c.setAttribute('role','link');const go=()=>{const h=c.dataset.href;if(h)location.href=h};c.addEventListener('click',e=>{if(e.target.closest('a,button,select,input'))return;go()});c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}})});
  document.querySelectorAll('.cards .card').forEach(c=>{const a=c.querySelector('a[href]');if(!a||c.dataset.clickParity)return;c.dataset.clickParity='1';c.tabIndex=0;c.setAttribute('role','link');c.addEventListener('click',e=>{if(e.target.closest('a,button,select,input'))return;location.href=a.href});c.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&!e.target.closest('a,button,select,input')){e.preventDefault();location.href=a.href}})})
