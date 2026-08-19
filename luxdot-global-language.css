@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&family=Noto+Sans+Hebrew:wght@400;500;600;700&display=swap');
+/* Global language lock: Arabic is always Kufi, Hebrew is always RTL Hebrew sans. */
+html[lang="ar"] body,html[lang="ar"] body *,body[data-lang="ar"],body[data-lang="ar"] *,[data-locale="ar"],[data-locale="ar"] *{
+  font-family:"Noto Kufi Arabic",Tahoma,Arial,sans-serif!important;
+  word-break:normal!important;hyphens:none!important;
+}
+html[lang="ar"],html[lang="ar"] body,[data-locale="ar"]{direction:rtl;text-align:right}
+html[lang="he"] body,html[lang="he"] body *,body[data-lang="he"],body[data-lang="he"] *,[data-locale="he"],[data-locale="he"] *{
+  font-family:"Noto Sans Hebrew",Arial,sans-serif;
+}
+html[lang="he"],html[lang="he"] body,[data-locale="he"]{direction:rtl;text-align:right}
+/* Preserve original Latin identifiers/names when explicitly marked. */
+.latin-name,[dir="ltr"]{unicode-bidi:isolate}

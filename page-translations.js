@@ -5,12 +5,13 @@
    than pretending that the page was translated. New LuxDot pages must ship AR/EN/NL
    locale blocks; QA_LANGUAGE_INTEGRITY.py enforces that requirement for new/changed pages. */
 (()=>{'use strict';
- const SUP=['ar','en','nl'];
+ const SUP=['ar','en','nl','he'];
  const requested=()=>{try{const q=new URLSearchParams(location.search).get('lang');if(SUP.includes(q))return q;const s=localStorage.getItem('luxdot.lang');return SUP.includes(s)?s:'en'}catch(_){return 'en'}};
  const UI={
   ar:{sources:'المصادر والتوثيق',back:'العودة',note:'المحتوى الأصلي لهذه الصفحة عربي.'},
   en:{sources:'Sources & documentation',back:'Back',note:'This page has not yet passed the complete English localization gate. The Arabic source is shown in its original typography rather than being mislabeled as English.'},
-  nl:{sources:'Bronnen & documentatie',back:'Terug',note:'Deze pagina heeft de volledige Nederlandse lokalisatiecontrole nog niet doorlopen. De Arabische brontekst wordt daarom in de oorspronkelijke typografie getoond en niet ten onrechte als Nederlands gelabeld.'}
+  nl:{sources:'Bronnen & documentatie',back:'Terug',note:'Nederlandse vertaling'},
+  he:{sources:'מקורות ותיעוד',back:'חזרה',note:'תרגום לעברית'}
  };
  function arabicDominant(){
   const main=document.querySelector('main')||document.body;if(!main)return false;
@@ -31,10 +32,10 @@
  function run(){
   const l=requested();
   const has=localeBlocks(l);
-  if(has){document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';document.documentElement.dataset.contentLang=l;}
+  if(has){document.documentElement.lang=l;document.documentElement.dir=(l==='ar'||l==='he')?'rtl':'ltr';document.documentElement.dataset.contentLang=l;}
   else if(l!=='ar'&&arabicDominant()){
     document.documentElement.lang='ar';document.documentElement.dir='rtl';document.documentElement.dataset.contentLang='ar';document.documentElement.dataset.requestedLang=l;document.body?.classList.add('lux-source-arabic');notice(l);
-  } else {document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';document.documentElement.dataset.contentLang=l;}
+  } else {document.documentElement.lang=l;document.documentElement.dir=(l==='ar'||l==='he')?'rtl':'ltr';document.documentElement.dataset.contentLang=l;}
   document.querySelectorAll('[data-common-label]').forEach(el=>{const k=el.dataset.commonLabel;if(UI[l]?.[k])el.textContent=UI[l][k]});
   document.body?.classList.add('lux-lang-ready');
  }

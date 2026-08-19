@@ -1,5 +1,5 @@
 (()=>{'use strict';
-const lang=()=>{const q=new URLSearchParams(location.search).get('lang');const s=localStorage.getItem('luxdot.lang');return ['ar','en','nl'].includes(q)?q:(['ar','en','nl'].includes(s)?s:'en')};
+const lang=()=>{const q=new URLSearchParams(location.search).get('lang');const s=localStorage.getItem('luxdot.lang');return ['ar','en','nl','he'].includes(q)?q:(['ar','en','nl','he'].includes(s)?s:'en')};
 const G={
 'الأبحاث':['Research','Onderzoek'],'أطلس المخلّص':['Savior Atlas','Verlossersatlas'],'الأسماء والأعداد':['Names & Numbers','Namen & getallen'],
 'بحث LuxDot مقارن · النص، النسبة، الحساب والفرضية طبقات منفصلة.':['Comparative LuxDot research · text, attribution, calculation and hypothesis remain separate layers.','Vergelijkend LuxDot-onderzoek · tekst, toeschrijving, berekening en hypothese blijven afzonderlijke lagen.'],
@@ -194,7 +194,7 @@ P['templars-master.html']={
 };
 
 function norm(s){return String(s||'').replace(/\s+/g,' ').trim()}
-function apply(){const l=lang();document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';if(l==='ar')return;const fn=location.pathname.split('/').pop()||'';const map=Object.assign({},G,P[fn]||{});for(const k of Object.keys(map)){if(document.title.includes(k))document.title=document.title.replace(k,map[k][l==='en'?0:1])}const pick=l==='en'?0:1;const blocks=[...document.querySelectorAll('p,h1,h2,h3,h4,.note,.warn,.quote')].reverse();for(const el of blocks){if(el.closest('.fixed-name-chip')||el.querySelector('a,button,input,select'))continue;const k=norm(el.textContent);if(map[k])el.textContent=map[k][pick]}const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);const nodes=[];while(w.nextNode())nodes.push(w.currentNode);for(const n of nodes){const k=norm(n.nodeValue);if(!k)continue;if(map[k]){const lead=n.nodeValue.match(/^\s*/)?.[0]||'',trail=n.nodeValue.match(/\s*$/)?.[0]||'';n.nodeValue=lead+map[k][l==='en'?0:1]+trail}}
+function apply(){const l=lang();document.documentElement.lang=l;document.documentElement.dir=(l==='ar'||l==='he')?'rtl':'ltr';if(l==='ar')return;const fn=location.pathname.split('/').pop()||'';const map=Object.assign({},G,P[fn]||{});for(const k of Object.keys(map)){if(document.title.includes(k))document.title=document.title.replace(k,map[k][l==='nl'?1:0])}const pick=l==='nl'?1:0;const blocks=[...document.querySelectorAll('p,h1,h2,h3,h4,.note,.warn,.quote')].reverse();for(const el of blocks){if(el.closest('.fixed-name-chip')||el.querySelector('a,button,input,select'))continue;const k=norm(el.textContent);if(map[k])el.textContent=map[k][pick]}const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);const nodes=[];while(w.nextNode())nodes.push(w.currentNode);for(const n of nodes){const k=norm(n.nodeValue);if(!k)continue;if(map[k]){const lead=n.nodeValue.match(/^\s*/)?.[0]||'',trail=n.nodeValue.match(/\s*$/)?.[0]||'';n.nodeValue=lead+map[k][l==='nl'?1:0]+trail}}
  document.body.dataset.contentLang=l;document.body.classList.add('lux-static-localized');
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply);else apply();document.addEventListener('luxlang',apply);
