@@ -1,9 +1,13 @@
-@font-face{font-family:'Noto Kufi Arabic';src:local('Noto Kufi Arabic');font-display:swap}
-html[lang="ar"],html[lang="ar"] body,body.lang-ar,body.lang-ar *:not(code):not(pre):not(.latin-lock),[data-locale="ar"],[data-locale="ar"] *,[lang="ar"],[lang="ar"] *,.lux-arabic-text{font-family:'Noto Kufi Arabic','Noto Sans Arabic',Tahoma,Arial,sans-serif!important}
-html[lang="ar"],body.lang-ar,[data-locale="ar"]{direction:rtl;text-align:right}
-html[lang="he"],body.lang-he,[data-locale="he"]{direction:rtl;text-align:right;font-family:Arial,'Noto Sans Hebrew',sans-serif}
-html[lang="en"],html[lang="nl"],body.lang-en,body.lang-nl,[data-locale="en"],[data-locale="nl"]{direction:ltr}
-[data-locale][hidden]{display:none!important}
-#lux-global-lang-picker{position:fixed;z-index:2147483000;right:12px;bottom:12px;display:flex;gap:5px;align-items:center;padding:6px;border:1px solid rgba(151,201,166,.3);border-radius:999px;background:rgba(2,8,5,.92);backdrop-filter:blur(12px);box-shadow:0 8px 30px rgba(0,0,0,.32)}
-#lux-global-lang-picker button{border:0;background:transparent;color:#dce8df;border-radius:999px;padding:6px 9px;font:600 11px/1.2 Arial,sans-serif;cursor:pointer}#lux-global-lang-picker button.active{background:#dce8df;color:#0a1610}#lux-global-lang-picker button[data-core-lang="ar"]{font-family:'Noto Kufi Arabic','Noto Sans Arabic',sans-serif}
-@media(max-width:650px){#lux-global-lang-picker{right:8px;bottom:8px;max-width:calc(100vw - 16px);overflow:auto}}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&family=Noto+Sans+Hebrew:wght@400;500;600;700&display=swap');
+/* Global language lock: Arabic is always Kufi, Hebrew is always RTL Hebrew sans. */
+html[lang="ar"] body,html[lang="ar"] body *,body[data-lang="ar"],body[data-lang="ar"] *,[data-locale="ar"],[data-locale="ar"] *{
+  font-family:"Noto Kufi Arabic",Tahoma,Arial,sans-serif!important;
+  word-break:normal!important;hyphens:none!important;
+}
+html[lang="ar"],html[lang="ar"] body,[data-locale="ar"]{direction:rtl;text-align:right}
+html[lang="he"] body,html[lang="he"] body *,body[data-lang="he"],body[data-lang="he"] *,[data-locale="he"],[data-locale="he"] *{
+  font-family:"Noto Sans Hebrew",Arial,sans-serif;
+}
+html[lang="he"],html[lang="he"] body,[data-locale="he"]{direction:rtl;text-align:right}
+/* Preserve original Latin identifiers/names when explicitly marked. */
+.latin-name,[dir="ltr"]{unicode-bidi:isolate}

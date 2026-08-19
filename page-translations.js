@@ -34,9 +34,7 @@
   const has=localeBlocks(l);
   if(has){document.documentElement.lang=l;document.documentElement.dir=(l==='ar'||l==='he')?'rtl':'ltr';document.documentElement.dataset.contentLang=l;}
   else if(l!=='ar'&&arabicDominant()){
-    /* v4.3.101: never force a requested non-Arabic locale back to Arabic.
-       Dedicated localization layers may replace the source after this pass. */
-    document.documentElement.lang=l;document.documentElement.dir=(l==='he')?'rtl':'ltr';document.documentElement.dataset.contentLang=l;document.documentElement.dataset.requestedLang=l;
+    document.documentElement.lang='ar';document.documentElement.dir='rtl';document.documentElement.dataset.contentLang='ar';document.documentElement.dataset.requestedLang=l;document.body?.classList.add('lux-source-arabic');notice(l);
   } else {document.documentElement.lang=l;document.documentElement.dir=(l==='ar'||l==='he')?'rtl':'ltr';document.documentElement.dataset.contentLang=l;}
   document.querySelectorAll('[data-common-label]').forEach(el=>{const k=el.dataset.commonLabel;if(UI[l]?.[k])el.textContent=UI[l][k]});
   document.body?.classList.add('lux-lang-ready');
