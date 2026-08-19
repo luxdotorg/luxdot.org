@@ -64,6 +64,22 @@
       "nl": "Christelijke ridderorde",
       "jv": "Ordo militèr Kristen",
       "he": "מסדר צבאי נוצרי"
+    },
+    "judaism": {
+      "parent": "abrahamic",
+      "ar": "اليهودية",
+      "en": "Judaism",
+      "nl": "Jodendom",
+      "jv": "Yudaisme",
+      "he": "יהדות"
+    },
+    "sephardic-judaism": {
+      "parent": "judaism",
+      "ar": "اليهودية السفاردية",
+      "en": "Sephardic Judaism",
+      "nl": "Sefardisch jodendom",
+      "jv": "Yudaisme Sefardi",
+      "he": "יהדות ספרדית"
     }
   },
   "historicalTypes": {
@@ -122,6 +138,20 @@
       "nl": "Bestuur & religiebeleid",
       "jv": "Pamrentahan & kabijakan agama",
       "he": "ממשל ומדיניות דת"
+    },
+    "halakha": {
+      "ar": "فقه/هالاخاه",
+      "en": "Halakha / Jewish law",
+      "nl": "Halacha / Joods recht",
+      "jv": "Halakha",
+      "he": "הלכה"
+    },
+    "kabbalah": {
+      "ar": "قبّالاه وتصوف يهودي",
+      "en": "Kabbalah & Jewish mysticism",
+      "nl": "Kabbala & joodse mystiek",
+      "jv": "Kabbalah",
+      "he": "קבלה ומיסטיקה יהודית"
     }
   }
 }
