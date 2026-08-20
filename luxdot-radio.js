@@ -2,6 +2,7 @@
  const commonsFile=(name)=>'https://commons.wikimedia.org/wiki/Special:Redirect/file/'+encodeURIComponent(name).replace(/%2F/g,'/');
  const commonsPage=(name)=>'https://commons.wikimedia.org/wiki/File:'+encodeURIComponent(name).replace(/%20/g,'_');
  const TRACKS={
+  ghoutaSilence:{title:'دقيقة صمت · Ghouta Memorial Silence',artist:'إذاعة نقطة نور · LuxDot من شام',culture:'الغوطة · 21 آب 2013 · In Memoriam',kind:'memorial',duration:60,url:'assets/audio/ghouta-silence-60s.wav',license:'LuxDot generated silence · no rights restrictions',source:'ghouta-chemical-memory.html'},
   min1:{title:'سورة الفاتحة · Al-Fātiḥa',artist:'محمد صديق المنشاوي',culture:'Qur’an · تلاوة مقدسة',kind:'sacred',duration:51.958,url:commonsFile('Sura Minshawi 1.ogg'),license:'Public domain · Egypt',source:commonsPage('Sura Minshawi 1.ogg')},
   min2:{title:'سورة البقرة · Al-Baqarah',artist:'محمد صديق المنشاوي',culture:'Qur’an · تلاوة مقدسة',kind:'sacred',duration:8217,url:commonsFile('Sura Minshawi 2.ogg'),license:'Public domain · Egypt',source:commonsPage('Sura Minshawi 2.ogg')},
   min4:{title:'سورة النساء · An-Nisāʾ',artist:'محمد صديق المنشاوي',culture:'Qur’an · تلاوة مقدسة',kind:'sacred',duration:5170,url:commonsFile('Sura Minshawi 4.ogg'),license:'Public domain · Egypt',source:commonsPage('Sura Minshawi 4.ogg')},
@@ -35,6 +36,7 @@
   oud:{title:'Arabic Oud · عود عربي',artist:'Houssem Bettaibi',culture:'Arab world',kind:'harmony',duration:49.64,url:commonsFile('OUD.ogg'),license:'CC BY-SA 3.0',source:commonsPage('OUD.ogg')}
  };
  const QURAN=['min2','min12','min20','min4','min14','min5','min26','min27','min25'];
+ const GHOUTA_MEMORIAL=['min1','ghoutaSilence','min12','min20','ghoutaSilence','min14','min25','min4','ghoutaSilence','min2'];
  const JEWISH_SABBATH=['adon','kaddish','jewish','retseh','zadik','habein','birchos','weseeraw'];
  const CHRISTIAN_SUNDAY=['syriac','gregorian','avemaria','moreschi','bach'];
  const SPIRITUAL_LIBRARY=['syriac','gregorian','jewish','qawwali','oud','persia','gamelan','china','japan','africa','bach','mozart'];
@@ -42,13 +44,25 @@
  function chaamParts(date=new Date()){const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Amsterdam',weekday:'short',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).formatToParts(date);return Object.fromEntries(parts.map(p=>[p.type,p.value]));}
  function secondsOfDay(date=new Date()){const p=chaamParts(date);return (+p.hour)*3600+(+p.minute)*60+(+p.second)}
  function cycle(listIds,date=new Date()){const list=listIds.map(id=>({id,...TRACKS[id]}));const total=list.reduce((a,t)=>a+t.duration,0);let x=secondsOfDay(date)%total,chosen=list[0];for(const t of list){if(x<t.duration){chosen=t;break}x-=t.duration}return{track:chosen,offset:x,list};}
- function modeFor(date=new Date()){const p=chaamParts(date);if(p.weekday==='Sat')return{key:'jewish',name:'Shabbat · שבת · السبت اليهودي',label:'تراث وروحانيات يهودية · Jewish sacred heritage',ids:JEWISH_SABBATH};if(p.weekday==='Sun')return{key:'christian',name:'Sunday · الأحد المسيحي',label:'ترانيم وروحانيات مسيحية · Christian sacred music',ids:CHRISTIAN_SUNDAY};return{key:'quran',name:'Qur’an Live from Chaam · قرآن من شام',label:'قرآن مباشر من شام · Qur’an from Chaam',ids:QURAN};}
+ function modeFor(date=new Date()){
+  const p=chaamParts(date);
+  // 21 August is an annual LuxDot memorial day for the victims of the 2013 Ghouta sarin attack.
+  if(p.day==='21'&&p.month==='08')return{
+    key:'ghouta-memorial',
+    name:'يوم حداد الغوطة · Ghouta Memorial Day · 21 August 2013',
+    label:'القرآن · دقيقة صمت · ذاكرة الضحايا',
+    ids:GHOUTA_MEMORIAL
+  };
+  if(p.weekday==='Sat')return{key:'jewish',name:'Shabbat · שבת · السبت اليهودي',label:'تراث وروحانيات يهودية · Jewish sacred heritage',ids:JEWISH_SABBATH};
+  if(p.weekday==='Sun')return{key:'christian',name:'Sunday · الأحد المسيحي',label:'ترانيم وروحانيات مسيحية · Christian sacred music',ids:CHRISTIAN_SUNDAY};
+  return{key:'quran',name:'Qur’an Live from Chaam · قرآن من شام',label:'قرآن مباشر من شام · Qur’an from Chaam',ids:QURAN};
+ }
  function live(date=new Date()){const m=modeFor(date),c=cycle(m.ids,date);return{program:{name:m.name,mode:m.key,label:m.label},track:c.track,offset:c.offset,list:c.list};}
  function next24(){const now=new Date(),rows=[];for(let i=0;i<24;i++){const d=new Date(now.getTime()+i*3600000),p=chaamParts(d),s=live(d);rows.push({time:`${p.hour}:00`,day:p.weekday,track:s.track,program:s.program})}return rows}
  function week(){const now=new Date(),rows=[];for(let i=0;i<7;i++){const d=new Date(now.getTime()+i*86400000),p=chaamParts(d),m=modeFor(d);rows.push({day:p.weekday,date:`${p.day}-${p.month}`,program:m})}return rows}
  function ensureDock(){if(document.getElementById('luxdot-radio-dock'))return;const d=document.createElement('div');d.id='luxdot-radio-dock';d.innerHTML='<div class="lrd-main"><button id="luxdot-radio-play" aria-label="Play LuxDot Radio">▶</button><div><div class="lrd-title"><span class="lrd-pulse"></span>إذاعة نقطة نور · LuxDot من شام</div><div class="lrd-track" id="luxdot-radio-track">قرآن مباشر من شام</div></div><span class="lrd-live">LIVE</span></div><div class="lrd-sub"><span id="luxdot-radio-day">Chaam · شام · 24/7</span><a href="radio.html">OPEN ↗</a></div>';document.body.appendChild(d);document.getElementById('luxdot-radio-play').onclick=toggle;}
  function setStatus(v){status=v;document.dispatchEvent(new CustomEvent('luxdotradio-status',{detail:v}))}
- function loadTrack(s,autoplay){const token=++loadToken;currentId=s.track.id;wantedOffset=Math.max(0,Math.min(s.offset,s.track.duration-1));setStatus('تحميل التلاوة… · Loading…');audio.pause();audio.removeAttribute('src');audio.load();audio.src=s.track.url;audio.load();const ready=()=>{if(token!==loadToken)return;try{if(Number.isFinite(audio.duration)&&wantedOffset<audio.duration)audio.currentTime=wantedOffset}catch(e){} if(autoplay){audio.play().then(()=>setStatus('يبث الآن من شام · LIVE from Chaam')).catch(e=>setStatus('اضغط تشغيل للسماح بالصوت · Tap play to allow audio'))}else setStatus('جاهز · Ready')};audio.addEventListener('loadedmetadata',ready,{once:true});audio.addEventListener('canplay',()=>{if(token===loadToken&&autoplay&&audio.paused)audio.play().catch(()=>{})},{once:true});}
+ function loadTrack(s,autoplay){const token=++loadToken;currentId=s.track.id;wantedOffset=Math.max(0,Math.min(s.offset,s.track.duration-1));setStatus('تحميل البث… · Loading…');audio.pause();audio.removeAttribute('src');audio.load();audio.src=s.track.url;audio.load();const ready=()=>{if(token!==loadToken)return;try{if(Number.isFinite(audio.duration)&&wantedOffset<audio.duration)audio.currentTime=wantedOffset}catch(e){} if(autoplay){audio.play().then(()=>setStatus('يبث الآن من شام · LIVE from Chaam')).catch(e=>setStatus('اضغط تشغيل للسماح بالصوت · Tap play to allow audio'))}else setStatus('جاهز · Ready')};audio.addEventListener('loadedmetadata',ready,{once:true});audio.addEventListener('canplay',()=>{if(token===loadToken&&autoplay&&audio.paused)audio.play().catch(()=>{})},{once:true});}
  function sync(force=false){const s=live();ensureDock();const tr=document.getElementById('luxdot-radio-track');if(tr)tr.textContent=s.track.title+' · '+s.track.artist;const day=document.getElementById('luxdot-radio-day');if(day)day.textContent='Chaam · شام · 24/7';if(force||currentId!==s.track.id)loadTrack(s,userOn);else if(userOn&&!audio.paused&&Math.abs((audio.currentTime||0)-s.offset)>20){try{audio.currentTime=s.offset}catch(e){}}updateBtn();document.dispatchEvent(new CustomEvent('luxdotradio',{detail:s}));}
  function updateBtn(){const b=document.getElementById('luxdot-radio-play');if(b)b.textContent=userOn&&!audio.paused?'❚❚':'▶'}
  function toggle(){ensureDock();if(!userOn||audio.paused){userOn=true;localStorage.setItem('luxdot.radio.on','1');const s=live();if(currentId!==s.track.id||!audio.src)loadTrack(s,true);else audio.play().then(()=>setStatus('يبث الآن من شام · LIVE from Chaam')).catch(()=>setStatus('تعذر التشغيل؛ جرّب فتح صفحة الراديو · Playback blocked'));}else{userOn=false;localStorage.setItem('luxdot.radio.on','0');audio.pause();setStatus('متوقف مؤقتاً · Paused')}updateBtn()}
