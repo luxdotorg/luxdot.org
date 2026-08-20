@@ -81,3 +81,17 @@
  .rg-view-switch-copy small,.rg-mode-legend{display:none}
 }
 @media(prefers-reduced-motion:reduce){.rg-signal-active{animation:none!important}}
+
+/* v4.3.123: view selector is part of the sky itself */
+.rg-canvas-wrap>.rg-view-switch{
+ position:absolute!important;top:54px!important;left:50%!important;right:auto!important;bottom:auto!important;
+ transform:translateX(-50%);z-index:40!important;width:auto!important;max-width:calc(100% - 32px);
+ margin:0!important;padding:8px 10px!important;border-color:rgba(210,177,91,.52)!important;
+ background:rgba(2,8,5,.90)!important;box-shadow:0 8px 36px rgba(0,0,0,.45),0 0 0 1px rgba(99,255,155,.08)!important;
+ backdrop-filter:blur(14px)
+}
+.rg-canvas-wrap>.rg-view-switch .rg-view-switch-copy{display:none}
+.rg-canvas-wrap>.rg-view-switch .rg-view-tabs{flex-wrap:nowrap}
+.rg-canvas-wrap>.rg-view-switch .rg-view-tab{min-width:92px;font-size:11px;padding:10px 14px}
+.rg-canvas-wrap>.rg-view-switch:before{content:"VIEW";color:#6f8d79;font:800 8px/1 Arial;letter-spacing:.16em;margin-inline:4px}
+@media(max-width:620px){.rg-canvas-wrap>.rg-view-switch{top:46px!important;max-width:calc(100% - 16px)}.rg-canvas-wrap>.rg-view-switch .rg-view-tab{min-width:0;padding:9px 10px;font-size:9px}}

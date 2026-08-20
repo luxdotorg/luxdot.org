@@ -34,3 +34,20 @@ function build(){if(!d.body)return;ensureStyle();d.querySelectorAll('.luxdot-his
 if(d.readyState==='loading')d.addEventListener('DOMContentLoaded',build);else build();
 window.addEventListener('resize',()=>{let h=d.querySelector('.lux-header-43108');if(h)d.documentElement.style.setProperty('--lux-header-h',Math.ceil(h.getBoundingClientRect().height)+'px')},{passive:true});
 })();
+
+
+/* LuxDot v4.3.124 · global timeline/info drawer */
+(function(){
+ function installLuxTimeline(){
+  if(document.getElementById('luxTimelineInfo'))return;
+  const host=document.querySelector('header .topin,header .wrap,.topin,.top');
+  if(!host)return;
+  const a=document.createElement('a');a.id='luxTimelineInfo';a.href='timeline.html?lang='+(new URLSearchParams(location.search).get('lang')||'ar');a.setAttribute('aria-label','LuxDot timeline / information');a.title='LuxDot · Now / Next';a.textContent='i';host.appendChild(a);
+  const panel=document.createElement('aside');panel.id='luxTimelinePeek';panel.setAttribute('aria-hidden','true');
+  panel.innerHTML='<button type="button" class="lt-close" aria-label="Close">×</button><div class="lt-k">LUXDOT · NOW / NEXT</div><h3>الخط الزمني</h3><div class="lt-line"><div><b>21.08</b><span>ذاكرة الغوطة · تم</span></div><div><b>03.09</b><span>ثورة الدقّة · PILOT</span></div><div><b>07.12</b><span>عصر الدقّة · KICK-OFF</span></div></div><a class="lt-open" href="'+a.href+'">فتح الرزنامة كاملة ←</a>';
+  document.body.appendChild(panel);
+  a.addEventListener('click',e=>{e.preventDefault();const open=panel.classList.toggle('open');panel.setAttribute('aria-hidden',open?'false':'true')});
+  panel.querySelector('.lt-close').addEventListener('click',()=>{panel.classList.remove('open');panel.setAttribute('aria-hidden','true')});
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',installLuxTimeline);else installLuxTimeline();
+})();

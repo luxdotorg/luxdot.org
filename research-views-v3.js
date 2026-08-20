@@ -144,6 +144,7 @@ function apply(newMode,persist=true){
 function ready(){
  const switcher=$('.rg-view-switch'), toolbar=$('.rg-toolbar'), graph=$('.rg-canvas');
  if(!switcher||!toolbar||!graph)return false;
+ const canvasWrap=$('.rg-canvas-wrap'); if(canvasWrap && switcher.parentElement!==canvasWrap) canvasWrap.appendChild(switcher);
  switcher.addEventListener('click',e=>{const b=e.target.closest('[data-research-view]');if(b)apply(b.dataset.researchView,true)});
  root.addEventListener('click',e=>{const n=e.target.closest?.('.rg-node[data-id]');if(n){selected=n.dataset.id;requestAnimationFrame(()=>pulse(selected))}});
  tabs();apply(mode,false);return true;

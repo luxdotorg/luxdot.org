@@ -70,3 +70,13 @@
  window.LuxDotRadio={TRACKS,QURAN,JEWISH_SABBATH,CHRISTIAN_SUNDAY,SPIRITUAL_LIBRARY,live,next24,week,audio,toggle,sync,getStatus:()=>status};
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>{ensureDock();sync(false);setInterval(()=>sync(false),15000)});else{ensureDock();sync(false);setInterval(()=>sync(false),15000)}
 })();
+
+document.addEventListener('pointermove',function(e){
+ const d=document.getElementById('luxdot-radio-dock'); if(!d)return;
+ const r=d.getBoundingClientRect(),pad=110;
+ const near=e.clientX>r.left-pad&&e.clientX<r.right+pad&&e.clientY>r.top-pad&&e.clientY<r.bottom+pad;
+ document.documentElement.classList.toggle('luxdot-radio-near',near);
+},{passive:true});
+document.addEventListener('click',function(e){
+ const d=e.target.closest&&e.target.closest('#luxdot-radio-dock'); if(d)d.classList.toggle('lrd-open',true);
+});
