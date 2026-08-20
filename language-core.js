@@ -26,5 +26,19 @@ function selectors(){const l=current();document.querySelectorAll('[data-lang-sel
 function common(){const l=current(),n=NAV[l];document.querySelectorAll('[data-lux-brand],header .logo,.top .logo').forEach(e=>e.textContent=BRAND[l]);document.querySelectorAll('header a[href],header nav a[href]').forEach(a=>{const f=(a.getAttribute('href')||'').split('/').pop().split('?')[0].split('#')[0],k={'home.html':'home','library.html':'library','faith.html':'faith','nusantara.html':'nusantara','memory.html':'memory','research.html':'research','projects.html':'projects'}[f];if(k&&!a.hasAttribute('data-preserve-label'))a.textContent=n[k]})}
 function carryLangLinks(){const l=current();document.querySelectorAll('a[href]').forEach(a=>{const raw=a.getAttribute('href');if(!raw||raw.startsWith('#')||/^(?:mailto:|tel:|javascript:|data:)/i.test(raw))return;let u;try{u=new URL(raw,location.href)}catch(_){return}if(u.origin!==location.origin||!/\.html$/i.test(u.pathname))return;const hash=raw.includes('#')?'#'+raw.split('#',2)[1]:'';const base=raw.split('#',1)[0];const path=base.split('?',1)[0];const q=new URLSearchParams(base.includes('?')?base.split('?',2)[1]:'');q.set('lang',l);a.setAttribute('href',path+'?'+q.toString()+hash)})}
 function locales(){const l=current(),bs=[...document.querySelectorAll('[data-locale]')];if(!bs.length)return;bs.forEach(b=>b.hidden=true);let b=bs.find(x=>x.dataset.locale===l);if(!b)b=bs.find(x=>x.dataset.locale==='en');if(b)b.hidden=false}
-function init(){setDoc(current());selectors();common();locales();carryLangLinks();document.body?.classList.add('lux-lang-ready')}
-bootstrap();window.LuxLang={get:current,set,navigate,names:NAME,dir:DIR,nav:NAV};document.addEventListener('DOMContentLoaded',init);document.addEventListener('luxlang',()=>setTimeout(init,0));})();
+function healSelectors(){
+ document.querySelectorAll('[data-lang-select],select.lang-select,select.lang').forEach(s=>{
+   if(s.tagName!=='SELECT')return;
+   const vals=[...s.options].map(o=>o.value);
+   if(SUP.some(x=>!vals.includes(x))){const l=current();s.innerHTML=SUP.map(x=>`<option value="${x}">${NAME[x]}</option>`).join('');s.value=l}
+ });
+}
+function init(){setDoc(current());selectors();common();locales();carryLangLinks();healSelectors();document.body?.classList.add('lux-lang-ready')}
+
+bootstrap();
+document.addEventListener('DOMContentLoaded',()=>{
+ const mo=new MutationObserver(()=>healSelectors());
+ mo.observe(document.body,{childList:true,subtree:true});
+ setTimeout(healSelectors,50);setTimeout(healSelectors,500);setTimeout(healSelectors,1500);
+});
+window.LuxLang={get:current,set,navigate,names:NAME,dir:DIR,nav:NAV};document.addEventListener('DOMContentLoaded',init);document.addEventListener('luxlang',()=>setTimeout(init,0));})();
