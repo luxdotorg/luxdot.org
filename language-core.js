@@ -1,9 +1,20 @@
 (()=>{'use strict';
-const SUP=['ar','en','nl','he'];
-const DIR={ar:'rtl',en:'ltr',nl:'ltr',he:'rtl'};
-const NAME={ar:'العربية',en:'English',nl:'Nederlands',he:'עברית'};
-const BRAND={ar:'LuxDot',en:'LuxDot',nl:'LuxDot',he:'LuxDot'};
-const NAV={ar:{home:'الرئيسية',library:'المكتبة',faith:'الإيمان والحكمة',nusantara:'نوسانتارا',memory:'الذاكرة',research:'الأبحاث',projects:'المشاريع'},en:{home:'Home',library:'Library',faith:'Faith & Wisdom',nusantara:'Nusantara',memory:'Memory',research:'Research',projects:'Projects'},nl:{home:'Home',library:'Bibliotheek',faith:'Geloof & wijsheid',nusantara:'Nusantara',memory:'Geheugen',research:'Onderzoek',projects:'Projecten'},he:{home:'ראשי',library:'ספרייה',faith:'אמונה וחכמה',nusantara:'נוסנטרה',memory:'זיכרון',research:'מחקר',projects:'פרויקטים'}};
+const SUP=['ar','en','nl','he','jv','id','fr','es','de','tr'];
+const DIR={ar:'rtl',en:'ltr',nl:'ltr',he:'rtl',jv:'ltr',id:'ltr',fr:'ltr',es:'ltr',de:'ltr',tr:'ltr'};
+const NAME={ar:'العربية',en:'English',nl:'Nederlands',he:'עברית',jv:'Basa Jawa',id:'Bahasa Indonesia',fr:'Français',es:'Español',de:'Deutsch',tr:'Türkçe'};
+const BRAND={ar:'LuxDot',en:'LuxDot',nl:'LuxDot',he:'LuxDot',jv:'LuxDot',id:'LuxDot',fr:'LuxDot',es:'LuxDot',de:'LuxDot',tr:'LuxDot'};
+const NAV={
+ar:{home:'الرئيسية',library:'المكتبة',faith:'الإيمان والحكمة',nusantara:'نوسانتارا',memory:'الذاكرة',research:'الأبحاث',projects:'المشاريع'},
+en:{home:'Home',library:'Library',faith:'Faith & Wisdom',nusantara:'Nusantara',memory:'Memory',research:'Research',projects:'Projects'},
+nl:{home:'Home',library:'Bibliotheek',faith:'Geloof & wijsheid',nusantara:'Nusantara',memory:'Geheugen',research:'Onderzoek',projects:'Projecten'},
+he:{home:'ראשי',library:'ספרייה',faith:'אמונה וחכמה',nusantara:'נוסנטרה',memory:'זיכרון',research:'מחקר',projects:'פרויקטים'},
+jv:{home:'Ngarep',library:'Pustaka',faith:'Iman & Kawicaksanan',nusantara:'Nusantara',memory:'Pangeling',research:'Panaliten',projects:'Proyèk'},
+id:{home:'Beranda',library:'Perpustakaan',faith:'Iman & Kebijaksanaan',nusantara:'Nusantara',memory:'Memori',research:'Riset',projects:'Proyek'},
+fr:{home:'Accueil',library:'Bibliothèque',faith:'Foi & sagesse',nusantara:'Nusantara',memory:'Mémoire',research:'Recherches',projects:'Projets'},
+es:{home:'Inicio',library:'Biblioteca',faith:'Fe y sabiduría',nusantara:'Nusantara',memory:'Memoria',research:'Investigación',projects:'Proyectos'},
+de:{home:'Start',library:'Bibliothek',faith:'Glaube & Weisheit',nusantara:'Nusantara',memory:'Erinnerung',research:'Forschung',projects:'Projekte'},
+tr:{home:'Ana sayfa',library:'Kütüphane',faith:'İnanç & Bilgelik',nusantara:'Nusantara',memory:'Hafıza',research:'Araştırma',projects:'Projeler'}
+};
 function saved(){const s=localStorage.getItem('luxdot.lang');return SUP.includes(s)?s:null}
 function query(){const q=new URLSearchParams(location.search).get('lang');return SUP.includes(q)?q:null}
 function current(){return SUP.includes(window.__LUX_LANG)?window.__LUX_LANG:(query()||saved()||'en')}
