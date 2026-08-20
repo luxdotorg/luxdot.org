@@ -1,0 +1,311 @@
+{
+  "updated": "2026-08-20",
+  "category": "savior",
+  "editorial_note": {
+    "ar": "هذه المواد توثق ما يُتداول ولا تُعامل كإثبات مستقل على تحقق نبوءة.",
+    "en": "These entries document circulating claims and are not treated as independent proof of fulfilled prophecy."
+  },
+  "items": [
+    {
+      "id": "judaism-hajioff-2026-07-11",
+      "belief": "judaism",
+      "belief_label": {
+        "ar": "اليهودية · المشيح",
+        "en": "Judaism · Moshiach",
+        "nl": "Jodendom · Moshiach",
+        "he": "יהדות · משיח"
+      },
+      "type": "podcast",
+      "type_label": {
+        "ar": "بودكاست",
+        "en": "Podcast",
+        "nl": "Podcast",
+        "he": "פודקאסט"
+      },
+      "status": "claim",
+      "status_label": {
+        "ar": "ادعاء معاصر",
+        "en": "Contemporary claim",
+        "nl": "Actuele claim",
+        "he": "טענה עכשווית"
+      },
+      "title": {
+        "ar": "«المشيح حي الآن ولا يعرف ذلك» — رابي لورنس هاجيوف",
+        "en": "“Moshiach Is Alive Right Now — And Doesn't Know It” — R' Lawrence Hajioff",
+        "nl": "‘Moshiach leeft nu — en weet het niet’ — R' Lawrence Hajioff",
+        "he": "״המשיח חי עכשיו — ואינו יודע זאת״ — ר׳ לורנס חג'יוף"
+      },
+      "claim": {
+        "ar": "حلقة منشورة في 11 يوليو 2026 تناقش ما إذا كانت أحداث العالم الحالية تدخل ضمن صورة نبوءات آخر الأيام والمشيح.",
+        "en": "A July 11, 2026 episode asking whether current world events fit the prophetic picture of the end of days and Moshiach.",
+        "nl": "Aflevering van 11 juli 2026 over de vraag of actuele gebeurtenissen passen in profetieën over de eindtijd en Moshiach.",
+        "he": "פרק מ־11 ביולי 2026 הבוחן אם אירועי העולם משתלבים בתמונת נבואות אחרית הימים והמשיח."
+      },
+      "source": {
+        "ar": "Meaningful People / Podscan",
+        "en": "Meaningful People / Podscan"
+      },
+      "published": "2026-07-11",
+      "url": "https://podscan.fm/podcasts/meaningful-people/episodes/moshiach-is-alive-right-now-and-doesnt-know-it-r-lawrence-hajioff",
+      "research": "research/savior/judaism.html"
+    },
+    {
+      "id": "judaism-shmuel-eliyahu-2026-06-19",
+      "belief": "judaism",
+      "belief_label": {
+        "ar": "اليهودية · المشيح",
+        "en": "Judaism · Moshiach",
+        "nl": "Jodendom · Moshiach",
+        "he": "יהדות · משיח"
+      },
+      "type": "article",
+      "type_label": {
+        "ar": "مقال",
+        "en": "Article",
+        "nl": "Artikel",
+        "he": "מאמר"
+      },
+      "status": "analysis",
+      "status_label": {
+        "ar": "تفسير نبوئي",
+        "en": "Prophetic interpretation",
+        "nl": "Profetische duiding",
+        "he": "פרשנות נבואית"
+      },
+      "title": {
+        "ar": "الحاخام شموئيل إلياهو: «الريبي والخلاص»",
+        "en": "Rabbi Shmuel Eliyahu: “The Rebbe on Redemption”",
+        "nl": "Rabbi Shmuel Eliyahu: ‘The Rebbe on Redemption’",
+        "he": "הרב שמואל אליהו: ״הרבי והגאולה״"
+      },
+      "claim": {
+        "ar": "يربط مقال من يونيو 2026 مِدراشًا عن السنة التي يُكشف فيها الملك المسيح بأحداث إقليمية معاصرة.",
+        "en": "A June 2026 article connects a Midrash about the year the King Messiah is revealed with contemporary regional events.",
+        "nl": "Een artikel uit juni 2026 verbindt een midrasj over het jaar waarin de Messias-koning wordt geopenbaard met actuele regionale gebeurtenissen.",
+        "he": "מאמר מיוני 2026 מקשר מדרש על השנה שבה מתגלה מלך המשיח לאירועים אזוריים עכשוויים."
+      },
+      "source": {
+        "ar": "Israel National News",
+        "en": "Israel National News"
+      },
+      "published": "2026-06-19",
+      "url": "https://www.israelnationalnews.com/news/428881",
+      "research": "research/savior/judaism.html"
+    },
+    {
+      "id": "christianity-premier-2026-01-15",
+      "belief": "christianity",
+      "belief_label": {
+        "ar": "المسيحية · المجيء الثاني",
+        "en": "Christianity · Second Coming",
+        "nl": "Christendom · Wederkomst",
+        "he": "נצרות · הביאה השנייה"
+      },
+      "type": "article",
+      "type_label": {
+        "ar": "مقال",
+        "en": "Article",
+        "nl": "Artikel",
+        "he": "מאמר"
+      },
+      "status": "context",
+      "status_label": {
+        "ar": "رصد ونقد",
+        "en": "Context / critique",
+        "nl": "Context / kritiek",
+        "he": "הקשר / ביקורת"
+      },
+      "title": {
+        "ar": "هل يجب أخذ توقعات المجيء الثاني في 2026 بجدية؟",
+        "en": "Should Christians take 2026 Second Coming predictions seriously?",
+        "nl": "Moeten christenen voorspellingen over de Wederkomst in 2026 serieus nemen?",
+        "he": "האם יש להתייחס ברצינות לתחזיות על הביאה השנייה ב־2026?"
+      },
+      "claim": {
+        "ar": "يوثق انتشار توقعات عن عودة المسيح خلال 2026، ويناقشها نقديًا بدل تبني موعد محدد.",
+        "en": "Documents circulation of predictions that Christ will return in 2026 while critically examining date-setting.",
+        "nl": "Documenteert voorspellingen dat Christus in 2026 terugkeert en bespreekt de datumstelling kritisch.",
+        "he": "מתעד תחזיות על חזרת ישו ב־2026 ובוחן באופן ביקורתי קביעת תאריך."
+      },
+      "source": {
+        "ar": "Premier Christianity · Chris Follett",
+        "en": "Premier Christianity · Chris Follett"
+      },
+      "published": "2026-01-15",
+      "url": "https://www.premierchristianity.com/opinion/people-are-betting-on-the-second-coming-of-christ-happening-in-2026-should-christians-take-it-seriously/20827.article",
+      "research": "research/savior/christianity.html"
+    },
+    {
+      "id": "sunni-islam-islamtv-2026-01-03",
+      "belief": "islam-sunni",
+      "belief_label": {
+        "ar": "الإسلام السني · المهدي",
+        "en": "Sunni Islam · Mahdi",
+        "nl": "Soennitische islam · Mahdi",
+        "he": "אסלאם סוני · מהדי"
+      },
+      "type": "video",
+      "type_label": {
+        "ar": "فيديو",
+        "en": "Video",
+        "nl": "Video",
+        "he": "וידאו"
+      },
+      "status": "claim",
+      "status_label": {
+        "ar": "ادعاء معاصر",
+        "en": "Contemporary claim",
+        "nl": "Actuele claim",
+        "he": "טענה עכשווית"
+      },
+      "title": {
+        "ar": "«بقيت ثلاث علامات لظهور المهدي»",
+        "en": "“3 Signs Left for Al-Mahdi to Show Himself”",
+        "nl": "‘Nog 3 tekenen voor de verschijning van Al-Mahdi’",
+        "he": "״נותרו שלושה סימנים להופעת אל־מהדי״"
+      },
+      "claim": {
+        "ar": "فيديو واسع المشاهدة نُشر في يناير 2026 يقدم الأحداث ضمن إطار اقتراب ظهور المهدي؛ يُسجل هنا كادعاء إعلامي لا كحكم علمائي.",
+        "en": "A widely viewed January 2026 video frames events as indicating the Mahdi's appearance is near; logged as a media claim, not scholarly consensus.",
+        "nl": "Een veelbekeken video uit januari 2026 presenteert gebeurtenissen als tekenen dat de Mahdi nabij is; opgenomen als mediaclaim, niet als geleerdenconsensus.",
+        "he": "סרטון נצפה מינואר 2026 מציג אירועים כסימנים להתקרבות הופעת המהדי; מתועד כטענת מדיה ולא כקונצנזוס הלכתי."
+      },
+      "source": {
+        "ar": "The iSLAM TV · YouTube",
+        "en": "The iSLAM TV · YouTube"
+      },
+      "published": "2026-01-03",
+      "url": "https://www.youtube.com/watch?v=57u2S7FFffs",
+      "research": "research/savior/islam-sunni.html"
+    },
+    {
+      "id": "twelver-ahmad-salman-2026-01-18",
+      "belief": "islam-twelver",
+      "belief_label": {
+        "ar": "الإسلام الاثنا عشري · الإمام المهدي",
+        "en": "Twelver Shi'a · Imam Mahdi",
+        "nl": "Twaalver-sjiisme · Imam Mahdi",
+        "he": "שיעה תריסרית · האימאם מהדי"
+      },
+      "type": "lecture",
+      "type_label": {
+        "ar": "محاضرة",
+        "en": "Lecture",
+        "nl": "Lezing",
+        "he": "הרצאה"
+      },
+      "status": "analysis",
+      "status_label": {
+        "ar": "شرح علامات الظهور",
+        "en": "Signs discussion",
+        "nl": "Bespreking van tekenen",
+        "he": "דיון בסימני ההופעה"
+      },
+      "title": {
+        "ar": "الشيخ أحمد سلمان: أسئلة حول علامات ظهور الإمام المهدي",
+        "en": "Shaykh Ahmad Salman: Questions on signs of Imam Mahdi’s appearance",
+        "nl": "Sjeik Ahmad Salman: vragen over tekenen van de verschijning van Imam Mahdi",
+        "he": "השייח׳ אחמד סלמאן: שאלות על סימני הופעת האימאם מהדי"
+      },
+      "claim": {
+        "ar": "محاضرة حديثة من مركز متخصص في النجف تتناول علامات الظهور وكيفية فهمها، وهي مادة أصلية من داخل التقليد الاثني عشري.",
+        "en": "A recent lecture from a specialist Najaf center discussing signs of the reappearance from within Twelver tradition.",
+        "nl": "Een recente lezing van een gespecialiseerd centrum in Najaf over tekenen van de terugkeer binnen de twaalvertraditie.",
+        "he": "הרצאה עדכנית ממרכז מתמחה בנג'ף על סימני ההופעה מתוך המסורת התריסרית."
+      },
+      "source": {
+        "ar": "مركز الدراسات التخصصية في الإمام المهدي · النجف",
+        "en": "Specialized Studies Center of Imam al-Mahdi · Najaf"
+      },
+      "published": "2026-01-18",
+      "url": "https://www.m-mahdi.net/posts/%D8%B9%D9%86%D8%AF-%D8%AE%D8%B1%D9%88%D8%AC-%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D9%85-%D8%A7%D9%84%D9%85%D9%87%D8%AF%D9%8A-%D8%B9%D8%AC%D9%84-%D8%A7%D9%84%D9%84%D9%87-%D9%81%D8%B1%D8%AC%D9%87-%D8%B3%D9%8A%D8%B9%D8%B1%D9%81%D9%87-%D9%83%D9%84-%D8%A7%D9%84%D9%86%D8%A7%D8%B3-%D8%A8%D9%84%D8%A7-%D8%A7%D8%B3%D8%AA%D8%AB%D9%86%D8%A7%D8%A1",
+      "research": "research/savior/islam-twelver.html"
+    },
+    {
+      "id": "hinduism-kalki-network-2026",
+      "belief": "hinduism",
+      "belief_label": {
+        "ar": "الهندوسية · كالكي",
+        "en": "Hinduism · Kalki",
+        "nl": "Hindoeïsme · Kalki",
+        "he": "הינדואיזם · קלקי"
+      },
+      "type": "social",
+      "type_label": {
+        "ar": "شبكات اجتماعية",
+        "en": "Social channels",
+        "nl": "Sociale kanalen",
+        "he": "רשתות חברתיות"
+      },
+      "status": "claim",
+      "status_label": {
+        "ar": "حركة معاصرة",
+        "en": "Contemporary movement",
+        "nl": "Hedendaagse beweging",
+        "he": "תנועה עכשווית"
+      },
+      "title": {
+        "ar": "شبكة «Kalki Avatar» وقنواتها المعاصرة",
+        "en": "The contemporary “Kalki Avatar” channel network",
+        "nl": "Het hedendaagse ‘Kalki Avatar’-kanaalnetwerk",
+        "he": "רשת הערוצים העכשווית ״Kalki Avatar״"
+      },
+      "claim": {
+        "ar": "شبكة تنشر عبر يوتيوب وإنستغرام وفيسبوك وتلغرام محتوى يربط Bhavishya Malika ببداية ساتيا يوغا في العصر الحالي/القريب.",
+        "en": "A multi-platform network publishing material that links Bhavishya Malika with a near/current transition toward Satya Yuga.",
+        "nl": "Een netwerk op meerdere platforms dat Bhavishya Malika koppelt aan een nabije overgang naar Satya Yuga.",
+        "he": "רשת רב־פלטפורמית המקשרת את Bhavishya Malika למעבר קרוב לעידן Satya Yuga."
+      },
+      "source": {
+        "ar": "Kalki Avatar · Linktree / social channels",
+        "en": "Kalki Avatar · Linktree / social channels"
+      },
+      "published": "2026",
+      "url": "https://linktr.ee/kalkiavatar",
+      "research": "research/savior/hinduism.html"
+    },
+    {
+      "id": "hinduism-vishnu-returns-2026",
+      "belief": "hinduism",
+      "belief_label": {
+        "ar": "الهندوسية · كالكي",
+        "en": "Hinduism · Kalki",
+        "nl": "Hindoeïsme · Kalki",
+        "he": "הינדואיזם · קלקי"
+      },
+      "type": "video",
+      "type_label": {
+        "ar": "فيديو / فيلم",
+        "en": "Video / film",
+        "nl": "Video / film",
+        "he": "וידאו / סרט"
+      },
+      "status": "claim",
+      "status_label": {
+        "ar": "تمثيل معاصر",
+        "en": "Contemporary portrayal",
+        "nl": "Hedendaagse verbeelding",
+        "he": "ייצוג עכשווי"
+      },
+      "title": {
+        "ar": "Kalki: Vishnu Returns — مشروع فيلم يضع الظهور في عالم اليوم",
+        "en": "Kalki: Vishnu Returns — film project placing the appearance in today's world",
+        "nl": "Kalki: Vishnu Returns — filmproject dat de verschijning in de huidige wereld plaatst",
+        "he": "Kalki: Vishnu Returns — פרויקט סרט המציב את ההופעה בעולם של ימינו"
+      },
+      "claim": {
+        "ar": "التشويق يصرح بأن العمل سيعرض سيناريو ظهور كالكي في عالم اليوم؛ هو تمثيل سينمائي وليس مصدرًا عقائديًا.",
+        "en": "The teaser explicitly presents a scenario of Kalki appearing in today's world; it is cinematic interpretation, not doctrinal evidence.",
+        "nl": "De teaser presenteert expliciet een scenario waarin Kalki in de huidige wereld verschijnt; het is filmische interpretatie, geen leerstellig bewijs.",
+        "he": "הטיזר מציג תרחיש של הופעת קלקי בעולם של ימינו; זהו ייצוג קולנועי ולא ראיה דתית."
+      },
+      "source": {
+        "ar": "Kalki: Vishnu Returns · YouTube",
+        "en": "Kalki: Vishnu Returns · YouTube"
+      },
+      "published": "2024-01-18 / release 2026",
+      "url": "https://www.youtube.com/watch?v=v2ulPVbw_nk",
+      "research": "research/savior/hinduism.html"
+    }
+  ]
+}
