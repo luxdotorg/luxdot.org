@@ -21,3 +21,8 @@
 
 /* v4.3.39 Agile Research Sky */
 .rg-canvas-wrap{min-height:820px}.rg-canvas{height:820px}.rg-star-label{opacity:.92;font-size:12px;stroke-width:6px}.rg-star.major .rg-star-label{opacity:1}.rg-zoom-far .rg-star:not([data-id="luxdot"]) .rg-star-label{opacity:.76}.rg-circuit{fill:none;stroke-linecap:square;stroke-linejoin:round}.rg-topic-filters,.rg-layout-modes{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin:0 0 12px}.rg-topic-filters{padding:10px;border:1px solid rgba(99,255,155,.12);border-radius:16px;background:rgba(4,12,8,.55)}.rg-layout-modes{justify-content:flex-end;margin-bottom:16px}.rg-layout-modes>span{font-size:11px;color:var(--rg-muted);margin-inline-end:4px}.rg-topic-filters .rg-btn.active,.rg-layout-modes .rg-btn.active{background:rgba(210,177,91,.09);box-shadow:0 0 16px rgba(210,177,91,.08)}@media(max-width:720px){.rg-canvas-wrap,.rg-canvas{min-height:760px;height:760px}.rg-star-label{font-size:12px;opacity:.88}.rg-topic-filters{overflow-x:auto;flex-wrap:nowrap}.rg-topic-filters .rg-btn{white-space:nowrap}.rg-layout-modes{justify-content:flex-start}}
+
+/* v4.3.119 cosmic hierarchy */
+.rg-galaxy-halo{fill:rgba(116,211,154,.025);stroke:rgba(116,211,154,.18);stroke-width:1.2;stroke-dasharray:3 10;filter:drop-shadow(0 0 18px rgba(116,211,154,.08))}
+.rg-galaxy-label{fill:#9fb7a7;font-size:18px;font-weight:800;letter-spacing:.03em;paint-order:stroke;stroke:#050806;stroke-width:5px}
+.rg-star.major .star-halo{opacity:.55}.rg-node[data-kind="hub"] .star-core{stroke-width:2.4}.rg-node[data-kind="hub"] .rg-star-label{font-weight:900;font-size:15px}
