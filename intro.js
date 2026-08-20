@@ -12,6 +12,22 @@ const pilotNote=document.getElementById('pilotNote');
 const PILOT={ar:'الموقع قيد التطوير · إطلاق النسخة التجريبية في 3 سبتمبر 2026',en:'Site under active development · Pilot launch: 3 September 2026',nl:'Website in actieve ontwikkeling · Pilotlancering: 3 september 2026',he:'האתר בפיתוח פעיל · השקת גרסת הניסיון: 3 בספטמבר 2026'};
 const L={ar:{dir:'rtl',sub:'نقطة الضوء الأولى · حيث يبدأ الفهم',eye:'تقليل الضجيج · زيادة الإشارة',enter:'تلقي الإشارة',micro:'من الضجيج إلى الذاكرة',a:'الإشارة / كامنة',b:'الضجيج ← الوضوح',acq:'الإشارة / تم التقاطها',mem:'الضجيج ← الذاكرة'},en:{dir:'ltr',sub:'The First LuxDot · Where Understanding Begins',eye:'REDUCING NOISE · INCREASING SIGNAL',enter:'RECEIVE THE SIGNAL',micro:'FROM NOISE INTO MEMORY',a:'SIGNAL / LATENT',b:'NOISE → CLARITY',acq:'SIGNAL / ACQUIRED',mem:'NOISE → MEMORY'},nl:{dir:'ltr',sub:'Het eerste lichtpunt · Waar begrip begint',eye:'MINDER RUIS · MEER SIGNAAL',enter:'ONTVANG HET SIGNAAL',micro:'VAN RUIS NAAR HERINNERING',a:'SIGNAAL / LATENT',b:'RUIS → HELDERHEID',acq:'SIGNAAL / GEVONDEN',mem:'RUIS → GEHEUGEN'},jv:{dir:'ltr',sub:'Titik cahya kapisan · Papan pangerten diwiwiti',eye:'NYUDA SWARA · NGUWATAKE TANDHA',enter:'TAMPA TANDHA',micro:'SAKA SWARA TUMUJU PANGELING',a:'TANDHA / MENENG',b:'SWARA → CETHA',acq:'TANDHA / KATAMPA',mem:'SWARA → PANGELING'},he:{dir:'rtl',sub:'נקודת האור הראשונה · המקום שבו ההבנה מתחילה',eye:'מפחיתים רעש · מגבירים אות',enter:'קבל את האות',micro:'מרעש אל זיכרון',a:'אות / חבוי',b:'רעש ← בהירות',acq:'אות / נקלט',mem:'רעש ← זיכרון'}};
 let lang='en',W,H,dpr,fs,cols=[],last=0,clarity=0,lastPoint={x:innerWidth/2,y:innerHeight/2};
+
+// LuxDot 4.3.112 — additional landing languages.
+(function(){
+  if(typeof TX==="undefined") return;
+  const base=TX.en||{};
+  const add={
+    jv:{eyebrow:"SINYAL / MEMORI",sub:"Saka gangguan dadi memori.",enter:"TAMPA SINYAL",micro:"Pilih basa banjur mlebu.",pilot:"LuxDot · sistem riset lan memori urip."},
+    id:{eyebrow:"SINYAL / MEMORI",sub:"Dari gangguan menjadi memori.",enter:"TERIMA SINYAL",micro:"Pilih bahasa lalu masuk.",pilot:"LuxDot · sistem riset dan memori hidup."},
+    fr:{eyebrow:"SIGNAL / MÉMOIRE",sub:"Du bruit à la mémoire.",enter:"RECEVOIR LE SIGNAL",micro:"Choisissez une langue puis entrez.",pilot:"LuxDot · système vivant de recherche et de mémoire."},
+    es:{eyebrow:"SEÑAL / MEMORIA",sub:"Del ruido a la memoria.",enter:"RECIBIR LA SEÑAL",micro:"Elige un idioma y entra.",pilot:"LuxDot · sistema vivo de investigación y memoria."},
+    de:{eyebrow:"SIGNAL / ERINNERUNG",sub:"Vom Rauschen zur Erinnerung.",enter:"SIGNAL EMPFANGEN",micro:"Sprache wählen und eintreten.",pilot:"LuxDot · lebendiges Forschungs- und Erinnerungssystem."},
+    tr:{eyebrow:"SİNYAL / HAFIZA",sub:"Gürültüden hafızaya.",enter:"SİNYALİ AL",micro:"Bir dil seçin ve girin.",pilot:"LuxDot · yaşayan araştırma ve hafıza sistemi."}
+  };
+  Object.keys(add).forEach(k=>{TX[k]=Object.assign({},base,add[k])});
+})();
+
 function resize(){dpr=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;C.width=W*dpr;C.height=H*dpr;C.style.width=W+'px';C.style.height=H+'px';x.setTransform(dpr,0,0,dpr,0,0);fs=W<700?13:16;cols=Array.from({length:Math.ceil(W/fs)},(_,i)=>({x:i*fs,y:Math.random()*H,s:.55+Math.random()*1.35,a:.11+Math.random()*.38}))}addEventListener('resize',resize);resize();
 function frame(t){if(t-last<44){requestAnimationFrame(frame);return}last=t;x.fillStyle='rgba(0,4,1,.15)';x.fillRect(0,0,W,H);x.font=`${fs}px monospace`;for(const c of cols){const special=Math.random()<.0028,ch=special?WORDS[(Math.random()*WORDS.length)|0]:ordinary[(Math.random()*ordinary.length)|0];x.fillStyle=special?`rgba(215,255,226,${.35+c.a})`:`rgba(39,255,104,${c.a})`;x.shadowBlur=special?14:0;x.shadowColor='#4aff89';x.fillText(ch,c.x,c.y);x.shadowBlur=0;c.y+=fs*c.s;if(c.y>H+30&&Math.random()>.91)c.y=-30}requestAnimationFrame(frame)}requestAnimationFrame(frame);
 function ghost(){const e=document.createElement('span');e.className='ghost';e.textContent=WORDS[(Math.random()*WORDS.length)|0];e.style.left=(4+Math.random()*89)+'%';e.style.top=(7+Math.random()*82)+'%';e.style.fontSize=(10+Math.random()*5)+'px';signals.appendChild(e);setTimeout(()=>e.remove(),2400)}setInterval(ghost,1150);for(let i=0;i<5;i++)setTimeout(ghost,i*320);
