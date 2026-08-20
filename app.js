@@ -29,9 +29,11 @@ Object.assign(TX.he,{
 });
 
 const LANG_META={
- ar:{dir:"rtl",voice:"ar-SA"}, en:{dir:"ltr",voice:"en-US"}, nl:{dir:"ltr",voice:"nl-NL"}, jv:{dir:"ltr",voice:"jv-ID"}, he:{dir:"rtl",voice:"he-IL"}
+ ar:{dir:"rtl",voice:"ar-SA"}, en:{dir:"ltr",voice:"en-US"}, nl:{dir:"ltr",voice:"nl-NL"},
+ he:{dir:"rtl",voice:"he-IL"}, jv:{dir:"ltr",voice:"jv-ID"}, id:{dir:"ltr",voice:"id-ID"},
+ fr:{dir:"ltr",voice:"fr-FR"}, es:{dir:"ltr",voice:"es-ES"}, de:{dir:"ltr",voice:"de-DE"}, tr:{dir:"ltr",voice:"tr-TR"}
 };
-const CORE_LANGS=["ar","en","nl","jv","he"];
+const CORE_LANGS=["ar","en","nl","he","jv","id","fr","es","de","tr"];
 let LANG=(window.LuxLang&&window.LuxLang.get())||"en";
 if(!CORE_LANGS.includes(LANG))LANG="en";
 function t(k){
@@ -47,8 +49,9 @@ function applyLang(){
  document.querySelectorAll("[data-t]").forEach(e=>{e.textContent=t(e.dataset.t)});
  document.querySelectorAll("[data-ph]").forEach(e=>{e.placeholder=t(e.dataset.ph)});
  document.querySelectorAll("[data-lang-select]").forEach(e=>{
-   e.value=LANG;const lm={ar:"langAr",en:"langEn",nl:"langNl",jv:"langJv",he:"langHe"};
-   [...e.options].forEach(o=>{if(lm[o.value])o.textContent=t(lm[o.value])});
+   e.value=LANG;const lm={ar:"langAr",en:"langEn",nl:"langNl",he:"langHe",jv:"langJv",id:"langId",fr:"langFr",es:"langEs",de:"langDe",tr:"langTr"};
+   const labels={ar:"العربية",en:"English",nl:"Nederlands",he:"עברית",jv:"Basa Jawa",id:"Bahasa Indonesia",fr:"Français",es:"Español",de:"Deutsch",tr:"Türkçe"};
+   [...e.options].forEach(o=>{o.textContent=labels[o.value]||o.textContent});
  });
  const tk=document.body&&document.body.dataset.titleKey;document.title=tk?t(tk):"LuxDot";
  stripTerminalDots();
