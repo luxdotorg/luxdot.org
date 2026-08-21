@@ -36,7 +36,7 @@
   oud:{title:'Arabic Oud · عود عربي',artist:'Houssem Bettaibi',culture:'Arab world',kind:'harmony',duration:49.64,url:commonsFile('OUD.ogg'),license:'CC BY-SA 3.0',source:commonsPage('OUD.ogg')}
  };
  const QURAN=['min2','min12','min20','min4','min14','min5','min26','min27','min25'];
- const GHOUTA_MEMORIAL=['min1','ghoutaSilence','min12','min20','ghoutaSilence','min14','min25','min4','ghoutaSilence','min2'];
+ const GHOUTA_MEMORIAL=['ghoutaSilence','min1','oud','syriac','bach','qawwali','persia','gamelan','china','japan','africa','ghoutaSilence'];
  const JEWISH_SABBATH=['adon','kaddish','jewish','retseh','zadik','habein','birchos','weseeraw'];
  const CHRISTIAN_SUNDAY=['syriac','gregorian','avemaria','moreschi','bach'];
  const SPIRITUAL_LIBRARY=['syriac','gregorian','jewish','qawwali','oud','persia','gamelan','china','japan','africa','bach','mozart'];
@@ -49,8 +49,8 @@
   // 21 August is an annual LuxDot memorial day for the victims of the 2013 Ghouta sarin attack.
   if(p.day==='21'&&p.month==='08')return{
     key:'ghouta-memorial',
-    name:'يوم حداد الغوطة · Ghouta Memorial Day · 21 August 2013',
-    label:'القرآن · دقيقة صمت · ذاكرة الضحايا',
+    name:'الغوطة · من الصمت إلى الحياة · Ghouta Memorial Broadcast',
+    label:'60s SILENCE → QUR’AN → CHILDREN / LIFE / PEACE → WORLD MUSIC',
     ids:GHOUTA_MEMORIAL
   };
   if(p.weekday==='Sat')return{key:'jewish',name:'Shabbat · שבת · السبت اليهودي',label:'تراث وروحانيات يهودية · Jewish sacred heritage',ids:JEWISH_SABBATH};
