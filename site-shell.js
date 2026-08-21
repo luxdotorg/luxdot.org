@@ -38,7 +38,7 @@ window.addEventListener('resize',()=>{let h=d.querySelector('.lux-header-43108')
 
 
 
-/* LuxDot v4.3.125 · LuxDot Pulse — public live transparency */
+/* LuxDot v4.3.126 · LuxDot Pulse — public live transparency */
 (function(){
  function fmt(n){return Number.isFinite(+n)?new Intl.NumberFormat().format(+n):"—"}
  function bytes(n){
@@ -65,7 +65,7 @@ window.addEventListener('resize',()=>{let h=d.querySelector('.lux-header-43108')
   panel.innerHTML=`
     <button type="button" class="lt-close" aria-label="Close">×</button>
     <div class="lt-k"><span class="lp-dot"></span>LUXDOT PULSE · LIVE TRANSPARENCY</div>
-    <div class="lp-head"><h3>نبض نقطة نور</h3><span id="lpVersion">v4.3.125</span></div>
+    <div class="lp-head"><h3>نبض نقطة نور</h3><span id="lpVersion">v4.3.126</span></div>
     <div id="lpStatus" class="lp-status">تحميل البيانات المجمعة…</div>
     <div class="lp-metrics">
       <div><small>آخر 15 دقيقة</small><b id="lp15">—</b><em>زيارة</em></div>
@@ -94,7 +94,7 @@ window.addEventListener('resize',()=>{let h=d.querySelector('.lux-header-43108')
     try{
       const r=await fetch("/api/transparency",{headers:{"accept":"application/json"}});
       const d=await r.json();
-      panel.querySelector("#lpVersion").textContent="v"+(d.release?.version||"4.3.125");
+      panel.querySelector("#lpVersion").textContent="v"+(d.release?.version||"4.3.126");
       const changes=d.release?.recentChanges||[];
       panel.querySelector("#lpChanges").innerHTML=changes.slice(0,4).map(x=>`<div><strong>${x.title}</strong><span>${x.detail}</span></div>`).join("")||"<span>—</span>";
       const an=d.analytics||{};

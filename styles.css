@@ -415,7 +415,7 @@ body.home-arrival.home-arrival-go{animation:luxArrival .9s cubic-bezier(.18,.82,
 #luxTimelinePeek{position:fixed;z-index:10020;top:66px;right:14px;width:min(330px,calc(100vw - 28px));padding:18px;border:1px solid rgba(99,255,155,.25);border-radius:20px;background:rgba(2,9,5,.96);color:#eaf6ed;box-shadow:0 18px 55px rgba(0,0,0,.45);backdrop-filter:blur(15px);transform:translateY(-8px);opacity:0;pointer-events:none;transition:.22s ease}
 [dir=rtl] #luxTimelinePeek{right:auto;left:14px}#luxTimelinePeek.open{transform:none;opacity:1;pointer-events:auto}.lt-close{position:absolute;top:8px;left:9px;border:0;background:none;color:#91a598;font-size:22px;cursor:pointer}.lt-k{font:800 9px Arial;color:#d2b15b;letter-spacing:.12em}.lt-line{margin:14px 0;padding-inline-start:16px;border-inline-start:1px solid #315b3d}.lt-line div{position:relative;padding:0 0 15px 9px}.lt-line div:before{content:"";position:absolute;inset-inline-start:-21px;top:5px;width:8px;height:8px;border-radius:50%;background:#63ff9b}.lt-line b{display:block;color:#d2b15b;font:800 11px Arial}.lt-line span{font-size:12px;color:#c5d5ca}.lt-open{display:block;border-top:1px solid #1d3424;padding-top:11px;color:#a9f6c1!important;font-size:11px;text-decoration:none!important}
 
-/* LuxDot v4.3.125 · Pulse drawer */
+/* LuxDot v4.3.126 · Pulse drawer */
 #luxTimelineInfo{appearance:none;cursor:pointer}
 .lp-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.lp-head h3{margin:.35em 0}.lp-head span{font:800 10px Arial;color:#d2b15b}
 .lp-dot{display:inline-block;width:7px;height:7px;margin-inline-end:7px;border-radius:50%;background:#63ff9b;box-shadow:0 0 9px rgba(99,255,155,.7)}
