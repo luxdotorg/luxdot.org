@@ -81,7 +81,7 @@ window.addEventListener('resize',()=>{let h=d.querySelector('.lux-header-43108')
       <div><b>07.12</b><span>عصر الدقّة · KICK-OFF</span></div>
     </div></div>
     <div class="lp-privacy">Aggregated only · لا IP · لا أسماء · لا تتبع فردي</div>
-    <div class="lp-hubs"><a href="values.html">VALUES · القيم</a><a href="research.html">LIVE RESEARCH · الأبحاث الحيّة</a><a href="media.html">SIGNAL · الإشارة</a></div><div class="lp-links"><a href="timeline.html?lang=${encodeURIComponent(lang)}">الرزنامة</a><a href="pulse-methodology.html?lang=${encodeURIComponent(lang)}">كيف نقيس؟</a></div>`;
+    <div class="lp-hubs"><a href="calendar.html">365 · هوية اليوم</a><a href="values.html">VALUES · القيم</a><a href="research.html">LIVE RESEARCH · الأبحاث الحيّة</a><a href="media.html">SIGNAL · الإشارة</a></div><div class="lp-links"><a href="timeline.html?lang=${encodeURIComponent(lang)}">الرزنامة</a><a href="pulse-methodology.html?lang=${encodeURIComponent(lang)}">كيف نقيس؟</a></div>`;
   document.body.appendChild(panel);
 
   a.addEventListener("click",()=>{const open=panel.classList.toggle("open");panel.setAttribute("aria-hidden",open?"false":"true");if(open)loadPulse()});

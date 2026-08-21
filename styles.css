@@ -436,3 +436,6 @@ body.home-arrival.home-arrival-go{animation:luxArrival .9s cubic-bezier(.18,.82,
 #luxDailyIdentity{position:fixed;z-index:9996;right:12px;bottom:12px;display:flex;align-items:center;gap:8px;max-width:260px;padding:7px 9px;border:1px solid rgba(99,255,155,.22);border-radius:14px;background:rgba(2,9,5,.78);backdrop-filter:blur(10px);color:#dce9df!important;text-decoration:none!important;opacity:.48;transition:.2s}
 #luxDailyIdentity:hover,#luxDailyIdentity:focus{opacity:1;transform:translateY(-1px)}#luxDailyIdentity svg{width:32px;height:21px;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.15)}#luxDailyIdentity>i{width:9px;height:9px;border-radius:50%;background:#d2b15b}#luxDailyIdentity span{display:grid;gap:1px}#luxDailyIdentity b{font-size:9px;color:#e7f2ea}#luxDailyIdentity small{font-size:7px;line-height:1.4;color:#8da194}
 @media(max-width:600px){#luxDailyIdentity{max-width:185px;right:7px;bottom:7px}#luxDailyIdentity small{display:none}}
+
+/* v4.5.0 LuxDot 365 */
+#luxDailyIdentity em{font:800 7px Arial;color:#d2b15b;font-style:normal;margin-inline-start:3px}#luxDailyIdentity[data-kind="memory"]{border-color:rgba(145,45,45,.42)}#luxDailyIdentity[data-kind="milestone"]{border-color:rgba(210,177,91,.55)}
