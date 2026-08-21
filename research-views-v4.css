@@ -96,3 +96,21 @@
 .rg-canvas-wrap>.rg-view-switch:before{content:"VIEW";color:#6f8d79;font:800 8px/1 Arial;letter-spacing:.16em;margin-inline:4px}
 @media(max-width:620px){.rg-canvas-wrap>.rg-view-switch{top:46px!important;max-width:calc(100% - 16px)}.rg-canvas-wrap>.rg-view-switch .rg-view-tab{min-width:0;padding:9px 10px;font-size:9px}}
 .rg-symbolism{display:grid;grid-template-columns:repeat(4,minmax(150px,1fr));gap:8px;margin:14px 0}.rg-symbolism article{padding:11px;border:1px solid rgba(99,255,155,.14);border-radius:14px;background:#06100a}.rg-symbolism b{display:block;font-size:10px}.rg-symbolism span{display:block;color:#849b8d;font-size:8px;line-height:1.6;margin-top:5px}.rg-symbolism article.active{border-color:rgba(210,177,91,.55)}[data-research-view="neural"] .rg-canvas-wrap{background:radial-gradient(circle at 50% 50%,rgba(65,122,83,.10),transparent 42%),#010403}.rg-neuron-ring{fill:none;stroke:rgba(99,255,155,.14);stroke-width:1;stroke-dasharray:2 5}[data-research-view="neural"] .rg-edge{stroke:rgba(99,255,155,.22)!important}[data-research-view="motherboard"] .rg-canvas-wrap{background:linear-gradient(rgba(61,143,92,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(61,143,92,.04) 1px,transparent 1px),#021008;background-size:18px 18px}.rg-motherboard .rg-board-zone{fill:rgba(5,24,13,.82);stroke:rgba(99,255,155,.22)}@media(max-width:800px){.rg-symbolism{grid-template-columns:1fr 1fr}}
+/* v4.12.0 · true neural view + dynamic translated view guide */
+.rg-symbolism{display:block!important;margin:14px 0 18px!important}
+.rg-guide-card{padding:14px 15px;border:1px solid rgba(99,255,155,.16);border-radius:18px;background:linear-gradient(135deg,rgba(7,19,11,.98),rgba(3,9,6,.98))}
+.rg-guide-head{display:grid;gap:5px}.rg-guide-head b{font-size:13px;color:#eef8f1}.rg-guide-head span{font-size:9px;color:#8ca091;line-height:1.7}
+.rg-guide-parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:7px;margin-top:11px}.rg-guide-parts div{padding:9px;border:1px solid rgba(99,255,155,.09);border-radius:11px;background:#051009}.rg-guide-parts strong{display:block;color:#d8eadf;font-size:9px}.rg-guide-parts small{display:block;color:#71887a;font-size:8px;line-height:1.5;margin-top:3px}
+html[lang="ar"] .rg-symbolism,html[lang="ar"] .rg-view-switch,html[lang="ar"] .rg-mode-legend{font-family:"Noto Kufi Arabic",Tahoma,Arial,sans-serif!important}
+[data-research-view="neural"] .rg-dust,[data-research-view="neural"] .rg-galaxy-halo,[data-research-view="neural"] .rg-galaxy-label{opacity:.035!important}
+[data-research-view="neural"] .rg-canvas-wrap{background:radial-gradient(ellipse at 50% 48%,rgba(29,95,53,.12),transparent 45%),radial-gradient(circle at 28% 24%,rgba(57,117,76,.055),transparent 27%),#010403!important}
+.rg-neural-lobe{fill:rgba(99,255,155,.012);stroke:rgba(99,255,155,.09);stroke-width:1;stroke-dasharray:3 11}
+.rg-dendrite{fill:none;stroke:rgba(117,183,137,.20);stroke-width:1;stroke-linecap:round}
+.rg-neuron-ring{fill:rgba(4,18,10,.5)!important;stroke:rgba(99,255,155,.32)!important;stroke-width:1!important;stroke-dasharray:2 4!important}
+[data-research-view="neural"] .rg-node .star-core{fill:#06140b!important;stroke:#9effbd!important;stroke-width:1.6!important;filter:drop-shadow(0 0 7px rgba(99,255,155,.72))!important}
+[data-research-view="neural"] .rg-edge{stroke:rgba(106,159,121,.18)!important;stroke-width:1.05!important;stroke-linecap:round!important}
+[data-research-view="neural"] .rg-edge.rg-neural-synapse{stroke-dasharray:4 130!important;animation:neuralSignal 2.7s linear infinite!important;animation-delay:var(--syn-delay,0s)!important;filter:drop-shadow(0 0 3px rgba(99,255,155,.45))}
+[data-research-view="neural"] .rg-edge.rg-signal-active{stroke:#c5ffd7!important;stroke-width:3!important;stroke-dasharray:7 100!important;animation:neuralSignalActive 1.05s linear infinite!important;filter:drop-shadow(0 0 5px #63ff9b)}
+@keyframes neuralSignal{from{stroke-dashoffset:134}to{stroke-dashoffset:0}}@keyframes neuralSignalActive{from{stroke-dashoffset:107}to{stroke-dashoffset:0}}
+[data-research-view="motherboard"] .rg-motherboard .rg-board-zone{stroke:rgba(86,186,119,.30)!important}
+@media(prefers-reduced-motion:reduce){[data-research-view="neural"] .rg-edge.rg-neural-synapse{animation:none!important}}

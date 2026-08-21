@@ -1,49 +1,44 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>LuxDot WITNESS · الشاهد</title><link rel="stylesheet" href="styles.css?v=460"><style>
-body{margin:0;background:#020503;color:#edf7ef;font-family:"Noto Kufi Arabic",Arial,sans-serif}.w{max-width:1040px;margin:auto;padding:42px 18px 120px}.ey{font:800 10px Arial;color:#d2b15b;letter-spacing:.15em}h1{font-size:clamp(42px,8vw,82px);margin:.1em 0}.lead{max-width:860px;line-height:2;color:#b6c8bc}.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;margin:22px 0}.trust div,.panel{border:1px solid #24402c;border-radius:18px;background:#06100a;padding:15px}.trust b{display:block;color:#8ff2ae;margin-bottom:6px}.trust small{color:#91a598;line-height:1.7}.panel{margin:12px 0}.panel h2{margin-top:0}.field{margin:13px 0}.field label{display:block;font-size:11px;color:#b7c8bd;margin-bottom:5px}.field input,.field textarea,.field select{width:100%;box-sizing:border-box;background:#020704;color:#edf7ef;border:1px solid #294b34;border-radius:12px;padding:11px;font:inherit}.field textarea{min-height:190px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.checks label{display:block;padding:7px 0;color:#b9c9be;font-size:11px}.warning{border-inline-start:2px solid #d2b15b;padding:12px 14px;background:#0a0d08;color:#c9d3cc;line-height:1.8;font-size:10px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.actions button{border:1px solid #3b6547;border-radius:999px;background:#07140c;color:#dff3e5;padding:10px 15px;cursor:pointer}.actions .primary{border-color:#d2b15b;color:#f0d482}.receipt{display:none;margin-top:20px;padding:18px;border:1px solid #d2b15b;border-radius:18px;background:#0b100b}.receipt.on{display:block}.receipt code{direction:ltr;display:block;word-break:break-all;color:#8ff2ae;margin:8px 0}.status{font:800 9px Arial;color:#7fe7a1;letter-spacing:.1em}.flow{display:flex;flex-wrap:wrap;gap:5px;margin:20px 0}.flow span{padding:7px 9px;border:1px solid #24402c;border-radius:999px;font:800 8px Arial;color:#91a598}.sep{border:0;border-top:1px solid #193020;margin:24px 0}.muted{font-size:9px;color:#72867a;line-height:1.8}@media(max-width:650px){.row{grid-template-columns:1fr}}
-</style><link rel="stylesheet" href="memory-invite.css?v=41000"></head><body><main class="w"><div class="ey">LUXDOT · WITNESS / HUMAN TESTIMONY NETWORK · v4.6.0</div><h1>الشاهد</h1>
-<p class="lead">مكان لحفظ قصة إنسان قبل أن تضيع. شهادة ناجٍ، قريب، مسعف، جار، صديق أو شاهد. الإيداع لا يعني أن LuxDot يثبت صحة الرواية، والنشر ليس شرطًا للحفظ.</p>
-<div class="trust"><div><b>PRIVACY BY CHOICE</b><small>أنت تختار: حفظ فقط، نشر مجهول، اسم أول، أو هوية كاملة.</small></div><div><b>CONSENT ≠ STORAGE</b><small>موافقة الحفظ منفصلة عن موافقة النشر والاستخدام البحثي.</small></div><div><b>PROVENANCE</b><small>كل شهادة تحصل على Witness ID وبصمة رقمية للنسخة المحفوظة محليًا.</small></div><div><b>NO AUTO-PUBLISH</b><small>لا تظهر شهادة للعامة تلقائيًا. النشر مرحلة مراجعة مستقلة.</small></div></div>
+<!doctype html><html lang="en"><head><script src="language-core.js?v=43115"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LuxDot · Witness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=430"><link rel="stylesheet" href="witness-v412.css?v=41200"><link rel="stylesheet" href="luxdot-global-language.css?v=4399">
+</head><body><main class="w">
+<div class="ey">LUXDOT · WITNESS / HUMAN TESTIMONY NETWORK · v4.12.0</div>
+<h1 id="wTitle"></h1><p class="lead" id="wLead"></p>
+<div class="trust" id="wTrust"></div>
 <div class="flow"><span>RECEIVED</span><span>PRESERVED</span><span>REVIEWING</span><span>CORROBORATED</span><span>DISPUTED</span><span>UNVERIFIED</span><span>PUBLISHED</span></div>
-<div class="warning"><b>نسخة الإطلاق الآمن:</b> هذه الواجهة تولّد حزمة شهادة مشفّرة منطقيًا من حيث البنية وتحمّلها على جهازك، لكنها لا ترسل بيانات حساسة إلى خادم LuxDot بعد. لن ندّعي وجود قاعدة استقبال مركزية قبل تجهيز backend آمن، سياسة احتفاظ/حذف، وصلاحيات وصول مناسبة لـGDPR. لا تضع معلومات قد تعرّض شخصًا للخطر في نسخة عامة من الموقع.</div>
-
-<section id="witnessContext" class="witness-context" hidden><b>هذه الذاكرة مرتبطة بـ: <span id="witnessEventName"></span></b><small>يمكنك تغيير الحدث أو وصف العلاقة داخل النموذج.</small></section>
-<section class="witness-consent-note"><b>أنت صاحب القرار.</b> يمكنك تقديم المادة للأرشيف فقط، أو بدون اسم، أو السماح بالنشر، أو طلب التواصل معك قبل أي نشر. يمكنك ترك أي سؤال غير مناسب لك، والتوقف عن إكمال النموذج. إذا كانت المادة شديدة الحساسية، لا تضع معلومات قد تعرّضك أو تعرّض شخصاً آخر للخطر.</section><form id="wf"><input type="hidden" name="context_event" id="contextEvent"><input type="hidden" name="context_source" id="contextSource">
-<section class="panel"><h2>1 · القصة</h2>
-<div class="field"><label>عنوان مختصر *</label><input id="title" maxlength="180" required placeholder="مثال: قصة شخص أريد أن تبقى محفوظة"></div>
-<div class="field"><label>اكتب القصة كما تعرفها *</label><textarea id="narrative" maxlength="30000" required placeholder="ما الذي حدث؟ ماذا تتذكر؟ وما الذي تريد ألا يضيع؟"></textarea></div>
-<div class="row"><div class="field"><label>تاريخ الحدث — اختياري</label><input id="eventDate" type="date"></div><div class="field"><label>المكان — اختياري</label><input id="place"></div></div>
-<div class="row"><div class="field"><label>البلد — اختياري</label><input id="country"></div><div class="field"><label>علاقتك بالقصة</label><select id="relationship"><option value="">اختياري</option><option>شاهد</option><option>ناجٍ</option><option>قريب</option><option>صديق</option><option>مسعف / عامل إنساني</option><option>باحث / موثّق</option><option>أخرى</option></select></div></div>
-</section>
-
-<section class="panel"><h2>2 · هويتك — كلها اختيارية</h2><p class="muted">يمكن حفظ شهادة بلا اسم. بيانات الاتصال، إن أضفتها، ليست إذنًا بنشرها.</p>
-<div class="row"><div class="field"><label>الاسم</label><input id="name"></div><div class="field"><label>البريد الإلكتروني</label><input id="email" type="email"></div></div><div class="field"><label>الهاتف</label><input id="phone"></div>
-</section>
-
-<section class="panel"><h2>3 · الخصوصية والنشر</h2>
-<div class="field"><label>كيف تريد التعامل مع هويتك؟ *</label><select id="privacy" required><option value="preserve_only">احفظ القصة فقط — لا تنشرها</option><option value="publish_anonymous">يمكن نشر القصة دون هويتي</option><option value="publish_first_name">يمكن نشر اسمي الأول فقط</option><option value="publish_full_identity">يمكن نشر هويتي الكاملة</option></select></div>
-<div class="checks"><label><input id="store" type="checkbox" required> أوافق على حفظ هذه الشهادة وفق مستوى الخصوصية الذي اخترته.</label><label><input id="publish" type="checkbox"> أسمح بالنشر وفق مستوى الخصوصية أعلاه. (مستقل عن الحفظ)</label><label><input id="contact" type="checkbox"> يمكن التواصل معي للتحقق أو طلب توضيح.</label><label><input id="research" type="checkbox"> أسمح باستخدام نسخة مناسبة للخصوصية في البحث والربط داخل LuxDot.</label></div>
-</section>
-
-<section class="panel"><h2>4 · أدلة ومواد</h2><div class="field"><label>صور / صوت / فيديو / وثائق — اختياري</label><input id="files" type="file" multiple></div><p class="muted">في هذه النسخة لا تُرفع الملفات إلى الإنترنت. تُحسب بصمتها SHA-256 داخل متصفحك وتُسجل أسماء الملفات ونوعها في حزمة الشهادة. احتفظ بالأصول دون تعديل.</p></section>
-
-<div class="actions"><button class="primary" type="submit">إنشاء حزمة الشهادة</button><button type="button" id="clear">مسح النموذج</button></div>
-</form><section id="witnessSuccessPulse" class="witness-success-pulse"><span class="pulse"></span><h3>وصلت الذاكرة</h3><p>أصبحت نبضة في السجل الحي. لن تُنشر إلا وفق الإذن الذي اخترته.</p></section>
-<div id="receipt" class="receipt"><div class="status">PRESERVED LOCALLY · NOT PUBLISHED</div><h2>إيصال الشهادة</h2><p>احتفظ بهذا المعرّف مع الملف الذي سيتم تنزيله.</p><code id="wid"></code><span id="hash"></span><div class="actions"><button id="download" type="button">تنزيل JSON المحفوظ</button></div></div>
-<hr class="sep"><p class="muted">حالات التحقق تصف حالة مراجعة LuxDot فقط، وليست حكمًا قضائيًا. «CORROBORATED» يعني وجود مصادر مستقلة مساندة، و«DISPUTED» يعني وجود تعارض موثق، و«UNVERIFIED» يعني أن المادة لم تصل بعد إلى مستوى تحقق كافٍ.</p>
-</main><script>
-const $=id=>document.getElementById(id);let bundle=null;
-async function sha(text){const b=new TextEncoder().encode(text),h=await crypto.subtle.digest("SHA-256",b);return [...new Uint8Array(h)].map(x=>x.toString(16).padStart(2,"0")).join("")}
-async function fileHash(f){return sha(await f.arrayBuffer().then(b=>String.fromCharCode(...new Uint8Array(b.slice(0,Math.min(b.byteLength,5000000))))))}
-function id(){let a=new Uint8Array(4);crypto.getRandomValues(a);return `WIT-${new Date().getFullYear()}-${[...a].map(x=>x.toString(16).padStart(2,"0")).join("").toUpperCase()}`}
-$("wf").onsubmit=async e=>{e.preventDefault();if(!$("store").checked)return;const evidence=[];for(const f of $("files").files){evidence.push({filename:f.name,mime:f.type||"application/octet-stream",size:f.size,sha256:await fileHash(f),note:"Hash computed locally; file not uploaded."})}
-bundle={witness_id:id(),created_at:new Date().toISOString(),story:{title:$("title").value,narrative:$("narrative").value,event_date:$("eventDate").value||null,place:$("place").value||null,country:$("country").value||null,relationship:$("relationship").value||null,categories:[]},identity:{name:$("name").value||null,email:$("email").value||null,phone:$("phone").value||null},privacy:$("privacy").value,consent:{store:true,publish:$("publish").checked,contact_for_verification:$("contact").checked,research_use:$("research").checked,withdrawal_requested:false},verification:"preserved",evidence};
-const fingerprint=await sha(JSON.stringify(bundle));bundle.envelope_sha256=fingerprint;$("wid").textContent=bundle.witness_id;$("hash").textContent="SHA-256 · "+fingerprint;$("receipt").classList.add("on");$("receipt").scrollIntoView({behavior:"smooth"})};
-$("download").onclick=()=>{if(!bundle)return;const blob=new Blob([JSON.stringify(bundle,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=bundle.witness_id+".json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
-$("clear").onclick=()=>{if(confirm("مسح جميع الحقول من هذه الصفحة؟")){ $("wf").reset();$("receipt").classList.remove("on");bundle=null}};
-</script><script src="site-shell.js?v=460"></script><script>
-(()=>{const q=new URLSearchParams(location.search),ev=q.get('event')||'',src=q.get('source')||'';const ce=document.getElementById('contextEvent'),cs=document.getElementById('contextSource'),box=document.getElementById('witnessContext'),nm=document.getElementById('witnessEventName');if(ce)ce.value=ev;if(cs)cs.value=src;if(ev&&box&&nm){nm.textContent=ev;box.hidden=false}
-const f=document.querySelector('form');if(f)f.addEventListener('submit',()=>{sessionStorage.setItem('luxdot.witness.pending','1')});
-if(sessionStorage.getItem('luxdot.witness.success')==='1'){sessionStorage.removeItem('luxdot.witness.success');document.getElementById('witnessSuccessPulse')?.classList.add('on')}
+<div class="warning" id="wWarning"></div>
+<section id="wContext" class="context" hidden><b><span id="wContextLabel"></span>: <span id="wEventName"></span></b><small id="wContextNote"></small></section>
+<section class="consent-note" id="wConsent"></section>
+<form id="wf"><input type="hidden" id="contextEvent"><input type="hidden" id="contextSource">
+<section class="panel"><h2 id="s1"></h2>
+<div class="field"><label id="l0"></label><input id="title" maxlength="180" required></div>
+<div class="field"><label id="l1"></label><textarea id="narrative" maxlength="30000" required></textarea></div>
+<div class="row"><div class="field"><label id="l2"></label><input id="eventDate" type="date"></div><div class="field"><label id="l3"></label><input id="place"></div></div>
+<div class="row"><div class="field"><label id="l4"></label><input id="country"></div><div class="field"><label id="l5"></label><select id="relationship"></select></div></div></section>
+<section class="panel"><h2 id="s2"></h2><p class="muted" id="identityNote"></p>
+<div class="row"><div class="field"><label id="l6"></label><input id="name"></div><div class="field"><label id="l7"></label><input id="email" type="email"></div></div><div class="field"><label id="l8"></label><input id="phone"></div></section>
+<section class="panel"><h2 id="s3"></h2><div class="field"><label id="l9"></label><select id="privacy" required></select></div><div class="checks" id="checkWrap"></div></section>
+<section class="panel"><h2 id="s4"></h2><div class="field"><label id="l10"></label><input id="files" type="file" multiple></div><p class="muted" id="filesNote"></p></section>
+<div class="actions"><button class="primary" id="createBtn" type="submit"></button><button type="button" id="clearBtn"></button></div>
+</form>
+<section id="success" class="success"><span class="pulse"></span><h3 id="successT"></h3><p id="successP"></p></section>
+<div id="receipt" class="receipt"><div class="status" id="status"></div><h2 id="receiptT"></h2><p id="receiptP"></p><code id="wid"></code><span id="hash"></span><div class="actions"><button id="download" type="button"></button></div></div>
+<hr class="sep"><p class="muted" id="footer"></p>
+</main>
+<script>
+(async()=>{const SUP=['ar','en','nl','he','jv','id','fr','es','de','tr'];const q=new URLSearchParams(location.search),stored=localStorage.getItem('luxdot.lang'),lang=SUP.includes(q.get('lang'))?q.get('lang'):SUP.includes(stored)?stored:'en';localStorage.setItem('luxdot.lang',lang);document.documentElement.lang=lang;document.documentElement.dir=(lang==='ar'||lang==='he')?'rtl':'ltr';
+const DB=await fetch('witness-i18n.json?v=41200').then(r=>r.json()),t=DB[lang]||DB.en;$=id=>document.getElementById(id);document.title=t.title+' · LuxDot';$('wTitle').textContent=t.title;$('wLead').textContent=t.lead;$('wWarning').textContent=t.warning;$('wConsent').textContent=t.consent;
+$('wTrust').innerHTML=t.trust.map(x=>`<div><b>${x[0]}</b><small>${x[1]}</small></div>`).join('');t.sections.forEach((x,i)=>$('s'+(i+1)).textContent=x);t.labels.forEach((x,i)=>$('l'+i).textContent=x);$('title').placeholder=t.ph[0];$('narrative').placeholder=t.ph[1];$('identityNote').textContent=t.identityNote;$('filesNote').textContent=t.filesNote;
+$('relationship').innerHTML=t.relation.map((x,i)=>`<option value="${i?x:''}">${x}</option>`).join('');const pv=['preserve_only','publish_anonymous','publish_first_name','publish_full_identity'];$('privacy').innerHTML=t.privacy.map((x,i)=>`<option value="${pv[i]}">${x}</option>`).join('');
+const ids=['store','publish','contact','research'];$('checkWrap').innerHTML=t.checks.map((x,i)=>`<label><input id="${ids[i]}" type="checkbox" ${i===0?'required':''}> ${x}</label>`).join('');
+$('createBtn').textContent=t.create;$('clearBtn').textContent=t.clear;$('successT').textContent=t.successT;$('successP').textContent=t.successP;$('receiptT').textContent=t.receipt;$('receiptP').textContent=t.receiptP;$('download').textContent=t.download;$('status').textContent=t.status;$('footer').textContent=t.footer;
+const eventId=q.get('event_id')||'',rawEvent=q.get('event')||'';let eventName=rawEvent;if(eventId==='ghouta-2013'||rawEvent.includes('الغوطة الكيميائية')||rawEvent.toLowerCase().includes('ghouta'))eventName=t.eventGhouta;const src=q.get('source')||'';$('contextEvent').value=eventId||rawEvent;$('contextSource').value=src;if(eventName){$('wContext').hidden=false;$('wContextLabel').textContent=t.context;$('wContextNote').textContent=t.contextNote;$('wEventName').textContent=eventName}
+let bundle=null;async function shaBytes(bytes){const h=await crypto.subtle.digest('SHA-256',bytes);return [...new Uint8Array(h)].map(x=>x.toString(16).padStart(2,'0')).join('')}async function shaText(x){return shaBytes(new TextEncoder().encode(x))}function makeId(){let a=new Uint8Array(4);crypto.getRandomValues(a);return `WIT-${new Date().getFullYear()}-${[...a].map(x=>x.toString(16).padStart(2,'0')).join('').toUpperCase()}`}
+$('wf').onsubmit=async e=>{e.preventDefault();if(!$('store').checked)return;const evidence=[];for(const f of $('files').files){evidence.push({filename:f.name,mime:f.type||'application/octet-stream',size:f.size,sha256:await shaBytes(await f.arrayBuffer()),note:'Hash computed locally; file not uploaded.'})}bundle={witness_id:makeId(),created_at:new Date().toISOString(),context:{event_id:eventId||null,event:eventName||rawEvent||null,source:src||null},story:{title:$('title').value,narrative:$('narrative').value,event_date:$('eventDate').value||null,place:$('place').value||null,country:$('country').value||null,relationship:$('relationship').value||null,categories:[]},identity:{name:$('name').value||null,email:$('email').value||null,phone:$('phone').value||null},privacy:$('privacy').value,consent:{store:true,publish:$('publish').checked,contact_for_verification:$('contact').checked,research_use:$('research').checked},verification:'preserved',evidence};bundle.envelope_sha256=await shaText(JSON.stringify(bundle));$('wid').textContent=bundle.witness_id;$('hash').textContent='SHA-256 · '+bundle.envelope_sha256;$('receipt').classList.add('on');$('success').classList.add('on');$('success').scrollIntoView({behavior:'smooth'})};
+$('download').onclick=()=>{if(!bundle)return;const blob=new Blob([JSON.stringify(bundle,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=bundle.witness_id+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200)};
+$('clearBtn').onclick=()=>{if(confirm(t.confirm)){$('wf').reset();$('receipt').classList.remove('on');$('success').classList.remove('on');bundle=null}};
 })();
-</script></body></html>
+</script>
+<script src="site-shell.js?v=41200"></script><script defer src="luxdot-radio.js?v=4900"></script></body></html>
