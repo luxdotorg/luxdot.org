@@ -1,0 +1,2215 @@
+{
+  "1127-watch.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "PAGE_TEMPLATE_MULTILINGUAL.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "abraham-maimonides-sufi-bridge.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "abulafia-comparative-lab.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "abulafia-letters-names.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "african-association.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "alphen-before-alphen.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "analects.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "id"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "avesta.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "id"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "bahai.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "id"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "belief-violence-memory.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "border-chapels-route.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "brabant-research-architecture.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "brother-roger-memory.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "buddhist.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "burckhardt.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "burial-settlement-layers.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "chaam-deep-history.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "chaam-genealogy.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "chaam-midwives.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "chaam-sacred-memory.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "christian-apocalyptic-numbers-newton.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "dao.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "id"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "denhaag-deportation-memory.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "deportation-memory.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "druze-hikma.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "edith-stein.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "erasmus.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "everyday-good.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "faith.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "fusus-reader.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "gematria-method-lab.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "genealogy-reader.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "ghouta-chemical-memory.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "gita.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "grote-kerk-north-transept.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "guardian-benefactor.html": {
+    "native": [
+      "en",
+      "nl"
+    ],
+    "auto": [
+      "ar",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "guru-granth.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "id"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "hallaj.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "hank-raamsdonk-war-memory.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "hendrick-busman.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "hikma-reader.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "historic-brabant-crossborder.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "jv"
+    ],
+    "auto": [
+      "he",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "home.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "hoogstraten.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "humanitarian-day-memory.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "humanity.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "hurufism-fazlallah-nasimi.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "ibn-arabi-abulafia-comparison.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "index.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "indies-memory.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "jafr-ilm-huruf.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "jain.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "id"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "jan-van-velthoven.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "jansen-de-koning-network.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "janssen-family.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "java-script.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "javanese-texts.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "jewish-research-center.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "jewish-source-ladder.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "jochem-van-velthoven.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "joseph-karo.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "kakawin-ramayana.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "id"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "karamazov-reader.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "karo-decision-method.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "kees-van-wanrooij.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "kevelaer-chaam-timeline.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "kojiki.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "id"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "library.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "luria-vital-redemption.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "mahdi-matrix.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "maimonides-letters-numbers.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "maimonides-messiah-test.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "maimonides.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "manuaal-1422-people-land.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "maximilian-kolbe.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "media.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "meditations-reader.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "memory.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "messianic-method-comparison.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "messianic-names-numbers-atlas.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he"
+    ],
+    "auto": [
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "muqaddimah-reader.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "name-date-matrix.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "name-truth-memory.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "new-testament.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "number-letter-lab.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "nusantara.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "oosterhout-1422-people-land.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "origin-reader.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "ovadia-yosef.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "paulina-withagen-rescue.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "pet-goat-apocalypse-media.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "polleke-mummy-cat.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "primbon-java.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "id"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "projects.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "quran.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "radio.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "red-heifer.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "reiderland-live.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "republic-reader.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "research.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "sabbatai-nathan-test.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "sacred-120km-network.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "sacred-25km-atlas.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "safed-kabbalah-messianism.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "saint-genis-memory.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "savior-atlas.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "savior-deepening.html": {
+    "native": [
+      "en",
+      "nl"
+    ],
+    "auto": [
+      "ar",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "scientific-revolutions-reader.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "sepharad-diaspora.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "sephardic-continuity-ovadia-yitzhak.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "sephardic-halakha.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "serat-centhini.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "id"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "serat-wedhatama.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "id"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "shaam-brabant-network.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "shaam-breda.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "sophies-world-reader.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "st-bartholomew-memory.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "stazzema-memory.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "suluk-java.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "id"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "talmud-messiah.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "tanakh.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "templar-land-chain.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "templars-master.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "ter-brake-cadastral-investigation.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "ter-brake-power-network.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "thijs-loss-consolation.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "tongerlo-fourteen-churches.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "totalitarian-victims-memory.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "totalitarianism-reader.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "urania-nassau.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  },
+  "van-velthoven-family.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "van-velthoven-grote-kerk.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "verwithagen-erasmus.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "war-reconstruction-memory.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "west-brabant-family-memory-network.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "westerweel-memory.html": {
+    "native": [],
+    "auto": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "willibrord-echternach.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl"
+    ],
+    "auto": [
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "withagen-chaam-toponym.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "withagen-family.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "withagen-jansen-dekoning.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "withagen-van-den-boom.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "withagen-wwii.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv"
+    ],
+    "auto": [
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ]
+  },
+  "yitzhak-yosef.html": {
+    "native": [
+      "ar",
+      "en",
+      "nl",
+      "he",
+      "jv",
+      "id",
+      "fr",
+      "es",
+      "de",
+      "tr"
+    ],
+    "auto": []
+  }
+}
