@@ -9,4 +9,4 @@ body{margin:0;background:#020503;color:#edf7ef;font-family:"Noto Kufi Arabic",Ar
 <div class="protocol"><b>بروتوكول LuxDot للقيم:</b> تعريف → جذور عبر الثقافات → سلوك قابل للملاحظة → ظل/نقيض → توتر مع قيم أخرى → مثال واقعي → قابلية المراجعة. لا ننسب القيم الإنسانية العامة إلى حضارة واحدة، ولا نحوّل الخريطة إلى مقياس لتصنيف قيمة الأشخاص.</div>
 </main><script src="values-data.js?v=442"></script><script>
 const tree=document.getElementById("tree");function draw(f="all"){tree.innerHTML="";LUX_VALUES.filter(v=>f==="all"||v.branch===f).forEach(v=>{let a=document.createElement("article");a.className="value";a.innerHTML=`<small>${v.en}</small><h2>${v.ar}</h2><p>${v.behavior}</p><p class="shadow">الظل: ${v.shadow}</p><p class="links">يرتبط بـ: ${v.links.join(" · ")}</p>`;tree.append(a)})}draw();document.querySelectorAll("[data-f]").forEach(b=>b.onclick=()=>draw(b.dataset.f));
-</script><script src="site-shell.js?v=442"></script></body></html>
+</script><script src="site-shell.js?v=4800"></script></body></html>
