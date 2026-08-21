@@ -1,6 +1,6 @@
 (()=>{
 "use strict";
-let DB=null,view='tree';
+let DB=null,view='brain';
 const V=document.getElementById('memoryView'),D=document.getElementById('nodeDialog'),titleEl=document.getElementById('memTitle'),leadEl=document.getElementById('memLead');
 if(!V||!D||!titleEl||!leadEl){console.error('LuxDot Memory: required DOM nodes missing');return}
 const UI={
@@ -9,6 +9,17 @@ const UI={
  nl:{title:'Herinnering is geen lijst met data',lead:'Een levende atlas van mensen, plaatsen, misdaden, redding, verzet en verzoening — met bronnen, versies en ruimte voor correctie',loading:'Levend geheugen laden…',error:'Geheugengegevens konden niet worden geladen',center:'LEVEND GEHEUGEN',documented:'Gedocumenteerd'},
  id:{title:'Memori bukan daftar tanggal',lead:'Atlas hidup tentang manusia, tempat, kejahatan, penyelamatan, perlawanan dan rekonsiliasi — bersumber, berversi dan terbuka untuk koreksi',loading:'Memuat memori hidup…',error:'Data memori tidak dapat dimuat',center:'MEMORI HIDUP',documented:'Terdokumentasi'},jv:{title:'Pangeling dudu mung dhaptar tanggal',lead:'Atlas urip bab wong, papan, kadurjanan, pitulungan, perlawanan lan rekonsiliasi — nganggo sumber lan bisa didandani',loading:'Muat pangeling urip…',error:'Data pangeling ora bisa dimuat',center:'PANGELING URIP',documented:'Kacathet'},he:{title:'זיכרון אינו רשימת תאריכים',lead:'אטלס חי של אנשים, מקומות, פשעים, הצלה, התנגדות ופיוס — מבוסס מקורות, מנוהל בגרסאות ופתוח לתיקון',loading:'טוען זיכרון חי…',error:'לא ניתן לטעון את נתוני הזיכרון',center:'זיכרון חי',documented:'מתועד'}
 };
+const VIEW_LABELS={
+ar:{brain:'العقل الحي',timeline:'الزمن',map:'الخريطة',field:'الميدان',sources:'المصادر'},
+en:{brain:'Living Mind',timeline:'Time',map:'Map',field:'Field',sources:'Sources'},
+nl:{brain:'Levend brein',timeline:'Tijd',map:'Kaart',field:'Veld',sources:'Bronnen'},
+he:{brain:'המוח החי',timeline:'זמן',map:'מפה',field:'שטח',sources:'מקורות'},
+jv:{brain:'Pikiran Urip',timeline:'Wektu',map:'Peta',field:'Lapangan',sources:'Sumber'},
+id:{brain:'Pikiran Hidup',timeline:'Waktu',map:'Peta',field:'Lapangan',sources:'Sumber'},
+fr:{brain:'Esprit vivant',timeline:'Temps',map:'Carte',field:'Terrain',sources:'Sources'},
+es:{brain:'Mente viva',timeline:'Tiempo',map:'Mapa',field:'Campo',sources:'Fuentes'},
+de:{brain:'Lebendiges Gedächtnis',timeline:'Zeit',map:'Karte',field:'Feld',sources:'Quellen'},
+tr:{brain:'Yaşayan Zihin',timeline:'Zaman',map:'Harita',field:'Saha',sources:'Kaynaklar'}};
 const I18N={
  'rufina-secunda':{ar:{theme:'استشهاد / تقليد',title:'روفينا وسيكوندا',place:'روما · طريق كورنيليا',summary:'يحيي الاستشهاد الروماني ذكرى روفينا وسيكوندا في 10 يوليو. تؤكد مصادر الفاتيكان قدم التذكار واستشهادهما قرب روما، بينما تعود الرواية التفصيلية عن آلامهما إلى طبقة لاحقة يجب تمييزها عن النواة الأقدم',question:'كيف نكرّم تقليداً قديماً ونفصل في الوقت نفسه بين الدليل المبكر والتفاصيل اللاحقة؟'},nl:{theme:'MARTELAARSCHAP / TRADITIE',title:'Rufina & Secunda',place:'Rome · Via Cornelia',summary:'Het Romeins Martyrologium gedenkt Rufina en Secunda op 10 juli. Vaticaanse bronnen plaatsen hun martelaarschap nabij Rome in de derde eeuw; het uitvoerige lijdensverhaal is later en wordt daarom apart gehouden van de oudere verering',question:'Hoe eren we een oude traditie en blijven we tegelijk eerlijk over de ouderdom van het bewijs?'}},
  'justa-rufina':{ar:{theme:'استشهاد / ذاكرة',title:'يوستا وروفينا الإشبيليتان',place:'إشبيلية · إسبانيا',summary:'تحيي كاتدرائية إشبيلية ذكرى يوستا وروفينا في 17 يوليو. العبادة المرتبطة بهما قديمة، لكن الكاتدرائية نفسها تنبّه إلى أن أول الإشارات المكتوبة لسيرتهما واستشهادهما جاءت بعد حياتهما بقرون. بقيتا في ذاكرة المدينة كخزّافتين وشفيعتين لإشبيلية',question:'حين تحفظ الفنون والطقوس الذاكرة، كيف نصون معناها من دون إخفاء عدم اليقين التاريخي؟'},nl:{theme:'MARTELAARSCHAP / HERINNERING',title:'Justa & Rufina van Sevilla',place:'Sevilla · Spanje',summary:'De kathedraal van Sevilla gedenkt Justa en Rufina op 17 juli. Hun verering is oud, maar de kathedraal merkt zelf op dat de eerste geschreven levensverhalen pas eeuwen later verschijnen. Als pottenbaksters en patrones van Sevilla bleven zij sterk aanwezig in kunst en stedelijk geheugen',question:'Hoe bewaren we de betekenis van een herinnering zonder historische onzekerheid te verbergen?'}},
@@ -109,45 +120,19 @@ function bloodMark(id){return symbolCartouche(id)}
 function openNode(id){const raw=DB?.nodes?.find(x=>x.id===id);if(!raw)return;const n=trNode(raw);D.innerHTML=`<article class="node-panel ${tragedy(n.id)?'has-tragedy':''}">${bloodMark(n.id)}<button class="closex" aria-label="${esc(lang()==='ar'?'إغلاق':lang()==='nl'?'Sluiten':'Close')}">×</button><div class="node-meta">${fmt(n.date)} / ${esc(n.theme)} / ${esc(lang()==='en'?n.status:ui().documented)}</div><h2>${esc(n.title)}</h2><div class="node-meta">${esc(n.place)}</div>${n.image?`<img src="${esc(n.image)}" alt="${esc(n.title)}" loading="lazy" referrerpolicy="no-referrer"><div class="credit">${esc(n.imageCredit||'')}</div>`:''}<p>${esc(n.summary)}</p>${n.dossier?`<div class="memory-dossier"><p>${esc(n.dossier)}</p></div>`:''}${n.page?`<div class="memory-dossier-link"><a href="${esc(localPage(n.page))}">${esc(lang()==='ar'?'فتح ملف الذاكرة الكامل':lang()==='nl'?'Open volledig geheugendossier':'Open full memory dossier')} →</a></div>`:''}<p class="question">${esc(n.question)}</p><div class="link-row">${[...(n.sources||[]),...(n.media||[])].map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)} ↗</a>`).join('')}</div></article>`;D.classList.add('on');D.setAttribute('aria-hidden','false');D.querySelector('.closex')?.addEventListener('click',close)}
 function close(){D.classList.remove('on');D.setAttribute('aria-hidden','true')}
 D.addEventListener('click',e=>{if(e.target===D)close()});addEventListener('keydown',e=>{if(e.key==='Escape')close()});
-function tree(){
- const nodes=(DB.nodes||[]).map(trNode);
- const left=nodes.filter((_,i)=>i%2===0), right=nodes.filter((_,i)=>i%2===1);
- const positions={};
- const distribute=(arr,side)=>arr.forEach((n,i)=>{
-   const count=Math.max(arr.length,1);
-   const y=12+(i+1)*(74/(count+1));
-   const tier=i%3;
-   const x=side==='left'?(24-tier*2):(76+tier*2);
-   positions[n.id]=[x,y];
- });
- distribute(left,'left');distribute(right,'right');
- const branchPath=n=>{
-   const [x,y]=positions[n.id]; const side=x<50?-1:1;
-   const trunkX=50+side*(2.8+Math.abs(y-50)*.025);
-   const elbow1=50+side*8.5, elbow2=x-side*5.2;
-   return `M50,86 L50,${Math.max(49,Math.min(65,y+8))} L${trunkX},${Math.max(44,Math.min(68,y+5))} L${elbow1},${y} L${elbow2},${y} L${x},${y}`;
- };
- const roots=[
-  'M50,86 L50,91 L43,97 L38,97','M50,86 L50,92 L46,99 L42,99','M50,86 L50,93 L49,100',
-  'M50,86 L50,93 L51,100','M50,86 L50,92 L54,99 L58,99','M50,86 L50,91 L57,97 L62,97'
- ];
- const minorRoots=[36,40,44,47,53,56,60,64].map((x,i)=>`M50,88 L${50+(x<50?-1:1)*(2+i%3)},${93+i%2} L${x},100`);
- const defs=`<defs>
-   <linearGradient id="treeTrunkGradient" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#5b3a20"/><stop offset=".42" stop-color="#8b6f35"/><stop offset=".72" stop-color="#a88938"/><stop offset="1" stop-color="#6f9d49"/></linearGradient>
-   <filter id="treeGlow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation=".45" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-  </defs>`;
- V.innerHTML=`<div class="memory-circuit-tree" role="img" aria-label="${esc(lang()==='ar'?'شجرة أطلس الذاكرة':lang()==='nl'?'Boom van de geheugenatlas':'Memory atlas tree')}">
-   <svg class="memory-circuit-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${defs}
-    <path class="circuit-trunk" d="M50,87 L50,15"/>
-    <path class="circuit-trunk-core" d="M49.25,87 L49.25,18 M50.75,87 L50.75,18"/>
-    ${roots.concat(minorRoots).map(d=>`<path class="circuit-root" d="${d}"/>`).join('')}
-    ${nodes.map(n=>`<path class="circuit-branch" d="${branchPath(n)}"/><path class="circuit-pulse" d="${branchPath(n)}"/>`).join('')}
-   </svg>
-   <div class="tree-heart" aria-hidden="true"><span>✦</span></div>
-   ${nodes.map(n=>{const [x,y]=positions[n.id];const img=n.image||'assets/thumbs-png/event.png';return `<button class="memory-circuit-node ${tragedy(n.id)?'has-tragedy':''}" data-id="${esc(n.id)}" style="left:${x}%;top:${y}%"><span class="circuit-port" aria-hidden="true"></span><span class="node-thumb"><img src="${esc(img)}" alt="" loading="lazy" onerror="this.style.display='none'"></span><span class="node-copy"><b>${esc(n.title)}</b><small>${fmt(n.date)} · ${esc(n.theme)}</small></span></button>`}).join('')}
-   <div class="tree-caption">${esc(lang()==='ar'?'كل ذاكرة غصن من شجرة واحدة، والجذور تحفظ ما لا ينبغي أن يُنسى':lang()==='nl'?'Elke herinnering is een tak van dezelfde boom; de wortels bewaren wat niet vergeten mag worden':'Every memory is a branch of one tree; the roots preserve what must not be forgotten')}</div>
-  </div>`;
+function brain(){
+ const nodes=(DB.nodes||[]).map(trNode),W=1000,H=620;
+ const zones=[{id:'people',ar:'أشخاص',en:'PEOPLE',x:300,y:205,rx:185,ry:120},{id:'violence',ar:'حروب وجرائم',en:'VIOLENCE / CRIMES',x:690,y:205,rx:190,ry:120},{id:'rescue',ar:'إنقاذ ورعاية',en:'RESCUE / CARE',x:285,y:410,rx:175,ry:115},{id:'places',ar:'أماكن وشهادات',en:'PLACES / WITNESS',x:700,y:410,rx:185,ry:115}];
+ function zoneOf(n){const x=(n.theme+' '+n.summary+' '+n.place).toLowerCase();if(/قتل|مجز|حرب|ترحيل|عنف|ضحايا|martyr|war|victim|deport|violence|chemical|gas/.test(x))return 'violence';if(/إنقاذ|رعاية|تضحي|خدمة|مسعف|rescue|care|service|humanitarian/.test(x))return 'rescue';if(/روما|بريدا|هولندا|إيطاليا|سوريا|غوطة|place|netherlands|syria|rome|italy/.test(x))return 'places';return 'people'}
+ const grouped={people:[],violence:[],rescue:[],places:[]};nodes.forEach(n=>grouped[zoneOf(n)].push(n));const pos={};
+ zones.forEach(z=>{const arr=grouped[z.id],c=Math.max(arr.length,1);arr.forEach((n,i)=>{const ang=Math.PI*2*i/c+(z.id==='violence'?.35:0),ring=.42+.45*((i%3)/2);pos[n.id]=[z.x+Math.cos(ang)*z.rx*ring,z.y+Math.sin(ang)*z.ry*ring]})});
+ const links=[];zones.forEach(z=>{const arr=grouped[z.id];arr.forEach((n,i)=>{if(arr.length>1)links.push([n.id,arr[(i+1)%arr.length].id,'local'])})});
+ for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const x=nodes[i],y=nodes[j];if(zoneOf(x)===zoneOf(y))continue;const px=String(x.place||'').split(/[·•]/)[0].trim(),py=String(y.place||'').split(/[·•]/)[0].trim();if(px&&px===py)links.push([x.id,y.id,'cross'])}
+ const outline='M500 64 C390 20 270 66 215 158 C115 190 104 319 176 378 C151 481 257 557 367 532 C417 594 505 567 523 522 C573 573 671 566 710 509 C825 524 901 437 866 343 C933 257 873 146 786 139 C727 62 608 35 500 64 Z';
+ const paths=links.slice(0,110).map(([x,y,k],i)=>{const p=pos[x],q=pos[y];if(!p||!q)return'';const mx=(p[0]+q[0])/2,bend=(i%2?1:-1)*(18+(i%5)*4),d=`M${p[0].toFixed(1)},${p[1].toFixed(1)} Q${mx.toFixed(1)},${((p[1]+q[1])/2+bend).toFixed(1)} ${q[0].toFixed(1)},${q[1].toFixed(1)}`;return `<path class="brain-synapse ${k}" data-a="${esc(x)}" data-b="${esc(y)}" d="${d}"/><path class="brain-impulse ${k}" d="${d}" style="animation-delay:${(i%13)*.23}s"/>`}).join('');
+ V.innerHTML=`<div class="living-mind"><div class="mind-symbolism"><b>${lang()==='ar'?'العقل الحي · Living Mind':'Living Mind'}</b><span>${lang()==='ar'?'الذكريات ليست فروعاً ثابتة؛ هي نبضات. تضيء الذكرى وتسافر عبر مسار عصبي فتوقظ علاقات قريبة. حجم النبضة لا يعني قيمة إنسان أكبر؛ التوثيق منفصل عن الكرامة.':'Memories are pulses, not branches. A memory lights up, travels a neural path and awakens related memories. Pulse size never ranks human worth; documentation is separate from dignity.'}</span></div><svg class="brain-map" viewBox="0 0 1000 620"><path class="brain-outline" d="${outline}"/><path class="brain-midline" d="M500 79 C470 130 488 181 501 220 C475 260 480 310 506 341 C483 382 484 431 514 463 C494 492 493 520 523 545"/>${zones.map(z=>`<ellipse class="brain-zone" cx="${z.x}" cy="${z.y}" rx="${z.rx}" ry="${z.ry}"/><text class="brain-zone-label" x="${z.x}" y="${z.y-z.ry+24}">${lang()==='ar'?z.ar:z.en}</text>`).join('')}<g>${paths}</g></svg><div class="brain-nodes">${nodes.map((n,i)=>{const q=pos[n.id]||[500,315];return `<button class="brain-memory ${tragedy(n.id)?'has-tragedy':''}" data-id="${esc(n.id)}" style="left:${(q[0]/W*100).toFixed(2)}%;top:${(q[1]/H*100).toFixed(2)}%;--delay:${(i%17)*.17}s"><span class="neuron-core"></span><span class="neuron-copy"><b>${esc(n.title)}</b><small>${fmt(n.date)} · ${esc(n.theme)}</small></span></button>`}).join('')}</div><div class="brain-legend"><span>MEMORY PULSE</span><span>SYNAPSE</span><span>DOCUMENTATION ≠ HUMAN WORTH</span></div></div>`;
  bindNodes();
+ V.querySelectorAll('.brain-memory').forEach(n=>n.addEventListener('mouseenter',()=>{const id=n.dataset.id,rel=new Set([id]);V.querySelectorAll('.brain-memory,.brain-synapse').forEach(x=>x.classList.remove('active','related','dim'));V.querySelectorAll(`.brain-synapse[data-a="${CSS.escape(id)}"],.brain-synapse[data-b="${CSS.escape(id)}"]`).forEach(e=>{e.classList.add('active');rel.add(e.dataset.a);rel.add(e.dataset.b)});V.querySelectorAll('.brain-memory').forEach(x=>x.classList.add(rel.has(x.dataset.id)?(x.dataset.id===id?'active':'related'):'dim'))}))
 }
 function timeline(){V.innerHTML=`<div class="timeline">${(DB.nodes||[]).map(trNode).map(n=>`<article class="time-row ${tragedy(n.id)?'has-tragedy':''}" data-id="${esc(n.id)}">${bloodMark(n.id)}<div class="time-date">${fmt(n.date)}</div><div><h3>${esc(n.title)}</h3><p>${esc(n.summary)}</p></div></article>`).join('')}</div>`;bindNodes()}
 function map(){
@@ -162,7 +147,7 @@ function map(){
 function field(){V.innerHTML=`<div class="field-grid">${(DB.field||[]).map(f=>`<article class="field-card"><span class="badge">${fmt(f.date)} / ${esc(fieldKind(f))}</span><b>${esc(fieldTitle(f))}</b><small>${esc(f.city)} · ${esc(f.time)}<br>${esc(f.address)}<br><br>${esc(fieldNote(f))}</small></article>`).join('')}</div>`}
 function sources(){let all=[];(DB.nodes||[]).forEach(raw=>{const n=trNode(raw);(n.sources||[]).forEach(s=>all.push({...s,node:n.title,date:n.date}))});V.innerHTML=`<div class="source-grid">${all.map(s=>`<article class="source-card"><small>${fmt(s.date)} · ${esc(s.node)}</small><br><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.label)} ↗</a></article>`).join('')}</div>`}
 function bindNodes(){V.querySelectorAll('[data-id]').forEach(el=>el.addEventListener('click',()=>openNode(el.dataset.id)))}
-function render(){if(!DB)return;({tree,timeline,map,field,sources}[view]||tree)()}
+function applyViewLabels(){const x=VIEW_LABELS[lang()]||VIEW_LABELS.en;const b=document.querySelector('[data-memory-view-label="brain"]');if(b)b.textContent=x.brain;document.querySelectorAll('.memory-controls [data-view]').forEach(q=>{if(q.dataset.view!=='brain'&&x[q.dataset.view])q.textContent=x[q.dataset.view]})} function render(){if(!DB)return;applyViewLabels();({brain,timeline,map,field,sources}[view]||brain)()}
 document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{view=b.dataset.view;document.querySelectorAll('[data-view]').forEach(x=>x.classList.toggle('on',x===b));render()}));
 document.addEventListener('luxlang',()=>{translateHead();render()});
 let bootTries=0;function boot(){translateHead();if(!DB)V.innerHTML=`<div class="status">${esc(ui().loading)}</div>`;if(window.LUXDOT_MEMORY_DB&&Array.isArray(window.LUXDOT_MEMORY_DB.nodes)){DB=window.LUXDOT_MEMORY_DB;render();return}bootTries++;if(bootTries<25){setTimeout(boot,80);return}console.error('LuxDot Memory: embedded dataset missing');V.innerHTML=`<div class="status">${esc(ui().error)}</div>`}
