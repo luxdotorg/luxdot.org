@@ -1,0 +1,21 @@
+{
+  "timezone": "Europe/Amsterdam",
+  "default": {
+    "type": "pulse",
+    "title_ar": "LuxDot · اليوم",
+    "title_en": "LuxDot · Today",
+    "href": "timeline.html",
+    "flags": []
+  },
+  "2026-08-21": {
+    "type": "memory",
+    "title_ar": "سوريا · ذاكرة الغوطة",
+    "title_en": "Syria · Ghouta Memory",
+    "subtitle_ar": "ذكرى وتوثيق ضحايا الهجوم الكيميائي على الغوطة",
+    "subtitle_en": "Memory and documentation of the victims of the Ghouta chemical attack",
+    "href": "ghouta-chemical-memory.html",
+    "flags": [
+      "sy"
+    ]
+  }
+}

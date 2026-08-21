@@ -7,7 +7,7 @@ const SUP=['ar','en','nl','he','jv','id','fr','es','de','tr'];
 const NAMES={ar:'AR',en:'EN',nl:'NL',he:'HE',jv:'JV',id:'ID',fr:'FR',es:'ES',de:'DE',tr:'TR'};
 const FULL={ar:'العربية',en:'English',nl:'Nederlands',he:'עברית',jv:'Basa Jawa',id:'Bahasa Indonesia',fr:'Français',es:'Español',de:'Deutsch',tr:'Türkçe'};
 const T={
- ar:{home:'الرئيسية',library:'المكتبة',faith:'الإيمان والحكمة',memory:'الذاكرة',research:'الأبحاث',media:'ميديا / أخبار',projects:'المشاريع'},
+ ar:{home:'الرئيسية',library:'المكتبة',faith:'الإيمان والحكمة',memory:'الذاكرة',research:'الأبحاث الحيّة',media:'ميديا / أخبار',projects:'المشاريع'},
  en:{home:'Home',library:'Library',faith:'Faith & Wisdom',memory:'Memory',research:'Research',media:'Media / News',projects:'Projects'},
  nl:{home:'Home',library:'Bibliotheek',faith:'Geloof & wijsheid',memory:'Geheugen',research:'Onderzoek',media:'Media / Nieuws',projects:'Projecten'},
  he:{home:'ראשי',library:'ספרייה',faith:'אמונה וחכמה',memory:'זיכרון',research:'מחקר',media:'מדיה / חדשות',projects:'פרויקטים'},
@@ -81,7 +81,7 @@ window.addEventListener('resize',()=>{let h=d.querySelector('.lux-header-43108')
       <div><b>07.12</b><span>عصر الدقّة · KICK-OFF</span></div>
     </div></div>
     <div class="lp-privacy">Aggregated only · لا IP · لا أسماء · لا تتبع فردي</div>
-    <div class="lp-links"><a href="timeline.html?lang=${encodeURIComponent(lang)}">الرزنامة</a><a href="pulse-methodology.html?lang=${encodeURIComponent(lang)}">كيف نقيس؟</a></div>`;
+    <div class="lp-hubs"><a href="values.html">VALUES · القيم</a><a href="research.html">LIVE RESEARCH · الأبحاث الحيّة</a><a href="media.html">SIGNAL · الإشارة</a></div><div class="lp-links"><a href="timeline.html?lang=${encodeURIComponent(lang)}">الرزنامة</a><a href="pulse-methodology.html?lang=${encodeURIComponent(lang)}">كيف نقيس؟</a></div>`;
   document.body.appendChild(panel);
 
   a.addEventListener("click",()=>{const open=panel.classList.toggle("open");panel.setAttribute("aria-hidden",open?"false":"true");if(open)loadPulse()});
@@ -117,3 +117,6 @@ window.addEventListener('resize',()=>{let h=d.querySelector('.lux-header-43108')
  }
  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",installLuxPulse);else installLuxPulse();
 })();
+
+/* v4.4.2 global daily identity loader */
+(()=>{if(document.querySelector('script[data-lux-daily]'))return;const x=document.createElement("script");x.src="daily-identity.js?v=442";x.defer=true;x.dataset.luxDaily="1";document.head.append(x)})();

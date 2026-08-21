@@ -428,3 +428,11 @@ body.home-arrival.home-arrival-go{animation:luxArrival .9s cubic-bezier(.18,.82,
 .lp-privacy{margin-top:12px;padding:8px 9px;border:1px solid rgba(210,177,91,.18);border-radius:10px;color:#8ca092;font-size:8px;text-align:center}
 .lp-links{display:flex;gap:7px;margin-top:9px}.lp-links a{flex:1;text-align:center;padding:8px;border:1px solid #23412c;border-radius:10px;color:#a8f2c0!important;text-decoration:none!important;font-size:9px}
 #luxTimelinePeek{max-height:calc(100vh - 88px);overflow:auto}
+
+/* v4.4.1 hub shortcuts */
+.lp-hubs{display:grid;grid-template-columns:1fr;gap:5px;margin-top:10px}.lp-hubs a{padding:7px 9px;border:1px solid #1f3927;border-radius:9px;color:#b8eec8!important;text-decoration:none!important;font:800 8px Arial;letter-spacing:.06em}
+
+/* v4.4.2 · Daily Identity */
+#luxDailyIdentity{position:fixed;z-index:9996;right:12px;bottom:12px;display:flex;align-items:center;gap:8px;max-width:260px;padding:7px 9px;border:1px solid rgba(99,255,155,.22);border-radius:14px;background:rgba(2,9,5,.78);backdrop-filter:blur(10px);color:#dce9df!important;text-decoration:none!important;opacity:.48;transition:.2s}
+#luxDailyIdentity:hover,#luxDailyIdentity:focus{opacity:1;transform:translateY(-1px)}#luxDailyIdentity svg{width:32px;height:21px;border-radius:2px;box-shadow:0 0 0 1px rgba(255,255,255,.15)}#luxDailyIdentity>i{width:9px;height:9px;border-radius:50%;background:#d2b15b}#luxDailyIdentity span{display:grid;gap:1px}#luxDailyIdentity b{font-size:9px;color:#e7f2ea}#luxDailyIdentity small{font-size:7px;line-height:1.4;color:#8da194}
+@media(max-width:600px){#luxDailyIdentity{max-width:185px;right:7px;bottom:7px}#luxDailyIdentity small{display:none}}
