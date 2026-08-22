@@ -1,11 +1,17 @@
 {
   "product": "LuxDot",
-  "version": "4.15.0",
-  "build_time": "2026-08-22T22:15:02+02:00",
+  "version": "4.16.1",
+  "build_time": "2026-08-22T23:37:43+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
   "release_type": "FULL_REPLACE",
   "features": [
+    "Arabic surface policy: نقطة نور across Arabic UI, original personal names retained beside Arabic when useful",
+    "Updated نبض نقطة نور daily pulse methodology",
+    "Deepened 23 August slave-trade remembrance node",
+    "Four-hour Aug 23 Christian radio cycle repeating six times",
+    "Separate filterable World Calendar for major religious/global/astronomical events",
+    "Research Sky ESC clear + hover preview interaction",
     "LuxDot Knowledge Experience v4.15",
     "Research Node Standard PREVIEW dock on research nodes",
     "Evidence Engine with source inventory and non-binding source-class suggestions",
@@ -29,12 +35,22 @@
     "Research Executive Report fingerprints"
   ],
   "counts": {
-    "files": 695,
-    "html": 195,
-    "js": 67,
+    "files": 701,
+    "html": 197,
+    "js": 69,
     "assets": 118
   },
   "latest_changes": [
+    {
+      "date": "2026-08-22",
+      "title_ar": "تعزيز تدقيق السطح العربي وتثبيت اسم نقطة نور",
+      "title_en": "Strengthened Arabic-surface normalization and audit"
+    },
+    {
+      "date": "2026-08-22",
+      "title_ar": "توحيد الاسم العربي إلى نقطة نور، تحديث النبض والراديو والرزنامة، وإصلاح تفاعل سماء الأبحاث",
+      "title_en": "Arabic naming, Pulse/Radio/Calendar refresh and Research Sky interaction repair"
+    },
     {
       "date": "2026-08-22",
       "title_ar": "إطلاق تجربة المعرفة v4.15: معيار العقدة، الأدلة، التقرير، الاعتراض، والخريطة المعرفية",

@@ -11,4 +11,4 @@ body{margin:0;background:#020503;color:#edf7ef;font-family:"Noto Kufi Arabic",Ar
 </main><script src="values-data.js?v=442"></script><script>
 const tree=document.getElementById("tree");function draw(f="all"){tree.innerHTML="";LUX_VALUES.filter(v=>f==="all"||v.branch===f).forEach(v=>{let a=document.createElement("article");a.className="value";a.innerHTML=`<small>${v.en}</small><h2>${v.ar}</h2><p>${v.behavior}</p><p class="shadow">الظل: ${v.shadow}</p><p class="links">يرتبط بـ: ${v.links.join(" · ")}</p>`;tree.append(a)})}draw();document.querySelectorAll("[data-f]").forEach(b=>b.onclick=()=>draw(b.dataset.f));
 </script><script src="site-shell.js?v=4800"></script><script defer src="content-language-core.js?v=4143"></script><script src="luxdot-typography-density.js?v=41416"></script>
-</body></html>
+<script src="arabic-surface-v4160.js?v=4160"></script></body></html>
