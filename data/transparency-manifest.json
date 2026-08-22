@@ -1,0 +1,19 @@
+{
+  "version": "4.3.126",
+  "name": "LuxDot Pulse",
+  "privacy": {
+    "aggregatedOnly": true,
+    "visitorIdentity": false,
+    "ipAddresses": false,
+    "individualHistory": false
+  },
+  "metrics": [
+    "last15m visits",
+    "last24h visits",
+    "last7d visits",
+    "24h trend",
+    "top paths"
+  ],
+  "endpoint": "/api/transparency",
+  "methodology": "/pulse-methodology.html"
+}
