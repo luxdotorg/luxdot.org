@@ -1,4 +1,4 @@
-/* LuxDot live development status · deployment-aware · v4.14.16 */
+/* LuxDot live development status · deployment-aware · v4.15.0 */
 (()=> {
   const REPO="luxdotorg/luxdot.org";
   const RAW_META="https://raw.githubusercontent.com/luxdotorg/luxdot.org/main/build-meta.json";

@@ -1,11 +1,19 @@
 {
   "product": "LuxDot",
-  "version": "4.14.16",
-  "build_time": "2026-08-22T21:48:11+02:00",
+  "version": "4.15.0",
+  "build_time": "2026-08-22T22:15:02+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
   "release_type": "FULL_REPLACE",
   "features": [
+    "LuxDot Knowledge Experience v4.15",
+    "Research Node Standard PREVIEW dock on research nodes",
+    "Evidence Engine with source inventory and non-binding source-class suggestions",
+    "Timestamped Executive Report generator with SHA-256 fingerprint",
+    "Structured Challenge Research export/copy workflow",
+    "Knowledge Graph generated from actual internal links",
+    "Related Nodes generated from graph",
+    "10-second Home start-path gateway",
     "Central typography scale with display/standard/knowledge density modes",
     "Research cluster organizer + project launch-sequence navigator + removed Ismaili floating review button",
     "Standalone What does LuxDot stand for? public gateway page",
@@ -21,12 +29,17 @@
     "Research Executive Report fingerprints"
   ],
   "counts": {
-    "files": 688,
-    "html": 194,
-    "js": 66,
+    "files": 695,
+    "html": 195,
+    "js": 67,
     "assets": 118
   },
   "latest_changes": [
+    {
+      "date": "2026-08-22",
+      "title_ar": "إطلاق تجربة المعرفة v4.15: معيار العقدة، الأدلة، التقرير، الاعتراض، والخريطة المعرفية",
+      "title_en": "Knowledge Experience v4.15: node standard, evidence, report, challenge and knowledge graph"
+    },
     {
       "date": "2026-08-22",
       "title_ar": "توحيد أحجام الخطوط وتقليل كثافة العناوين في صفحات المعرفة",
