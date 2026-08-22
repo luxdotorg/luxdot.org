@@ -1,0 +1,25 @@
+LuxDot Pulse — one-time secure Cloudflare setup
+======================================================
+
+This release already contains the public UI and /api/transparency Pages Function.
+
+In Cloudflare Pages project: luxdot-org
+Settings → Variables and Secrets → Add
+
+1) CF_ZONE_ID
+   Type: text variable
+   Value: the Zone ID for luxdot.org
+
+2) SITE_HOST
+   Type: text variable
+   Value: luxdot.org
+
+3) CF_ANALYTICS_TOKEN
+   Type: SECRET / encrypted
+   Value: a Cloudflare API Token with read-only Analytics access to the luxdot.org zone.
+
+IMPORTANT
+- Never put CF_ANALYTICS_TOKEN in GitHub, HTML, JavaScript, .env committed to Git, or screenshots.
+- The browser calls only /api/transparency. The secret remains server-side in Cloudflare.
+- After adding the bindings, redeploy the latest Production deployment once.
+- Until the secret is configured, LuxDot Pulse openly shows SETUP instead of fake numbers.
