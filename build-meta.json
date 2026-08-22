@@ -1,11 +1,12 @@
 {
   "product": "LuxDot",
-  "version": "4.14.9",
-  "build_time": "2026-08-22T17:56:24+02:00",
+  "version": "4.14.10",
+  "build_time": "2026-08-22T18:47:54+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
   "release_type": "FULL_REPLACE",
   "features": [
+    "Dynamic global version badge; legacy Kufi/i18n repair; GitHub Pages no-Jekyll marker",
     "Deployment-aware live version detection and cache-busting",
     "Alawi/Nusayri history, doctrine and source-audit research node",
     "Ismaili Qāʾim/Mahdi text-level source dossier",
@@ -14,12 +15,17 @@
     "Research Executive Report fingerprints"
   ],
   "counts": {
-    "files": 671,
+    "files": 672,
     "html": 189,
     "js": 64,
     "assets": 118
   },
   "latest_changes": [
+    {
+      "date": "2026-08-22",
+      "title_ar": "إزالة رقم الإصدار الثابت وإصلاح Kufi/i18n للصفحات البحثية القديمة",
+      "title_en": "Removed stale hard-coded version and repaired legacy Kufi/i18n coverage"
+    },
     {
       "date": "2026-08-22",
       "title_ar": "إصلاح كشف الإصدار الحي ومقارنة الإنتاج مع main ومنع كاش ملفات الحالة",

@@ -1,4 +1,4 @@
-/* LuxDot live development status · deployment-aware · v4.14.9 */
+/* LuxDot live development status · deployment-aware · v4.14.10 */
 (()=> {
   const REPO="luxdotorg/luxdot.org";
   const RAW_META="https://raw.githubusercontent.com/luxdotorg/luxdot.org/main/build-meta.json";
@@ -32,6 +32,16 @@
     const mismatch=!!(local&&repo&&cmp(local.version,repo.version)!==0);
     const newest=!local?repo:(!repo?local:(cmp(repo.version,local.version)>=0?repo:local));
     window.LuxDotBuild={meta:newest,deployment:local,repository:repo,github:head,mismatch};
+
+    const badge=document.getElementById("luxdotVersionBadge");
+    if(badge){
+      badge.textContent=newest?.version?`LuxDot · v${newest.version}`:"LuxDot · live";
+      badge.title=mismatch
+        ? `Production ${local?.version||"?"} · main ${repo?.version||"?"}`
+        : `LuxDot ${newest?.version||"live"}`;
+      badge.dataset.deployMismatch=mismatch?"true":"false";
+      if(mismatch) badge.style.borderColor="rgba(240,179,106,.55)";
+    }
 
     const box=document.getElementById("liveBuild");
     if(box){
