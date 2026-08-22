@@ -1,11 +1,12 @@
 {
   "product": "LuxDot",
-  "version": "4.14.15",
-  "build_time": "2026-08-22T21:04:04+02:00",
+  "version": "4.14.16",
+  "build_time": "2026-08-22T21:48:11+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
   "release_type": "FULL_REPLACE",
   "features": [
+    "Central typography scale with display/standard/knowledge density modes",
     "Research cluster organizer + project launch-sequence navigator + removed Ismaili floating review button",
     "Standalone What does LuxDot stand for? public gateway page",
     "LuxDot Research Standard v0.1 theoretical-preview schema and non-enforcing laboratory",
@@ -20,12 +21,17 @@
     "Research Executive Report fingerprints"
   ],
   "counts": {
-    "files": 685,
+    "files": 688,
     "html": 194,
-    "js": 65,
+    "js": 66,
     "assets": 118
   },
   "latest_changes": [
+    {
+      "date": "2026-08-22",
+      "title_ar": "توحيد أحجام الخطوط وتقليل كثافة العناوين في صفحات المعرفة",
+      "title_en": "Central typography pass with denser knowledge pages"
+    },
     {
       "date": "2026-08-22",
       "title_ar": "تنظيم الأبحاث بعناقيد وإضافة تسلسل إطلاق للمشاريع وإزالة زر مراجعة الإسماعيلية العائم",
