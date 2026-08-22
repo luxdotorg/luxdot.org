@@ -1,0 +1,37 @@
+{
+  "product": "LuxDot",
+  "version": "4.14.7",
+  "build_time": "2026-08-22T15:19:43+02:00",
+  "timezone": "Europe/Amsterdam",
+  "repository": "luxdotorg/luxdot.org",
+  "release_type": "FULL_REPLACE",
+  "features": [
+    "Ismaili Qāʾim/Mahdi text-level source dossier",
+    "Living 365 calendar: current year generated at runtime",
+    "Live development manifest and GitHub commit status",
+    "Research Executive Report fingerprints"
+  ],
+  "counts": {
+    "files": 666,
+    "html": 188,
+    "js": 64,
+    "assets": 118
+  },
+  "latest_changes": [
+    {
+      "date": "2026-08-22",
+      "title_ar": "توسيع ملف الإسماعيلية إلى مستوى النصوص والتحقيقات",
+      "title_en": "Ismaili dossier deepened to text/edition level"
+    },
+    {
+      "date": "2026-08-22",
+      "title_ar": "تحويل LuxDot 365 إلى رزنامة حية غير مربوطة بسنة 2026",
+      "title_en": "LuxDot 365 made year-independent and live"
+    },
+    {
+      "date": "2026-08-22",
+      "title_ar": "إضافة حالة تطوير حيّة تربط النسخة المنشورة بآخر commit عام",
+      "title_en": "Added live deployment/build status"
+    }
+  ]
+}
