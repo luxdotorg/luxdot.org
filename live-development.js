@@ -1,31 +1,69 @@
-/* LuxDot live development status · v4.14.7 */
+/* LuxDot live development status · deployment-aware · v4.14.9 */
 (()=> {
   const REPO="luxdotorg/luxdot.org";
-  async function localMeta(){
-    try{const r=await fetch("build-meta.json?ts="+Date.now(),{cache:"no-store"}); if(r.ok)return await r.json()}catch(e){}
+  const RAW_META="https://raw.githubusercontent.com/luxdotorg/luxdot.org/main/build-meta.json";
+
+  async function getJSON(url){
+    try{
+      const sep=url.includes("?")?"&":"?";
+      const r=await fetch(url+sep+"ts="+Date.now(),{cache:"no-store",headers:{"Cache-Control":"no-cache"}});
+      if(r.ok)return await r.json();
+    }catch(e){}
     return null;
   }
+  async function localMeta(){ return getJSON("/build-meta.json"); }
+  async function repoMeta(){ return getJSON(RAW_META); }
   async function githubHead(){
     try{
-      const r=await fetch("https://api.github.com/repos/"+REPO+"/commits?per_page=1",{headers:{"Accept":"application/vnd.github+json"}});
-      if(!r.ok)return null; const j=await r.json(); if(!j[0])return null;
+      const r=await fetch("https://api.github.com/repos/"+REPO+"/commits?per_page=1&ts="+Date.now(),{
+        cache:"no-store",headers:{"Accept":"application/vnd.github+json","Cache-Control":"no-cache"}
+      });
+      if(!r.ok)return null;
+      const j=await r.json(); if(!j[0])return null;
       return {sha:j[0].sha.slice(0,8),date:j[0].commit.committer.date,message:j[0].commit.message.split("\n")[0],url:j[0].html_url};
     }catch(e){return null}
   }
-  function fmt(d){try{return new Intl.DateTimeFormat(document.documentElement.lang==="ar"?"ar":"en",{dateStyle:"medium",timeStyle:"short",timeZone:"Europe/Amsterdam"}).format(new Date(d))}catch(e){return d}}
+  function nums(v){return String(v||"0").replace(/^v/,"").split(".").map(x=>parseInt(x,10)||0)}
+  function cmp(a,b){const A=nums(a),B=nums(b);for(let i=0;i<Math.max(A.length,B.length);i++){const d=(A[i]||0)-(B[i]||0);if(d)return d}return 0}
+  function fmt(d){try{return new Intl.DateTimeFormat((document.documentElement.lang||"ar")==="ar"?"ar":"en",{dateStyle:"medium",timeStyle:"short",timeZone:"Europe/Amsterdam"}).format(new Date(d))}catch(e){return d}}
+
   async function run(){
-    const [m,g]=await Promise.all([localMeta(),githubHead()]);
-    window.LuxDotBuild={meta:m,github:g};
+    const [local,repo,head]=await Promise.all([localMeta(),repoMeta(),githubHead()]);
+    const mismatch=!!(local&&repo&&cmp(local.version,repo.version)!==0);
+    const newest=!local?repo:(!repo?local:(cmp(repo.version,local.version)>=0?repo:local));
+    window.LuxDotBuild={meta:newest,deployment:local,repository:repo,github:head,mismatch};
+
     const box=document.getElementById("liveBuild");
     if(box){
-      if(m){
-        const ar=(document.documentElement.lang||"ar")==="ar";
-        box.innerHTML=ar
-          ? `<b>حالة LuxDot الحيّة</b> · النسخة <b>v${m.version}</b> · بُنيت ${fmt(m.build_time)} · ${m.counts.html} صفحة · ${m.counts.js} ملف JS${g?` · آخر commit عام <a href="${g.url}" target="_blank" rel="noopener">${g.sha}</a>`:""}`
-          : `<b>Live LuxDot status</b> · v${m.version} · built ${fmt(m.build_time)} · ${m.counts.html} pages · ${m.counts.js} JS files${g?` · public head <a href="${g.url}" target="_blank" rel="noopener">${g.sha}</a>`:""}`;
+      const ar=(document.documentElement.lang||"ar")==="ar";
+      if(newest){
+        const c=newest.counts||{};
+        const base=ar
+          ? `<b>حالة LuxDot الحيّة</b> · أحدث نسخة معروفة <b>v${newest.version}</b> · ${newest.build_time?`بُنيت ${fmt(newest.build_time)} · `:""}${c.html||"?"} صفحة · ${c.js||"?"} ملف JS`
+          : `<b>Live LuxDot status</b> · newest known <b>v${newest.version}</b> · ${newest.build_time?`built ${fmt(newest.build_time)} · `:""}${c.html||"?"} pages · ${c.js||"?"} JS files`;
+
+        const deploy=local?`v${local.version}`:"?";
+        const source=repo?`v${repo.version}`:"?";
+        const status=mismatch
+          ? (ar
+            ? `<div style="margin-top:8px;color:#f0b36a"><b>تنبيه نشر:</b> الإنتاج يعرض ${deploy} بينما main يحتوي ${source}. الـdeployment أو الكاش متأخر.</div>`
+            : `<div style="margin-top:8px;color:#f0b36a"><b>Deploy warning:</b> production is ${deploy}, while main contains ${source}. Deployment/cache is behind.</div>`)
+          : (local&&repo
+            ? (ar
+              ? `<div style="margin-top:8px;color:#9fd3aa">✓ الإنتاج وmain متزامنان على ${deploy}</div>`
+              : `<div style="margin-top:8px;color:#9fd3aa">✓ production and main are synced at ${deploy}</div>`)
+            : "");
+
+        const commit=head?` · <a href="${head.url}" target="_blank" rel="noopener">${head.sha}</a>`:"";
+        box.innerHTML=base+commit+status;
+      } else {
+        box.textContent=ar?"تعذر قراءة حالة النسخة حالياً.":"Unable to read build status.";
       }
     }
-    document.dispatchEvent(new CustomEvent("luxdotbuild",{detail:{meta:m,github:g}}));
+
+    document.documentElement.dataset.luxVersion=newest?.version||"unknown";
+    document.dispatchEvent(new CustomEvent("luxdotbuild",{detail:window.LuxDotBuild}));
   }
+
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",run,{once:true}); else run();
 })();

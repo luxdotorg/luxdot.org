@@ -1,11 +1,12 @@
 {
   "product": "LuxDot",
-  "version": "4.14.8",
-  "build_time": "2026-08-22T15:24:24+02:00",
+  "version": "4.14.9",
+  "build_time": "2026-08-22T17:56:24+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
   "release_type": "FULL_REPLACE",
   "features": [
+    "Deployment-aware live version detection and cache-busting",
     "Alawi/Nusayri history, doctrine and source-audit research node",
     "Ismaili Qāʾim/Mahdi text-level source dossier",
     "Living 365 calendar: current year generated at runtime",
@@ -13,12 +14,17 @@
     "Research Executive Report fingerprints"
   ],
   "counts": {
-    "files": 668,
+    "files": 671,
     "html": 189,
     "js": 64,
     "assets": 118
   },
   "latest_changes": [
+    {
+      "date": "2026-08-22",
+      "title_ar": "إصلاح كشف الإصدار الحي ومقارنة الإنتاج مع main ومنع كاش ملفات الحالة",
+      "title_en": "Fixed live version detection, production/main mismatch reporting, and critical status caching"
+    },
     {
       "date": "2026-08-22",
       "title_ar": "إضافة ملف بحث علوي/نُصيري بمراجعة النصوص والمصادر والهوية المعاصرة",
