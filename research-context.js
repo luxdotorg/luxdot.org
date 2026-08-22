@@ -1,6 +1,4 @@
-(()=>{
-const p=location.pathname.split('/').pop();const M={
-'tishrei-5787-gates.html':['T5787','اليهودية والسفارديم','Judaism & Sepharad','Jodendom & Sefarad','Yahudi & Sefarad','יהדות וספרד'],
+(()=>{const p=location.pathname.split('/').pop();const M={
 'savior-atlas.html':['001','الإنسان والمعنى','Human & Meaning','Mens & Betekenis','Manungsa lan Makna','אדם ומשמעות'],
 'java-script.html':['002','الإنسان والمعنى · رحلات المعرفة','Human & Meaning · Knowledge Journeys','Mens & Betekenis · Kennisreizen','Manungsa lan Makna · Lelakon Kawruh','אדם ומשמעות · מסעות ידע'],
 'shaam-breda.html':['003','الأرض والحدود','Land & Borders','Land & Grenzen','Tanah lan Wates','ארץ וגבולות'],
