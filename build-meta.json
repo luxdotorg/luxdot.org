@@ -1,11 +1,12 @@
 {
   "product": "LuxDot",
-  "version": "4.14.13",
-  "build_time": "2026-08-22T19:56:08+02:00",
+  "version": "4.14.14",
+  "build_time": "2026-08-22T20:24:00+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
   "release_type": "FULL_REPLACE",
   "features": [
+    "Gates of Tishrei 5787 textual research gateway + criteria-first Savior Atlas protocol",
     "LuxDot Research Standard v0.1 theoretical-preview schema and non-enforcing laboratory",
     "LuxDot Philosophy + Research Method + 12-principle Charter gateway",
     "Floating cartouche-only header; search last; Humanity & Meaning first",
@@ -18,12 +19,17 @@
     "Research Executive Report fingerprints"
   ],
   "counts": {
-    "files": 682,
-    "html": 193,
+    "files": 686,
+    "html": 194,
     "js": 65,
     "assets": 118
   },
   "latest_changes": [
+    {
+      "date": "2026-08-22",
+      "title_ar": "إضافة بوابات تشري 5787 وتحويل المسار اليهودي في أطلس المخلّص إلى المعيار قبل المرشح",
+      "title_en": "Added Gates of Tishrei 5787 and changed the Jewish Savior Atlas path to criteria before candidates"
+    },
     {
       "date": "2026-08-22",
       "title_ar": "بناء معيار LuxDot للبحث كبنية تقنية نظرية غير مفعلة على العقد",
