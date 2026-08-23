@@ -1,6 +1,11 @@
 
 (()=>{
 'use strict';
+const SCRIPT_URL=(()=>{try{return new URL(document.currentScript?.src||'luxdot-radio.js',location.href)}catch(e){return new URL('luxdot-radio.js',location.href)}})();
+const ROOT_URL=new URL('./',SCRIPT_URL);
+const asset=path=>new URL(path,ROOT_URL).href;
+const STATE_KEY='luxdot.radio.liveState.v2', FAIL_KEY='luxdot.radio.failedSources.v2';
+const failed=new Set(JSON.parse(sessionStorage.getItem(FAIL_KEY)||'[]'));
 const commonsFile=n=>'https://commons.wikimedia.org/wiki/Special:Redirect/file/'+encodeURIComponent(n).replace(/%2F/g,'/');
 const TZ='Asia/Damascus';
 const audio=new Audio(); audio.preload='auto'; audio.muted=false; audio.volume=1; audio.removeAttribute('crossorigin');
@@ -8,7 +13,7 @@ let userOn=localStorage.getItem('luxdot.radio.on')==='1', current=null, sacredLo
 let consecutiveErrors=0,lastErrorAt=0,loadToken=0,sourceTimer=null;
 let prayerTimes=null, prayerDate='', lastPrayerKey='', lastIdentKey='';
 
-const LOCAL_FALLBACK={id:'luxdot-fallback',title:'نقطة نور · سرير صوتي احتياطي',artist:'LuxDot generated audio',kind:'music',tags:['quiet','ambient','arab-quiet','quiet-world','world-window','instrumental'],duration:180,url:'assets/audio/system/point-of-light-fallback.wav',license:'LuxDot original generated audio'};
+const LOCAL_FALLBACK={id:'luxdot-fallback',title:'نقطة نور · سرير صوتي احتياطي',artist:'LuxDot generated audio',kind:'music',tags:['quiet','ambient','arab-quiet','quiet-world','world-window','instrumental'],duration:180,url:asset('assets/audio/system/point-of-light-fallback.wav'),license:'LuxDot original generated audio'};
 const CATALOG=[
  LOCAL_FALLBACK,
  {id:'quran-fatiha',title:'سورة الفاتحة',artist:'محمد صديق المنشاوي',kind:'sacred',tags:['quran-selected'],duration:52,url:commonsFile('Sura Minshawi 1.ogg'),license:'Public domain'},
@@ -17,16 +22,26 @@ const CATALOG=[
  {id:'oud',title:'عود عربي',artist:'Houssem Bettaibi',kind:'music',tags:['oud','arab-quiet','instrumental','quiet'],duration:50,url:commonsFile('OUD.ogg'),license:'CC BY-SA 3.0'},
  {id:'muwashah-musili',title:'للعاشق في الهوى دلائل · موشح',artist:'أحمد عبد القادر الموصلي',kind:'music',tags:['muwashshah','muwashah-classic','andalusian-night','arab-classic','maqam'],duration:203,url:commonsFile('Ahmed al-Musili, Muwashah 02.ogg'),license:'Public domain'},
  {id:'lamma-bada',title:'لما بدا يتثنى · موشح',artist:'الشيخ سيد الصفتي',kind:'music',tags:['muwashshah','muwashah-classic','andalusian-night','arab-classic','halab-night'],duration:210,url:commonsFile('Muwashah lamma bada yatathanna.OGG'),license:'Public domain'},
- {id:'andalusi-free',title:'أندلسيات · مقطع أندلسي',artist:'Anass Sedrati',kind:'music',tags:['andalusian','andalusian-night','muwashshah','arab-classic'],duration:81,url:commonsFile('أوديو أندلسي.ogg'),license:'CC BY-SA 4.0'},
+ {id:'andalusi-free',title:'أندلسيات · مادة أرشيفية كلامية',artist:'Anass Sedrati',kind:'spoken',tags:['archive','andalusian-spoken'],duration:81,url:commonsFile('أوديو أندلسي.ogg'),license:'CC BY-SA 4.0',broadcast:false},
  {id:'persia',title:'Baiaty · Chiraz · Rast',artist:'Traditional Persian music',kind:'music',tags:['persian','quiet-world'],duration:183,url:commonsFile('Baiaty Chiraz Rast .ogg'),license:'Public domain'},
  {id:'bach-air',title:'Air · BWV 1068',artist:'J. S. Bach',kind:'music',tags:['symphonic','quiet-world'],duration:260,url:commonsFile('Air (Bach).ogg'),license:'Public domain'},
+ {id:'samai-hijaz-kurdi',title:'سماعي حجاز كار كردي · 1926',artist:'Chahadé Saadé',kind:'music',tags:['samaai','oud','arab-classic','andalusian-night','halab-night','instrumental'],duration:212,url:commonsFile('Samaii Hijaz Kar Kurdi (c. 1926).ogg'),license:'Public domain'},
+ {id:'maqam-sika-1931',title:'مقام سيكاه · تسجيل 1931',artist:'Traditional Egyptian ensemble',kind:'music',tags:['maqam','arab-classic','andalusian-night','halab-night','quiet-world'],duration:201,url:commonsFile('Art-song Maqam Sika (1931).ogg'),license:'Public domain'},
+ {id:'maqam-hijaz-1',title:'بشرف مقام حجاز · الجزء الأول',artist:'Traditional Egyptian music',kind:'music',tags:['maqam','arab-classic','andalusian-night','halab-night','instrumental'],duration:218,url:commonsFile('Baschrav Kuzum Maqam Hijaz part 1 (1931).ogg'),license:'Public domain'},
+ {id:'maqam-hijaz-2',title:'بشرف مقام حجاز · الجزء الثاني',artist:'Traditional Egyptian music',kind:'music',tags:['maqam','arab-classic','andalusian-night','halab-night','instrumental'],duration:210,url:commonsFile('Baschrav Kuzum Maqam Hijaz part 2 (1931).ogg'),license:'Public domain'},
+ {id:'maqam-mezmum',title:'مقام مزموم · تونس 1931',artist:'Traditional Tunisian music',kind:'music',tags:['maqam','quiet-world','andalusian-night','world-window'],duration:166,url:commonsFile('Art-song Maqam Mezmum (1931).ogg'),license:'Public domain'},
+ {id:'dervishes-dil',title:'إنشاد دراويش · مقام ديل',artist:'Traditional Tunisian music',kind:'spiritual',tags:['spiritual','mawlid','halab-night','world-window'],duration:166,url:commonsFile('Song of the Dervishes Maqam Dil (1931).ogg'),license:'Public domain'},
+ {id:'memory-heal-world',title:'Heal the World · ذاكرة إنسانية',artist:'Memory library',kind:'memory',tags:['memory','children','world-window'],duration:382,url:asset('assets/audio/memorial/heal-the-world.mp3'),license:'User-supplied; publication rights to be confirmed'},
+ {id:'memory-one-day',title:'One Day · ذاكرة إنسانية',artist:'Memory library',kind:'memory',tags:['memory','children','world-window'],duration:213,url:asset('assets/audio/memorial/one-day.mp3'),license:'User-supplied; publication rights to be confirmed'},
+ {id:'memory-julia',title:'غابت شمس الحق · ذاكرة سورية',artist:'Julia / memory library',kind:'memory',tags:['memory','sham','arab-classic'],duration:314,url:asset('assets/audio/memorial/julia-ghabat-shams-alhaq.mp3'),license:'User-supplied; publication rights to be confirmed'},
+ {id:'memory-not-alone',title:'You’re Not Alone Syria · ذاكرة سورية',artist:'Memory library',kind:'memory',tags:['memory','sham','children'],duration:359,url:asset('assets/audio/memorial/youre-not-alone-syria.mp3'),license:'User-supplied; publication rights to be confirmed'},
  {id:'gamelan',title:'Gamelan Anklung',artist:'Traditional ensemble',kind:'music',tags:['world-window','quiet-world'],duration:177,url:commonsFile('Gamelan Anklung Berong Pengetjet (1931).ogg'),license:'Public domain'},
  {id:'qawwali',title:'Sohini Qawwali',artist:'Imdad Khan',kind:'spiritual',tags:['spiritual','mawlid','world-window'],duration:185,url:commonsFile('Sohini Qawwali.ogg'),license:'Public domain'},
  {id:'syriac',title:'Abun d-bashmayo · الصلاة الربانية',artist:'Western Syriac rite',kind:'sacred',tags:['spiritual','world-window'],duration:80,url:commonsFile('Abunbshmayo.ogg'),license:'CC0 1.0'},
  {id:'jewish-adon',title:'Adon Olam · אדון עולם',artist:'Gershon Sirota',kind:'sacred',tags:['spiritual','world-window'],duration:212,url:commonsFile('Adoin oilom (1903).ogg'),license:'Public domain'},
  {id:'gregorian',title:'Veni Sancte Spiritus',artist:'Gregorian chant',kind:'sacred',tags:['spiritual','world-window'],duration:157,url:commonsFile('Veni.sancte.spiritus.ogg'),license:'Public domain'},
- {id:'heartbeat',title:'Heartbeat · A Song for Syria',artist:'Syrian children / UNICEF project',kind:'children',tags:['children','memory'],duration:222,url:'assets/audio/memorial/heartbeat-song-for-syria.mp3',license:'User-supplied; publication rights to be confirmed'},
- {id:'sarkha',title:'صرخة · رسالة طفل لاجئ',artist:'Provisional identification',kind:'children',tags:['children','memory','short-story'],duration:393,url:'assets/audio/memorial/sarkha-child-refugee.mp3',license:'User-supplied; publication rights to be confirmed'}
+ {id:'heartbeat',title:'Heartbeat · A Song for Syria',artist:'Syrian children / UNICEF project',kind:'children',tags:['children','memory'],duration:222,url:asset('assets/audio/memorial/heartbeat-song-for-syria.mp3'),license:'User-supplied; publication rights to be confirmed'},
+ {id:'sarkha',title:'صرخة · رسالة طفل لاجئ',artist:'Provisional identification',kind:'children',tags:['children','memory','short-story'],duration:393,url:asset('assets/audio/memorial/sarkha-child-refugee.mp3'),license:'User-supplied; publication rights to be confirmed'}
 ];
 
 const LICENSED_SLOTS=[
@@ -38,9 +53,9 @@ const LICENSED_SLOTS=[
 
 
 const OPTIONAL_LICENSED=[
- {id:'fairuz-sham-local',title:'فيروز · مختارات عن الشام',artist:'فيروز',kind:'music',tags:['fairuz-licensed','sham','arab-classic'],duration:1800,url:'assets/audio/licensed/fairuz-sham.mp3',license:'User-supplied licensed audio'},
- {id:'umm-kulthum-local',title:'أم كلثوم · طرب ما قبل الفجر',artist:'أم كلثوم',kind:'music',tags:['umm-kulthum-licensed','tarab','arab-classic'],duration:1800,url:'assets/audio/licensed/umm-kulthum-night.mp3',license:'User-supplied licensed audio'},
- {id:'qudud-halabi-local',title:'قدود حلبية · مختارات',artist:'مكتبة حلبية',kind:'music',tags:['qudud','qudud-halabi','halab-night','muwashshah'],duration:1800,url:'assets/audio/licensed/qudud-halabi.mp3',license:'User-supplied licensed audio'}
+ {id:'fairuz-sham-local',title:'فيروز · مختارات عن الشام',artist:'فيروز',kind:'music',tags:['fairuz-licensed','sham','arab-classic'],duration:1800,url:asset('assets/audio/licensed/fairuz-sham.mp3'),license:'User-supplied licensed audio'},
+ {id:'umm-kulthum-local',title:'أم كلثوم · طرب ما قبل الفجر',artist:'أم كلثوم',kind:'music',tags:['umm-kulthum-licensed','tarab','arab-classic'],duration:1800,url:asset('assets/audio/licensed/umm-kulthum-night.mp3'),license:'User-supplied licensed audio'},
+ {id:'qudud-halabi-local',title:'قدود حلبية · مختارات',artist:'مكتبة حلبية',kind:'music',tags:['qudud','qudud-halabi','halab-night','muwashshah'],duration:1800,url:asset('assets/audio/licensed/qudud-halabi.mp3'),license:'User-supplied licensed audio'}
 ];
 async function discoverLicensed(){
  for(const t of OPTIONAL_LICENSED){
@@ -106,25 +121,64 @@ function weekdayLayer(d=new Date()){
 function candidates(dp){
  let tags=[...dp.tags];
  const sp=special();
- // Special days influence the identity, but ordinary Saturday/Sunday no longer hijack the playlist.
- if(sp?.key==='mawlid')tags.unshift('mawlid','muwashshah','qudud','quran-selected');
- let real=CATALOG.filter(t=>t.tags.some(x=>tags.includes(x)));
- // Sacred material is only selected when the programme explicitly requests it.
+ if(sp?.key==='mawlid')tags.unshift('mawlid','muwashshah','qudud','quran-selected','spiritual');
+ let real=CATALOG.filter(t=>t.broadcast!==false&&!failed.has(t.id)&&t.tags.some(x=>tags.includes(x)));
  const wantsSacred=tags.includes('quran-selected')||tags.includes('spiritual')||tags.includes('mawlid');
  if(!wantsSacred) real=real.filter(t=>t.kind!=='sacred'&&t.kind!=='spiritual');
- return real.length?real:CATALOG.filter(t=>t.kind!=='sacred');
+ // Keep the editorial identity, but add a few compatible "breathers" so long blocks do not loop three files.
+ const broad=CATALOG.filter(t=>t.broadcast!==false&&!failed.has(t.id)&&t.kind!=='sacred'&&t.kind!=='spoken');
+ if(dp.nameEn==='Morning of Chaam') real.push(...broad.filter(t=>t.tags.includes('quiet-world')||t.tags.includes('instrumental')));
+ if(dp.nameEn==='Point of Light Day') real.push(...broad.filter(t=>t.tags.includes('world-window')||t.tags.includes('memory')));
+ if(dp.nameEn==='Eastern Evening') real.push(...broad.filter(t=>t.tags.includes('maqam')||t.tags.includes('quiet-world')||t.tags.includes('symphonic')));
+ if(dp.nameEn==='Andalusian & Muwashshah Night') real.push(...broad.filter(t=>t.tags.includes('maqam')||t.tags.includes('samaai')||t.tags.includes('oud')));
+ if(dp.nameEn==='Aleppo Stays Awake') real.push(...broad.filter(t=>t.tags.includes('halab-night')||t.tags.includes('maqam')||t.tags.includes('oud')));
+ if(dp.nameEn==='Night Tarab') real.push(...broad.filter(t=>t.tags.includes('arab-classic')||t.tags.includes('quiet-world')||t.tags.includes('maqam')));
+ const uniq=[];const seen=new Set();
+ for(const t of real){if(!seen.has(t.id)){seen.add(t.id);uniq.push(t)}}
+ return uniq.length?uniq:[LOCAL_FALLBACK];
 }
-function pick(dp){
- const pool=candidates(dp),history=JSON.parse(localStorage.getItem('luxdot.radio.history')||'{}');
- const tags=dp.tags||[];
- const ranked=[...pool].sort((a,b)=>{
-   const am=a.tags.filter(x=>tags.includes(x)).length,bm=b.tags.filter(x=>tags.includes(x)).length;
-   if(am!==bm)return bm-am;
-   return (history[a.id]||0)-(history[b.id]||0);
- });
- const t=ranked[0]||LOCAL_FALLBACK;
- history[t.id]=Date.now();localStorage.setItem('luxdot.radio.history',JSON.stringify(history));
- return t;
+function hash32(str){let h=2166136261>>>0;for(let i=0;i<str.length;i++){h^=str.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
+function shuffleStable(arr,seed){
+ const a=[...arr];let x=seed||1;
+ const rnd=()=>{x^=x<<13;x^=x>>>17;x^=x<<5;return (x>>>0)/4294967296};
+ for(let i=a.length-1;i>0;i--){const j=Math.floor(rnd()*(i+1));[a[i],a[j]]=[a[j],a[i]]}
+ return a;
+}
+function dateKey(d=new Date()){const p=parts(d);return `${p.year}-${p.month}-${p.day}`}
+function elapsedInDaypart(dp,d=new Date()){
+ const p=parts(d),n=Number(p.hour)*3600+Number(p.minute)*60+Number(p.second),a=minutes(dp.start)*60,b=minutes(dp.end)*60;
+ if(a<=b)return Math.max(0,n-a);
+ return n>=a?n-a:n+86400-a;
+}
+function scheduled(dp,d=new Date()){
+ const pool=candidates(dp);
+ if(pool.length===1)return {track:pool[0],offset:elapsedInDaypart(dp,d)%Math.max(20,pool[0].duration||180)};
+ let remain=elapsedInDaypart(dp,d),cycle=0;
+ while(cycle<200){
+   const order=shuffleStable(pool,hash32(`${dateKey(d)}|${dp.start}|${cycle}`));
+   // Avoid beginning a cycle with the same title that ended the previous one.
+   const cycleDur=order.reduce((z,t)=>z+Math.max(20,Number(t.duration)||180),0);
+   if(remain<cycleDur){
+     for(const t of order){
+       const dur=Math.max(20,Number(t.duration)||180);
+       if(remain<dur)return {track:t,offset:remain};
+       remain-=dur;
+     }
+   }else remain-=cycleDur;
+   cycle++;
+ }
+ return {track:pool[0],offset:0};
+}
+function savedState(){
+ try{const x=JSON.parse(localStorage.getItem(STATE_KEY)||'null');return x&&Date.now()-x.at<30000?x:null}catch(e){return null}
+}
+function saveState(){
+ if(!current)return;
+ try{localStorage.setItem(STATE_KEY,JSON.stringify({id:current.id,pos:Number(audio.currentTime)||0,at:Date.now(),program:daypart().start,on:userOn}))}catch(e){}
+}
+function markFailed(id){
+ if(!id||id==='luxdot-fallback')return;
+ failed.add(id);sessionStorage.setItem(FAIL_KEY,JSON.stringify([...failed]));
 }
 function emit(){
  document.dispatchEvent(new CustomEvent('luxdotradio',{detail:live()}));
@@ -137,7 +191,7 @@ function setStatus(s){document.dispatchEvent(new CustomEvent('luxdotradio-status
 function ensureDock(){
  if(document.getElementById('luxdot-radio-dock'))return;
  const d=document.createElement('div');d.id='luxdot-radio-dock';
- d.innerHTML=`<div class="lrd-main"><button id="luxdot-radio-play">▶</button><div><div class="lrd-title"><span class="lrd-pulse"></span>إذاعة نقطة نور · LuxDot من الشام</div><div class="lrd-track" id="luxdot-radio-track">من الشام… نقطة نور إلى العالم</div></div><span class="lrd-live">LIVE</span></div><div class="lrd-sub"><span>Chaam · الشام · 24/7</span><a href="radio.html">OPEN ↗</a></div>`;
+ d.innerHTML=`<div class="lrd-main"><button id="luxdot-radio-play">▶</button><div><div class="lrd-title"><span class="lrd-pulse"></span>إذاعة نقطة نور · LuxDot من الشام</div><div class="lrd-track" id="luxdot-radio-track">من الشام… نقطة نور إلى العالم</div></div><span class="lrd-live">LIVE</span></div><div class="lrd-sub"><span>Chaam · الشام · 24/7</span><a href="${asset('radio.html')}">OPEN ↗</a></div>`;
  document.body.appendChild(d);
  d.querySelector('#luxdot-radio-play').onclick=toggle;
 }
@@ -146,51 +200,63 @@ function updateDock(){
  if(t)t.textContent=current?`${current.title} · ${current.artist}`:'من الشام… نقطة نور إلى العالم';
  if(b)b.textContent=userOn&&!audio.paused?'❚❚':'▶';
 }
-function load(t,play=true){
+function load(t,play=true,seek=0){
  clearTimeout(sourceTimer); const token=++loadToken;
- current=t||LOCAL_FALLBACK; sacredLock=current.kind==='sacred'; audio.loop=current.id==='luxdot-fallback';
+ current=t||LOCAL_FALLBACK; sacredLock=current.kind==='sacred'; audio.loop=false;
  audio.pause(); audio.muted=false; audio.volume=1; audio.src=current.url; audio.load(); updateDock(); emit();
-
- // If a remote source never reaches playable state, fall back locally instead of cycling.
+ let sought=false;
+ const doSeek=()=>{if(sought||token!==loadToken)return;sought=true;try{const dur=Number.isFinite(audio.duration)&&audio.duration>0?audio.duration:(current.duration||0);if(dur>1)audio.currentTime=Math.max(0,Math.min(seek,dur-0.35));else audio.currentTime=Math.max(0,seek)}catch(e){}};
+ audio.addEventListener('loadedmetadata',doSeek,{once:true});
+ audio.addEventListener('canplay',doSeek,{once:true});
  sourceTimer=setTimeout(()=>{
-   if(token!==loadToken || !userOn || !audio.paused || audio.readyState>=2)return;
-   if(current.id!=='luxdot-fallback'){setStatus('المصدر الخارجي لم يستجب؛ تشغيل المصدر المحلي الاحتياطي…');load(LOCAL_FALLBACK,true)}
- },8000);
-
+   if(token!==loadToken||!userOn||!audio.paused||audio.readyState>=2)return;
+   if(current.id!=='luxdot-fallback'){
+     markFailed(current.id);setStatus('المصدر لم يستجب؛ الانتقال تلقائيًا إلى المسار التالي…');syncToAir(true);
+   }
+ },9000);
  if(play&&userOn){
-   const pr=audio.play();
-   if(pr&&pr.catch)pr.catch(()=>{
-     if(current.id!=='luxdot-fallback') load(LOCAL_FALLBACK,true);
-     else setStatus('اضغط ▶ مرة واحدة للسماح بالصوت · Tap ▶ once to allow audio');
-   });
+   const tryPlay=()=>{doSeek();const pr=audio.play();if(pr&&pr.catch)pr.catch(()=>setStatus('اضغط ▶ مرة واحدة للسماح باستمرار البث بين الصفحات.'))};
+   if(audio.readyState>=1)tryPlay();else audio.addEventListener('loadedmetadata',tryPlay,{once:true});
  }
 }
-function next(){load(pick(daypart()),true)}
+function syncToAir(force=false){
+ const dp=daypart(),air=scheduled(dp),st=savedState();
+ let seek=air.offset;
+ // During quick same-site navigation, continue the exact stream position from the page just left.
+ if(st&&st.id===air.track.id&&st.program===dp.start){
+   seek=(st.pos||0)+(Date.now()-st.at)/1000;
+   const dur=Math.max(20,air.track.duration||180);seek%=dur;
+ }
+ if(!force&&current?.id===air.track.id){
+   if(userOn&&audio.paused)audio.play().catch(()=>{});
+   if(Math.abs((audio.currentTime||0)-seek)>15&&!sacredLock&&!identBusy&&!prayerBusy){try{audio.currentTime=seek}catch(e){}}
+   updateDock();emit();return;
+ }
+ load(air.track,true,seek);
+}
+function next(){if(current)markFailed('__none__');syncToAir(true)}
 function toggle(){
- userOn=!userOn; localStorage.setItem('luxdot.radio.on',userOn?'1':'0');
- if(userOn){
-   audio.muted=false; audio.volume=1;
-   if(!current) load(LOCAL_FALLBACK,true);
-   else {
-     const pr=audio.play();
-     if(pr&&pr.catch)pr.catch(()=>load(LOCAL_FALLBACK,true));
-   }
- }else audio.pause();
+ userOn=!userOn;localStorage.setItem('luxdot.radio.on',userOn?'1':'0');
+ if(userOn){audio.muted=false;audio.volume=1;syncToAir(true)}
+ else{audio.pause();saveState()}
  updateDock();emit();
 }
-audio.onended=()=>{clearTimeout(sourceTimer);consecutiveErrors=0;sacredLock=false;if(current?.id==='luxdot-fallback'){audio.currentTime=0;audio.play().catch(()=>{});return}if(pendingPrayer)playPrayer(pendingPrayer,true);else next()};
-audio.onplaying=()=>{clearTimeout(sourceTimer);consecutiveErrors=0;updateDock();emit()};
+audio.onended=()=>{
+ clearTimeout(sourceTimer);consecutiveErrors=0;sacredLock=false;saveState();
+ if(pendingPrayer)playPrayer(pendingPrayer,true);else syncToAir(true);
+};
+audio.ontimeupdate=()=>{if(Math.floor(audio.currentTime)%3===0)saveState()};
+audio.onplaying=()=>{clearTimeout(sourceTimer);consecutiveErrors=0;updateDock();saveState();emit()};
 audio.onerror=()=>{
- clearTimeout(sourceTimer); sacredLock=false; consecutiveErrors++;
- if(current && current.id!=='luxdot-fallback'){
-   setStatus('تعذر المصدر الخارجي؛ انتقلت الإذاعة إلى مصدر محلي ثابت.');
-   setTimeout(()=>load(LOCAL_FALLBACK,true),700);
+ clearTimeout(sourceTimer);sacredLock=false;consecutiveErrors++;
+ if(current&&current.id!=='luxdot-fallback'){
+   markFailed(current.id);setStatus('تعذر هذا المصدر؛ تجاوزته الإذاعة وتتابع البرنامج.');setTimeout(()=>syncToAir(true),350);
  }else{
-   userOn=false;localStorage.setItem('luxdot.radio.on','0');
-   setStatus('تعذر تشغيل الصوت المحلي. اضغط ▶ بعد تحديث الصفحة.');
-   updateDock();
+   setStatus('تعذر المصدر المحلي الاحتياطي.');updateDock();
  }
 };
+window.addEventListener('pagehide',saveState);
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')saveState()});
 
 function speak(text,lang){
  return new Promise(resolve=>{
@@ -222,7 +288,7 @@ async function hourlyIdent(force=false){
  await gongAgeng();
  const idx=Number(p.hour)%ID_LANG.length,lg=ID_LANG[idx],txt=(ID_TEXT[lg]||ID_TEXT.en)(`${p.hour}:${p.minute}`);
  await speak(txt,lg==='ar'?'ar-SA':lg);
- identBusy=false;if(was&&userOn)audio.play().catch(()=>{});
+ identBusy=false;if(was&&userOn)syncToAir(true);
 }
 
 let pendingPrayer=null;
@@ -258,13 +324,13 @@ async function playPrayer(pr,fromQueue=false){
  await new Promise(resolve=>{
    const a=new Audio(commonsFile('Beautiful adhan.ogg'));a.onended=resolve;a.onerror=resolve;a.play().catch(resolve);
  });
- prayerBusy=false;if(was&&userOn)next();
+ prayerBusy=false;if(was&&userOn)syncToAir(true);
 }
 function tick(){
  fetchPrayers();
  const pr=prayerDue();if(pr)playPrayer(pr);
  const p=parts();if(p.minute==='00'&&Number(p.second)<18)hourlyIdent(false);
- const dp=daypart(); if(current&&!current.tags.some(x=>dp.tags.includes(x))&&!sacredLock&&!prayerBusy&&!identBusy)next();
+ if(!sacredLock&&!prayerBusy&&!identBusy)syncToAir(false);
  emit();
 }
 function next24(){
@@ -277,11 +343,12 @@ function week(){
  for(let i=0;i<7;i++){const d=new Date(now.getTime()+i*86400000),p=parts(d);rows.push({day:p.weekday,date:`${p.day}-${p.month}`,program:{name:weekdayLayer(d).ar,label:weekdayLayer(d).en}})}
  return rows;
 }
-function sync(force=false){if(force||!current)next();else updateDock();emit()}
+function sync(force=false){syncToAir(force||!current)}
 function getStatus(){return audio.paused?'جاهز · Ready':'يبث الآن من الشام · LIVE from Chaam'}
 
 function installAudioUnlock(){const unlock=()=>{if(userOn&&current&&audio.paused)audio.play().catch(()=>{});document.removeEventListener('pointerdown',unlock,true);document.removeEventListener('keydown',unlock,true)};document.addEventListener('pointerdown',unlock,true);document.addEventListener('keydown',unlock,true)}
 installAudioUnlock();
 window.LuxDotRadio={TRACKS:Object.fromEntries(CATALOG.map(x=>[x.id,x])),CATALOG,LICENSED_SLOTS,live,next24,week,audio,toggle,sync,hourlyIdent,fetchPrayers,getStatus};
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>{ensureDock();sync(false);fetchPrayers();setInterval(tick,15000)});else{ensureDock();sync(false);fetchPrayers();setInterval(tick,15000)}
+function boot(){ensureDock();syncToAir(true);fetchPrayers();setInterval(tick,15000);setInterval(saveState,2500)}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot()
 })();

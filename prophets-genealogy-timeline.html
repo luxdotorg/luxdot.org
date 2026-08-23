@@ -8,7 +8,7 @@ svg{width:100%;height:680px;background:radial-gradient(circle at 50% 35%,#14251b
 .node text{fill:#f0e6bd;font-size:13px;pointer-events:none}.node circle{fill:#0e2116;stroke:#c9b45f;stroke-width:1.6}.edge{stroke:#718476;stroke-width:1.4;fill:none}.edge.family{stroke:#d1b95e;stroke-width:2}.edge.sibling{stroke:#a9c8b0;stroke-dasharray:5 4}.edge.influence{stroke:#74a8c4;stroke-dasharray:3 4}.edge.dotted{stroke:#777;stroke-dasharray:2 6}
 .tip{position:fixed;z-index:1000;display:none;max-width:300px;background:#07100c;border:1px solid #776d45;border-radius:12px;padding:9px;color:#edf3ec;pointer-events:none;font-size:.82rem}
 .legend{display:flex;gap:12px;flex-wrap:wrap;font-size:.78rem}.timeline{overflow:auto}.timeline svg{min-width:1150px;height:640px}
-</style><link rel="stylesheet" href="luxdot-ibm-plex-v41817.css?v=41817"></head><body><main>
+</style><link rel="stylesheet" href="luxdot-ibm-plex-v41817.css?v=41817"><link rel="stylesheet" href="luxdot-radio.css?v=41818"></head><body><main>
 <div class="k">لوكسدوت · علاقات الأنبياء · v4.18.10</div><section class="hero"><h1>شجرة الأنبياء والارتباطات والإطار الزمني</h1>
 <p>ثلاث عدسات لنفس المادة: <b>النسب</b>، <b>العلاقات الرسالية/التاريخية</b>، و<b>الزمن</b>. عند المرور فوق العقدة يظهر تعريفها وإطارها الزمني، والنقر يفتح قصتها.</p></section>
 <div class="warn"><b>تنبيه منهجي:</b> لا نعرض آدم ونوح وإبراهيم وموسى كتواريخ أثرية مؤكدة. الأنساب القديمة هنا <b>أنساب تقليدية نصية</b>، بينما الخط الزمني يستخدم تواريخ تقريبية فقط عندما يسمح البحث التاريخي بذلك. الخط المنقّط يعني سلسلة طويلة أو علاقة تقليدية غير مباشرة.</div>
@@ -42,4 +42,4 @@ function drawTimeline(){
 drawTimeline();
 document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');let t=b.dataset.v;if(t==='time'){document.getElementById('gene').hidden=true;document.getElementById('time').hidden=false}else{document.getElementById('time').hidden=true;document.getElementById('gene').hidden=false}});
 </script>
-<script src="site-shell.js?v=41817"></script><script src="luxdot-challenge.js?v=4183"></script><script src="language-core.js?v=41817"></script><script src="content-language-core.js?v=41817"></script><script src="luxdot-language-polish.js?v=41815"></script></body></html>
+<script src="site-shell.js?v=41817"></script><script src="luxdot-challenge.js?v=4183"></script><script src="language-core.js?v=41817"></script><script src="content-language-core.js?v=41817"></script><script src="luxdot-language-polish.js?v=41815"></script><script defer src="luxdot-radio.js?v=41818"></script></body></html>

@@ -1,6 +1,6 @@
 {
   "product": "LuxDot",
-  "version": "4.18.17",
+  "version": "4.18.18",
   "build_time": "2026-08-23T12:21:00+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
@@ -130,7 +130,7 @@
   "tv_engine": "Living TV v2 — Audio Visual Harmony",
   "research_expansion": "biology + universal signals + psychoactive evidence lab",
   "header_media": "Radio + TV persistent nav",
-  "focus": "IBM Plex global typography",
+  "focus": "continuous live radio across page navigation",
   "challenge_layer": "universal claim correction + troubleshooting",
   "open_knowledge": "covenant v1",
   "linguistics": "major galaxy",
@@ -197,5 +197,12 @@
     "hebrew": "IBM Plex Sans Hebrew",
     "delivery": "Fontsource packages via jsDelivr",
     "pages_injected": 523
+  },
+  "radio": {
+    "wall_clock_live_schedule": true,
+    "resume_state_seconds": 30,
+    "all_html_pages_have_radio_runtime": true,
+    "spoken_andalusian_clip_in_rotation": false,
+    "source_failure_skip": true
   }
 }
