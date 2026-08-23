@@ -2987,5 +2987,22 @@
         "title": "Savior Atlas · LuxDot"
       }
     ]
+  },
+  "ancient-megastructures-rockcut-axis.html": {
+    "id": "ancient-megastructures-rockcut-axis.html",
+    "title": "محور العمارة الصخرية والضخامة القديمة",
+    "external_sources": 5,
+    "confidence": "B",
+    "review_status": "expanded-v4.17.0",
+    "related": [
+      {
+        "id": "petra.html",
+        "title": "Petra"
+      },
+      {
+        "id": "prewriting-egypt.html",
+        "title": "Prewriting Egypt"
+      }
+    ]
   }
 }

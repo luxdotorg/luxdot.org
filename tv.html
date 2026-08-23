@@ -1,18 +1,18 @@
 <!doctype html>
 <html lang="ar" dir="rtl"><head>
-<script src="language-core.js?v=4169"></script>
+<script src="language-core.js?v=4170"></script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>نقطة نور المرئية — من الشام · LuxDot TV</title>
-<link rel="stylesheet" href="styles.css?v=4169"><link rel="stylesheet" href="platform-v43.css?v=4169">
-<link rel="stylesheet" href="luxdot-arabic-ui.css?v=4169"><link rel="stylesheet" href="luxdot-radio.css?v=4169"><link rel="stylesheet" href="luxdot-tv.css?v=4169">
+<link rel="stylesheet" href="styles.css?v=4170"><link rel="stylesheet" href="platform-v43.css?v=4170">
+<link rel="stylesheet" href="luxdot-arabic-ui.css?v=4170"><link rel="stylesheet" href="luxdot-radio.css?v=4170"><link rel="stylesheet" href="luxdot-tv.css?v=4170">
 </head><body>
 <main class="tv-shell">
 <header class="tv-head"><span class="tv-live"><i></i> LIVING TV · Chaam / الشام</span>
 <h1>نقطة نور المرئية — من الشام</h1><p class="tv-motto">من الشام… نقطةُ نورٍ إلى العالم.</p><p>LuxDot TV — from Chaam</p></header>
 
 <section class="tv-frame">
-<video id="luxdotTvVideo" playsinline muted autoplay></video>
-<div class="tv-overlay"><h2 id="tvNowTitle">نقطة نور المرئية</h2><p id="tvRadioNow">إذاعة نقطة نور · من الشام</p><p id="tvCredit"></p></div>
+<video id="luxdotTvVideo" playsinline muted autoplay></video><img id="luxdotTvImage" alt="">
+<div class="tv-overlay"><h2 id="tvNowTitle">نقطة نور المرئية</h2><p id="tvRadioNow">إذاعة نقطة نور · من الشام</p><p id="tvCredit"></p><a id="tvResearchLink" class="tv-research" href="#" hidden>افتح البحث المرتبط ↗</a></div>
 </section>
 <nav class="tv-controls">
 <button id="tvPlay">▶ / ❚❚</button><button id="tvNext">التالي · NEXT</button>
@@ -22,15 +22,22 @@
 
 <div class="tv-grid">
 <section class="tv-card"><h3>القناة الآن · Visual channel</h3><div class="tv-channels">
-<button data-tv-item><span>سماء الليل</span><small>Night Sky · NPS</small></button>
-<button data-tv-item><span>الأرض من الفضاء</span><small>Earth · NASA</small></button>
-<button data-tv-item><span>من الليل إلى الصباح</span><small>Night → Dawn</small></button>
+<button data-tv-item="petra-film"><span>البتراء · المدينة الصخرية</span><small>Petra · priority cycle</small></button>
+<button data-tv-item="petra-deir"><span>الدير · البتراء</span><small>Ad Deir · Petra</small></button>
+<button data-tv-item="sphinx1897"><span>أبو الهول والأهرامات</span><small>Sphinx · historic film</small></button>
+<button data-tv-item="serapeum"><span>سرابيوم سقارة</span><small>Serapeum · slow visual</small></button>
+<button data-tv-item="karnak"><span>الكرنك · الأقصر</span><small>Karnak · slow visual</small></button>
+<button data-tv-item="abusimbel"><span>أبو سمبل</span><small>Abu Simbel · slow visual</small></button>
+<button data-tv-item="night"><span>سماء الليل</span><small>Night Sky</small></button>
+<button data-tv-item="earth"><span>الأرض من الفضاء</span><small>Earth · NASA</small></button>
+<button data-tv-item="dawn"><span>من الليل إلى الصباح</span><small>Night → Dawn</small></button>
 </div></section>
 <section class="tv-card"><h3>البث الحي القادم · LIVE input</h3>
 <p class="tv-next">النسخة الحالية تعمل كـ Slow TV مرئية فوق إذاعة نقطة نور. مكان البث الحي من كاميرا Chaam جاهز معماريًا؛ عند ربط OBS/RTMP لاحقًا ينتقل المشاهد إلى LIVE من دون تغيير صفحة القناة.</p>
-<p class="tv-next"><strong>Visual Sacred Lock:</strong> أثناء القرآن والنصوص المقدسة والأذان لا تظهر أخبار عاجلة أو انتقالات صاخبة.</p></section>
+<p class="tv-next"><strong>Visual Sacred Lock:</strong> أثناء القرآن والنصوص المقدسة والأذان لا تظهر أخبار عاجلة أو انتقالات صاخبة.</p>
+<p class="tv-sync-note"><strong>Audio–Visual Harmony:</strong> الصورة تُختار الآن حسب نوع الصوت الجاري وطاقته: القرآن/الهدوء → لقطات بطيئة؛ الطرب والسيمفونيات → عمارة وآثار أوسع؛ الموشحات والقدود → البتراء والتراث الشرقي. لا يُستخدم فيديو سريع مع مادة صوتية تأملية.</p></section>
 </div>
 <section class="tv-card"><h3>هوية القناة</h3><p>مناظر هادئة · سماء وفضاء · ذاكرة اليوم · ثقافة وفن · قصص · أطفال · نبض عالم موثّق. الصوت الأساسي هو إذاعة نقطة نور، مع خيار «صورة فقط».</p></section>
 </main>
-<script src="site-shell.js?v=4169"></script><script src="luxdot-radio.js?v=4169"></script><script src="luxdot-tv.js?v=4169"></script>
+<script src="site-shell.js?v=4170"></script><script src="luxdot-radio.js?v=4170"></script><script src="luxdot-tv.js?v=4170"></script>
 </body></html>

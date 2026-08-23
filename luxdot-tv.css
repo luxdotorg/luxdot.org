@@ -15,3 +15,9 @@
 .tv-channels button.active{border-color:var(--tv-gold);background:#0a1b10}
 .tv-next{font-size:.83rem;color:#a9b8ae;line-height:1.65}.tv-badge{font-size:.72rem;border:1px solid #31533b;border-radius:999px;padding:4px 8px}
 @media(max-width:800px){.tv-grid{grid-template-columns:1fr}.tv-shell{padding-inline:10px}}
+
+.tv-frame img{width:100%;height:100%;object-fit:cover;background:#000;display:none;transform:scale(1.02)}
+.tv-frame img.kenburns{animation:luxKenBurns 52s ease-in-out forwards}
+@keyframes luxKenBurns{0%{transform:scale(1.02) translate3d(0,0,0)}50%{transform:scale(1.10) translate3d(-1.5%,1%,0)}100%{transform:scale(1.16) translate3d(1%,-1%,0)}}
+.tv-research{pointer-events:auto;display:inline-block;margin-top:5px;padding:4px 8px;border:1px solid #6c6334;border-radius:999px;color:#ead77f;text-decoration:none;font-size:.72rem}
+.tv-sync-note{color:#9fbea9;font-size:.78rem}

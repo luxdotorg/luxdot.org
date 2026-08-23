@@ -1,6 +1,6 @@
 {
   "product": "LuxDot",
-  "version": "4.16.9",
+  "version": "4.17.0",
   "build_time": "2026-08-23T12:21:00+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
@@ -127,5 +127,5 @@
     }
   ],
   "radio_engine": "Living Broadcast Engine v1",
-  "tv_engine": "Living TV v1"
+  "tv_engine": "Living TV v2 — Audio Visual Harmony"
 }
