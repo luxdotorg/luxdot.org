@@ -2,6 +2,7 @@
 const SUP=['ar','en','nl','he','jv','id','fr','es','de','tr'];
 const DIR={ar:'rtl',en:'ltr',nl:'ltr',he:'rtl',jv:'ltr',id:'ltr',fr:'ltr',es:'ltr',de:'ltr',tr:'ltr'};
 const NAME={ar:'العربية',en:'English',nl:'Nederlands',he:'עברית',jv:'Basa Jawa',id:'Bahasa Indonesia',fr:'Français',es:'Español',de:'Deutsch',tr:'Türkçe'};
+function rootPrefix(){const p=location.pathname.split('/').filter(Boolean);return p.length>1?'../'.repeat(p.length-1):''}
 const BRAND={ar:'LuxDot',en:'LuxDot',nl:'LuxDot',he:'LuxDot',jv:'LuxDot',id:'LuxDot',fr:'LuxDot',es:'LuxDot',de:'LuxDot',tr:'LuxDot'};
 const NAV={
 ar:{home:'الرئيسية',library:'المكتبة',faith:'الإيمان والحكمة',nusantara:'نوسانتارا',memory:'الذاكرة',research:'الأبحاث الحيّة',media:'ميديا / أخبار',projects:'المشاريع'},
@@ -15,11 +16,11 @@ es:{home:'Inicio',library:'Biblioteca',faith:'Fe y sabiduría',nusantara:'Nusant
 de:{home:'Start',library:'Bibliothek',faith:'Glaube & Weisheit',nusantara:'Nusantara',memory:'Erinnerung',research:'Live-Forschung',media:'Medien / Nachrichten',projects:'Projekte'},
 tr:{home:'Ana sayfa',library:'Kütüphane',faith:'İnanç & Bilgelik',nusantara:'Nusantara',memory:'Hafıza',research:'Canlı Araştırma',media:'Medya / Haberler',projects:'Projeler'}
 };
-function ensureGlobalCss(){if(document.getElementById('luxdot-global-compact-v4167'))return;const l=document.createElement('link');l.id='luxdot-global-compact-v4167';l.rel='stylesheet';l.href='luxdot-global-compact-v4167.css?v=4167';document.head.append(l)}
+function ensureGlobalCss(){if(document.getElementById('luxdot-global-compact-v41815'))return;const l=document.createElement('link');l.id='luxdot-global-compact-v41815';l.rel='stylesheet';l.href=rootPrefix()+'luxdot-global-compact-v4167.css?v=41815';document.head.append(l)}
 function saved(){const s=localStorage.getItem('luxdot.lang');return SUP.includes(s)?s:null}
 function query(){const q=new URLSearchParams(location.search).get('lang');return SUP.includes(q)?q:null}
 function current(){return SUP.includes(window.__LUX_LANG)?window.__LUX_LANG:(query()||saved()||'en')}
-function setDoc(l){document.documentElement.lang=l;document.documentElement.dir=DIR[l];document.documentElement.dataset.luxLang=l;if(document.body){document.body.dataset.lang=l;document.body.classList.toggle('rtl-core',DIR[l]==='rtl');['ar','en','nl','he'].forEach(x=>document.body.classList.toggle('lang-'+x,x===l))}}
+function setDoc(l){document.documentElement.lang=l;document.documentElement.dir=DIR[l];document.documentElement.dataset.luxLang=l;if(document.body){document.body.dataset.lang=l;document.body.classList.toggle('rtl-core',DIR[l]==='rtl');SUP.forEach(x=>document.body.classList.toggle('lang-'+x,x===l))}}
 function set(l,mark=true){if(!SUP.includes(l))l='en';window.__LUX_LANG=l;if(mark)localStorage.setItem('luxdot.lang',l);setDoc(l);document.dispatchEvent(new CustomEvent('luxlang',{detail:{lang:l}}));window.dispatchEvent(new CustomEvent('luxdot-language',{detail:{lang:l}}))}
 function navigate(l){if(!SUP.includes(l))l='en';localStorage.setItem('luxdot.lang',l);const u=new URL(location.href);u.searchParams.set('lang',l);location.assign(u.pathname+u.search+u.hash)}
 function bootstrap(){ensureGlobalCss();const l=query()||saved()||'en';window.__LUX_LANG=l;localStorage.setItem('luxdot.lang',l);setDoc(l)}

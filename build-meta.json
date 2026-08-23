@@ -1,6 +1,6 @@
 {
   "product": "LuxDot",
-  "version": "4.18.14",
+  "version": "4.18.15",
   "build_time": "2026-08-23T12:21:00+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
@@ -130,7 +130,7 @@
   "tv_engine": "Living TV v2 — Audio Visual Harmony",
   "research_expansion": "biology + universal signals + psychoactive evidence lab",
   "header_media": "Radio + TV persistent nav",
-  "focus": "knowledge architecture audit + living context + news pulse + report print system",
+  "focus": "language QA only",
   "challenge_layer": "universal claim correction + troubleshooting",
   "open_knowledge": "covenant v1",
   "linguistics": "major galaxy",
@@ -173,5 +173,22 @@
   "prophet_nested_assets_fixed": true,
   "radio_time_signal": "Gong Ageng",
   "radio_ident_ar": "هنا الشام. الساعة الآن [HH:MM] بتوقيت الشام. أنتم تستمعون إلى البث المباشر لإذاعة لوكسدوت — نقطة نور، من الشام.",
-  "tv_min_scene_seconds": 90
+  "tv_min_scene_seconds": 90,
+  "html_pages_audited": 523,
+  "supported_languages": [
+    "ar",
+    "en",
+    "nl",
+    "he",
+    "jv",
+    "id",
+    "fr",
+    "es",
+    "de",
+    "tr"
+  ],
+  "prophet_pages_cleaned": 51,
+  "structural_language_issues_remaining": 0,
+  "arabic_static_ui_pages_repaired": 265,
+  "final_arabic_kicker_repairs": 4
 }
