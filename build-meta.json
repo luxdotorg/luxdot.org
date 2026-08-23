@@ -1,6 +1,6 @@
 {
   "product": "LuxDot",
-  "version": "4.18.16",
+  "version": "4.18.17",
   "build_time": "2026-08-23T12:21:00+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
@@ -130,7 +130,7 @@
   "tv_engine": "Living TV v2 — Audio Visual Harmony",
   "research_expansion": "biology + universal signals + psychoactive evidence lab",
   "header_media": "Radio + TV persistent nav",
-  "focus": "language routing, landing localization, nested header stabilization",
+  "focus": "IBM Plex global typography",
   "challenge_layer": "universal claim correction + troubleshooting",
   "open_knowledge": "covenant v1",
   "linguistics": "major galaxy",
@@ -190,5 +190,12 @@
   "prophet_pages_cleaned": 51,
   "structural_language_issues_remaining": 0,
   "arabic_static_ui_pages_repaired": 265,
-  "final_arabic_kicker_repairs": 4
+  "final_arabic_kicker_repairs": 4,
+  "typography": {
+    "latin": "IBM Plex Sans",
+    "arabic": "IBM Plex Sans Arabic",
+    "hebrew": "IBM Plex Sans Hebrew",
+    "delivery": "Fontsource packages via jsDelivr",
+    "pages_injected": 523
+  }
 }
