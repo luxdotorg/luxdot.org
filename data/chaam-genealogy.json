@@ -1,0 +1,1216 @@
+{
+  "schema": "luxdot.genealogy.v1",
+  "version": "4.3.15",
+  "scope": "Chaam first archival genealogy cohort",
+  "method": "Only explicit kinship/marriage links are genealogical. Witness, land and archival co-occurrence are separate edge types.",
+  "nodes": [
+    {
+      "id": "adrianus-janssen-witness-1633",
+      "type": "person",
+      "name": "Adrianus Janssen",
+      "sex": "M",
+      "place": "Chaam",
+      "period": "1633",
+      "confidence": "B",
+      "note": "Named as baptism witness; identity beyond this record not yet resolved."
+    },
+    {
+      "id": "franciscus-fransen-1633",
+      "type": "person",
+      "name": "Franciscus Fransen",
+      "sex": "M",
+      "baptism": "1633-11-12",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "A"
+    },
+    {
+      "id": "dingeman-fransen",
+      "type": "person",
+      "name": "Dingeman Fransen",
+      "sex": "M",
+      "religion": "roman-catholic",
+      "period": "17th c.",
+      "confidence": "A"
+    },
+    {
+      "id": "anna-simonis",
+      "type": "person",
+      "name": "Anna Simonis",
+      "sex": "F",
+      "religion": "roman-catholic",
+      "period": "17th c.",
+      "confidence": "A"
+    },
+    {
+      "id": "cornelia-jansen-kin",
+      "type": "person",
+      "name": "Cornelia Jansen Kin",
+      "sex": "F",
+      "religion": "roman-catholic",
+      "period": "17th c.",
+      "confidence": "A"
+    },
+    {
+      "id": "adrianus-erven-gool",
+      "type": "person",
+      "name": "Adrianus Henricx van Erven van Gool",
+      "sex": "M",
+      "religion": "roman-catholic",
+      "period": "17th c.",
+      "confidence": "A"
+    },
+    {
+      "id": "petronilla-erven-1659",
+      "type": "person",
+      "name": "Petronilla van Erven",
+      "sex": "F",
+      "baptism": "1659-11-06",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "A"
+    },
+    {
+      "id": "joanna-erven-1660",
+      "type": "person",
+      "name": "Joanna van Erven",
+      "sex": "F",
+      "baptism": "1660-10-26",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "A"
+    },
+    {
+      "id": "joannes-erven-1662",
+      "type": "person",
+      "name": "Joannes van Erven",
+      "sex": "M",
+      "baptism": "1662-04-11",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "A"
+    },
+    {
+      "id": "nicolaus-erven-1666",
+      "type": "person",
+      "name": "Nicolaus van Erven",
+      "sex": "M",
+      "baptism": "1666-08-21",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "A"
+    },
+    {
+      "id": "catarina-erven-1666",
+      "type": "person",
+      "name": "Catarina van Erven",
+      "sex": "F",
+      "baptism": "1666-08-21",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "A"
+    },
+    {
+      "id": "josina-erven-1666",
+      "type": "person",
+      "name": "Josina van Erven",
+      "sex": "F",
+      "baptism": "1666-08-21",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "A"
+    },
+    {
+      "id": "antonius-jansen-evers",
+      "type": "person",
+      "name": "Antonius Jansen Evers",
+      "sex": "M",
+      "religion": "roman-catholic",
+      "period": "17th c.",
+      "confidence": "A"
+    },
+    {
+      "id": "catharina-jansen-de-bie",
+      "type": "person",
+      "name": "Catharina Jansen de Bie",
+      "sex": "F",
+      "religion": "roman-catholic",
+      "period": "17th c.",
+      "confidence": "A"
+    },
+    {
+      "id": "dingemannus-evers-1649",
+      "type": "person",
+      "name": "Dingemannus Evers",
+      "sex": "M",
+      "baptism": "1649-05-24",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "A"
+    },
+    {
+      "id": "andreas-jansen",
+      "type": "person",
+      "name": "Andreas Jansen",
+      "sex": "M",
+      "religion": "roman-catholic",
+      "period": "17th c.",
+      "confidence": "A"
+    },
+    {
+      "id": "maria-lambrechts",
+      "type": "person",
+      "name": "Maria Lambrechts",
+      "sex": "F",
+      "religion": "roman-catholic",
+      "period": "17th c.",
+      "confidence": "A"
+    },
+    {
+      "id": "joannes-andreas-1655",
+      "type": "person",
+      "name": "Joannes Jansen",
+      "sex": "M",
+      "baptism": "1655-01-13",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "A"
+    },
+    {
+      "id": "antonius-jansse",
+      "type": "person",
+      "name": "Antonius Jansse",
+      "sex": "M",
+      "religion": "roman-catholic",
+      "period": "17th c.",
+      "confidence": "A"
+    },
+    {
+      "id": "maria-jacobs",
+      "type": "person",
+      "name": "Maria Jacobs",
+      "sex": "F",
+      "religion": "roman-catholic",
+      "period": "17th c.",
+      "confidence": "A"
+    },
+    {
+      "id": "joannes-antonius-1671",
+      "type": "person",
+      "name": "Joannes Jansse",
+      "sex": "M",
+      "baptism": "1671-07-27",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "A"
+    },
+    {
+      "id": "jacobus-antonius-1675",
+      "type": "person",
+      "name": "Jacobus Jansse",
+      "sex": "M",
+      "baptism": "1675-09-18",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "A"
+    },
+    {
+      "id": "adrianus-antonius-1678",
+      "type": "person",
+      "name": "Adrianus Jansse",
+      "sex": "M",
+      "baptism": "1678-10-14",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "A"
+    },
+    {
+      "id": "jan-janssen-kin",
+      "type": "person",
+      "name": "Jan Janssen Kin",
+      "sex": "M",
+      "place": "Chaam",
+      "period": "1658–1670",
+      "confidence": "A"
+    },
+    {
+      "id": "anneken-janssen-kin",
+      "type": "person",
+      "name": "Anneken Janssen Kin",
+      "sex": "F",
+      "place": "Chaam",
+      "period": "1671",
+      "confidence": "B"
+    },
+    {
+      "id": "jenneken-janssen-kin",
+      "type": "person",
+      "name": "Jenneken Janssen Kin",
+      "sex": "F",
+      "place": "Chaam",
+      "period": "1671",
+      "confidence": "B"
+    },
+    {
+      "id": "willem-janssen-kin",
+      "type": "person",
+      "name": "Willem Janssen Kin",
+      "sex": "M",
+      "place": "Chaam",
+      "period": "1671",
+      "confidence": "B"
+    },
+    {
+      "id": "tongerlo",
+      "type": "institution",
+      "name": "Abbey of Tongerlo",
+      "religion": "roman-catholic",
+      "period": "medieval–early modern",
+      "confidence": "A"
+    },
+    {
+      "id": "chaam-church-land",
+      "type": "place",
+      "name": "Land opposite/near the church in Chaam",
+      "place": "Chaam",
+      "period": "1658–1671",
+      "confidence": "A"
+    },
+    {
+      "id": "joannes-jansen-kin-1656",
+      "type": "person",
+      "name": "Joannes Jansen Kin",
+      "sex": "M",
+      "baptism": "1656-05-18",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "B",
+      "note": "Baptism and later marriage/children are reported in a genealogical compilation that points back to Chaam parish records; retained as B pending image-level verification of each entry."
+    },
+    {
+      "id": "maria-anna-van-kempen-1670",
+      "type": "person",
+      "name": "Maria Anna van Kempen",
+      "sex": "F",
+      "baptism": "1670-03-25",
+      "place": "Breda",
+      "religion": "roman-catholic",
+      "confidence": "B"
+    },
+    {
+      "id": "joannes-kin-1695",
+      "type": "person",
+      "name": "Joannes Jansen Kin",
+      "sex": "M",
+      "baptism": "1695-04-02",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "B"
+    },
+    {
+      "id": "magdalena-kin-1696",
+      "type": "person",
+      "name": "Magdalena Jansen Kin",
+      "sex": "F",
+      "baptism": "1696-09-28",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "B"
+    },
+    {
+      "id": "joanna-kin-1698",
+      "type": "person",
+      "name": "Joanna Jansen Kin",
+      "sex": "F",
+      "baptism": "1698-08-05",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "B"
+    },
+    {
+      "id": "anna-kin-1701",
+      "type": "person",
+      "name": "Anna Jansen Kin",
+      "sex": "F",
+      "baptism": "1701-07-24",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "B"
+    },
+    {
+      "id": "joannes-kin-1703",
+      "type": "person",
+      "name": "Joannes Jansen Kin",
+      "sex": "M",
+      "baptism": "1703-04-21",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "B"
+    },
+    {
+      "id": "bernardus-kin-1712",
+      "type": "person",
+      "name": "Bernardus Jansen Kin",
+      "sex": "M",
+      "baptism": "1712-08-05",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "B"
+    },
+    {
+      "id": "joannes-simons-kin-sr",
+      "type": "person",
+      "name": "Joannes Joannes Cornelis Simons alias Kin",
+      "sex": "M",
+      "place": "Chaam",
+      "death": "before 1655-06-16",
+      "period": "early 17th c.",
+      "religion": "roman-catholic",
+      "confidence": "B"
+    },
+    {
+      "id": "wilhelmus-joannis-kin-1633",
+      "type": "person",
+      "name": "Wilhelmus Joannis Kin",
+      "sex": "M",
+      "baptism": "1633-01-04",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "B"
+    },
+    {
+      "id": "dymphna-thomae-van-gils",
+      "type": "person",
+      "name": "Dymphna Thomae van Gils",
+      "sex": "F",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "period": "17th c.",
+      "confidence": "A"
+    },
+    {
+      "id": "joannes-wilhelmus-kin-1654",
+      "type": "person",
+      "name": "Joannes Wilhelmi Kin",
+      "sex": "M",
+      "baptism": "1654-12-15",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "A"
+    },
+    {
+      "id": "maria-wilhelmus-kin-1657",
+      "type": "person",
+      "name": "Maria Wilhelmi Kin",
+      "sex": "F",
+      "baptism": "1657-11-27",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "A"
+    },
+    {
+      "id": "cornelia-wilhelmus-kin-1658",
+      "type": "person",
+      "name": "Cornelia Wilhelmi Kin",
+      "sex": "F",
+      "baptism": "1658-12-29",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "A"
+    },
+    {
+      "id": "thomas-wilhelmus-kin-1660",
+      "type": "person",
+      "name": "Thomas Wilhelmi Kin",
+      "sex": "M",
+      "baptism": "1660-11-25",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "A"
+    },
+    {
+      "id": "joanna-wilhelmus-kin-1663",
+      "type": "person",
+      "name": "Joanna Wilhelmi Kin",
+      "sex": "F",
+      "baptism": "1663-01-28",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "A"
+    },
+    {
+      "id": "josina-wilhelmus-kin-1665",
+      "type": "person",
+      "name": "Josina Wilhelmi Kin",
+      "sex": "F",
+      "baptism": "1665-08-28",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "A"
+    },
+    {
+      "id": "adriana-wilhelmus-kin-1668",
+      "type": "person",
+      "name": "Adriana Wilhelmi Kin",
+      "sex": "F",
+      "baptism": "1668-10-28",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "A"
+    },
+    {
+      "id": "anna-wilhelmus-kin-1671",
+      "type": "person",
+      "name": "Anna Wilhelmi Kin",
+      "sex": "F",
+      "baptism": "1671-09-24",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "A"
+    },
+    {
+      "id": "catharina-wilhelmus-kin-1675",
+      "type": "person",
+      "name": "Catharina Wilhelmi Kin",
+      "sex": "F",
+      "baptism": "1675-02-20",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "confidence": "A"
+    },
+    {
+      "id": "henricus-thomae-van-gils",
+      "type": "person",
+      "name": "Henricus Thomae van Gils",
+      "sex": "M",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "period": "17th c.",
+      "confidence": "A"
+    },
+    {
+      "id": "cornelia-commers-bedaf",
+      "type": "person",
+      "name": "Cornelia Commers van Bedaf",
+      "sex": "F",
+      "place": "Chaam",
+      "religion": "roman-catholic",
+      "period": "17th c.",
+      "confidence": "A"
+    }
+  ],
+  "edges": [
+    {
+      "from": "dingeman-fransen",
+      "to": "anna-simonis",
+      "type": "spouse",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "dingeman-fransen",
+      "to": "franciscus-fransen-1633",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "anna-simonis",
+      "to": "franciscus-fransen-1633",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "adrianus-janssen-witness-1633",
+      "to": "franciscus-fransen-1633",
+      "type": "baptism-witness",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "cornelia-jansen-kin",
+      "to": "adrianus-erven-gool",
+      "type": "spouse",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "adrianus-erven-gool",
+      "to": "petronilla-erven-1659",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "cornelia-jansen-kin",
+      "to": "petronilla-erven-1659",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "adrianus-erven-gool",
+      "to": "joanna-erven-1660",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "cornelia-jansen-kin",
+      "to": "joanna-erven-1660",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "adrianus-erven-gool",
+      "to": "joannes-erven-1662",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "cornelia-jansen-kin",
+      "to": "joannes-erven-1662",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "adrianus-erven-gool",
+      "to": "nicolaus-erven-1666",
+      "type": "parent",
+      "confidence": "B",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "cornelia-jansen-kin",
+      "to": "nicolaus-erven-1666",
+      "type": "parent",
+      "confidence": "B",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "adrianus-erven-gool",
+      "to": "catarina-erven-1666",
+      "type": "parent",
+      "confidence": "B",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "cornelia-jansen-kin",
+      "to": "catarina-erven-1666",
+      "type": "parent",
+      "confidence": "B",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "adrianus-erven-gool",
+      "to": "josina-erven-1666",
+      "type": "parent",
+      "confidence": "B",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "cornelia-jansen-kin",
+      "to": "josina-erven-1666",
+      "type": "parent",
+      "confidence": "B",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "antonius-jansen-evers",
+      "to": "catharina-jansen-de-bie",
+      "type": "spouse",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "antonius-jansen-evers",
+      "to": "dingemannus-evers-1649",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "catharina-jansen-de-bie",
+      "to": "dingemannus-evers-1649",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "andreas-jansen",
+      "to": "maria-lambrechts",
+      "type": "spouse",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "andreas-jansen",
+      "to": "joannes-andreas-1655",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "maria-lambrechts",
+      "to": "joannes-andreas-1655",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "antonius-jansse",
+      "to": "maria-jacobs",
+      "type": "spouse",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "antonius-jansse",
+      "to": "joannes-antonius-1671",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "maria-jacobs",
+      "to": "joannes-antonius-1671",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "antonius-jansse",
+      "to": "jacobus-antonius-1675",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "maria-jacobs",
+      "to": "jacobus-antonius-1675",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "antonius-jansse",
+      "to": "adrianus-antonius-1678",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "maria-jacobs",
+      "to": "adrianus-antonius-1678",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "jan-janssen-kin",
+      "to": "chaam-church-land",
+      "type": "land-neighbor",
+      "confidence": "A",
+      "source": "vestbrieven-1658"
+    },
+    {
+      "from": "tongerlo",
+      "to": "chaam-church-land",
+      "type": "land-neighbor",
+      "confidence": "A",
+      "source": "vestbrieven-1658"
+    },
+    {
+      "from": "anneken-janssen-kin",
+      "to": "willem-janssen-kin",
+      "type": "sibling-stated",
+      "confidence": "B",
+      "source": "vestbrieven-1671"
+    },
+    {
+      "from": "jenneken-janssen-kin",
+      "to": "willem-janssen-kin",
+      "type": "sibling-stated",
+      "confidence": "B",
+      "source": "vestbrieven-1671"
+    },
+    {
+      "from": "joannes-jansen-kin-1656",
+      "to": "maria-anna-van-kempen-1670",
+      "type": "spouse",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "joannes-jansen-kin-1656",
+      "to": "joannes-kin-1695",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "maria-anna-van-kempen-1670",
+      "to": "joannes-kin-1695",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "joannes-jansen-kin-1656",
+      "to": "magdalena-kin-1696",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "maria-anna-van-kempen-1670",
+      "to": "magdalena-kin-1696",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "joannes-jansen-kin-1656",
+      "to": "joanna-kin-1698",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "maria-anna-van-kempen-1670",
+      "to": "joanna-kin-1698",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "joannes-jansen-kin-1656",
+      "to": "anna-kin-1701",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "maria-anna-van-kempen-1670",
+      "to": "anna-kin-1701",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "joannes-jansen-kin-1656",
+      "to": "joannes-kin-1703",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "maria-anna-van-kempen-1670",
+      "to": "joannes-kin-1703",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "joannes-jansen-kin-1656",
+      "to": "bernardus-kin-1712",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "maria-anna-van-kempen-1670",
+      "to": "bernardus-kin-1712",
+      "type": "parent",
+      "confidence": "B",
+      "source": "familievaniersel-chaam-kin"
+    },
+    {
+      "from": "joannes-simons-kin-sr",
+      "to": "wilhelmus-joannis-kin-1633",
+      "type": "parent",
+      "confidence": "B",
+      "source": "wissenburg-kin"
+    },
+    {
+      "from": "wilhelmus-joannis-kin-1633",
+      "to": "dymphna-thomae-van-gils",
+      "type": "spouse",
+      "confidence": "A",
+      "source": "chaam-marriages"
+    },
+    {
+      "from": "henricus-thomae-van-gils",
+      "to": "cornelia-commers-bedaf",
+      "type": "spouse",
+      "confidence": "A",
+      "source": "chaam-marriages"
+    },
+    {
+      "from": "wilhelmus-joannis-kin-1633",
+      "to": "henricus-thomae-van-gils",
+      "type": "archive-cooccurrence",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "wilhelmus-joannis-kin-1633",
+      "to": "joannes-wilhelmus-kin-1654",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "dymphna-thomae-van-gils",
+      "to": "joannes-wilhelmus-kin-1654",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "wilhelmus-joannis-kin-1633",
+      "to": "maria-wilhelmus-kin-1657",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "dymphna-thomae-van-gils",
+      "to": "maria-wilhelmus-kin-1657",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "wilhelmus-joannis-kin-1633",
+      "to": "cornelia-wilhelmus-kin-1658",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "dymphna-thomae-van-gils",
+      "to": "cornelia-wilhelmus-kin-1658",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "wilhelmus-joannis-kin-1633",
+      "to": "thomas-wilhelmus-kin-1660",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "dymphna-thomae-van-gils",
+      "to": "thomas-wilhelmus-kin-1660",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "wilhelmus-joannis-kin-1633",
+      "to": "joanna-wilhelmus-kin-1663",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "dymphna-thomae-van-gils",
+      "to": "joanna-wilhelmus-kin-1663",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "wilhelmus-joannis-kin-1633",
+      "to": "josina-wilhelmus-kin-1665",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "dymphna-thomae-van-gils",
+      "to": "josina-wilhelmus-kin-1665",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "wilhelmus-joannis-kin-1633",
+      "to": "adriana-wilhelmus-kin-1668",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "dymphna-thomae-van-gils",
+      "to": "adriana-wilhelmus-kin-1668",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "wilhelmus-joannis-kin-1633",
+      "to": "anna-wilhelmus-kin-1671",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "dymphna-thomae-van-gils",
+      "to": "anna-wilhelmus-kin-1671",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "wilhelmus-joannis-kin-1633",
+      "to": "catharina-wilhelmus-kin-1675",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    },
+    {
+      "from": "dymphna-thomae-van-gils",
+      "to": "catharina-wilhelmus-kin-1675",
+      "type": "parent",
+      "confidence": "A",
+      "source": "chaam-baptisms"
+    }
+  ],
+  "sources": [
+    {
+      "id": "chaam-baptisms",
+      "title": "DOPEN CHAAM: 1/04/1626 - 28/12/1700",
+      "url": "https://www.ravels-weelde-poppel.be/klappers/Chaamdopen.pdf",
+      "type": "parish-index"
+    },
+    {
+      "id": "vestbrieven-1658",
+      "title": "Vestbrieven Alphen & Chaam, R774, 1658",
+      "url": "https://www.wissenburg.info/gen/gen12.htm",
+      "type": "archival-transcription"
+    },
+    {
+      "id": "vestbrieven-1671",
+      "title": "Vestbrieven Alphen & Chaam, R774, 1671",
+      "url": "https://www.wissenburg.info/gen/gen12.htm",
+      "type": "archival-transcription"
+    },
+    {
+      "id": "bhic-dtb",
+      "title": "BHIC DTB Chaam inventory",
+      "url": "https://www.bhic.nl/genealogie/dtb/8024.htm",
+      "type": "archive-inventory"
+    },
+    {
+      "id": "familievaniersel-chaam-kin",
+      "title": "Kwartierstaat — Jansen Kin branch, Chaam",
+      "url": "https://www.familievaniersel.nl/genealogie/kwartierstaat/",
+      "type": "secondary genealogy cross-check",
+      "confidence": "B/C",
+      "note": "Used to extend the branch; dates should be checked against original parish scans before promotion to A."
+    },
+    {
+      "id": "bhic-dtb-chaam",
+      "title": "BHIC DTB inventory — Chaam",
+      "url": "https://www.bhic.nl/genealogie/dtb/8024.htm",
+      "type": "archive inventory",
+      "confidence": "A",
+      "note": "Confirms the surviving Catholic and Reformed baptism, marriage, death and burial series and date ranges."
+    },
+    {
+      "id": "chaam-marriages",
+      "title": "Kerkelijke huwelijken Chaam 1626–1697 — Cyriel Verbeek",
+      "url": "https://www.ravels-weelde-poppel.be/klappers/Chaamh.pdf",
+      "type": "parish-index",
+      "confidence": "A"
+    },
+    {
+      "id": "wissenburg-kin",
+      "title": "Kwartierstaten Marcel Wissenburg — Kin family reconstruction",
+      "url": "https://www.wissenburg.info/gen/gen12.htm",
+      "type": "secondary-genealogy",
+      "confidence": "B"
+    },
+    {
+      "id": "bhic-kin-1680",
+      "title": "BHIC Raad van Brabant — Jan Jan Jansen Kin and Hendrik Jan Janssen Kin, 1680",
+      "url": "https://www.bhic.nl/integrated?miadt=235&micode=339&milang=nl&minr=921663&mivast=235&miview=inv2&mizig=210",
+      "type": "archive-catalogue",
+      "confidence": "A"
+    }
+  ],
+  "records": [
+    {
+      "date": "1633-01-04",
+      "kind": "baptism",
+      "person": "Wilhelmus Joannis Kin",
+      "parents": "Joannes Joannes Cornelis Simons alias Kin (secondary reconstruction)",
+      "source": "chaam-baptisms",
+      "confidence": "B"
+    },
+    {
+      "date": "1646-01-30",
+      "kind": "marriage",
+      "person": "Martina Jansen Kin × Henricus Jansen Hoogens",
+      "source": "chaam-marriages",
+      "confidence": "A"
+    },
+    {
+      "date": "1647-10-29",
+      "kind": "marriage",
+      "person": "Henricus Thomae van Gils × Cornelia Commers van Bedaf",
+      "source": "chaam-marriages",
+      "confidence": "A"
+    },
+    {
+      "date": "1652-07-20",
+      "kind": "marriage",
+      "person": "Adriana Jansen Kin × Joannes Crols",
+      "source": "chaam-marriages",
+      "confidence": "A"
+    },
+    {
+      "date": "1653-04-17",
+      "kind": "marriage",
+      "person": "Wilhelmus Joannis Kin × Dymphna Thomae van Gils",
+      "source": "chaam-marriages",
+      "confidence": "A"
+    },
+    {
+      "date": "1654-12-15",
+      "kind": "baptism",
+      "person": "Joannes Wilhelmi Kin",
+      "parents": "Wilhelmus Joannis Kin × Dymphna Thomae van Gils",
+      "source": "chaam-baptisms",
+      "confidence": "A"
+    },
+    {
+      "date": "before 1655-06-16",
+      "kind": "death",
+      "person": "Joannes Joannes Cornelis Simons alias Kin",
+      "source": "wissenburg-kin",
+      "confidence": "B"
+    },
+    {
+      "date": "1657-11-27",
+      "kind": "baptism",
+      "person": "Maria Wilhelmi Kin",
+      "parents": "Wilhelmus Joannis Kin × Dymphna Thomae van Gils",
+      "source": "chaam-baptisms",
+      "confidence": "A"
+    },
+    {
+      "date": "1657-12-04",
+      "kind": "marriage",
+      "person": "Catharina Joannis Kin × Petrus Cornelissen",
+      "source": "chaam-marriages",
+      "confidence": "A"
+    },
+    {
+      "date": "1658-12-29",
+      "kind": "baptism",
+      "person": "Cornelia Wilhelmi Kin",
+      "parents": "Wilhelmus Joannis Kin × Dymphna Thomae van Gils",
+      "source": "chaam-baptisms",
+      "confidence": "A"
+    },
+    {
+      "date": "1660-11-25",
+      "kind": "baptism",
+      "person": "Thomas Wilhelmi Kin",
+      "parents": "Wilhelmus Joannis Kin × Dymphna Thomae van Gils",
+      "source": "chaam-baptisms",
+      "confidence": "A"
+    },
+    {
+      "date": "1662-11-15",
+      "kind": "marriage",
+      "person": "Cornelis Jan Kin × Lucia van Bedaf",
+      "source": "chaam-marriages",
+      "confidence": "A"
+    },
+    {
+      "date": "1663-01-28",
+      "kind": "baptism",
+      "person": "Joanna Wilhelmi Kin",
+      "parents": "Wilhelmus Joannis Kin × Dymphna Thomae van Gils",
+      "source": "chaam-baptisms",
+      "confidence": "A"
+    },
+    {
+      "date": "1665-02-12",
+      "kind": "marriage",
+      "person": "Joanna Jansen Kin × Gerardus Adriaen Smits",
+      "source": "chaam-marriages",
+      "confidence": "A"
+    },
+    {
+      "date": "1665-02-12",
+      "kind": "marriage",
+      "person": "Anna Kin × Lucas Lenarts Voet",
+      "source": "chaam-marriages",
+      "confidence": "A"
+    },
+    {
+      "date": "1665-08-28",
+      "kind": "baptism",
+      "person": "Josina Wilhelmi Kin",
+      "parents": "Wilhelmus Joannis Kin × Dymphna Thomae van Gils",
+      "source": "chaam-baptisms",
+      "confidence": "A"
+    },
+    {
+      "date": "1668-10-28",
+      "kind": "baptism",
+      "person": "Adriana Wilhelmi Kin",
+      "parents": "Wilhelmus Joannis Kin × Dymphna Thomae van Gils",
+      "source": "chaam-baptisms",
+      "confidence": "A"
+    },
+    {
+      "date": "1671-09-24",
+      "kind": "baptism",
+      "person": "Anna Wilhelmi Kin",
+      "parents": "Wilhelmus Joannis Kin × Dymphna Thomae van Gils",
+      "source": "chaam-baptisms",
+      "confidence": "A"
+    },
+    {
+      "date": "1675-02-20",
+      "kind": "baptism",
+      "person": "Catharina Wilhelmi Kin",
+      "parents": "Wilhelmus Joannis Kin × Dymphna Thomae van Gils",
+      "source": "chaam-baptisms",
+      "confidence": "A"
+    },
+    {
+      "date": "1680-06-21",
+      "kind": "archive",
+      "person": "Jan Jan Jansen Kin (Chaam) + Hendrik Jan Janssen Kin (Meerle)",
+      "source": "bhic-kin-1680",
+      "confidence": "A"
+    },
+    {
+      "date": "1682-11-16",
+      "kind": "marriage",
+      "person": "Josina Jansse Kin × Joannes Peeters",
+      "source": "chaam-marriages",
+      "confidence": "A"
+    },
+    {
+      "date": "1694-05-29",
+      "kind": "marriage",
+      "person": "Joannes Joannis Kin × Maria Anna van Kempen",
+      "source": "chaam-marriages",
+      "confidence": "A"
+    }
+  ]
+}

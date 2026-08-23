@@ -1,0 +1,116 @@
+/* LuxDot / نقطة نور — Arabic Design System v2.9.1 */
+:root{--lux-gold:#d6b45a;--lux-gold-soft:#8a6a2f;--lux-bark:#654325;--lux-olive:#778b4a;--lux-leaf:#63b779;--lux-leaf-bright:#83d29a;--lux-ink:#06100b}
+html[lang="ar"] body{font-family:"Noto Kufi Arabic",Tahoma,Arial,sans-serif;direction:rtl;text-align:right;line-height:1.95}
+html[lang="ar"] .logo,html[lang="ar"] .r-logo,html[lang="ar"] .brand-luxdot{letter-spacing:0;font-family:"Noto Kufi Arabic",Tahoma,Arial,sans-serif;font-weight:700;color:#f4f8f5}
+html[lang="ar"] .logo::after,html[lang="ar"] .r-logo::after{content:""}
+
+/* Whole cartouche = action. No inner open button */
+.lux-cartouche{position:relative;overflow:visible;cursor:pointer;outline:none;transition:transform .18s ease,border-color .18s ease,background .18s ease,box-shadow .18s ease;padding-inline-start:82px!important}
+.lux-cartouche:hover,.lux-cartouche:focus-visible{transform:translateY(-2px);border-color:rgba(214,180,90,.64)!important;box-shadow:0 16px 42px rgba(0,0,0,.26),inset 0 0 0 1px rgba(214,180,90,.06)!important}
+.lux-cartouche .btn,.lux-cartouche>[data-t="open"],.lux-cartouche>.open-btn{display:none!important}
+.lux-thumb{position:absolute;inset-inline-start:18px;top:18px;width:50px;height:50px;border:1px solid rgba(214,180,90,.28);border-radius:13px;overflow:hidden;background:#07100b;display:grid;place-items:center;pointer-events:none}
+.lux-thumb img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.86) contrast(1.02)}
+.lux-thumb.fallback img{padding:8px;object-fit:contain;filter:none}
+.lux-cartouche .lux-action-hint{position:absolute;inset-inline-end:15px;bottom:10px;width:5px;height:5px;border-radius:50%;background:rgba(214,180,90,.72);box-shadow:0 0 8px rgba(214,180,90,.5);opacity:.45;transition:.18s}
+.lux-cartouche:hover .lux-action-hint{opacity:1;box-shadow:0 0 12px rgba(214,180,90,.8)}
+
+/* Relationship ports exist only where explicitly authored */
+.lux-port{position:absolute;width:10px;height:10px;border:1px solid var(--lux-gold);border-radius:50%;background:#07100b;box-shadow:0 0 8px rgba(214,180,90,.28);z-index:5}
+.lux-port.out{inset-inline-end:-22px;top:50%;transform:translateY(-50%)}
+.lux-port.in{inset-inline-start:-22px;top:50%;transform:translateY(-50%)}
+.lux-circuit{position:absolute;pointer-events:none;overflow:visible;z-index:2}
+.lux-circuit path{fill:none;stroke:rgba(214,180,90,.65);stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}
+.lux-circuit .signal{stroke:#ffe08b;stroke-width:2.1;stroke-dasharray:2 20;animation:luxPulseLine 3s linear infinite;filter:drop-shadow(0 0 3px rgba(255,224,139,.55))}
+@keyframes luxPulseLine{to{stroke-dashoffset:-44}}
+
+/* Human library as physical books */
+.human-books{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))!important;gap:28px!important;align-items:end!important}
+.human-book{--human-cover:#2b4c3a;appearance:none;border:0;background:transparent;color:inherit;text-align:center;cursor:default;perspective:900px;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:12px}
+.human-book-object{width:142px;height:216px;position:relative;transform-style:preserve-3d;transform:rotateY(-8deg);transition:.35s}
+.human-book:hover .human-book-object,.human-book:focus-visible .human-book-object{transform:rotateY(-2deg) translateY(-5px)}
+.human-book-cover{position:absolute;inset:0;border:1px solid rgba(255,255,255,.14);border-radius:5px 9px 9px 5px;background:linear-gradient(145deg,color-mix(in srgb,var(--human-cover) 78%,black),var(--human-cover));box-shadow:10px 12px 20px rgba(0,0,0,.35),inset 0 0 0 1px rgba(214,180,90,.13);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:17px;color:#f4ead0}
+.human-book-cover strong{font-size:15px;line-height:1.7}.human-book-cover small{font-size:10px;line-height:1.7;color:#d4cab0;margin-top:9px}
+.human-book-pages{position:absolute;inset:7px -9px 7px auto;width:17px;background:repeating-linear-gradient(0deg,#eee5cf 0 2px,#cfc2a5 2px 3px);border-radius:0 4px 4px 0;transform:rotateY(8deg)}
+.human-book-spine{position:absolute;top:3px;bottom:3px;left:-13px;width:19px;background:linear-gradient(90deg,#08130c,var(--human-cover),#06100b);transform:rotateY(-90deg);transform-origin:right;border-radius:4px 0 0 4px}
+.human-book-domain{font-size:10px;color:var(--muted)}
+.human-book.blank{--human-cover:#f3f1e9;cursor:pointer}.human-book.blank .human-book-cover{background:linear-gradient(145deg,#fff,#e9e6dc);box-shadow:10px 12px 20px rgba(0,0,0,.35),inset 0 0 0 1px rgba(80,70,50,.12)}
+.human-book.blank .human-book-cover>*{display:none}
+
+/* Blank book overlay */
+.lux-blank-overlay{position:fixed;inset:0;z-index:120;background:rgba(0,0,0,.86);backdrop-filter:blur(8px);display:none;place-items:center;padding:18px}
+.lux-blank-overlay.on{display:grid}.lux-blank-spread{width:min(1000px,94vw);height:min(650px,75vh);display:grid;grid-template-columns:1fr 1fr;position:relative;filter:drop-shadow(0 25px 45px rgba(0,0,0,.55))}
+.lux-blank-page{background:radial-gradient(circle at 50% 15%,#fffef9,#f3edde 80%,#e4d9c3);box-shadow:inset 0 0 28px rgba(96,75,44,.08)}.lux-blank-page:first-child{border-radius:14px 2px 2px 14px}.lux-blank-page:last-child{border-radius:2px 14px 14px 2px}.lux-blank-spread::after{content:"";position:absolute;left:50%;top:8px;bottom:8px;width:18px;transform:translateX(-50%);background:linear-gradient(90deg,rgba(0,0,0,.12),rgba(255,255,255,.5),rgba(0,0,0,.08));filter:blur(2px)}
+.lux-book-close{position:fixed;top:84px;inset-inline-end:18px;z-index:130;border:1px solid rgba(214,180,90,.5);background:rgba(5,8,6,.94);color:#fff;border-radius:999px;padding:10px 14px;cursor:pointer;font-family:inherit;box-shadow:0 0 18px rgba(214,180,90,.08)}
+
+/* Book-light system replaces the old photon swarm completely */
+.lux-photon{display:none!important}
+
+/* Living tree — based on user's drawn topology */
+.lux-living-tree{position:relative;min-height:760px;border:1px solid rgba(214,180,90,.18);border-radius:26px;background:radial-gradient(circle at 50% 68%,rgba(101,67,37,.09),transparent 24%),radial-gradient(circle at 50% 42%,rgba(99,183,121,.055),transparent 35%),#030705;overflow:hidden}
+.lux-living-tree svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.lux-living-tree .branch{fill:none;stroke:url(#treeGradient);stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 2px rgba(99,183,121,.12))}.lux-living-tree .trunk{stroke-width:8}.lux-living-tree .major{stroke-width:4.5}.lux-living-tree .minor{stroke-width:2.4}.lux-living-tree .root{stroke-width:2.2}.lux-living-tree .tree-signal{fill:none;stroke:#d6b45a;stroke-width:1.5;stroke-dasharray:2 24;animation:luxTreeFlow 4s linear infinite;filter:drop-shadow(0 0 3px rgba(214,180,90,.45))}@keyframes luxTreeFlow{to{stroke-dashoffset:-52}}
+.lux-tree-node{position:absolute;width:min(220px,22vw);min-width:150px;transform:translate(-50%,-50%);border:1px solid rgba(214,180,90,.28);background:rgba(5,12,8,.94);border-radius:15px;padding:12px 12px 12px 54px;color:#edf6ef;text-align:start;cursor:pointer;transition:.18s;z-index:4}.lux-tree-node:hover,.lux-tree-node:focus-visible{border-color:rgba(131,210,154,.7);transform:translate(-50%,-50%) scale(1.025)}.lux-tree-node .node-port{position:absolute;inset-inline-start:-6px;top:50%;width:10px;height:10px;border:1px solid #d6b45a;border-radius:50%;background:#07100b;transform:translateY(-50%)}.lux-tree-node img{position:absolute;inset-inline-start:8px;top:9px;width:36px;height:36px;border-radius:9px;object-fit:cover;border:1px solid rgba(214,180,90,.18)}.lux-tree-node b{display:block;font-size:12px}.lux-tree-node small{display:block;color:var(--muted);font-size:9px;margin-top:3px}
+
+/* Faith & wisdom forest */
+.faith-forest{position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin:34px 0 56px}.faith-tradition{min-height:155px;padding:18px 18px 18px 74px!important}.faith-tradition .lux-thumb{width:42px;height:42px}.faith-tradition h3{margin:0 0 7px;font-size:17px}.faith-tradition p{margin:0;color:var(--muted);font-size:12px;line-height:1.85}
+
+/* Real map */
+#memoryLeafletMap{height:620px;border-radius:22px;overflow:hidden;background:#06100b}.leaflet-container{font-family:"Noto Kufi Arabic",Tahoma,Arial,sans-serif;background:#07100b}.leaflet-tile{filter:saturate(.45) brightness(.72) contrast(1.08)}.leaflet-control-attribution{font-size:9px!important}.lux-map-marker{width:14px;height:14px;border-radius:50%;background:#d6b45a;border:2px solid #07100b;box-shadow:0 0 0 1px rgba(214,180,90,.72),0 0 12px rgba(214,180,90,.4)}
+
+@media(max-width:720px){.lux-cartouche{padding-inline-start:70px!important}.lux-thumb{width:42px;height:42px}.human-books{grid-template-columns:repeat(2,1fr)!important}.human-book-object{width:120px;height:184px}.lux-living-tree{min-height:1080px}.lux-tree-node{width:44%;min-width:0;padding:10px 10px 10px 45px}.lux-tree-node img{width:30px;height:30px}.lux-blank-spread{height:60vh}.lux-book-close{top:72px}.faith-forest{grid-template-columns:1fr}.faith-tradition{padding-inline-start:68px!important}}
+
+.atlas-signal{animation:luxTreeFlow 4s linear infinite;filter:drop-shadow(0 0 3px rgba(214,180,90,.45))}
+/* v2.9.1: no decorative connection unless a real relationship is authored */
+html[lang="ar"] .card::before,html[lang="ar"] .card::after,
+html[lang="ar"] article::before,html[lang="ar"] article::after,
+html[lang="ar"] .event::before,html[lang="ar"] .event::after{display:none!important}
+html[lang="ar"] .lux-port{display:block!important}
+
+/* Arabic sacred readers: show the Arabic meaning only; source-language text remains on its source page */
+html[lang="ar"] [data-sacred-lang]:not([data-sacred-lang="ar"]){display:none!important}
+
+/* Existing knowledge trees are rebuilt as live branches rather than list rails */
+.lux-legacy-tree-lane{overflow:visible!important;padding-bottom:54px!important}
+.lux-legacy-tree-svg,.lux-simple-tree-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible}
+.legacy-branch{fill:none;stroke:url(#legacyTreeG);stroke-linecap:round;stroke-linejoin:round}
+.lux-simple-tree .legacy-branch{stroke:url(#simpleTreeG)}
+.legacy-trunk{stroke-width:7}.legacy-major{stroke-width:2.8}.legacy-root{stroke-width:1.7}
+.lux-legacy-tree-lane>.tree-node{z-index:2;background:rgba(5,13,8,.94)!important;margin-inline:8%!important}
+.lux-legacy-tree-lane>.tree-node::before,.lux-legacy-tree-lane>.tree-node::after{display:none!important}
+.lux-legacy-tree-lane .tree-node .node-port,.lux-simple-tree .node .node-port{position:absolute;width:10px;height:10px;border-radius:50%;border:1px solid var(--lux-gold);background:#06100b;box-shadow:0 0 8px rgba(214,180,90,.35);top:50%;inset-inline-start:-6px;transform:translateY(-50%);z-index:4}
+.lux-simple-tree{position:relative!important;display:flex!important;flex-direction:column;gap:18px!important;padding:22px 0 64px!important;min-height:420px}
+.lux-simple-tree>.node{position:relative!important;z-index:2;width:43%;margin:0!important;border:1px solid rgba(119,139,74,.32)!important;border-radius:14px;background:rgba(5,13,8,.94);padding:13px 18px!important}
+.lux-simple-tree>.node::before{display:none!important}
+.lux-simple-tree>.tree-side-right{align-self:flex-start}.lux-simple-tree>.tree-side-left{align-self:flex-end}
+.lux-simple-tree>.tree-side-right .node-port{inset-inline-start:auto;inset-inline-end:-6px}.lux-simple-tree>.tree-side-left .node-port{inset-inline-start:-6px}
+@media(max-width:720px){.lux-simple-tree>.node{width:78%}.lux-simple-tree>.tree-side-right{align-self:flex-start}.lux-simple-tree>.tree-side-left{align-self:flex-end}.dual-tree{grid-template-columns:1fr!important}}
+
+/* v2.9.4 book opening: soft rays + seven drifting dust motes */
+.lux-photon{display:none!important}
+.lux-book-rays{position:fixed;width:1px;height:1px;z-index:10000;pointer-events:none}
+.lux-light-ray{position:absolute;left:0;bottom:0;width:clamp(120px,22vw,310px);height:2px;transform-origin:0 50%;transform:rotate(var(--ra));background:linear-gradient(90deg,rgba(255,249,220,.64),rgba(173,255,202,.12) 48%,transparent);filter:blur(.7px);opacity:0;animation:luxRay var(--rd) ease-out forwards}
+.lux-light-ray::after{content:"";position:absolute;inset:-24px 0;background:linear-gradient(90deg,rgba(255,248,205,.08),transparent 72%);filter:blur(12px)}
+@keyframes luxRay{0%{opacity:0;scale:.12 1}24%{opacity:.66}100%{opacity:0;scale:1.08 1}}
+.lux-dust{position:fixed;width:1px;height:7px;border-radius:999px;background:linear-gradient(#fff8d8,rgba(255,245,196,.22));box-shadow:0 0 3px rgba(255,240,177,.34);z-index:10001;pointer-events:none;opacity:0;transform-origin:center;animation:luxDust var(--dd) ease-in-out forwards}
+@keyframes luxDust{0%{opacity:0;transform:translate(0,0) rotate(0) scale(var(--ds))}18%{opacity:.42}56%{opacity:.32;transform:translate(calc(var(--dx)*.52),calc(var(--dy)*.48)) rotate(var(--dr)) scale(var(--ds))}100%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(calc(var(--dr)*1.7)) scale(calc(var(--ds)*.78))}}
+.lux-image-fallback{object-fit:contain!important;padding:7px!important;filter:none!important}
+.human-books{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:clamp(18px,2.4vw,34px)!important}.human-book.blank{grid-column:1/-1;justify-self:center;margin-top:34px}.lux-future-page{display:grid;place-items:center}.lux-future-note{max-width:76%;text-align:center;color:#8b7d66;display:grid;gap:12px;font-size:clamp(13px,1.5vw,18px);animation:futureNote 7s ease forwards}.lux-future-note strong{color:#594d3d;font-size:1.15em}.lux-future-note em{font-style:normal;color:#6d5e48;margin-top:8px}@keyframes futureNote{0%,8%{opacity:0}22%,72%{opacity:1}100%{opacity:0}}
+@media(max-width:900px){.human-books{grid-template-columns:repeat(3,1fr)!important}}@media(max-width:620px){.human-books{grid-template-columns:repeat(2,1fr)!important}.human-book.blank{grid-column:1/-1}}
+
+.human-book{display:grid;justify-items:center;gap:10px;cursor:pointer}.human-book-object.real-cover{position:relative;width:min(150px,100%);aspect-ratio:420/640;border-radius:4px 9px 9px 4px;overflow:hidden;box-shadow:10px 16px 25px rgba(0,0,0,.4);transform:perspective(700px) rotateY(-5deg);transition:.35s}.human-book:hover .real-cover{transform:perspective(700px) translateY(-8px) rotateY(-12deg)}.human-book-object.real-cover img{width:100%;height:100%;object-fit:cover;display:block}.human-book-label{text-align:center;display:grid;gap:2px}.human-book-label strong{font-size:14px}.human-book-label small{color:#8ea095;font-size:11px}.blank-cover .human-book-cover{background:#f7f5ed!important;border-color:#ded9ca!important}.blank-cover{filter:drop-shadow(0 18px 18px rgba(0,0,0,.32))}
+
+/* v2.9.5 Arabic master — unified semantic symbols, navigation and book motion */
+.hero-one-line{display:inline-flex;white-space:nowrap;gap:.28em;align-items:baseline}.hero-one-line [data-t]{display:inline!important}@media(max-width:560px){.hero-one-line{font-size:.72em;gap:.18em}}
+.nav{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.nav>a{white-space:nowrap}.nav>a.active{color:var(--lux-gold,#d6b45a)}
+.lux-semantic-icon,.lux-tradition-icon{position:absolute;inset-inline-start:16px;top:16px;width:48px;height:48px;display:grid;place-items:center;border:1px solid rgba(214,180,90,.28);border-radius:14px;background:rgba(7,16,11,.76);color:#d8b95d;z-index:2;pointer-events:none}.lux-semantic-icon svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.lux-tradition-icon{font-size:25px;font-family:Georgia,"Noto Kufi Arabic",serif;color:#d8b95d}.cards .card,.faith-tradition,.r-card,.p{padding-inline-start:82px!important}.cards .card:hover .lux-semantic-icon,.faith-tradition:hover .lux-tradition-icon,.r-card:hover .lux-semantic-icon,.p:hover .lux-semantic-icon{border-color:rgba(120,230,153,.6);box-shadow:0 0 18px rgba(120,230,153,.08)}
+.lux-book-flight{position:fixed;inset:0;z-index:12000;pointer-events:none;background:rgba(0,0,0,0);display:grid;place-items:center;transition:background .5s ease}.lux-book-flight.on{background:rgba(0,0,0,.72)}.lux-book-flight-object{width:min(190px,34vw)!important;max-width:190px;transform:translateY(18vh) scale(.45) perspective(800px) rotateY(-18deg);opacity:0;transition:transform .72s cubic-bezier(.2,.8,.2,1),opacity .4s}.lux-book-flight.on .lux-book-flight-object{transform:translateY(0) scale(1) perspective(800px) rotateY(-8deg);opacity:1}.lux-book-flight.opening .lux-book-flight-object{transform:translateY(0) scale(1.08) perspective(800px) rotateY(-58deg) translateX(-22px)}.lux-book-flight.opening .shelf-pages-side{box-shadow:30px 0 0 rgba(247,244,230,.9),42px 0 0 rgba(232,226,207,.85)}
+.reader-meaning,.reader-title,.reader-deck,.reader-context,.sacred-text,.sacred-block,.intro-copy{opacity:1!important;filter:none!important}.reader-meaning{color:#f3fff7!important}.reader-context{color:#c9dacf!important}.reader-section{background:#07100b!important}.reader-hero{background:#07100b!important}
+.memory-map-popup{display:grid;gap:5px;min-width:180px}.memory-map-popup small{color:#aab9ae}.memory-map-popup button{border:1px solid rgba(214,180,90,.35);background:#0a1710;color:#f1fff5;border-radius:999px;padding:7px 10px;font-family:inherit;cursor:pointer}
+@media(max-width:760px){header .topin{align-items:flex-start}.nav{gap:7px}.nav>a{font-size:10px}.lux-semantic-icon,.lux-tradition-icon{width:42px;height:42px}.cards .card,.faith-tradition,.r-card,.p{padding-inline-start:72px!important}}
+
+/* v4.3.15 — Arabic Faith & Wisdom cartouche width/readability repair */
+html[lang="ar"] .faith-forest{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+html[lang="ar"] .faith-tradition{min-height:166px;padding-inline-start:78px!important;padding-inline-end:20px!important;overflow:visible}
+html[lang="ar"] .faith-tradition h3{font-size:clamp(14px,1.35vw,17px);line-height:1.7;white-space:nowrap;overflow:visible;text-overflow:clip;letter-spacing:0}
+html[lang="ar"] .faith-tradition:last-child h3{font-size:clamp(12px,1.18vw,15px)}
+@media(max-width:760px){html[lang="ar"] .faith-forest{grid-template-columns:1fr}html[lang="ar"] .faith-tradition{min-height:150px;padding-inline-start:70px!important}html[lang="ar"] .faith-tradition h3{font-size:clamp(13px,4vw,16px)}}
+@media(max-width:390px){html[lang="ar"] .faith-tradition h3{font-size:12px}html[lang="ar"] .faith-tradition:last-child h3{font-size:11px}}

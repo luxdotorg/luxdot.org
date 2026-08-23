@@ -1,0 +1,11 @@
+# LuxDot v4.17.3
+- Knowledge architecture and internal-link audit across the full HTML corpus.
+- Repaired the detected broken Circle of Care project link.
+- Connected Biology, Psychoactive Evidence Lab and Universal Signals Atlas directly into Science Galaxy.
+- Added shared Today Context for calendar/radio/TV/sacred-state coherence.
+- Daily Identity now follows the current remembrance/special day and the live radio program/track.
+- Added verified TV News Pulse ticker with NASA/USGS items; ticker hides during Sacred Audio Lock.
+- Added machine-readable knowledge architecture audit and human audit page.
+- Moved Executive Report button so it no longer overlaps Daily Identity.
+- Rebuilt generated research report visual language: Kufi-first Arabic, complementary book-serif Latin, LuxDot masthead, structured sections, and SHA-256 fingerprint footer.
+- Current-event astronomy/geology is explicitly treated as monitored evidence, not automatic prophecy evidence.
