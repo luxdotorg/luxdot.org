@@ -1,0 +1,2 @@
+.lux-report-btn{position:fixed;right:18px;bottom:18px;z-index:9998;border:1px solid #1f6f4a;background:#f7fff9;color:#123c2b;border-radius:999px;padding:10px 16px;font:600 14px system-ui;box-shadow:0 8px 28px #0002;cursor:pointer}.lux-report-btn:hover{transform:translateY(-1px)}
+@media print{.lux-report-btn,header,.lux-header-43108,.no-print{display:none!important}}

@@ -1,0 +1,15 @@
+{
+  "station": "إذاعة نقطة نور — LuxDot من شام",
+  "rule": "No one-hour loop",
+  "identity": "Syrian music/content only",
+  "dayparts": [
+    "Quran",
+    "quiet Syrian instrumental",
+    "qudud and muwashshahat",
+    "Syrian heritage",
+    "children and humanitarian memory",
+    "modern Syrian music",
+    "regional Syrian traditions"
+  ],
+  "rights": "Use only audio permitted for rebroadcast."
+}
