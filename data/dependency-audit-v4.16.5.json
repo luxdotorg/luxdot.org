@@ -1,0 +1,114 @@
+{
+  "manifest_files": [],
+  "cdn_domains": [
+    [
+      "fonts.googleapis.com",
+      7
+    ],
+    [
+      "cdn.jsdelivr.net",
+      3
+    ],
+    [
+      "unpkg.com",
+      2
+    ],
+    [
+      "fonts.gstatic.com",
+      1
+    ],
+    [
+      "cdn.islamic.network",
+      1
+    ],
+    [
+      "{s}.basemaps.cartocdn.com",
+      1
+    ]
+  ],
+  "cdn_references": [
+    {
+      "file": "memory.html",
+      "domain": "unpkg.com",
+      "url": "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    },
+    {
+      "file": "memory.html",
+      "domain": "unpkg.com",
+      "url": "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    },
+    {
+      "file": "witness.html",
+      "domain": "fonts.googleapis.com",
+      "url": "https://fonts.googleapis.com"
+    },
+    {
+      "file": "witness.html",
+      "domain": "fonts.gstatic.com",
+      "url": "https://fonts.gstatic.com"
+    },
+    {
+      "file": "witness.html",
+      "domain": "fonts.googleapis.com",
+      "url": "https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700&display=swap"
+    },
+    {
+      "file": "research/circle-of-care-25km-original.html",
+      "domain": "cdn.jsdelivr.net",
+      "url": "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css"
+    },
+    {
+      "file": "research/circle-of-care-25km-original.html",
+      "domain": "cdn.jsdelivr.net",
+      "url": "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"
+    },
+    {
+      "file": "quran.js",
+      "domain": "cdn.islamic.network",
+      "url": "https://cdn.islamic.network/quran/audio/128/ar.alafasy/"
+    },
+    {
+      "file": "quran.js",
+      "domain": "cdn.jsdelivr.net",
+      "url": "https://cdn.jsdelivr.net/npm/quran-json@3.1.2/dist/chapters/"
+    },
+    {
+      "file": "research/research.js",
+      "domain": "{s}.basemaps.cartocdn.com",
+      "url": "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+    },
+    {
+      "file": "luxdot-header-v43108.css",
+      "domain": "fonts.googleapis.com",
+      "url": "https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;600;700&family=Noto+Sans+Hebrew:wght@500;600&display=swap"
+    },
+    {
+      "file": "platform-v43.css",
+      "domain": "fonts.googleapis.com",
+      "url": "https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap"
+    },
+    {
+      "file": "arabic-polish.css",
+      "domain": "fonts.googleapis.com",
+      "url": "https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap"
+    },
+    {
+      "file": "luxdot-global-language.css",
+      "domain": "fonts.googleapis.com",
+      "url": "https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&family=Noto+Sans+Hebrew:wght@400;500;600;700&display=swap"
+    },
+    {
+      "file": "luxdot-ui-lock.css",
+      "domain": "fonts.googleapis.com",
+      "url": "https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap"
+    }
+  ],
+  "library_signature_hits": {
+    "Leaflet": [
+      "memory.js",
+      "research/circle-of-care-live-map.js",
+      "research/research.js"
+    ]
+  },
+  "note": "Static signature/reference scan; absence is not proof of no dependency."
+}

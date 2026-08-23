@@ -1,0 +1,6911 @@
+{
+  "version": "4.16.4",
+  "method": "Conservative static provenance/license audit. Classification is triage, not a legal determination.",
+  "counts": {
+    "LIKELY_PROJECT_AUTHORED": 401,
+    "REVIEW_EXTERNAL_REFERENCES": 194,
+    "REVIEW": 4,
+    "NEEDS_PROVENANCE": 116
+  },
+  "license_marker_hits": {
+    "CC": 17,
+    "MIT": 4,
+    "AGPL": 3
+  },
+  "top_external_domains": [
+    [
+      "www.un.org",
+      160
+    ],
+    [
+      "alphenserfgoed.nl",
+      159
+    ],
+    [
+      "www.google.com",
+      116
+    ],
+    [
+      "commons.wikimedia.org",
+      114
+    ],
+    [
+      "westbrabantsarchief.nl",
+      100
+    ],
+    [
+      "vanvelthoven-vanrijt.nl",
+      80
+    ],
+    [
+      "www.dbnl.org",
+      60
+    ],
+    [
+      "www.grotekerkbreda.nl",
+      60
+    ],
+    [
+      "deoranjeboom.nl",
+      51
+    ],
+    [
+      "www.youtube.com",
+      45
+    ],
+    [
+      "www.unesco.org",
+      43
+    ],
+    [
+      "inventaris.onroerenderfgoed.be",
+      40
+    ],
+    [
+      "www.alphen-chaam.nl",
+      38
+    ],
+    [
+      "www.w3.org",
+      35
+    ],
+    [
+      "bergen-op-zoom.nieuws.nl",
+      30
+    ],
+    [
+      "www.iis.ac.uk",
+      28
+    ],
+    [
+      "www.sefaria.org",
+      26
+    ],
+    [
+      "www.heliofant.com",
+      24
+    ],
+    [
+      "amarant.nl",
+      24
+    ],
+    [
+      "www.bhic.nl",
+      23
+    ],
+    [
+      "www.oorlogsbronnen.nl",
+      22
+    ],
+    [
+      "drukkersmerken.stcv.be",
+      20
+    ],
+    [
+      "erfgoed.breda.nl",
+      20
+    ],
+    [
+      "www.vv-raamsdonk.nl",
+      20
+    ],
+    [
+      "www.omroepbrabant.nl",
+      20
+    ],
+    [
+      "bisdombreda.nl",
+      20
+    ],
+    [
+      "www.thebe.nl",
+      20
+    ],
+    [
+      "ebible.org",
+      20
+    ],
+    [
+      "covers.openlibrary.org",
+      20
+    ],
+    [
+      "www.koninklijkhuis.nl",
+      19
+    ],
+    [
+      "www.iranicaonline.org",
+      18
+    ],
+    [
+      "galder-strijbeek.nl",
+      18
+    ],
+    [
+      "www.regionaalarchieftilburg.nl",
+      18
+    ],
+    [
+      "sunnah.com",
+      18
+    ],
+    [
+      "ejournal.perpusnas.go.id",
+      17
+    ],
+    [
+      "www.openarchieven.nl",
+      16
+    ],
+    [
+      "www.reiderlanddefilm.nl",
+      16
+    ],
+    [
+      "www.gutenberg.org",
+      15
+    ],
+    [
+      "www.futmak.com",
+      15
+    ],
+    [
+      "www.parochieheiligegeest.nl",
+      15
+    ],
+    [
+      "www.online-begraafplaatsen.nl",
+      14
+    ],
+    [
+      "15augustus1945.nl",
+      14
+    ],
+    [
+      "www.biblegateway.com",
+      14
+    ],
+    [
+      "www.vatican.va",
+      14
+    ],
+    [
+      "sintkatharinakerk.be",
+      14
+    ],
+    [
+      "visithoogstraten.be",
+      14
+    ],
+    [
+      "www.auschwitz.org",
+      12
+    ],
+    [
+      "encyclopedia.ushmm.org",
+      12
+    ],
+    [
+      "www.fv-kempen.be",
+      12
+    ],
+    [
+      "ledevaertkerk.protestantsekerk.net",
+      12
+    ],
+    [
+      "www.unicode.org",
+      12
+    ],
+    [
+      "voedselbankbreda.nl",
+      12
+    ],
+    [
+      "ibnalarabi.com",
+      11
+    ],
+    [
+      "alashraf-almahdia.net",
+      11
+    ],
+    [
+      "emobooktrade.unimi.it",
+      10
+    ],
+    [
+      "archive.org",
+      10
+    ],
+    [
+      "brabantsegesneuvelden.nl",
+      10
+    ],
+    [
+      "en.wikipedia.org",
+      10
+    ],
+    [
+      "uitvaartzorgcreemers.nl",
+      10
+    ],
+    [
+      "quran.com",
+      10
+    ],
+    [
+      "zuidfront-holland1940.nl",
+      10
+    ],
+    [
+      "www.weekbladdongen.nl",
+      10
+    ],
+    [
+      "gelovenindedelta.nl",
+      10
+    ],
+    [
+      "www.pewresearch.org",
+      10
+    ],
+    [
+      "img.youtube.com",
+      10
+    ],
+    [
+      "fonts.googleapis.com",
+      9
+    ],
+    [
+      "www.sastra.org",
+      9
+    ],
+    [
+      "kevelaer-marketing.de",
+      8
+    ],
+    [
+      "bedevaartkevelaer.nl",
+      8
+    ],
+    [
+      "www.boekscout.nl",
+      8
+    ],
+    [
+      "www.brabantserfgoed.nl",
+      8
+    ],
+    [
+      "dorar.net",
+      8
+    ],
+    [
+      "www.bijdepaters.be",
+      8
+    ],
+    [
+      "www.ravels-weelde-poppel.be",
+      8
+    ],
+    [
+      "ctext.org",
+      8
+    ],
+    [
+      "www.vluchtelingenwerk.nl",
+      8
+    ],
+    [
+      "www.bahai.org",
+      7
+    ],
+    [
+      "plato.stanford.edu",
+      7
+    ],
+    [
+      "www.vaticannews.va",
+      7
+    ],
+    [
+      "openlibrary.org",
+      6
+    ],
+    [
+      "www.alphenserfgoed.nl",
+      6
+    ],
+    [
+      "brabantsheem.nl",
+      6
+    ],
+    [
+      "archaeology.datastations.nl",
+      6
+    ],
+    [
+      "www.geschiedkundigekringboz.nl",
+      6
+    ],
+    [
+      "www.rooseveltoudvossemeer.nl",
+      6
+    ],
+    [
+      "www.sint-jan-de-doper.nl",
+      6
+    ],
+    [
+      "jaarrekening.be",
+      6
+    ],
+    [
+      "www.jstor.org",
+      6
+    ],
+    [
+      "www.bl.uk",
+      6
+    ],
+    [
+      "www.parochie-ulicoten.nl",
+      6
+    ],
+    [
+      "arjati.nl",
+      6
+    ],
+    [
+      "www.nmkampvught.nl",
+      6
+    ],
+    [
+      "beeldbank.cultureelerfgoed.nl",
+      6
+    ],
+    [
+      "www.santannadistazzema.org",
+      6
+    ],
+    [
+      "www.cartoonbrew.com",
+      6
+    ],
+    [
+      "imamhussain.org",
+      6
+    ],
+    [
+      "princeclausfund.nl",
+      6
+    ],
+    [
+      "www.chabad.org",
+      6
+    ],
+    [
+      "ecma-international.org",
+      6
+    ],
+    [
+      "developer.mozilla.org",
+      6
+    ]
+  ],
+  "records": [
+    {
+      "path": "CHANGELOG_v4_3_118.md",
+      "ext": ".md",
+      "size": 544,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_107.md",
+      "ext": ".md",
+      "size": 432,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_105.md",
+      "ext": ".md",
+      "size": 603,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "license-marker:CC",
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_52.md",
+      "ext": ".md",
+      "size": 426,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_6_2.md",
+      "ext": ".md",
+      "size": 200,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "quran.js",
+      "ext": ".js",
+      "size": 16963,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "4 external URL(s)"
+      ]
+    },
+    {
+      "path": "sophies-world-reader.html",
+      "ext": ".html",
+      "size": 2451,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_71_MAP_RELIABILITY.md",
+      "ext": ".md",
+      "size": 939,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "bahai.html",
+      "ext": ".html",
+      "size": 9704,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "meditations-reader.html",
+      "ext": ".html",
+      "size": 2410,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_5_0.md",
+      "ext": ".md",
+      "size": 550,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_8_0.md",
+      "ext": ".md",
+      "size": 458,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_50.md",
+      "ext": ".md",
+      "size": 665,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_68.md",
+      "ext": ".md",
+      "size": 670,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_60.md",
+      "ext": ".md",
+      "size": 620,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "chaam-midwives.html",
+      "ext": ".html",
+      "size": 35767,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "22 external URL(s)"
+      ]
+    },
+    {
+      "path": "guru-granth.html",
+      "ext": ".html",
+      "size": 9066,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "verwithagen-erasmus.html",
+      "ext": ".html",
+      "size": 14991,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "20 external URL(s)"
+      ]
+    },
+    {
+      "path": "complete-sacred-reader.css",
+      "ext": ".css",
+      "size": 2275,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "research-report.css",
+      "ext": ".css",
+      "size": 369,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "knowledge-graph.html",
+      "ext": ".html",
+      "size": 5117,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "red-heifer.css",
+      "ext": ".css",
+      "size": 1431,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "hallaj.html",
+      "ext": ".html",
+      "size": 14095,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "4 external URL(s)"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_8_0.md",
+      "ext": ".md",
+      "size": 184,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "luxdot-research-standard-preview.css",
+      "ext": ".css",
+      "size": 499,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "messianic-names-numbers-atlas.html",
+      "ext": ".html",
+      "size": 28464,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "kevelaer-chaam-timeline.html",
+      "ext": ".html",
+      "size": 15331,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "16 external URL(s)"
+      ]
+    },
+    {
+      "path": "luxdot-philosophy.html",
+      "ext": ".html",
+      "size": 6862,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "hikma-i18n-v43108.js",
+      "ext": ".js",
+      "size": 6438,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "daily-identity.js",
+      "ext": ".js",
+      "size": 175757,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "61 external URL(s)",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "research-static-i18n.js",
+      "ext": ".js",
+      "size": 96572,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "source-reader-v2.js",
+      "ext": ".js",
+      "size": 7370,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_14_11.md",
+      "ext": ".md",
+      "size": 218,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "muqaddimah-reader.html",
+      "ext": ".html",
+      "size": 2400,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_112.md",
+      "ext": ".md",
+      "size": 473,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "research-graph.js",
+      "ext": ".js",
+      "size": 173640,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "8 external URL(s)"
+      ]
+    },
+    {
+      "path": "kees-van-wanrooij-i18n.js",
+      "ext": ".js",
+      "size": 9925,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "12 external URL(s)"
+      ]
+    },
+    {
+      "path": "sacred-120km-network.html",
+      "ext": ".html",
+      "size": 30063,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_14_3.md",
+      "ext": ".md",
+      "size": 990,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "what-is-luxdot.html",
+      "ext": ".html",
+      "size": 7122,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_14_9.md",
+      "ext": ".md",
+      "size": 532,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_7_0.md",
+      "ext": ".md",
+      "size": 164,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_29.md",
+      "ext": ".md",
+      "size": 1439,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_1.md",
+      "ext": ".md",
+      "size": 671,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "guardian-benefactor.html",
+      "ext": ".html",
+      "size": 9710,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_5_1.md",
+      "ext": ".md",
+      "size": 423,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "savior-atlas.js",
+      "ext": ".js",
+      "size": 75995,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "license-marker:MIT",
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "serat-centhini.html",
+      "ext": ".html",
+      "size": 7246,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "research-views-v4.css",
+      "ext": ".css",
+      "size": 10411,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "memory-flags.css",
+      "ext": ".css",
+      "size": 696,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_6.md",
+      "ext": ".md",
+      "size": 628,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_49.md",
+      "ext": ".md",
+      "size": 534,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v2_9_4.md",
+      "ext": ".md",
+      "size": 702,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "hurufism-fazlallah-nasimi.html",
+      "ext": ".html",
+      "size": 4706,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "hank-raamsdonk-war-memory.html",
+      "ext": ".html",
+      "size": 11582,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "5 external URL(s)"
+      ]
+    },
+    {
+      "path": "chaam-genealogy.css",
+      "ext": ".css",
+      "size": 2777,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "ARABIC_SURFACE_AUDIT_v4_16_1.md",
+      "ext": ".md",
+      "size": 431,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "QA_REPORT_v4_16_0.md",
+      "ext": ".md",
+      "size": 183,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_126.md",
+      "ext": ".md",
+      "size": 468,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_9.md",
+      "ext": ".md",
+      "size": 704,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "avesta.html",
+      "ext": ".html",
+      "size": 7195,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_14_0.md",
+      "ext": ".md",
+      "size": 890,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_73_TARGETED_REPAIR.md",
+      "ext": ".md",
+      "size": 750,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "chosen-balance.html",
+      "ext": ".html",
+      "size": 5601,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "values-data.js",
+      "ext": ".js",
+      "size": 5126,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "st-bartholomew-memory.html",
+      "ext": ".html",
+      "size": 12946,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "3 external URL(s)"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_83.md",
+      "ext": ".md",
+      "size": 19,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "world-calendar.html",
+      "ext": ".html",
+      "size": 9161,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_45.md",
+      "ext": ".md",
+      "size": 580,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "shaam-breda.html",
+      "ext": ".html",
+      "size": 6340,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "VERSION_MEMORY_DOSSIERS_4_3_89.txt",
+      "ext": ".txt",
+      "size": 159,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_7_0.md",
+      "ext": ".md",
+      "size": 227,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_69_LANGUAGE_ROUTING.md",
+      "ext": ".md",
+      "size": 543,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v2_9_4.md",
+      "ext": ".md",
+      "size": 806,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "laws-principles-atlas.html",
+      "ext": ".html",
+      "size": 13219,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "5 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_71.md",
+      "ext": ".md",
+      "size": 662,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "timeline.html",
+      "ext": ".html",
+      "size": 4194,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "luxdot-header-v43108.css",
+      "ext": ".css",
+      "size": 6407,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "projects-i18n.js",
+      "ext": ".js",
+      "size": 4722,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_53.md",
+      "ext": ".md",
+      "size": 581,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "source-inventory.json",
+      "ext": ".json",
+      "size": 152352,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "949 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_14_2.md",
+      "ext": ".md",
+      "size": 964,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_37.md",
+      "ext": ".md",
+      "size": 400,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_121.md",
+      "ext": ".md",
+      "size": 253,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "sabbatai-nathan-test.html",
+      "ext": ".html",
+      "size": 4312,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_14_6.md",
+      "ext": ".md",
+      "size": 413,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_9_0.md",
+      "ext": ".md",
+      "size": 395,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_10_0.md",
+      "ext": ".md",
+      "size": 206,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "jewish-research-page.js",
+      "ext": ".js",
+      "size": 3252,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "karamazov-reader.html",
+      "ext": ".html",
+      "size": 2473,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_116.md",
+      "ext": ".md",
+      "size": 88,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_11_0.md",
+      "ext": ".md",
+      "size": 1011,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "build-meta.json",
+      "ext": ".json",
+      "size": 6163,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_109.md",
+      "ext": ".md",
+      "size": 758,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_38.md",
+      "ext": ".md",
+      "size": 589,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "ibn-arabi-abulafia-comparison.html",
+      "ext": ".html",
+      "size": 7991,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "3 external URL(s)"
+      ]
+    },
+    {
+      "path": "app.js",
+      "ext": ".js",
+      "size": 75335,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_69.md",
+      "ext": ".md",
+      "size": 408,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "content-language-core.js",
+      "ext": ".js",
+      "size": 4788,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "license-marker:MIT",
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_14.md",
+      "ext": ".md",
+      "size": 743,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": ".nojekyll",
+      "ext": "",
+      "size": 0,
+      "status": "REVIEW",
+      "rationale": [
+        "unclassified file type"
+      ]
+    },
+    {
+      "path": "index.html",
+      "ext": ".html",
+      "size": 4025,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_112.md",
+      "ext": ".md",
+      "size": 319,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "burial-settlement-layers.html",
+      "ext": ".html",
+      "size": 14209,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "12 external URL(s)"
+      ]
+    },
+    {
+      "path": "sepharad-diaspora.html",
+      "ext": ".html",
+      "size": 5699,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v2_9_9.md",
+      "ext": ".md",
+      "size": 527,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "suluk-java.html",
+      "ext": ".html",
+      "size": 6104,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_61.md",
+      "ext": ".md",
+      "size": 580,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "research-sky-interaction-v4160.js",
+      "ext": ".js",
+      "size": 2117,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_12.md",
+      "ext": ".md",
+      "size": 1028,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_48.md",
+      "ext": ".md",
+      "size": 374,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_86.md",
+      "ext": ".md",
+      "size": 560,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "LUXDOT_INFORMATION_ARCHITECTURE_v4_4_1.md",
+      "ext": ".md",
+      "size": 1138,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_44.md",
+      "ext": ".md",
+      "size": 564,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "humanity.html",
+      "ext": ".html",
+      "size": 25805,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "van-velthoven-family.html",
+      "ext": ".html",
+      "size": 13956,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "25 external URL(s)"
+      ]
+    },
+    {
+      "path": "complete-sacred-reader.js",
+      "ext": ".js",
+      "size": 5310,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_2_0.md",
+      "ext": ".md",
+      "size": 1123,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "witness-v412.css",
+      "ext": ".css",
+      "size": 3414,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "WITNESS_BACKEND_BLUEPRINT.md",
+      "ext": ".md",
+      "size": 1045,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "african-association.html",
+      "ext": ".html",
+      "size": 20949,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "5 external URL(s)"
+      ]
+    },
+    {
+      "path": "VERSION_RESEARCH_SKY.txt",
+      "ext": ".txt",
+      "size": 54,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "LUXDOT_PULSE_CLOUDFLARE_SETUP.txt",
+      "ext": ".txt",
+      "size": 913,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v2_9_1.md",
+      "ext": ".md",
+      "size": 4220,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "everyday-good.html",
+      "ext": ".html",
+      "size": 16098,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "8 external URL(s)"
+      ]
+    },
+    {
+      "path": "values.html",
+      "ext": ".html",
+      "size": 4271,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "five-lang-site.js",
+      "ext": ".js",
+      "size": 123,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_6_1.md",
+      "ext": ".md",
+      "size": 136,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "alphen-before-alphen.html",
+      "ext": ".html",
+      "size": 4696,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "savior-deepening.html",
+      "ext": ".html",
+      "size": 27680,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "26 external URL(s)"
+      ]
+    },
+    {
+      "path": "intro.css",
+      "ext": ".css",
+      "size": 10510,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "alawi-nusayri-research.html",
+      "ext": ".html",
+      "size": 20695,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "8 external URL(s)"
+      ]
+    },
+    {
+      "path": "number-letter-lab.html",
+      "ext": ".html",
+      "size": 11489,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "research-report.js",
+      "ext": ".js",
+      "size": 6560,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "visual-library.html",
+      "ext": ".html",
+      "size": 5103,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "search-index.json",
+      "ext": ".json",
+      "size": 368467,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "license-marker:CC",
+        "local text/code; no external URL detected",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "brabant-research-architecture.html",
+      "ext": ".html",
+      "size": 18254,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "5 external URL(s)"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_6.md",
+      "ext": ".md",
+      "size": 857,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "willibrord-echternach.html",
+      "ext": ".html",
+      "size": 24199,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "14 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_16_3.md",
+      "ext": ".md",
+      "size": 650,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "license-marker:AGPL",
+        "license-marker:CC",
+        "local text/code; no external URL detected",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "memory-flags.js",
+      "ext": ".js",
+      "size": 998,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "README.txt",
+      "ext": ".txt",
+      "size": 841,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "denhaag-deportation-memory.html",
+      "ext": ".html",
+      "size": 7941,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "maimonides-letters-numbers.html",
+      "ext": ".html",
+      "size": 7881,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "3 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_19.md",
+      "ext": ".md",
+      "size": 450,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "fusus-reader.html",
+      "ext": ".html",
+      "size": 2413,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "hebrew-research-overlay.js",
+      "ext": ".js",
+      "size": 14531,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "platform-v43.css",
+      "ext": ".css",
+      "size": 4203,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "deportation-memory.html",
+      "ext": ".html",
+      "size": 8194,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_74_LANGUAGE_MEMORY_JAVA_RECOVERY.md",
+      "ext": ".md",
+      "size": 1100,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_14_10.md",
+      "ext": ".md",
+      "size": 629,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "hendrick-busman.html",
+      "ext": ".html",
+      "size": 22241,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_34.md",
+      "ext": ".md",
+      "size": 987,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "burckhardt.html",
+      "ext": ".html",
+      "size": 23494,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "5 external URL(s)"
+      ]
+    },
+    {
+      "path": "genealogy-reader.html",
+      "ext": ".html",
+      "size": 2541,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_32.md",
+      "ext": ".md",
+      "size": 477,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "grote-kerk-north-transept.html",
+      "ext": ".html",
+      "size": 11902,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "25 external URL(s)"
+      ]
+    },
+    {
+      "path": "shaam-brabant-network.html",
+      "ext": ".html",
+      "size": 40583,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "6 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v2_9_2.md",
+      "ext": ".md",
+      "size": 790,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "manuaal-1422-people-land.html",
+      "ext": ".html",
+      "size": 16022,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "11 external URL(s)"
+      ]
+    },
+    {
+      "path": "jan-van-velthoven.html",
+      "ext": ".html",
+      "size": 11737,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "15 external URL(s)"
+      ]
+    },
+    {
+      "path": "nusantara.html",
+      "ext": ".html",
+      "size": 8340,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "6 external URL(s)"
+      ]
+    },
+    {
+      "path": "arabic-polish.css",
+      "ext": ".css",
+      "size": 5749,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_91.md",
+      "ext": ".md",
+      "size": 545,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_6_0.md",
+      "ext": ".md",
+      "size": 602,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v2_9_7.md",
+      "ext": ".md",
+      "size": 1426,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "red-heifer.js",
+      "ext": ".js",
+      "size": 15294,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "6 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_57.md",
+      "ext": ".md",
+      "size": 1158,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "license-marker:CC",
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "maximilian-kolbe.html",
+      "ext": ".html",
+      "size": 16693,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "6 external URL(s)"
+      ]
+    },
+    {
+      "path": "tanakh.html",
+      "ext": ".html",
+      "size": 8007,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "10 external URL(s)",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_4_2.md",
+      "ext": ".md",
+      "size": 483,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_83.md",
+      "ext": ".md",
+      "size": 279,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_82.md",
+      "ext": ".md",
+      "size": 26,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "sephardic-halakha.html",
+      "ext": ".html",
+      "size": 5496,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "license-marker:CC",
+        "4 external URL(s)"
+      ]
+    },
+    {
+      "path": "belief-violence-memory.html",
+      "ext": ".html",
+      "size": 30579,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "6 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_113.md",
+      "ext": ".md",
+      "size": 580,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "jafr-ilm-huruf.html",
+      "ext": ".html",
+      "size": 5390,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_104.md",
+      "ext": ".md",
+      "size": 630,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "luxdot-research-experience-v4150.js",
+      "ext": ".js",
+      "size": 11072,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "withagen-van-den-boom.html",
+      "ext": ".html",
+      "size": 13300,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "15 external URL(s)"
+      ]
+    },
+    {
+      "path": "hikma-reader.html",
+      "ext": ".html",
+      "size": 10236,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_0_0.md",
+      "ext": ".md",
+      "size": 1195,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "analytics-config.js",
+      "ext": ".js",
+      "size": 311,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "history-galaxy.html",
+      "ext": ".html",
+      "size": 3706,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "historic-brabant-crossborder.html",
+      "ext": ".html",
+      "size": 23589,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "19 external URL(s)"
+      ]
+    },
+    {
+      "path": "media.html",
+      "ext": ".html",
+      "size": 4793,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_78.md",
+      "ext": ".md",
+      "size": 387,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "LUXDOT_MASTER_BACKLOG.md",
+      "ext": ".md",
+      "size": 8319,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "license-marker:AGPL",
+        "license-marker:CC",
+        "local text/code; no external URL detected",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_117.md",
+      "ext": ".md",
+      "size": 439,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_109.md",
+      "ext": ".md",
+      "size": 711,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "abulafia-letters-names.html",
+      "ext": ".html",
+      "size": 8024,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "3 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_93.md",
+      "ext": ".md",
+      "size": 709,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_114.md",
+      "ext": ".md",
+      "size": 63,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_27.md",
+      "ext": ".md",
+      "size": 139,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_80.md",
+      "ext": ".md",
+      "size": 420,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_59.md",
+      "ext": ".md",
+      "size": 670,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_14_8.md",
+      "ext": ".md",
+      "size": 560,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "luxdot-typography-v41416.css",
+      "ext": ".css",
+      "size": 2081,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "gita.html",
+      "ext": ".html",
+      "size": 2232,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_18.md",
+      "ext": ".md",
+      "size": 761,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v3_0_0.md",
+      "ext": ".md",
+      "size": 599,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_121.md",
+      "ext": ".md",
+      "size": 480,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_77_MULTILINGUAL_IDENTITY_MEDIA_QA.md",
+      "ext": ".md",
+      "size": 1944,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "1127-watch.html",
+      "ext": ".html",
+      "size": 17501,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "4 external URL(s)"
+      ]
+    },
+    {
+      "path": "druze-hikma.html",
+      "ext": ".html",
+      "size": 36578,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "license-marker:CC",
+        "9 external URL(s)"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_11_0.md",
+      "ext": ".md",
+      "size": 270,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "faith-i18n-v2.js",
+      "ext": ".js",
+      "size": 10798,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "audiovisual.html",
+      "ext": ".html",
+      "size": 5432,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "PAGE_TEMPLATE_MULTILINGUAL.html",
+      "ext": ".html",
+      "size": 1192,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_33.md",
+      "ext": ".md",
+      "size": 463,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "border-chapels-route.html",
+      "ext": ".html",
+      "size": 15435,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "15 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_108.md",
+      "ext": ".md",
+      "size": 1079,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_40.md",
+      "ext": ".md",
+      "size": 527,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "luxdot-arabic-ui.css",
+      "ext": ".css",
+      "size": 18548,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "research-views-v3.css",
+      "ext": ".css",
+      "size": 6408,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "analects.html",
+      "ext": ".html",
+      "size": 7309,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "analytics.js",
+      "ext": ".js",
+      "size": 1637,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_15.md",
+      "ext": ".md",
+      "size": 1181,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_17.md",
+      "ext": ".md",
+      "size": 391,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_14_12.md",
+      "ext": ".md",
+      "size": 422,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_4.md",
+      "ext": ".md",
+      "size": 483,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "buddhist.html",
+      "ext": ".html",
+      "size": 2299,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_115.md",
+      "ext": ".md",
+      "size": 786,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_111.md",
+      "ext": ".md",
+      "size": 553,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "research-media.css",
+      "ext": ".css",
+      "size": 3032,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "VERSION.txt",
+      "ext": ".txt",
+      "size": 7,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "library-i18n.js",
+      "ext": ".js",
+      "size": 4185,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "jewish-source-ladder.html",
+      "ext": ".html",
+      "size": 6188,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "shaam-breda.css",
+      "ext": ".css",
+      "size": 12584,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "pet-goat-apocalypse-media.html",
+      "ext": ".html",
+      "size": 78636,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "48 external URL(s)"
+      ]
+    },
+    {
+      "path": "luxdot-arabic-ui.js",
+      "ext": ".js",
+      "size": 23782,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "4 external URL(s)"
+      ]
+    },
+    {
+      "path": "reiderland-live.html",
+      "ext": ".html",
+      "size": 31880,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "6 external URL(s)"
+      ]
+    },
+    {
+      "path": "thijs-loss-consolation.html",
+      "ext": ".html",
+      "size": 9886,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "10 external URL(s)"
+      ]
+    },
+    {
+      "path": "name-truth-memory.html",
+      "ext": ".html",
+      "size": 8200,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "3 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_9_0.md",
+      "ext": ".md",
+      "size": 1037,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "science-galaxy.html",
+      "ext": ".html",
+      "size": 3075,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "indies-memory.html",
+      "ext": ".html",
+      "size": 8800,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "3 external URL(s)"
+      ]
+    },
+    {
+      "path": "chaam-genealogy.html",
+      "ext": ".html",
+      "size": 6795,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "8 external URL(s)"
+      ]
+    },
+    {
+      "path": "source-reader-v2.css",
+      "ext": ".css",
+      "size": 3211,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_64.md",
+      "ext": ".md",
+      "size": 547,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_2.md",
+      "ext": ".md",
+      "size": 540,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "memory.css",
+      "ext": ".css",
+      "size": 18319,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "library.html",
+      "ext": ".html",
+      "size": 20572,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "22 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_14_15.md",
+      "ext": ".md",
+      "size": 449,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_86.md",
+      "ext": ".md",
+      "size": 682,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "ismaili-qaim-mahdi.html",
+      "ext": ".html",
+      "size": 27126,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "17 external URL(s)"
+      ]
+    },
+    {
+      "path": "maimonides.html",
+      "ext": ".html",
+      "size": 7352,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "VERSION_MEMORY_DOSSIERS_4_3_88.txt",
+      "ext": ".txt",
+      "size": 122,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_101.md",
+      "ext": ".md",
+      "size": 615,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "war-reconstruction-memory.html",
+      "ext": ".html",
+      "size": 15637,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "15 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_44.md",
+      "ext": ".md",
+      "size": 637,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_13.md",
+      "ext": ".md",
+      "size": 832,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_39.md",
+      "ext": ".md",
+      "size": 180,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "media-news.js",
+      "ext": ".js",
+      "size": 13901,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "license-marker:MIT",
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "genetics-memory-hypothesis.html",
+      "ext": ".html",
+      "size": 5070,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_122.md",
+      "ext": ".md",
+      "size": 585,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_5.md",
+      "ext": ".md",
+      "size": 564,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_94.md",
+      "ext": ".md",
+      "size": 340,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "sacred-25km-atlas.css",
+      "ext": ".css",
+      "size": 4039,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "slave-trade-remembrance.html",
+      "ext": ".html",
+      "size": 6155,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "frontier-research.css",
+      "ext": ".css",
+      "size": 1415,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "research-views-v4.js",
+      "ext": ".js",
+      "size": 21377,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "psychoactive-substances.html",
+      "ext": ".html",
+      "size": 5144,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_6_3.md",
+      "ext": ".md",
+      "size": 581,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_1_0.md",
+      "ext": ".md",
+      "size": 989,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "intro.js",
+      "ext": ".js",
+      "size": 12042,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "quantum-entanglement.html",
+      "ext": ".html",
+      "size": 3929,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_58.md",
+      "ext": ".md",
+      "size": 700,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "saint-genis-memory.html",
+      "ext": ".html",
+      "size": 15918,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "license-marker:CC",
+        "3 external URL(s)"
+      ]
+    },
+    {
+      "path": "live-development.js",
+      "ext": ".js",
+      "size": 4411,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "sacred-25km-atlas.html",
+      "ext": ".html",
+      "size": 1210,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_82.md",
+      "ext": ".md",
+      "size": 452,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "westerweel-memory.html",
+      "ext": ".html",
+      "size": 8434,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "3 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_96.md",
+      "ext": ".md",
+      "size": 317,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_1_1.md",
+      "ext": ".md",
+      "size": 561,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_30.md",
+      "ext": ".md",
+      "size": 596,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "egyptology.html",
+      "ext": ".html",
+      "size": 2321,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "README-INTEGRATION.txt",
+      "ext": ".txt",
+      "size": 471,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_63.md",
+      "ext": ".md",
+      "size": 2053,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "kakawin-ramayana.html",
+      "ext": ".html",
+      "size": 5956,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "praxis.js",
+      "ext": ".js",
+      "size": 33155,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "library-active-i18n.js",
+      "ext": ".js",
+      "size": 12933,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_15.md",
+      "ext": ".md",
+      "size": 1254,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_20.md",
+      "ext": ".md",
+      "size": 588,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "knowledge-laws-galaxy.html",
+      "ext": ".html",
+      "size": 3355,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "media-library.css",
+      "ext": ".css",
+      "size": 1021,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "ovadia-yosef.html",
+      "ext": ".html",
+      "size": 5707,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "license-marker:CC",
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "luxdot-radio.css",
+      "ext": ".css",
+      "size": 2442,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "jain.html",
+      "ext": ".html",
+      "size": 7637,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_79.md",
+      "ext": ".md",
+      "size": 837,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "brabant-network-context.js",
+      "ext": ".js",
+      "size": 2230,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_29.md",
+      "ext": ".md",
+      "size": 923,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "LANGUAGE_LEGACY_BASELINE.json",
+      "ext": ".json",
+      "size": 2678,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "shaam-breda.js",
+      "ext": ".js",
+      "size": 39960,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "21 external URL(s)"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_125.md",
+      "ext": ".md",
+      "size": 436,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "knowledge-graph.json",
+      "ext": ".json",
+      "size": 113370,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_0.md",
+      "ext": ".md",
+      "size": 2445,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_14_4.md",
+      "ext": ".md",
+      "size": 474,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "home.html",
+      "ext": ".html",
+      "size": 8785,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_11.md",
+      "ext": ".md",
+      "size": 593,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v2_9_3.md",
+      "ext": ".md",
+      "size": 1027,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_106.md",
+      "ext": ".md",
+      "size": 772,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "gematria-method-lab.html",
+      "ext": ".html",
+      "size": 7925,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "3 external URL(s)"
+      ]
+    },
+    {
+      "path": "luxdot-research-experience-v4150.css",
+      "ext": ".css",
+      "size": 2442,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_9.md",
+      "ext": ".md",
+      "size": 1919,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_97_RESEARCH_LANGUAGE_QA.md",
+      "ext": ".md",
+      "size": 3217,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "edith-stein.html",
+      "ext": ".html",
+      "size": 23684,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "license-marker:CC",
+        "7 external URL(s)",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "development-live.html",
+      "ext": ".html",
+      "size": 2465,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "alphen-before-alphen.js",
+      "ext": ".js",
+      "size": 40912,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "6 external URL(s)"
+      ]
+    },
+    {
+      "path": "QA_LANGUAGE_INTEGRITY.py",
+      "ext": ".py",
+      "size": 1065,
+      "status": "REVIEW",
+      "rationale": [
+        "unclassified file type"
+      ]
+    },
+    {
+      "path": "withagen-jansen-dekoning.html",
+      "ext": ".html",
+      "size": 13675,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "15 external URL(s)"
+      ]
+    },
+    {
+      "path": "stazzema-memory.html",
+      "ext": ".html",
+      "size": 8301,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "page-translations.js",
+      "ext": ".js",
+      "size": 3540,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "chosen-hypothesis.html",
+      "ext": ".html",
+      "size": 11153,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "5 external URL(s)"
+      ]
+    },
+    {
+      "path": "research-context.js",
+      "ext": ".js",
+      "size": 4242,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "luxdot-typography-density.js",
+      "ext": ".js",
+      "size": 472,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_28.md",
+      "ext": ".md",
+      "size": 2338,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "memory-submit.html",
+      "ext": ".html",
+      "size": 718,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_108.md",
+      "ext": ".md",
+      "size": 1911,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "serat-wedhatama.html",
+      "ext": ".html",
+      "size": 5939,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_99.md",
+      "ext": ".md",
+      "size": 144,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_119.md",
+      "ext": ".md",
+      "size": 709,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "janssen-family.html",
+      "ext": ".html",
+      "size": 16644,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "4 external URL(s)"
+      ]
+    },
+    {
+      "path": "chosen-dual.css",
+      "ext": ".css",
+      "size": 2879,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "calendar.html",
+      "ext": ".html",
+      "size": 197134,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "62 external URL(s)",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_123.md",
+      "ext": ".md",
+      "size": 364,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "luxdot-global-language.css",
+      "ext": ".css",
+      "size": 967,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_107.md",
+      "ext": ".md",
+      "size": 546,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_16_2.md",
+      "ext": ".md",
+      "size": 658,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_73.md",
+      "ext": ".md",
+      "size": 443,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "new-testament.html",
+      "ext": ".html",
+      "size": 6817,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "10 external URL(s)",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "withagen-wwii.html",
+      "ext": ".html",
+      "size": 13106,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "20 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_35.md",
+      "ext": ".md",
+      "size": 504,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "alphen-before-alphen.css",
+      "ext": ".css",
+      "size": 7870,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_45.md",
+      "ext": ".md",
+      "size": 674,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_12_0.md",
+      "ext": ".md",
+      "size": 872,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "ter-brake-cadastral-investigation.html",
+      "ext": ".html",
+      "size": 17564,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "9 external URL(s)"
+      ]
+    },
+    {
+      "path": "sacred-book.js",
+      "ext": ".js",
+      "size": 3272,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "humanitarian-day-memory.html",
+      "ext": ".html",
+      "size": 15953,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "3 external URL(s)"
+      ]
+    },
+    {
+      "path": "origin-reader.html",
+      "ext": ".html",
+      "size": 2363,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_28.md",
+      "ext": ".md",
+      "size": 1044,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_12_0.md",
+      "ext": ".md",
+      "size": 338,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "witness-stream.html",
+      "ext": ".html",
+      "size": 1969,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "deploy-marker.json",
+      "ext": ".json",
+      "size": 168,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "luria-vital-redemption.html",
+      "ext": ".html",
+      "size": 4567,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "scientific-revolutions-reader.html",
+      "ext": ".html",
+      "size": 2496,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "_headers",
+      "ext": "",
+      "size": 316,
+      "status": "REVIEW",
+      "rationale": [
+        "unclassified file type"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_62.md",
+      "ext": ".md",
+      "size": 813,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_22.md",
+      "ext": ".md",
+      "size": 273,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_36.md",
+      "ext": ".md",
+      "size": 664,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "chosen-falsification.html",
+      "ext": ".html",
+      "size": 9296,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "5 external URL(s)"
+      ]
+    },
+    {
+      "path": "witness-i18n.json",
+      "ext": ".json",
+      "size": 36313,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "license-marker:MIT",
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_116.md",
+      "ext": ".md",
+      "size": 853,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_113.md",
+      "ext": ".md",
+      "size": 704,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "polleke-mummy-cat.html",
+      "ext": ".html",
+      "size": 11020,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "10 external URL(s)"
+      ]
+    },
+    {
+      "path": "memory.html",
+      "ext": ".html",
+      "size": 5128,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_13_0.md",
+      "ext": ".md",
+      "size": 769,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "luxdot-research-standard.schema.json",
+      "ext": ".json",
+      "size": 3445,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_4_2.md",
+      "ext": ".md",
+      "size": 281,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "scripture-reader-v43108.css",
+      "ext": ".css",
+      "size": 2014,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "witness.html",
+      "ext": ".html",
+      "size": 8051,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "3 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_102.md",
+      "ext": ".md",
+      "size": 620,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "license-marker:CC",
+        "local text/code; no external URL detected",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_114.md",
+      "ext": ".md",
+      "size": 576,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "memory.js",
+      "ext": ".js",
+      "size": 44753,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_14_13.md",
+      "ext": ".md",
+      "size": 380,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "source-reader.js",
+      "ext": ".js",
+      "size": 1180,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "site-shell.js",
+      "ext": ".js",
+      "size": 14676,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "luxdot-ui-lock.css",
+      "ext": ".css",
+      "size": 13135,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v2_9_5.md",
+      "ext": ".md",
+      "size": 2166,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "praxis.html",
+      "ext": ".html",
+      "size": 3542,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "research-dossier.css",
+      "ext": ".css",
+      "size": 1732,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_99_LANGUAGE_CORE_REPAIR.md",
+      "ext": ".md",
+      "size": 1738,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_65.md",
+      "ext": ".md",
+      "size": 560,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "laws-principles.css",
+      "ext": ".css",
+      "size": 3805,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "VERSION_MEMORY_SYMBOLS.txt",
+      "ext": ".txt",
+      "size": 7,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "I18N_COVERAGE_v4_3_115.md",
+      "ext": ".md",
+      "size": 1165,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "urania-nassau.html",
+      "ext": ".html",
+      "size": 30803,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "12 external URL(s)"
+      ]
+    },
+    {
+      "path": "humanity.js",
+      "ext": ".js",
+      "size": 8252,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "savior-atlas.html",
+      "ext": ".html",
+      "size": 13028,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_84.md",
+      "ext": ".md",
+      "size": 19,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "joseph-karo.html",
+      "ext": ".html",
+      "size": 6276,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "laws-principles-i18n.js",
+      "ext": ".js",
+      "size": 9672,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "safed-kabbalah-messianism.html",
+      "ext": ".html",
+      "size": 5821,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_6_0.md",
+      "ext": ".md",
+      "size": 151,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_92.md",
+      "ext": ".md",
+      "size": 730,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_84.md",
+      "ext": ".md",
+      "size": 661,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v2_9_1.md",
+      "ext": ".md",
+      "size": 1404,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "ARABIC_MASTER_v2_9_1.md",
+      "ext": ".md",
+      "size": 4037,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "hoogstraten.html",
+      "ext": ".html",
+      "size": 23805,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "14 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_23.md",
+      "ext": ".md",
+      "size": 661,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_8.md",
+      "ext": ".md",
+      "size": 791,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_122.md",
+      "ext": ".md",
+      "size": 215,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "reiderland-i18n.js",
+      "ext": ".js",
+      "size": 33532,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "18 external URL(s)",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "quran.html",
+      "ext": ".html",
+      "size": 4186,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "ghouta-chemical-memory.html",
+      "ext": ".html",
+      "size": 20971,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "7 external URL(s)"
+      ]
+    },
+    {
+      "path": "oosterhout-1422-people-land.html",
+      "ext": ".html",
+      "size": 11981,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "3 external URL(s)"
+      ]
+    },
+    {
+      "path": "guardian-benefactor-i18n.js",
+      "ext": ".js",
+      "size": 10746,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "memory-invite.js",
+      "ext": ".js",
+      "size": 1006,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "west-brabant-family-memory-network.html",
+      "ext": ".html",
+      "size": 15771,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "30 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_14.md",
+      "ext": ".md",
+      "size": 1247,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "humanity.css",
+      "ext": ".css",
+      "size": 3579,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "withagen-research.css",
+      "ext": ".css",
+      "size": 2555,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "sacred-25km-atlas.js",
+      "ext": ".js",
+      "size": 933,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "luxdot-charter.html",
+      "ext": ".html",
+      "size": 3438,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_90.md",
+      "ext": ".md",
+      "size": 623,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "radio-syrian-day-schedule.json",
+      "ext": ".json",
+      "size": 418,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_12.md",
+      "ext": ".md",
+      "size": 612,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_7.md",
+      "ext": ".md",
+      "size": 1063,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_115.md",
+      "ext": ".md",
+      "size": 841,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_5.md",
+      "ext": ".md",
+      "size": 627,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "chaam-deep-history.html",
+      "ext": ".html",
+      "size": 26939,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "26 external URL(s)"
+      ]
+    },
+    {
+      "path": "jewish-research.css",
+      "ext": ".css",
+      "size": 2424,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "luxdot-method-lab.html",
+      "ext": ".html",
+      "size": 5547,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_26.md",
+      "ext": ".md",
+      "size": 379,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "arabic-surface-v4160.js",
+      "ext": ".js",
+      "size": 3525,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "brother-roger-memory.html",
+      "ext": ".html",
+      "size": 6935,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "LOCAL_MEMORY_IMAGE_MANIFEST_v2_9_7.md",
+      "ext": ".md",
+      "size": 1173,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_14_14.md",
+      "ext": ".md",
+      "size": 534,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_31_RESEARCH_SKY.md",
+      "ext": ".md",
+      "size": 567,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "WITNESS_PRIVACY_AND_EDITORIAL_PROTOCOL.md",
+      "ext": ".md",
+      "size": 1099,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "luxdot-research-standard-preview.js",
+      "ext": ".js",
+      "size": 1490,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "memory-invite.css",
+      "ext": ".css",
+      "size": 2582,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "abraham-maimonides-sufi-bridge.html",
+      "ext": ".html",
+      "size": 6576,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "templar-land-chain.html",
+      "ext": ".html",
+      "size": 10184,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "3 external URL(s)"
+      ]
+    },
+    {
+      "path": "mahdi-matrix.html",
+      "ext": ".html",
+      "size": 12349,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "6 external URL(s)"
+      ]
+    },
+    {
+      "path": "erasmus.html",
+      "ext": ".html",
+      "size": 7216,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "van-velthoven-grote-kerk.html",
+      "ext": ".html",
+      "size": 9157,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "15 external URL(s)"
+      ]
+    },
+    {
+      "path": "sephardic-continuity-ovadia-yitzhak.html",
+      "ext": ".html",
+      "size": 7066,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_14_16.md",
+      "ext": ".md",
+      "size": 189,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_55.md",
+      "ext": ".md",
+      "size": 640,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "erasmus.js",
+      "ext": ".js",
+      "size": 45471,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "13 external URL(s)"
+      ]
+    },
+    {
+      "path": "primbon-java.html",
+      "ext": ".html",
+      "size": 6497,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "pulse-methodology.html",
+      "ext": ".html",
+      "size": 4240,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_5_0.md",
+      "ext": ".md",
+      "size": 234,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "javanese-texts.html",
+      "ext": ".html",
+      "size": 6447,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "radio.html",
+      "ext": ".html",
+      "size": 21503,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "license-marker:CC",
+        "3 external URL(s)",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "research-graph.css",
+      "ext": ".css",
+      "size": 12672,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v2_9_5.md",
+      "ext": ".md",
+      "size": 1061,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "research-manifest.json",
+      "ext": ".json",
+      "size": 85680,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_124.md",
+      "ext": ".md",
+      "size": 387,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "totalitarian-victims-memory.html",
+      "ext": ".html",
+      "size": 12932,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "3 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_14_1.md",
+      "ext": ".md",
+      "size": 727,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_13.md",
+      "ext": ".md",
+      "size": 399,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_87.md",
+      "ext": ".md",
+      "size": 675,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_74.md",
+      "ext": ".md",
+      "size": 715,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "yitzhak-yosef.html",
+      "ext": ".html",
+      "size": 6265,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "license-marker:CC",
+        "3 external URL(s)"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_98_HEBREW_ACTIVATION_QA.md",
+      "ext": ".md",
+      "size": 1053,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "research-media.js",
+      "ext": ".js",
+      "size": 2180,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "luxdot-method.html",
+      "ext": ".html",
+      "size": 8837,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "erasmus.css",
+      "ext": ".css",
+      "size": 13072,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "chaam-genealogy.js",
+      "ext": ".js",
+      "size": 7859,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "name-date-matrix.html",
+      "ext": ".html",
+      "size": 23658,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "15 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_103.md",
+      "ext": ".md",
+      "size": 742,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "withagen-family.html",
+      "ext": ".html",
+      "size": 12707,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "20 external URL(s)"
+      ]
+    },
+    {
+      "path": "paulina-withagen-rescue.html",
+      "ext": ".html",
+      "size": 10875,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "10 external URL(s)"
+      ]
+    },
+    {
+      "path": "christian-apocalyptic-numbers-newton.html",
+      "ext": ".html",
+      "size": 4676,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "3 external URL(s)"
+      ]
+    },
+    {
+      "path": "memory-data.js",
+      "ext": ".js",
+      "size": 28624,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "39 external URL(s)"
+      ]
+    },
+    {
+      "path": "templars-master.html",
+      "ext": ".html",
+      "size": 10900,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "adhan-clock.js",
+      "ext": ".js",
+      "size": 2559,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "jochem-van-velthoven.html",
+      "ext": ".html",
+      "size": 19633,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "25 external URL(s)"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v2_9_6.md",
+      "ext": ".md",
+      "size": 438,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "language-core.js",
+      "ext": ".js",
+      "size": 6287,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "dao.html",
+      "ext": ".html",
+      "size": 8631,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "QA_REPORT_v4_15_0.md",
+      "ext": ".md",
+      "size": 587,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_125.md",
+      "ext": ".md",
+      "size": 632,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "projects.html",
+      "ext": ".html",
+      "size": 32146,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "kojiki.html",
+      "ext": ".html",
+      "size": 9533,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_13_0.md",
+      "ext": ".md",
+      "size": 798,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_77.md",
+      "ext": ".md",
+      "size": 1389,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_47.md",
+      "ext": ".md",
+      "size": 722,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_124.md",
+      "ext": ".md",
+      "size": 609,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_14_7.md",
+      "ext": ".md",
+      "size": 857,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "adhan-radio.js",
+      "ext": ".js",
+      "size": 408,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_123.md",
+      "ext": ".md",
+      "size": 598,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_4_1.md",
+      "ext": ".md",
+      "size": 69,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "savior-deepening-i18n.js",
+      "ext": ".js",
+      "size": 17453,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "4 external URL(s)"
+      ]
+    },
+    {
+      "path": "DOCUMENT_REGISTRY.md",
+      "ext": ".md",
+      "size": 4486,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "QA_FILE_MANIFEST_v2_9_4.txt",
+      "ext": ".txt",
+      "size": 3564,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "research-views-v3.js",
+      "ext": ".js",
+      "size": 8924,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "maimonides-messiah-test.html",
+      "ext": ".html",
+      "size": 8284,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "4 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_1_0.md",
+      "ext": ".md",
+      "size": 1393,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "republic-reader.html",
+      "ext": ".html",
+      "size": 2460,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_5_1.md",
+      "ext": ".md",
+      "size": 91,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_110.md",
+      "ext": ".md",
+      "size": 391,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "jewish-research-center.html",
+      "ext": ".html",
+      "size": 7172,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "3 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_4_1.md",
+      "ext": ".md",
+      "size": 361,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_2.md",
+      "ext": ".md",
+      "size": 1509,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "hikma-reader.js",
+      "ext": ".js",
+      "size": 8587,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "java-script.html",
+      "ext": ".html",
+      "size": 64314,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "33 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_56.md",
+      "ext": ".md",
+      "size": 822,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "messianic-method-comparison.html",
+      "ext": ".html",
+      "size": 4299,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_21.md",
+      "ext": ".md",
+      "size": 602,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "totalitarianism-reader.html",
+      "ext": ".html",
+      "size": 2606,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "jansen-de-koning-network.html",
+      "ext": ".html",
+      "size": 32700,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "20 external URL(s)"
+      ]
+    },
+    {
+      "path": "talmud-messiah.html",
+      "ext": ".html",
+      "size": 5825,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "scripture-reader-v43108.js",
+      "ext": ".js",
+      "size": 3518,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_31_1_RESEARCH_SKY.md",
+      "ext": ".md",
+      "size": 1061,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_31.md",
+      "ext": ".md",
+      "size": 872,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "styles.css",
+      "ext": ".css",
+      "size": 42621,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "faith.html",
+      "ext": ".html",
+      "size": 7941,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "media-news.css",
+      "ext": ".css",
+      "size": 5625,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_2_0.md",
+      "ext": ".md",
+      "size": 1651,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_0_0.md",
+      "ext": ".md",
+      "size": 862,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_7.md",
+      "ext": ".md",
+      "size": 1023,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_97.md",
+      "ext": ".md",
+      "size": 886,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_46.md",
+      "ext": ".md",
+      "size": 664,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_67.md",
+      "ext": ".md",
+      "size": 1046,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_70.md",
+      "ext": ".md",
+      "size": 963,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_111.md",
+      "ext": ".md",
+      "size": 788,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "prince-claus-bridge.html",
+      "ext": ".html",
+      "size": 24597,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "license-marker:CC",
+        "23 external URL(s)",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_42.md",
+      "ext": ".md",
+      "size": 206,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "red-heifer.html",
+      "ext": ".html",
+      "size": 2143,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "site-quality.js",
+      "ext": ".js",
+      "size": 1824,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_75.md",
+      "ext": ".md",
+      "size": 549,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_66.md",
+      "ext": ".md",
+      "size": 618,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "praxis.css",
+      "ext": ".css",
+      "size": 3226,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_76.md",
+      "ext": ".md",
+      "size": 471,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "senses-of-knowledge.css",
+      "ext": ".css",
+      "size": 1807,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v2_9_6.md",
+      "ext": ".md",
+      "size": 890,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_24.md",
+      "ext": ".md",
+      "size": 753,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_15_0.md",
+      "ext": ".md",
+      "size": 588,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "abulafia-comparative-lab.html",
+      "ext": ".html",
+      "size": 4721,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_70_REIDERLAND_MEDIA_MAP.md",
+      "ext": ".md",
+      "size": 734,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_4_0.md",
+      "ext": ".md",
+      "size": 722,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_51.md",
+      "ext": ".md",
+      "size": 711,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "karo-decision-method.html",
+      "ext": ".html",
+      "size": 6679,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "3 external URL(s)"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v3_0_0.md",
+      "ext": ".md",
+      "size": 1149,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "withagen-chaam-toponym.html",
+      "ext": ".html",
+      "size": 10499,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "10 external URL(s)"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_11.md",
+      "ext": ".md",
+      "size": 1781,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_81.md",
+      "ext": ".md",
+      "size": 518,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "TEST_REPORT_v4_3_85.md",
+      "ext": ".md",
+      "size": 461,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "chaam-sacred-memory.html",
+      "ext": ".html",
+      "size": 15558,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "18 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_54.md",
+      "ext": ".md",
+      "size": 517,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_85.md",
+      "ext": ".md",
+      "size": 953,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "ARABIC_SURFACE_AUDIT_v4_16_0.md",
+      "ext": ".md",
+      "size": 5181,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "research.html",
+      "ext": ".html",
+      "size": 20313,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "compat.css",
+      "ext": ".css",
+      "size": 2575,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_0.md",
+      "ext": ".md",
+      "size": 2240,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "prewriting-history.html",
+      "ext": ".html",
+      "size": 2033,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "ter-brake-power-network.html",
+      "ext": ".html",
+      "size": 28038,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "9 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_10_0.md",
+      "ext": ".md",
+      "size": 584,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "luxdot-radio.js",
+      "ext": ".js",
+      "size": 20695,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "license-marker:CC",
+        "3 external URL(s)",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_63.md",
+      "ext": ".md",
+      "size": 1105,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v2_9_7.md",
+      "ext": ".md",
+      "size": 757,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "kees-van-wanrooij.html",
+      "ext": ".html",
+      "size": 17540,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "11 external URL(s)"
+      ]
+    },
+    {
+      "path": "audio-library.html",
+      "ext": ".html",
+      "size": 4811,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_110.md",
+      "ext": ".md",
+      "size": 449,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "tongerlo-fourteen-churches.html",
+      "ext": ".html",
+      "size": 24666,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "16 external URL(s)"
+      ]
+    },
+    {
+      "path": "CHANGELOG_v4_3_25.md",
+      "ext": ".md",
+      "size": 807,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "research/shaam-breda.html",
+      "ext": ".html",
+      "size": 1262,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "research/circle-of-care-live-map.js",
+      "ext": ".js",
+      "size": 16001,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "research/circle-of-care-25km-original.html",
+      "ext": ".html",
+      "size": 53292,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "72 external URL(s)"
+      ]
+    },
+    {
+      "path": "research/circle-of-care.js",
+      "ext": ".js",
+      "size": 8014,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "research/research.css",
+      "ext": ".css",
+      "size": 9289,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "research/global-savior-atlas.html",
+      "ext": ".html",
+      "size": 1260,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "research/research.js",
+      "ext": ".js",
+      "size": 23467,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "23 external URL(s)",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "research/savior-investigation.css",
+      "ext": ".css",
+      "size": 2641,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "assets/druze-hikma-manuscript.jpg",
+      "ext": ".jpg",
+      "size": 530794,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/hallaj-execution-mughal.webp",
+      "ext": ".webp",
+      "size": 666122,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/druze-mithaq-wali-zaman.jpg",
+      "ext": ".jpg",
+      "size": 465799,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/reiderland-map-1842.jpg",
+      "ext": ".jpg",
+      "size": 807183,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/al-hakim-mosque-cairo.jpg",
+      "ext": ".jpg",
+      "size": 957991,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "tools/qa_arabic_master.py",
+      "ext": ".py",
+      "size": 1444,
+      "status": "REVIEW",
+      "rationale": [
+        "unclassified file type"
+      ]
+    },
+    {
+      "path": "data/daily-identity.json",
+      "ext": ".json",
+      "size": 1159,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "data/luxdot-calendar-2026.json",
+      "ext": ".json",
+      "size": 280102,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "62 external URL(s)",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "data/research-media.json",
+      "ext": ".json",
+      "size": 18022,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "license-marker:CC",
+        "14 external URL(s)"
+      ]
+    },
+    {
+      "path": "data/i18n-coverage.json",
+      "ext": ".json",
+      "size": 32417,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "data/witness-public.json",
+      "ext": ".json",
+      "size": 3,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "data/research-taxonomy.json",
+      "ext": ".json",
+      "size": 5017,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "data/care-points.json",
+      "ext": ".json",
+      "size": 46598,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "70 external URL(s)"
+      ]
+    },
+    {
+      "path": "data/media-news.json",
+      "ext": ".json",
+      "size": 55117,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "31 external URL(s)"
+      ]
+    },
+    {
+      "path": "data/chaam-genealogy.json",
+      "ext": ".json",
+      "size": 31377,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "9 external URL(s)"
+      ]
+    },
+    {
+      "path": "data/witness-schema.json",
+      "ext": ".json",
+      "size": 2929,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "data/care-points.js",
+      "ext": ".js",
+      "size": 37798,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "70 external URL(s)"
+      ]
+    },
+    {
+      "path": "data/luxdot-timeline.json",
+      "ext": ".json",
+      "size": 2052,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "data/memory-atlas.json",
+      "ext": ".json",
+      "size": 21245,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "29 external URL(s)"
+      ]
+    },
+    {
+      "path": "data/knowledge-inventory-v4.16.3.json",
+      "ext": ".json",
+      "size": 99625,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "data/transparency-manifest.json",
+      "ext": ".json",
+      "size": 384,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "data/radio-hourly-ident.json",
+      "ext": ".json",
+      "size": 2806,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "functions/api/transparency.js",
+      "ext": ".js",
+      "size": 6605,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "docs/architecture/CURRENT_BUILD_RECONCILIATION_v4_16_2.md",
+      "ext": ".md",
+      "size": 3508,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "docs/architecture/Roadmap.md",
+      "ext": ".md",
+      "size": 1658,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "docs/architecture/Architecture.md",
+      "ext": ".md",
+      "size": 2052,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "docs/architecture/KNOWLEDGE_INVENTORY_RECONCILIATION_v4_16_3.md",
+      "ext": ".md",
+      "size": 10328,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "docs/governance/LUXDOT_COMMONS_STEWARDSHIP_POLICY_DRAFT_v0_1.md",
+      "ext": ".md",
+      "size": 5241,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "license-marker:AGPL",
+        "license-marker:CC",
+        "local text/code; no external URL detected",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "docs/governance/SOCIAL_RETURN_PLEDGE_DRAFT.md",
+      "ext": ".md",
+      "size": 798,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "assets/research-media/chaam-antonius.webp",
+      "ext": ".webp",
+      "size": 60314,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/research-media/java-manuscript.svg",
+      "ext": ".svg",
+      "size": 1002,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/research-media/passport-syrian-redacted.jpg",
+      "ext": ".jpg",
+      "size": 126355,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/research-media/kevelaer-gnadenkapelle.webp",
+      "ext": ".webp",
+      "size": 216294,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/research-media/burckhardt.webp",
+      "ext": ".webp",
+      "size": 45866,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/research-media/hoogstraten.webp",
+      "ext": ".webp",
+      "size": 69378,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/research-media/polleke.jpg",
+      "ext": ".jpg",
+      "size": 153224,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/research-media/red-heifer-timeline.svg",
+      "ext": ".svg",
+      "size": 1063,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/research-media/red-heifer.svg",
+      "ext": ".svg",
+      "size": 999,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/research-media/passport-dutch-redacted.jpg",
+      "ext": ".jpg",
+      "size": 195761,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/research-media/pet-goat-analysis.svg",
+      "ext": ".svg",
+      "size": 1032,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/research-media/chaam-ledevaert.webp",
+      "ext": ".webp",
+      "size": 135306,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/research-media/erasmus.webp",
+      "ext": ".webp",
+      "size": 71500,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/research-media/urania.jpg",
+      "ext": ".jpg",
+      "size": 1099457,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/research-media/media-stage.svg",
+      "ext": ".svg",
+      "size": 1005,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/research-media/alphen-willibrordus.webp",
+      "ext": ".webp",
+      "size": 82630,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/research-media/grote-kerk-breda.png",
+      "ext": ".png",
+      "size": 106684,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/research-media/hondsdonk.webp",
+      "ext": ".webp",
+      "size": 163328,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/research-media/java-script-grid.svg",
+      "ext": ".svg",
+      "size": 977,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers-png/fusus.png",
+      "ext": ".png",
+      "size": 17567,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers-png/muqaddimah.webp",
+      "ext": ".webp",
+      "size": 8228,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers-png/origin.png",
+      "ext": ".png",
+      "size": 21046,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers-png/totalitarianism.png",
+      "ext": ".png",
+      "size": 22104,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers-png/scientific-revolutions.webp",
+      "ext": ".webp",
+      "size": 12348,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers-png/sophies-world.webp",
+      "ext": ".webp",
+      "size": 7966,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers-png/muqaddimah.png",
+      "ext": ".png",
+      "size": 15218,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers-png/meditations.png",
+      "ext": ".png",
+      "size": 18628,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers-png/origin.webp",
+      "ext": ".webp",
+      "size": 8648,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers-png/genealogy.png",
+      "ext": ".png",
+      "size": 21797,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers-png/genealogy.webp",
+      "ext": ".webp",
+      "size": 8786,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers-png/meditations.webp",
+      "ext": ".webp",
+      "size": 7528,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers-png/scientific-revolutions.png",
+      "ext": ".png",
+      "size": 22703,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers-png/republic.png",
+      "ext": ".png",
+      "size": 16093,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers-png/totalitarianism.webp",
+      "ext": ".webp",
+      "size": 10624,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers-png/republic.webp",
+      "ext": ".webp",
+      "size": 6418,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers-png/karamazov.png",
+      "ext": ".png",
+      "size": 21253,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers-png/karamazov.webp",
+      "ext": ".webp",
+      "size": 9744,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers-png/fusus.webp",
+      "ext": ".webp",
+      "size": 7478,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers-png/sophies-world.png",
+      "ext": ".png",
+      "size": 19097,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers/meditations.svg",
+      "ext": ".svg",
+      "size": 898,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers/totalitarianism.svg",
+      "ext": ".svg",
+      "size": 890,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers/scientific-revolutions.svg",
+      "ext": ".svg",
+      "size": 905,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers/republic.svg",
+      "ext": ".svg",
+      "size": 875,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers/sophies-world.svg",
+      "ext": ".svg",
+      "size": 886,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers/origin.svg",
+      "ext": ".svg",
+      "size": 894,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers/genealogy.svg",
+      "ext": ".svg",
+      "size": 894,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers/fusus.svg",
+      "ext": ".svg",
+      "size": 899,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers/karamazov.svg",
+      "ext": ".svg",
+      "size": 911,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/book-covers/muqaddimah.svg",
+      "ext": ".svg",
+      "size": 876,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/reiderland/kees.jpg",
+      "ext": ".jpg",
+      "size": 102755,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/reiderland/anton.jpg",
+      "ext": ".jpg",
+      "size": 160640,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/reiderland/directors.jpg",
+      "ext": ".jpg",
+      "size": 128735,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/jewish-research/maimonides.jpg",
+      "ext": ".jpg",
+      "size": 353383,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/jewish-research/joseph-karo.jpg",
+      "ext": ".jpg",
+      "size": 1028997,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/jewish-research/ovadia-yosef.jpg",
+      "ext": ".jpg",
+      "size": 59767,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/jewish-research/yitzhak-yosef.jpg",
+      "ext": ".jpg",
+      "size": 182156,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/images/urania-goltzius.jpg",
+      "ext": ".jpg",
+      "size": 3021882,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/thumbs/projects.svg",
+      "ext": ".svg",
+      "size": 457,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/thumbs/nusantara.svg",
+      "ext": ".svg",
+      "size": 460,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/thumbs/research.svg",
+      "ext": ".svg",
+      "size": 468,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/thumbs/event.svg",
+      "ext": ".svg",
+      "size": 462,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/thumbs/person.svg",
+      "ext": ".svg",
+      "size": 470,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/thumbs/place.svg",
+      "ext": ".svg",
+      "size": 513,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/thumbs/faith.svg",
+      "ext": ".svg",
+      "size": 448,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/thumbs/memory.svg",
+      "ext": ".svg",
+      "size": 486,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/thumbs/library.svg",
+      "ext": ".svg",
+      "size": 470,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/thumbs/default.svg",
+      "ext": ".svg",
+      "size": 453,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/thumbs-png/faith.png",
+      "ext": ".png",
+      "size": 13757,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/thumbs-png/projects.png",
+      "ext": ".png",
+      "size": 13137,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/thumbs-png/nusantara.png",
+      "ext": ".png",
+      "size": 12992,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/thumbs-png/person.png",
+      "ext": ".png",
+      "size": 13530,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/thumbs-png/place.png",
+      "ext": ".png",
+      "size": 19601,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/thumbs-png/event.png",
+      "ext": ".png",
+      "size": 14479,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/thumbs-png/research.png",
+      "ext": ".png",
+      "size": 11986,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/thumbs-png/memory.png",
+      "ext": ".png",
+      "size": 15029,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/thumbs-png/library.png",
+      "ext": ".png",
+      "size": 14834,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/thumbs-png/default.png",
+      "ext": ".png",
+      "size": 14525,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/audio/ghouta-silence-60s.wav",
+      "ext": ".wav",
+      "size": 480044,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/audio/ADHAN_README.txt",
+      "ext": ".txt",
+      "size": 83,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected",
+        "rights/license wording detected"
+      ]
+    },
+    {
+      "path": "assets/audio/idents/station-id-en.wav",
+      "ext": ".wav",
+      "size": 272654,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/audio/idents/station-id-tr.wav",
+      "ext": ".wav",
+      "size": 262956,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/audio/idents/station-id-es.wav",
+      "ext": ".wav",
+      "size": 296304,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/audio/idents/station-id-de.wav",
+      "ext": ".wav",
+      "size": 279826,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/audio/idents/station-id-nl.wav",
+      "ext": ".wav",
+      "size": 286718,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/audio/idents/hour-strike.wav",
+      "ext": ".wav",
+      "size": 154394,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/audio/idents/README.txt",
+      "ext": ".txt",
+      "size": 488,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "assets/audio/idents/station-id-he.wav",
+      "ext": ".wav",
+      "size": 276742,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/audio/idents/station-id-fr.wav",
+      "ext": ".wav",
+      "size": 267994,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/audio/idents/station-id-jv.wav",
+      "ext": ".wav",
+      "size": 317618,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/audio/idents/luxdot-signature.wav",
+      "ext": ".wav",
+      "size": 217016,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/audio/idents/station-id-id.wav",
+      "ext": ".wav",
+      "size": 308028,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/audio/idents/station-id-ar.wav",
+      "ext": ".wav",
+      "size": 312312,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/audio/memorial/julia-ghabat-shams-alhaq.mp3",
+      "ext": ".mp3",
+      "size": 5134750,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/audio/memorial/heartbeat-song-for-syria.mp3",
+      "ext": ".mp3",
+      "size": 3403693,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/audio/memorial/heal-the-world.mp3",
+      "ext": ".mp3",
+      "size": 5957680,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/audio/memorial/sarkha-child-refugee.mp3",
+      "ext": ".mp3",
+      "size": 3552946,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/audio/memorial/one-day.mp3",
+      "ext": ".mp3",
+      "size": 5123480,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/audio/memorial/youre-not-alone-syria.mp3",
+      "ext": ".mp3",
+      "size": 5786420,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/images/research/chaam-ledevaert-cemetery.jpg",
+      "ext": ".jpg",
+      "size": 176080,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/images/memory/maximilian-kolbe.jpg",
+      "ext": ".jpg",
+      "size": 29959,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/images/memory/maximilian-kolbe-research.jpg",
+      "ext": ".jpg",
+      "size": 144404,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/images/memory/santanna-monument.jpg",
+      "ext": ".jpg",
+      "size": 543208,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/images/memory/saint-genis-memorial.jpg",
+      "ext": ".jpg",
+      "size": 2747061,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/images/memory/kolbe-niepokalanow.jpg",
+      "ext": ".jpg",
+      "size": 133852,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/images/memory/franciszek-gajowniczek.jpg",
+      "ext": ".jpg",
+      "size": 87626,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/images/memory/raffy-indies-commemoration.jpg",
+      "ext": ".jpg",
+      "size": 247883,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/images/memory/edith-stein.jpeg",
+      "ext": ".jpeg",
+      "size": 201032,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/images/memory/edith-stein-carmel.jpg",
+      "ext": ".jpg",
+      "size": 306137,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/images/memory/indonesia-proclamation-1945.jpg",
+      "ext": ".jpg",
+      "size": 308435,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/images/memory/edith-stein-echt-memorial.jpg",
+      "ext": ".jpg",
+      "size": 400231,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/images/memory/canal-hotel-2003.jpg",
+      "ext": ".jpg",
+      "size": 50415,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/images/memory/edith-stein-student.jpg",
+      "ext": ".jpg",
+      "size": 1305933,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "assets/images/research/withagen/bergen-1741-map.jpg",
+      "ext": ".jpg",
+      "size": 118206,
+      "status": "NEEDS_PROVENANCE",
+      "rationale": [
+        "binary/media asset; ownership cannot be inferred safely"
+      ]
+    },
+    {
+      "path": "research/savior/bahai.html",
+      "ext": ".html",
+      "size": 7377,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "research/savior/islam-sunni.html",
+      "ext": ".html",
+      "size": 10219,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "5 external URL(s)"
+      ]
+    },
+    {
+      "path": "research/savior/daesoon.html",
+      "ext": ".html",
+      "size": 6467,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "research/savior/javanese.html",
+      "ext": ".html",
+      "size": 6846,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "research/savior/jainism.html",
+      "ext": ".html",
+      "size": 6513,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "research/savior/secular-humanism.html",
+      "ext": ".html",
+      "size": 7083,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "research/savior/dossier-i18n.js",
+      "ext": ".js",
+      "size": 34807,
+      "status": "LIKELY_PROJECT_AUTHORED",
+      "rationale": [
+        "local text/code; no external URL detected"
+      ]
+    },
+    {
+      "path": "research/savior/buddhism.html",
+      "ext": ".html",
+      "size": 6949,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "research/savior/caodai.html",
+      "ext": ".html",
+      "size": 6569,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "research/savior/sikhism.html",
+      "ext": ".html",
+      "size": 6673,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "1 external URL(s)"
+      ]
+    },
+    {
+      "path": "research/savior/zoroastrianism.html",
+      "ext": ".html",
+      "size": 7121,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "research/savior/confucian-daoist.html",
+      "ext": ".html",
+      "size": 6888,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "research/savior/christianity.html",
+      "ext": ".html",
+      "size": 10698,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "6 external URL(s)"
+      ]
+    },
+    {
+      "path": "research/savior/islam-twelver.html",
+      "ext": ".html",
+      "size": 7287,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "research/savior/hinduism.html",
+      "ext": ".html",
+      "size": 6883,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    },
+    {
+      "path": "research/savior/judaism.html",
+      "ext": ".html",
+      "size": 7113,
+      "status": "REVIEW_EXTERNAL_REFERENCES",
+      "rationale": [
+        "2 external URL(s)"
+      ]
+    }
+  ]
+}
