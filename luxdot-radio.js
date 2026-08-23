@@ -5,6 +5,7 @@ const commonsFile=n=>'https://commons.wikimedia.org/wiki/Special:Redirect/file/'
 const TZ='Asia/Damascus';
 const audio=new Audio(); audio.preload='auto'; audio.crossOrigin='anonymous';
 let userOn=localStorage.getItem('luxdot.radio.on')==='1', current=null, sacredLock=false, identBusy=false, prayerBusy=false;
+let consecutiveErrors=0,lastErrorAt=0;
 let prayerTimes=null, prayerDate='', lastPrayerKey='', lastIdentKey='';
 
 const CATALOG=[
@@ -133,8 +134,9 @@ function toggle(){
  if(userOn){if(!current)next();else audio.play().catch(()=>{});}else audio.pause();
  updateDock();emit();
 }
-audio.onended=()=>{sacredLock=false;if(pendingPrayer)playPrayer(pendingPrayer,true);else next()};
-audio.onerror=()=>{sacredLock=false;setTimeout(next,900)};
+audio.onended=()=>{consecutiveErrors=0;sacredLock=false;if(pendingPrayer)playPrayer(pendingPrayer,true);else next()};
+audio.onplaying=()=>{consecutiveErrors=0;updateDock();emit()};
+audio.onerror=()=>{sacredLock=false;const now=Date.now();if(now-lastErrorAt<7000)consecutiveErrors++;else consecutiveErrors=1;lastErrorAt=now;if(consecutiveErrors>=3){userOn=false;localStorage.setItem('luxdot.radio.on','0');setStatus('تعذر تحميل الصوت بعد عدة محاولات. اضغط ▶ للمحاولة مجددًا · Tap ▶ to retry.');updateDock();return}setStatus('إعادة محاولة مصدر الصوت…');setTimeout(next,6500)};
 
 function speak(text,lang){
  return new Promise(resolve=>{
@@ -217,6 +219,8 @@ function week(){
 function sync(force=false){if(force||!current)next();else updateDock();emit()}
 function getStatus(){return audio.paused?'جاهز · Ready':'يبث الآن من الشام · LIVE from Chaam'}
 
+function installAudioUnlock(){const unlock=()=>{if(userOn&&current&&audio.paused)audio.play().catch(()=>{});document.removeEventListener('pointerdown',unlock,true);document.removeEventListener('keydown',unlock,true)};document.addEventListener('pointerdown',unlock,true);document.addEventListener('keydown',unlock,true)}
+installAudioUnlock();
 window.LuxDotRadio={TRACKS:Object.fromEntries(CATALOG.map(x=>[x.id,x])),CATALOG,LICENSED_SLOTS,live,next24,week,audio,toggle,sync,hourlyIdent,fetchPrayers,getStatus};
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>{ensureDock();sync(false);fetchPrayers();setInterval(tick,15000)});else{ensureDock();sync(false);fetchPrayers();setInterval(tick,15000)}
 })();

@@ -3085,5 +3085,89 @@
         "title": "Correction Gateway"
       }
     ]
+  },
+  "linguistics-galaxy.html": {
+    "id": "linguistics-galaxy.html",
+    "title": "مجرة اللسانيات وعلوم اللغة",
+    "confidence": "B",
+    "review_status": "new-v4.18.0",
+    "related": [
+      {
+        "id": "science-galaxy.html",
+        "title": "مجرة العلوم"
+      }
+    ]
+  },
+  "human-writing-geometry-atlas.html": {
+    "id": "human-writing-geometry-atlas.html",
+    "title": "أطلس هندسة الكتابة البشرية",
+    "confidence": "B",
+    "review_status": "new-v4.18.0",
+    "related": [
+      {
+        "id": "science-galaxy.html",
+        "title": "مجرة العلوم"
+      }
+    ]
+  },
+  "chomsky-language-mind.html": {
+    "id": "chomsky-language-mind.html",
+    "title": "تشومسكي — اللغة والعقل",
+    "confidence": "B",
+    "review_status": "new-v4.18.0",
+    "related": [
+      {
+        "id": "science-galaxy.html",
+        "title": "مجرة العلوم"
+      }
+    ]
+  },
+  "phonetics-phonology.html": {
+    "id": "phonetics-phonology.html",
+    "title": "الصوت — Phonetics & Phonology",
+    "confidence": "B",
+    "review_status": "new-v4.18.0",
+    "related": [
+      {
+        "id": "science-galaxy.html",
+        "title": "مجرة العلوم"
+      }
+    ]
+  },
+  "language-structure.html": {
+    "id": "language-structure.html",
+    "title": "بنية اللغة",
+    "confidence": "B",
+    "review_status": "new-v4.18.0",
+    "related": [
+      {
+        "id": "science-galaxy.html",
+        "title": "مجرة العلوم"
+      }
+    ]
+  },
+  "language-genealogy.html": {
+    "id": "language-genealogy.html",
+    "title": "تاريخ اللغات وعائلاتها",
+    "confidence": "B",
+    "review_status": "new-v4.18.0",
+    "related": [
+      {
+        "id": "science-galaxy.html",
+        "title": "مجرة العلوم"
+      }
+    ]
+  },
+  "luxdot-harmonic-typography.html": {
+    "id": "luxdot-harmonic-typography.html",
+    "title": "LuxDot Harmonic Typography",
+    "confidence": "B",
+    "review_status": "new-v4.18.0",
+    "related": [
+      {
+        "id": "science-galaxy.html",
+        "title": "مجرة العلوم"
+      }
+    ]
   }
 }

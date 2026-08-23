@@ -32,6 +32,7 @@ const PLANNED=[
 const v=document.getElementById('luxdotTvVideo'),img=document.getElementById('luxdotTvImage'),title=document.getElementById('tvNowTitle'),credit=document.getElementById('tvCredit');
 if(!v||!img)return;
 let i=Number(localStorage.getItem('luxdot.tv.index')||0)%SCENES.length,timer=null,lastAudio=null;
+let sceneStarted=0,lastSyncAt=0,errorStreak=0;const MIN_SCENE_MS=45000,IMAGE_SCENE_MS=70000,ERROR_RETRY_MS=9000;
 function radioProfile(s){
  const t=((s?.track?.title||'')+' '+(s?.track?.artist||'')+' '+(s?.program?.name||'')).toLowerCase();
  if(s?.sacredLock||/قرآن|quran|adhan|أذان|sacred|منشاوي/.test(t))return {tags:['sacred','quiet','dawn','night','petra','spiritual'],energy:0};
@@ -56,18 +57,15 @@ function paint(x){
  const link=document.getElementById('tvResearchLink');if(link){link.hidden=!x.research;if(x.research)link.href=x.research}
 }
 function load(n=i){
- clearTimeout(timer);i=(n+SCENES.length)%SCENES.length;localStorage.setItem('luxdot.tv.index',i);
+ clearTimeout(timer);sceneStarted=Date.now();i=(n+SCENES.length)%SCENES.length;localStorage.setItem('luxdot.tv.index',i);
  const x=SCENES[i],hist=JSON.parse(localStorage.getItem('luxdot.tv.history')||'{}');hist[x.id]=Date.now();localStorage.setItem('luxdot.tv.history',JSON.stringify(hist));
  v.pause();v.removeAttribute('src');v.style.display='none';img.style.display='none';img.classList.remove('kenburns');
  if(x.kind==='video'){v.style.display='block';v.src=x.src;v.load();v.play().catch(()=>{});}
- else{img.style.display='block';img.src=x.src;requestAnimationFrame(()=>img.classList.add('kenburns'));timer=setTimeout(()=>syncToRadio(true),52000);}
+ else{img.style.display='block';img.src=x.src;requestAnimationFrame(()=>img.classList.add('kenburns'));timer=setTimeout(()=>syncToRadio(true),IMAGE_SCENE_MS);}
  paint(x);
 }
-function syncToRadio(force=false){
- const s=window.LuxDotRadio?.live?.()||null,p=radioProfile(s),n=choose(p);
- if(force||n!==i)load(n);
-}
-v.addEventListener('ended',()=>syncToRadio(true));v.addEventListener('error',()=>setTimeout(()=>syncToRadio(true),1200));img.addEventListener('error',()=>setTimeout(()=>syncToRadio(true),1200));
+function syncToRadio(force=false){const now=Date.now(),state=window.LuxDotRadio?.live?.()||null,p=radioProfile(state),n=choose(p);if(!force&&now-sceneStarted<MIN_SCENE_MS)return;if(now-lastSyncAt<2500)return;lastSyncAt=now;if(force||n!==i)load(n)}
+v.muted=true;v.volume=0;v.addEventListener('playing',()=>{errorStreak=0});v.addEventListener('ended',()=>syncToRadio(true));v.addEventListener('error',()=>{errorStreak++;setTimeout(()=>{if(errorStreak<4)syncToRadio(true);else{errorStreak=0;load(SCENES.findIndex(x=>x.id==='night'))}},ERROR_RETRY_MS)});img.addEventListener('error',()=>setTimeout(()=>load(SCENES.findIndex(x=>x.id==='night')),ERROR_RETRY_MS));
 document.getElementById('tvPlay').onclick=()=>{if(SCENES[i].kind==='video')v.paused?v.play():v.pause()};
 document.getElementById('tvNext').onclick=()=>syncToRadio(true);
 document.getElementById('tvFull').onclick=()=>document.querySelector('.tv-frame')?.requestFullscreen?.();
@@ -75,7 +73,7 @@ document.getElementById('tvRadio').onclick=()=>{if(window.LuxDotRadio)LuxDotRadi
 document.querySelectorAll('[data-tv-item]').forEach(b=>b.onclick=()=>load(SCENES.findIndex(x=>x.id===b.dataset.tvItem)));
 document.addEventListener('luxdotradio',e=>{
  const s=e.detail||{},el=document.getElementById('tvRadioNow');if(el&&s.track)el.textContent=`إذاعة نقطة نور · ${s.track.title} · ${s.track.artist}`;
- const key=(s.track?.id||'')+'|'+(s.program?.name||'');if(key!==lastAudio){lastAudio=key;syncToRadio(false)}
+ const key=(s.track?.id||'')+'|'+(s.program?.name||'');if(key!==lastAudio){lastAudio=key;if(Date.now()-sceneStarted>=MIN_SCENE_MS)syncToRadio(false)}
 });
 load(i);setTimeout(()=>syncToRadio(false),700);
 window.LuxDotTV={SCENES,PLANNED,load,syncToRadio};

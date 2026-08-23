@@ -1,6 +1,6 @@
 {
   "product": "LuxDot",
-  "version": "4.17.4",
+  "version": "4.18.0",
   "build_time": "2026-08-23T12:21:00+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
@@ -132,5 +132,8 @@
   "header_media": "Radio + TV persistent nav",
   "focus": "knowledge architecture audit + living context + news pulse + report print system",
   "challenge_layer": "universal claim correction + troubleshooting",
-  "open_knowledge": "covenant v1"
+  "open_knowledge": "covenant v1",
+  "linguistics": "major galaxy",
+  "media_stability": "radio backoff + audio unlock + TV scene hold",
+  "calendar": "Aug 24/25/28 contextual layers"
 }
