@@ -37,8 +37,8 @@ function addButtons(){
    if(el.querySelector(':scope > .lux-challenge-btn'))return;
    const text=cleanText(el),id='claim-'+hash(location.pathname+'|'+text);
    if(!el.id)el.id=id;
-   const b=document.createElement('button');b.type='button';b.className='lux-challenge-btn';b.textContent='? '+t.btn;
-   b.setAttribute('aria-label',t.btn);b.dataset.claim=text;b.dataset.anchor=el.id;
+   const b=document.createElement('button');b.type='button';b.className='lux-challenge-btn';b.textContent='⚑';
+   b.setAttribute('aria-label',t.btn);b.setAttribute('title',t.btn);b.dataset.claim=text;b.dataset.anchor=el.id;
    b.addEventListener('click',e=>{e.stopPropagation();openModal(b.dataset.claim,b.dataset.anchor)});
    el.appendChild(b);
  });

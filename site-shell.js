@@ -150,3 +150,16 @@ window.addEventListener('resize',()=>{let h=d.querySelector('.lux-header-43108')
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',add);else add();
 })();
+
+
+// v4.18.2 Symbol-first UI
+(function(){
+ try{
+  if(!document.querySelector('link[href*="luxdot-symbol-ui.css"]')){
+   const l=document.createElement('link');l.rel='stylesheet';l.href='luxdot-symbol-ui.css?v=4182';document.head.appendChild(l);
+  }
+  if(!document.querySelector('script[src*="luxdot-symbol-ui.js"]')){
+   const sc=document.createElement('script');sc.src='luxdot-symbol-ui.js?v=4182';sc.defer=true;document.head.appendChild(sc);
+  }
+ }catch(e){console.warn('symbol-ui',e)}
+})();

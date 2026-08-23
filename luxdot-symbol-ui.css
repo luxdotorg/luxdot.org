@@ -1,0 +1,23 @@
+
+/* LuxDot v4.18.2 — Symbol First UI */
+.lux-main-nav,.lux-symbol-utility-strip{overflow:visible!important}
+.lux-symbol-nav{position:relative!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ min-width:36px!important;height:36px!important;padding:0 8px!important;border:1px solid rgba(160,190,166,.22)!important;
+ border-radius:999px!important;background:rgba(3,12,7,.56)!important;text-decoration:none!important;color:#dce9df!important}
+.lux-symbol-nav:hover,.lux-symbol-nav:focus-visible{border-color:#d7c168!important;color:#fff2a9!important;outline:none!important}
+.lux-symbol-glyph{font:600 20px/1 "Segoe UI Symbol","Noto Sans Symbols 2","Arial Unicode MS",sans-serif!important;display:block!important}
+.lux-symbol-tooltip{position:absolute;z-index:10040;left:50%;top:calc(100% + 9px);transform:translateX(-50%) translateY(-3px);
+ opacity:0;pointer-events:none;min-width:145px;max-width:220px;padding:8px 10px;border:1px solid #36543f;border-radius:10px;
+ background:#041008f2;color:#edf6ef;text-align:center;box-shadow:0 10px 34px #0009;transition:.14s ease;white-space:normal}
+.lux-symbol-tooltip b{display:block;font:700 .76rem/1.5 "Noto Kufi Arabic","Segoe UI",sans-serif;color:#e2cc74}
+.lux-symbol-tooltip small{display:block;font:.66rem/1.45 "Noto Kufi Arabic","Segoe UI",sans-serif;color:#a8b9ad;margin-top:2px}
+.lux-symbol-nav:hover .lux-symbol-tooltip,.lux-symbol-nav:focus-visible .lux-symbol-tooltip{opacity:1;transform:translateX(-50%) translateY(0)}
+.lux-symbol-utility-strip{display:flex;gap:6px;align-items:center;justify-content:center;padding:5px 8px}
+.lux-symbol-utility-strip .lux-symbol-nav{min-width:31px!important;width:31px!important;height:31px!important;padding:0!important}
+.lux-symbol-utility-strip .lux-symbol-glyph{font-size:16px!important}
+@media(max-width:760px){
+ .lux-symbol-nav{min-width:32px!important;height:32px!important;padding:0 6px!important}
+ .lux-symbol-glyph{font-size:18px!important}
+ .lux-symbol-tooltip{display:none!important}
+}
+@media print{.lux-symbol-utility-strip{display:none!important}}

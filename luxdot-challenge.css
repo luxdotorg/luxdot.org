@@ -12,3 +12,8 @@
 .lux-challenge-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.lux-submit-review,.lux-security-link{border:1px solid #4a704f;background:#0a1a10;color:#edf7ef;border-radius:10px;padding:8px 11px;text-decoration:none;cursor:pointer;font:600 .75rem "Noto Kufi Arabic","Segoe UI",sans-serif}
 .lux-security-link{border-color:#7e5b5b;color:#f0c5c5}.lux-method-note{font-size:.68rem;color:#8fa296;margin-top:12px}
 @media print{.lux-challenge-btn,.lux-correction-hub,.lux-challenge-modal{display:none!important}}
+
+/* v4.18.2 compact challenge control */
+.lux-challenge-btn{width:23px!important;height:23px!important;min-width:23px!important;padding:0!important;margin-inline-start:.32rem!important;
+ border-radius:50%!important;font:700 12px/1 "Segoe UI Symbol","Noto Sans Symbols 2",sans-serif!important;color:#d9c86f!important;
+ display:inline-flex!important;align-items:center!important;justify-content:center!important}
