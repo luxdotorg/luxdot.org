@@ -1,6 +1,0 @@
-/* LuxDot Memory Mark v1 — symbolic, non-graphic */
-.lux-memory-mark{position:absolute;inset-inline-end:12px;top:10px;display:flex;align-items:flex-start;gap:3px;z-index:4;pointer-events:none}
-.lux-memory-flag{width:31px;height:20px;border-radius:2px;object-fit:cover;border:1px solid rgba(255,255,255,.22);filter:saturate(.82) brightness(.88)}
-.lux-memory-blood{width:13px;height:18px;position:relative}
-.lux-memory-blood:before,.lux-memory-blood:after{content:"";position:absolute;border-radius:60% 45% 65% 40%;background:#781c1c;opacity:.82}
-.lux-memory-blood:before{width:8px;height:11px;top:0;left:2px;transform:rotate(18deg)}.lux-memory-blood:after{width:5px;height:6px;right:0;bottom:0}
