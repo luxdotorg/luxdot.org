@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><head><script src="language-core.js?v=43115"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LuxDot · Witness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=430"><link rel="stylesheet" href="witness-v412.css?v=41200"><link rel="stylesheet" href="luxdot-global-language.css?v=4399">
+<link rel="stylesheet" href="luxdot-typography-v41416.css?v=41416">
+</head><body data-lux-i18n-complete="global-content-core"><main class="w">
+<div class="ey">LUXDOT · WITNESS / HUMAN TESTIMONY NETWORK · LIVE</div>
+<h1 id="wTitle"></h1><p class="lead" id="wLead"></p>
+<div class="trust" id="wTrust"></div>
+<div class="flow"><span>RECEIVED</span><span>PRESERVED</span><span>REVIEWING</span><span>CORROBORATED</span><span>DISPUTED</span><span>UNVERIFIED</span><span>PUBLISHED</span></div>
+<div class="warning" id="wWarning"></div>
+<section id="wContext" class="context" hidden><b><span id="wContextLabel"></span>: <span id="wEventName"></span></b><small id="wContextNote"></small></section>
+<section class="consent-note" id="wConsent"></section>
+<form id="wf"><input type="hidden" id="contextEvent"><input type="hidden" id="contextSource">
+<section class="panel"><h2 id="s1"></h2>
+<div class="field"><label id="l0"></label><input id="title" maxlength="180" required></div>
+<div class="field"><label id="l1"></label><textarea id="narrative" maxlength="30000" required></textarea></div>
+<div class="row"><div class="field"><label id="l2"></label><input id="eventDate" type="date"></div><div class="field"><label id="l3"></label><input id="place"></div></div>
+<div class="row"><div class="field"><label id="l4"></label><input id="country"></div><div class="field"><label id="l5"></label><select id="relationship"></select></div></div></section>
+<section class="panel"><h2 id="s2"></h2><p class="muted" id="identityNote"></p>
+<div class="row"><div class="field"><label id="l6"></label><input id="name"></div><div class="field"><label id="l7"></label><input id="email" type="email"></div></div><div class="field"><label id="l8"></label><input id="phone"></div></section>
+<section class="panel"><h2 id="s3"></h2><div class="field"><label id="l9"></label><select id="privacy" required></select></div><div class="checks" id="checkWrap"></div></section>
+<section class="panel"><h2 id="s4"></h2><div class="field"><label id="l10"></label><input id="files" type="file" multiple></div><p class="muted" id="filesNote"></p></section>
+<div class="actions"><button class="primary" id="createBtn" type="submit"></button><button type="button" id="clearBtn"></button></div>
+</form>
+<section id="success" class="success"><span class="pulse"></span><h3 id="successT"></h3><p id="successP"></p></section>
+<div id="receipt" class="receipt"><div class="status" id="status"></div><h2 id="receiptT"></h2><p id="receiptP"></p><code id="wid"></code><span id="hash"></span><div class="actions"><button id="download" type="button"></button></div></div>
+<hr class="sep"><p class="muted" id="footer"></p>
+</main>
+<script>
+(async()=>{const SUP=['ar','en','nl','he','jv','id','fr','es','de','tr'];const q=new URLSearchParams(location.search),stored=localStorage.getItem('luxdot.lang'),lang=SUP.includes(q.get('lang'))?q.get('lang'):SUP.includes(stored)?stored:'en';localStorage.setItem('luxdot.lang',lang);document.documentElement.lang=lang;document.documentElement.dir=(lang==='ar'||lang==='he')?'rtl':'ltr';
+const DB=await fetch('witness-i18n.json?v=41200').then(r=>r.json()),t=DB[lang]||DB.en;$=id=>document.getElementById(id);document.title=t.title+' · LuxDot';$('wTitle').textContent=t.title;$('wLead').textContent=t.lead;$('wWarning').textContent=t.warning;$('wConsent').textContent=t.consent;
+$('wTrust').innerHTML=t.trust.map(x=>`<div><b>${x[0]}</b><small>${x[1]}</small></div>`).join('');t.sections.forEach((x,i)=>$('s'+(i+1)).textContent=x);t.labels.forEach((x,i)=>$('l'+i).textContent=x);$('title').placeholder=t.ph[0];$('narrative').placeholder=t.ph[1];$('identityNote').textContent=t.identityNote;$('filesNote').textContent=t.filesNote;
+$('relationship').innerHTML=t.relation.map((x,i)=>`<option value="${i?x:''}">${x}</option>`).join('');const pv=['preserve_only','publish_anonymous','publish_first_name','publish_full_identity'];$('privacy').innerHTML=t.privacy.map((x,i)=>`<option value="${pv[i]}">${x}</option>`).join('');
+const ids=['store','publish','contact','research'];$('checkWrap').innerHTML=t.checks.map((x,i)=>`<label><input id="${ids[i]}" type="checkbox" ${i===0?'required':''}> ${x}</label>`).join('');
+$('createBtn').textContent=t.create;$('clearBtn').textContent=t.clear;$('successT').textContent=t.successT;$('successP').textContent=t.successP;$('receiptT').textContent=t.receipt;$('receiptP').textContent=t.receiptP;$('download').textContent=t.download;$('status').textContent=t.status;$('footer').textContent=t.footer;
+const eventId=q.get('event_id')||'',rawEvent=q.get('event')||'';let eventName=rawEvent;if(eventId==='ghouta-2013'||rawEvent.includes('الغوطة الكيميائية')||rawEvent.toLowerCase().includes('ghouta'))eventName=t.eventGhouta;const src=q.get('source')||'';$('contextEvent').value=eventId||rawEvent;$('contextSource').value=src;if(eventName){$('wContext').hidden=false;$('wContextLabel').textContent=t.context;$('wContextNote').textContent=t.contextNote;$('wEventName').textContent=eventName}
+let bundle=null;async function shaBytes(bytes){const h=await crypto.subtle.digest('SHA-256',bytes);return [...new Uint8Array(h)].map(x=>x.toString(16).padStart(2,'0')).join('')}async function shaText(x){return shaBytes(new TextEncoder().encode(x))}function makeId(){let a=new Uint8Array(4);crypto.getRandomValues(a);return `WIT-${new Date().getFullYear()}-${[...a].map(x=>x.toString(16).padStart(2,'0')).join('').toUpperCase()}`}
+$('wf').onsubmit=async e=>{e.preventDefault();if(!$('store').checked)return;const evidence=[];for(const f of $('files').files){evidence.push({filename:f.name,mime:f.type||'application/octet-stream',size:f.size,sha256:await shaBytes(await f.arrayBuffer()),note:'Hash computed locally; file not uploaded.'})}bundle={witness_id:makeId(),created_at:new Date().toISOString(),context:{event_id:eventId||null,event:eventName||rawEvent||null,source:src||null},story:{title:$('title').value,narrative:$('narrative').value,event_date:$('eventDate').value||null,place:$('place').value||null,country:$('country').value||null,relationship:$('relationship').value||null,categories:[]},identity:{name:$('name').value||null,email:$('email').value||null,phone:$('phone').value||null},privacy:$('privacy').value,consent:{store:true,publish:$('publish').checked,contact_for_verification:$('contact').checked,research_use:$('research').checked},verification:'preserved',evidence};bundle.envelope_sha256=await shaText(JSON.stringify(bundle));$('wid').textContent=bundle.witness_id;$('hash').textContent='SHA-256 · '+bundle.envelope_sha256;$('receipt').classList.add('on');$('success').classList.add('on');$('success').scrollIntoView({behavior:'smooth'})};
+$('download').onclick=()=>{if(!bundle)return;const blob=new Blob([JSON.stringify(bundle,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=bundle.witness_id+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1200)};
+$('clearBtn').onclick=()=>{if(confirm(t.confirm)){$('wf').reset();$('receipt').classList.remove('on');$('success').classList.remove('on');bundle=null}};
+})();
+</script>
+<script src="site-shell.js?v=41200"></script><script defer src="luxdot-radio.js?v=4181"></script><script defer src="content-language-core.js?v=4143"></script><script src="luxdot-typography-density.js?v=41416"></script>
+<script src="arabic-surface-v4160.js?v=4160"></script></body></html>
