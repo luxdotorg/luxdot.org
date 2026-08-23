@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<script src="language-core.js?v=43115"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="styles.css?v=430" rel="stylesheet">
+<link rel="stylesheet" href="luxdot-ui-lock.css?v=4385">
+<link rel="stylesheet" href="luxdot-global-language.css?v=4399">
+<link rel="stylesheet" href="luxdot-radio.css?v=43105">
+<style>
+body{background:#020403;color:#edf7ef;margin:0;font-family:Arial,sans-serif}
+.d{max-width:1180px;margin:auto;padding:34px 22px 90px}
+.hero{position:relative;overflow:hidden;border:1px solid #294d34;border-radius:28px;padding:34px;background:
+radial-gradient(circle at 85% 10%,rgba(210,177,91,.13),transparent 28%),
+radial-gradient(circle at 15% 90%,rgba(60,130,80,.16),transparent 30%),
+linear-gradient(145deg,#08150d,#020403)}
+.hero:after{content:"22";position:absolute;inset-inline-end:20px;bottom:-55px;font:900 210px/1 Arial;color:rgba(255,255,255,.025);pointer-events:none}
+.tag{font-size:12px;color:#d2b15b;letter-spacing:.13em}
+.hero h1{font-size:clamp(34px,5.5vw,66px);line-height:1.25;margin:.25em 0}
+.lead{font-size:18px;line-height:2;color:#dcebe0;max-width:980px}
+.symbolcart{display:inline-flex;gap:9px;align-items:center;border:1px solid #52705b;border-radius:999px;padding:8px 14px;font-size:22px}
+.motto{margin-top:22px;padding:16px 20px;border-inline-start:3px solid #d2b15b;background:#0a160e;border-radius:12px;font-size:20px;line-height:1.9}
+.photo-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:14px;margin:22px 0}
+.photo{min-height:280px;border-radius:22px;overflow:hidden;position:relative;border:1px solid #294d34;background:#07110a}
+.photo img{width:100%;height:100%;min-height:280px;object-fit:cover;display:block}
+.photo .ph{position:absolute;inset:0;display:flex;align-items:flex-end;padding:18px;background:linear-gradient(transparent 45%,rgba(0,0,0,.85))}
+.photo .ph b{font-size:16px}.photo .ph small{display:block;color:#c8d5cc;margin-top:5px;line-height:1.5}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:14px;margin:22px 0}
+.c{border:1px solid #203a29;border-radius:19px;padding:20px;background:#06100a}
+.c h3{color:#d2b15b;margin-top:0}.c p{line-height:1.85;color:#d7e5db}
+.ribbon{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:22px 0}
+.r{border:1px solid #294d34;border-radius:15px;padding:16px 10px;text-align:center;background:#07120b}
+.r strong{display:block;color:#d2b15b;font-size:24px}.r span{font-size:12px;color:#b8c8bd}
+.section{margin-top:34px}.section h2{font-size:28px;margin-bottom:10px}.section>p{line-height:1.9;color:#d6e5da}
+.memorywall{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+.mem{min-height:145px;border-radius:18px;padding:18px;border:1px solid #294d34;background:linear-gradient(145deg,#08140c,#050906)}
+.mem .ico{font-size:28px}.mem b{display:block;color:#e6c977;margin:8px 0}.mem p{font-size:13px;line-height:1.7;color:#c5d3c9}
+.rule{border:1px solid #765e2d;background:#151108;border-radius:18px;padding:20px;line-height:1.9}
+.src{display:grid;gap:10px}.src a{display:block;border:1px solid #203a29;border-radius:16px;padding:16px;background:#06100a;text-decoration:none;color:#edf7ef}.src small{display:block;color:#9db1a3;margin-top:5px}
+.back a{color:#d2b15b;text-decoration:none}
+@media(max-width:760px){.photo-grid{grid-template-columns:1fr}.ribbon{grid-template-columns:1fr 1fr}.hero{padding:24px}}
+html[lang='ar'] body{font-family:'Noto Kufi Arabic',Arial,sans-serif!important}
+html[lang='en'] body,html[lang='nl'] body,html[lang='jv'] body{font-family:Arial,Helvetica,sans-serif!important}
+</style>
+<link rel="stylesheet" href="luxdot-typography-v41416.css?v=41416">
+<link rel="stylesheet" href="luxdot-research-experience-v4150.css?v=4150"></head>
+<body data-lux-i18n-complete="global-content-core">
+<header class="top"><div class="wrap topin"><a class="logo" href="home.html">LuxDot</a><nav class="nav"><a href="memory.html" id="memlink">الذاكرة</a><a href="research.html" id="reslink">الأبحاث الحيّة</a></nav></div></header>
+<main class="d">
+<section class="hero">
+<div class="symbolcart">☮ ✝ ☪ ✡ ☸ 🕉︎ ⛩︎ ◯</div>
+<span class="tag">LUXDOT · LIVING MEMORY · 22 AUGUST</span>
+<h1 id="title"></h1>
+<p class="lead" id="lead"></p>
+<div class="motto" id="motto"></div>
+</section>
+
+<section class="photo-grid">
+<figure class="photo"><img src="https://global.unitednations.entermediadb.net/assets/mediadb/services/module/asset/downloads/preset/Libraries/Production%20Library/14-04-2023-UN-Photo-Guterres.jpg/image1440x560cropped.jpg" alt="Interfaith prayer for peace at the United Nations"><figcaption class="ph"><div><b id="cap1t"></b><small id="cap1"></small></div></figcaption></figure>
+<figure class="photo"><img src="https://www.rudaw.net/s3/rudaw.net/ContentFiles/636605Image1.jpg?version=4509816" alt="Restoration of a church in Mosul"><figcaption class="ph"><div><b id="cap2t"></b><small id="cap2"></small></div></figcaption></figure>
+</section>
+
+<div class="ribbon">
+<div class="r"><strong>18</strong><span id="r18"></span></div>
+<div class="r"><strong>73/296</strong><span id="rres"></span></div>
+<div class="r"><strong>21 → 22</strong><span id="r2122"></span></div>
+<div class="r"><strong>0</strong><span id="rzero"></span></div>
+<div class="r"><strong>∞</strong><span id="rinf"></span></div>
+</div>
+
+<section class="grid" id="cards"></section>
+
+<section class="section"><h2 id="facesTitle"></h2><p id="facesIntro"></p><div class="memorywall" id="memorywall"></div></section>
+
+<section class="section"><h2 id="placesTitle"></h2><p id="placesText"></p></section>
+
+<section class="section"><h2 id="digitalTitle"></h2><p id="digitalText"></p></section>
+
+<section class="section"><h2 id="luxTitle"></h2><div class="rule" id="luxRule"></div></section>
+
+<section class="section"><h2 id="sourcesTitle"></h2><div class="src">
+<a target="_blank" rel="noopener" href="https://www.un.org/en/observances/religious-based-violence-victims-day"><b>United Nations — 22 August observance</b><small>Resolution 73/296, human-rights framework and background.</small></a>
+<a target="_blank" rel="noopener" href="https://indonesia.un.org/en/321288-international-day-commemorating-victims-acts-violence-based-religion-or-belief-2026"><b>UN Secretary-General — Message for 22 August 2026</b><small>2026 message on victims, places of worship, hate speech and collective safety.</small></a>
+<a target="_blank" rel="noopener" href="https://www.ohchr.org/Documents/Issues/Religion/RapporteursDigestFreedomReligionBelief.pdf"><b>OHCHR — Freedom of Religion or Belief</b><small>Human-rights documentation on violence affecting religious and belief communities.</small></a>
+<a target="_blank" rel="noopener" href="https://www.unesco.org/en/revive-mosul/about"><b>UNESCO — Revive the Spirit of Mosul</b><small>Rebuilding a plural city, its mosques, churches, heritage and memory.</small></a>
+</div></section>
+
+<p class="back"><a id="back" href="memory.html">← Memory</a></p>
+</main>
+
+<script src="site-shell.js?v=4184"></script>
+<script>
+const D={
+ar:{
+title:"22 أغسطس — حين يصبح الإيمان أو عدم الإيمان سبباً للعنف",
+lead:"هذا اليوم ليس ذكرى لطائفة واحدة. إنه مساحة ذاكرة لكل إنسان استُهدف لأنه مسلم أو مسيحي أو يهودي أو إيزيدي أو بهائي أو هندوسي أو بوذي أو سيخي أو من أي تقليد آخر، أو لأنه غيّر معتقده، أو لأنه لا يتبنى معتقداً دينياً. في 22 أغسطس نضع الضحية قبل التصنيف، والإنسان قبل الهوية التي استُخدمت لاستهدافه.",
+motto:"«حين تُضطهد جماعة واحدة، لا تبقى أي جماعة آمنة.» — الفكرة المركزية في رسالة الأمين العام للأمم المتحدة لعام 2026",
+cap1t:"الإيمان جنباً إلى جنب",cap1:"قادة دينيون في لحظة صلاة من أجل السلام أمام مقر الأمم المتحدة. الصورة تذكّر بأن الاختلاف لا يحتاج إلى أن يتحول إلى خصومة.",
+cap2t:"إعادة بناء الذاكرة",cap2:"ترميم كنيسة الطاهرة في الموصل بعد الحرب. حماية الإنسان تشمل أيضاً الأماكن التي تحمل ذاكرته وصلاته وتاريخه.",
+r18:"المادة 18: حرية الفكر والوجدان والدين",rres:"قرار الأمم المتحدة الذي أنشأ يوم 22 أغسطس",r2122:"ضحايا الإرهاب ← ضحايا العنف بسبب الدين أو المعتقد",rzero:"لا دين يبرر استهداف المدنيين",rinf:"عدد الهويات والضمائر التي يجب أن تتسع لها الكرامة",
+cards:[
+["لماذا 22 أغسطس؟","اعتمدت الجمعية العامة القرار 73/296 لتخصيص يوم دولي للضحايا وأسرهم، ولإدانة العنف ضد الأشخاص ومنازلهم ومدارسهم وأعمالهم ومراكزهم الثقافية ودور عبادتهم بسبب الدين أو المعتقد."],
+["الضحية ليست رمزاً لطائفتها","LuxDot لا يحوّل المقتول إلى رقم أو إلى ذخيرة في صراع هويات. الاسم، الوجه، المكان، العائلة، الشهادة والمصدر تأتي أولاً؛ ثم يأتي السياق."],
+["حرية أن تؤمن — وحرية ألا تؤمن","الحماية لا تتوقف عند الأديان المنظمة. حرية الضمير تشمل امتلاك معتقد أو تغييره أو تركه أو عدم تبني معتقد ديني، دون خوف من العنف أو الإكراه."],
+["لا ذنب جماعياً","الجريمة تُنسب إلى مرتكبها وتنظيمها وسياقها، لا إلى ملايين البشر الذين يشاركون الجاني اسماً دينياً أو قومياً. الأمم المتحدة تؤكد أن الإرهاب لا ينبغي ربطه بدين أو حضارة أو عرق."],
+["العنف لا يقتل الأشخاص فقط","عندما يُحرق معبد أو تُفجّر كنيسة أو مسجد أو كنيس أو مزار، تُصاب أيضاً الذاكرة والعمارة والمخطوطات والموسيقى والطقوس وعلاقة المجتمع بالمكان."],
+["من الكراهية الرقمية إلى الدم","رسالة 2026 تلفت إلى العداء داخل الإنترنت وخارجه وتدعو شركات التقنية إلى حماية المستخدمين من الوصم وتحويل الجماعات إلى كبش فداء. الكلمات قد تكون مرحلة مبكرة في سلسلة عنف أطول."],
+["العدالة جزء من الذاكرة","التذكر وحده لا يكفي: المطلوب التحقيق والمساءلة ودعم الضحايا والأسر وحماية حق المجتمعات في العبادة والحياة بحرية، مع رفض الانتقام من جماعة أخرى."],
+["المصالحة لا تعني النسيان","إعادة بناء مكان عبادة لا تمحو ما حدث. لكنها قد تحول الخراب إلى شاهد: هذا المكان دُمّر، وهذه الذاكرة بقيت، وهؤلاء الناس لهم حق العودة إلى حياتهم دون خوف."]
+],
+facesTitle:"جدار الذاكرة — من يشملهم هذا اليوم؟",
+facesIntro:"لا توجد قائمة مغلقة. الأمثلة التالية ليست مساواة بين أحداث مختلفة ولا حصراً للضحايا؛ هي تذكير بأن الحق واحد حتى عندما تختلف العقائد والجغرافيا والفاعل والسياق.",
+mem:[
+["☪","مسلمون","استُهدفوا بسبب مذهبهم أو هويتهم الإسلامية أو لأنهم أقلية في مكان ما."],
+["✝","مسيحيون","ضحايا هجمات واضطهاد وتهجير واستهداف للكنائس والمجتمعات المسيحية."],
+["✡","يهود","ضحايا معاداة السامية والعنف ضد الأفراد والكنس والمؤسسات اليهودية."],
+["☀","إيزيديون","تعرّض المجتمع الإيزيدي في سنجار لجرائم قتل وخطف واستعباد صنفتها الأمم المتحدة ضمن أفظع جرائم داعش."],
+["✺","بهائيون","واجهت مجتمعات بهائية في بعض الدول الاعتقال والتمييز ومصادرة الممتلكات والقيود على التعليم والممارسة الدينية."],
+["🕉︎","هندوس","ضحايا اعتداءات على أفراد أو معابد أو مجتمعات أقلية في سياقات مختلفة."],
+["☸","بوذيون","يشمل الحق البوذيين أيضاً عندما يصبح الانتماء الديني سبباً للاستهداف أو التمييز."],
+["☬","سيخ","ذاكرة ضحايا العنف ضد السيخ جزء من الذاكرة العالمية لحرية الدين والمعتقد."],
+["◯","غير المؤمنين ومغيّرو المعتقد","حرية الضمير تحمي أيضاً الملحد واللاأدري ومن يغيّر دينه أو يتركه؛ الحماية للإنسان لا للبطاقة الدينية."]
+],
+placesTitle:"المكان أيضاً ضحية",
+placesText:"قرار الأمم المتحدة لا يتحدث عن الأفراد فقط، بل يذكر صراحة المنازل والأعمال والمدارس والمراكز الثقافية وأماكن العبادة والمواقع والمزارات. الموصل مثال بصري قوي: دُمّرت مساجد وكنائس ومزارات ومكتبات وآثار، ثم أصبح ترميم الجامع النوري وكنيسة الطاهرة وغيرهما محاولة لإعادة بناء مدينة متعددة الذاكرات، لا حجارة منفردة فقط.",
+digitalTitle:"2026 — جبهة جديدة للذاكرة",
+digitalText:"في رسالة هذا العام حذّر الأمين العام من العداء الذي يلاحق المؤمنين والأقليات داخل الإنترنت وخارجه، ودعا الحكومات إلى المحاسبة، والقادة الدينيين إلى رفض العنف، وشركات التقنية إلى تصميم وإدارة منصاتها بطريقة تحد من الوصم وتحويل جماعات كاملة إلى كبش فداء.",
+luxTitle:"قاعدة LuxDot لهذه العقدة",
+luxRule:"نحفظ الضحية بلا مصادرة لهويتها، ونوثق الجريمة بلا تعميم الذنب، ونفصل بين الدليل والادعاء، ونذكر دور العبادة المهدمة كما نذكر البشر، ونترك مساحة للناجي كي يصف نفسه بصوته. لا نستخدم مأساة جماعة لإلغاء مأساة أخرى. الذاكرة هنا ليست مسابقة ألم؛ إنها مقاومة للنسيان ولتكرار الجريمة.",
+sourcesTitle:"المصادر الأساسية"
+},
+en:{
+title:"22 August — When belief or non-belief becomes a reason for violence",
+lead:"This is not the remembrance of one community. It is a memory space for every person targeted because they were Muslim, Christian, Jewish, Yazidi, Baha'i, Hindu, Buddhist, Sikh, from another tradition, because they changed belief, or because they held no religious belief. On 22 August, the victim comes before the label.",
+motto:"“Whenever one group is persecuted, no group is safe.” — central message of the UN Secretary-General for 2026",
+cap1t:"Faiths side by side",cap1:"Religious leaders in a moment of prayer for peace at the United Nations.",cap2t:"Rebuilding memory",cap2:"Restoration in Mosul after war: protecting people also means protecting places that carry memory.",
+r18:"Article 18: thought, conscience and religion",rres:"UN resolution establishing 22 August",r2122:"Victims of terrorism → victims of religion/belief violence",rzero:"No faith justifies targeting civilians",rinf:"Consciences that human dignity must hold",
+cards:[["Why 22 August?","Resolution 73/296 created an international day for victims and families and condemns violence against people and their homes, schools, businesses, cultural centres and places of worship."],["The victim is not a sectarian symbol","LuxDot records name, face, place, family, testimony and source before turning a victim into a statistic or argument."],["Freedom to believe — and not believe","Freedom of conscience includes having, changing or leaving a belief, and holding no religious belief, without violence or coercion."],["No collective guilt","Responsibility belongs to perpetrators and contexts, not millions who share a religious or national label."],["Places can be victims too","Destroying a shrine, mosque, church, synagogue or temple can also attack memory, architecture, manuscripts, ritual and belonging."],["From digital hate to bloodshed","The 2026 message highlights hostility online and offline and calls on technology companies to protect users from stigma and scapegoating."],["Justice belongs to memory","Remembrance requires investigation, accountability, victim support and protection without retaliatory blame."],["Reconciliation is not forgetting","Reconstruction does not erase destruction; it can turn ruins into witnesses and restore a community's right to live without fear."]],
+facesTitle:"Memory wall — who does this day include?",facesIntro:"There is no closed list. These examples do not equate different histories; they show that the same human right crosses beliefs and borders.",
+mem:[["☪","Muslims","Targeted because of sect, Muslim identity or minority status."],["✝","Christians","Victims of attacks, persecution, displacement and attacks on churches."],["✡","Jews","Victims of antisemitism and violence against people, synagogues and institutions."],["☀","Yazidis","The Sinjar community suffered killing, abduction and enslavement among ISIL's gravest crimes."],["✺","Baha'is","Communities have faced detention, discrimination, property seizure and restrictions."],["🕉︎","Hindus","Victims of attacks on people, temples or minority communities in different contexts."],["☸","Buddhists","Protected equally when religious identity becomes a ground for targeting."],["☬","Sikhs","Victims of anti-Sikh violence belong in the global memory of freedom of belief."],["◯","Non-believers & converts","Conscience also protects atheists, agnostics and people who change or leave religion."]],
+placesTitle:"Places can be victims too",placesText:"The UN resolution explicitly includes homes, businesses, schools, cultural centres, places of worship, sites and shrines. Mosul is a powerful visual case: mosques, churches, shrines, libraries and antiquities were destroyed, and their restoration became part of rebuilding a plural city.",
+digitalTitle:"2026 — a new front of memory",digitalText:"This year's UN message warns about hostility online and offline, calling on governments, religious leaders and technology companies to counter discrimination, hate speech, stigma and scapegoating.",
+luxTitle:"The LuxDot rule for this node",luxRule:"Preserve the victim without confiscating identity. Document the crime without generalising guilt. Separate evidence from allegation. Remember destroyed sacred places alongside people. Let survivors describe themselves in their own voice. One community's pain must never be used to erase another's.",
+sourcesTitle:"Core sources"
+},
+nl:{
+title:"22 augustus — Wanneer geloof of niet-geloven een reden voor geweld wordt",
+lead:"Dit is niet de herdenking van één gemeenschap. Het is een geheugenruimte voor iedereen die werd aangevallen vanwege geloof, vermeende religieuze identiteit, verandering van overtuiging of juist het ontbreken van religie. Op 22 augustus komt het slachtoffer vóór het etiket.",
+motto:"‘Wanneer één groep wordt vervolgd, is geen enkele groep veilig.’ — kern van de VN-boodschap voor 2026",
+cap1t:"Geloven naast elkaar",cap1:"Religieuze leiders tijdens een moment van gebed voor vrede bij de Verenigde Naties.",cap2t:"Herbouw van herinnering",cap2:"Restauratie in Mosul na de oorlog: bescherming geldt ook voor plaatsen die herinnering dragen.",
+r18:"Artikel 18: gedachte, geweten en godsdienst",rres:"VN-resolutie voor 22 augustus",r2122:"Terrorismeslachtoffers → religieus geweld",rzero:"Geen geloof rechtvaardigt aanvallen op burgers",rinf:"Gewetens die menselijke waardigheid moet omvatten",
+cards:[["Waarom 22 augustus?","Resolutie 73/296 creëerde deze dag voor slachtoffers en families en veroordeelt geweld tegen mensen en hun huizen, scholen, bedrijven, culturele centra en gebedshuizen."],["Het slachtoffer is geen sektarisch symbool","LuxDot zet naam, gezicht, plaats, familie, getuigenis en bron vóór statistiek of politieke inzet."],["Vrijheid om te geloven — of niet","Gewetensvrijheid omvat geloven, veranderen, verlaten en niet-geloven zonder geweld of dwang."],["Geen collectieve schuld","Verantwoordelijkheid ligt bij daders en contexten, niet bij miljoenen mensen met hetzelfde religieuze of nationale label."],["Ook plaatsen kunnen slachtoffer zijn","De vernietiging van een moskee, kerk, synagoge, tempel of heiligdom treft ook geheugen, architectuur, ritueel en verbondenheid."],["Van digitale haat naar geweld","De boodschap van 2026 wijst op vijandigheid online en offline en vraagt technologiebedrijven stigma en zondebokdenken tegen te gaan."],["Rechtvaardigheid hoort bij herinnering","Herdenken vraagt onderzoek, verantwoording, steun aan slachtoffers en bescherming zonder vergeldende collectieve schuld."],["Verzoening is niet vergeten","Herbouw wist vernietiging niet uit; ruïnes kunnen getuigen worden en gemeenschappen hun recht op leven zonder angst teruggeven."]],
+facesTitle:"Geheugenmuur — wie omvat deze dag?",facesIntro:"Er is geen gesloten lijst. Deze voorbeelden stellen verschillende geschiedenissen niet gelijk; ze tonen dat hetzelfde mensenrecht grenzen en overtuigingen overstijgt.",
+mem:[["☪","Moslims","Slachtoffers vanwege stroming, islamitische identiteit of minderheidspositie."],["✝","Christenen","Slachtoffers van aanvallen, vervolging, verdrijving en geweld tegen kerken."],["✡","Joden","Slachtoffers van antisemitisme en geweld tegen mensen, synagogen en instellingen."],["☀","Jezidi's","De gemeenschap in Sinjar werd getroffen door moord, ontvoering en slavernij."],["✺","Bahá'ís","Gemeenschappen kregen te maken met detentie, discriminatie en beperkingen."],["🕉︎","Hindoes","Slachtoffers van geweld tegen personen, tempels of minderheidsgemeenschappen."],["☸","Boeddhisten","Evenzeer beschermd wanneer religieuze identiteit reden voor geweld wordt."],["☬","Sikhs","Slachtoffers van anti-Sikhgeweld horen bij deze mondiale herinnering."],["◯","Niet-gelovigen & bekeerlingen","Gewetensvrijheid beschermt ook atheïsten, agnosten en mensen die religie veranderen of verlaten."]],
+placesTitle:"Ook een plaats kan slachtoffer zijn",placesText:"De VN-resolutie noemt uitdrukkelijk woningen, bedrijven, scholen, culturele centra, gebedshuizen, locaties en heiligdommen. Mosul is een krachtig voorbeeld: moskeeën, kerken, schrijnen, bibliotheken en oudheden werden vernietigd; herstel werd onderdeel van het herbouwen van een plurale stad.",
+digitalTitle:"2026 — een nieuw front van herinnering",digitalText:"De VN-boodschap van dit jaar waarschuwt voor vijandigheid online en offline en roept overheden, religieuze leiders en technologiebedrijven op discriminatie, haatspraak, stigma en zondebokdenken tegen te gaan.",
+luxTitle:"De LuxDot-regel voor deze knoop",luxRule:"Bewaar het slachtoffer zonder diens identiteit af te nemen. Documenteer de misdaad zonder schuld te veralgemenen. Scheid bewijs van bewering. Herinner verwoeste heilige plaatsen naast mensen. Laat overlevenden zichzelf in hun eigen stem beschrijven. Het leed van de ene gemeenschap mag nooit worden gebruikt om dat van een andere uit te wissen.",
+sourcesTitle:"Kernbronnen"
+},
+jv:{title:"22 Agustus — Nalika kapercayan dadi alesan kanggo kekerasan",lead:"Dina iki dudu kanggo siji komunitas wae. Iki papan memori kanggo saben wong sing dadi korban amarga agama, kapercayan, owah kapercayan utawa ora duwe agama.",motto:"Yen siji kelompok dianiaya, ora ana kelompok sing aman.",cap1t:"Iman bebarengan",cap1:"Pimpinan agama ndedonga kanggo tentrem ing PBB.",cap2t:"Mbangun memori maneh",cap2:"Restorasi ing Mosul sawise perang.",r18:"Artikel 18",rres:"Resolusi PBB 73/296",r2122:"21 → 22 Agustus",rzero:"Ora ana iman sing mbenerake nyerang sipil",rinf:"Kamulyan kanggo kabeh",cards:[["Napa 22 Agustus?","PBB nggawe dina iki kanggo korban lan kulawargane."],["Korban dudu simbol sekte","Jeneng, pasuryan, papan lan kesaksian luwih dhisik."],["Bebas percaya utawa ora","Nurani kalebu hak percaya, ngganti utawa ninggal kapercayan."],["Ora ana salah kolektif","Tanggung jawab ana ing pelaku, dudu kabeh komunitas."],["Papan uga bisa dadi korban","Panggonan ibadah lan warisan uga nggawa memori."],["Saka sengit digital menyang kekerasan","Pesen 2026 ngelingake bab stigma online lan offline."],["Kaadilan lan memori","Eling kudu bebarengan karo tanggung jawab lan dhukungan korban."],["Rekonsiliasi dudu lali","Mbangun maneh ora mbusak sejarah karusakan."]],facesTitle:"Tembok memori",facesIntro:"Hak iki kanggo kabeh.",mem:[["☪","Muslim",""],["✝","Kristen",""],["✡","Yahudi",""],["☀","Yazidi",""],["✺","Baha'i",""],["🕉︎","Hindu",""],["☸","Buddha",""],["☬","Sikh",""],["◯","Ora percaya",""]],placesTitle:"Papan uga korban",placesText:"PBB uga nyebut omah, sekolah, pusat budaya lan papan ibadah.",digitalTitle:"2026 — ruang digital",digitalText:"Pesen taun iki ngajak nglawan stigma lan sengit online.",luxTitle:"Aturan LuxDot",luxRule:"Simpen memori korban tanpa nggawe salah kolektif lan bedakake bukti saka pratelan.",sourcesTitle:"Sumber"},
+he:{title:"22 באוגוסט — כשהאמונה או אי־האמונה הופכות לעילה לאלימות",lead:"זהו אינו יום זיכרון של קהילה אחת. זהו מרחב זיכרון לכל מי שנפגע בשל דתו, אמונתו, שינוי אמונתו או משום שאינו מחזיק באמונה דתית.",motto:"כאשר קבוצה אחת נרדפת, אף קבוצה אינה בטוחה.",cap1t:"אמונות זו לצד זו",cap1:"מנהיגים דתיים ברגע של תפילה לשלום באו״ם.",cap2t:"בנייה מחדש של הזיכרון",cap2:"שיקום במוסול לאחר המלחמה.",r18:"סעיף 18",rres:"החלטת האו״ם 73/296",r2122:"21 ← 22 באוגוסט",rzero:"שום אמונה אינה מצדיקה פגיעה באזרחים",rinf:"כבוד לכל מצפון",cards:[["למה 22 באוגוסט?","החלטה 73/296 קבעה יום בינלאומי לקורבנות ולמשפחותיהם."],["הקורבן אינו סמל עדתי","שם, פנים, מקום, משפחה, עדות ומקור קודמים לסטטיסטיקה."],["החופש להאמין — או לא","חופש המצפון כולל אמונה, שינוי אמונה, עזיבתה או אי־אמונה."],["אין אשמה קולקטיבית","האחריות היא של מבצעים והקשר, לא של קהילה שלמה."],["גם מקום יכול להיות קורבן","פגיעה בבית תפילה פוגעת גם בזיכרון, באדריכלות ובשייכות."],["משנאה דיגיטלית לאלימות","מסר 2026 מזהיר מעוינות ברשת ומחוצה לה."],["צדק הוא חלק מהזיכרון","זיכרון דורש חקירה, אחריות ותמיכה בקורבנות."],["פיוס אינו שכחה","שיקום אינו מוחק את ההרס; הוא יכול להפוך את החורבות לעדות."]],facesTitle:"קיר הזיכרון",facesIntro:"אין רשימה סגורה; הזכות חוצה דתות וגבולות.",mem:[["☪","מוסלמים",""],["✝","נוצרים",""],["✡","יהודים",""],["☀","יזידים",""],["✺","בהאים",""],["🕉︎","הינדים",""],["☸","בודהיסטים",""],["☬","סיקים",""],["◯","לא־מאמינים וממירי דת",""]],placesTitle:"גם המקום הוא קורבן",placesText:"החלטת האו״ם כוללת בתים, עסקים, בתי ספר, מרכזי תרבות, מקומות תפילה ואתרים קדושים.",digitalTitle:"2026 — חזית דיגיטלית",digitalText:"מסר השנה קורא להתמודד עם שנאה, סטיגמה והפיכת קבוצות לשעיר לעזאזל ברשת ומחוצה לה.",luxTitle:"כלל LuxDot",luxRule:"לשמר את הקורבן בלי להפקיע את זהותו; לתעד פשע בלי להכליל אשמה; להפריד ראיה מטענה; ולא להשתמש בכאב של קהילה אחת כדי למחוק אחרת.",sourcesTitle:"מקורות מרכזיים"}
+};
+function lang(){let q=new URLSearchParams(location.search).get('lang')||localStorage.getItem('luxdot.lang')||'ar';return D[q]?q:'en'}
+function render(){
+ let l=lang(),x=D[l];document.documentElement.lang=l;document.documentElement.dir=(l==='ar'||l==='he')?'rtl':'ltr';
+ ['title','lead','motto','cap1t','cap1','cap2t','cap2','r18','rres','r2122','rzero','rinf','facesTitle','facesIntro','placesTitle','placesText','digitalTitle','digitalText','luxTitle','luxRule','sourcesTitle'].forEach(k=>document.getElementById(k).textContent=x[k]);
+ cards.innerHTML=x.cards.map(c=>`<article class="c"><h3>${c[0]}</h3><p>${c[1]}</p></article>`).join('');
+ memorywall.innerHTML=x.mem.map(c=>`<article class="mem"><div class="ico">${c[0]}</div><b>${c[1]}</b><p>${c[2]||''}</p></article>`).join('');
+ let s='?lang='+l;memlink.href='memory.html'+s;reslink.href='research.html'+s;back.href='memory.html'+s;
+}
+render();
+</script>
+<script defer src="luxdot-radio.js?v=4184"></script>
+<script defer src="content-language-core.js?v=43115"></script>
+<script src="luxdot-typography-density.js?v=41416"></script>
+<script src="luxdot-research-experience-v4150.js?v=4150"></script><script src="arabic-surface-v4160.js?v=4160"></script></body></html>
