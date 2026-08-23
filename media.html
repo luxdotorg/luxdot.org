@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <script src="language-core.js?v=43115"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>LuxDot · الإشارة · Signal</title>
+  <link rel="stylesheet" href="styles.css?v=430">
+  <link rel="stylesheet" href="luxdot-arabic-ui.css?v=430">
+  <link rel="stylesheet" href="luxdot-global-language.css?v=4399">
+  <link rel="stylesheet" href="media-news.css?v=43114"><link rel="stylesheet" href="luxdot-header-v43108.css?v=43114"><link rel="stylesheet" href="luxdot-radio.css?v=43105">
+<link rel="stylesheet" href="luxdot-typography-v41416.css?v=41416">
+</head>
+<div style="position:fixed;left:14px;bottom:14px;z-index:9997;font:800 9px Arial;color:#9beeb5;letter-spacing:.08em;pointer-events:none">SIGNAL · الإشارة</div><body data-lux-i18n-complete="global-content-core" class="lux-media-page" data-lux-reviewed-locales="ar,en,nl,he,jv,id,fr,es,de,tr">
+  <header class="top">
+    <div class="wrap topin">
+      <a class="logo" data-lux-brand href="home.html">LuxDot</a>
+      <nav class="nav">
+        <a href="home.html" data-label="home">Home</a>
+        <a href="research.html" data-label="research">Live Research</a>
+        <a href="media.html" class="active" data-label="media">Media / News</a>
+        <select id="mediaLang" class="lang lang-select" aria-label="Language">
+          <option value="ar">العربية</option><option value="en">English</option>
+          <option value="nl">Nederlands</option><option value="he">עברית</option>
+          <option value="jv">Basa Jawa</option><option value="id">Bahasa Indonesia</option>
+          <option value="fr">Français</option><option value="es">Español</option>
+          <option value="de">Deutsch</option><option value="tr">Türkçe</option>
+        </select>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap media-main">
+    <section class="media-hero">
+      <div class="eyebrow" id="eyebrow">LUXDOT · LIVE MEDIA DESK</div>
+      <h1 id="pageTitle">Media & News</h1>
+      <p id="pageLead">A sourced monitoring layer for contemporary claims, videos, posts and reporting connected to LuxDot research.</p>
+    </section>
+
+    <section class="media-category-head">
+      <div>
+        <span class="category-mark">✦</span>
+        <div>
+          <small id="categoryKicker">CATEGORY</small>
+          <h2 id="categoryTitle">The Savior · Current discourse</h2>
+          <p id="categoryLead">What people are saying now about the Messiah, Mahdi, Second Coming, Kalki and other savior traditions. Inclusion here documents circulation; it does not certify a prophecy as fulfilled.</p>
+        </div>
+      </div>
+      <a class="atlas-link" id="atlasLink" href="savior-atlas.html">Open Savior Atlas ↗</a>
+    </section>
+
+
+    <section class="belief-radar" aria-label="Savior traditions radar">
+      <div class="radar-head"><div><small id="radarKicker">LIVE RADAR</small><h2 id="radarTitle">Savior traditions now</h2></div><p id="radarNote"></p></div>
+      <div id="beliefRail" class="belief-rail"></div>
+    </section>
+
+    <section class="editorial-note"><span>◎</span><p id="editorialNote"></p></section>
+    <section class="media-controls">
+      <input id="mediaSearch" type="search" placeholder="Search…" autocomplete="off">
+      <select id="beliefFilter"><option value="all">All traditions</option></select>
+      <select id="typeFilter"><option value="all">All media</option></select>
+      <select id="stanceFilter"><option value="all">All statuses</option></select>
+    </section>
+
+    <section class="media-meta">
+      <span id="resultCount"></span>
+      <span id="updatedAt"></span>
+    </section>
+
+    <section id="mediaGrid" class="media-grid" aria-live="polite"></section>
+  </main>
+
+  <template id="mediaCardTemplate">
+    <article class="media-card">
+      <div class="media-card-top">
+        <span class="belief-pill"></span>
+        <span class="type-pill"></span>
+      </div>
+      <h3></h3>
+      <p class="claim"></p>
+      <div class="source-line"></div>
+      <div class="media-card-bottom">
+        <span class="status-pill"></span>
+        <div class="actions">
+          <a class="research-link"></a>
+          <a class="source-link" target="_blank" rel="noopener noreferrer"></a>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script defer src="media-news.js?v=43114"></script><script defer src="site-quality.js?v=4377"></script><script src="site-shell.js?v=4183"></script><script defer src="luxdot-radio.js?v=4181"></script>
+<script defer src="content-language-core.js?v=43115"></script><script src="luxdot-typography-density.js?v=41416"></script>
+<script src="arabic-surface-v4160.js?v=4160"></script></body>
+</html>
