@@ -1,0 +1,45 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>جرافات الأنبياء: النسب والزمن والارتباطات · LuxDot</title>
+<link rel="stylesheet" href="styles.css?v=41810"><link rel="stylesheet" href="humanity.css?v=41810"><link rel="stylesheet" href="luxdot-global-language.css?v=41810">
+<style>
+main{max-width:1500px;margin:auto;padding:34px 16px 100px}.hero,.panel{border:1px solid #3d4e40;border-radius:18px;background:#08120d;padding:14px;margin:12px 0}.warn{border-right:3px solid #d2bb62;background:#171408;padding:11px 14px;border-radius:12px;line-height:1.8}
+.tabs{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.tabs button{border:1px solid #536047;border-radius:999px;padding:7px 12px;background:#0a1710;color:#e8efe8}.tabs button.on{border-color:#d5bd64;color:#ffe58a}
+svg{width:100%;height:680px;background:radial-gradient(circle at 50% 35%,#14251b,#050b08 70%);border-radius:16px;touch-action:none}
+.node text{fill:#f0e6bd;font-size:13px;pointer-events:none}.node circle{fill:#0e2116;stroke:#c9b45f;stroke-width:1.6}.edge{stroke:#718476;stroke-width:1.4;fill:none}.edge.family{stroke:#d1b95e;stroke-width:2}.edge.sibling{stroke:#a9c8b0;stroke-dasharray:5 4}.edge.influence{stroke:#74a8c4;stroke-dasharray:3 4}.edge.dotted{stroke:#777;stroke-dasharray:2 6}
+.tip{position:fixed;z-index:1000;display:none;max-width:300px;background:#07100c;border:1px solid #776d45;border-radius:12px;padding:9px;color:#edf3ec;pointer-events:none;font-size:.82rem}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:.78rem}.timeline{overflow:auto}.timeline svg{min-width:1150px;height:640px}
+</style></head><body><main>
+<div class="k">LUXDOT · PROPHET RELATIONS · v4.18.10</div><section class="hero"><h1>شجرة الأنبياء والارتباطات والإطار الزمني</h1>
+<p>ثلاث عدسات لنفس المادة: <b>النسب</b>، <b>العلاقات الرسالية/التاريخية</b>، و<b>الزمن</b>. عند المرور فوق العقدة يظهر تعريفها وإطارها الزمني، والنقر يفتح قصتها.</p></section>
+<div class="warn"><b>تنبيه منهجي:</b> لا نعرض آدم ونوح وإبراهيم وموسى كتواريخ أثرية مؤكدة. الأنساب القديمة هنا <b>أنساب تقليدية نصية</b>، بينما الخط الزمني يستخدم تواريخ تقريبية فقط عندما يسمح البحث التاريخي بذلك. الخط المنقّط يعني سلسلة طويلة أو علاقة تقليدية غير مباشرة.</div>
+<div class="tabs"><button class="on" data-v="gene">شجرة النسب</button><button data-v="rel">شبكة الارتباطات</button><button data-v="time">الخط الزمني</button></div>
+<section class="panel"><div class="legend"><span>━ قرابة مباشرة</span><span>┄ إخوة</span><span>┈ سلسلة نسب بعيدة</span><span>⇢ علاقة/تأثير رسالي</span></div><div id="gene"><svg id="graph" viewBox="0 0 1400 680"></svg></div><div id="time" class="timeline" hidden><svg id="timeline" viewBox="0 0 1400 640"></svg></div></section>
+<div class="tip" id="tip"></div>
+</main>
+<script>
+const N=[["adam", "آدم", "Adam", "بدايات", "غير مؤرخ تاريخيًا"], ["nuh", "نوح", "Noah", "بدايات", "غير مؤرخ تاريخيًا"], ["ibrahim", "إبراهيم", "Abraham", "الآباء", "تقليديًا الألفية 2 ق.م؛ غير قابل للتأريخ الدقيق"], ["lut", "لوط", "Lot", "الآباء", "تقليديًا عصر إبراهيم"], ["ismail", "إسماعيل", "Ishmael", "الآباء", "تقليديًا الألفية 2 ق.م"], ["ishaq", "إسحاق", "Isaac", "الآباء", "تقليديًا الألفية 2 ق.م"], ["yaqub", "يعقوب/إسرائيل", "Jacob/Israel", "الآباء", "تقليديًا الألفية 2 ق.م"], ["yusuf", "يوسف", "Joseph", "الآباء", "تقليديًا الألفية 2 ق.م؛ التأريخ محل نقاش"], ["musa", "موسى", "Moses", "الخروج", "تقليديًا الألفية 2 ق.م؛ التأريخ التاريخي محل نقاش"], ["harun", "هارون", "Aaron", "الخروج", "تقليديًا زمن موسى"], ["miriam", "مريم النبية", "Miriam", "الخروج", "تقليديًا زمن موسى"], ["dawud", "داود", "David", "الملكية", "نحو القرن 10 ق.م في التأريخ التقليدي"], ["sulayman", "سليمان", "Solomon", "الملكية", "نحو القرن 10 ق.م في التأريخ التقليدي"], ["ilyas", "إلياس", "Elijah", "الممالك", "القرن 9 ق.م تقريبًا"], ["alyasa", "اليسع", "Elisha", "الممالك", "القرن 9 ق.م تقريبًا"], ["amos", "عاموس", "Amos", "الأنبياء الكتابيون", "القرن 8 ق.م"], ["hosea", "هوشع", "Hosea", "الأنبياء الكتابيون", "القرن 8 ق.م"], ["isaiah", "إشعيا", "Isaiah", "الأنبياء الكتابيون", "القرن 8 ق.م"], ["micah", "ميخا", "Micah", "الأنبياء الكتابيون", "القرن 8 ق.م"], ["jeremiah", "إرميا", "Jeremiah", "السبي", "أواخر 7–بدايات 6 ق.م"], ["ezekiel", "حزقيال", "Ezekiel", "السبي", "القرن 6 ق.م"], ["daniel", "دانيال", "Daniel", "السبي/الرؤيا", "إطار القصة القرن 6 ق.م؛ تأليف السفر محل بحث"], ["haggai", "حجّي", "Haggai", "ما بعد السبي", "520 ق.م تقريبًا"], ["zechariah", "زكريا بن برخيا", "Zechariah", "ما بعد السبي", "أواخر القرن 6 ق.م"], ["malachi", "ملاخي", "Malachi", "ما بعد السبي", "القرن 5 ق.م تقريبًا؛ تقديري"], ["zakariya", "زكريا والد يحيى", "Zechariah father of John", "القرن الأول", "أواخر القرن 1 ق.م"], ["yahya", "يحيى/يوحنا", "John the Baptist", "القرن الأول", "نحو أواخر 1 ق.م–نحو 30 م"], ["isa", "عيسى/يسوع", "Jesus", "القرن الأول", "نحو 4 ق.م–30/33 م تقريبًا"], ["muhammad", "محمد", "Muhammad", "الإسلام المبكر", "نحو 570–632 م"]], E=[["adam", "nuh", "سلسلة نسب تقليدية طويلة", "dotted"], ["nuh", "ibrahim", "سلسلة نسب تقليدية طويلة", "dotted"], ["ibrahim", "lut", "عمّ/ابن أخ في التقليد الكتابي", "family"], ["ibrahim", "ismail", "أب → ابن", "family"], ["ibrahim", "ishaq", "أب → ابن", "family"], ["ishaq", "yaqub", "أب → ابن", "family"], ["yaqub", "yusuf", "أب → ابن", "family"], ["musa", "harun", "أخوان", "sibling"], ["musa", "miriam", "إخوة", "sibling"], ["harun", "miriam", "إخوة", "sibling"], ["yaqub", "dawud", "من ذرية إسرائيل بحسب التقليد", "dotted"], ["dawud", "sulayman", "أب → ابن", "family"], ["ilyas", "alyasa", "معلم/خليفة نبوي", "influence"], ["zakariya", "yahya", "أب → ابن", "family"], ["yahya", "isa", "معاصران/صلة رسالية في المسيحية والإسلام", "influence"]], TL=[["إشعيا", -760, -700, "تقريبي"], ["عاموس", -760, -750, "تقريبي"], ["هوشع", -750, -720, "تقريبي"], ["ميخا", -740, -700, "تقريبي"], ["إرميا", -627, -580, "تقريبي"], ["حزقيال", -593, -571, "نشاط نبوي تقريبي"], ["دانيال", -600, -530, "إطار سردي تقريبي"], ["حجّي", -520, -518, "نشاط مؤرخ نسبيًا"], ["زكريا بن برخيا", -520, -500, "تقريبي"], ["ملاخي", -500, -430, "تقديري"], ["زكريا والد يحيى", -30, 5, "تقريبي"], ["يحيى/يوحنا", -5, 30, "تقريبي"], ["عيسى/يسوع", -4, 33, "تقريبي"], ["محمد", 570, 632, "تقريبي/تاريخي"]]; const map=Object.fromEntries(N.map(x=>[x[0],x]));
+const pos={
+adam:[700,55],nuh:[700,135],ibrahim:[700,225],lut:[1030,225],ismail:[480,310],ishaq:[780,310],yaqub:[780,390],yusuf:[1000,470],
+musa:[280,470],harun:[430,470],miriam:[130,470],dawud:[760,500],sulayman:[760,585],ilyas:[1120,400],alyasa:[1240,480],
+zakariya:[1130,555],yahya:[1130,625],isa:[1290,625]
+};
+const svg=document.getElementById('graph'),tip=document.getElementById('tip');
+function line(a,b,type,label){let [x1,y1]=pos[a],[x2,y2]=pos[b];return `<g><line class="edge ${type}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/><title>${label}</title></g>`}
+function node(id){let n=map[id],[x,y]=pos[id];return `<a href="prophets/${id}.html"><g class="node" data-id="${id}" transform="translate(${x},${y})"><circle r="28"/><text text-anchor="middle" y="47">${n[1]}</text></g></a>`}
+function drawGene(){svg.innerHTML=E.filter(e=>pos[e[0]]&&pos[e[1]]).map(e=>line(e[0],e[1],e[3],e[2])).join('')+Object.keys(pos).map(node).join('');bindTips(svg)}
+function bindTips(root){root.querySelectorAll('.node').forEach(g=>{g.onmousemove=e=>{let n=map[g.dataset.id];tip.innerHTML=`<b>${n[1]}</b> · ${n[2]}<br>${n[3]}<br><small>${n[4]}</small>`;tip.style.display='block';tip.style.left=(e.clientX+14)+'px';tip.style.top=(e.clientY+14)+'px'};g.onmouseleave=()=>tip.style.display='none'})}
+drawGene();
+
+function yr(y){return y<0?Math.abs(y)+' ق.م':y+' م'}
+function drawTimeline(){
+ let s=document.getElementById('timeline'), xmin=-800,xmax=700,L=120,R=1350, top=55,row=38;
+ const X=y=>L+(y-xmin)/(xmax-xmin)*(R-L);
+ let h=`<line x1="${L}" y1="35" x2="${R}" y2="35" stroke="#9a9062"/>`;
+ [-800,-600,-400,-200,0,200,400,600].forEach(y=>h+=`<line x1="${X(y)}" y1="28" x2="${X(y)}" y2="600" stroke="#26352c"/><text x="${X(y)}" y="20" fill="#c9c2a0" text-anchor="middle" font-size="12">${yr(y)}</text>`);
+ TL.forEach((r,i)=>{let y=top+i*row,x1=X(r[1]),x2=X(r[2]);h+=`<text x="105" y="${y+5}" fill="#eee5bd" text-anchor="end" font-size="13">${r[0]}</text><line x1="${x1}" y1="${y}" x2="${Math.max(x2,x1+5)}" y2="${y}" stroke="#d0b85e" stroke-width="7" stroke-linecap="round"><title>${yr(r[1])} – ${yr(r[2])} · ${r[3]}</title></line>`});
+ s.innerHTML=h;
+}
+drawTimeline();
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');let t=b.dataset.v;if(t==='time'){document.getElementById('gene').hidden=true;document.getElementById('time').hidden=false}else{document.getElementById('time').hidden=true;document.getElementById('gene').hidden=false}});
+</script>
+<script src="site-shell.js?v=41810"></script><script src="luxdot-challenge.js?v=4183"></script></body></html>
