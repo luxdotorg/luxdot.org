@@ -1,0 +1,3405 @@
+{
+  "generated_at": "2026-08-23",
+  "source_version": "4.16.2",
+  "research_html_count": 3,
+  "selected_top_level_research_surfaces_count": 35,
+  "manifest_candidate_records": 172,
+  "taxonomy_present": true,
+  "routes": [
+    {
+      "route": "/alawi-nusayri-research.html",
+      "title": ""
+    },
+    {
+      "route": "/audio-library.html",
+      "title": "LuxDot · المكتبة المسموعة"
+    },
+    {
+      "route": "/belief-violence-memory.html",
+      "title": ""
+    },
+    {
+      "route": "/brabant-research-architecture.html",
+      "title": "Historic Brabant Research Architecture · LuxDot"
+    },
+    {
+      "route": "/brother-roger-memory.html",
+      "title": ""
+    },
+    {
+      "route": "/chaam-sacred-memory.html",
+      "title": "Chaam: Churches &amp; Memory · LuxDot"
+    },
+    {
+      "route": "/denhaag-deportation-memory.html",
+      "title": ""
+    },
+    {
+      "route": "/deportation-memory.html",
+      "title": ""
+    },
+    {
+      "route": "/genetics-memory-hypothesis.html",
+      "title": "التشفير الجيني وفرضية الذاكرة عبر الأجيال · LuxDot"
+    },
+    {
+      "route": "/ghouta-chemical-memory.html",
+      "title": "21 آب 2013 — الغوطة: ملف السارين · LuxDot"
+    },
+    {
+      "route": "/hank-raamsdonk-war-memory.html",
+      "title": ""
+    },
+    {
+      "route": "/humanitarian-day-memory.html",
+      "title": "LuxDot Memory"
+    },
+    {
+      "route": "/indies-memory.html",
+      "title": ""
+    },
+    {
+      "route": "/jewish-research-center.html",
+      "title": "Jewish Research · LuxDot"
+    },
+    {
+      "route": "/kevelaer-chaam-timeline.html",
+      "title": "Kevelaer Chaam Timeline · LuxDot"
+    },
+    {
+      "route": "/laws-principles-atlas.html",
+      "title": "أطلس القوانين والمبادئ · LuxDot"
+    },
+    {
+      "route": "/library.html",
+      "title": "Library · LuxDot"
+    },
+    {
+      "route": "/memory-submit.html",
+      "title": "LuxDot · أرسل ذاكرة"
+    },
+    {
+      "route": "/memory.html",
+      "title": "Memory · LuxDot"
+    },
+    {
+      "route": "/messianic-names-numbers-atlas.html",
+      "title": "LuxDot · Messianic Names & Numbers Atlas"
+    },
+    {
+      "route": "/name-truth-memory.html",
+      "title": ""
+    },
+    {
+      "route": "/projects.html",
+      "title": "Projects · LuxDot"
+    },
+    {
+      "route": "/research/circle-of-care-25km-original.html",
+      "title": "Circle Of Care 25Km Original · LuxDot"
+    },
+    {
+      "route": "/research/global-savior-atlas.html",
+      "title": "Global Savior Atlas · LuxDot"
+    },
+    {
+      "route": "/research/shaam-breda.html",
+      "title": "Shaam–Breda · LuxDot"
+    },
+    {
+      "route": "/research.html",
+      "title": "LuxDot · الأبحاث الحيّة · Live Research"
+    },
+    {
+      "route": "/sacred-25km-atlas.html",
+      "title": "LuxDot network moved"
+    },
+    {
+      "route": "/saint-genis-memory.html",
+      "title": "LuxDot Memory"
+    },
+    {
+      "route": "/savior-atlas.html",
+      "title": "Savior Atlas · LuxDot"
+    },
+    {
+      "route": "/savior-deepening.html",
+      "title": "تعميق أطلس المخلّص · لوكسدوت"
+    },
+    {
+      "route": "/st-bartholomew-memory.html",
+      "title": ""
+    },
+    {
+      "route": "/stazzema-memory.html",
+      "title": ""
+    },
+    {
+      "route": "/timeline.html",
+      "title": "LuxDot · الخط الزمني"
+    },
+    {
+      "route": "/totalitarian-victims-memory.html",
+      "title": ""
+    },
+    {
+      "route": "/visual-library.html",
+      "title": "LuxDot · المكتبة المرئية"
+    },
+    {
+      "route": "/war-reconstruction-memory.html",
+      "title": "War, Reconstruction &amp; Memory · LuxDot"
+    },
+    {
+      "route": "/west-brabant-family-memory-network.html",
+      "title": "West Brabant Networks — Land, Family, Faith &amp; Memory · LuxDot"
+    },
+    {
+      "route": "/westerweel-memory.html",
+      "title": ""
+    }
+  ],
+  "manifest_records": [
+    {
+      "id": "knowledge-laws-galaxy.html",
+      "title": "مجرة المعرفة والقرار · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 2,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "laws-principles-atlas.html",
+          "title": "أطلس القوانين والمبادئ · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "research.html",
+      "title": "LuxDot · الأبحاث الحيّة · Live Research"
+    },
+    {
+      "id": "laws-principles-atlas.html",
+      "title": "أطلس القوانين والمبادئ · LuxDot"
+    },
+    {
+      "id": "van-velthoven-family.html",
+      "title": "عائلة فان فيلتهوفن — شجرة حية",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 25,
+      "source_class_suggestions": {
+        "E? · research lead / external": 25
+      },
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        }
+      ]
+    },
+    {
+      "id": "brother-roger-memory.html",
+      "title": "الأخ روجيه — المصالحة بعد الحرب",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 2,
+      "source_class_suggestions": {
+        "E? · research lead / external": 1,
+        "A? · possible primary/official": 1
+      },
+      "internal_connections": 4,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "humanity.html",
+          "title": "Humanity & Meaning · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "home.html",
+      "title": "Home · LuxDot"
+    },
+    {
+      "id": "memory.html",
+      "title": "Memory · LuxDot"
+    },
+    {
+      "id": "humanity.html",
+      "title": "Humanity & Meaning · LuxDot"
+    },
+    {
+      "id": "paulina-withagen-rescue.html",
+      "title": "Paulina Withagen — Rescue, Memory & Yad Vashem · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 10,
+      "source_class_suggestions": {
+        "E? · research lead / external": 10
+      },
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        }
+      ]
+    },
+    {
+      "id": "talmud-messiah.html",
+      "title": "Jewish Research · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 3,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "faith.html",
+          "title": "Faith · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "faith.html",
+      "title": "Faith · LuxDot"
+    },
+    {
+      "id": "genetics-memory-hypothesis.html",
+      "title": "التشفير الجيني وفرضية الذاكرة عبر الأجيال · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 2,
+      "source_class_suggestions": {
+        "E? · research lead / external": 2
+      },
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "science-galaxy.html",
+          "title": "مجرة العلوم · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "science-galaxy.html",
+      "title": "مجرة العلوم · LuxDot"
+    },
+    {
+      "id": "jansen-de-koning-network.html",
+      "title": "Jansen × De Koning · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 20,
+      "source_class_suggestions": {
+        "E? · research lead / external": 20
+      },
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        }
+      ]
+    },
+    {
+      "id": "chaam-midwives.html",
+      "title": "قابلتا شام · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 22,
+      "source_class_suggestions": {
+        "E? · research lead / external": 22
+      },
+      "internal_connections": 6,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "projects.html",
+          "title": "Projects · LuxDot"
+        },
+        {
+          "id": "humanity.html",
+          "title": "Humanity & Meaning · LuxDot"
+        },
+        {
+          "id": "everyday-good.html",
+          "title": "Everyday Good · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "projects.html",
+      "title": "Projects · LuxDot"
+    },
+    {
+      "id": "everyday-good.html",
+      "title": "Everyday Good · LuxDot"
+    },
+    {
+      "id": "abulafia-comparative-lab.html",
+      "title": "أبو العافية: تركيب الحروف والجيماتريا والتجربة النبوية · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 1,
+      "source_class_suggestions": {
+        "B? · academic/scholarly": 1
+      },
+      "internal_connections": 5,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        },
+        {
+          "id": "messianic-names-numbers-atlas.html",
+          "title": "LuxDot · Messianic Names & Numbers Atlas"
+        },
+        {
+          "id": "messianic-method-comparison.html",
+          "title": "مصفوفة المخلّص · مقارنة عابرة للتقاليد"
+        }
+      ]
+    },
+    {
+      "id": "savior-atlas.html",
+      "title": "Savior Atlas · LuxDot"
+    },
+    {
+      "id": "messianic-names-numbers-atlas.html",
+      "title": "LuxDot · Messianic Names & Numbers Atlas"
+    },
+    {
+      "id": "messianic-method-comparison.html",
+      "title": "مصفوفة المخلّص · مقارنة عابرة للتقاليد"
+    },
+    {
+      "id": "chaam-sacred-memory.html",
+      "title": "Chaam: Churches & Memory · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 18,
+      "source_class_suggestions": {
+        "E? · research lead / external": 18
+      },
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "shaam-brabant-network.html",
+          "title": "Shaam–Brabant Network · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "shaam-brabant-network.html",
+      "title": "Shaam–Brabant Network · LuxDot"
+    },
+    {
+      "id": "messianic-method-comparison.html",
+      "title": "مصفوفة المخلّص · مقارنة عابرة للتقاليد",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 9,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "messianic-names-numbers-atlas.html",
+          "title": "LuxDot · Messianic Names & Numbers Atlas"
+        },
+        {
+          "id": "number-letter-lab.html",
+          "title": "Number & Letter Lab · LuxDot"
+        },
+        {
+          "id": "abulafia-comparative-lab.html",
+          "title": "أبو العافية: تركيب الحروف والجيماتريا والتجربة النبوية · LuxDot"
+        },
+        {
+          "id": "hurufism-fazlallah-nasimi.html",
+          "title": "الحروفية: فضل الله الأسترآبادي ونسيمي · LuxDot"
+        },
+        {
+          "id": "christian-apocalyptic-numbers-newton.html",
+          "title": "الأعداد الأخروية المسيحية · الرؤيا ونيوتن"
+        },
+        {
+          "id": "ismaili-qaim-mahdi.html",
+          "title": "الإسماعيلية والقائم/المهدي — ملف للمراجعة والمقارنة"
+        },
+        {
+          "id": "sabbatai-nathan-test.html",
+          "title": "شبتاي تسفي وناتان الغزّي · اختبار المهدوية العددية"
+        }
+      ]
+    },
+    {
+      "id": "number-letter-lab.html",
+      "title": "Number & Letter Lab · LuxDot"
+    },
+    {
+      "id": "abulafia-comparative-lab.html",
+      "title": "أبو العافية: تركيب الحروف والجيماتريا والتجربة النبوية · LuxDot"
+    },
+    {
+      "id": "hurufism-fazlallah-nasimi.html",
+      "title": "الحروفية: فضل الله الأسترآبادي ونسيمي · LuxDot"
+    },
+    {
+      "id": "christian-apocalyptic-numbers-newton.html",
+      "title": "الأعداد الأخروية المسيحية · الرؤيا ونيوتن"
+    },
+    {
+      "id": "ismaili-qaim-mahdi.html",
+      "title": "الإسماعيلية والقائم/المهدي — ملف للمراجعة والمقارنة"
+    },
+    {
+      "id": "sabbatai-nathan-test.html",
+      "title": "شبتاي تسفي وناتان الغزّي · اختبار المهدوية العددية"
+    },
+    {
+      "id": "tongerlo-fourteen-churches.html",
+      "title": "Tongerlo & Fourteen Towers · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 16,
+      "source_class_suggestions": {
+        "E? · research lead / external": 16
+      },
+      "internal_connections": 3,
+      "related": [
+        {
+          "id": "shaam-brabant-network.html",
+          "title": "Shaam–Brabant Network · LuxDot"
+        },
+        {
+          "id": "templars-master.html",
+          "title": "فرسان الهيكل · الملف الكبير · LuxDot"
+        },
+        {
+          "id": "brabant-research-architecture.html",
+          "title": "Historic Brabant Research Architecture · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "templars-master.html",
+      "title": "فرسان الهيكل · الملف الكبير · LuxDot"
+    },
+    {
+      "id": "brabant-research-architecture.html",
+      "title": "Historic Brabant Research Architecture · LuxDot"
+    },
+    {
+      "id": "alawi-nusayri-research.html",
+      "title": "العلوية / النُصيرية — ملف تاريخ العقيدة والنصوص للمراجعة",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 8,
+      "source_class_suggestions": {
+        "B? · academic/scholarly": 5,
+        "E? · research lead / external": 3
+      },
+      "internal_connections": 2,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "ismaili-qaim-mahdi.html",
+          "title": "الإسماعيلية والقائم/المهدي — ملف للمراجعة والمقارنة"
+        }
+      ]
+    },
+    {
+      "id": "history-galaxy.html",
+      "title": "مجرة التاريخ · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 4,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "projects.html",
+          "title": "Projects · LuxDot"
+        },
+        {
+          "id": "prewriting-history.html",
+          "title": "التاريخ قبل التدوين · LuxDot"
+        },
+        {
+          "id": "egyptology.html",
+          "title": "المصريات · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "prewriting-history.html",
+      "title": "التاريخ قبل التدوين · LuxDot"
+    },
+    {
+      "id": "egyptology.html",
+      "title": "المصريات · LuxDot"
+    },
+    {
+      "id": "chosen-hypothesis.html",
+      "title": "فرضية المختار · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 5,
+      "source_class_suggestions": {
+        "C? · reference": 2,
+        "E? · research lead / external": 3
+      },
+      "internal_connections": 4,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        },
+        {
+          "id": "chosen-falsification.html",
+          "title": "تهافت فرضية المختار · LuxDot"
+        },
+        {
+          "id": "chosen-balance.html",
+          "title": "ميزان فرضية المختار · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "chosen-falsification.html",
+      "title": "تهافت فرضية المختار · LuxDot"
+    },
+    {
+      "id": "chosen-balance.html",
+      "title": "ميزان فرضية المختار · LuxDot"
+    },
+    {
+      "id": "messianic-names-numbers-atlas.html",
+      "title": "LuxDot · Messianic Names & Numbers Atlas",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 14,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        },
+        {
+          "id": "druze-hikma.html",
+          "title": "رسائل الحكمة · LuxDot"
+        },
+        {
+          "id": "messianic-method-comparison.html",
+          "title": "مصفوفة المخلّص · مقارنة عابرة للتقاليد"
+        },
+        {
+          "id": "mahdi-matrix.html",
+          "title": "مصفوفة المهدي · LuxDot"
+        },
+        {
+          "id": "maimonides-messiah-test.html",
+          "title": "Jewish Research · LuxDot"
+        },
+        {
+          "id": "abulafia-comparative-lab.html",
+          "title": "أبو العافية: تركيب الحروف والجيماتريا والتجربة النبوية · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "druze-hikma.html",
+      "title": "رسائل الحكمة · LuxDot"
+    },
+    {
+      "id": "mahdi-matrix.html",
+      "title": "مصفوفة المهدي · LuxDot"
+    },
+    {
+      "id": "maimonides-messiah-test.html",
+      "title": "Jewish Research · LuxDot"
+    },
+    {
+      "id": "burial-settlement-layers.html",
+      "title": "Burial & Settlement Layers · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 12,
+      "source_class_suggestions": {
+        "E? · research lead / external": 12
+      },
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "shaam-brabant-network.html",
+          "title": "Shaam–Brabant Network · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "withagen-chaam-toponym.html",
+      "title": "From Family to Street? — Investigating Withagen in Chaam · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 10,
+      "source_class_suggestions": {
+        "A? · possible primary/official": 5,
+        "E? · research lead / external": 5
+      },
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        }
+      ]
+    },
+    {
+      "id": "west-brabant-family-memory-network.html",
+      "title": "West Brabant Networks — Land, Family, Faith & Memory · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 30,
+      "source_class_suggestions": {
+        "A? · possible primary/official": 10,
+        "E? · research lead / external": 20
+      },
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        }
+      ]
+    },
+    {
+      "id": "maximilian-kolbe.html",
+      "title": "Maximilian Kolbe · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 6,
+      "source_class_suggestions": {
+        "E? · research lead / external": 4,
+        "A? · possible primary/official": 1,
+        "C? · reference": 1
+      },
+      "internal_connections": 4,
+      "related": [
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "witness.html",
+          "title": "LuxDot · Witness"
+        },
+        {
+          "id": "humanity.html",
+          "title": "Humanity & Meaning · LuxDot"
+        },
+        {
+          "id": "witness-stream.html",
+          "title": "LuxDot · Witness Stream"
+        }
+      ]
+    },
+    {
+      "id": "witness.html",
+      "title": "LuxDot · Witness"
+    },
+    {
+      "id": "witness-stream.html",
+      "title": "LuxDot · Witness Stream"
+    },
+    {
+      "id": "maimonides.html",
+      "title": "Jewish Research · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 4,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "faith.html",
+          "title": "Faith · LuxDot"
+        },
+        {
+          "id": "humanity.html",
+          "title": "Humanity & Meaning · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "ghouta-chemical-memory.html",
+      "title": "21 آب 2013 — الغوطة: ملف السارين · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 6,
+      "source_class_suggestions": {
+        "E? · research lead / external": 6
+      },
+      "internal_connections": 6,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "witness.html",
+          "title": "LuxDot · Witness"
+        },
+        {
+          "id": "witness-stream.html",
+          "title": "LuxDot · Witness Stream"
+        },
+        {
+          "id": "radio.html",
+          "title": "إذاعة نقطة نور · LuxDot من شام · 24/7"
+        }
+      ]
+    },
+    {
+      "id": "radio.html",
+      "title": "إذاعة نقطة نور · LuxDot من شام · 24/7"
+    },
+    {
+      "id": "abulafia-letters-names.html",
+      "title": "Jewish Research · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 4,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "faith.html",
+          "title": "Faith · LuxDot"
+        },
+        {
+          "id": "humanity.html",
+          "title": "Humanity & Meaning · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "sacred-25km-atlas.html",
+      "title": "LuxDot network moved",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "sacred-120km-network.html",
+          "title": "120 km Network · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "sacred-120km-network.html",
+      "title": "120 km Network · LuxDot"
+    },
+    {
+      "id": "abraham-maimonides-sufi-bridge.html",
+      "title": "Jewish Research · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 3,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "faith.html",
+          "title": "Faith · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "westerweel-memory.html",
+      "title": "يوب فيسترفيل — الحماية كفعل",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 3,
+      "source_class_suggestions": {
+        "E? · research lead / external": 3
+      },
+      "internal_connections": 6,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "witness.html",
+          "title": "LuxDot · Witness"
+        },
+        {
+          "id": "humanity.html",
+          "title": "Humanity & Meaning · LuxDot"
+        },
+        {
+          "id": "witness-stream.html",
+          "title": "LuxDot · Witness Stream"
+        }
+      ]
+    },
+    {
+      "id": "brabant-research-architecture.html",
+      "title": "Historic Brabant Research Architecture · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 5,
+      "source_class_suggestions": {
+        "E? · research lead / external": 5
+      },
+      "internal_connections": 7,
+      "related": [
+        {
+          "id": "shaam-brabant-network.html",
+          "title": "Shaam–Brabant Network · LuxDot"
+        },
+        {
+          "id": "manuaal-1422-people-land.html",
+          "title": "Manuaal 1422 · People & Land · LuxDot"
+        },
+        {
+          "id": "historic-brabant-crossborder.html",
+          "title": "Historic Brabant Cross-Border Network · LuxDot"
+        },
+        {
+          "id": "ter-brake-power-network.html",
+          "title": "Ter Brake · LuxDot"
+        },
+        {
+          "id": "tongerlo-fourteen-churches.html",
+          "title": "Tongerlo & Fourteen Towers · LuxDot"
+        },
+        {
+          "id": "willibrord-echternach.html",
+          "title": "Willibrord & Echternach · LuxDot"
+        },
+        {
+          "id": "oosterhout-1422-people-land.html",
+          "title": "Oosterhout 1422 · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "manuaal-1422-people-land.html",
+      "title": "Manuaal 1422 · People & Land · LuxDot"
+    },
+    {
+      "id": "historic-brabant-crossborder.html",
+      "title": "Historic Brabant Cross-Border Network · LuxDot"
+    },
+    {
+      "id": "ter-brake-power-network.html",
+      "title": "Ter Brake · LuxDot"
+    },
+    {
+      "id": "tongerlo-fourteen-churches.html",
+      "title": "Tongerlo & Fourteen Towers · LuxDot"
+    },
+    {
+      "id": "willibrord-echternach.html",
+      "title": "Willibrord & Echternach · LuxDot"
+    },
+    {
+      "id": "oosterhout-1422-people-land.html",
+      "title": "Oosterhout 1422 · LuxDot"
+    },
+    {
+      "id": "templars-master.html",
+      "title": "فرسان الهيكل · الملف الكبير · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 9,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "shaam-brabant-network.html",
+          "title": "Shaam–Brabant Network · LuxDot"
+        },
+        {
+          "id": "manuaal-1422-people-land.html",
+          "title": "Manuaal 1422 · People & Land · LuxDot"
+        },
+        {
+          "id": "ter-brake-power-network.html",
+          "title": "Ter Brake · LuxDot"
+        },
+        {
+          "id": "ter-brake-cadastral-investigation.html",
+          "title": "Ter Brake → Chaam · Parcel Evidence Lab · LuxDot"
+        },
+        {
+          "id": "templar-land-chain.html",
+          "title": "تحقيق الأرض · تير براكة وشام · LuxDot"
+        },
+        {
+          "id": "1127-watch.html",
+          "title": "1127 · السهر وانتظار المجيء · LuxDot"
+        },
+        {
+          "id": "tongerlo-fourteen-churches.html",
+          "title": "Tongerlo & Fourteen Towers · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "ter-brake-cadastral-investigation.html",
+      "title": "Ter Brake → Chaam · Parcel Evidence Lab · LuxDot"
+    },
+    {
+      "id": "templar-land-chain.html",
+      "title": "تحقيق الأرض · تير براكة وشام · LuxDot"
+    },
+    {
+      "id": "1127-watch.html",
+      "title": "1127 · السهر وانتظار المجيء · LuxDot"
+    },
+    {
+      "id": "druze-hikma.html",
+      "title": "رسائل الحكمة · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 9,
+      "source_class_suggestions": {
+        "E? · research lead / external": 8,
+        "B? · academic/scholarly": 1
+      },
+      "internal_connections": 9,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "faith.html",
+          "title": "Faith · LuxDot"
+        },
+        {
+          "id": "library.html",
+          "title": "Library · LuxDot"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        },
+        {
+          "id": "messianic-names-numbers-atlas.html",
+          "title": "LuxDot · Messianic Names & Numbers Atlas"
+        },
+        {
+          "id": "hallaj.html",
+          "title": "الحسين بن منصور الحلاج · LuxDot"
+        },
+        {
+          "id": "mahdi-matrix.html",
+          "title": "مصفوفة المهدي · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "library.html",
+      "title": "Library · LuxDot"
+    },
+    {
+      "id": "hallaj.html",
+      "title": "الحسين بن منصور الحلاج · LuxDot"
+    },
+    {
+      "id": "chaam-genealogy.html",
+      "title": "LuxDot — Chaam Genealogy",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 8,
+      "source_class_suggestions": {
+        "E? · research lead / external": 8
+      },
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        }
+      ]
+    },
+    {
+      "id": "belief-violence-memory.html",
+      "title": "Belief Violence Memory",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 4,
+      "source_class_suggestions": {
+        "E? · research lead / external": 4
+      },
+      "internal_connections": 4,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "radio.html",
+          "title": "إذاعة نقطة نور · LuxDot من شام · 24/7"
+        }
+      ]
+    },
+    {
+      "id": "joseph-karo.html",
+      "title": "Jewish Research · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 4,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "faith.html",
+          "title": "Faith · LuxDot"
+        },
+        {
+          "id": "humanity.html",
+          "title": "Humanity & Meaning · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "historic-brabant-crossborder.html",
+      "title": "Historic Brabant Cross-Border Network · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 19,
+      "source_class_suggestions": {
+        "E? · research lead / external": 19
+      },
+      "internal_connections": 6,
+      "related": [
+        {
+          "id": "shaam-brabant-network.html",
+          "title": "Shaam–Brabant Network · LuxDot"
+        },
+        {
+          "id": "brabant-research-architecture.html",
+          "title": "Historic Brabant Research Architecture · LuxDot"
+        },
+        {
+          "id": "hoogstraten.html",
+          "title": "Hoogstraten · LuxDot"
+        },
+        {
+          "id": "manuaal-1422-people-land.html",
+          "title": "Manuaal 1422 · People & Land · LuxDot"
+        },
+        {
+          "id": "ter-brake-power-network.html",
+          "title": "Ter Brake · LuxDot"
+        },
+        {
+          "id": "border-chapels-route.html",
+          "title": "Border Chapels & Pilgrimage Routes · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "hoogstraten.html",
+      "title": "Hoogstraten · LuxDot"
+    },
+    {
+      "id": "border-chapels-route.html",
+      "title": "Border Chapels & Pilgrimage Routes · LuxDot"
+    },
+    {
+      "id": "st-bartholomew-memory.html",
+      "title": "St Bartholomew Memory",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 2,
+      "source_class_suggestions": {
+        "E? · research lead / external": 1,
+        "C? · reference": 1
+      },
+      "internal_connections": 5,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "witness.html",
+          "title": "LuxDot · Witness"
+        },
+        {
+          "id": "witness-stream.html",
+          "title": "LuxDot · Witness Stream"
+        }
+      ]
+    },
+    {
+      "id": "name-truth-memory.html",
+      "title": "17 أغسطس — الكذبة التي كُشفت",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 3,
+      "source_class_suggestions": {
+        "C? · reference": 1,
+        "E? · research lead / external": 2
+      },
+      "internal_connections": 3,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "egyptology.html",
+      "title": "المصريات · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "history-galaxy.html",
+          "title": "مجرة التاريخ · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "history-galaxy.html",
+      "title": "مجرة التاريخ · LuxDot"
+    },
+    {
+      "id": "reiderland-live.html",
+      "title": "رايدرلاند · بحث حي · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 6,
+      "source_class_suggestions": {
+        "E? · research lead / external": 6
+      },
+      "internal_connections": 3,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "projects.html",
+          "title": "Projects · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "gematria-method-lab.html",
+      "title": "Jewish Research · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 4,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "faith.html",
+          "title": "Faith · LuxDot"
+        },
+        {
+          "id": "luria-vital-redemption.html",
+          "title": "لوريا وحاييم فيتال · الخلاص وإصلاح العالم"
+        }
+      ]
+    },
+    {
+      "id": "luria-vital-redemption.html",
+      "title": "لوريا وحاييم فيتال · الخلاص وإصلاح العالم"
+    },
+    {
+      "id": "prewriting-history.html",
+      "title": "التاريخ قبل التدوين · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "history-galaxy.html",
+          "title": "مجرة التاريخ · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "genealogy-reader.html",
+      "title": "في جينيالوجيا الأخلاق · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 1,
+      "source_class_suggestions": {
+        "E? · research lead / external": 1
+      },
+      "internal_connections": 2,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "library.html",
+          "title": "Library · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "laws-principles-atlas.html",
+      "title": "أطلس القوانين والمبادئ · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 5,
+      "source_class_suggestions": {
+        "E? · research lead / external": 4,
+        "C? · reference": 1
+      },
+      "internal_connections": 3,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "projects.html",
+          "title": "Projects · LuxDot"
+        },
+        {
+          "id": "knowledge-laws-galaxy.html",
+          "title": "مجرة المعرفة والقرار · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "knowledge-laws-galaxy.html",
+      "title": "مجرة المعرفة والقرار · LuxDot"
+    },
+    {
+      "id": "withagen-family.html",
+      "title": "The Withagen Family — Bergen op Zoom & West Brabant · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 20,
+      "source_class_suggestions": {
+        "A? · possible primary/official": 15,
+        "E? · research lead / external": 5
+      },
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        }
+      ]
+    },
+    {
+      "id": "saint-genis-memory.html",
+      "title": "LuxDot Memory",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 5,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "witness.html",
+          "title": "LuxDot · Witness"
+        },
+        {
+          "id": "witness-stream.html",
+          "title": "LuxDot · Witness Stream"
+        }
+      ]
+    },
+    {
+      "id": "denhaag-deportation-memory.html",
+      "title": "18 أغسطس — بداية الترحيل الجماعي من لاهاي",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 1,
+      "source_class_suggestions": {
+        "E? · research lead / external": 1
+      },
+      "internal_connections": 5,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "witness.html",
+          "title": "LuxDot · Witness"
+        },
+        {
+          "id": "witness-stream.html",
+          "title": "LuxDot · Witness Stream"
+        }
+      ]
+    },
+    {
+      "id": "stazzema-memory.html",
+      "title": "سانت آنا دي ستاتزيما — المدنيون في قلب الحرب",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 2,
+      "source_class_suggestions": {
+        "E? · research lead / external": 2
+      },
+      "internal_connections": 5,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "witness.html",
+          "title": "LuxDot · Witness"
+        },
+        {
+          "id": "witness-stream.html",
+          "title": "LuxDot · Witness Stream"
+        }
+      ]
+    },
+    {
+      "id": "totalitarianism-reader.html",
+      "title": "أصول الشمولية · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 1,
+      "source_class_suggestions": {
+        "E? · research lead / external": 1
+      },
+      "internal_connections": 2,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "library.html",
+          "title": "Library · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "sacred-120km-network.html",
+      "title": "120 km Network · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 7,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "shaam-brabant-network.html",
+          "title": "Shaam–Brabant Network · LuxDot"
+        },
+        {
+          "id": "shaam-breda.html",
+          "title": "Shaam Breda · LuxDot"
+        },
+        {
+          "id": "urania-nassau.html",
+          "title": "Urania Nassau · LuxDot"
+        },
+        {
+          "id": "hoogstraten.html",
+          "title": "Hoogstraten · LuxDot"
+        },
+        {
+          "id": "alphen-before-alphen.html",
+          "title": "Alphen before Alphen · LuxDot"
+        },
+        {
+          "id": "sacred-25km-atlas.html",
+          "title": "LuxDot network moved"
+        }
+      ]
+    },
+    {
+      "id": "shaam-breda.html",
+      "title": "Shaam Breda · LuxDot"
+    },
+    {
+      "id": "urania-nassau.html",
+      "title": "Urania Nassau · LuxDot"
+    },
+    {
+      "id": "alphen-before-alphen.html",
+      "title": "Alphen before Alphen · LuxDot"
+    },
+    {
+      "id": "sacred-25km-atlas.html",
+      "title": "LuxDot network moved"
+    },
+    {
+      "id": "hank-raamsdonk-war-memory.html",
+      "title": "هانك–رامسدونك — فان فيلتهوفن وذاكرة الحرب",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 5,
+      "source_class_suggestions": {
+        "E? · research lead / external": 5
+      },
+      "internal_connections": 3,
+      "related": [
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "witness.html",
+          "title": "LuxDot · Witness"
+        },
+        {
+          "id": "witness-stream.html",
+          "title": "LuxDot · Witness Stream"
+        }
+      ]
+    },
+    {
+      "id": "luria-vital-redemption.html",
+      "title": "لوريا وحاييم فيتال · الخلاص وإصلاح العالم",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 1,
+      "source_class_suggestions": {
+        "E? · research lead / external": 1
+      },
+      "internal_connections": 4,
+      "related": [
+        {
+          "id": "messianic-names-numbers-atlas.html",
+          "title": "LuxDot · Messianic Names & Numbers Atlas"
+        },
+        {
+          "id": "number-letter-lab.html",
+          "title": "Number & Letter Lab · LuxDot"
+        },
+        {
+          "id": "messianic-method-comparison.html",
+          "title": "مصفوفة المخلّص · مقارنة عابرة للتقاليد"
+        },
+        {
+          "id": "gematria-method-lab.html",
+          "title": "Jewish Research · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "gematria-method-lab.html",
+      "title": "Jewish Research · LuxDot"
+    },
+    {
+      "id": "quantum-entanglement.html",
+      "title": "التشابك الكمومي · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 2,
+      "source_class_suggestions": {
+        "E? · research lead / external": 2
+      },
+      "internal_connections": 2,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "science-galaxy.html",
+          "title": "مجرة العلوم · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "withagen-jansen-dekoning.html",
+      "title": "Withagen × Jansen × de Koning — Bergen op Zoom Network · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 15,
+      "source_class_suggestions": {
+        "A? · possible primary/official": 10,
+        "E? · research lead / external": 5
+      },
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        }
+      ]
+    },
+    {
+      "id": "templar-land-chain.html",
+      "title": "تحقيق الأرض · تير براكة وشام · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 3,
+      "source_class_suggestions": {
+        "E? · research lead / external": 3
+      },
+      "internal_connections": 6,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "shaam-brabant-network.html",
+          "title": "Shaam–Brabant Network · LuxDot"
+        },
+        {
+          "id": "templars-master.html",
+          "title": "فرسان الهيكل · الملف الكبير · LuxDot"
+        },
+        {
+          "id": "manuaal-1422-people-land.html",
+          "title": "Manuaal 1422 · People & Land · LuxDot"
+        },
+        {
+          "id": "ter-brake-power-network.html",
+          "title": "Ter Brake · LuxDot"
+        },
+        {
+          "id": "ter-brake-cadastral-investigation.html",
+          "title": "Ter Brake → Chaam · Parcel Evidence Lab · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "mahdi-matrix.html",
+      "title": "مصفوفة المهدي · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 6,
+      "source_class_suggestions": {
+        "E? · research lead / external": 6
+      },
+      "internal_connections": 7,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "projects.html",
+          "title": "Projects · LuxDot"
+        },
+        {
+          "id": "messianic-names-numbers-atlas.html",
+          "title": "LuxDot · Messianic Names & Numbers Atlas"
+        },
+        {
+          "id": "druze-hikma.html",
+          "title": "رسائل الحكمة · LuxDot"
+        },
+        {
+          "id": "hallaj.html",
+          "title": "الحسين بن منصور الحلاج · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "withagen-van-den-boom.html",
+      "title": "Withagen × Van den Boom — A Two-Century Family Network · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 15,
+      "source_class_suggestions": {
+        "A? · possible primary/official": 5,
+        "E? · research lead / external": 10
+      },
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        }
+      ]
+    },
+    {
+      "id": "humanitarian-day-memory.html",
+      "title": "LuxDot Memory",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 5,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "witness.html",
+          "title": "LuxDot · Witness"
+        },
+        {
+          "id": "witness-stream.html",
+          "title": "LuxDot · Witness Stream"
+        }
+      ]
+    },
+    {
+      "id": "hallaj.html",
+      "title": "الحسين بن منصور الحلاج · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 4,
+      "source_class_suggestions": {
+        "B? · academic/scholarly": 1,
+        "E? · research lead / external": 3
+      },
+      "internal_connections": 7,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "projects.html",
+          "title": "Projects · LuxDot"
+        },
+        {
+          "id": "humanity.html",
+          "title": "Humanity & Meaning · LuxDot"
+        },
+        {
+          "id": "druze-hikma.html",
+          "title": "رسائل الحكمة · LuxDot"
+        },
+        {
+          "id": "mahdi-matrix.html",
+          "title": "مصفوفة المهدي · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "science-galaxy.html",
+      "title": "مجرة العلوم · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 5,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "projects.html",
+          "title": "Projects · LuxDot"
+        },
+        {
+          "id": "quantum-entanglement.html",
+          "title": "التشابك الكمومي · LuxDot"
+        },
+        {
+          "id": "genetics-memory-hypothesis.html",
+          "title": "التشفير الجيني وفرضية الذاكرة عبر الأجيال · LuxDot"
+        },
+        {
+          "id": "psychoactive-substances.html",
+          "title": "المواد ذات التأثير النفسي · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "quantum-entanglement.html",
+      "title": "التشابك الكمومي · LuxDot"
+    },
+    {
+      "id": "genetics-memory-hypothesis.html",
+      "title": "التشفير الجيني وفرضية الذاكرة عبر الأجيال · LuxDot"
+    },
+    {
+      "id": "psychoactive-substances.html",
+      "title": "المواد ذات التأثير النفسي · LuxDot"
+    },
+    {
+      "id": "red-heifer.html",
+      "title": "Red Heifer · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 4,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "faith.html",
+          "title": "Faith · LuxDot"
+        },
+        {
+          "id": "pet-goat-apocalypse-media.html",
+          "title": "سينما الرموز والأخرويات · I, Pet Goat · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "pet-goat-apocalypse-media.html",
+      "title": "سينما الرموز والأخرويات · I, Pet Goat · LuxDot"
+    },
+    {
+      "id": "jan-van-velthoven.html",
+      "title": "يان فان فيلتهوفن — النحات في بريدا",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 15,
+      "source_class_suggestions": {
+        "E? · research lead / external": 15
+      },
+      "internal_connections": 0,
+      "related": []
+    },
+    {
+      "id": "name-date-matrix.html",
+      "title": "Name & Date Matrix · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 15,
+      "source_class_suggestions": {
+        "E? · research lead / external": 15
+      },
+      "internal_connections": 4,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "projects.html",
+          "title": "Projects · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "van-velthoven-grote-kerk.html",
+      "title": "فان فيلتهوفن والكنيسة الكبرى — أربعة قرون من التقاطعات",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 15,
+      "source_class_suggestions": {
+        "E? · research lead / external": 15
+      },
+      "internal_connections": 0,
+      "related": []
+    },
+    {
+      "id": "maimonides-letters-numbers.html",
+      "title": "Jewish Research · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 3,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "faith.html",
+          "title": "Faith · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "number-letter-lab.html",
+      "title": "Number & Letter Lab · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 9,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        },
+        {
+          "id": "messianic-method-comparison.html",
+          "title": "مصفوفة المخلّص · مقارنة عابرة للتقاليد"
+        },
+        {
+          "id": "pet-goat-apocalypse-media.html",
+          "title": "سينما الرموز والأخرويات · I, Pet Goat · LuxDot"
+        },
+        {
+          "id": "christian-apocalyptic-numbers-newton.html",
+          "title": "الأعداد الأخروية المسيحية · الرؤيا ونيوتن"
+        },
+        {
+          "id": "sabbatai-nathan-test.html",
+          "title": "شبتاي تسفي وناتان الغزّي · اختبار المهدوية العددية"
+        },
+        {
+          "id": "luria-vital-redemption.html",
+          "title": "لوريا وحاييم فيتال · الخلاص وإصلاح العالم"
+        },
+        {
+          "id": "guardian-benefactor.html",
+          "title": "نموذج الحارس المُحسن عبر التقاليد · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "guardian-benefactor.html",
+      "title": "نموذج الحارس المُحسن عبر التقاليد · LuxDot"
+    },
+    {
+      "id": "shaam-brabant-network.html",
+      "title": "Shaam–Brabant Network · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 6,
+      "source_class_suggestions": {
+        "E? · research lead / external": 6
+      },
+      "internal_connections": 21,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "shaam-breda.html",
+          "title": "Shaam Breda · LuxDot"
+        },
+        {
+          "id": "urania-nassau.html",
+          "title": "Urania Nassau · LuxDot"
+        },
+        {
+          "id": "templars-master.html",
+          "title": "فرسان الهيكل · الملف الكبير · LuxDot"
+        },
+        {
+          "id": "kees-van-wanrooij.html",
+          "title": "كيس فان وانرووي · LuxDot"
+        },
+        {
+          "id": "sacred-120km-network.html",
+          "title": "120 km Network · LuxDot"
+        },
+        {
+          "id": "brabant-research-architecture.html",
+          "title": "Historic Brabant Research Architecture · LuxDot"
+        },
+        {
+          "id": "hoogstraten.html",
+          "title": "Hoogstraten · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "kees-van-wanrooij.html",
+      "title": "كيس فان وانرووي · LuxDot"
+    },
+    {
+      "id": "ismaili-qaim-mahdi.html",
+      "title": "الإسماعيلية والقائم/المهدي — ملف للمراجعة والمقارنة",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 17,
+      "source_class_suggestions": {
+        "B? · academic/scholarly": 16,
+        "C? · reference": 1
+      },
+      "internal_connections": 4,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "messianic-names-numbers-atlas.html",
+          "title": "LuxDot · Messianic Names & Numbers Atlas"
+        },
+        {
+          "id": "messianic-method-comparison.html",
+          "title": "مصفوفة المخلّص · مقارنة عابرة للتقاليد"
+        },
+        {
+          "id": "alawi-nusayri-research.html",
+          "title": "العلوية / النُصيرية — ملف تاريخ العقيدة والنصوص للمراجعة"
+        }
+      ]
+    },
+    {
+      "id": "alawi-nusayri-research.html",
+      "title": "العلوية / النُصيرية — ملف تاريخ العقيدة والنصوص للمراجعة"
+    },
+    {
+      "id": "chaam-deep-history.html",
+      "title": "Chaam Deep History · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 26,
+      "source_class_suggestions": {
+        "E? · research lead / external": 16,
+        "A? · possible primary/official": 10
+      },
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "shaam-brabant-network.html",
+          "title": "Shaam–Brabant Network · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "savior-atlas.html",
+      "title": "Savior Atlas · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 37,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "faith.html",
+          "title": "Faith · LuxDot"
+        },
+        {
+          "id": "library.html",
+          "title": "Library · LuxDot"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "projects.html",
+          "title": "Projects · LuxDot"
+        },
+        {
+          "id": "messianic-names-numbers-atlas.html",
+          "title": "LuxDot · Messianic Names & Numbers Atlas"
+        },
+        {
+          "id": "number-letter-lab.html",
+          "title": "Number & Letter Lab · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "prince-claus-bridge.html",
+      "title": "Prince Claus — The Bridge · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 22,
+      "source_class_suggestions": {
+        "A? · possible primary/official": 6,
+        "E? · research lead / external": 16
+      },
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        }
+      ]
+    },
+    {
+      "id": "jewish-research-center.html",
+      "title": "Jewish Research · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 3,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "faith.html",
+          "title": "Faith · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "jafr-ilm-huruf.html",
+      "title": "الجفر: من كتاب أخروي شيعي مبكر إلى علم الحروف والتنبؤ · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 2,
+      "source_class_suggestions": {
+        "B? · academic/scholarly": 2
+      },
+      "internal_connections": 4,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        },
+        {
+          "id": "messianic-names-numbers-atlas.html",
+          "title": "LuxDot · Messianic Names & Numbers Atlas"
+        }
+      ]
+    },
+    {
+      "id": "verwithagen-erasmus.html",
+      "title": "Jan Verwithagen / Joannes Withagius × Erasmus — Name Hypothesis & Printing Network · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 20,
+      "source_class_suggestions": {
+        "E? · research lead / external": 20
+      },
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        }
+      ]
+    },
+    {
+      "id": "erasmus.html",
+      "title": "Erasmus · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 1,
+      "source_class_suggestions": {
+        "E? · research lead / external": 1
+      },
+      "internal_connections": 9,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "faith.html",
+          "title": "Faith · LuxDot"
+        },
+        {
+          "id": "library.html",
+          "title": "Library · LuxDot"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "projects.html",
+          "title": "Projects · LuxDot"
+        },
+        {
+          "id": "urania-nassau.html",
+          "title": "Urania Nassau · LuxDot"
+        },
+        {
+          "id": "nusantara.html",
+          "title": "Nusantara · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "nusantara.html",
+      "title": "Nusantara · LuxDot"
+    },
+    {
+      "id": "indies-memory.html",
+      "title": "15 أغسطس — ذاكرة الحرب في آسيا وبريدا",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 3,
+      "source_class_suggestions": {
+        "E? · research lead / external": 3
+      },
+      "internal_connections": 5,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "witness.html",
+          "title": "LuxDot · Witness"
+        },
+        {
+          "id": "witness-stream.html",
+          "title": "LuxDot · Witness Stream"
+        }
+      ]
+    },
+    {
+      "id": "willibrord-echternach.html",
+      "title": "Willibrord & Echternach · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 14,
+      "source_class_suggestions": {
+        "E? · research lead / external": 14
+      },
+      "internal_connections": 3,
+      "related": [
+        {
+          "id": "shaam-brabant-network.html",
+          "title": "Shaam–Brabant Network · LuxDot"
+        },
+        {
+          "id": "templars-master.html",
+          "title": "فرسان الهيكل · الملف الكبير · LuxDot"
+        },
+        {
+          "id": "brabant-research-architecture.html",
+          "title": "Historic Brabant Research Architecture · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "deportation-memory.html",
+      "title": "آلة الترحيل — حين تصبح البيروقراطية أداة أذى",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 2,
+      "source_class_suggestions": {
+        "C? · reference": 1,
+        "E? · research lead / external": 1
+      },
+      "internal_connections": 5,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "witness.html",
+          "title": "LuxDot · Witness"
+        },
+        {
+          "id": "witness-stream.html",
+          "title": "LuxDot · Witness Stream"
+        }
+      ]
+    },
+    {
+      "id": "burckhardt.html",
+      "title": "Burckhardt · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 5,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "projects.html",
+          "title": "Projects · LuxDot"
+        },
+        {
+          "id": "african-association.html",
+          "title": "African Association · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "african-association.html",
+      "title": "African Association · LuxDot"
+    },
+    {
+      "id": "hoogstraten.html",
+      "title": "Hoogstraten · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 14,
+      "source_class_suggestions": {
+        "E? · research lead / external": 14
+      },
+      "internal_connections": 7,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "projects.html",
+          "title": "Projects · LuxDot"
+        },
+        {
+          "id": "shaam-brabant-network.html",
+          "title": "Shaam–Brabant Network · LuxDot"
+        },
+        {
+          "id": "sacred-120km-network.html",
+          "title": "120 km Network · LuxDot"
+        },
+        {
+          "id": "historic-brabant-crossborder.html",
+          "title": "Historic Brabant Cross-Border Network · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "ibn-arabi-abulafia-comparison.html",
+      "title": "Jewish Research · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 4,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "faith.html",
+          "title": "Faith · LuxDot"
+        },
+        {
+          "id": "humanity.html",
+          "title": "Humanity & Meaning · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "chosen-balance.html",
+      "title": "ميزان فرضية المختار · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 4,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        },
+        {
+          "id": "chosen-falsification.html",
+          "title": "تهافت فرضية المختار · LuxDot"
+        },
+        {
+          "id": "chosen-hypothesis.html",
+          "title": "فرضية المختار · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "chosen-hypothesis.html",
+      "title": "فرضية المختار · LuxDot"
+    },
+    {
+      "id": "sabbatai-nathan-test.html",
+      "title": "شبتاي تسفي وناتان الغزّي · اختبار المهدوية العددية",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 4,
+      "related": [
+        {
+          "id": "messianic-names-numbers-atlas.html",
+          "title": "LuxDot · Messianic Names & Numbers Atlas"
+        },
+        {
+          "id": "number-letter-lab.html",
+          "title": "Number & Letter Lab · LuxDot"
+        },
+        {
+          "id": "messianic-method-comparison.html",
+          "title": "مصفوفة المخلّص · مقارنة عابرة للتقاليد"
+        },
+        {
+          "id": "maimonides-messiah-test.html",
+          "title": "Jewish Research · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "maimonides-messiah-test.html",
+      "title": "Jewish Research · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 5,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "faith.html",
+          "title": "Faith · LuxDot"
+        },
+        {
+          "id": "messianic-names-numbers-atlas.html",
+          "title": "LuxDot · Messianic Names & Numbers Atlas"
+        },
+        {
+          "id": "sabbatai-nathan-test.html",
+          "title": "شبتاي تسفي وناتان الغزّي · اختبار المهدوية العددية"
+        }
+      ]
+    },
+    {
+      "id": "withagen-wwii.html",
+      "title": "Withagen in World War II — From the Border Battalion to Wieldrecht · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 20,
+      "source_class_suggestions": {
+        "E? · research lead / external": 15,
+        "A? · possible primary/official": 5
+      },
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        }
+      ]
+    },
+    {
+      "id": "psychoactive-substances.html",
+      "title": "المواد ذات التأثير النفسي · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 2,
+      "source_class_suggestions": {
+        "E? · research lead / external": 2
+      },
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "science-galaxy.html",
+          "title": "مجرة العلوم · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "edith-stein.html",
+      "title": "Edith Stein · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 7,
+      "source_class_suggestions": {
+        "E? · research lead / external": 7
+      },
+      "internal_connections": 4,
+      "related": [
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "witness.html",
+          "title": "LuxDot · Witness"
+        },
+        {
+          "id": "humanity.html",
+          "title": "Humanity & Meaning · LuxDot"
+        },
+        {
+          "id": "witness-stream.html",
+          "title": "LuxDot · Witness Stream"
+        }
+      ]
+    },
+    {
+      "id": "chosen-falsification.html",
+      "title": "تهافت فرضية المختار · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 5,
+      "source_class_suggestions": {
+        "C? · reference": 1,
+        "E? · research lead / external": 4
+      },
+      "internal_connections": 4,
+      "related": [
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        },
+        {
+          "id": "chosen-hypothesis.html",
+          "title": "فرضية المختار · LuxDot"
+        },
+        {
+          "id": "chosen-balance.html",
+          "title": "ميزان فرضية المختار · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "war-reconstruction-memory.html",
+      "title": "War, Reconstruction & Memory · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 15,
+      "source_class_suggestions": {
+        "E? · research lead / external": 15
+      },
+      "internal_connections": 3,
+      "related": [
+        {
+          "id": "shaam-brabant-network.html",
+          "title": "Shaam–Brabant Network · LuxDot"
+        },
+        {
+          "id": "witness.html",
+          "title": "LuxDot · Witness"
+        },
+        {
+          "id": "witness-stream.html",
+          "title": "LuxDot · Witness Stream"
+        }
+      ]
+    },
+    {
+      "id": "karo-decision-method.html",
+      "title": "Jewish Research · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 3,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "faith.html",
+          "title": "Faith · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "jochem-van-velthoven.html",
+      "title": "يوخيم فان فيلتهوفن — من دورست إلى ألفن",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 25,
+      "source_class_suggestions": {
+        "E? · research lead / external": 25
+      },
+      "internal_connections": 0,
+      "related": []
+    },
+    {
+      "id": "hurufism-fazlallah-nasimi.html",
+      "title": "الحروفية: فضل الله الأسترآبادي ونسيمي · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 2,
+      "source_class_suggestions": {
+        "B? · academic/scholarly": 1,
+        "E? · research lead / external": 1
+      },
+      "internal_connections": 5,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        },
+        {
+          "id": "messianic-names-numbers-atlas.html",
+          "title": "LuxDot · Messianic Names & Numbers Atlas"
+        },
+        {
+          "id": "messianic-method-comparison.html",
+          "title": "مصفوفة المخلّص · مقارنة عابرة للتقاليد"
+        }
+      ]
+    },
+    {
+      "id": "kevelaer-chaam-timeline.html",
+      "title": "Kevelaer Chaam Timeline · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 16,
+      "source_class_suggestions": {
+        "E? · research lead / external": 8,
+        "A? · possible primary/official": 8
+      },
+      "internal_connections": 5,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "projects.html",
+          "title": "Projects · LuxDot"
+        },
+        {
+          "id": "urania-nassau.html",
+          "title": "Urania Nassau · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "totalitarian-victims-memory.html",
+      "title": "Totalitarian Victims Memory",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 2,
+      "source_class_suggestions": {
+        "E? · research lead / external": 2
+      },
+      "internal_connections": 5,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "research.html",
+          "title": "LuxDot · الأبحاث الحيّة · Live Research"
+        },
+        {
+          "id": "memory.html",
+          "title": "Memory · LuxDot"
+        },
+        {
+          "id": "witness.html",
+          "title": "LuxDot · Witness"
+        },
+        {
+          "id": "witness-stream.html",
+          "title": "LuxDot · Witness Stream"
+        }
+      ]
+    },
+    {
+      "id": "research/global-savior-atlas.html",
+      "title": "Global Savior Atlas · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "research/circle-of-care-25km-original.html",
+      "title": "Circle Of Care 25Km Original · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 71,
+      "source_class_suggestions": {
+        "E? · research lead / external": 71
+      },
+      "internal_connections": 2,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "projects.html",
+          "title": "Projects · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "research/shaam-breda.html",
+      "title": "Shaam–Breda · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 0,
+      "source_class_suggestions": {},
+      "internal_connections": 1,
+      "related": [
+        {
+          "id": "shaam-breda.html",
+          "title": "Shaam Breda · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "research/savior/christianity.html",
+      "title": "Christianity · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 6,
+      "source_class_suggestions": {
+        "E? · research lead / external": 6
+      },
+      "internal_connections": 3,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        },
+        {
+          "id": "number-letter-lab.html",
+          "title": "Number & Letter Lab · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "research/savior/zoroastrianism.html",
+      "title": "Zoroastrianism · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 2,
+      "source_class_suggestions": {
+        "B? · academic/scholarly": 2
+      },
+      "internal_connections": 2,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "research/savior/caodai.html",
+      "title": "Caodai · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 1,
+      "source_class_suggestions": {
+        "E? · research lead / external": 1
+      },
+      "internal_connections": 2,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "research/savior/sikhism.html",
+      "title": "Sikhism · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 1,
+      "source_class_suggestions": {
+        "E? · research lead / external": 1
+      },
+      "internal_connections": 2,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "research/savior/islam-sunni.html",
+      "title": "Islam Sunni · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 5,
+      "source_class_suggestions": {
+        "E? · research lead / external": 5
+      },
+      "internal_connections": 2,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "research/savior/hinduism.html",
+      "title": "Hinduism · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 2,
+      "source_class_suggestions": {
+        "E? · research lead / external": 2
+      },
+      "internal_connections": 2,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "research/savior/secular-humanism.html",
+      "title": "Secular Humanism · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 2,
+      "source_class_suggestions": {
+        "E? · research lead / external": 2
+      },
+      "internal_connections": 2,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "research/savior/confucian-daoist.html",
+      "title": "Confucian Daoist · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 2,
+      "source_class_suggestions": {
+        "E? · research lead / external": 1,
+        "C? · reference": 1
+      },
+      "internal_connections": 2,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "research/savior/bahai.html",
+      "title": "Bahai · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 2,
+      "source_class_suggestions": {
+        "E? · research lead / external": 2
+      },
+      "internal_connections": 2,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "research/savior/daesoon.html",
+      "title": "Daesoon · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 1,
+      "source_class_suggestions": {
+        "E? · research lead / external": 1
+      },
+      "internal_connections": 2,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "research/savior/buddhism.html",
+      "title": "Buddhism · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 2,
+      "source_class_suggestions": {
+        "E? · research lead / external": 2
+      },
+      "internal_connections": 2,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "research/savior/judaism.html",
+      "title": "Judaism · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 2,
+      "source_class_suggestions": {
+        "E? · research lead / external": 2
+      },
+      "internal_connections": 2,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "research/savior/javanese.html",
+      "title": "Javanese · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 1,
+      "source_class_suggestions": {
+        "C? · reference": 1
+      },
+      "internal_connections": 2,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "research/savior/islam-twelver.html",
+      "title": "Islam Twelver · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 2,
+      "source_class_suggestions": {
+        "B? · academic/scholarly": 2
+      },
+      "internal_connections": 2,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        }
+      ]
+    },
+    {
+      "id": "research/savior/jainism.html",
+      "title": "Jainism · LuxDot",
+      "standard": "LuxDot Research Standard v0.2 PREVIEW",
+      "review_status": "not-reviewed",
+      "confidence": "not-assigned",
+      "external_sources": 1,
+      "source_class_suggestions": {
+        "E? · research lead / external": 1
+      },
+      "internal_connections": 2,
+      "related": [
+        {
+          "id": "home.html",
+          "title": "Home · LuxDot"
+        },
+        {
+          "id": "savior-atlas.html",
+          "title": "Savior Atlas · LuxDot"
+        }
+      ]
+    }
+  ]
+}

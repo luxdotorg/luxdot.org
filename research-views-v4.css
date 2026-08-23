@@ -1,0 +1,116 @@
+/* LuxDot v4.3.121 — robust Research View Controller */
+.rg-view-switch{
+  display:flex!important;align-items:center;justify-content:space-between;gap:14px;
+  margin:18px 0 14px;padding:12px 14px;border:1px solid rgba(99,255,155,.25);
+  border-radius:18px;background:linear-gradient(180deg,rgba(6,17,11,.96),rgba(2,7,4,.96));
+  box-shadow:0 10px 40px rgba(0,0,0,.20);position:relative;z-index:15
+}
+.rg-view-switch-copy b{display:block;color:#effff4;font-size:13px}
+.rg-view-switch-copy small{display:block;color:#88a394;font-size:10px;margin-top:3px}
+.rg-view-tabs{display:flex;gap:7px;flex-wrap:wrap}
+.rg-view-tab{
+  appearance:none;border:1px solid rgba(99,255,155,.24);border-radius:999px;
+  background:#06100a;color:#c3d6c9;padding:10px 15px;cursor:pointer;
+  font:800 10px/1 Arial,sans-serif;letter-spacing:.08em
+}
+.rg-view-tab:hover{border-color:#63ff9b;color:#fff}
+.rg-view-tab.active{border-color:#d2b15b;background:rgba(210,177,91,.13);color:#f2d77e;box-shadow:0 0 20px rgba(210,177,91,.12)}
+.rg-layout-modes{display:none!important}
+
+.rg-view-badge{
+ position:absolute;top:14px;left:50%;z-index:9;transform:translateX(-50%);
+ padding:7px 11px;border:1px solid rgba(99,255,155,.18);border-radius:999px;
+ background:rgba(2,7,4,.88);color:#a9c1b2;font:800 9px/1 Arial;letter-spacing:.08em;pointer-events:none
+}
+.rg-view-badge:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;
+ background:#63ff9b;box-shadow:0 0 10px #63ff9b;margin-inline-end:7px}
+
+[data-research-view="universe"] .rg-canvas-wrap{
+ background:
+ radial-gradient(circle at 17% 24%,rgba(103,83,177,.14),transparent 22%),
+ radial-gradient(circle at 79% 70%,rgba(49,123,162,.12),transparent 25%),
+ radial-gradient(circle at 50% 50%,rgba(47,110,71,.14),transparent 33%),#010403
+}
+[data-research-view="universe"] .rg-galaxy-halo{fill:rgba(99,255,155,.018)!important;stroke:rgba(99,255,155,.26)!important;stroke-dasharray:4 9!important}
+[data-research-view="universe"] .rg-galaxy-label{fill:#c7d9cd!important;font-weight:800!important;letter-spacing:.05em}
+.rg-orbit-ring{fill:none;stroke:rgba(255,255,255,.13);stroke-width:.75;stroke-dasharray:2 5;pointer-events:none}
+.rg-role-system .rg-orbit-ring{stroke:rgba(210,177,91,.42)}
+.rg-role-planet .rg-orbit-ring{stroke:rgba(99,255,155,.25)}
+.rg-cluster-ring{fill:none;stroke:rgba(210,177,91,.22);stroke-width:1;stroke-dasharray:5 10;pointer-events:none}
+[data-research-view="universe"] .rg-role-system .star-core{filter:drop-shadow(0 0 13px rgba(210,177,91,.9))}
+[data-research-view="universe"] .rg-role-planet .star-core{filter:drop-shadow(0 0 8px rgba(99,255,155,.7))}
+[data-research-view="universe"] .rg-role-asteroid .star-ray{opacity:.10!important}
+
+[data-research-view="motherboard"] .rg-canvas-wrap{
+ background:
+ linear-gradient(rgba(99,255,155,.025) 1px,transparent 1px),
+ linear-gradient(90deg,rgba(99,255,155,.025) 1px,transparent 1px),
+ radial-gradient(circle at 50% 50%,rgba(99,255,155,.06),transparent 38%),#020705;
+ background-size:28px 28px,28px 28px,auto,auto
+}
+[data-research-view="motherboard"] .rg-dust,
+[data-research-view="motherboard"] .rg-galaxy-halo,
+[data-research-view="motherboard"] .rg-galaxy-label{display:none!important}
+.rg-motherboard .rg-board-zone{fill:rgba(6,18,11,.76);stroke:rgba(99,255,155,.20);stroke-width:1.2}
+.rg-motherboard .rg-cpu-zone{fill:rgba(210,177,91,.08);stroke:rgba(210,177,91,.46)}
+.rg-motherboard text{fill:#789487;font:800 12px Arial;text-anchor:middle;letter-spacing:.07em}
+[data-research-view="motherboard"] .rg-edge{stroke:rgba(99,255,155,.29)!important;stroke-width:1.2!important;stroke-linecap:square!important;stroke-linejoin:round!important}
+[data-research-view="motherboard"] .star-halo,
+[data-research-view="motherboard"] .star-glow,
+[data-research-view="motherboard"] .star-ray{display:none!important}
+[data-research-view="motherboard"] .rg-node .star-core{fill:#061009!important;stroke:#63ff9b!important;stroke-width:1.2!important;filter:none!important}
+[data-research-view="motherboard"] .rg-role-chip .star-core{opacity:0}
+.rg-chip-body{display:none;fill:#07130c;stroke:rgba(210,177,91,.78);stroke-width:1.3}
+.rg-chip-pins{display:none;stroke:rgba(99,255,155,.54);stroke-width:1}
+[data-research-view="motherboard"] .rg-role-chip .rg-chip-body,
+[data-research-view="motherboard"] .rg-role-chip .rg-chip-pins{display:block}
+
+.rg-signal-active{opacity:1!important;stroke:#63ff9b!important;stroke-width:3!important;stroke-dasharray:9 9!important;
+ filter:drop-shadow(0 0 6px rgba(99,255,155,.9));animation:rgPulseFlow .8s linear infinite}
+.rg-signal-dim{opacity:.05!important}
+.rg-signal-related{opacity:1!important}
+.rg-signal-source .star-core{stroke:#fff!important;filter:drop-shadow(0 0 12px #63ff9b)!important}
+@keyframes rgPulseFlow{to{stroke-dashoffset:-18}}
+
+.rg-mode-legend{position:absolute;inset-inline-end:16px;bottom:48px;z-index:8;display:flex;gap:6px;flex-wrap:wrap;max-width:520px;justify-content:flex-end}
+.rg-mode-legend span{padding:5px 8px;border:1px solid rgba(255,255,255,.09);border-radius:999px;background:rgba(2,7,4,.84);color:#9db2a5;font-size:9px}
+
+@media(max-width:720px){
+ .rg-view-switch{align-items:flex-start;flex-direction:column}
+ .rg-view-tabs{width:100%}.rg-view-tab{flex:1}
+ .rg-view-switch-copy small,.rg-mode-legend{display:none}
+}
+@media(prefers-reduced-motion:reduce){.rg-signal-active{animation:none!important}}
+
+/* v4.3.123: view selector is part of the sky itself */
+.rg-canvas-wrap>.rg-view-switch{
+ position:absolute!important;top:54px!important;left:50%!important;right:auto!important;bottom:auto!important;
+ transform:translateX(-50%);z-index:40!important;width:auto!important;max-width:calc(100% - 32px);
+ margin:0!important;padding:8px 10px!important;border-color:rgba(210,177,91,.52)!important;
+ background:rgba(2,8,5,.90)!important;box-shadow:0 8px 36px rgba(0,0,0,.45),0 0 0 1px rgba(99,255,155,.08)!important;
+ backdrop-filter:blur(14px)
+}
+.rg-canvas-wrap>.rg-view-switch .rg-view-switch-copy{display:none}
+.rg-canvas-wrap>.rg-view-switch .rg-view-tabs{flex-wrap:nowrap}
+.rg-canvas-wrap>.rg-view-switch .rg-view-tab{min-width:92px;font-size:11px;padding:10px 14px}
+.rg-canvas-wrap>.rg-view-switch:before{content:"VIEW";color:#6f8d79;font:800 8px/1 Arial;letter-spacing:.16em;margin-inline:4px}
+@media(max-width:620px){.rg-canvas-wrap>.rg-view-switch{top:46px!important;max-width:calc(100% - 16px)}.rg-canvas-wrap>.rg-view-switch .rg-view-tab{min-width:0;padding:9px 10px;font-size:9px}}
+.rg-symbolism{display:grid;grid-template-columns:repeat(4,minmax(150px,1fr));gap:8px;margin:14px 0}.rg-symbolism article{padding:11px;border:1px solid rgba(99,255,155,.14);border-radius:14px;background:#06100a}.rg-symbolism b{display:block;font-size:10px}.rg-symbolism span{display:block;color:#849b8d;font-size:8px;line-height:1.6;margin-top:5px}.rg-symbolism article.active{border-color:rgba(210,177,91,.55)}[data-research-view="neural"] .rg-canvas-wrap{background:radial-gradient(circle at 50% 50%,rgba(65,122,83,.10),transparent 42%),#010403}.rg-neuron-ring{fill:none;stroke:rgba(99,255,155,.14);stroke-width:1;stroke-dasharray:2 5}[data-research-view="neural"] .rg-edge{stroke:rgba(99,255,155,.22)!important}[data-research-view="motherboard"] .rg-canvas-wrap{background:linear-gradient(rgba(61,143,92,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(61,143,92,.04) 1px,transparent 1px),#021008;background-size:18px 18px}.rg-motherboard .rg-board-zone{fill:rgba(5,24,13,.82);stroke:rgba(99,255,155,.22)}@media(max-width:800px){.rg-symbolism{grid-template-columns:1fr 1fr}}
+/* v4.12.0 · true neural view + dynamic translated view guide */
+.rg-symbolism{display:block!important;margin:14px 0 18px!important}
+.rg-guide-card{padding:14px 15px;border:1px solid rgba(99,255,155,.16);border-radius:18px;background:linear-gradient(135deg,rgba(7,19,11,.98),rgba(3,9,6,.98))}
+.rg-guide-head{display:grid;gap:5px}.rg-guide-head b{font-size:13px;color:#eef8f1}.rg-guide-head span{font-size:9px;color:#8ca091;line-height:1.7}
+.rg-guide-parts{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:7px;margin-top:11px}.rg-guide-parts div{padding:9px;border:1px solid rgba(99,255,155,.09);border-radius:11px;background:#051009}.rg-guide-parts strong{display:block;color:#d8eadf;font-size:9px}.rg-guide-parts small{display:block;color:#71887a;font-size:8px;line-height:1.5;margin-top:3px}
+html[lang="ar"] .rg-symbolism,html[lang="ar"] .rg-view-switch,html[lang="ar"] .rg-mode-legend{font-family:"Noto Kufi Arabic",Tahoma,Arial,sans-serif!important}
+[data-research-view="neural"] .rg-dust,[data-research-view="neural"] .rg-galaxy-halo,[data-research-view="neural"] .rg-galaxy-label{opacity:.035!important}
+[data-research-view="neural"] .rg-canvas-wrap{background:radial-gradient(ellipse at 50% 48%,rgba(29,95,53,.12),transparent 45%),radial-gradient(circle at 28% 24%,rgba(57,117,76,.055),transparent 27%),#010403!important}
+.rg-neural-lobe{fill:rgba(99,255,155,.012);stroke:rgba(99,255,155,.09);stroke-width:1;stroke-dasharray:3 11}
+.rg-dendrite{fill:none;stroke:rgba(117,183,137,.20);stroke-width:1;stroke-linecap:round}
+.rg-neuron-ring{fill:rgba(4,18,10,.5)!important;stroke:rgba(99,255,155,.32)!important;stroke-width:1!important;stroke-dasharray:2 4!important}
+[data-research-view="neural"] .rg-node .star-core{fill:#06140b!important;stroke:#9effbd!important;stroke-width:1.6!important;filter:drop-shadow(0 0 7px rgba(99,255,155,.72))!important}
+[data-research-view="neural"] .rg-edge{stroke:rgba(106,159,121,.18)!important;stroke-width:1.05!important;stroke-linecap:round!important}
+[data-research-view="neural"] .rg-edge.rg-neural-synapse{stroke-dasharray:4 130!important;animation:neuralSignal 2.7s linear infinite!important;animation-delay:var(--syn-delay,0s)!important;filter:drop-shadow(0 0 3px rgba(99,255,155,.45))}
+[data-research-view="neural"] .rg-edge.rg-signal-active{stroke:#c5ffd7!important;stroke-width:3!important;stroke-dasharray:7 100!important;animation:neuralSignalActive 1.05s linear infinite!important;filter:drop-shadow(0 0 5px #63ff9b)}
+@keyframes neuralSignal{from{stroke-dashoffset:134}to{stroke-dashoffset:0}}@keyframes neuralSignalActive{from{stroke-dashoffset:107}to{stroke-dashoffset:0}}
+[data-research-view="motherboard"] .rg-motherboard .rg-board-zone{stroke:rgba(86,186,119,.30)!important}
+@media(prefers-reduced-motion:reduce){[data-research-view="neural"] .rg-edge.rg-neural-synapse{animation:none!important}}
