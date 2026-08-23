@@ -1,0 +1,17 @@
+
+:root{--lux-body:16px;--lux-compact:15px;--lux-small:13px;--lux-chip:13px;--lux-nav:13px;--lux-h1:clamp(34px,4.2vw,48px);--lux-h2:clamp(24px,2.6vw,31px);--lux-h3:clamp(18px,1.8vw,22px);--lux-lh:1.72;--lux-section:28px}
+html{font-size:16px}body{font-size:var(--lux-body)!important;line-height:var(--lux-lh)!important}
+p,li,td,th,blockquote{font-size:1rem;line-height:var(--lux-lh)}
+h1{font-size:var(--lux-h1)!important;line-height:1.22!important;margin:.35em 0 .55em!important}
+h2{font-size:var(--lux-h2)!important;line-height:1.28!important;margin-top:var(--lux-section)!important;margin-bottom:12px!important}
+h3{font-size:var(--lux-h3)!important;line-height:1.32!important;margin-bottom:8px!important}
+small,.small,.meta,.muted,[class*="meta"],[class*="eyebrow"]{font-size:var(--lux-small)!important}
+.pill,.chip,.tag,.badge,.cartouche,[class*="pill"],[class*="chip"],[class*="tag"]{font-size:var(--lux-chip)!important;line-height:1.25!important}
+.lux-header-43108 .lux-main-nav a,.lux-header-43108 .lux-lang-btn,.lux-header-43108 .lux-search-open{font-size:var(--lux-nav)!important}
+.card p,.box p,article p,[class*="card"] p{font-size:var(--lux-compact)!important;line-height:1.65!important}
+th,td{padding:10px 11px!important}
+body[data-lux-density="knowledge"],body.lux-research-organized,body.lux-projects-list-mode{--lux-body:15.5px;--lux-compact:14.5px;--lux-h1:clamp(32px,3.8vw,44px);--lux-h2:clamp(22px,2.3vw,29px);--lux-section:24px}
+body[data-lux-density="display"]{--lux-body:17px;--lux-compact:16px;--lux-h1:clamp(46px,6.5vw,68px)}
+body[data-lux-density="display"] .lead{font-size:clamp(18px,2vw,23px)!important;line-height:1.65!important}
+#luxResearchOrganizer .lux-ro-cluster p,#luxResearchOrganizer .lux-ro-links a,#luxProjectsNavigator .lux-project-row,#luxProjectsNavigator .lux-project-main small{font-size:14px!important}
+@media(max-width:700px){:root{--lux-body:15.5px;--lux-compact:14.5px;--lux-chip:12px;--lux-nav:12px;--lux-h1:clamp(30px,9vw,40px);--lux-h2:clamp(21px,6vw,27px);--lux-h3:18px;--lux-lh:1.68;--lux-section:22px}th,td{padding:8px!important}}
