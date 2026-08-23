@@ -1,0 +1,17 @@
+
+:root{--tv-green:#72dc9a;--tv-gold:#dbc46e;--tv-bg:#020705}
+.tv-shell{max-width:1280px;margin:auto;padding:18px 16px 90px}
+.tv-head{text-align:center;padding:24px 0 14px}.tv-head h1{font-size:clamp(1.45rem,3vw,2.35rem);margin:.25rem}.tv-motto{color:var(--tv-gold)}
+.tv-live{display:inline-flex;align-items:center;gap:7px;border:1px solid #375e43;border-radius:999px;padding:6px 11px;font-size:.78rem;background:#07130c}
+.tv-live i{width:7px;height:7px;border-radius:50%;background:#e55353;box-shadow:0 0 10px #e55353}
+.tv-frame{position:relative;aspect-ratio:16/9;background:#000;border:1px solid #23452f;border-radius:20px;overflow:hidden;box-shadow:0 22px 80px #0009}
+.tv-frame video{width:100%;height:100%;object-fit:cover;background:#000}
+.tv-overlay{position:absolute;inset:auto 0 0;padding:42px 18px 15px;background:linear-gradient(transparent,#000d);pointer-events:none}
+.tv-overlay h2{font-size:1.05rem;margin:0;color:#fff}.tv-overlay p{font-size:.76rem;margin:.25rem 0;color:#cbd7cf}
+.tv-controls{display:flex;flex-wrap:wrap;gap:8px;padding:12px 0}.tv-controls button,.tv-card{border:1px solid #244c32;background:#06120b;color:#e8f4eb;border-radius:12px}
+.tv-controls button{padding:8px 12px;cursor:pointer}.tv-controls button:hover{border-color:var(--tv-gold)}
+.tv-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}.tv-card{padding:14px}.tv-card h3{margin:.1rem 0 .7rem;color:var(--tv-gold);font-size:1rem}
+.tv-channels{display:grid;gap:7px}.tv-channels button{display:flex;justify-content:space-between;text-align:start;padding:10px;border:1px solid #173b25;border-radius:10px;background:#041008;color:#dce8df;cursor:pointer}
+.tv-channels button.active{border-color:var(--tv-gold);background:#0a1b10}
+.tv-next{font-size:.83rem;color:#a9b8ae;line-height:1.65}.tv-badge{font-size:.72rem;border:1px solid #31533b;border-radius:999px;padding:4px 8px}
+@media(max-width:800px){.tv-grid{grid-template-columns:1fr}.tv-shell{padding-inline:10px}}

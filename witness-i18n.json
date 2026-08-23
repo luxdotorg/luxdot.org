@@ -1,0 +1,842 @@
+{
+  "ar": {
+    "title": "الشاهد",
+    "lead": "مكان لحفظ قصة إنسان قبل أن تضيع. شهادة ناجٍ، قريب، مسعف، جار، صديق أو شاهد. الإيداع لا يعني أن LuxDot يثبت صحة الرواية، والنشر ليس شرطًا للحفظ.",
+    "trust": [
+      [
+        "الخصوصية باختيارك",
+        "أنت تختار: حفظ فقط، نشر مجهول، الاسم الأول، أو الهوية الكاملة."
+      ],
+      [
+        "الموافقة ≠ النشر",
+        "موافقة الحفظ منفصلة عن موافقة النشر والاستخدام البحثي."
+      ],
+      [
+        "المصدر والتاريخ",
+        "كل شهادة تحصل على Witness ID وبصمة رقمية للنسخة المحفوظة محليًا."
+      ],
+      [
+        "لا نشر تلقائي",
+        "لا تظهر شهادة للعامة تلقائيًا. النشر مرحلة مراجعة مستقلة."
+      ]
+    ],
+    "warning": "نسخة الإطلاق الآمن: النموذج ينشئ حزمة شهادة على جهازك ولا يرسل البيانات الحساسة تلقائيًا إلى خادم LuxDot. لا تضع معلومات قد تعرّض شخصًا للخطر.",
+    "context": "هذه الذاكرة مرتبطة بـ",
+    "contextNote": "يمكنك وصف العلاقة أو تعديلها داخل القصة.",
+    "consent": "أنت صاحب القرار. يمكنك حفظ المادة للأرشيف فقط، أو بدون اسم، أو السماح بالنشر. يمكنك ترك أي سؤال لا يناسبك والتوقف عن النموذج.",
+    "sections": [
+      "1 · القصة",
+      "2 · هويتك — كلها اختيارية",
+      "3 · الخصوصية والنشر",
+      "4 · أدلة ومواد"
+    ],
+    "labels": [
+      "عنوان مختصر *",
+      "اكتب القصة كما تعرفها *",
+      "تاريخ الحدث — اختياري",
+      "المكان — اختياري",
+      "البلد — اختياري",
+      "علاقتك بالقصة",
+      "الاسم",
+      "البريد الإلكتروني",
+      "الهاتف",
+      "كيف تريد التعامل مع هويتك؟ *",
+      "صور / صوت / فيديو / وثائق — اختياري"
+    ],
+    "ph": [
+      "مثال: قصة شخص أريد أن تبقى محفوظة",
+      "ما الذي حدث؟ ماذا تتذكر؟ وما الذي تريد ألا يضيع؟"
+    ],
+    "relation": [
+      "اختياري",
+      "شاهد",
+      "ناجٍ",
+      "قريب",
+      "صديق",
+      "مسعف / عامل إنساني",
+      "باحث / موثّق",
+      "أخرى"
+    ],
+    "privacy": [
+      "احفظ القصة فقط — لا تنشرها",
+      "يمكن نشر القصة دون هويتي",
+      "يمكن نشر اسمي الأول فقط",
+      "يمكن نشر هويتي الكاملة"
+    ],
+    "checks": [
+      "أوافق على حفظ هذه الشهادة وفق مستوى الخصوصية الذي اخترته.",
+      "أسمح بالنشر وفق مستوى الخصوصية أعلاه. (مستقل عن الحفظ)",
+      "يمكن التواصل معي للتحقق أو طلب توضيح.",
+      "أسمح باستخدام نسخة مناسبة للخصوصية في البحث والربط داخل LuxDot."
+    ],
+    "identityNote": "يمكن حفظ شهادة بلا اسم. بيانات الاتصال، إن أضفتها، ليست إذنًا بنشرها.",
+    "filesNote": "في هذه النسخة لا تُرفع الملفات إلى الإنترنت. تُحسب بصمتها SHA‑256 داخل متصفحك وتُسجل في حزمة الشهادة. احتفظ بالأصول دون تعديل.",
+    "create": "إنشاء حزمة الشهادة",
+    "clear": "مسح النموذج",
+    "successT": "وصلت الذاكرة",
+    "successP": "أصبحت نبضة في الذاكرة الحية. لن تُنشر إلا وفق الإذن الذي اخترته.",
+    "receipt": "إيصال الشهادة",
+    "receiptP": "احتفظ بهذا المعرّف مع الملف الذي سيتم تنزيله.",
+    "download": "تنزيل JSON المحفوظ",
+    "status": "محفوظ محليًا · غير منشور",
+    "footer": "حالات التحقق تصف حالة مراجعة LuxDot فقط وليست حكمًا قضائيًا.",
+    "confirm": "مسح جميع الحقول من هذه الصفحة؟",
+    "eventGhouta": "هجمات الغوطة الكيميائية — 21 أغسطس 2013"
+  },
+  "en": {
+    "title": "Witness",
+    "lead": "A place to preserve a human story before it is lost: a survivor, relative, medic, neighbour, friend or witness. Depositing a testimony does not mean LuxDot has verified it, and preservation does not require publication.",
+    "trust": [
+      [
+        "PRIVACY BY CHOICE",
+        "Choose preserve only, anonymous publication, first name, or full identity."
+      ],
+      [
+        "CONSENT ≠ PUBLICATION",
+        "Storage, publication and research permissions are separate choices."
+      ],
+      [
+        "PROVENANCE",
+        "Each testimony receives a Witness ID and a local digital fingerprint."
+      ],
+      [
+        "NO AUTO-PUBLISH",
+        "Nothing becomes public merely because it was submitted."
+      ]
+    ],
+    "warning": "Safe-launch mode: this form creates a testimony package on your device and does not automatically send sensitive data to a LuxDot server. Do not enter information that could put someone at risk.",
+    "context": "This memory is linked to",
+    "contextNote": "You can explain or change that relationship in the story.",
+    "consent": "You stay in control. You may preserve only, remain unnamed, permit publication, skip questions, or stop the form.",
+    "sections": [
+      "1 · Story",
+      "2 · Your identity — all optional",
+      "3 · Privacy & publication",
+      "4 · Evidence & materials"
+    ],
+    "labels": [
+      "Short title *",
+      "Tell the story as you know it *",
+      "Event date — optional",
+      "Place — optional",
+      "Country — optional",
+      "Your relationship to the story",
+      "Name",
+      "Email",
+      "Phone",
+      "How should your identity be handled? *",
+      "Images / audio / video / documents — optional"
+    ],
+    "ph": [
+      "Example: A story I want to remain preserved",
+      "What happened? What do you remember? What must not be lost?"
+    ],
+    "relation": [
+      "Optional",
+      "Witness",
+      "Survivor",
+      "Relative",
+      "Friend",
+      "Medic / humanitarian worker",
+      "Researcher / documenter",
+      "Other"
+    ],
+    "privacy": [
+      "Preserve only — do not publish",
+      "May publish without my identity",
+      "May publish my first name only",
+      "May publish my full identity"
+    ],
+    "checks": [
+      "I consent to preserving this testimony under the privacy level I selected.",
+      "I permit publication under the privacy level above. (Separate from storage)",
+      "LuxDot may contact me for verification or clarification.",
+      "I permit a privacy-appropriate version to be used for research and linking inside LuxDot."
+    ],
+    "identityNote": "A testimony can be preserved without a name. Contact details are not permission to publish them.",
+    "filesNote": "Files are not uploaded in this release. SHA‑256 fingerprints are computed in your browser and recorded in the testimony package. Keep the originals unchanged.",
+    "create": "Create testimony package",
+    "clear": "Clear form",
+    "successT": "Memory received",
+    "successP": "It is now a pulse in Living Memory. It will not be published beyond the permission you chose.",
+    "receipt": "Testimony receipt",
+    "receiptP": "Keep this identifier with the downloaded file.",
+    "download": "Download saved JSON",
+    "status": "PRESERVED LOCALLY · NOT PUBLISHED",
+    "footer": "Verification states describe LuxDot editorial review only; they are not judicial findings.",
+    "confirm": "Clear all fields on this page?",
+    "eventGhouta": "Ghouta chemical attacks — 21 August 2013"
+  },
+  "nl": {
+    "title": "Getuigenis",
+    "lead": "Een plek om een menselijk verhaal te bewaren voordat het verloren gaat: van een overlevende, familielid, hulpverlener, buur, vriend of getuige. Bewaren betekent niet dat LuxDot het verhaal heeft geverifieerd en vereist geen publicatie.",
+    "trust": [
+      [
+        "PRIVACY OP JOUW KEUZE",
+        "Kies alleen bewaren, anoniem publiceren, voornaam of volledige identiteit."
+      ],
+      [
+        "TOESTEMMING ≠ PUBLICATIE",
+        "Bewaren, publiceren en onderzoek zijn afzonderlijke keuzes."
+      ],
+      [
+        "HERKOMST",
+        "Elke getuigenis krijgt een Witness ID en lokale digitale vingerafdruk."
+      ],
+      [
+        "GEEN AUTOMATISCHE PUBLICATIE",
+        "Niets wordt publiek alleen omdat het is ingediend."
+      ]
+    ],
+    "warning": "Veilige startmodus: dit formulier maakt een getuigenispakket op je apparaat en stuurt gevoelige gegevens niet automatisch naar een LuxDot-server. Deel niets dat iemand in gevaar kan brengen.",
+    "context": "Deze herinnering is gekoppeld aan",
+    "contextNote": "Je kunt die relatie in het verhaal aanpassen of toelichten.",
+    "consent": "Jij houdt de controle. Je kunt alleen bewaren, naamloos blijven, publicatie toestaan, vragen overslaan of stoppen.",
+    "sections": [
+      "1 · Verhaal",
+      "2 · Jouw identiteit — alles optioneel",
+      "3 · Privacy & publicatie",
+      "4 · Bewijs & materialen"
+    ],
+    "labels": [
+      "Korte titel *",
+      "Vertel het verhaal zoals jij het kent *",
+      "Datum — optioneel",
+      "Plaats — optioneel",
+      "Land — optioneel",
+      "Jouw relatie tot het verhaal",
+      "Naam",
+      "E-mail",
+      "Telefoon",
+      "Hoe moet je identiteit worden behandeld? *",
+      "Afbeeldingen / audio / video / documenten — optioneel"
+    ],
+    "ph": [
+      "Voorbeeld: een verhaal dat ik wil bewaren",
+      "Wat gebeurde er? Wat herinner je je? Wat mag niet verloren gaan?"
+    ],
+    "relation": [
+      "Optioneel",
+      "Getuige",
+      "Overlevende",
+      "Familielid",
+      "Vriend",
+      "Hulpverlener",
+      "Onderzoeker / documentalist",
+      "Anders"
+    ],
+    "privacy": [
+      "Alleen bewaren — niet publiceren",
+      "Publiceren zonder mijn identiteit",
+      "Alleen mijn voornaam publiceren",
+      "Mijn volledige identiteit publiceren"
+    ],
+    "checks": [
+      "Ik geef toestemming om deze getuigenis te bewaren volgens mijn gekozen privacy.",
+      "Ik geef toestemming voor publicatie volgens de bovenstaande privacykeuze.",
+      "LuxDot mag contact opnemen voor verificatie of verduidelijking.",
+      "Ik sta een privacy-passende versie toe voor onderzoek en koppelingen binnen LuxDot."
+    ],
+    "identityNote": "Een getuigenis kan zonder naam worden bewaard. Contactgegevens zijn geen toestemming tot publicatie.",
+    "filesNote": "Bestanden worden in deze versie niet geüpload. SHA‑256-vingerafdrukken worden lokaal berekend. Bewaar de originele bestanden ongewijzigd.",
+    "create": "Getuigenispakket maken",
+    "clear": "Formulier wissen",
+    "successT": "Herinnering ontvangen",
+    "successP": "De herinnering is nu een puls in het Levende Geheugen en wordt alleen gepubliceerd volgens jouw toestemming.",
+    "receipt": "Ontvangstbewijs",
+    "receiptP": "Bewaar deze identifier bij het gedownloade bestand.",
+    "download": "JSON downloaden",
+    "status": "LOKAAL BEWAARD · NIET GEPUBLICEERD",
+    "footer": "Verificatiestatussen beschrijven alleen de redactionele beoordeling van LuxDot.",
+    "confirm": "Alle velden wissen?",
+    "eventGhouta": "Chemische aanvallen in Ghouta — 21 augustus 2013"
+  },
+  "he": {
+    "title": "עדות",
+    "lead": "מקום לשמר סיפור אנושי לפני שייעלם — של ניצול, קרוב, איש הצלה, שכן, חבר או עד. הפקדת עדות אינה אומרת ש‑LuxDot אימתה אותה, ושימור אינו מחייב פרסום.",
+    "trust": [
+      [
+        "פרטיות לפי בחירתך",
+        "שמירה בלבד, פרסום אנונימי, שם פרטי או זהות מלאה."
+      ],
+      [
+        "הסכמה ≠ פרסום",
+        "שמירה, פרסום ושימוש מחקרי הן בחירות נפרדות."
+      ],
+      [
+        "מקור",
+        "כל עדות מקבלת Witness ID וטביעת אצבע דיגיטלית מקומית."
+      ],
+      [
+        "אין פרסום אוטומטי",
+        "שום דבר אינו הופך לציבורי רק משום שנשלח."
+      ]
+    ],
+    "warning": "מצב השקה בטוח: הטופס יוצר חבילת עדות במכשיר ואינו שולח אוטומטית מידע רגיש לשרת LuxDot. אין להזין מידע שעלול לסכן אדם.",
+    "context": "הזיכרון הזה קשור ל",
+    "contextNote": "אפשר לשנות או להסביר את הקשר בתוך הסיפור.",
+    "consent": "השליטה בידיך. אפשר לשמור בלבד, להישאר ללא שם, לאשר פרסום, לדלג על שאלות או לעצור.",
+    "sections": [
+      "1 · הסיפור",
+      "2 · הזהות שלך — הכול אופציונלי",
+      "3 · פרטיות ופרסום",
+      "4 · ראיות וחומרים"
+    ],
+    "labels": [
+      "כותרת קצרה *",
+      "ספרו את הסיפור כפי שאתם מכירים אותו *",
+      "תאריך — אופציונלי",
+      "מקום — אופציונלי",
+      "מדינה — אופציונלי",
+      "הקשר שלך לסיפור",
+      "שם",
+      "דוא״ל",
+      "טלפון",
+      "כיצד לטפל בזהותך? *",
+      "תמונות / שמע / וידאו / מסמכים — אופציונלי"
+    ],
+    "ph": [
+      "דוגמה: סיפור שאני רוצה לשמר",
+      "מה קרה? מה אתם זוכרים? מה אסור שייעלם?"
+    ],
+    "relation": [
+      "אופציונלי",
+      "עד",
+      "ניצול",
+      "קרוב משפחה",
+      "חבר",
+      "איש הצלה / סיוע",
+      "חוקר / מתעד",
+      "אחר"
+    ],
+    "privacy": [
+      "שמירה בלבד — ללא פרסום",
+      "אפשר לפרסם בלי זהותי",
+      "אפשר לפרסם רק את שמי הפרטי",
+      "אפשר לפרסם את זהותי המלאה"
+    ],
+    "checks": [
+      "אני מסכים לשמירת העדות לפי רמת הפרטיות שבחרתי.",
+      "אני מתיר פרסום לפי רמת הפרטיות שבחרתי.",
+      "אפשר ליצור איתי קשר לצורך אימות או הבהרה.",
+      "אני מתיר שימוש בגרסה מותאמת לפרטיות למחקר וקישור בתוך LuxDot."
+    ],
+    "identityNote": "אפשר לשמר עדות בלי שם. פרטי קשר אינם הרשאה לפרסם אותם.",
+    "filesNote": "הקבצים אינם מועלים בגרסה זו. טביעות SHA‑256 מחושבות בדפדפן ונשמרות בחבילה.",
+    "create": "יצירת חבילת עדות",
+    "clear": "ניקוי הטופס",
+    "successT": "הזיכרון התקבל",
+    "successP": "הוא הפך לפעימה בזיכרון החי ולא יפורסם מעבר להרשאה שבחרת.",
+    "receipt": "קבלת עדות",
+    "receiptP": "שמרו את המזהה עם הקובץ שהורד.",
+    "download": "הורדת JSON",
+    "status": "נשמר מקומית · לא פורסם",
+    "footer": "מצבי האימות מתארים רק את הבדיקה העריכתית של LuxDot.",
+    "confirm": "לנקות את כל השדות?",
+    "eventGhouta": "המתקפות הכימיות בע'וטה — 21 באוגוסט 2013"
+  },
+  "jv": {
+    "title": "Saksi",
+    "lead": "Panggonan kanggo nyimpen crita manungsa sadurunge ilang: saka slamet, sedulur, relawan, tangga, kanca utawa saksi. Nyimpen ora ateges LuxDot wis verifikasi lan ora kudu diterbitake.",
+    "trust": [
+      [
+        "PRIVASI PILIHANMU",
+        "Simpen wae, anonim, jeneng ngarep utawa identitas lengkap."
+      ],
+      [
+        "IJIN ≠ PUBLIKASI",
+        "Panyimpenan, publikasi lan riset iku pilihan kapisah."
+      ],
+      [
+        "ASAL DATA",
+        "Saben testimoni entuk Witness ID lan sidik digital lokal."
+      ],
+      [
+        "ORA OTOMATIS PUBLIK",
+        "Ora ana sing dadi umum mung amarga dikirim."
+      ]
+    ],
+    "warning": "Mode peluncuran aman: formulir iki nggawe paket testimoni ing pirantimu lan ora otomatis ngirim data sensitif menyang server LuxDot.",
+    "context": "Pangeling iki gegandhengan karo",
+    "contextNote": "Sampeyan bisa nerangake utawa ngganti gandhengane ing crita.",
+    "consent": "Sampeyan sing ngontrol. Bisa mung disimpen, anonim, maringi ijin publikasi, ngliwati pitakon utawa mandheg.",
+    "sections": [
+      "1 · Crita",
+      "2 · Identitas — kabeh opsional",
+      "3 · Privasi & publikasi",
+      "4 · Bukti & materi"
+    ],
+    "labels": [
+      "Judhul cekak *",
+      "Critakna kaya sing sampeyan ngerti *",
+      "Tanggal — opsional",
+      "Panggonan — opsional",
+      "Negara — opsional",
+      "Hubunganmu karo crita",
+      "Jeneng",
+      "Email",
+      "Telpon",
+      "Kepiye identitasmu ditangani? *",
+      "Gambar / audio / video / dokumen — opsional"
+    ],
+    "ph": [
+      "Tuladha: crita sing pengin tak simpen",
+      "Apa sing kedadeyan? Apa sing sampeyan eling? Apa sing aja nganti ilang?"
+    ],
+    "relation": [
+      "Opsional",
+      "Saksi",
+      "Slamet",
+      "Sedulur",
+      "Kanca",
+      "Relawan kemanusiaan",
+      "Peneliti / dokumenter",
+      "Liyane"
+    ],
+    "privacy": [
+      "Simpen wae — aja diterbitake",
+      "Boleh diterbitake tanpa identitasku",
+      "Mung jeneng ngarep",
+      "Identitas lengkap"
+    ],
+    "checks": [
+      "Aku setuju testimoni iki disimpen miturut privasi sing tak pilih.",
+      "Aku ngidini publikasi miturut pilihan privasi.",
+      "LuxDot bisa ngubungi aku kanggo verifikasi.",
+      "Aku ngidini versi sing cocog privasi kanggo riset LuxDot."
+    ],
+    "identityNote": "Testimoni bisa disimpen tanpa jeneng. Data kontak dudu ijin publikasi.",
+    "filesNote": "File ora diunggah ing versi iki. SHA‑256 diitung lokal ing browser.",
+    "create": "Gawe paket testimoni",
+    "clear": "Busak formulir",
+    "successT": "Pangeling wis ditampa",
+    "successP": "Saiki dadi pulsa ing Living Memory lan ora diterbitake ngluwihi ijinmu.",
+    "receipt": "Tandha panrima",
+    "receiptP": "Simpen ID iki karo file undhuhan.",
+    "download": "Unduh JSON",
+    "status": "DISIMPEN LOKAL · DURUNG DIPUBLIKASI",
+    "footer": "Status verifikasi mung nerangake review editorial LuxDot.",
+    "confirm": "Busak kabeh isian?",
+    "eventGhouta": "Serangan kimia Ghouta — 21 Agustus 2013"
+  },
+  "id": {
+    "title": "Kesaksian",
+    "lead": "Tempat untuk menyimpan kisah manusia sebelum hilang: penyintas, keluarga, petugas kemanusiaan, tetangga, teman atau saksi. Penyimpanan tidak berarti LuxDot telah memverifikasi kisah tersebut dan tidak mengharuskan publikasi.",
+    "trust": [
+      [
+        "PRIVASI PILIHAN ANDA",
+        "Simpan saja, anonim, nama depan, atau identitas lengkap."
+      ],
+      [
+        "PERSETUJUAN ≠ PUBLIKASI",
+        "Penyimpanan, publikasi dan penggunaan riset adalah pilihan terpisah."
+      ],
+      [
+        "ASAL DATA",
+        "Setiap kesaksian mendapat Witness ID dan sidik digital lokal."
+      ],
+      [
+        "TANPA PUBLIKASI OTOMATIS",
+        "Tidak ada yang menjadi publik hanya karena dikirim."
+      ]
+    ],
+    "warning": "Mode peluncuran aman: formulir ini membuat paket kesaksian di perangkat Anda dan tidak otomatis mengirim data sensitif ke server LuxDot.",
+    "context": "Memori ini terkait dengan",
+    "contextNote": "Anda dapat menjelaskan atau mengubah hubungan itu di dalam cerita.",
+    "consent": "Anda tetap memegang kendali. Anda dapat hanya menyimpan, tetap anonim, mengizinkan publikasi, melewati pertanyaan atau berhenti.",
+    "sections": [
+      "1 · Kisah",
+      "2 · Identitas — semuanya opsional",
+      "3 · Privasi & publikasi",
+      "4 · Bukti & materi"
+    ],
+    "labels": [
+      "Judul singkat *",
+      "Ceritakan kisah sebagaimana Anda mengetahuinya *",
+      "Tanggal — opsional",
+      "Tempat — opsional",
+      "Negara — opsional",
+      "Hubungan Anda dengan kisah",
+      "Nama",
+      "Email",
+      "Telepon",
+      "Bagaimana identitas Anda ditangani? *",
+      "Gambar / audio / video / dokumen — opsional"
+    ],
+    "ph": [
+      "Contoh: kisah yang ingin saya simpan",
+      "Apa yang terjadi? Apa yang Anda ingat? Apa yang tidak boleh hilang?"
+    ],
+    "relation": [
+      "Opsional",
+      "Saksi",
+      "Penyintas",
+      "Keluarga",
+      "Teman",
+      "Petugas kemanusiaan",
+      "Peneliti / dokumenter",
+      "Lainnya"
+    ],
+    "privacy": [
+      "Simpan saja — jangan publikasikan",
+      "Boleh dipublikasikan tanpa identitas saya",
+      "Hanya nama depan",
+      "Identitas lengkap"
+    ],
+    "checks": [
+      "Saya menyetujui penyimpanan kesaksian ini sesuai tingkat privasi yang dipilih.",
+      "Saya mengizinkan publikasi sesuai tingkat privasi di atas.",
+      "LuxDot dapat menghubungi saya untuk verifikasi.",
+      "Saya mengizinkan versi yang sesuai privasi digunakan untuk riset LuxDot."
+    ],
+    "identityNote": "Kesaksian dapat disimpan tanpa nama. Kontak bukan izin untuk mempublikasikannya.",
+    "filesNote": "File tidak diunggah pada versi ini. SHA‑256 dihitung secara lokal di browser.",
+    "create": "Buat paket kesaksian",
+    "clear": "Hapus formulir",
+    "successT": "Memori diterima",
+    "successP": "Kini menjadi denyut dalam Living Memory dan tidak akan dipublikasikan melebihi izin Anda.",
+    "receipt": "Tanda terima",
+    "receiptP": "Simpan ID ini bersama file unduhan.",
+    "download": "Unduh JSON",
+    "status": "TERSIMPAN LOKAL · BELUM DIPUBLIKASIKAN",
+    "footer": "Status verifikasi hanya menjelaskan tinjauan editorial LuxDot.",
+    "confirm": "Hapus semua isian?",
+    "eventGhouta": "Serangan kimia Ghouta — 21 Agustus 2013"
+  },
+  "fr": {
+    "title": "Témoignage",
+    "lead": "Un lieu pour préserver une histoire humaine avant qu’elle ne disparaisse : survivant, proche, secouriste, voisin, ami ou témoin. Le dépôt ne signifie pas que LuxDot a vérifié le récit et la conservation n’impose pas sa publication.",
+    "trust": [
+      [
+        "VIE PRIVÉE PAR CHOIX",
+        "Conserver seulement, publier anonymement, prénom ou identité complète."
+      ],
+      [
+        "CONSENTEMENT ≠ PUBLICATION",
+        "Conservation, publication et recherche sont des choix séparés."
+      ],
+      [
+        "PROVENANCE",
+        "Chaque témoignage reçoit un Witness ID et une empreinte numérique locale."
+      ],
+      [
+        "AUCUNE PUBLICATION AUTOMATIQUE",
+        "Rien ne devient public simplement parce qu’il a été envoyé."
+      ]
+    ],
+    "warning": "Mode de lancement sûr : ce formulaire crée un paquet de témoignage sur votre appareil et n’envoie pas automatiquement de données sensibles à un serveur LuxDot.",
+    "context": "Cette mémoire est liée à",
+    "contextNote": "Vous pouvez expliquer ou modifier ce lien dans le récit.",
+    "consent": "Vous gardez le contrôle : conserver seulement, rester anonyme, autoriser la publication, sauter des questions ou arrêter.",
+    "sections": [
+      "1 · Récit",
+      "2 · Votre identité — tout est facultatif",
+      "3 · Vie privée & publication",
+      "4 · Preuves & documents"
+    ],
+    "labels": [
+      "Titre court *",
+      "Racontez l’histoire telle que vous la connaissez *",
+      "Date — facultatif",
+      "Lieu — facultatif",
+      "Pays — facultatif",
+      "Votre lien avec l’histoire",
+      "Nom",
+      "E-mail",
+      "Téléphone",
+      "Comment traiter votre identité ? *",
+      "Images / audio / vidéo / documents — facultatif"
+    ],
+    "ph": [
+      "Exemple : une histoire que je veux préserver",
+      "Que s’est-il passé ? Que retenez-vous ? Que ne doit-on pas perdre ?"
+    ],
+    "relation": [
+      "Facultatif",
+      "Témoin",
+      "Survivant",
+      "Proche",
+      "Ami",
+      "Secouriste / humanitaire",
+      "Chercheur / documentariste",
+      "Autre"
+    ],
+    "privacy": [
+      "Conserver seulement — ne pas publier",
+      "Publier sans mon identité",
+      "Publier mon prénom seulement",
+      "Publier mon identité complète"
+    ],
+    "checks": [
+      "J’accepte la conservation selon le niveau de confidentialité choisi.",
+      "J’autorise la publication selon le niveau choisi.",
+      "LuxDot peut me contacter pour vérification.",
+      "J’autorise une version respectueuse de la confidentialité pour la recherche LuxDot."
+    ],
+    "identityNote": "Un témoignage peut être conservé sans nom. Les coordonnées ne constituent pas une autorisation de publication.",
+    "filesNote": "Les fichiers ne sont pas téléversés dans cette version. Les empreintes SHA‑256 sont calculées localement.",
+    "create": "Créer le paquet",
+    "clear": "Effacer le formulaire",
+    "successT": "Mémoire reçue",
+    "successP": "Elle est maintenant une impulsion dans la Mémoire vivante et ne sera publiée que selon votre autorisation.",
+    "receipt": "Reçu du témoignage",
+    "receiptP": "Conservez cet identifiant avec le fichier téléchargé.",
+    "download": "Télécharger le JSON",
+    "status": "CONSERVÉ LOCALEMENT · NON PUBLIÉ",
+    "footer": "Les états de vérification décrivent uniquement la revue éditoriale LuxDot.",
+    "confirm": "Effacer tous les champs ?",
+    "eventGhouta": "Attaques chimiques de la Ghouta — 21 août 2013"
+  },
+  "es": {
+    "title": "Testimonio",
+    "lead": "Un lugar para preservar una historia humana antes de que se pierda: superviviente, familiar, socorrista, vecino, amigo o testigo. Depositarla no significa que LuxDot la haya verificado y conservarla no exige publicarla.",
+    "trust": [
+      [
+        "PRIVACIDAD A TU ELECCIÓN",
+        "Solo conservar, publicar anónimamente, nombre de pila o identidad completa."
+      ],
+      [
+        "CONSENTIMIENTO ≠ PUBLICACIÓN",
+        "Conservación, publicación e investigación son decisiones separadas."
+      ],
+      [
+        "PROCEDENCIA",
+        "Cada testimonio recibe un Witness ID y una huella digital local."
+      ],
+      [
+        "SIN PUBLICACIÓN AUTOMÁTICA",
+        "Nada se hace público solo por haber sido enviado."
+      ]
+    ],
+    "warning": "Modo de lanzamiento seguro: el formulario crea un paquete en tu dispositivo y no envía automáticamente datos sensibles a un servidor LuxDot.",
+    "context": "Esta memoria está vinculada a",
+    "contextNote": "Puedes explicar o cambiar esa relación dentro del relato.",
+    "consent": "Tú mantienes el control: conservar, permanecer anónimo, permitir publicación, omitir preguntas o detenerte.",
+    "sections": [
+      "1 · Historia",
+      "2 · Tu identidad — todo opcional",
+      "3 · Privacidad & publicación",
+      "4 · Evidencia & materiales"
+    ],
+    "labels": [
+      "Título breve *",
+      "Cuenta la historia como la conoces *",
+      "Fecha — opcional",
+      "Lugar — opcional",
+      "País — opcional",
+      "Tu relación con la historia",
+      "Nombre",
+      "Correo",
+      "Teléfono",
+      "¿Cómo debe tratarse tu identidad? *",
+      "Imágenes / audio / vídeo / documentos — opcional"
+    ],
+    "ph": [
+      "Ejemplo: una historia que quiero conservar",
+      "¿Qué ocurrió? ¿Qué recuerdas? ¿Qué no debe perderse?"
+    ],
+    "relation": [
+      "Opcional",
+      "Testigo",
+      "Superviviente",
+      "Familiar",
+      "Amigo",
+      "Socorrista / humanitario",
+      "Investigador / documentalista",
+      "Otro"
+    ],
+    "privacy": [
+      "Solo conservar — no publicar",
+      "Publicar sin mi identidad",
+      "Solo mi nombre",
+      "Mi identidad completa"
+    ],
+    "checks": [
+      "Acepto conservar este testimonio con la privacidad elegida.",
+      "Autorizo la publicación según esa privacidad.",
+      "LuxDot puede contactarme para verificar.",
+      "Autorizo una versión adecuada a la privacidad para investigación LuxDot."
+    ],
+    "identityNote": "Puede conservarse sin nombre. Los datos de contacto no autorizan su publicación.",
+    "filesNote": "Los archivos no se suben en esta versión. Las huellas SHA‑256 se calculan localmente.",
+    "create": "Crear paquete",
+    "clear": "Borrar formulario",
+    "successT": "Memoria recibida",
+    "successP": "Ahora es un pulso en la Memoria Viva y no se publicará más allá de tu permiso.",
+    "receipt": "Recibo",
+    "receiptP": "Conserva este identificador con el archivo.",
+    "download": "Descargar JSON",
+    "status": "GUARDADO LOCALMENTE · NO PUBLICADO",
+    "footer": "Los estados de verificación describen únicamente la revisión editorial de LuxDot.",
+    "confirm": "¿Borrar todos los campos?",
+    "eventGhouta": "Ataques químicos de Ghouta — 21 de agosto de 2013"
+  },
+  "de": {
+    "title": "Zeugnis",
+    "lead": "Ein Ort, um eine menschliche Geschichte zu bewahren, bevor sie verloren geht: von Überlebenden, Angehörigen, Helfern, Nachbarn, Freunden oder Zeugen. Die Ablage bedeutet keine Verifizierung durch LuxDot und verlangt keine Veröffentlichung.",
+    "trust": [
+      [
+        "DATENSCHUTZ NACH WAHL",
+        "Nur bewahren, anonym, Vorname oder volle Identität."
+      ],
+      [
+        "EINWILLIGUNG ≠ VERÖFFENTLICHUNG",
+        "Speicherung, Veröffentlichung und Forschung sind getrennte Entscheidungen."
+      ],
+      [
+        "HERKUNFT",
+        "Jedes Zeugnis erhält eine Witness ID und einen lokalen digitalen Fingerabdruck."
+      ],
+      [
+        "KEINE AUTOMATISCHE VERÖFFENTLICHUNG",
+        "Nichts wird allein durch Einsendung öffentlich."
+      ]
+    ],
+    "warning": "Sicherer Startmodus: Das Formular erstellt ein Paket auf Ihrem Gerät und sendet sensible Daten nicht automatisch an einen LuxDot-Server.",
+    "context": "Diese Erinnerung ist verknüpft mit",
+    "contextNote": "Diese Beziehung kann im Text erklärt oder geändert werden.",
+    "consent": "Sie behalten die Kontrolle: nur bewahren, anonym bleiben, Veröffentlichung erlauben, Fragen überspringen oder abbrechen.",
+    "sections": [
+      "1 · Geschichte",
+      "2 · Identität — alles optional",
+      "3 · Datenschutz & Veröffentlichung",
+      "4 · Belege & Materialien"
+    ],
+    "labels": [
+      "Kurzer Titel *",
+      "Erzählen Sie die Geschichte, wie Sie sie kennen *",
+      "Datum — optional",
+      "Ort — optional",
+      "Land — optional",
+      "Beziehung zur Geschichte",
+      "Name",
+      "E-Mail",
+      "Telefon",
+      "Wie soll Ihre Identität behandelt werden? *",
+      "Bilder / Audio / Video / Dokumente — optional"
+    ],
+    "ph": [
+      "Beispiel: eine Geschichte, die erhalten bleiben soll",
+      "Was geschah? Woran erinnern Sie sich? Was darf nicht verloren gehen?"
+    ],
+    "relation": [
+      "Optional",
+      "Zeuge",
+      "Überlebender",
+      "Angehöriger",
+      "Freund",
+      "Helfer / humanitär",
+      "Forscher / Dokumentar",
+      "Andere"
+    ],
+    "privacy": [
+      "Nur bewahren — nicht veröffentlichen",
+      "Ohne meine Identität veröffentlichen",
+      "Nur Vorname",
+      "Volle Identität"
+    ],
+    "checks": [
+      "Ich stimme der Speicherung gemäß meiner Datenschutzwahl zu.",
+      "Ich erlaube die Veröffentlichung gemäß der Wahl oben.",
+      "LuxDot darf mich zur Verifizierung kontaktieren.",
+      "Ich erlaube eine datenschutzgerechte Version für LuxDot-Forschung."
+    ],
+    "identityNote": "Ein Zeugnis kann ohne Namen bewahrt werden. Kontaktdaten sind keine Veröffentlichungserlaubnis.",
+    "filesNote": "Dateien werden in dieser Version nicht hochgeladen. SHA‑256-Fingerabdrücke werden lokal berechnet.",
+    "create": "Zeugnispaket erstellen",
+    "clear": "Formular leeren",
+    "successT": "Erinnerung erhalten",
+    "successP": "Sie ist nun ein Impuls im Lebenden Gedächtnis und wird nur gemäß Ihrer Erlaubnis veröffentlicht.",
+    "receipt": "Beleg",
+    "receiptP": "Bewahren Sie diese Kennung mit der Datei auf.",
+    "download": "JSON herunterladen",
+    "status": "LOKAL BEWAHRT · NICHT VERÖFFENTLICHT",
+    "footer": "Verifizierungsstatus beschreiben nur die redaktionelle Prüfung von LuxDot.",
+    "confirm": "Alle Felder löschen?",
+    "eventGhouta": "Chemische Angriffe in Ghouta — 21. August 2013"
+  },
+  "tr": {
+    "title": "Tanıklık",
+    "lead": "Bir insan hikâyesini kaybolmadan korumak için bir yer: hayatta kalan, yakını, sağlık çalışanı, komşu, arkadaş veya tanık. Kaydetmek LuxDot’un hikâyeyi doğruladığı anlamına gelmez ve yayımlamayı gerektirmez.",
+    "trust": [
+      [
+        "GİZLİLİK SİZİN SEÇİMİNİZ",
+        "Sadece sakla, anonim yayımla, ad veya tam kimlik."
+      ],
+      [
+        "ONAY ≠ YAYIN",
+        "Saklama, yayın ve araştırma izinleri ayrı seçimlerdir."
+      ],
+      [
+        "KAYNAK",
+        "Her tanıklık bir Witness ID ve yerel dijital parmak izi alır."
+      ],
+      [
+        "OTOMATİK YAYIN YOK",
+        "Bir şey yalnızca gönderildi diye kamuya açılmaz."
+      ]
+    ],
+    "warning": "Güvenli başlangıç modu: form cihazınızda bir tanıklık paketi oluşturur ve hassas verileri otomatik olarak LuxDot sunucusuna göndermez.",
+    "context": "Bu anı şununla bağlantılı",
+    "contextNote": "Bu ilişkiyi hikâyede açıklayabilir veya değiştirebilirsiniz.",
+    "consent": "Kontrol sizde kalır: yalnızca saklayabilir, anonim kalabilir, yayına izin verebilir, soruları atlayabilir veya durabilirsiniz.",
+    "sections": [
+      "1 · Hikâye",
+      "2 · Kimliğiniz — hepsi isteğe bağlı",
+      "3 · Gizlilik & yayın",
+      "4 · Kanıt & materyal"
+    ],
+    "labels": [
+      "Kısa başlık *",
+      "Hikâyeyi bildiğiniz şekliyle anlatın *",
+      "Tarih — isteğe bağlı",
+      "Yer — isteğe bağlı",
+      "Ülke — isteğe bağlı",
+      "Hikâyeyle ilişkiniz",
+      "Ad",
+      "E-posta",
+      "Telefon",
+      "Kimliğiniz nasıl ele alınsın? *",
+      "Görsel / ses / video / belge — isteğe bağlı"
+    ],
+    "ph": [
+      "Örnek: korunmasını istediğim bir hikâye",
+      "Ne oldu? Ne hatırlıyorsunuz? Ne kaybolmamalı?"
+    ],
+    "relation": [
+      "İsteğe bağlı",
+      "Tanık",
+      "Hayatta kalan",
+      "Yakın",
+      "Arkadaş",
+      "Sağlık / insani yardım çalışanı",
+      "Araştırmacı / belgeleyici",
+      "Diğer"
+    ],
+    "privacy": [
+      "Sadece sakla — yayımlama",
+      "Kimliğim olmadan yayımlanabilir",
+      "Sadece adım",
+      "Tam kimliğim"
+    ],
+    "checks": [
+      "Bu tanıklığın seçtiğim gizlilik düzeyinde saklanmasını onaylıyorum.",
+      "Yukarıdaki gizlilik düzeyinde yayımlanmasına izin veriyorum.",
+      "LuxDot doğrulama için benimle iletişime geçebilir.",
+      "Gizliliğe uygun bir sürümün LuxDot araştırmasında kullanılmasına izin veriyorum."
+    ],
+    "identityNote": "Tanıklık isim olmadan saklanabilir. İletişim bilgileri yayın izni değildir.",
+    "filesNote": "Bu sürümde dosyalar yüklenmez. SHA‑256 parmak izleri tarayıcıda yerel olarak hesaplanır.",
+    "create": "Tanıklık paketi oluştur",
+    "clear": "Formu temizle",
+    "successT": "Anı alındı",
+    "successP": "Artık Yaşayan Hafızada bir nabızdır ve izninizin ötesinde yayımlanmaz.",
+    "receipt": "Tanıklık makbuzu",
+    "receiptP": "Bu kimliği indirilen dosyayla saklayın.",
+    "download": "JSON indir",
+    "status": "YEREL OLARAK SAKLANDI · YAYINLANMADI",
+    "footer": "Doğrulama durumları yalnızca LuxDot editoryal incelemesini açıklar.",
+    "confirm": "Tüm alanlar silinsin mi?",
+    "eventGhouta": "Ghouta kimyasal saldırıları — 21 Ağustos 2013"
+  }
+}

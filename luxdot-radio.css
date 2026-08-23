@@ -1,0 +1,28 @@
+:root{--radio-accent:#69f0a4;--radio-bg:rgba(4,10,7,.94);--radio-line:rgba(105,240,164,.28)}
+#luxdot-radio-dock{position:fixed;left:18px;bottom:18px;z-index:9997;width:min(380px,calc(100vw - 36px));background:var(--radio-bg);border:1px solid var(--radio-line);border-radius:18px;box-shadow:0 18px 60px rgba(0,0,0,.42);backdrop-filter:blur(14px);color:#effbf4;font-family:inherit;overflow:hidden}
+#luxdot-radio-dock .lrd-main{display:grid;grid-template-columns:48px 1fr auto;gap:10px;align-items:center;padding:10px 12px}
+#luxdot-radio-dock button{appearance:none;border:1px solid var(--radio-line);background:#07130d;color:#effbf4;border-radius:999px;cursor:pointer}
+#luxdot-radio-play{width:44px;height:44px;font-size:17px}
+#luxdot-radio-dock .lrd-title{font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--radio-accent)}
+#luxdot-radio-dock .lrd-track{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:230px}
+#luxdot-radio-dock .lrd-live{font-size:10px;border:1px solid rgba(255,255,255,.18);padding:4px 7px;border-radius:999px;opacity:.88}
+#luxdot-radio-dock .lrd-sub{padding:0 12px 10px 70px;font-size:11px;opacity:.66;display:flex;justify-content:space-between;gap:10px}
+#luxdot-radio-dock a{color:inherit;text-decoration:none}
+#luxdot-radio-dock .lrd-pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--radio-accent);margin-inline-end:6px;box-shadow:0 0 0 0 rgba(105,240,164,.6);animation:lrdPulse 1.7s infinite}
+@keyframes lrdPulse{70%{box-shadow:0 0 0 8px rgba(105,240,164,0)}100%{box-shadow:0 0 0 0 rgba(105,240,164,0)}}
+@media(max-width:620px){#luxdot-radio-dock{left:10px;right:10px;bottom:10px;width:auto}#luxdot-radio-dock .lrd-track{max-width:48vw}}
+
+/* v4.3.123: respectful ghost radio */
+#luxdot-radio-dock{
+ opacity:.10;transform:translateX(-72%) scale(.88);transform-origin:left bottom;
+ transition:opacity .32s ease,transform .32s ease,filter .32s ease;
+ filter:saturate(.55);max-width:360px
+}
+#luxdot-radio-dock:hover,#luxdot-radio-dock:focus-within,.luxdot-radio-near #luxdot-radio-dock{
+ opacity:.98;transform:translateX(0) scale(1);filter:none
+}
+#luxdot-radio-dock:not(:hover):not(:focus-within) .lrd-sub{opacity:0}
+@media(pointer:coarse){
+ #luxdot-radio-dock{opacity:.14;transform:translateX(-78%) scale(.84)}
+ #luxdot-radio-dock:focus-within,#luxdot-radio-dock.lrd-open{opacity:.98;transform:translateX(0) scale(1)}
+}

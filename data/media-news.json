@@ -1,0 +1,1419 @@
+{
+  "updated": "2026-08-20",
+  "category": "savior",
+  "beliefs": {
+    "judaism": {
+      "icon": "✡",
+      "heat": 5,
+      "research": "research/savior/judaism.html",
+      "label": {
+        "ar": "اليهودية · المشيح",
+        "en": "Judaism · Moshiach",
+        "nl": "Jodendom · Moshiach",
+        "he": "יהדות · משיח",
+        "jv": "Yudaisme · Moshiach",
+        "id": "Yudaisme · Moshiach",
+        "fr": "Judaïsme · Machia'h",
+        "es": "Judaísmo · Mashíaj",
+        "de": "Judentum · Maschiach",
+        "tr": "Yahudilik · Maşiah"
+      }
+    },
+    "christianity": {
+      "icon": "✝",
+      "heat": 5,
+      "research": "research/savior/christianity.html",
+      "label": {
+        "ar": "المسيحية · المجيء الثاني",
+        "en": "Christianity · Second Coming",
+        "nl": "Christendom · Wederkomst",
+        "he": "נצרות · הביאה השנייה",
+        "jv": "Kristen · Rawuh Kapindho",
+        "id": "Kristen · Kedatangan Kedua",
+        "fr": "Christianisme · Second Avènement",
+        "es": "Cristianismo · Segunda Venida",
+        "de": "Christentum · Wiederkunft",
+        "tr": "Hristiyanlık · İkinci Geliş"
+      }
+    },
+    "islam-sunni": {
+      "icon": "☾",
+      "heat": 5,
+      "research": "research/savior/islam-sunni.html",
+      "label": {
+        "ar": "الإسلام السني · المهدي",
+        "en": "Sunni Islam · Mahdi",
+        "nl": "Soennitische islam · Mahdi",
+        "he": "אסלאם סוני · מהדי",
+        "jv": "Islam Sunni · Mahdi",
+        "id": "Islam Sunni · Mahdi",
+        "fr": "Islam sunnite · Mahdi",
+        "es": "Islam suní · Mahdi",
+        "de": "Sunnitischer Islam · Mahdi",
+        "tr": "Sünni İslam · Mehdi"
+      }
+    },
+    "islam-twelver": {
+      "icon": "☾",
+      "heat": 4,
+      "research": "research/savior/islam-twelver.html",
+      "label": {
+        "ar": "الإسلام الاثنا عشري · الإمام المهدي",
+        "en": "Twelver Shi'a · Imam Mahdi",
+        "nl": "Twaalver-sjiisme · Imam Mahdi",
+        "he": "שיעה תריסרית · האימאם מהדי",
+        "jv": "Syiah Ithna Asyari · Imam Mahdi",
+        "id": "Syiah Dua Belas · Imam Mahdi",
+        "fr": "Chiisme duodécimain · Imam Mahdi",
+        "es": "Chiismo duodecimano · Imam Mahdi",
+        "de": "Zwölfer-Schia · Imam Mahdi",
+        "tr": "On İki İmam Şiiliği · İmam Mehdi"
+      }
+    },
+    "hinduism": {
+      "icon": "ॐ",
+      "heat": 5,
+      "research": "research/savior/hinduism.html",
+      "label": {
+        "ar": "الهندوسية · كالكي",
+        "en": "Hinduism · Kalki",
+        "nl": "Hindoeïsme · Kalki",
+        "he": "הינדואיזם · קלקי",
+        "jv": "Hindhu · Kalki",
+        "id": "Hindu · Kalki",
+        "fr": "Hindouisme · Kalki",
+        "es": "Hinduismo · Kalki",
+        "de": "Hinduismus · Kalki",
+        "tr": "Hinduizm · Kalki"
+      }
+    },
+    "buddhism": {
+      "icon": "☸",
+      "heat": 3,
+      "research": "research/savior/buddhism.html",
+      "label": {
+        "ar": "البوذية · مايتريا",
+        "en": "Buddhism · Maitreya",
+        "nl": "Boeddhisme · Maitreya",
+        "he": "בודהיזם · מאיטריה",
+        "jv": "Buddha · Maitreya",
+        "id": "Buddhisme · Maitreya",
+        "fr": "Bouddhisme · Maitreya",
+        "es": "Budismo · Maitreya",
+        "de": "Buddhismus · Maitreya",
+        "tr": "Budizm · Maitreya"
+      }
+    },
+    "zoroastrianism": {
+      "icon": "🔥",
+      "heat": 2,
+      "research": "research/savior/zoroastrianism.html",
+      "label": {
+        "ar": "الزرادشتية · ساوشيانت",
+        "en": "Zoroastrianism · Saoshyant",
+        "nl": "Zoroastrisme · Saoshyant",
+        "he": "זורואסטריות · סאושיאנט",
+        "jv": "Zoroastrianisme · Saoshyant",
+        "id": "Zoroastrianisme · Saoshyant",
+        "fr": "Zoroastrisme · Saoshyant",
+        "es": "Zoroastrismo · Saoshyant",
+        "de": "Zoroastrismus · Saoshyant",
+        "tr": "Zerdüştlük · Saoşyant"
+      }
+    },
+    "javanese": {
+      "icon": "ꦫ",
+      "heat": 3,
+      "research": "research/savior/javanese.html",
+      "label": {
+        "ar": "الجاوية · راتو عادل",
+        "en": "Javanese · Ratu Adil",
+        "nl": "Javaans · Ratu Adil",
+        "he": "ג'אווה · רטו אדיל",
+        "jv": "Jawa · Ratu Adil",
+        "id": "Jawa · Ratu Adil",
+        "fr": "Tradition javanaise · Ratu Adil",
+        "es": "Tradición javanesa · Ratu Adil",
+        "de": "Javanische Tradition · Ratu Adil",
+        "tr": "Cava geleneği · Ratu Adil"
+      }
+    }
+  },
+  "editorial_note": {
+    "ar": "المرصد يوثق التداول ولا يثبت تحقق أي نبوءة. قوة التداول تقيس كثافة المواد الحديثة التي وجدناها، لا صحة العقيدة أو الادعاء.",
+    "en": "The monitor documents circulation; it does not prove any prophecy fulfilled. Heat measures the density of recent material found, not the truth of a belief or claim."
+  },
+  "items": [
+    {
+      "id": "judaism-hajioff-2026-07-11",
+      "belief": "judaism",
+      "belief_label": {
+        "ar": "اليهودية · المشيح",
+        "en": "Judaism · Moshiach",
+        "nl": "Jodendom · Moshiach",
+        "he": "יהדות · משיח",
+        "jv": "Yudaisme · Moshiach",
+        "id": "Yudaisme · Moshiach",
+        "fr": "Judaïsme · Machia'h",
+        "es": "Judaísmo · Mashíaj",
+        "de": "Judentum · Maschiach",
+        "tr": "Yahudilik · Maşiah"
+      },
+      "type": "podcast",
+      "type_label": {
+        "ar": "بودكاست",
+        "en": "Podcast"
+      },
+      "status": "claim",
+      "status_label": {
+        "ar": "ادعاء معاصر",
+        "en": "Contemporary claim"
+      },
+      "title": {
+        "en": "“Moshiach Is Alive Right Now — And Doesn't Know It” — R' Lawrence Hajioff",
+        "ar": "«المشيح حي الآن ولا يعرف ذلك» — رابي لورنس هاجيوف"
+      },
+      "claim": {
+        "en": "A July 2026 episode explicitly frames the Messiah as alive in the present and asks listeners to read current events through that expectation.",
+        "ar": "حلقة من يوليو 2026 تطرح بصورة صريحة أن المشيح حي في الحاضر وتقرأ الأحداث الحالية ضمن هذا الانتظار."
+      },
+      "source": {
+        "en": "Meaningful People / Podscan",
+        "ar": "Meaningful People / Podscan"
+      },
+      "published": "2026-07-11",
+      "url": "https://podscan.fm/podcasts/meaningful-people/episodes/moshiach-is-alive-right-now-and-doesnt-know-it-r-lawrence-hajioff",
+      "research": "research/savior/judaism.html"
+    },
+    {
+      "id": "judaism-eliyahu-2026-06-19",
+      "belief": "judaism",
+      "belief_label": {
+        "ar": "اليهودية · المشيح",
+        "en": "Judaism · Moshiach",
+        "nl": "Jodendom · Moshiach",
+        "he": "יהדות · משיח",
+        "jv": "Yudaisme · Moshiach",
+        "id": "Yudaisme · Moshiach",
+        "fr": "Judaïsme · Machia'h",
+        "es": "Judaísmo · Mashíaj",
+        "de": "Judentum · Maschiach",
+        "tr": "Yahudilik · Maşiah"
+      },
+      "type": "article",
+      "type_label": {
+        "ar": "مقال",
+        "en": "Article"
+      },
+      "status": "analysis",
+      "status_label": {
+        "ar": "تفسير/تحليل",
+        "en": "Interpretation / analysis"
+      },
+      "title": {
+        "en": "Rabbi Shmuel Eliyahu: “The Rebbe on Redemption”",
+        "ar": "الحاخام شموئيل إلياهو: «الريبي والخلاص»"
+      },
+      "claim": {
+        "en": "A June 2026 article connects a Midrash about the year the King Messiah is revealed with contemporary regional events.",
+        "ar": "مقال من يونيو 2026 يربط مِدراشًا عن سنة انكشاف الملك المسيح بأحداث إقليمية معاصرة."
+      },
+      "source": {
+        "en": "Israel National News",
+        "ar": "Israel National News"
+      },
+      "published": "2026-06-19",
+      "url": "https://www.israelnationalnews.com/news/428881",
+      "research": "research/savior/judaism.html"
+    },
+    {
+      "id": "judaism-current-events-iran",
+      "belief": "judaism",
+      "belief_label": {
+        "ar": "اليهودية · المشيح",
+        "en": "Judaism · Moshiach",
+        "nl": "Jodendom · Moshiach",
+        "he": "יהדות · משיח",
+        "jv": "Yudaisme · Moshiach",
+        "id": "Yudaisme · Moshiach",
+        "fr": "Judaïsme · Machia'h",
+        "es": "Judaísmo · Mashíaj",
+        "de": "Judentum · Maschiach",
+        "tr": "Yahudilik · Maşiah"
+      },
+      "type": "video",
+      "type_label": {
+        "ar": "فيديو",
+        "en": "Video"
+      },
+      "status": "analysis",
+      "status_label": {
+        "ar": "تفسير/تحليل",
+        "en": "Interpretation / analysis"
+      },
+      "title": {
+        "en": "Is the Iran War a Sign of Moshiach? — Rabbi Vigler",
+        "ar": "هل حرب إيران علامة على المشيح؟ — الحاخام فيغلر"
+      },
+      "claim": {
+        "en": "A current-events video explicitly asks whether war involving Iran should be read as a messianic sign.",
+        "ar": "فيديو معاصر يسأل صراحةً إن كانت الحرب المرتبطة بإيران تُقرأ كعلامة مسيحانية."
+      },
+      "source": {
+        "en": "Moshiach.com · Current Events",
+        "ar": "Moshiach.com · Current Events"
+      },
+      "published": "2026 · active",
+      "url": "https://moshiach.com/current/",
+      "research": "research/savior/judaism.html"
+    },
+    {
+      "id": "judaism-headlines-lens",
+      "belief": "judaism",
+      "belief_label": {
+        "ar": "اليهودية · المشيح",
+        "en": "Judaism · Moshiach",
+        "nl": "Jodendom · Moshiach",
+        "he": "יהדות · משיח",
+        "jv": "Yudaisme · Moshiach",
+        "id": "Yudaisme · Moshiach",
+        "fr": "Judaïsme · Machia'h",
+        "es": "Judaísmo · Mashíaj",
+        "de": "Judentum · Maschiach",
+        "tr": "Yahudilik · Maşiah"
+      },
+      "type": "video",
+      "type_label": {
+        "ar": "فيديو",
+        "en": "Video"
+      },
+      "status": "analysis",
+      "status_label": {
+        "ar": "تفسير/تحليل",
+        "en": "Interpretation / analysis"
+      },
+      "title": {
+        "en": "Seeing Headlines Through a Moshiach Lens — Rabbi Yossel Katzman",
+        "ar": "قراءة العناوين من منظور المشيح — الحاخام يوسل كاتزمان"
+      },
+      "claim": {
+        "en": "A long-form discussion about how contemporary headlines are interpreted within Chabad messianic consciousness.",
+        "ar": "نقاش مطول حول كيفية قراءة الأخبار المعاصرة ضمن الوعي المسيحاني في حباد."
+      },
+      "source": {
+        "en": "Moshiach.com",
+        "ar": "Moshiach.com"
+      },
+      "published": "2026 · active",
+      "url": "https://moshiach.com/videos/seeing-headlines-through-a-moshiach-lens/",
+      "research": "research/savior/judaism.html"
+    },
+    {
+      "id": "judaism-prepare-now",
+      "belief": "judaism",
+      "belief_label": {
+        "ar": "اليهودية · المشيح",
+        "en": "Judaism · Moshiach",
+        "nl": "Jodendom · Moshiach",
+        "he": "יהדות · משיח",
+        "jv": "Yudaisme · Moshiach",
+        "id": "Yudaisme · Moshiach",
+        "fr": "Judaïsme · Machia'h",
+        "es": "Judaísmo · Mashíaj",
+        "de": "Judentum · Maschiach",
+        "tr": "Yahudilik · Maşiah"
+      },
+      "type": "video",
+      "type_label": {
+        "ar": "فيديو",
+        "en": "Video"
+      },
+      "status": "source",
+      "status_label": {
+        "ar": "مصدر عقائدي/تعليمي",
+        "en": "Doctrinal / educational source"
+      },
+      "title": {
+        "en": "Now Is The Time to Prepare For Moshiach — Rabbi Zev Leff",
+        "ar": "الآن وقت الاستعداد للمشيح — الحاخام زيف ليف"
+      },
+      "claim": {
+        "en": "An educational video urging preparation for Moshiach; included as present-tense religious messaging rather than a dated prediction.",
+        "ar": "فيديو تعليمي يدعو للاستعداد للمشيح الآن؛ أُدرج كمثال على خطاب ديني حاضر لا كتنبؤ مؤرخ."
+      },
+      "source": {
+        "en": "Moshiach.com · Current Events",
+        "ar": "Moshiach.com · Current Events"
+      },
+      "published": "2026 · active",
+      "url": "https://moshiach.com/current/",
+      "research": "research/savior/judaism.html"
+    },
+    {
+      "id": "christianity-premier-2026",
+      "belief": "christianity",
+      "belief_label": {
+        "ar": "المسيحية · المجيء الثاني",
+        "en": "Christianity · Second Coming",
+        "nl": "Christendom · Wederkomst",
+        "he": "נצרות · הביאה השנייה",
+        "jv": "Kristen · Rawuh Kapindho",
+        "id": "Kristen · Kedatangan Kedua",
+        "fr": "Christianisme · Second Avènement",
+        "es": "Cristianismo · Segunda Venida",
+        "de": "Christentum · Wiederkunft",
+        "tr": "Hristiyanlık · İkinci Geliş"
+      },
+      "type": "article",
+      "type_label": {
+        "ar": "مقال",
+        "en": "Article"
+      },
+      "status": "context",
+      "status_label": {
+        "ar": "سياق ونقد",
+        "en": "Context / critique"
+      },
+      "title": {
+        "en": "People are betting on the Second Coming happening in 2026",
+        "ar": "ناس يراهنون على حدوث المجيء الثاني في 2026"
+      },
+      "claim": {
+        "en": "Premier Christianity documents 2026 date-setting and evaluates it critically rather than endorsing the prediction.",
+        "ar": "يوثق Premier Christianity ظاهرة تحديد 2026 موعدًا للمجيء الثاني ويناقشها نقديًا دون تبنيها."
+      },
+      "source": {
+        "en": "Premier Christianity",
+        "ar": "Premier Christianity"
+      },
+      "published": "2026-01-15",
+      "url": "https://www.premierchristianity.com/opinion/people-are-betting-on-the-second-coming-of-christ-happening-in-2026-should-christians-take-it-seriously/20827.article",
+      "research": "research/savior/christianity.html"
+    },
+    {
+      "id": "christianity-bible-seen-2026",
+      "belief": "christianity",
+      "belief_label": {
+        "ar": "المسيحية · المجيء الثاني",
+        "en": "Christianity · Second Coming",
+        "nl": "Christendom · Wederkomst",
+        "he": "נצרות · הביאה השנייה",
+        "jv": "Kristen · Rawuh Kapindho",
+        "id": "Kristen · Kedatangan Kedua",
+        "fr": "Christianisme · Second Avènement",
+        "es": "Cristianismo · Segunda Venida",
+        "de": "Christentum · Wiederkunft",
+        "tr": "Hristiyanlık · İkinci Geliş"
+      },
+      "type": "video",
+      "type_label": {
+        "ar": "فيديو",
+        "en": "Video"
+      },
+      "status": "source",
+      "status_label": {
+        "ar": "مصدر عقائدي/تعليمي",
+        "en": "Doctrinal / educational source"
+      },
+      "title": {
+        "en": "The Second Coming of Jesus Christ — Revelation timeline",
+        "ar": "المجيء الثاني ليسوع المسيح — خط زمني من سفر الرؤيا"
+      },
+      "claim": {
+        "en": "A February 2026 cinematic Bible video walks through end-times signs, seals, trumpets and the return of Christ.",
+        "ar": "فيديو كتابي سينمائي من فبراير 2026 يستعرض علامات النهاية والأختام والأبواق وعودة المسيح."
+      },
+      "source": {
+        "en": "The Bible Seen · YouTube",
+        "ar": "The Bible Seen · YouTube"
+      },
+      "published": "2026-02-10",
+      "url": "https://www.youtube.com/watch?v=pyhqdGvisxQ",
+      "research": "research/savior/christianity.html"
+    },
+    {
+      "id": "christianity-jerusalem-2026",
+      "belief": "christianity",
+      "belief_label": {
+        "ar": "المسيحية · المجيء الثاني",
+        "en": "Christianity · Second Coming",
+        "nl": "Christendom · Wederkomst",
+        "he": "נצרות · הביאה השנייה",
+        "jv": "Kristen · Rawuh Kapindho",
+        "id": "Kristen · Kedatangan Kedua",
+        "fr": "Christianisme · Second Avènement",
+        "es": "Cristianismo · Segunda Venida",
+        "de": "Christentum · Wiederkunft",
+        "tr": "Hristiyanlık · İkinci Geliş"
+      },
+      "type": "video",
+      "type_label": {
+        "ar": "فيديو",
+        "en": "Video"
+      },
+      "status": "claim",
+      "status_label": {
+        "ar": "ادعاء معاصر",
+        "en": "Contemporary claim"
+      },
+      "title": {
+        "en": "“Biggest Prophecy Is Happening Now in Jerusalem”",
+        "ar": "«أكبر نبوءة تتحقق الآن في القدس»"
+      },
+      "claim": {
+        "en": "A March 2026 video directly labels events in Jerusalem as prophecy unfolding now and connects them with the Second Coming.",
+        "ar": "فيديو من مارس 2026 يصف أحداثًا في القدس بأنها نبوءة تتحقق الآن ويربطها بالمجيء الثاني."
+      },
+      "source": {
+        "en": "Jesus & Bible · YouTube",
+        "ar": "Jesus & Bible · YouTube"
+      },
+      "published": "2026-03-11",
+      "url": "https://www.youtube.com/watch?v=sQVc-tzveJo",
+      "research": "research/savior/christianity.html"
+    },
+    {
+      "id": "sunni-islam-islamtv-2026",
+      "belief": "islam-sunni",
+      "belief_label": {
+        "ar": "الإسلام السني · المهدي",
+        "en": "Sunni Islam · Mahdi",
+        "nl": "Soennitische islam · Mahdi",
+        "he": "אסלאם סוני · מהדי",
+        "jv": "Islam Sunni · Mahdi",
+        "id": "Islam Sunni · Mahdi",
+        "fr": "Islam sunnite · Mahdi",
+        "es": "Islam suní · Mahdi",
+        "de": "Sunnitischer Islam · Mahdi",
+        "tr": "Sünni İslam · Mehdi"
+      },
+      "type": "video",
+      "type_label": {
+        "ar": "فيديو",
+        "en": "Video"
+      },
+      "status": "claim",
+      "status_label": {
+        "ar": "ادعاء معاصر",
+        "en": "Contemporary claim"
+      },
+      "title": {
+        "en": "3 Signs Left for Al-Mahdi to Show Himself",
+        "ar": "بقيت ثلاث علامات لظهور المهدي"
+      },
+      "claim": {
+        "en": "A January 2026 video with a large audience presents only three signs as remaining before the Mahdi appears.",
+        "ar": "فيديو من يناير 2026 ذو مشاهدة واسعة يقول إن ثلاث علامات فقط بقيت قبل ظهور المهدي."
+      },
+      "source": {
+        "en": "The iSLAM TV · YouTube",
+        "ar": "The iSLAM TV · YouTube"
+      },
+      "published": "2026-01-03",
+      "url": "https://www.youtube.com/watch?v=57u2S7FFffs",
+      "research": "research/savior/islam-sunni.html"
+    },
+    {
+      "id": "sunni-bangla-2026",
+      "belief": "islam-sunni",
+      "belief_label": {
+        "ar": "الإسلام السني · المهدي",
+        "en": "Sunni Islam · Mahdi",
+        "nl": "Soennitische islam · Mahdi",
+        "he": "אסלאם סוני · מהדי",
+        "jv": "Islam Sunni · Mahdi",
+        "id": "Islam Sunni · Mahdi",
+        "fr": "Islam sunnite · Mahdi",
+        "es": "Islam suní · Mahdi",
+        "de": "Sunnitischer Islam · Mahdi",
+        "tr": "Sünni İslam · Mehdi"
+      },
+      "type": "video",
+      "type_label": {
+        "ar": "فيديو",
+        "en": "Video"
+      },
+      "status": "claim",
+      "status_label": {
+        "ar": "ادعاء معاصر",
+        "en": "Contemporary claim"
+      },
+      "title": {
+        "en": "2026–2027: Signs of the arrival of Imam Mahdi?",
+        "ar": "2026–2027: هل بدأت علامات وصول الإمام المهدي؟"
+      },
+      "claim": {
+        "en": "A January 2026 Bangla video frames war, injustice and upheaval as changes that may signal the Mahdi's approach.",
+        "ar": "فيديو بنغالي من يناير 2026 يقدّم الحرب والظلم والاضطراب كتحولات قد تشير إلى اقتراب المهدي."
+      },
+      "source": {
+        "en": "Ruhani Rekha · YouTube",
+        "ar": "Ruhani Rekha · YouTube"
+      },
+      "published": "2026-01-19",
+      "url": "https://www.youtube.com/watch?v=XBwK8K6oWqY",
+      "research": "research/savior/islam-sunni.html"
+    },
+    {
+      "id": "sunni-yasir-qadhi",
+      "belief": "islam-sunni",
+      "belief_label": {
+        "ar": "الإسلام السني · المهدي",
+        "en": "Sunni Islam · Mahdi",
+        "nl": "Soennitische islam · Mahdi",
+        "he": "אסלאם סוני · מהדי",
+        "jv": "Islam Sunni · Mahdi",
+        "id": "Islam Sunni · Mahdi",
+        "fr": "Islam sunnite · Mahdi",
+        "es": "Islam suní · Mahdi",
+        "de": "Sunnitischer Islam · Mahdi",
+        "tr": "Sünni İslam · Mehdi"
+      },
+      "type": "video",
+      "type_label": {
+        "ar": "فيديو",
+        "en": "Video"
+      },
+      "status": "context",
+      "status_label": {
+        "ar": "سياق ونقد",
+        "en": "Context / critique"
+      },
+      "title": {
+        "en": "Is the Mahdi here? — Yasir Qadhi",
+        "ar": "هل المهدي موجود الآن؟ — ياسر قاضي"
+      },
+      "claim": {
+        "en": "A mainstream educational treatment of minor and major signs, useful as a counterweight to viral date-setting claims.",
+        "ar": "معالجة تعليمية لعلامات الساعة الصغرى والكبرى تفيد كميزان مقابل للادعاءات الفيروسية محددة الموعد."
+      },
+      "source": {
+        "en": "One Islam TV",
+        "ar": "One Islam TV"
+      },
+      "published": "current",
+      "url": "https://www.oneislam.tv/the-minor-major-signs/videos/tv-is-the-mahdi-here",
+      "research": "research/savior/islam-sunni.html"
+    },
+    {
+      "id": "sunni-big-signs",
+      "belief": "islam-sunni",
+      "belief_label": {
+        "ar": "الإسلام السني · المهدي",
+        "en": "Sunni Islam · Mahdi",
+        "nl": "Soennitische islam · Mahdi",
+        "he": "אסלאם סוני · מהדי",
+        "jv": "Islam Sunni · Mahdi",
+        "id": "Islam Sunni · Mahdi",
+        "fr": "Islam sunnite · Mahdi",
+        "es": "Islam suní · Mahdi",
+        "de": "Sunnitischer Islam · Mahdi",
+        "tr": "Sünni İslam · Mehdi"
+      },
+      "type": "video",
+      "type_label": {
+        "ar": "فيديو",
+        "en": "Video"
+      },
+      "status": "source",
+      "status_label": {
+        "ar": "مصدر عقائدي/تعليمي",
+        "en": "Doctrinal / educational source"
+      },
+      "title": {
+        "en": "Big Signs of the Arrival of Imam Mahdi",
+        "ar": "العلامات الكبرى لوصول الإمام المهدي"
+      },
+      "claim": {
+        "en": "A concise teaching video on major Mahdi signs; included to distinguish traditional sign-lists from current-event matching.",
+        "ar": "فيديو تعليمي موجز عن العلامات الكبرى للمهدي، لفصل قوائم العلامات التقليدية عن مطابقة الأخبار اليومية."
+      },
+      "source": {
+        "en": "One Islam TV",
+        "ar": "One Islam TV"
+      },
+      "published": "current",
+      "url": "https://www.oneislam.tv/videos/big-signs-of-the-arrival-of-imam-mahdi",
+      "research": "research/savior/islam-sunni.html"
+    },
+    {
+      "id": "twelver-najaf-2026",
+      "belief": "islam-twelver",
+      "belief_label": {
+        "ar": "الإسلام الاثنا عشري · الإمام المهدي",
+        "en": "Twelver Shi'a · Imam Mahdi",
+        "nl": "Twaalver-sjiisme · Imam Mahdi",
+        "he": "שיעה תריסרית · האימאם מהדי",
+        "jv": "Syiah Ithna Asyari · Imam Mahdi",
+        "id": "Syiah Dua Belas · Imam Mahdi",
+        "fr": "Chiisme duodécimain · Imam Mahdi",
+        "es": "Chiismo duodecimano · Imam Mahdi",
+        "de": "Zwölfer-Schia · Imam Mahdi",
+        "tr": "On İki İmam Şiiliği · İmam Mehdi"
+      },
+      "type": "lecture",
+      "type_label": {
+        "ar": "محاضرة",
+        "en": "Lecture"
+      },
+      "status": "source",
+      "status_label": {
+        "ar": "مصدر عقائدي/تعليمي",
+        "en": "Doctrinal / educational source"
+      },
+      "title": {
+        "en": "Questions on signs of Imam Mahdi’s appearance — Najaf specialist center",
+        "ar": "أسئلة حول علامات ظهور الإمام المهدي — مركز تخصصي في النجف"
+      },
+      "claim": {
+        "en": "A January 2026 lecture from a specialist Mahdi studies center discusses how signs of reappearance should be understood.",
+        "ar": "محاضرة من يناير 2026 من مركز متخصص في دراسات الإمام المهدي تناقش كيفية فهم علامات الظهور."
+      },
+      "source": {
+        "en": "مركز الدراسات التخصصية في الإمام المهدي · النجف",
+        "ar": "مركز الدراسات التخصصية في الإمام المهدي · النجف"
+      },
+      "published": "2026-01-18",
+      "url": "https://www.m-mahdi.net/posts/%D8%B9%D9%86%D8%AF-%D8%AE%D8%B1%D9%88%D8%AC-%D8%A7%D9%84%D8%A5%D9%85%D8%A7%D9%85-%D8%A7%D9%84%D9%85%D9%87%D8%AF%D9%8A-%D8%B9%D8%AC%D9%84-%D8%A7%D9%84%D9%84%D9%87-%D9%81%D8%B1%D8%AC%D9%87-%D8%B3%D9%8A%D8%B9%D8%B1%D9%81%D9%87-%D9%83%D9%84-%D8%A7%D9%84%D9%86%D8%A7%D8%B3-%D8%A8%D9%84%D8%A7-%D8%A7%D8%B3%D8%AA%D8%AB%D9%86%D8%A7%D8%A1",
+      "research": "research/savior/islam-twelver.html"
+    },
+    {
+      "id": "twelver-discover",
+      "belief": "islam-twelver",
+      "belief_label": {
+        "ar": "الإسلام الاثنا عشري · الإمام المهدي",
+        "en": "Twelver Shi'a · Imam Mahdi",
+        "nl": "Twaalver-sjiisme · Imam Mahdi",
+        "he": "שיעה תריסרית · האימאם מהדי",
+        "jv": "Syiah Ithna Asyari · Imam Mahdi",
+        "id": "Syiah Dua Belas · Imam Mahdi",
+        "fr": "Chiisme duodécimain · Imam Mahdi",
+        "es": "Chiismo duodecimano · Imam Mahdi",
+        "de": "Zwölfer-Schia · Imam Mahdi",
+        "tr": "On İki İmam Şiiliği · İmam Mehdi"
+      },
+      "type": "video",
+      "type_label": {
+        "ar": "فيديو",
+        "en": "Video"
+      },
+      "status": "source",
+      "status_label": {
+        "ar": "مصدر عقائدي/تعليمي",
+        "en": "Doctrinal / educational source"
+      },
+      "title": {
+        "en": "End of Times: Signs of the Mahdi",
+        "ar": "آخر الزمان: علامات المهدي"
+      },
+      "claim": {
+        "en": "A dedicated Mahdi education site hosts video material on signs of the awaited Imam; categorized as tradition-internal teaching.",
+        "ar": "موقع تعليمي متخصص بالمهدي ينشر مادة مرئية عن علامات الإمام المنتظر؛ مصنف كمصدر تعليمي من داخل التقليد."
+      },
+      "source": {
+        "en": "Discover Mahdi",
+        "ar": "Discover Mahdi"
+      },
+      "published": "current",
+      "url": "https://www.discovermahdi.com/",
+      "research": "research/savior/islam-twelver.html"
+    },
+    {
+      "id": "twelver-era-appearance",
+      "belief": "islam-twelver",
+      "belief_label": {
+        "ar": "الإسلام الاثنا عشري · الإمام المهدي",
+        "en": "Twelver Shi'a · Imam Mahdi",
+        "nl": "Twaalver-sjiisme · Imam Mahdi",
+        "he": "שיעה תריסרית · האימאם מהדי",
+        "jv": "Syiah Ithna Asyari · Imam Mahdi",
+        "id": "Syiah Dua Belas · Imam Mahdi",
+        "fr": "Chiisme duodécimain · Imam Mahdi",
+        "es": "Chiismo duodecimano · Imam Mahdi",
+        "de": "Zwölfer-Schia · Imam Mahdi",
+        "tr": "On İki İmam Şiiliği · İmam Mehdi"
+      },
+      "type": "video",
+      "type_label": {
+        "ar": "فيديو",
+        "en": "Video"
+      },
+      "status": "analysis",
+      "status_label": {
+        "ar": "تفسير/تحليل",
+        "en": "Interpretation / analysis"
+      },
+      "title": {
+        "en": "The Era of Appearance",
+        "ar": "عصر الظهور"
+      },
+      "claim": {
+        "en": "A visual timeline of signs of Imam al-Mahdi’s reappearance assembled from Shi'a media sources.",
+        "ar": "خط زمني مرئي لعلامات ظهور الإمام المهدي جُمّع من مصادر إعلامية شيعية."
+      },
+      "source": {
+        "en": "Ahlulbayt Society Kuwait · Vimeo",
+        "ar": "Ahlulbayt Society Kuwait · Vimeo"
+      },
+      "published": "current archive",
+      "url": "https://vimeo.com/238095366",
+      "research": "research/savior/islam-twelver.html"
+    },
+    {
+      "id": "hindu-kalki-predictions",
+      "belief": "hinduism",
+      "belief_label": {
+        "ar": "الهندوسية · كالكي",
+        "en": "Hinduism · Kalki",
+        "nl": "Hindoeïsme · Kalki",
+        "he": "הינדואיזם · קלקי",
+        "jv": "Hindhu · Kalki",
+        "id": "Hindu · Kalki",
+        "fr": "Hindouisme · Kalki",
+        "es": "Hinduismo · Kalki",
+        "de": "Hinduismus · Kalki",
+        "tr": "Hinduizm · Kalki"
+      },
+      "type": "article",
+      "type_label": {
+        "ar": "مقال",
+        "en": "Article"
+      },
+      "status": "claim",
+      "status_label": {
+        "ar": "ادعاء معاصر",
+        "en": "Contemporary claim"
+      },
+      "title": {
+        "en": "Bhavishya Malika: “49 fulfillments and growing”",
+        "ar": "بهافيشيا ماليكا: «49 تحققًا والعدد يتزايد»"
+      },
+      "claim": {
+        "en": "A live 2026 registry explicitly claims dozens of dated prophecy fulfillments and links them to a transition toward Satya Yuga.",
+        "ar": "سجل حي في 2026 يدعي عشرات التحققات المؤرخة ويربطها بالانتقال نحو ساتيا يوغا."
+      },
+      "source": {
+        "en": "Kalki Avatar International",
+        "ar": "Kalki Avatar International"
+      },
+      "published": "updated 2026-07",
+      "url": "https://kalkiabatara.org/predictions",
+      "research": "research/savior/hinduism.html"
+    },
+    {
+      "id": "hindu-proof-registry",
+      "belief": "hinduism",
+      "belief_label": {
+        "ar": "الهندوسية · كالكي",
+        "en": "Hinduism · Kalki",
+        "nl": "Hindoeïsme · Kalki",
+        "he": "הינדואיזם · קלקי",
+        "jv": "Hindhu · Kalki",
+        "id": "Hindu · Kalki",
+        "fr": "Hindouisme · Kalki",
+        "es": "Hinduismo · Kalki",
+        "de": "Hinduismus · Kalki",
+        "tr": "Hinduizm · Kalki"
+      },
+      "type": "article",
+      "type_label": {
+        "ar": "مقال",
+        "en": "Article"
+      },
+      "status": "claim",
+      "status_label": {
+        "ar": "ادعاء معاصر",
+        "en": "Contemporary claim"
+      },
+      "title": {
+        "en": "49 Dated Fulfillments and Counting",
+        "ar": "49 تحققًا مؤرخًا والعدد مستمر"
+      },
+      "claim": {
+        "en": "A July 2026 article presents a proof registry that attempts to match Bhavishya Malika signs to externally reported events.",
+        "ar": "مقال من يوليو 2026 يعرض سجل «إثباتات» يحاول مطابقة علامات بهافيشيا ماليكا بأحداث منشورة خارجيًا."
+      },
+      "source": {
+        "en": "Kalki Avatar International",
+        "ar": "Kalki Avatar International"
+      },
+      "published": "2026-07-20",
+      "url": "https://kalkiabatara.org/blog-49-dated-fulfillments-proof-registry",
+      "research": "research/savior/hinduism.html"
+    },
+    {
+      "id": "hindu-machine-age",
+      "belief": "hinduism",
+      "belief_label": {
+        "ar": "الهندوسية · كالكي",
+        "en": "Hinduism · Kalki",
+        "nl": "Hindoeïsme · Kalki",
+        "he": "הינדואיזם · קלקי",
+        "jv": "Hindhu · Kalki",
+        "id": "Hindu · Kalki",
+        "fr": "Hindouisme · Kalki",
+        "es": "Hinduismo · Kalki",
+        "de": "Hinduismus · Kalki",
+        "tr": "Hinduizm · Kalki"
+      },
+      "type": "video",
+      "type_label": {
+        "ar": "فيديو",
+        "en": "Video"
+      },
+      "status": "claim",
+      "status_label": {
+        "ar": "ادعاء معاصر",
+        "en": "Contemporary claim"
+      },
+      "title": {
+        "en": "The Machine Age Ends: prophecy of the day the screens go dark",
+        "ar": "نهاية عصر الآلة: نبوءة اليوم الذي تنطفئ فيه الشاشات"
+      },
+      "claim": {
+        "en": "A July 2026 video in a dense sequence of prophecy content presents technological collapse as a foretold sign.",
+        "ar": "فيديو من يوليو 2026 ضمن سلسلة كثيفة من محتوى النبوءات يقدم انهيار التكنولوجيا كعلامة متنبأ بها."
+      },
+      "source": {
+        "en": "Bhavishya Malika Wisdom",
+        "ar": "Bhavishya Malika Wisdom"
+      },
+      "published": "2026-07-25",
+      "url": "https://kalkiabatara.org/videos",
+      "research": "research/savior/hinduism.html"
+    },
+    {
+      "id": "hindu-false-kalkis",
+      "belief": "hinduism",
+      "belief_label": {
+        "ar": "الهندوسية · كالكي",
+        "en": "Hinduism · Kalki",
+        "nl": "Hindoeïsme · Kalki",
+        "he": "הינדואיזם · קלקי",
+        "jv": "Hindhu · Kalki",
+        "id": "Hindu · Kalki",
+        "fr": "Hindouisme · Kalki",
+        "es": "Hinduismo · Kalki",
+        "de": "Hinduismus · Kalki",
+        "tr": "Hinduizm · Kalki"
+      },
+      "type": "video",
+      "type_label": {
+        "ar": "فيديو",
+        "en": "Video"
+      },
+      "status": "analysis",
+      "status_label": {
+        "ar": "تفسير/تحليل",
+        "en": "Interpretation / analysis"
+      },
+      "title": {
+        "en": "False Kalkis: a text predicted its own impostors",
+        "ar": "كالكي المزيّفون: نص تنبأ بمدّعيه"
+      },
+      "claim": {
+        "en": "A July 2026 video discusses false claimants and how the movement says they were anticipated in the prophecy corpus.",
+        "ar": "فيديو من يوليو 2026 يناقش مدّعي كالكي وكيف تقول الحركة إن النصوص تنبأت بظهورهم."
+      },
+      "source": {
+        "en": "Bhavishya Malika Wisdom",
+        "ar": "Bhavishya Malika Wisdom"
+      },
+      "published": "2026-07-24",
+      "url": "https://kalkiabatara.org/videos",
+      "research": "research/savior/hinduism.html"
+    },
+    {
+      "id": "hindu-puri-signs",
+      "belief": "hinduism",
+      "belief_label": {
+        "ar": "الهندوسية · كالكي",
+        "en": "Hinduism · Kalki",
+        "nl": "Hindoeïsme · Kalki",
+        "he": "הינדואיזם · קלקי",
+        "jv": "Hindhu · Kalki",
+        "id": "Hindu · Kalki",
+        "fr": "Hindouisme · Kalki",
+        "es": "Hinduismo · Kalki",
+        "de": "Hinduismus · Kalki",
+        "tr": "Hinduizm · Kalki"
+      },
+      "type": "video",
+      "type_label": {
+        "ar": "فيديو",
+        "en": "Video"
+      },
+      "status": "claim",
+      "status_label": {
+        "ar": "ادعاء معاصر",
+        "en": "Contemporary claim"
+      },
+      "title": {
+        "en": "The Signs at Puri — a decade of anomalies",
+        "ar": "علامات بوري — عقد من الظواهر غير المعتادة"
+      },
+      "claim": {
+        "en": "A July 2026 video interprets anomalies around Jagannath Temple as part of an end-of-age sign set.",
+        "ar": "فيديو من يوليو 2026 يفسر ظواهر حول معبد جاغاناث باعتبارها جزءًا من علامات نهاية العصر."
+      },
+      "source": {
+        "en": "Bhavishya Malika Wisdom",
+        "ar": "Bhavishya Malika Wisdom"
+      },
+      "published": "2026-07-22",
+      "url": "https://kalkiabatara.org/videos",
+      "research": "research/savior/hinduism.html"
+    },
+    {
+      "id": "hindu-aajtak-2026",
+      "belief": "hinduism",
+      "belief_label": {
+        "ar": "الهندوسية · كالكي",
+        "en": "Hinduism · Kalki",
+        "nl": "Hindoeïsme · Kalki",
+        "he": "הינדואיזם · קלקי",
+        "jv": "Hindhu · Kalki",
+        "id": "Hindu · Kalki",
+        "fr": "Hindouisme · Kalki",
+        "es": "Hinduismo · Kalki",
+        "de": "Hinduismus · Kalki",
+        "tr": "Hinduizm · Kalki"
+      },
+      "type": "article",
+      "type_label": {
+        "ar": "مقال",
+        "en": "Article"
+      },
+      "status": "context",
+      "status_label": {
+        "ar": "سياق ونقد",
+        "en": "Context / critique"
+      },
+      "title": {
+        "en": "Is a third world war a sign of Kalki’s arrival?",
+        "ar": "هل الحرب العالمية الثالثة إشارة إلى قدوم كالكي؟"
+      },
+      "claim": {
+        "en": "A July 2026 AajTak article reports popular prophecy discourse around Kalki, Bhavishya Malika and a future global war.",
+        "ar": "مقال AajTak من يوليو 2026 يرصد خطاب النبوءات الشعبي حول كالكي وبهافيشيا ماليكا وحرب عالمية مستقبلية."
+      },
+      "source": {
+        "en": "AajTak",
+        "ar": "AajTak"
+      },
+      "published": "2026-07-11",
+      "url": "https://www.aajtak.in/religion/news/story/kalki-avatar-third-world-war-prediction-bhavishya-malika-hindu-dharam-prophecy-tvisg-dskc-2598587-2026-07-11",
+      "research": "research/savior/hinduism.html"
+    },
+    {
+      "id": "buddhism-smtv-412",
+      "belief": "buddhism",
+      "belief_label": {
+        "ar": "البوذية · مايتريا",
+        "en": "Buddhism · Maitreya",
+        "nl": "Boeddhisme · Maitreya",
+        "he": "בודהיזם · מאיטריה",
+        "jv": "Buddha · Maitreya",
+        "id": "Buddhisme · Maitreya",
+        "fr": "Bouddhisme · Maitreya",
+        "es": "Budismo · Maitreya",
+        "de": "Buddhismus · Maitreya",
+        "tr": "Budizm · Maitreya"
+      },
+      "type": "series",
+      "type_label": {
+        "ar": "سلسلة",
+        "en": "Series"
+      },
+      "status": "claim",
+      "status_label": {
+        "ar": "ادعاء معاصر",
+        "en": "Contemporary claim"
+      },
+      "title": {
+        "en": "Prophecy Part 412: Maitreya and the “Day of Declaration”",
+        "ar": "النبوءة 412: مايتريا و«يوم الإعلان»"
+      },
+      "claim": {
+        "en": "An August 2026 program says Maitreya will eventually address the whole world on a simultaneous televised “Day of Declaration.”",
+        "ar": "برنامج من أغسطس 2026 يقول إن مايتريا سيخاطب العالم كله في «يوم إعلان» متزامن عبر الشاشات."
+      },
+      "source": {
+        "en": "Supreme Master Television",
+        "ar": "Supreme Master Television"
+      },
+      "published": "2026-08-02",
+      "url": "https://www-de-1.suprememastertv.com/en1/program/AP",
+      "research": "research/savior/buddhism.html"
+    },
+    {
+      "id": "buddhism-smtv-411",
+      "belief": "buddhism",
+      "belief_label": {
+        "ar": "البوذية · مايتريا",
+        "en": "Buddhism · Maitreya",
+        "nl": "Boeddhisme · Maitreya",
+        "he": "בודהיזם · מאיטריה",
+        "jv": "Buddha · Maitreya",
+        "id": "Buddhisme · Maitreya",
+        "fr": "Bouddhisme · Maitreya",
+        "es": "Budismo · Maitreya",
+        "de": "Buddhismus · Maitreya",
+        "tr": "Budizm · Maitreya"
+      },
+      "type": "series",
+      "type_label": {
+        "ar": "سلسلة",
+        "en": "Series"
+      },
+      "status": "claim",
+      "status_label": {
+        "ar": "ادعاء معاصر",
+        "en": "Contemporary claim"
+      },
+      "title": {
+        "en": "Prophecy Part 411: “This time, Maitreya Himself has come”",
+        "ar": "النبوءة 411: «هذه المرة جاء مايتريا نفسه»"
+      },
+      "claim": {
+        "en": "A July 2026 episode explicitly states that Maitreya has already come; logged as a movement claim, not mainstream Buddhist consensus.",
+        "ar": "حلقة من يوليو 2026 تقول صراحة إن مايتريا قد جاء بالفعل؛ تُسجل كادعاء حركة لا كإجماع بوذي."
+      },
+      "source": {
+        "en": "Supreme Master Television",
+        "ar": "Supreme Master Television"
+      },
+      "published": "2026-07-26",
+      "url": "https://www2.suprememastertv.com/en1/program/AP",
+      "research": "research/savior/buddhism.html"
+    },
+    {
+      "id": "buddhism-academic-2026",
+      "belief": "buddhism",
+      "belief_label": {
+        "ar": "البوذية · مايتريا",
+        "en": "Buddhism · Maitreya",
+        "nl": "Boeddhisme · Maitreya",
+        "he": "בודהיזם · מאיטריה",
+        "jv": "Buddha · Maitreya",
+        "id": "Buddhisme · Maitreya",
+        "fr": "Bouddhisme · Maitreya",
+        "es": "Budismo · Maitreya",
+        "de": "Buddhismus · Maitreya",
+        "tr": "Budizm · Maitreya"
+      },
+      "type": "academic",
+      "type_label": {
+        "ar": "بحث أكاديمي",
+        "en": "Academic"
+      },
+      "status": "context",
+      "status_label": {
+        "ar": "سياق ونقد",
+        "en": "Context / critique"
+      },
+      "title": {
+        "en": "2026 scholarship on how Maitreya expectation developed",
+        "ar": "بحث أكاديمي 2026 حول تطور انتظار مايتريا"
+      },
+      "claim": {
+        "en": "A 2026 academic article provides historical context: early Buddhism did not center waiting for Maitreya in the same way later traditions did.",
+        "ar": "مقال أكاديمي 2026 يقدم سياقًا تاريخيًا: البوذية المبكرة لم تجعل انتظار مايتريا محوريًا بالطريقة التي ظهرت لاحقًا."
+      },
+      "source": {
+        "en": "Transfer · University of Barcelona",
+        "ar": "Transfer · University of Barcelona"
+      },
+      "published": "2026",
+      "url": "https://revistes.ub.edu/index.php/transfer/article/download/49999/45935/160026",
+      "research": "research/savior/buddhism.html"
+    },
+    {
+      "id": "buddhism-2026-prophecy-text",
+      "belief": "buddhism",
+      "belief_label": {
+        "ar": "البوذية · مايتريا",
+        "en": "Buddhism · Maitreya",
+        "nl": "Boeddhisme · Maitreya",
+        "he": "בודהיזם · מאיטריה",
+        "jv": "Buddha · Maitreya",
+        "id": "Buddhisme · Maitreya",
+        "fr": "Bouddhisme · Maitreya",
+        "es": "Budismo · Maitreya",
+        "de": "Buddhismus · Maitreya",
+        "tr": "Budizm · Maitreya"
+      },
+      "type": "article",
+      "type_label": {
+        "ar": "مقال",
+        "en": "Article"
+      },
+      "status": "analysis",
+      "status_label": {
+        "ar": "تفسير/تحليل",
+        "en": "Interpretation / analysis"
+      },
+      "title": {
+        "en": "A prophecy text explicitly naming the Fire-Female-Horse year 2026",
+        "ar": "نص نبوئي يذكر صراحة سنة حصان النار الأنثى 2026"
+      },
+      "claim": {
+        "en": "A circulated Tibetan Buddhist prophecy text specifically names autumn 2026; included as a textual-current overlap requiring source-critical review.",
+        "ar": "نص نبوئي بوذي تبتي متداول يذكر خريف 2026 تحديدًا؛ أُدرج كتقاطع نصي/زمني يحتاج إلى نقد مصدر صارم."
+      },
+      "source": {
+        "en": "Dharma Data",
+        "ar": "Dharma Data"
+      },
+      "published": "older text · 2026 reference",
+      "url": "https://www.dharmadata.org/index.php?Itemid=104&catid=10&id=442%3Aprophecy-revealed-by-jamyang-khyentse-choeky-lodroe-about-the-next-decade&lang=en&option=com_content&view=article",
+      "research": "research/savior/buddhism.html"
+    },
+    {
+      "id": "zoro-2026-article",
+      "belief": "zoroastrianism",
+      "belief_label": {
+        "ar": "الزرادشتية · ساوشيانت",
+        "en": "Zoroastrianism · Saoshyant",
+        "nl": "Zoroastrisme · Saoshyant",
+        "he": "זורואסטריות · סאושיאנט",
+        "jv": "Zoroastrianisme · Saoshyant",
+        "id": "Zoroastrianisme · Saoshyant",
+        "fr": "Zoroastrisme · Saoshyant",
+        "es": "Zoroastrismo · Saoshyant",
+        "de": "Zoroastrismus · Saoshyant",
+        "tr": "Zerdüştlük · Saoşyant"
+      },
+      "type": "article",
+      "type_label": {
+        "ar": "مقال",
+        "en": "Article"
+      },
+      "status": "context",
+      "status_label": {
+        "ar": "سياق ونقد",
+        "en": "Context / critique"
+      },
+      "title": {
+        "en": "The Saoshyant: The Future Savior of the World",
+        "ar": "ساوشيانت: مخلّص العالم المستقبلي"
+      },
+      "claim": {
+        "en": "A June 2026 long-form explainer renewed public discussion of Saoshyant and Frashokereti; it does not claim a 2026 appearance.",
+        "ar": "شرح مطول من يونيو 2026 أعاد تداول ساوشيانت وفراشوكيريتي؛ ولا يدعي ظهورًا في 2026."
+      },
+      "source": {
+        "en": "Kurdish History · Sherko Sabir",
+        "ar": "Kurdish History · Sherko Sabir"
+      },
+      "published": "2026-06-03",
+      "url": "https://www.kurdish-history.com/post/saoshyant-savior",
+      "research": "research/savior/zoroastrianism.html"
+    },
+    {
+      "id": "zoro-community-2026",
+      "belief": "zoroastrianism",
+      "belief_label": {
+        "ar": "الزرادشتية · ساوشيانت",
+        "en": "Zoroastrianism · Saoshyant",
+        "nl": "Zoroastrisme · Saoshyant",
+        "he": "זורואסטריות · סאושיאנט",
+        "jv": "Zoroastrianisme · Saoshyant",
+        "id": "Zoroastrianisme · Saoshyant",
+        "fr": "Zoroastrisme · Saoshyant",
+        "es": "Zoroastrismo · Saoshyant",
+        "de": "Zoroastrismus · Saoshyant",
+        "tr": "Zerdüştlük · Saoşyant"
+      },
+      "type": "community",
+      "type_label": {
+        "ar": "نقاش مجتمعي",
+        "en": "Community"
+      },
+      "status": "context",
+      "status_label": {
+        "ar": "سياق ونقد",
+        "en": "Context / critique"
+      },
+      "title": {
+        "en": "Is Saoshyant future, already born, or symbolic?",
+        "ar": "هل ساوشيانت مستقبلي أم مولود الآن أم رمزي؟"
+      },
+      "claim": {
+        "en": "A March 2026 Zoroastrian community discussion asks how the figure is understood today, showing contemporary interest without a strong imminent-arrival movement.",
+        "ar": "نقاش زرادشتي مجتمعي من مارس 2026 يسأل كيف تُفهم الشخصية اليوم، ويظهر اهتمامًا معاصرًا دون موجة قوية لقرب الظهور."
+      },
+      "source": {
+        "en": "r/Zoroastrianism · Reddit",
+        "ar": "r/Zoroastrianism · Reddit"
+      },
+      "published": "2026-03-09",
+      "url": "https://www.reddit.com/r/Zoroastrianism/comments/1roqzaz/who_is_the_saoshyant_in_zoroastrianism_a_future/",
+      "research": "research/savior/zoroastrianism.html"
+    },
+    {
+      "id": "zoro-three-saviours",
+      "belief": "zoroastrianism",
+      "belief_label": {
+        "ar": "الزرادشتية · ساوشيانت",
+        "en": "Zoroastrianism · Saoshyant",
+        "nl": "Zoroastrisme · Saoshyant",
+        "he": "זורואסטריות · סאושיאנט",
+        "jv": "Zoroastrianisme · Saoshyant",
+        "id": "Zoroastrianisme · Saoshyant",
+        "fr": "Zoroastrisme · Saoshyant",
+        "es": "Zoroastrismo · Saoshyant",
+        "de": "Zoroastrismus · Saoshyant",
+        "tr": "Zerdüştlük · Saoşyant"
+      },
+      "type": "article",
+      "type_label": {
+        "ar": "مقال",
+        "en": "Article"
+      },
+      "status": "source",
+      "status_label": {
+        "ar": "مصدر عقائدي/تعليمي",
+        "en": "Doctrinal / educational source"
+      },
+      "title": {
+        "en": "The three mighty saviours to come",
+        "ar": "المخلّصون الثلاثة القادمون"
+      },
+      "claim": {
+        "en": "A tradition-internal explainer distinguishes three future saviours and provides doctrinal context for modern Saoshyant claims.",
+        "ar": "شرح من داخل التقليد يميز بين ثلاثة مخلّصين مستقبليين ويوفر سياقًا عقائديًا للادعاءات المعاصرة."
+      },
+      "source": {
+        "en": "Zoroastrianism.com",
+        "ar": "Zoroastrianism.com"
+      },
+      "published": "current archive",
+      "url": "https://zoroastrianism.com/Tenets/three33.html",
+      "research": "research/savior/zoroastrianism.html"
+    },
+    {
+      "id": "java-apmd-2026",
+      "belief": "javanese",
+      "belief_label": {
+        "ar": "الجاوية · راتو عادل",
+        "en": "Javanese · Ratu Adil",
+        "nl": "Javaans · Ratu Adil",
+        "he": "ג'אווה · רטו אדיל",
+        "jv": "Jawa · Ratu Adil",
+        "id": "Jawa · Ratu Adil",
+        "fr": "Tradition javanaise · Ratu Adil",
+        "es": "Tradición javanesa · Ratu Adil",
+        "de": "Javanische Tradition · Ratu Adil",
+        "tr": "Cava geleneği · Ratu Adil"
+      },
+      "type": "lecture",
+      "type_label": {
+        "ar": "محاضرة",
+        "en": "Lecture"
+      },
+      "status": "context",
+      "status_label": {
+        "ar": "سياق ونقد",
+        "en": "Context / critique"
+      },
+      "title": {
+        "en": "Satrio Piningit: Utopian vs Realist — ideal democracy",
+        "ar": "ساتريو بينينغيت: يوتوبيا أم واقعية — الديمقراطية المثالية"
+      },
+      "claim": {
+        "en": "An April 2026 academic public discussion in Yogyakarta used Satrio Piningit as a live framework for debating leadership and democracy.",
+        "ar": "نقاش أكاديمي عام في يوجياكارتا في أبريل 2026 استخدم ساتريو بينينغيت إطارًا حيًا لمناقشة القيادة والديمقراطية."
+      },
+      "source": {
+        "en": "STPMD APMD Yogyakarta",
+        "ar": "STPMD APMD Yogyakarta"
+      },
+      "published": "2026-04-07",
+      "url": "https://mip.apmd.ac.id/v1/",
+      "research": "research/savior/javanese.html"
+    },
+    {
+      "id": "java-jangka-2026",
+      "belief": "javanese",
+      "belief_label": {
+        "ar": "الجاوية · راتو عادل",
+        "en": "Javanese · Ratu Adil",
+        "nl": "Javaans · Ratu Adil",
+        "he": "ג'אווה · רטו אדיל",
+        "jv": "Jawa · Ratu Adil",
+        "id": "Jawa · Ratu Adil",
+        "fr": "Tradition javanaise · Ratu Adil",
+        "es": "Tradición javanesa · Ratu Adil",
+        "de": "Javanische Tradition · Ratu Adil",
+        "tr": "Cava geleneği · Ratu Adil"
+      },
+      "type": "article",
+      "type_label": {
+        "ar": "مقال",
+        "en": "Article"
+      },
+      "status": "claim",
+      "status_label": {
+        "ar": "ادعاء معاصر",
+        "en": "Contemporary claim"
+      },
+      "title": {
+        "en": "Jangka Jayabaya: ancient prophecy and the coming Ratu Adil",
+        "ar": "جانغكا جايابايا: النبوءة القديمة وقدوم راتو عادل"
+      },
+      "claim": {
+        "en": "A July 2026 Indonesian post presents Jayabaya prophecy as describing crisis followed by the era of the Just Ruler.",
+        "ar": "منشور إندونيسي من يوليو 2026 يعرض نبوءة جايابايا بوصفها تصف أزمة يعقبها عصر الحاكم العادل."
+      },
+      "source": {
+        "en": "Jangka Jawa",
+        "ar": "Jangka Jawa"
+      },
+      "published": "2026-07",
+      "url": "https://jangkajawa.blogspot.com/2026/07/jangka-jayabaya-ramalan-kuno-nusantara.html",
+      "research": "research/savior/javanese.html"
+    },
+    {
+      "id": "java-academic-2025",
+      "belief": "javanese",
+      "belief_label": {
+        "ar": "الجاوية · راتو عادل",
+        "en": "Javanese · Ratu Adil",
+        "nl": "Javaans · Ratu Adil",
+        "he": "ג'אווה · רטו אדיל",
+        "jv": "Jawa · Ratu Adil",
+        "id": "Jawa · Ratu Adil",
+        "fr": "Tradition javanaise · Ratu Adil",
+        "es": "Tradición javanesa · Ratu Adil",
+        "de": "Javanische Tradition · Ratu Adil",
+        "tr": "Cava geleneği · Ratu Adil"
+      },
+      "type": "academic",
+      "type_label": {
+        "ar": "بحث أكاديمي",
+        "en": "Academic"
+      },
+      "status": "context",
+      "status_label": {
+        "ar": "سياق ونقد",
+        "en": "Context / critique"
+      },
+      "title": {
+        "en": "From King to People: Jayabaya's Prophecy in Javanese political culture",
+        "ar": "من الملك إلى الشعب: نبوءة جايابايا في الثقافة السياسية الجاوية"
+      },
+      "claim": {
+        "en": "A recent peer-reviewed study traces how Ratu Adil and “age of madness” language moved from royal legitimation into modern popular and digital politics.",
+        "ar": "دراسة محكّمة حديثة تتبع انتقال راتو عادل و«زمن الجنون» من شرعنة الحكم الملكي إلى السياسة الشعبية والرقمية الحديثة."
+      },
+      "source": {
+        "en": "Jurnal Ceteris Paribus",
+        "ar": "Jurnal Ceteris Paribus"
+      },
+      "published": "2025-10-31",
+      "url": "https://jcp.fib.unand.ac.id/index.php/jcepe/article/view/50",
+      "research": "research/savior/javanese.html"
+    }
+  ]
+}
