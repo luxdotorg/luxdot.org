@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LuxDot Asset Rights Record",
+  "type": "object",
+  "required": [
+    "path",
+    "sha256",
+    "rights_status"
+  ],
+  "properties": {
+    "path": {
+      "type": "string"
+    },
+    "sha256": {
+      "type": "string"
+    },
+    "rights_status": {
+      "enum": [
+        "LUXDOT_OWNED",
+        "CC_LICENSED",
+        "PUBLIC_DOMAIN",
+        "PERMISSION_GRANTED",
+        "THIRD_PARTY",
+        "UNKNOWN"
+      ]
+    },
+    "creator": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "source": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "license": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "permission_record": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "attribution_text": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

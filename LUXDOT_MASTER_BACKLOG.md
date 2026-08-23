@@ -155,3 +155,35 @@ it was discussed.
 - **PENDING** Build machine-readable registry for current research nodes/routes and map them to the canonical hierarchy.
 - **PENDING** Index historical changelogs/test reports into institutional memory rather than deleting them.
 - **PENDING** Reconcile `VERSION.txt`, package naming, changelog lineage and release metadata on every future build.
+
+## L. Commons / intellectual-property direction
+- **PENDING REVIEW** Replace ownership-maximization posture with a commons/stewardship model.
+- **DRAFTED** `docs/governance/LUXDOT_COMMONS_STEWARDSHIP_POLICY_DRAFT_v0_1.md`.
+- **DRAFTED** `docs/governance/SOCIAL_RETURN_PLEDGE_DRAFT.md`.
+- **PENDING LEGAL REVIEW** Candidate content license: CC BY-SA 4.0.
+- **PENDING COMPATIBILITY/LEGAL REVIEW** Candidate software license: GNU AGPLv3.
+- **CANONICAL INTENT** Attribution and provenance must be preserved.
+- **CANONICAL INTENT** Open licensing does not authorize impersonation or false claims of official LuxDot provenance.
+- **CANONICAL INTENT** LuxDot should not receive/custody donations; social-return funds should flow directly from benefactor to independent beneficiary/organization.
+- **PENDING** Audit third-party assets before any blanket public license notice.
+- **PENDING** Draft separate Identity/Trademark & Provenance Policy.
+
+## M. IP / asset audit v4.16.4
+- **IMPLEMENTED** Static audit of 715 repository files.
+- **IMPLEMENTED** Machine-readable JSON and CSV audit registries.
+- **IMPLEMENTED** Pre-activation licensing notice; no blanket license falsely applied.
+- **DRAFTED** Identity & Provenance Policy.
+- **PENDING MANUAL REVIEW** Resolve 116 media/binary assets requiring provenance.
+- **PENDING MANUAL REVIEW** Review 194 text/code files with external references.
+- **PENDING** Generate final THIRD_PARTY_NOTICES after provenance resolution.
+- **PENDING** Dependency compatibility review before AGPL activation.
+
+## N. Provenance / dependency pass v4.16.5
+- **IMPLEMENTED** Fingerprinted and classified all 116 previously unresolved media/binary assets.
+- **IMPLEMENTED** Media provenance registry CSV/JSON.
+- **IMPLEMENTED** Dependency/CDN/library static scan.
+- **IMPLEMENTED** Asset-rights JSON schema.
+- **IMPLEMENTED** Working third-party notices registry.
+- **PENDING EVIDENCE** Resolve creator/source/license/permission for unresolved media fingerprints.
+- **PENDING** Confirm authorship/license of local source code before AGPL activation.
+- **PENDING** Generate final THIRD_PARTY_NOTICES and scoped LICENSE files only after evidence resolution.
