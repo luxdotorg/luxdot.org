@@ -1,6 +1,6 @@
 {
   "product": "LuxDot",
-  "version": "4.18.4",
+  "version": "4.18.10",
   "build_time": "2026-08-23T12:21:00+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
@@ -144,5 +144,23 @@
   "pulse": "moved to last header icon after projects",
   "radio_scheduler": "daypart-first; weekday faith identity no longer hijacks playlist",
   "radio_free_music": "muwashshah + Andalusian Commons tracks",
-  "licensed_slots": "auto-detect Fairuz/Umm Kulthum/Qudud local licensed files"
+  "licensed_slots": "auto-detect Fairuz/Umm Kulthum/Qudud local licensed files",
+  "science_update": "deep ketamine dossier + pioneers/transformers atlas + 7 rich profile cartridges",
+  "transformers_count": 200,
+  "transformer_domains": 15,
+  "atlas": "civilization-transformers-atlas.html",
+  "living_transformer_dossiers": 243,
+  "philosophy_path": "sufi-scholar-philosophy-path.html",
+  "philosophers": 58,
+  "prophet_story_cards": 25,
+  "prophet_method": "common-ground first; tradition-attributed differences",
+  "additional_prophetic_figures": 26,
+  "total_active_prophetic_story_pages": 51,
+  "prophetic_atlas": "prophetic-traditions-atlas.html",
+  "prophet_graphs": [
+    "genealogy",
+    "relations",
+    "timeline"
+  ],
+  "prophet_graph_page": "prophets-genealogy-timeline.html"
 }
