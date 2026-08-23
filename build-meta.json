@@ -1,7 +1,7 @@
 {
   "product": "LuxDot",
-  "version": "4.16.1",
-  "build_time": "2026-08-22T23:37:43+02:00",
+  "version": "4.16.7",
+  "build_time": "2026-08-23T12:02:00+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
   "release_type": "FULL_REPLACE",
@@ -32,13 +32,22 @@
     "Ismaili Qāʾim/Mahdi text-level source dossier",
     "Living 365 calendar: current year generated at runtime",
     "Live development manifest and GitHub commit status",
-    "Research Executive Report fingerprints"
+    "Research Executive Report fingerprints",
+    "Live Research header/cartouche naming parity",
+    "Global compact typography and UI scale",
+    "Research lenses directly above the visualization",
+    "Pointer-adjacent Google-Maps-style research node hover cards",
+    "Realistic Milky Way research sky",
+    "JWST-style deep-universe research lens",
+    "Human-neural-network research lens",
+    "Motherboard/circuit research lens",
+    "GitHub Pages CNAME preserved in every FULL REPLACE"
   ],
   "counts": {
-    "files": 701,
+    "files": 713,
     "html": 197,
     "js": 69,
-    "assets": 118
+    "css": 44
   },
   "latest_changes": [
     {
