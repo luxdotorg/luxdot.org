@@ -3004,5 +3004,52 @@
         "title": "Prewriting Egypt"
       }
     ]
+  },
+  "biology-animals-galaxy.html": {
+    "id": "biology-animals-galaxy.html",
+    "title": "مجرة البيولوجيا — الحيوانات التي علمتنا",
+    "external_sources": 8,
+    "confidence": "B",
+    "review_status": "new-v4.17.1",
+    "related": [
+      {
+        "id": "science-galaxy.html",
+        "title": "مجرة العلوم"
+      }
+    ]
+  },
+  "universal-signals-atlas.html": {
+    "id": "universal-signals-atlas.html",
+    "title": "أطلس الإشارات العالمية",
+    "external_sources": 5,
+    "confidence": "A",
+    "review_status": "new-v4.17.1",
+    "related": [
+      {
+        "id": "science-galaxy.html",
+        "title": "مجرة العلوم"
+      },
+      {
+        "id": "knowledge-graph.html",
+        "title": "شبكة المعرفة"
+      }
+    ]
+  },
+  "psychoactive-evidence-lab.html": {
+    "id": "psychoactive-evidence-lab.html",
+    "title": "مختبر المواد النفسية — الأدلة والمخاطر",
+    "external_sources": 12,
+    "confidence": "B",
+    "review_status": "expanded-v4.17.1",
+    "related": [
+      {
+        "id": "psychoactive-substances.html",
+        "title": "المواد النفسية"
+      },
+      {
+        "id": "science-galaxy.html",
+        "title": "مجرة العلوم"
+      }
+    ]
   }
 }

@@ -3,6 +3,14 @@
 'use strict';
 const C=n=>'https://commons.wikimedia.org/wiki/Special:Redirect/file/'+encodeURIComponent(n).replace(/%2F/g,'/');
 const SCENES=[
+
+{id:'camel',kind:'video',titleAr:'الجمل ذو السنامين',titleEn:'Bactrian Camel',src:C('2024-06-01 LJUBLJANA ZOO LJUBLJANA - Camelus bactrianus.webm'),credit:'NaIzletuSi / Wikimedia Commons',tags:['animal','camel','desert','heritage','quiet'],energy:1,priority:8,research:'biology-animals-galaxy.html'},
+{id:'peregrine',kind:'video',titleAr:'الشاهين · صقر الجو',titleEn:'Peregrine Falcon',src:C('Peregrine falcon (Falco peregrinus) in West Reno, Nevada, USA.webm'),credit:'Paul Hurtado / Wikimedia Commons',tags:['animal','bird','falcon','peregrine','flight','epic'],energy:2,priority:10,research:'biology-animals-galaxy.html'},
+{id:'eagle',kind:'video',titleAr:'العقاب · النسر الأصلع',titleEn:'Bald Eagle',src:C('Bald Eagle (Haliaeetus leucocephalus) in USA.webm'),credit:'U.S. Fish & Wildlife Service / Public domain',tags:['animal','bird','eagle','flight','epic'],energy:2,priority:9,research:'biology-animals-galaxy.html'},
+{id:'manta',kind:'video',titleAr:'الشفنين الشيطاني · Manta',titleEn:'Manta Ray',src:C('MVI 0941.webm'),credit:'James Heilman, MD · CC BY-SA 3.0',tags:['animal','ocean','manta','quiet','ambient'],energy:1,priority:9,research:'biology-animals-galaxy.html'},
+{id:'whale',kind:'video',titleAr:'الحوت الأحدب · الغناء تحت الماء',titleEn:'Singing Humpback Whale',src:C('Singing Humpback Whale.webm'),credit:'Sylke Rohrlach · CC BY-SA 4.0',tags:['animal','ocean','whale','quiet','ambient','sound'],energy:0,priority:9,research:'biology-animals-galaxy.html'},
+{id:'octopus',kind:'video',titleAr:'حديقة الأخطبوط في الأعماق',titleEn:'Deep-Sea Octopus Garden',src:C('Wk215-deep-sea-octopuses.webm'),credit:'NOAA · Public domain',tags:['animal','ocean','octopus','science','quiet'],energy:1,priority:10,research:'biology-animals-galaxy.html'},
+
 {id:'petra-film',kind:'video',titleAr:'البتراء · المدينة الصخرية',titleEn:'Petra · Rock-Cut City',src:C('Petra, Hauptstadt der Nabatäer (CC BY-SA 4.0).webm'),credit:'ZDF/Terra X · CC BY-SA 4.0',tags:['heritage','nabataean','petra','epic','history'],energy:2,priority:10,research:'petra.html'},
 {id:'petra-deir',kind:'video',titleAr:'الدير · البتراء',titleEn:'Ad Deir · Petra',src:C('Ad Deir - The Monastery - Nov 20 2018.webm'),credit:'Ankur Panchbudhe · CC BY',tags:['heritage','nabataean','petra','quiet','spiritual'],energy:1,priority:10,research:'petra.html'},
 {id:'sphinx1897',kind:'video',titleAr:'أبو الهول والأهرامات · 1897',titleEn:'Sphinx & Pyramids · 1897',src:C('Les Pyramides, 1897.webm'),credit:'Alexandre Promio / Lumière · historic film',tags:['heritage','egypt','sphinx','pyramids','memory','classical'],energy:1,priority:9,research:'prewriting-egypt.html'},

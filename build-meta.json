@@ -1,6 +1,6 @@
 {
   "product": "LuxDot",
-  "version": "4.17.0",
+  "version": "4.17.1",
   "build_time": "2026-08-23T12:21:00+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
@@ -127,5 +127,6 @@
     }
   ],
   "radio_engine": "Living Broadcast Engine v1",
-  "tv_engine": "Living TV v2 — Audio Visual Harmony"
+  "tv_engine": "Living TV v2 — Audio Visual Harmony",
+  "research_expansion": "biology + universal signals + psychoactive evidence lab"
 }
