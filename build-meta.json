@@ -1,6 +1,6 @@
 {
   "product": "LuxDot",
-  "version": "4.18.15",
+  "version": "4.18.16",
   "build_time": "2026-08-23T12:21:00+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
@@ -130,7 +130,7 @@
   "tv_engine": "Living TV v2 — Audio Visual Harmony",
   "research_expansion": "biology + universal signals + psychoactive evidence lab",
   "header_media": "Radio + TV persistent nav",
-  "focus": "language QA only",
+  "focus": "language routing, landing localization, nested header stabilization",
   "challenge_layer": "universal claim correction + troubleshooting",
   "open_knowledge": "covenant v1",
   "linguistics": "major galaxy",

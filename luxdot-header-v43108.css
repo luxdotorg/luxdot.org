@@ -25,3 +25,19 @@ html[lang=he] .lux-main-nav a,html[lang=he] .lux-lang-menu button{font-family:"N
 .lux-main-nav a[href*="tv.html"]{color:#e9d77b}
 .lux-main-nav a[href*="radio.html"]{color:#a8e9ba}
 @media(max-width:980px){.lux-main-nav a[href*="radio.html"],.lux-main-nav a[href*="tv.html"]{display:flex!important}}
+
+/* v4.18.16 language/header stabilization */
+header.top.lux-header-43108{direction:ltr!important}
+.lux-header-43108 .lux-header-inner{display:flex!important;flex-wrap:nowrap!important;align-items:center!important}
+.lux-header-43108 .lux-main-nav{display:flex!important;flex:1 1 auto!important;min-width:0!important;justify-content:center!important;overflow:visible!important}
+.lux-header-43108 .lux-main-nav a{font-size:10px!important;padding:7px 8px!important}
+.lux-header-43108 .lux-language{flex:0 0 auto!important}
+.lux-header-43108 .lux-lang-menu{z-index:2147483647!important;max-height:70vh!important;overflow:auto!important}
+html[dir=rtl] .lux-header-43108 .lux-main-nav{direction:rtl!important}
+html[dir=rtl] .lux-header-43108 .lux-lang-menu{direction:rtl!important}
+@media(max-width:1100px){
+ .lux-header-43108 .lux-menu-toggle{display:block!important}
+ .lux-header-43108 .lux-main-nav{display:none!important;position:absolute!important;top:52px!important;left:12px!important;right:12px!important;flex-direction:column!important;align-items:stretch!important;background:#07100a!important;border:1px solid rgba(125,255,174,.22)!important;border-radius:16px!important;padding:8px!important;box-shadow:0 16px 40px rgba(0,0,0,.45)!important}
+ .lux-header-43108 .lux-main-nav.open{display:flex!important}
+ .lux-header-43108 .lux-main-nav a{padding:10px 12px!important}
+}

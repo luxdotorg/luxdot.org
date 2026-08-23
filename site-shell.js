@@ -3,6 +3,9 @@
 (function(){
 'use strict';
 const d=document, FILE=()=>location.pathname.split('/').pop().toLowerCase()||'index.html';
+const DEPTH=()=>Math.max(0,location.pathname.split('/').filter(Boolean).length-1);
+const ROOT=()=> '../'.repeat(DEPTH());
+const rootHref=(file)=>ROOT()+file;
 if(FILE()==='index.html') return;
 const SUP=['ar','en','nl','he','jv','id','fr','es','de','tr'];
 const NAMES={ar:'AR',en:'EN',nl:'NL',he:'HE',jv:'JV',id:'ID',fr:'FR',es:'ES',de:'DE',tr:'TR'};
@@ -20,10 +23,11 @@ const T={
  tr:{home:'Ana sayfa',library:'Kütüphane',faith:'İnanç & Bilgelik',memory:'Hafıza',research:'Araştırma',media:'Medya / Haberler',projects:'Projeler'}
 };
 const lang=()=>{const q=new URLSearchParams(location.search).get('lang'),s=localStorage.getItem('luxdot.lang');return SUP.includes(q)?q:SUP.includes(s)?s:'en'};
-const withLang=(href,l=lang())=>{let u=new URL(href,location.href);u.searchParams.set('lang',l);return u.pathname.split('/').pop()+u.search+u.hash};
-function ensureStyle(){if(d.getElementById('lux43113-header-style'))return;let l=d.createElement('link');l.id='lux43113-header-style';l.rel='stylesheet';l.href='luxdot-header-v43108.css?v=43113';d.head.appendChild(l)}
+const withLang=(href,l=lang())=>{let u=new URL(rootHref(href),location.href);u.searchParams.set('lang',l);return u.pathname+u.search+u.hash};
+function ensureStyle(){if(d.getElementById('lux43113-header-style'))return;let l=d.createElement('link');l.id='lux43113-header-style';l.rel='stylesheet';l.href=rootHref('luxdot-header-v43108.css?v=41816');d.head.appendChild(l)}
 function go(l){if(!SUP.includes(l))l='en';localStorage.setItem('luxdot.lang',l);let u=new URL(location.href);u.searchParams.set('lang',l);location.assign(u.pathname+u.search+u.hash)}
-function build(){if(!d.body)return;ensureStyle();d.querySelectorAll('.luxdot-history-arrows,.luxdot-page-actions,.luxdot-breadcrumb').forEach(x=>x.remove());let old=d.querySelector('header.top');if(old)old.remove();
+function build(){if(!d.body)return;ensureStyle();d.querySelectorAll('.luxdot-history-arrows,.luxdot-page-actions,.luxdot-breadcrumb').forEach(x=>x.remove());d.querySelectorAll('header.top,header.site-header,.global-header,.legacy-header,.topbar').forEach(x=>x.remove());
+d.querySelectorAll('body > .langbar,body > .language-bar,body > .lang-switcher').forEach(x=>x.remove());
  let h=d.createElement('header');h.className='top lux-header-43108';h.innerHTML='<div class="lux-header-inner"><a class="lux-header-brand" data-lux-brand href="'+withLang('home.html')+'">LuxDot</a><button class="lux-menu-toggle" type="button" aria-label="Menu" aria-expanded="false">☰</button><nav class="lux-main-nav"></nav><div class="lux-language"><button class="lux-lang-btn" type="button" aria-expanded="false"><span>'+NAMES[lang()]+'</span><b>⌄</b></button><div class="lux-lang-menu" role="menu"></div></div><div class="lux-global-search"><button class="lux-search-open" type="button" aria-label="Search">⌕</button></div></div>';d.body.prepend(h);
  let nav=h.querySelector('.lux-main-nav'),tx=T[lang()]||T.en;
  tx=Object.assign({},tx,{
@@ -133,13 +137,13 @@ window.addEventListener('resize',()=>{let h=d.querySelector('.lux-header-43108')
 
 (()=>{let idx=null;const txt={ar:['ابحث في LuxDot كله…','لا نتائج'],en:['Search all LuxDot…','No results'],nl:['Doorzoek heel LuxDot…','Geen resultaten'],he:['חיפוש בכל LuxDot…','אין תוצאות'],fr:['Rechercher dans tout LuxDot…','Aucun résultat'],es:['Buscar en todo LuxDot…','Sin resultados'],de:['Ganz LuxDot durchsuchen…','Keine Ergebnisse'],tr:['Tüm LuxDot’ta ara…','Sonuç yok'],id:['Cari di seluruh LuxDot…','Tidak ada hasil'],jv:['Goleki ing kabeh LuxDot…','Ora ana asil']};function lng(){let q=new URLSearchParams(location.search).get('lang')||localStorage.getItem('luxdot.lang')||'en';return txt[q]?q:'en'}function norm(x){return String(x||'').toLowerCase().normalize('NFKD').replace(/[\u064B-\u065F\u0670]/g,'').replace(/[^\p{L}\p{N}\s]/gu,' ')}async function load(){if(idx)return idx;try{idx=await fetch('search-index.json?v=4700').then(r=>r.json())}catch(e){idx=[]}return idx}function init(){if(document.getElementById('luxSearchOverlay'))return;let t=txt[lng()],o=document.createElement('div');o.id='luxSearchOverlay';o.className='lux-search-overlay';o.innerHTML=`<div class="lux-search-panel"><div class="lux-search-top"><b>LuxDot Search</b><button>×</button></div><input id="luxSearchInput" type="search" placeholder="${t[0]}"><div id="luxSearchResults" class="lux-search-results"></div></div>`;document.body.append(o);let inp=o.querySelector('input'),res=o.querySelector('#luxSearchResults');function open(){o.classList.add('on');setTimeout(()=>inp.focus(),20)}function close(){o.classList.remove('on')}o.querySelector('button').onclick=close;o.onclick=e=>{if(e.target===o)close()};document.querySelectorAll('.lux-search-open').forEach(b=>b.onclick=open);addEventListener('keydown',e=>{if(e.key==='Escape')close();if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();open()}});inp.oninput=async()=>{let q=norm(inp.value).trim();if(q.length<2){res.innerHTML='';return}let parts=q.split(/\s+/),db=await load(),hits=db.map(x=>{let a=norm(x.title+' '+x.headings),b=norm(x.text),score=0;parts.forEach(p=>{if(a.includes(p))score+=7;if(b.includes(p))score++});return{x,score}}).filter(x=>x.score).sort((a,b)=>b.score-a.score).slice(0,14);res.innerHTML=hits.length?hits.map(v=>`<a href="${withLang(v.x.href)}"><b>${v.x.title}</b><small>${v.x.headings||v.x.text.slice(0,180)}</small></a>`).join(''):`<div class="lux-search-empty">${t[1]}</div>`}}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init()})();
 
-(function(){if(document.querySelector('link[href*="memory-invite.css"]')==null){let l=document.createElement('link');l.rel='stylesheet';l.href='memory-invite.css?v=41000';document.head.append(l)}if(document.querySelector('script[src*="memory-invite.js"]')==null){let x=document.createElement('script');x.defer=true;x.src='memory-invite.js?v=41000';document.head.append(x)}})();
+(function(){if(document.querySelector('link[href*="memory-invite.css"]')==null){let l=document.createElement('link');l.rel='stylesheet';l.href=rootHref('memory-invite.css?v=41000');document.head.append(l)}if(document.querySelector('script[src*="memory-invite.js"]')==null){let x=document.createElement('script');x.defer=true;x.src=rootHref('memory-invite.js?v=41000');document.head.append(x)}})();
 
 /* LuxDot v4.14.0 — living research snapshot reports */
-(()=>{const c=document.createElement('link');c.rel='stylesheet';c.href='research-report.css?v=4140';document.head.appendChild(c);const s=document.createElement('script');s.src='research-report.js?v=4140';s.defer=true;document.head.appendChild(s)})();
+(()=>{const c=document.createElement('link');c.rel='stylesheet';c.href=rootHref('research-report.css?v=4140');document.head.appendChild(c);const s=document.createElement('script');s.src=rootHref('research-report.js?v=4140');s.defer=true;document.head.appendChild(s)})();
 
 // v4.17.4 universal falsification/correction layer
-(function(){try{if(!document.querySelector('link[href*="luxdot-challenge.css"]')){const l=document.createElement('link');l.rel='stylesheet';l.href='luxdot-challenge.css?v=4174';document.head.appendChild(l)}if(!document.querySelector('script[src*="luxdot-challenge.js"]')){const s=document.createElement('script');s.src='luxdot-challenge.js?v=4174';s.defer=true;document.head.appendChild(s)}}catch(e){console.warn('challenge layer',e)}})();
+(function(){try{if(!document.querySelector('link[href*="luxdot-challenge.css"]')){const l=document.createElement('link');l.rel='stylesheet';l.href=rootHref('luxdot-challenge.css?v=4174');document.head.appendChild(l)}if(!document.querySelector('script[src*="luxdot-challenge.js"]')){const s=document.createElement('script');s.src=rootHref('luxdot-challenge.js?v=4174');s.defer=true;document.head.appendChild(s)}}catch(e){console.warn('challenge layer',e)}})();
 
 
 (function(){

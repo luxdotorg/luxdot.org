@@ -9,24 +9,32 @@ const WORDS=[
 'אור','זיכרון','דאגה','אמת','אות','רעש','בהירות','הבנה','מודעות','קוד','פענוח','עדות','כבוד','חמלה','שלום','צדק','אנושות','שירות','ידע'
 ];
 const pilotNote=document.getElementById('pilotNote');
-const PILOT={ar:'الموقع قيد التطوير · إطلاق النسخة التجريبية في 3 سبتمبر 2026',en:'Site under active development · Pilot launch: 3 September 2026',nl:'Website in actieve ontwikkeling · Pilotlancering: 3 september 2026',he:'האתר בפיתוח פעיל · השקת גרסת הניסיון: 3 בספטמבר 2026'};
-const L={ar:{dir:'rtl',sub:'نقطة الضوء الأولى · حيث يبدأ الفهم',eye:'تقليل الضجيج · زيادة الإشارة',enter:'تلقي الإشارة',micro:'من الضجيج إلى الذاكرة',a:'الإشارة / كامنة',b:'الضجيج ← الوضوح',acq:'الإشارة / تم التقاطها',mem:'الضجيج ← الذاكرة'},en:{dir:'ltr',sub:'The First LuxDot · Where Understanding Begins',eye:'REDUCING NOISE · INCREASING SIGNAL',enter:'RECEIVE THE SIGNAL',micro:'FROM NOISE INTO MEMORY',a:'SIGNAL / LATENT',b:'NOISE → CLARITY',acq:'SIGNAL / ACQUIRED',mem:'NOISE → MEMORY'},nl:{dir:'ltr',sub:'Het eerste lichtpunt · Waar begrip begint',eye:'MINDER RUIS · MEER SIGNAAL',enter:'ONTVANG HET SIGNAAL',micro:'VAN RUIS NAAR HERINNERING',a:'SIGNAAL / LATENT',b:'RUIS → HELDERHEID',acq:'SIGNAAL / GEVONDEN',mem:'RUIS → GEHEUGEN'},jv:{dir:'ltr',sub:'Titik cahya kapisan · Papan pangerten diwiwiti',eye:'NYUDA SWARA · NGUWATAKE TANDHA',enter:'TAMPA TANDHA',micro:'SAKA SWARA TUMUJU PANGELING',a:'TANDHA / MENENG',b:'SWARA → CETHA',acq:'TANDHA / KATAMPA',mem:'SWARA → PANGELING'},he:{dir:'rtl',sub:'נקודת האור הראשונה · המקום שבו ההבנה מתחילה',eye:'מפחיתים רעש · מגבירים אות',enter:'קבל את האות',micro:'מרעש אל זיכרון',a:'אות / חבוי',b:'רעש ← בהירות',acq:'אות / נקלט',mem:'רעש ← זיכרון'}};
+const PILOT={
+ar:'الموقع قيد التطوير · إطلاق النسخة التجريبية في 3 سبتمبر 2026',
+en:'Site under active development · Pilot launch: 3 September 2026',
+nl:'Website in actieve ontwikkeling · Pilotlancering: 3 september 2026',
+he:'האתר בפיתוח פעיל · השקת גרסת הניסיון: 3 בספטמבר 2026',
+jv:'Situs lagi dikembangaké · Peluncuran uji coba: 3 September 2026',
+id:'Situs sedang dikembangkan · Peluncuran percontohan: 3 September 2026',
+fr:'Site en développement actif · Lancement pilote : 3 septembre 2026',
+es:'Sitio en desarrollo activo · Lanzamiento piloto: 3 de septiembre de 2026',
+de:'Website in aktiver Entwicklung · Pilotstart: 3. September 2026',
+tr:'Site aktif olarak geliştiriliyor · Pilot yayın: 3 Eylül 2026'
+};
+const L={
+ar:{dir:'rtl',sub:'نقطة الضوء الأولى · حيث يبدأ الفهم',eye:'تقليل الضجيج · زيادة الإشارة',enter:'تلقي الإشارة',micro:'من الضجيج إلى الذاكرة',a:'الإشارة / كامنة',b:'الضجيج ← الوضوح',acq:'الإشارة / تم التقاطها',mem:'الضجيج ← الذاكرة'},
+en:{dir:'ltr',sub:'The First LuxDot · Where Understanding Begins',eye:'REDUCING NOISE · INCREASING SIGNAL',enter:'RECEIVE THE SIGNAL',micro:'FROM NOISE INTO MEMORY',a:'SIGNAL / LATENT',b:'NOISE → CLARITY',acq:'SIGNAL / ACQUIRED',mem:'NOISE → MEMORY'},
+nl:{dir:'ltr',sub:'Het eerste lichtpunt · Waar begrip begint',eye:'MINDER RUIS · MEER SIGNAAL',enter:'ONTVANG HET SIGNAAL',micro:'VAN RUIS NAAR HERINNERING',a:'SIGNAAL / LATENT',b:'RUIS → HELDERHEID',acq:'SIGNAAL / GEVONDEN',mem:'RUIS → GEHEUGEN'},
+he:{dir:'rtl',sub:'נקודת האור הראשונה · המקום שבו ההבנה מתחילה',eye:'מפחיתים רעש · מגבירים אות',enter:'קבל את האות',micro:'מרעש אל זיכרון',a:'אות / חבוי',b:'רעש ← בהירות',acq:'אות / נקלט',mem:'רעש ← זיכרון'},
+jv:{dir:'ltr',sub:'Titik cahya kapisan · Papan pangerten diwiwiti',eye:'NYUDA GANGGUAN · NGUWATAKE TANDHA',enter:'TAMPA TANDHA',micro:'SAKA GANGGUAN DADI PANGELING',a:'TANDHA / LATEN',b:'GANGGUAN → CETHA',acq:'TANDHA / KATAMPA',mem:'GANGGUAN → PANGELING'},
+id:{dir:'ltr',sub:'Titik cahaya pertama · Tempat pemahaman bermula',eye:'MENGURANGI GANGGUAN · MEMPERKUAT SINYAL',enter:'TERIMA SINYAL',micro:'DARI GANGGUAN MENUJU MEMORI',a:'SINYAL / LATEN',b:'GANGGUAN → KEJELASAN',acq:'SINYAL / DITERIMA',mem:'GANGGUAN → MEMORI'},
+fr:{dir:'ltr',sub:'Le premier point de lumière · Là où commence la compréhension',eye:'RÉDUIRE LE BRUIT · RENFORCER LE SIGNAL',enter:'RECEVOIR LE SIGNAL',micro:'DU BRUIT À LA MÉMOIRE',a:'SIGNAL / LATENT',b:'BRUIT → CLARTÉ',acq:'SIGNAL / REÇU',mem:'BRUIT → MÉMOIRE'},
+es:{dir:'ltr',sub:'El primer punto de luz · Donde comienza la comprensión',eye:'REDUCIR EL RUIDO · AUMENTAR LA SEÑAL',enter:'RECIBIR LA SEÑAL',micro:'DEL RUIDO A LA MEMORIA',a:'SEÑAL / LATENTE',b:'RUIDO → CLARIDAD',acq:'SEÑAL / RECIBIDA',mem:'RUIDO → MEMORIA'},
+de:{dir:'ltr',sub:'Der erste Lichtpunkt · Wo Verstehen beginnt',eye:'RAUSCHEN REDUZIEREN · SIGNAL VERSTÄRKEN',enter:'SIGNAL EMPFANGEN',micro:'VOM RAUSCHEN ZUR ERINNERUNG',a:'SIGNAL / LATENT',b:'RAUSCHEN → KLARHEIT',acq:'SIGNAL / EMPFANGEN',mem:'RAUSCHEN → ERINNERUNG'},
+tr:{dir:'ltr',sub:'İlk ışık noktası · Anlayışın başladığı yer',eye:'GÜRÜLTÜYÜ AZALT · SİNYALİ GÜÇLENDİR',enter:'SİNYALİ AL',micro:'GÜRÜLTÜDEN HAFIZAYA',a:'SİNYAL / GİZLİ',b:'GÜRÜLTÜ → NETLİK',acq:'SİNYAL / ALINDI',mem:'GÜRÜLTÜ → HAFIZA'}
+};
 let lang='en',W,H,dpr,fs,cols=[],last=0,clarity=0,lastPoint={x:innerWidth/2,y:innerHeight/2};
 
-// LuxDot 4.3.112 — additional landing languages.
-(function(){
-  if(typeof TX==="undefined") return;
-  const base=TX.en||{};
-  const add={
-    jv:{eyebrow:"SINYAL / MEMORI",sub:"Saka gangguan dadi memori.",enter:"TAMPA SINYAL",micro:"Pilih basa banjur mlebu.",pilot:"LuxDot · sistem riset lan memori urip."},
-    id:{eyebrow:"SINYAL / MEMORI",sub:"Dari gangguan menjadi memori.",enter:"TERIMA SINYAL",micro:"Pilih bahasa lalu masuk.",pilot:"LuxDot · sistem riset dan memori hidup."},
-    fr:{eyebrow:"SIGNAL / MÉMOIRE",sub:"Du bruit à la mémoire.",enter:"RECEVOIR LE SIGNAL",micro:"Choisissez une langue puis entrez.",pilot:"LuxDot · système vivant de recherche et de mémoire."},
-    es:{eyebrow:"SEÑAL / MEMORIA",sub:"Del ruido a la memoria.",enter:"RECIBIR LA SEÑAL",micro:"Elige un idioma y entra.",pilot:"LuxDot · sistema vivo de investigación y memoria."},
-    de:{eyebrow:"SIGNAL / ERINNERUNG",sub:"Vom Rauschen zur Erinnerung.",enter:"SIGNAL EMPFANGEN",micro:"Sprache wählen und eintreten.",pilot:"LuxDot · lebendiges Forschungs- und Erinnerungssystem."},
-    tr:{eyebrow:"SİNYAL / HAFIZA",sub:"Gürültüden hafızaya.",enter:"SİNYALİ AL",micro:"Bir dil seçin ve girin.",pilot:"LuxDot · yaşayan araştırma ve hafıza sistemi."}
-  };
-  Object.keys(add).forEach(k=>{TX[k]=Object.assign({},base,add[k])});
-})();
 
 function resize(){dpr=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;C.width=W*dpr;C.height=H*dpr;C.style.width=W+'px';C.style.height=H+'px';x.setTransform(dpr,0,0,dpr,0,0);fs=W<700?13:16;cols=Array.from({length:Math.ceil(W/fs)},(_,i)=>({x:i*fs,y:Math.random()*H,s:.55+Math.random()*1.35,a:.11+Math.random()*.38}))}addEventListener('resize',resize);resize();
 function frame(t){if(t-last<44){requestAnimationFrame(frame);return}last=t;x.fillStyle='rgba(0,4,1,.15)';x.fillRect(0,0,W,H);x.font=`${fs}px monospace`;for(const c of cols){const special=Math.random()<.0028,ch=special?WORDS[(Math.random()*WORDS.length)|0]:ordinary[(Math.random()*ordinary.length)|0];x.fillStyle=special?`rgba(215,255,226,${.35+c.a})`:`rgba(39,255,104,${c.a})`;x.shadowBlur=special?14:0;x.shadowColor='#4aff89';x.fillText(ch,c.x,c.y);x.shadowBlur=0;c.y+=fs*c.s;if(c.y>H+30&&Math.random()>.91)c.y=-30}requestAnimationFrame(frame)}requestAnimationFrame(frame);
@@ -35,7 +43,9 @@ const BELIEFS=['☪','✝','✡','ॐ','☸','☯','ੴ','✹','神','仁','哲'
 function buildBeliefStars(){if(!beliefStars)return;beliefStars.innerHTML='';const n=Math.min(30,Math.max(18,Math.round(innerWidth/55)));for(let i=0;i<n;i++){const s=document.createElement('span');s.className='belief-star';s.textContent=BELIEFS[i%BELIEFS.length];s.style.left=(5+Math.random()*90)+'%';s.style.top=(6+Math.random()*88)+'%';s.style.setProperty('--dur',(5.4+Math.random()*5.4)+'s');s.style.setProperty('--delay',(-Math.random()*8)+'s');beliefStars.appendChild(s)}}buildBeliefStars();addEventListener('resize',()=>{clearTimeout(window.__beliefResize);window.__beliefResize=setTimeout(buildBeliefStars,220)});
 function persistLang(l){try{localStorage.setItem('luxdot.lang',l);localStorage.setItem('luxdot.lang.explicit','1')}catch{}}
 function setLang(l,selected=false){if(!L[l])return;lang=l;if(selected)persistLang(l);document.documentElement.lang=l;document.documentElement.dir=L[l].dir;sub.textContent=L[l].sub;eyebrow.textContent=L[l].eye;enter.textContent=L[l].enter;micro.textContent=L[l].micro;statusA.textContent=L[l].a;statusB.textContent=L[l].b;if(pilotNote)pilotNote.textContent=PILOT[l]||PILOT.en;document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('on',b.dataset.lang===l))}
-document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',e=>{rememberPoint(e);startAmbient();setLang(b.dataset.lang,true)}));setLang('en',false);
+document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',e=>{rememberPoint(e);startAmbient();setLang(b.dataset.lang,true)}));
+let initial='en';try{const q=new URLSearchParams(location.search).get('lang'),sv=localStorage.getItem('luxdot.lang');if(L[q])initial=q;else if(L[sv])initial=sv}catch(_){}
+setLang(initial,false);
 let audioCtx,master,on=false,nodes=[],morseTimer;
 function beep(start,dur,f=760,g=.11){const o=audioCtx.createOscillator(),v=audioCtx.createGain();o.type='sine';o.frequency.value=f;v.gain.setValueAtTime(.0001,start);v.gain.exponentialRampToValueAtTime(g,start+.008);v.gain.setValueAtTime(g,start+Math.max(.01,dur-.012));v.gain.exponentialRampToValueAtTime(.0001,start+dur);o.connect(v).connect(master);o.start(start);o.stop(start+dur+.025)}
 function playMorseMessage(){if(!on||!audioCtx)return 0;const unit=.09,letters={'S':'...','O':'---','G':'--.','D':'-..'},words=['SOS','GOD'];let t=audioCtx.currentTime+.08;const start=t;words.forEach((word,wi)=>{[...word].forEach((ch,ci)=>{[...letters[ch]].forEach((mark,mi)=>{const dur=mark==='.'?unit:unit*3;beep(t,dur);t+=dur;if(mi<letters[ch].length-1)t+=unit});if(ci<word.length-1)t+=unit*3});if(wi<words.length-1)t+=unit*7});return Math.max(0,(t-start)*1000)}
