@@ -1,6 +1,6 @@
 {
   "product": "LuxDot",
-  "version": "4.18.18",
+  "version": "4.18.19b",
   "build_time": "2026-08-23T12:21:00+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
@@ -204,5 +204,7 @@
     "all_html_pages_have_radio_runtime": true,
     "spoken_andalusian_clip_in_rotation": false,
     "source_failure_skip": true
-  }
+  },
+  "persistent_radio_shell": true,
+  "rebuilt_from": "4.18.18"
 }

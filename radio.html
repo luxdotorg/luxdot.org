@@ -1,13 +1,33 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
+<script>
+(()=>{try{
+ const u=new URL(location.href);
+ if(window.top===window.self && u.searchParams.get('luxembed')!=='1' && !u.pathname.endsWith('/player-shell.html')){
+   const here=u.pathname.replace(/^\//,'')+u.search+u.hash;
+   location.replace('/player-shell.html?page='+encodeURIComponent(here));
+   return;
+ }
+ if(window.top!==window.self){
+   const send=()=>{
+     try{
+       const u=new URL(location.href);
+       u.searchParams.delete('luxembed');
+       parent.postMessage({type:'luxdot:navigate',url:u.pathname.replace(/^\//,'')+u.search+u.hash},location.origin);
+     }catch(e){}
+   };
+   addEventListener('load',send,{once:true});
+ }
+}catch(e){}})();
+</script>
 <script src="language-core.js?v=41817"></script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>إذاعة نقطة نور — من الشام · Chaam</title>
 <link rel="stylesheet" href="styles.css?v=4168">
 <link rel="stylesheet" href="platform-v43.css?v=4168">
 <link rel="stylesheet" href="luxdot-arabic-ui.css?v=4168">
-<link rel="stylesheet" href="luxdot-radio.css?v=41818">
+<link rel="stylesheet" href="luxdot-radio.css?v=41819b">
 <style>
 .radio-hero{padding:44px 0 22px;text-align:center}.radio-hero h1{margin:.2rem 0;font-size:clamp(1.7rem,4vw,3rem)}
 .radio-hero .motto{font-size:1.15rem;color:#d8c978}.radio-badge{display:inline-flex;gap:8px;align-items:center;border:1px solid #426a50;border-radius:999px;padding:7px 13px;margin:5px;background:#06130c}
@@ -69,7 +89,7 @@
 </section>
 </main>
 <script src="site-shell.js?v=41817"></script>
-<script src="luxdot-radio.js?v=41818"></script>
+<script src="luxdot-radio.js?v=41819b"></script>
 <script>
 const FLOW=[
 ['06:00','افتتاح الصباح','قرآن مختار'],

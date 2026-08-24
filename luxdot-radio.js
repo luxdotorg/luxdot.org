@@ -1,6 +1,7 @@
 
 (()=>{
 'use strict';
+if(window.top!==window.self)return;
 const SCRIPT_URL=(()=>{try{return new URL(document.currentScript?.src||'luxdot-radio.js',location.href)}catch(e){return new URL('luxdot-radio.js',location.href)}})();
 const ROOT_URL=new URL('./',SCRIPT_URL);
 const asset=path=>new URL(path,ROOT_URL).href;

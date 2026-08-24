@@ -1,10 +1,30 @@
 <!doctype html>
 <html lang="ar" dir="rtl"><head>
+<script>
+(()=>{try{
+ const u=new URL(location.href);
+ if(window.top===window.self && u.searchParams.get('luxembed')!=='1' && !u.pathname.endsWith('/player-shell.html')){
+   const here=u.pathname.replace(/^\//,'')+u.search+u.hash;
+   location.replace('/player-shell.html?page='+encodeURIComponent(here));
+   return;
+ }
+ if(window.top!==window.self){
+   const send=()=>{
+     try{
+       const u=new URL(location.href);
+       u.searchParams.delete('luxembed');
+       parent.postMessage({type:'luxdot:navigate',url:u.pathname.replace(/^\//,'')+u.search+u.hash},location.origin);
+     }catch(e){}
+   };
+   addEventListener('load',send,{once:true});
+ }
+}catch(e){}})();
+</script>
 <script src="language-core.js?v=41817"></script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>نقطة نور المرئية — من الشام · LuxDot TV</title>
 <link rel="stylesheet" href="styles.css?v=4170"><link rel="stylesheet" href="platform-v43.css?v=4170">
-<link rel="stylesheet" href="luxdot-arabic-ui.css?v=4170"><link rel="stylesheet" href="luxdot-radio.css?v=41818"><link rel="stylesheet" href="luxdot-tv.css?v=4170">
+<link rel="stylesheet" href="luxdot-arabic-ui.css?v=4170"><link rel="stylesheet" href="luxdot-radio.css?v=41819b"><link rel="stylesheet" href="luxdot-tv.css?v=4170">
 <link rel="stylesheet" href="luxdot-ibm-plex-v41817.css?v=41817"></head><body>
 <main class="tv-shell">
 <header class="tv-head"><span class="tv-live"><i></i> LIVING TV · Chaam / الشام</span>
@@ -39,5 +59,5 @@
 </div>
 <section class="tv-card"><h3>هوية القناة</h3><p>مناظر هادئة · سماء وفضاء · ذاكرة اليوم · ثقافة وفن · قصص · أطفال · نبض عالم موثّق. الصوت الأساسي هو إذاعة نقطة نور، مع خيار «صورة فقط».</p></section>
 </main>
-<script src="site-shell.js?v=41817"></script><script src="luxdot-radio.js?v=41818"></script><script src="luxdot-tv.js?v=4181"></script>
+<script src="site-shell.js?v=41817"></script><script src="luxdot-radio.js?v=41819b"></script><script src="luxdot-tv.js?v=4181"></script>
 <script src="news-pulse.js?v=4173"></script><script src="content-language-core.js?v=41817"></script><script src="luxdot-language-polish.js?v=41815"></script></body></html>

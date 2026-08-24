@@ -1,5 +1,25 @@
 <!DOCTYPE html>
-<html lang="en"><head><script src="language-core.js?v=41817"></script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><link href="styles.css?v=430" rel="stylesheet"/><link href="arabic-polish.css?v=430" rel="stylesheet"/><link href="research-dossier.css?v=4330" rel="stylesheet"/><link href="research-media.css?v=4331" rel="stylesheet"/><link href="platform-v43.css?v=4328" rel="stylesheet"/><link href="luxdot-ui-lock.css?v=4385" rel="stylesheet"/><link rel="stylesheet" href="luxdot-global-language.css?v=4399"><link rel="stylesheet" href="luxdot-radio.css?v=41818"><link rel="stylesheet" href="memory-invite.css?v=41000"><link rel="stylesheet" href="luxdot-typography-v41416.css?v=41416">
+<html lang="en"><head>
+<script>
+(()=>{try{
+ const u=new URL(location.href);
+ if(window.top===window.self && u.searchParams.get('luxembed')!=='1' && !u.pathname.endsWith('/player-shell.html')){
+   const here=u.pathname.replace(/^\//,'')+u.search+u.hash;
+   location.replace('/player-shell.html?page='+encodeURIComponent(here));
+   return;
+ }
+ if(window.top!==window.self){
+   const send=()=>{
+     try{
+       const u=new URL(location.href);
+       u.searchParams.delete('luxembed');
+       parent.postMessage({type:'luxdot:navigate',url:u.pathname.replace(/^\//,'')+u.search+u.hash},location.origin);
+     }catch(e){}
+   };
+   addEventListener('load',send,{once:true});
+ }
+}catch(e){}})();
+</script><script src="language-core.js?v=41817"></script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><link href="styles.css?v=430" rel="stylesheet"/><link href="arabic-polish.css?v=430" rel="stylesheet"/><link href="research-dossier.css?v=4330" rel="stylesheet"/><link href="research-media.css?v=4331" rel="stylesheet"/><link href="platform-v43.css?v=4328" rel="stylesheet"/><link href="luxdot-ui-lock.css?v=4385" rel="stylesheet"/><link rel="stylesheet" href="luxdot-global-language.css?v=4399"><link rel="stylesheet" href="luxdot-radio.css?v=41819b"><link rel="stylesheet" href="memory-invite.css?v=41000"><link rel="stylesheet" href="luxdot-typography-v41416.css?v=41416">
 <link rel="stylesheet" href="luxdot-research-experience-v4150.css?v=4150"><link rel="stylesheet" href="luxdot-ibm-plex-v41817.css?v=41817"></head><body data-lux-i18n-complete="global-content-core" data-full-locales="1"><header class="top"></header><div data-locale="ar" hidden=""><main class="wrap dossier" dir="rtl"><section class="lux-memory-call ">
 <div class="monkeys">🙈 🙉 🙊</div>
 <h3>افتح عينيك · أصغِ · تكلّم — لا تجعل الذاكرة تموت</h3>
@@ -26,5 +46,5 @@
  <p class="back"><a href="memory.html?lang=${l}">← ${l==='nl'?'Terug naar levend geheugen':'Back to Living Memory'}</a></p>`;
 })();
 </script>
-<script src="hebrew-research-overlay.js?v=4399"></script><script defer src="luxdot-radio.js?v=41818"></script><script defer src="content-language-core.js?v=41817"></script><script src="luxdot-typography-density.js?v=41416"></script>
+<script src="hebrew-research-overlay.js?v=4399"></script><script defer src="luxdot-radio.js?v=41819b"></script><script defer src="content-language-core.js?v=41817"></script><script src="luxdot-typography-density.js?v=41416"></script>
 <script src="luxdot-research-experience-v4150.js?v=4150"></script><script src="arabic-surface-v4160.js?v=4160"></script><script src="luxdot-language-polish.js?v=41815"></script></body></html>
