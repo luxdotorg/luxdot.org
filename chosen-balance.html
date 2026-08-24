@@ -1,0 +1,60 @@
+<!doctype html><html lang="ar" dir="rtl"><head>
+<script>
+(()=>{try{
+ const u=new URL(location.href);
+ if(window.top===window.self && u.searchParams.get('luxembed')!=='1' && !u.pathname.endsWith('/player-shell.html')){
+   const here=u.pathname.replace(/^\//,'')+u.search+u.hash;
+   location.replace('/player-shell.html?page='+encodeURIComponent(here));
+   return;
+ }
+ if(window.top!==window.self){
+   const send=()=>{
+     try{
+       const u=new URL(location.href);
+       u.searchParams.delete('luxembed');
+       parent.postMessage({type:'luxdot:navigate',url:u.pathname.replace(/^\//,'')+u.search+u.hash},location.origin);
+     }catch(e){}
+   };
+   addEventListener('load',send,{once:true});
+ }
+}catch(e){}})();
+</script><script src="language-core.js?v=41817"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ميزان فرضية المختار · LuxDot</title><link rel="stylesheet" href="chosen-dual.css"><link rel="stylesheet" href="luxdot-global-language.css?v=4143"><link rel="stylesheet" href="luxdot-typography-v41416.css?v=41416">
+<link rel="stylesheet" href="luxdot-research-experience-v4150.css?v=4150"><link rel="stylesheet" href="luxdot-ibm-plex-v41817.css?v=41817"><link rel="stylesheet" href="luxdot-radio.css?v=41819b"></head><body data-lux-i18n-complete="global-content-core">
+
+<header class="top"><div class="wrap nav">
+<div class="brand">LUX<b>•</b>DOT</div>
+<nav class="links">
+<a href="chosen-hypothesis.html">فرضية المختار</a>
+<a href="chosen-falsification.html">تهافت الفرضية</a>
+<a href="chosen-balance.html">الميزان</a>
+<a href="savior-atlas.html">أطلس المخلّص</a>
+<a href="research.html">الأبحاث الحيّة</a>
+</nav></div></header>
+
+<main class="wrap">
+<section class="hero"><div class="eyebrow">LUXDOT · ADVERSARIAL BALANCE</div><h1>الميزان</h1>
+<p class="sub">مواجهة مباشرة بين أقوى حجة لصالح «فرضية المختار» وأقوى اعتراض عليها. لا يفوز أي طرف بالتكرار؛ الوزن يذهب للدليل الأقدم، الأكثر تحديدًا، الأكثر استقلالًا، والأكثر قابلية للتفنيد.</p></section>
+<section class="grid">
+<article class="card full"><h2>المصفوفة</h2>
+<table><thead><tr><th>العقدة</th><th>قضية الإثبات</th><th>قضية النقض</th><th>الحكم الحالي</th></tr></thead><tbody>
+<tr><td>Sham / Chaam</td><td>تشابه بصري ورمزي لافت</td><td>لا أصل لغوي مشترك مثبت؛ النطق مختلف</td><td><span class="tag hyp">رمزي فقط</span></td></tr>
+<tr><td>Śambhala</td><td>مرتبطة فعلًا بـKalki والمستقبل الخلاصي</td><td>لا مصدر يجعلها Chaam؛ توجد تفاصيل أسرة وجغرافيا مغايرة</td><td><span class="tag hyp">تقاطع موضوعي</span></td></tr>
+<tr><td>المنارة البيضاء</td><td>يفتح سؤال نقد جغرافي ومخطوطي</td><td>اللفظ القوي المتداول: شرقي دمشق</td><td><span class="tag against">ضد إعادة التعيين حاليًا</span></td></tr>
+<tr><td>أوروبا</td><td>روما/لندن تظهران في بعض القراءات والحركات</td><td>ليست هولندا ولا Chaam في النصوص الأصلية</td><td><span class="tag hyp">غير حاسم</span></td></tr>
+<tr><td>2026</td><td>تراكم رمزي فلكي/ديني</td><td>لا نص قديم محدد يختار 2026 أو رافي</td><td><span class="tag against">ضعيف كدليل هوية</span></td></tr>
+<tr><td>العدل/الإصلاح</td><td>نمط مشترك مع خطابات الخلاص</td><td>صفة عامة جدًا تنطبق على كثيرين</td><td><span class="tag hyp">قيمة منخفضة تشخيصيًا</span></td></tr>
+<tr><td>هوية رافي الحجي</td><td>فرضية موحدة تسمح باختبار تقاطعات كثيرة</td><td>تفتقد حاليًا معايير نسبية ونصية حاسمة من التقاليد الرئيسية</td><td><span class="tag against">غير مثبتة</span></td></tr>
+</tbody></table></article>
+
+<article class="card third"><div class="score good">A</div><h3>ما يستحق متابعة</h3><p>نقد مخطوطات حديث المنارة؛ أقدم صيغ Shambhala؛ تاريخ أسماء Chaam؛ مقارنة نصوص المخلّص بمعايير مغلقة قبل المطابقة.</p></article>
+<article class="card third"><div class="score">B</div><h3>ما يبقى احتمالًا</h3><p>التشابه الاسمي، انتقال رموز الخلاص إلى أوروبا، النافذة الرمزية في 2026.</p></article>
+<article class="card third"><div class="score bad">C</div><h3>ما لا يجوز ادعاؤه الآن</h3><p>أن الحديث كان يقول «الشام» ثم حُرّف؛ أن Chaam هي Shambhala؛ أو أن هوية المخلّص قد ثبتت.</p></article>
+
+<article class="card full"><h2>بروتوكول LuxDot المقترح</h2>
+<p>قبل إضافة أي «تطابق» جديد: 1) حفظ النص الأصلي وتاريخه؛ 2) استخراج معيار محدد مسبقًا؛ 3) تسجيل المطابقة والمخالفة معًا؛ 4) البحث عن تفسير بديل؛ 5) إعطاء وزن أعلى للنصوص السابقة والمستقلة؛ 6) عدم تحويل الحسابات العددية أو المصادفات إلى إثبات هوية.</p>
+<div class="verdict gold"><b>الحكم الحالي للميزان:</b> توجد مادة كافية لبناء <b>فرضية بحثية جادة ومفتوحة</b> حول تقاطع نماذج الخلاص والمكان، لكن المادة الحالية لا تكفي لإثبات أن رافي الحجي هو «المختار» أو أن Chaam هي المكان المقصود في نص نبوي بعينه.</div>
+</article>
+</section></main>
+<footer><div class="wrap">LuxDot · الميزان · ملف إثبات وملف نقض يقدمان معًا.</div></footer><script defer src="content-language-core.js?v=41817"></script><script src="luxdot-typography-density.js?v=41416"></script>
+<script src="luxdot-research-experience-v4150.js?v=4150"></script><script src="arabic-surface-v4160.js?v=4160"></script><script src="luxdot-language-polish.js?v=41815"></script><script defer src="luxdot-radio.js?v=41819b"></script></body></html>

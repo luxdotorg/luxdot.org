@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LuxDot WITNESS testimony envelope v1",
+  "type": "object",
+  "required": [
+    "witness_id",
+    "created_at",
+    "story",
+    "privacy",
+    "consent",
+    "verification"
+  ],
+  "properties": {
+    "witness_id": {
+      "type": "string",
+      "pattern": "^WIT-[0-9]{4}-[A-Z0-9]{8}$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "story": {
+      "type": "object",
+      "required": [
+        "title",
+        "narrative"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 180
+        },
+        "narrative": {
+          "type": "string",
+          "maxLength": 30000
+        },
+        "event_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "place": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "country": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "relationship": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "identity": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "email": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "phone": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "privacy": {
+      "enum": [
+        "preserve_only",
+        "publish_anonymous",
+        "publish_first_name",
+        "publish_full_identity"
+      ]
+    },
+    "consent": {
+      "type": "object",
+      "required": [
+        "store",
+        "publish"
+      ],
+      "properties": {
+        "store": {
+          "type": "boolean"
+        },
+        "publish": {
+          "type": "boolean"
+        },
+        "contact_for_verification": {
+          "type": "boolean"
+        },
+        "research_use": {
+          "type": "boolean"
+        },
+        "withdrawal_requested": {
+          "type": "boolean"
+        }
+      }
+    },
+    "verification": {
+      "enum": [
+        "received",
+        "preserved",
+        "reviewing",
+        "corroborated",
+        "disputed",
+        "unverified",
+        "published"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "filename": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string"
+          },
+          "mime": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

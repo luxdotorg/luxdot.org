@@ -1,0 +1,21 @@
+<!doctype html><html lang="ar" dir="rtl"><head>
+<script>
+(()=>{try{
+ const u=new URL(location.href);
+ if(window.top===window.self && u.searchParams.get('luxembed')!=='1' && !u.pathname.endsWith('/player-shell.html')){
+   const here=u.pathname.replace(/^\//,'')+u.search+u.hash;
+   location.replace('/player-shell.html?page='+encodeURIComponent(here));
+   return;
+ }
+ if(window.top!==window.self){
+   const send=()=>{
+     try{
+       const u=new URL(location.href);
+       u.searchParams.delete('luxembed');
+       parent.postMessage({type:'luxdot:navigate',url:u.pathname.replace(/^\//,'')+u.search+u.hash},location.origin);
+     }catch(e){}
+   };
+   addEventListener('load',send,{once:true});
+ }
+}catch(e){}})();
+</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>الصوت · Phonetics & Phonology · LuxDot</title><link rel="stylesheet" href="styles.css?v=4180"><link rel="stylesheet" href="platform-v43.css?v=4180"><link rel="stylesheet" href="luxdot-challenge.css?v=4183"><link rel="stylesheet" href="luxdot-ibm-plex-v41817.css?v=41817"><link rel="stylesheet" href="luxdot-radio.css?v=41819b"></head><body><main class="wrap"><article class="card"><h1>الصوت · Phonetics & Phonology</h1><p>أعضاء النطق، IPA، المخرج والصفة، الفونيم، النبر والنغمة، والتحول من الحركة الفيزيائية إلى صوت مميز داخل اللغة.</p><p><a href="linguistics-galaxy.html">← مجرة اللسانيات</a></p></article></main><script src="site-shell.js?v=41817"></script><script src="luxdot-challenge.js?v=4183"></script><script src="language-core.js?v=41817"></script><script src="content-language-core.js?v=41817"></script><script src="luxdot-language-polish.js?v=41815"></script><script defer src="luxdot-radio.js?v=41819b"></script></body></html>

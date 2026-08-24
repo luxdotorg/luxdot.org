@@ -1,0 +1,33 @@
+<!doctype html><html lang="ar" dir="rtl"><head>
+<script>
+(()=>{try{
+ const u=new URL(location.href);
+ if(window.top===window.self && u.searchParams.get('luxembed')!=='1' && !u.pathname.endsWith('/player-shell.html')){
+   const here=u.pathname.replace(/^\//,'')+u.search+u.hash;
+   location.replace('/player-shell.html?page='+encodeURIComponent(here));
+   return;
+ }
+ if(window.top!==window.self){
+   const send=()=>{
+     try{
+       const u=new URL(location.href);
+       u.searchParams.delete('luxembed');
+       parent.postMessage({type:'luxdot:navigate',url:u.pathname.replace(/^\//,'')+u.search+u.hash},location.origin);
+     }catch(e){}
+   };
+   addEventListener('load',send,{once:true});
+ }
+}catch(e){}})();
+</script><script src="../language-core.js?v=41817"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="../styles.css?v=4188"><link rel="stylesheet" href="../humanity.css?v=4188"><link rel="stylesheet" href="../luxdot-global-language.css?v=4188"><style>
+main{max-width:1120px;margin:auto;padding:38px 18px 110px}.phero{border:1px solid #4b573e;border-radius:24px;padding:22px;background:linear-gradient(145deg,#07120c,#10140e)}.pmeta{display:flex;gap:7px;flex-wrap:wrap}.pill{border:1px solid #665f3f;border-radius:999px;padding:4px 9px;font-size:.74rem}.story{font-size:1.06rem;line-height:2}.gridp{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:11px}.box{border:1px solid #36473a;border-radius:15px;padding:13px;background:#08120d}.rule{border-right:3px solid #d2bb62;padding:10px 14px;background:#151208;border-radius:12px;margin:14px 0}.links{display:flex;gap:8px;flex-wrap:wrap}.links a{border:1px solid #526047;border-radius:999px;padding:5px 9px;text-decoration:none}
+</style><title>هود · قصص الأنبياء · LuxDot</title><style id="prophet-emergency-shell-v41814">html,body{background:#020503!important;color:#edf7ef!important}body{margin:0;font-family:"Noto Kufi Arabic","Noto Sans Arabic",Arial,sans-serif}main{max-width:980px!important;padding:28px 18px 92px!important}.phero{padding:18px!important;border-radius:18px!important}.phero h1{font-size:clamp(1.55rem,3.2vw,2.65rem)!important;margin:.25em 0}.lead{font-size:.94rem!important}.story{font-size:.96rem!important;line-height:1.95!important}.box{padding:12px!important}.pill{font-size:.68rem!important}a{color:inherit}</style><link rel="stylesheet" href="../luxdot-ibm-plex-v41817.css?v=41817"><link rel="stylesheet" href="../luxdot-radio.css?v=41819b"></head><body><main>
+<div class="k">لوكسدوت · الأنبياء · القصة المشتركة · v4.18.8</div>
+<section class="phero"><h1>هود</h1><p class="lead original-script">Hud · هود</p><div class="pmeta"><span class="pill">قرآني</span><span class="pill">قصة مختصرة أولية</span><span class="pill">قابلة للتوسيع المقارن</span></div></section>
+<div class="rule"><b>منهج الصفحة:</b> نعرض أولًا أقل نواة سردية مشتركة يمكن نسبتها بأمان إلى التقاليد ذات الصلة. عندما لا توجد رواية مشتركة، نقول ذلك صراحة وننسب القصة إلى تقليدها بدل صناعة توافق غير موجود.</div>
+<section class="box"><h2>القصة المختصرة</h2><p class="story">في القرآن نبي أُرسل إلى عاد ودعاهم إلى عبادة الله وترك الاستكبار، ثم ترتبط القصة بهلاك القوم بعد رفض الرسالة. لا توجد شخصية كتابية متفق على مطابقتها به، لذلك تعرض القصة هنا ضمن تقليدها القرآني.</p></section>
+<section class="gridp"><article class="box"><h2>المتفق أو المتقاطع</h2><p>قرآني. هذه الطبقة تتجنب التفاصيل الخلافية في العرض الأول.</p></article>
+<article class="box"><h2>طبقة الاختلاف</h2><p>ستُضاف لاحقًا كمقارنة منفصلة: القرآن، التناخ/الكتاب العبري، العهد الجديد، والتقاليد التفسيرية ذات الصلة، من دون دمج الروايات في نص واحد.</p></article>
+<article class="box"><h2>التاريخ والآثار</h2><p>لا نحول التسلسل الديني إلى تاريخ أثري تلقائيًا. ستفصل الطبقة البحثية بين النص، التقليد، التأريخ، والجغرافيا/الأثر.</p></article>
+<article class="box"><h2>المصادر</h2><p>المرحلة التالية ستربط المقاطع الأصلية من الكتب الدينية والمراجع الأكاديمية، مع تحديد مصدر كل تفصيل بوضوح.</p></article></section>
+<nav class="links"><a href="nuh.html">← نوح</a><a href="../prophets-stories.html">فهرس الأنبياء</a><a href="salih.html">صالح →</a></nav>
+</main><script src="../site-shell.js?v=41817"></script><script src="../luxdot-challenge.js?v=4183"></script><script src="../content-language-core.js?v=41817"></script><script src="../arabic-surface-v4160.js?v=4160"></script><script src="../luxdot-language-polish.js?v=41816"></script><script defer src="../luxdot-radio.js?v=41819b"></script></body></html>

@@ -1,0 +1,49 @@
+<!doctype html><html lang="ar" dir="rtl"><head>
+<script>
+(()=>{try{
+ const u=new URL(location.href);
+ if(window.top===window.self && u.searchParams.get('luxembed')!=='1' && !u.pathname.endsWith('/player-shell.html')){
+   const here=u.pathname.replace(/^\//,'')+u.search+u.hash;
+   location.replace('/player-shell.html?page='+encodeURIComponent(here));
+   return;
+ }
+ if(window.top!==window.self){
+   const send=()=>{
+     try{
+       const u=new URL(location.href);
+       u.searchParams.delete('luxembed');
+       parent.postMessage({type:'luxdot:navigate',url:u.pathname.replace(/^\//,'')+u.search+u.hash},location.origin);
+     }catch(e){}
+   };
+   addEventListener('load',send,{once:true});
+ }
+}catch(e){}})();
+</script><script src="language-core.js?v=41817"></script><script src="page-translations.js?v=4385"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="styles.css?v=430" rel="stylesheet"><style>body{background:#020403;color:#edf7ef;margin:0;font-family:Arial,sans-serif}.d{max-width:1040px;margin:auto;padding:34px 22px 80px}.hero{border:1px solid #23402d;border-radius:24px;padding:28px;background:linear-gradient(145deg,#07120b,#020403)}.tag{font-size:12px;color:#d2b15b;letter-spacing:.08em}.hero h1{font-size:clamp(32px,5vw,62px);margin:.2em 0}.lead{font-size:19px;line-height:1.9;color:#d8e8dd}.heroimg{width:100%;max-height:520px;object-fit:cover;border-radius:18px;margin-top:20px;border:1px solid #2b4934}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin:22px 0}.c,.src a{display:block;border:1px solid #203a29;border-radius:18px;padding:18px;background:#06100a}.c h3{color:#d2b15b;margin-top:0}.c p{line-height:1.75}.src{display:grid;gap:10px}.src a{text-decoration:none;color:#edf7ef}.src small{display:block;color:#9db1a3;margin-top:6px;line-height:1.5}.question{border-inline-start:3px solid #d2b15b;padding:16px 20px;background:#09140d;line-height:1.8}.back a{color:#d2b15b;text-decoration:none}html[dir=rtl] body{font-family:'Noto Kufi Arabic',Arial,sans-serif}html[lang='ar'] body{font-family:'Noto Kufi Arabic',Arial,sans-serif!important}html[lang='en'] body,html[lang='nl'] body{font-family:Arial,Helvetica,sans-serif!important}</style><link rel="stylesheet" href="luxdot-ui-lock.css?v=4385"><link rel="stylesheet" href="luxdot-global-language.css?v=4399"><link rel="stylesheet" href="luxdot-radio.css?v=41819b"><link rel="stylesheet" href="memory-invite.css?v=41000"><link rel="stylesheet" href="luxdot-typography-v41416.css?v=41416">
+<link rel="stylesheet" href="luxdot-research-experience-v4150.css?v=4150"><link rel="stylesheet" href="luxdot-ibm-plex-v41817.css?v=41817"></head><body data-lux-i18n-complete="global-content-core"><header class="top"><div class="wrap topin"><a class="logo" href="home.html">LuxDot</a><nav class="nav"><a href="memory.html">الذاكرة</a><a href="research.html">الأبحاث الحيّة</a></nav></div></header><main class="d"><section class="lux-memory-call ">
+<div class="monkeys">🙈 🙉 🙊</div>
+<h3>افتح عينيك · أصغِ · تكلّم — لا تجعل الذاكرة تموت</h3>
+<p>إن كنت شاهداً، ناجياً، قريباً، صديقاً، مسعفاً، طبيباً، صحفياً، أو تحمل ذكرى إنسان رحل، يمكنك أن تترك شهادتك أو ذكراك في السجل الحي.</p>
+<div class="memory-actions"><a class="primary" href="witness.html?source=indies-memory&event=indies-memory">⚡ أضف نبضة إلى الذاكرة الحية</a><a href="witness-stream.html">شاهد مرصد الذاكرة</a></div>
+<small>أنت تختار مستوى الخصوصية والنشر. لا تُنشر الشهادة علناً لمجرد إرسالها؛ المراجعة والموافقة جزء من المسار.</small>
+</section><section class="hero"><span class="tag">LUXDOT · الذاكرة الحية · 15 أغسطس</span><h1>15 أغسطس — ذاكرة الحرب في آسيا وبريدا</h1><p class="lead">يمثل 15 أغسطس نهاية الحرب العالمية الثانية رسمياً لمملكة هولندا، لكنه يفتح عدة ذواكر متجاورة: الاحتلال الياباني، الأسر، العمل القسري، النزوح، الثورة الإندونيسية، العنف اللاحق، وتجارب الهنديين والمولوكيين والإندونيسيين والبابويين وغيرهم في هولندا.</p><img class="heroimg" src="assets/images/memory/raffy-indies-commemoration.jpg" alt="15 أغسطس — ذاكرة الحرب في آسيا وبريدا"><small>إحياء ذكرى إنديش في Raffy ببريدا — صورة صحفية.</small></section><section class="grid"><article class="c"><h3>لماذا 15 أغسطس؟</h3><p>يرتبط التاريخ باستسلام اليابان ونهاية الحرب في آسيا، بينما كانت هولندا الأوروبية قد تحررت في مايو.</p></article><article class="c"><h3>بريدا وRaffy</h3><p>أصبحت Raffy في بريدا مكاناً محلياً لنقل الذاكرة بين الأجيال، مع نصب ومراسم واستماع لقصص متعددة.</p></article><article class="c"><h3>ذاكرات غير متطابقة</h3><p>ذاكرة الضحية الهولندية–الهندية ليست هي نفسها سردية الاستقلال الإندونيسي. LuxDot يعرضهما جنباً إلى جنب ولا يذيب إحداهما في الأخرى.</p></article><article class="c"><h3>2026</h3><p>أُلغي إحياء بريدا في 2026 بسبب الحر الشديد؛ بقاء الذاكرة لا يتوقف على إقامة فعالية واحدة.</p></article></section><h2>لماذا تحفظها LuxDot؟</h2><p class="question">كيف نبني ذاكرة مشتركة من دون فرض قصة واحدة على جماعات عاشت الحرب ونهايتها والاستقلال بطرق مختلفة؟</p><h2>المصادر</h2><div class="src"><a target="_blank" rel="noopener" href="https://15augustus1945.nl/en/why-remember/"><b>Nationale Herdenking 15 Augustus — Why remember?</b><small>شرح رسمي لمعنى اليوم.</small></a><a target="_blank" rel="noopener" href="https://15augustus1945.nl/herdenkingen-en-monumenten/monument-breda/"><b>Breda — Indië Monument</b><small>توثيق النصب في Raffy.</small></a><a target="_blank" rel="noopener" href="https://arjati.nl/"><b>Arjati</b><small>مؤسسة حفظ ونقل التراث الإنديش في بريدا.</small></a></div><p class="back"><a href="memory.html">← العودة إلى الذاكرة الحية</a></p></main><script src="site-shell.js?v=41817"></script><script>window.__MEMORY_DOSSIER_TRANSLATIONS__={"en": ["15 August — Netherlands remembers the end of the war in Asia", "Breda · The Hague · Netherlands", "This dossier follows Dutch remembrance of the end of the Second World War for the Kingdom and victims of the war against Japan and the Japanese occupation of the former Dutch East Indies.", "How can public remembrance be inherited without simplifying a complicated colonial and wartime history?"], "nl": ["15 augustus — Nederland herdenkt", "Breda · Den Haag · Nederland", "Dit dossier volgt de Nederlandse herdenking van het einde van de Tweede Wereldoorlog voor het Koninkrijk en de slachtoffers van de oorlog tegen Japan en de Japanse bezetting van voormalig Nederlands-Indië.", "Hoe kan publieke herinnering worden doorgegeven zonder een complexe koloniale en oorlogsgeschiedenis te vereenvoudigen?"]};</script>
+<script>
+(function(){
+ const q=new URLSearchParams(location.search), saved=(window.LuxLang&&LuxLang.get&&LuxLang.get())||q.get('lang')||localStorage.getItem('luxdot.lang')||'ar';
+ const l=(saved==='nl')?'nl':(saved==='en'?'en':'ar');
+ if(l==='ar') return;
+ const DATA=window.__MEMORY_DOSSIER_TRANSLATIONS__;
+ const x=DATA&&DATA[l]; if(!x)return;
+ document.documentElement.lang=l; document.documentElement.dir='ltr';
+ document.body.classList.add('memory-non-ar');
+ const main=document.querySelector('main');
+ if(!main)return;
+ const src=[...document.querySelectorAll('.src a')].map(a=>({u:a.href,t:(a.querySelector('b')||a).textContent.trim()}));
+ main.innerHTML=`<section class="hero"><span class="tag">LUXDOT · ${l==='nl'?'LEVEND GEHEUGEN':'LIVING MEMORY'}</span><h1>${x[0]}</h1><p class="lead">${x[2]}</p></section>
+ <section class="grid"><article class="c"><h3>${l==='nl'?'Plaats':'Place'}</h3><p>${x[1]}</p></article><article class="c"><h3>${l==='nl'?'Methode':'Method'}</h3><p>${l==='nl'?'Bron eerst → interpretatie daarna → onzekerheid zichtbaar.':'Source first → interpretation second → uncertainty stays visible.'}</p></article></section>
+ <h2>${l==='nl'?'Onderzoeksvraag':'Research question'}</h2><p class="question">${x[3]}</p>
+ <h2>${l==='nl'?'Bronnen':'Sources'}</h2><div class="src">${src.map(s=>`<a target="_blank" rel="noopener" href="${s.u}"><b>${s.t}</b></a>`).join('')}</div>
+ <p class="back"><a href="memory.html?lang=${l}">← ${l==='nl'?'Terug naar levend geheugen':'Back to Living Memory'}</a></p>`;
+})();
+</script>
+<script defer src="luxdot-radio.js?v=41819b"></script><script defer src="content-language-core.js?v=41817"></script><script src="luxdot-typography-density.js?v=41416"></script>
+<script src="luxdot-research-experience-v4150.js?v=4150"></script><script src="arabic-surface-v4160.js?v=4160"></script><script src="luxdot-language-polish.js?v=41815"></script></body></html>

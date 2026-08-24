@@ -1,0 +1,93 @@
+/* LuxDot v4.18.17 — IBM Plex Global Typography
+   One visual family across scripts; script-specific Plex faces lead the fallback chain.
+   CDN packages are OFL-1.1 IBM Plex releases. */
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans@5.2.8/400.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans@5.2.8/500.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans@5.2.8/600.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans@5.2.8/700.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans-arabic@5.3.0/400.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans-arabic@5.3.0/500.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans-arabic@5.3.0/600.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans-arabic@5.3.0/700.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans-hebrew@5.2.8/400.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans-hebrew@5.2.8/500.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans-hebrew@5.2.8/600.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/ibm-plex-sans-hebrew@5.2.8/700.css");
+
+:root{
+  --lux-font-latin:"IBM Plex Sans";
+  --lux-font-arabic:"IBM Plex Sans Arabic";
+  --lux-font-hebrew:"IBM Plex Sans Hebrew";
+  --lux-font-ui:var(--lux-font-latin),var(--lux-font-arabic),var(--lux-font-hebrew),
+    "Segoe UI",Arial,sans-serif;
+  --lux-font-ar:var(--lux-font-arabic),var(--lux-font-hebrew),var(--lux-font-latin),
+    "Noto Sans Arabic","Segoe UI",sans-serif;
+  --lux-font-he:var(--lux-font-hebrew),var(--lux-font-arabic),var(--lux-font-latin),
+    "Noto Sans Hebrew","Segoe UI",sans-serif;
+  --lux-font-display:var(--lux-font-ui);
+}
+
+/* The selected language controls the primary face. Other scripts naturally fall through
+   to the matching Plex face in the same family. */
+html[lang="ar"] body,
+html.lang-ar body,
+body.lang-ar{
+  font-family:var(--lux-font-ar)!important;
+}
+html[lang="he"] body,
+html.lang-he body,
+body.lang-he{
+  font-family:var(--lux-font-he)!important;
+}
+html:not([lang="ar"]):not([lang="he"]) body{
+  font-family:var(--lux-font-ui)!important;
+}
+
+/* Keep every visible UI surface in the same Plex system. */
+body :where(
+  h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,
+  button,input,select,textarea,label,summary,option,
+  nav,a,.btn,.button,.chip,.pill,.badge,.tag,.card,.panel,.meta,.type,.k,.kicker,
+  .lux-header-43108,.lux-main-nav,.lux-lang-menu,.lux-language,
+  .radio,.tv,.timeline,.tooltip,.tip,.report,.cartouche
+){
+  font-family:inherit!important;
+}
+
+/* Original-script evidence can explicitly select the matching Plex face. */
+:lang(ar), [lang="ar"]{font-family:var(--lux-font-ar)!important}
+:lang(he), [lang="he"]{font-family:var(--lux-font-he)!important}
+:lang(en),:lang(nl),:lang(jv),:lang(id),:lang(fr),:lang(es),:lang(de),:lang(tr),
+[lang="en"],[lang="nl"],[lang="jv"],[lang="id"],[lang="fr"],[lang="es"],[lang="de"],[lang="tr"]{
+  font-family:var(--lux-font-ui)!important;
+}
+
+/* Plex has a large x-height; keep the site compact and harmonised across scripts. */
+html{font-size:15px}
+html[lang="ar"]{font-size:14.5px}
+html[lang="he"]{font-size:14.75px}
+body{font-weight:400;letter-spacing:normal}
+h1,h2,h3,h4,h5,h6,
+.lux-header-43108 .lux-brand,
+.lux-header-43108 .lux-main-nav a{
+  font-weight:600!important;
+  letter-spacing:normal!important;
+}
+small,.meta,.k,.kicker,.type{font-weight:400}
+
+/* Avoid pseudo-monospace styling leaking into ordinary research labels. */
+code,pre,kbd,samp{
+  font-family:"IBM Plex Mono","Cascadia Mono","SFMono-Regular",Consolas,monospace!important;
+}
+
+/* More even line rhythm between Arabic/Hebrew/Latin. */
+html[lang="ar"] body{line-height:1.72}
+html[lang="he"] body{line-height:1.62}
+html:not([lang="ar"]):not([lang="he"]) body{line-height:1.58}
+
+/* Mobile density: typography should not force the header to wrap. */
+@media(max-width:700px){
+  html{font-size:14px}
+  html[lang="ar"]{font-size:13.75px}
+  html[lang="he"]{font-size:13.9px}
+}

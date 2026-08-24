@@ -1,0 +1,6 @@
+/* LuxDot v4.18.14 cleanup baseline: compact UI */
+@media (min-width:761px){body{font-size:14px}.wrap,.page,main{--lux-ui-scale:.92}.hero h1,.landing h1{font-size:clamp(1.9rem,4.2vw,3.8rem)!important}.card,.panel{padding-block:clamp(10px,1.5vw,18px)}button,.chip,.pill{font-size:.78rem}}
+@media (max-width:760px){body{font-size:13px}}
+
+/* report/identity stacking fix */
+#printReport,.print-report,[data-print-report]{position:relative!important;z-index:2!important;margin-top:12px!important}.daily-identity,.today-identity,#dailyIdentity{position:relative!important;z-index:1!important}
