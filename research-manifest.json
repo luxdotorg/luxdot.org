@@ -3169,5 +3169,41 @@
         "title": "مجرة العلوم"
       }
     ]
+  },
+  "brabant-sacred-memory-atlas.html": {
+    "id": "brabant-sacred-memory-atlas.html",
+    "title": "أطلس الذاكرة المقدسة لبرابانت · LuxDot",
+    "standard": "LuxDot Research Standard v0.2 PREVIEW",
+    "review_status": "live-atlas",
+    "confidence": "B",
+    "external_sources": 14,
+    "source_class_suggestions": {
+      "A? · primary/official": 5,
+      "B? · scholarly/heritage": 5,
+      "C? · documented tradition": 4
+    },
+    "internal_connections": 8,
+    "related": [
+      {
+        "id": "research.html",
+        "title": "LuxDot · الأبحاث الحيّة · Live Research"
+      },
+      {
+        "id": "shaam-brabant-network.html",
+        "title": "شبكة شام–برابانت"
+      },
+      {
+        "id": "border-chapels-route.html",
+        "title": "Border Chapels & Pilgrimage Routes · LuxDot"
+      },
+      {
+        "id": "historic-brabant-crossborder.html",
+        "title": "Historic Brabant Cross-Border Network · LuxDot"
+      },
+      {
+        "id": "brabant-research-architecture.html",
+        "title": "Historic Brabant Research Architecture · LuxDot"
+      }
+    ]
   }
 }
