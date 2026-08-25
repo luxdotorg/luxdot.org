@@ -1,11 +1,16 @@
 {
   "product": "LuxDot",
-  "version": "4.18.25",
-  "build_time": "2026-08-25T07:28:00+02:00",
+  "version": "4.18.27",
+  "build_time": "2026-08-25T07:43:00+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
   "release_type": "FULL_REPLACE",
   "features": [
+    "Site-wide Cosmic Matrix visual system matching the approved LuxDot Radio concept",
+    "Unified compact pill header with LuxDot Pulse placed inline immediately after Projects",
+    "Consistent neon-green/gold cards, controls, panels and responsive RTL/LTR treatment across the site",
+    "Symbol Genealogy SG-002: 4×4 wafq with mathematical/historical evidence separation",
+    "Symbol Genealogy SG-003: 28 Arabic letters × 28 lunar mansions investigation matrix",
     "Letter · Number · Symbol research galaxy with five evidence-separated clusters",
     "Buduh 3×3 Symbol Genealogy SG-001 separating mathematics, abjad, manuscripts and later folklore",
     "Special collection gateway from Library to occult/letter-number manuscript research",
@@ -51,12 +56,22 @@
     "GitHub Pages CNAME preserved in every FULL REPLACE"
   ],
   "counts": {
-    "files": 1113,
-    "html": 526,
+    "files": 1124,
+    "html": 531,
     "js": 75,
-    "css": 49
+    "css": 50
   },
   "latest_changes": [
+    {
+      "date": "2026-08-25",
+      "title_ar": "تطبيق هوية Cosmic Matrix على الموقع وتثبيت نبض نقطة نور داخل الهيدر بعد المشاريع",
+      "title_en": "Applied Cosmic Matrix visual system site-wide and fixed LuxDot Pulse inline after Projects"
+    },
+    {
+      "date": "2026-08-25",
+      "title_ar": "إضافة SG-002 للوفق 4×4 وSG-003 لمصفوفة 28 حرفًا × 28 منزلة قمرية",
+      "title_en": "Added SG-002 4×4 wafq genealogy and SG-003 28 letters × 28 lunar mansions investigation matrix"
+    },
     {
       "date": "2026-08-25",
       "title_ar": "إضافة مجرة علوم الحرف والعدد والرمز وأول شجرة نَسَب للرمز: بدوح 3×3",
@@ -147,7 +162,7 @@
   "tv_engine": "Living TV v2 — Audio Visual Harmony",
   "research_expansion": "biology + universal signals + psychoactive evidence lab",
   "header_media": "Radio + TV persistent nav",
-  "focus": "Letter · Number · Symbol research galaxy + Buduh Symbol Genealogy",
+  "focus": "Site-wide Cosmic Matrix design system + inline LuxDot Pulse header repair",
   "challenge_layer": "universal claim correction + troubleshooting",
   "open_knowledge": "covenant v1",
   "linguistics": "major galaxy",
@@ -155,10 +170,10 @@
   "calendar": "Aug 24/25/28 contextual layers",
   "hotfix": "radio local fallback + remove CORS + cache bust + TV 60s minimum",
   "media_cache_key": "4181",
-  "ui": "selected 19-color-icon system",
+  "ui": "Cosmic Matrix site-wide visual system; compact pill navigation; neon green + gold",
   "symbol_ui": "multilingual hover labels + aria labels",
   "claim_actions": "correct + challenge + report",
-  "pulse": "moved to last header icon after projects",
+  "pulse": "inline header pill immediately after projects; no detached oversized floating control",
   "radio_scheduler": "daypart-first; weekday faith identity no longer hijacks playlist",
   "radio_free_music": "muwashshah + Andalusian Commons tracks",
   "licensed_slots": "auto-detect Fairuz/Umm Kulthum/Qudud local licensed files",

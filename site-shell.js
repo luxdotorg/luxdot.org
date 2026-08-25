@@ -24,7 +24,7 @@ const T={
 };
 const lang=()=>{const q=new URLSearchParams(location.search).get('lang'),s=localStorage.getItem('luxdot.lang');return SUP.includes(q)?q:SUP.includes(s)?s:'en'};
 const withLang=(href,l=lang())=>{let u=new URL(rootHref(href),location.href);u.searchParams.set('lang',l);return u.pathname+u.search+u.hash};
-function ensureStyle(){if(d.getElementById('lux43113-header-style'))return;let l=d.createElement('link');l.id='lux43113-header-style';l.rel='stylesheet';l.href=rootHref('luxdot-header-v43108.css?v=41816');d.head.appendChild(l)}
+function ensureStyle(){if(!d.getElementById('lux43113-header-style')){let l=d.createElement('link');l.id='lux43113-header-style';l.rel='stylesheet';l.href=rootHref('luxdot-header-v43108.css?v=41827');d.head.appendChild(l)}if(!d.getElementById('lux41827-cosmic-style')){let c=d.createElement('link');c.id='lux41827-cosmic-style';c.rel='stylesheet';c.href=rootHref('luxdot-cosmic-site-v41827.css?v=41827');d.head.appendChild(c)}}
 function go(l){if(!SUP.includes(l))l='en';localStorage.setItem('luxdot.lang',l);let u=new URL(location.href);u.searchParams.set('lang',l);location.assign(u.pathname+u.search+u.hash)}
 function build(){if(!d.body)return;ensureStyle();d.querySelectorAll('.luxdot-history-arrows,.luxdot-page-actions,.luxdot-breadcrumb').forEach(x=>x.remove());d.querySelectorAll('header.top,header.site-header,.global-header,.legacy-header,.topbar').forEach(x=>x.remove());
 d.querySelectorAll('body > .langbar,body > .language-bar,body > .lang-switcher').forEach(x=>x.remove());
@@ -62,13 +62,13 @@ window.addEventListener('resize',()=>{let h=d.querySelector('.lux-header-43108')
  }
  function installLuxPulse(){
   if(document.getElementById("luxTimelineInfo"))return;
-  const host=document.querySelector("header .topin,header .wrap,.topin,.top");
+  const host=document.querySelector(".lux-header-43108 .lux-main-nav")||document.querySelector("header .topin,header .wrap,.topin,.top");
   if(!host)return;
 
   const q=new URLSearchParams(location.search),lang=q.get("lang")||"ar";
   const a=document.createElement("button");
-  a.id="luxTimelineInfo";a.type="button";a.className="lux-symbol-nav lux-color-nav lux-pulse-nav";a.setAttribute("aria-label","نبض نقطة نور / LuxDot Pulse");a.title="نبض نقطة نور · LuxDot Pulse";a.innerHTML='<img class="lux-color-icon" src="assets/icons/luxdot-symbols/pulse.svg" alt=""><span class="lux-symbol-tooltip"><b>نبض نقطة نور</b><small>الاستعلام والشفافية الحية</small></span>';
-  host.appendChild(a);
+  a.id="luxTimelineInfo";a.type="button";a.className="lux-symbol-nav lux-color-nav lux-pulse-nav";a.setAttribute("aria-label","نبض نقطة نور / LuxDot Pulse");a.title="نبض نقطة نور · LuxDot Pulse";const assetRoot='../'.repeat(Math.max(0,location.pathname.split('/').filter(Boolean).length-1));const pulseLabel=({ar:'نبض نقطة نور',en:'LuxDot Pulse',nl:'LuxDot Pulse',he:'LuxDot Pulse',jv:'LuxDot Pulse',id:'LuxDot Pulse',fr:'LuxDot Pulse',es:'LuxDot Pulse',de:'LuxDot Pulse',tr:'LuxDot Pulse'}[lang]||'LuxDot Pulse');a.innerHTML='<img class="lux-color-icon" src="'+assetRoot+'assets/icons/luxdot-symbols/pulse.svg" alt=""><span class="lux-pulse-label">'+pulseLabel+'</span><span class="lux-symbol-tooltip"><b>نبض نقطة نور</b><small>الاستعلام والشفافية الحية</small></span>';
+  const projects=host.querySelector('a[href*="projects.html"]');if(projects)projects.insertAdjacentElement('afterend',a);else host.appendChild(a);
 
   const panel=document.createElement("aside");panel.id="luxTimelinePeek";panel.setAttribute("aria-hidden","true");
   panel.innerHTML=`
