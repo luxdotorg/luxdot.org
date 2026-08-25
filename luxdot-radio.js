@@ -21,20 +21,17 @@ const CATALOG=[
  {id:'quran-yusuf',title:'سورة يوسف',artist:'محمد صديق المنشاوي',kind:'sacred',tags:['quran-selected'],duration:2701,url:commonsFile('Sura Minshawi 12.ogg'),license:'Public domain'},
  {id:'quran-ibrahim',title:'سورة إبراهيم',artist:'محمد صديق المنشاوي',kind:'sacred',tags:['quran-selected'],duration:1118,url:commonsFile('Sura Minshawi 14.ogg'),license:'Public domain'},
  {id:'oud',title:'عود عربي',artist:'Houssem Bettaibi',kind:'music',tags:['oud','arab-quiet','instrumental','quiet'],duration:50,url:commonsFile('OUD.ogg'),license:'CC BY-SA 3.0'},
- {id:'muwashah-musili',title:'للعاشق في الهوى دلائل · موشح',artist:'أحمد عبد القادر الموصلي',kind:'music',tags:['mawlid','celebration','muwashshah','muwashah-classic','andalusian-night','arab-classic','maqam'],duration:203,url:commonsFile('Ahmed al-Musili, Muwashah 02.ogg'),license:'Public domain'},
- {id:'lamma-bada',title:'لما بدا يتثنى · موشح',artist:'الشيخ سيد الصفتي',kind:'music',tags:['mawlid','celebration','muwashshah','muwashah-classic','andalusian-night','arab-classic','halab-night'],duration:210,url:commonsFile('Muwashah lamma bada yatathanna.OGG'),license:'Public domain'},
+ {id:'muwashah-musili',title:'للعاشق في الهوى دلائل · موشح',artist:'أحمد عبد القادر الموصلي',kind:'music',tags:['muwashshah','muwashah-classic','andalusian-night','arab-classic','maqam'],duration:203,url:commonsFile('Ahmed al-Musili, Muwashah 02.ogg'),license:'Public domain'},
+ {id:'lamma-bada',title:'لما بدا يتثنى · موشح',artist:'الشيخ سيد الصفتي',kind:'music',tags:['muwashshah','muwashah-classic','andalusian-night','arab-classic','halab-night'],duration:210,url:commonsFile('Muwashah lamma bada yatathanna.OGG'),license:'Public domain'},
  {id:'andalusi-free',title:'أندلسيات · مادة أرشيفية كلامية',artist:'Anass Sedrati',kind:'spoken',tags:['archive','andalusian-spoken'],duration:81,url:commonsFile('أوديو أندلسي.ogg'),license:'CC BY-SA 4.0',broadcast:false},
  {id:'persia',title:'Baiaty · Chiraz · Rast',artist:'Traditional Persian music',kind:'music',tags:['persian','quiet-world'],duration:183,url:commonsFile('Baiaty Chiraz Rast .ogg'),license:'Public domain'},
  {id:'bach-air',title:'Air · BWV 1068',artist:'J. S. Bach',kind:'music',tags:['symphonic','quiet-world'],duration:260,url:commonsFile('Air (Bach).ogg'),license:'Public domain'},
- {id:'samai-hijaz-kurdi',title:'سماعي حجاز كار كردي · 1926',artist:'Chahadé Saadé',kind:'music',tags:['mawlid','celebration','samaai','oud','arab-classic','andalusian-night','halab-night','instrumental'],duration:212,url:commonsFile('Samaii Hijaz Kar Kurdi (c. 1926).ogg'),license:'Public domain'},
- {id:'maqam-sika-1931',title:'مقام سيكاه · تسجيل 1931',artist:'Traditional Egyptian ensemble',kind:'music',tags:['mawlid','celebration','maqam','arab-classic','andalusian-night','halab-night','quiet-world'],duration:201,url:commonsFile('Art-song Maqam Sika (1931).ogg'),license:'Public domain'},
- {id:'maqam-hijaz-1',title:'بشرف مقام حجاز · الجزء الأول',artist:'Traditional Egyptian music',kind:'music',tags:['mawlid','celebration','maqam','arab-classic','andalusian-night','halab-night','instrumental'],duration:218,url:commonsFile('Baschrav Kuzum Maqam Hijaz part 1 (1931).ogg'),license:'Public domain'},
- {id:'maqam-hijaz-2',title:'بشرف مقام حجاز · الجزء الثاني',artist:'Traditional Egyptian music',kind:'music',tags:['mawlid','celebration','maqam','arab-classic','andalusian-night','halab-night','instrumental'],duration:210,url:commonsFile('Baschrav Kuzum Maqam Hijaz part 2 (1931).ogg'),license:'Public domain'},
+ {id:'samai-hijaz-kurdi',title:'سماعي حجاز كار كردي · 1926',artist:'Chahadé Saadé',kind:'music',tags:['samaai','oud','arab-classic','andalusian-night','halab-night','instrumental'],duration:212,url:commonsFile('Samaii Hijaz Kar Kurdi (c. 1926).ogg'),license:'Public domain'},
+ {id:'maqam-sika-1931',title:'مقام سيكاه · تسجيل 1931',artist:'Traditional Egyptian ensemble',kind:'music',tags:['maqam','arab-classic','andalusian-night','halab-night','quiet-world'],duration:201,url:commonsFile('Art-song Maqam Sika (1931).ogg'),license:'Public domain'},
+ {id:'maqam-hijaz-1',title:'بشرف مقام حجاز · الجزء الأول',artist:'Traditional Egyptian music',kind:'music',tags:['maqam','arab-classic','andalusian-night','halab-night','instrumental'],duration:218,url:commonsFile('Baschrav Kuzum Maqam Hijaz part 1 (1931).ogg'),license:'Public domain'},
+ {id:'maqam-hijaz-2',title:'بشرف مقام حجاز · الجزء الثاني',artist:'Traditional Egyptian music',kind:'music',tags:['maqam','arab-classic','andalusian-night','halab-night','instrumental'],duration:210,url:commonsFile('Baschrav Kuzum Maqam Hijaz part 2 (1931).ogg'),license:'Public domain'},
  {id:'maqam-mezmum',title:'مقام مزموم · تونس 1931',artist:'Traditional Tunisian music',kind:'music',tags:['maqam','quiet-world','andalusian-night','world-window'],duration:166,url:commonsFile('Art-song Maqam Mezmum (1931).ogg'),license:'Public domain'},
  {id:'dervishes-dil',title:'إنشاد دراويش · مقام ديل',artist:'Traditional Tunisian music',kind:'spiritual',tags:['spiritual','mawlid','halab-night','world-window'],duration:166,url:commonsFile('Song of the Dervishes Maqam Dil (1931).ogg'),license:'Public domain'},
- {id:'mawlid-manqoos-1',title:'مجلس مولد · Manqoos Maulid',artist:'Akbarali',kind:'spiritual',tags:['mawlid','mawlid-feature','spiritual','celebration'],duration:700,url:commonsFile('Manqoos Maulid.ogg'),license:'CC BY-SA 4.0'},
- {id:'mawlid-manqoos-2',title:'مقطع مولد قصير · Manqoos Maulid 2',artist:'Akbarali',kind:'spiritual',tags:['mawlid','mawlid-feature','spiritual','celebration'],duration:58,url:commonsFile('Manqoos Maulid 2.ogg'),license:'CC BY-SA 4.0'},
- {id:'mawlid-manqoos-3',title:'مجلس مولد · Manqoos Maulid 3',artist:'Akbarali',kind:'spiritual',tags:['mawlid','mawlid-feature','spiritual','celebration'],duration:849,url:commonsFile('Manqoos Maulid 3.ogg'),license:'CC BY-SA 4.0'},
  {id:'memory-heal-world',title:'Heal the World · ذاكرة إنسانية',artist:'Memory library',kind:'memory',tags:['memory','children','world-window'],duration:382,url:asset('assets/audio/memorial/heal-the-world.mp3'),license:'User-supplied; publication rights to be confirmed'},
  {id:'memory-one-day',title:'One Day · ذاكرة إنسانية',artist:'Memory library',kind:'memory',tags:['memory','children','world-window'],duration:213,url:asset('assets/audio/memorial/one-day.mp3'),license:'User-supplied; publication rights to be confirmed'},
  {id:'memory-julia',title:'غابت شمس الحق · ذاكرة سورية',artist:'Julia / memory library',kind:'memory',tags:['memory','sham','arab-classic'],duration:314,url:asset('assets/audio/memorial/julia-ghabat-shams-alhaq.mp3'),license:'User-supplied; publication rights to be confirmed'},
@@ -80,18 +77,6 @@ const DAYPARTS=[
  ['04:15','06:00','ما قبل الفجر','Before Dawn',['quiet','quran-selected','oud']]
 ];
 
-
-const MAWLID_DAYPARTS=[
- ['00:00','04:15','فرح حلب · سَهرة المولد','Aleppo Mawlid Night',['mawlid-feature','mawlid','muwashshah','halab-night','maqam','spiritual']],
- ['04:15','06:00','سَكينة ما قبل الفجر · المولد','Mawlid Before Dawn',['quran-selected','mawlid-feature','spiritual','quiet']],
- ['06:00','08:30','صباح المولد · من الشام','Mawlid Morning from Chaam',['quran-selected','mawlid-feature','mawlid','oud','muwashshah']],
- ['08:30','12:00','فرح حلب · قدود وموشحات','Aleppo Celebration',['mawlid-feature','mawlid','muwashshah','halab-night','oud','maqam']],
- ['12:00','16:30','مجالس المولد · إنشاد ومديح','Mawlid Gatherings',['mawlid-feature','mawlid','spiritual','muwashshah','maqam']],
- ['16:30','19:30','مساء الشام · فرح ونور','Mawlid Evening',['mawlid-feature','mawlid','muwashshah','halab-night','samaai','oud']],
- ['19:30','22:00','ليلة المولد · موشحات ومدائح','Mawlid Night',['mawlid-feature','mawlid','muwashshah','halab-night','spiritual','maqam']],
- ['22:00','24:00','حلب تسهر · ليلة المولد','Aleppo Stays Awake — Mawlid',['mawlid-feature','mawlid','qudud','muwashshah','halab-night','spiritual','oud']]
-];
-
 const ID_LANG=['ar','en','nl','he','jv','id','fr','es','de','tr'];
 const ID_TEXT={
  ar:t=>`هنا الشام. الساعة الآن ${t} بتوقيت الشام. أنتم تستمعون إلى البث المباشر لإذاعة لوكسدوت — نقطة نور، من الشام.`,
@@ -117,9 +102,8 @@ function inRange(now,start,end){
  return a<=b ? n>=a&&n<b : n>=a||n<b;
 }
 function daypart(d=new Date()){
- const n=hm(d),p=parts(d),date=`${p.year}-${p.month}-${p.day}`;
- const schedule=date==='2026-08-25'?MAWLID_DAYPARTS:DAYPARTS;
- const row=schedule.find(x=>inRange(n,x[0],x[1]))||schedule[0];
+ const n=hm(d);
+ const row=DAYPARTS.find(x=>inRange(n,x[0],x[1]))||DAYPARTS[0];
  return {start:row[0],end:row[1],nameAr:row[2],nameEn:row[3],tags:row[4]};
 }
 function special(d=new Date()){
@@ -138,7 +122,7 @@ function weekdayLayer(d=new Date()){
 function candidates(dp){
  let tags=[...dp.tags];
  const sp=special();
- if(sp?.key==='mawlid')tags.unshift('mawlid-feature','mawlid','celebration','muwashshah','qudud','quran-selected','spiritual','maqam','oud');
+ if(sp?.key==='mawlid')tags.unshift('mawlid','muwashshah','qudud','quran-selected','spiritual');
  let real=CATALOG.filter(t=>t.broadcast!==false&&!failed.has(t.id)&&t.tags.some(x=>tags.includes(x)));
  const wantsSacred=tags.includes('quran-selected')||tags.includes('spiritual')||tags.includes('mawlid');
  if(!wantsSacred) real=real.filter(t=>t.kind!=='sacred'&&t.kind!=='spiritual');
@@ -214,7 +198,7 @@ function ensureDock(){
 }
 function updateDock(){
  ensureDock();const t=document.getElementById('luxdot-radio-track'),b=document.getElementById('luxdot-radio-play');
- if(t){const sp=special();t.textContent=current?`${sp?.key==='mawlid'?'فرح حلب · ':''}${current.title} · ${current.artist}`:(sp?.key==='mawlid'?'فرح حلب — ليلة المولد':'من الشام… نقطة نور إلى العالم');}
+ if(t)t.textContent=current?`${current.title} · ${current.artist}`:'من الشام… نقطة نور إلى العالم';
  if(b)b.textContent=userOn&&!audio.paused?'❚❚':'▶';
 }
 function load(t,play=true,seek=0){

@@ -1,12 +1,10 @@
 # LuxDot v4.18.28
 
-## فرح حلب — ليلة المولد
+## فرح حلب — المولد النبوي / Farah Halab — Mawlid
 
-- حوّل 25 أغسطس 2026 إلى دورة إذاعية خاصة طوال اليوم للمولد النبوي الشريف.
-- أضاف ثلاث مواد مولد من Wikimedia Commons بترخيص CC BY-SA 4.0، مع نسبها إلى Akbarali.
-- وسّع دوران الموشحات والمقامات والسماعيات والإنشاد خلال يوم المولد.
-- أضاف واجهة احتفالية خاصة «فرح حلب — ليلة المولد» إلى صفحة الراديو.
-- حافظ على خانات القدود الحلبية التجارية كخانات تحريرية لا تعمل إلا عند وجود تسجيل مملوك/مرخّص.
-- ثبّت اسم المحطة بالعربية: «إذاعة نقطة نور — LuxDot من شام».
-
-Base: v4.18.27 FULL_REPLACE.
+- Added a Mawlid audiovisual takeover directly inside `tv.html` / نقطة نور المرئية.
+- Added a dedicated Mawlid hero card for 25 August 2026 / 12 Rabi al-Awwal 1448.
+- Added source-embedded YouTube audiovisual selections, including a stream reported live at build time and recent Mawlid celebrations/readings.
+- Added switching between LuxDot slow-TV + radio mode and audiovisual Mawlid mode.
+- No third-party video is copied into the LuxDot package; playback remains embedded from the original source.
+- Updated TV cache key and build metadata to v4.18.28.

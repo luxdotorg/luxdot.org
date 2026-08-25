@@ -1,6 +1,6 @@
 {
   "station": {
-    "ar": "إذاعة نقطة نور — LuxDot من شام",
+    "ar": "إذاعة نقطة نور — من الشام",
     "latin": "LuxDot Radio — from Chaam",
     "place_ar": "الشام",
     "place_latin": "Chaam",
@@ -149,29 +149,5 @@
     "title_ar": "الشين والسين: القداسة والدنس في اللغات والتقاليد",
     "scope": "Separate linguistic/religious research; not part of radio implementation.",
     "status": "backlog"
-  },
-  "mawlid_2026": {
-    "date": "2026-08-25",
-    "title_ar": "فرح حلب — ليلة المولد",
-    "title_en": "Farah Halab — Mawlid Night",
-    "broadcast_mode": "all-day-special",
-    "audio_policy": "Only public-domain, Creative Commons, LuxDot-owned, or user-licensed audio is activated.",
-    "commons_tracks": [
-      {
-        "file": "Manqoos Maulid.ogg",
-        "license": "CC BY-SA 4.0",
-        "creator": "Akbarali"
-      },
-      {
-        "file": "Manqoos Maulid 2.ogg",
-        "license": "CC BY-SA 4.0",
-        "creator": "Akbarali"
-      },
-      {
-        "file": "Manqoos Maulid 3.ogg",
-        "license": "CC BY-SA 4.0",
-        "creator": "Akbarali"
-      }
-    ]
   }
 }

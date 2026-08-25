@@ -6,7 +6,7 @@
   "repository": "luxdotorg/luxdot.org",
   "release_type": "FULL_REPLACE",
   "features": [
-    "Mawlid all-day special: فرح حلب — ليلة المولد with CC-licensed Mawlid audio and Aleppine editorial flow",
+    "Farah Halab — Mawlid visual takeover inside Nuqtat Noor TV with embedded live/recent audiovisual sources",
     "Site-wide Cosmic Matrix visual system matching the approved LuxDot Radio concept",
     "Unified compact pill header with LuxDot Pulse placed inline immediately after Projects",
     "Consistent neon-green/gold cards, controls, panels and responsive RTL/LTR treatment across the site",
@@ -57,7 +57,7 @@
     "GitHub Pages CNAME preserved in every FULL REPLACE"
   ],
   "counts": {
-    "files": 1125,
+    "files": 1124,
     "html": 531,
     "js": 75,
     "css": 50
@@ -65,8 +65,8 @@
   "latest_changes": [
     {
       "date": "2026-08-25",
-      "title_ar": "إطلاق دورة فرح حلب — ليلة المولد مع مقاطع مولد حرة الترخيص وجدول بث احتفالي طوال اليوم",
-      "title_en": "Launched Farah Halab — Mawlid Night with CC-licensed Mawlid audio and an all-day celebratory schedule"
+      "title_ar": "إضافة دورة فرح حلب للمولد النبوي داخل نقطة نور المرئية مع بث مرئي مباشر ومواد حديثة مضمّنة من المصدر",
+      "title_en": "Added Farah Halab Mawlid takeover to Nuqtat Noor TV with live/recent source-embedded audiovisual streams"
     },
     {
       "date": "2026-08-25",
@@ -165,10 +165,10 @@
     }
   ],
   "radio_engine": "Living Broadcast Engine v1",
-  "tv_engine": "Living TV v2 — Audio Visual Harmony",
+  "tv_engine": "Living TV v2.1 — Mawlid audiovisual takeover",
   "research_expansion": "biology + universal signals + psychoactive evidence lab",
   "header_media": "Radio + TV persistent nav",
-  "focus": "Mawlid special broadcast — Farah Halab",
+  "focus": "Farah Halab Mawlid visual takeover inside Nuqtat Noor TV",
   "challenge_layer": "universal claim correction + troubleshooting",
   "open_knowledge": "covenant v1",
   "linguistics": "major galaxy",
@@ -241,8 +241,7 @@
     "resume_state_seconds": 30,
     "all_html_pages_have_radio_runtime": true,
     "spoken_andalusian_clip_in_rotation": false,
-    "source_failure_skip": true,
-    "mawlid_special_2026": true
+    "source_failure_skip": true
   },
   "persistent_radio_shell": true,
   "rebuilt_from": "4.18.22",

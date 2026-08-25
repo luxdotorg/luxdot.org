@@ -29,8 +29,11 @@ const PLANNED=[
 ['الكرنك · قاعة الأعمدة','Karnak Hypostyle Hall','Egypt deep cycle'],
 ['أبو سمبل · رمسيس الثاني','Abu Simbel · Ramesses II','Egypt deep cycle']
 ];
-const v=document.getElementById('luxdotTvVideo'),img=document.getElementById('luxdotTvImage'),title=document.getElementById('tvNowTitle'),credit=document.getElementById('tvCredit');
+const v=document.getElementById('luxdotTvVideo'),img=document.getElementById('luxdotTvImage'),embed=document.getElementById('luxdotTvEmbed'),title=document.getElementById('tvNowTitle'),credit=document.getElementById('tvCredit');
 if(!v||!img)return;
+let mawlidMode=false;
+function stopEmbed(){if(!embed)return;embed.hidden=true;embed.removeAttribute('src');mawlidMode=false;document.getElementById('tvAudioNote')&&(document.getElementById('tvAudioNote').textContent='🔊 الصوت يأتي من إذاعة نقطة نور. الفيديو المرئي صامت عمدًا حتى لا يتداخل مع البث.');}
+function playMawlid(videoId,arTitle,source){clearTimeout(timer);v.pause();v.removeAttribute('src');v.style.display='none';img.style.display='none';if(!embed)return;mawlidMode=true;embed.hidden=false;embed.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(videoId)+'?autoplay=1&rel=0&playsinline=1';title.textContent=arTitle;credit.textContent=source+' · Embedded from source';document.getElementById('tvResearchLink')&&(document.getElementById('tvResearchLink').hidden=true);document.getElementById('tvAudioNote')&&(document.getElementById('tvAudioNote').textContent='🔊 الصوت والصورة الآن من بث المولد المرئي. إذا منع المتصفح التشغيل التلقائي اضغط تشغيل داخل الفيديو.');document.querySelectorAll('[data-tv-item]').forEach(b=>b.classList.remove('active'));document.querySelectorAll('[data-mawlid-video]').forEach(b=>b.classList.toggle('active',b.dataset.mawlidVideo===videoId));}
 let i=Number(localStorage.getItem('luxdot.tv.index')||0)%SCENES.length,timer=null,lastAudio=null;
 let sceneStarted=0,lastSyncAt=0,errorStreak=0;const MIN_SCENE_MS=90000,IMAGE_SCENE_MS=120000,ERROR_RETRY_MS=12000;
 function radioProfile(s){
@@ -57,6 +60,7 @@ function paint(x){
  const link=document.getElementById('tvResearchLink');if(link){link.hidden=!x.research;if(x.research)link.href=x.research}
 }
 function load(n=i){
+ stopEmbed();
  clearTimeout(timer);sceneStarted=Date.now();i=(n+SCENES.length)%SCENES.length;localStorage.setItem('luxdot.tv.index',i);
  const x=SCENES[i],hist=JSON.parse(localStorage.getItem('luxdot.tv.history')||'{}');hist[x.id]=Date.now();localStorage.setItem('luxdot.tv.history',JSON.stringify(hist));
  v.pause();v.removeAttribute('src');v.style.display='none';img.style.display='none';img.classList.remove('kenburns');
@@ -64,12 +68,14 @@ function load(n=i){
  else{img.style.display='block';img.src=x.src;requestAnimationFrame(()=>img.classList.add('kenburns'));timer=setTimeout(()=>syncToRadio(true),IMAGE_SCENE_MS);}
  paint(x);
 }
-function syncToRadio(force=false){const now=Date.now(),state=window.LuxDotRadio?.live?.()||null,p=radioProfile(state),n=choose(p);if(!force&&now-sceneStarted<MIN_SCENE_MS)return;if(now-lastSyncAt<2500)return;lastSyncAt=now;if(force||n!==i)load(n)}
+function syncToRadio(force=false){if(mawlidMode&&!force)return;const now=Date.now(),state=window.LuxDotRadio?.live?.()||null,p=radioProfile(state),n=choose(p);if(!force&&now-sceneStarted<MIN_SCENE_MS)return;if(now-lastSyncAt<2500)return;lastSyncAt=now;if(force||n!==i)load(n)}
 v.muted=true;v.volume=0;v.addEventListener('playing',()=>{errorStreak=0});v.addEventListener('ended',()=>syncToRadio(true));v.addEventListener('error',()=>{errorStreak++;setTimeout(()=>{if(errorStreak<4)syncToRadio(true);else{errorStreak=0;load(SCENES.findIndex(x=>x.id==='night'))}},ERROR_RETRY_MS)});img.addEventListener('error',()=>setTimeout(()=>load(SCENES.findIndex(x=>x.id==='night')),ERROR_RETRY_MS));
-document.getElementById('tvPlay').onclick=()=>{if(SCENES[i].kind==='video')v.paused?v.play():v.pause()};
+document.getElementById('tvPlay').onclick=()=>{if(mawlidMode){return}if(SCENES[i].kind==='video')v.paused?v.play():v.pause()};
 document.getElementById('tvNext').onclick=()=>syncToRadio(true);
 document.getElementById('tvFull').onclick=()=>document.querySelector('.tv-frame')?.requestFullscreen?.();
-document.getElementById('tvRadio').onclick=()=>{if(window.LuxDotRadio)LuxDotRadio.toggle()};
+document.getElementById('tvRadio').onclick=()=>{if(mawlidMode)stopEmbed();if(window.LuxDotRadio)LuxDotRadio.toggle();};
+document.getElementById('tvMawlidHome')?.addEventListener('click',()=>{const b=document.querySelector('[data-mawlid-video]');if(b)b.click()});
+document.querySelectorAll('[data-mawlid-video]').forEach(b=>b.addEventListener('click',()=>playMawlid(b.dataset.mawlidVideo,b.dataset.mawlidTitle||b.textContent.trim(),b.dataset.mawlidCredit||'YouTube')));
 document.querySelectorAll('[data-tv-item]').forEach(b=>b.onclick=()=>load(SCENES.findIndex(x=>x.id===b.dataset.tvItem)));
 document.addEventListener('luxdotradio',e=>{
  const s=e.detail||{},el=document.getElementById('tvRadioNow');if(el&&s.track)el.textContent=`إذاعة نقطة نور · ${s.track.title} · ${s.track.artist}`;
