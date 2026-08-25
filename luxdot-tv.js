@@ -33,7 +33,7 @@ const v=document.getElementById('luxdotTvVideo'),img=document.getElementById('lu
 if(!v||!img)return;
 let mawlidMode=false;
 function stopEmbed(){if(!embed)return;embed.hidden=true;embed.removeAttribute('src');mawlidMode=false;document.getElementById('tvAudioNote')&&(document.getElementById('tvAudioNote').textContent='🔊 الصوت يأتي من إذاعة نقطة نور. الفيديو المرئي صامت عمدًا حتى لا يتداخل مع البث.');}
-function playMawlid(videoId,arTitle,source){clearTimeout(timer);v.pause();v.removeAttribute('src');v.style.display='none';img.style.display='none';if(!embed)return;mawlidMode=true;embed.hidden=false;embed.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(videoId)+'?autoplay=1&rel=0&playsinline=1';title.textContent=arTitle;credit.textContent=source+' · Embedded from source';document.getElementById('tvResearchLink')&&(document.getElementById('tvResearchLink').hidden=true);document.getElementById('tvAudioNote')&&(document.getElementById('tvAudioNote').textContent='🔊 الصوت والصورة الآن من بث المولد المرئي. إذا منع المتصفح التشغيل التلقائي اضغط تشغيل داخل الفيديو.');document.querySelectorAll('[data-tv-item]').forEach(b=>b.classList.remove('active'));document.querySelectorAll('[data-mawlid-video]').forEach(b=>b.classList.toggle('active',b.dataset.mawlidVideo===videoId));}
+function playMawlid(videoId,arTitle,source){clearTimeout(timer);v.pause();v.removeAttribute('src');v.style.display='none';img.style.display='none';if(!embed)return;mawlidMode=true;embed.hidden=false;embed.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(videoId)+'?autoplay=1&rel=0&playsinline=1&enablejsapi=1';title.textContent=arTitle;credit.textContent=source+' · Embedded from source';document.getElementById('tvResearchLink')&&(document.getElementById('tvResearchLink').hidden=true);document.getElementById('tvAudioNote')&&(document.getElementById('tvAudioNote').textContent='🔊 الصوت والصورة الآن من بث المولد المرئي. إذا منع المتصفح التشغيل التلقائي اضغط تشغيل داخل الفيديو.');document.querySelectorAll('[data-tv-item]').forEach(b=>b.classList.remove('active'));document.querySelectorAll('[data-mawlid-video]').forEach(b=>b.classList.toggle('active',b.dataset.mawlidVideo===videoId));}
 let i=Number(localStorage.getItem('luxdot.tv.index')||0)%SCENES.length,timer=null,lastAudio=null;
 let sceneStarted=0,lastSyncAt=0,errorStreak=0;const MIN_SCENE_MS=90000,IMAGE_SCENE_MS=120000,ERROR_RETRY_MS=12000;
 function radioProfile(s){
@@ -77,6 +77,37 @@ document.getElementById('tvRadio').onclick=()=>{if(mawlidMode)stopEmbed();if(win
 document.getElementById('tvMawlidHome')?.addEventListener('click',()=>{const b=document.querySelector('[data-mawlid-video]');if(b)b.click()});
 document.querySelectorAll('[data-mawlid-video]').forEach(b=>b.addEventListener('click',()=>playMawlid(b.dataset.mawlidVideo,b.dataset.mawlidTitle||b.textContent.trim(),b.dataset.mawlidCredit||'YouTube')));
 document.querySelectorAll('[data-tv-item]').forEach(b=>b.onclick=()=>load(SCENES.findIndex(x=>x.id===b.dataset.tvItem)));
+// TV keyboard remote: Space = mute/unmute, F = fullscreen, Esc = exit fullscreen.
+let tvMuted=false;
+function youtubeCommand(func,args=[]){
+ if(!embed||embed.hidden||!embed.contentWindow)return;
+ try{embed.contentWindow.postMessage(JSON.stringify({event:'command',func,args}),'*')}catch(e){}
+}
+function setTvMuted(muted){
+ tvMuted=!!muted;
+ const ra=window.LuxDotRadio?.audio;
+ if(ra)ra.muted=tvMuted;
+ if(mawlidMode)youtubeCommand(tvMuted?'mute':'unMute');
+ const note=document.getElementById('tvAudioNote');
+ if(note)note.dataset.keyboardMute=tvMuted?'1':'0';
+}
+function isTypingTarget(el){return !!el&&(el.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName));}
+document.addEventListener('keydown',e=>{
+ if(isTypingTarget(e.target))return;
+ if(e.code==='Space'){
+   e.preventDefault();
+   setTvMuted(!tvMuted);
+   return;
+ }
+ if(e.key==='f'||e.key==='F'){
+   e.preventDefault();
+   if(!document.fullscreenElement)document.querySelector('.tv-frame')?.requestFullscreen?.();
+   return;
+ }
+ if(e.key==='Escape'&&document.fullscreenElement){
+   document.exitFullscreen?.();
+ }
+});
 document.addEventListener('luxdotradio',e=>{
  const s=e.detail||{},el=document.getElementById('tvRadioNow');if(el&&s.track)el.textContent=`إذاعة نقطة نور · ${s.track.title} · ${s.track.artist}`;
  const key=(s.track?.id||'');if(key!==lastAudio){lastAudio=key;if(Date.now()-sceneStarted>=MIN_SCENE_MS)syncToRadio(false)}
