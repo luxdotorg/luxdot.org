@@ -1,6 +1,6 @@
 {
   "product": "LuxDot",
-  "version": "4.18.23",
+  "version": "4.18.24",
   "build_time": "2026-08-24T23:13:00+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
@@ -139,7 +139,7 @@
   "tv_engine": "Living TV v2 — Audio Visual Harmony",
   "research_expansion": "biology + universal signals + psychoactive evidence lab",
   "header_media": "Radio + TV persistent nav",
-  "focus": "continuous live radio across page navigation",
+  "focus": "Human Library + reading paths",
   "challenge_layer": "universal claim correction + troubleshooting",
   "open_knowledge": "covenant v1",
   "linguistics": "major galaxy",
@@ -215,5 +215,12 @@
     "source_failure_skip": true
   },
   "persistent_radio_shell": true,
-  "rebuilt_from": "4.18.22"
+  "rebuilt_from": "4.18.22",
+  "human_library": {
+    "foundational_books": 100,
+    "symbolic_eleven_preserved": true,
+    "empty_book_11_preserved": true,
+    "reading_paths": 4,
+    "page": "human-library.html"
+  }
 }
