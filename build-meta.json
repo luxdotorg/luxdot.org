@@ -1,11 +1,14 @@
 {
   "product": "LuxDot",
-  "version": "4.18.24",
-  "build_time": "2026-08-24T23:13:00+02:00",
+  "version": "4.18.25",
+  "build_time": "2026-08-25T07:28:00+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
   "release_type": "FULL_REPLACE",
   "features": [
+    "Letter · Number · Symbol research galaxy with five evidence-separated clusters",
+    "Buduh 3×3 Symbol Genealogy SG-001 separating mathematics, abjad, manuscripts and later folklore",
+    "Special collection gateway from Library to occult/letter-number manuscript research",
     "Brabant Sacred Memory Atlas: nine narrative-transformation trees comparing documented layers with later folklore",
     "Landing language selector redesigned as a dedicated dropdown distinct from Receive the Signal",
     "Build metadata synchronized with release number so the live version badge no longer remains on 4.18.19b",
@@ -54,6 +57,11 @@
     "css": 49
   },
   "latest_changes": [
+    {
+      "date": "2026-08-25",
+      "title_ar": "إضافة مجرة علوم الحرف والعدد والرمز وأول شجرة نَسَب للرمز: بدوح 3×3",
+      "title_en": "Added Letter · Number · Symbol galaxy and first Symbol Genealogy: Buduh 3×3"
+    },
     {
       "date": "2026-08-24",
       "title_ar": "إضافة تسع أشجار لتحول الرواية في أطلس الذاكرة المقدسة، تحويل اختيار اللغة إلى قائمة منسدلة، وإصلاح رقم الإصدار الحي",
@@ -139,7 +147,7 @@
   "tv_engine": "Living TV v2 — Audio Visual Harmony",
   "research_expansion": "biology + universal signals + psychoactive evidence lab",
   "header_media": "Radio + TV persistent nav",
-  "focus": "Human Library + reading paths",
+  "focus": "Letter · Number · Symbol research galaxy + Buduh Symbol Genealogy",
   "challenge_layer": "universal claim correction + troubleshooting",
   "open_knowledge": "covenant v1",
   "linguistics": "major galaxy",
