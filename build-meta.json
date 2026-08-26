@@ -1,26 +1,43 @@
 {
   "product": "LuxDot",
-  "version": "4.18.31",
-  "build_time": "2026-08-26T13:18:00+02:00",
+  "version": "4.18.30",
+  "build_time": "2026-08-26T12:20:00+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
   "release_type": "LIVE_PATCH",
   "features": [
-    "Homepage forces fresh v4.18.31 signal-header runtime after shared site shell",
-    "Calendar icon visible on homepage",
-    "LuxDot Pulse header label removed; pulse remains icon-only with hover/focus tooltip",
-    "Monthly Global Calendar remains default planner view"
+    "Global Calendar monthly planner with event cartridges, category colors, symbols and UN flag",
+    "Signal-first utility header: Pulse, Calendar, Search, Inquiry/Challenge and Help as icon-only controls",
+    "Primary navigation retained as textual cartouches",
+    "Global Convergence Watch with FACT / TRADITION / CONVERGENCE / HYPOTHESIS / OUTCOME"
   ],
+  "counts": {
+    "files": 1124,
+    "html": 531,
+    "js": 75,
+    "css": 50
+  },
   "latest_changes": [
     {
       "date": "2026-08-26",
-      "title_ar": "إصلاح ظهور زر الرزنامة في الصفحة الرئيسية وإزالة كتابة نبض نقطة نور من زر الإشارة",
-      "title_en": "Fixed homepage Calendar signal and removed visible LuxDot Pulse label"
+      "title_ar": "تحويل الرزنامة العالمية إلى مخطط شهري بخراطيش ملوّنة ورموز لكل تقليد أو جهة",
+      "title_en": "Converted Global Calendar into a monthly planner with colored event cartridges and category symbols"
+    },
+    {
+      "date": "2026-08-26",
+      "title_ar": "فصل خراطيش التنقل الأساسية عن أدوات الإشارة: النبض والرزنامة والبحث والاستعلام والمساعدة",
+      "title_en": "Separated textual primary navigation from icon-only Pulse, Calendar, Search, Inquiry and Help signal tools"
+    },
+    {
+      "date": "2026-08-26",
+      "title_ar": "إضافة مرصد التقاطعات العالمي ونافذة سبتمبر مع بروتوكول النتيجة",
+      "title_en": "Added Global Convergence Watch and September outcome protocol"
     }
   ],
-  "calendar": "monthly planner + homepage calendar signal",
-  "symbol_ui": "forced fresh v41831 runtime on homepage",
-  "pulse": "icon-only",
-  "media_cache_key": "41831",
-  "rebuilt_from": "4.18.30"
+  "calendar": "monthly planner + agenda + convergence highlighting",
+  "convergence_watch": "FACT / TRADITION / CONVERGENCE / HYPOTHESIS / OUTCOME",
+  "symbol_ui": "primary navigation text; utility controls icon-only with hover/focus labels",
+  "pulse": "icon-only header signal",
+  "media_cache_key": "41830",
+  "rebuilt_from": "4.18.28"
 }
