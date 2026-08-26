@@ -48,3 +48,11 @@
   .lux-header-43108 .lux-signal-strip-41832 .lux-sig32 img{width:27px!important;min-width:27px!important;max-width:27px!important;height:27px!important;min-height:27px!important;max-height:27px!important}
   .lux-header-43108 .lux-sig32-tip{display:none!important}
 }
+
+/* v4.18.38 compact utility rail */
+.lux-header-43108 .lux-signal-strip-41832{height:32px!important;min-height:32px!important;max-height:32px!important;gap:1px!important;padding:0 2px!important;margin-inline:2px!important}
+.lux-header-43108 .lux-signal-strip-41832 .lux-sig32{flex:0 0 27px!important;width:27px!important;min-width:27px!important;max-width:27px!important;height:27px!important;min-height:27px!important;max-height:27px!important;border-radius:8px!important}
+.lux-header-43108 .lux-signal-strip-41832 .lux-sig32 img,.lux-header-43108 .lux-signal-strip-41832 .lux-sig32 svg{width:22px!important;min-width:22px!important;max-width:22px!important;height:22px!important;min-height:22px!important;max-height:22px!important}
+.lux-header-43108 .lux-signal-strip-41832 .lux-sig32 .sig32-char{width:22px!important;height:22px!important;font:700 16px/22px Arial,sans-serif!important}
+.lux-header-43108 .lux-sig32-tip{font-size:9px!important;padding:4px 7px!important;border-radius:7px!important}
+@media(max-width:560px){.lux-header-43108 .lux-signal-strip-41832 .lux-sig32:nth-child(5),.lux-header-43108 .lux-signal-strip-41832 .lux-sig32:nth-child(6){display:none!important}}

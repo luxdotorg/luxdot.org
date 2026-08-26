@@ -41,3 +41,27 @@ html[dir=rtl] .lux-header-43108 .lux-lang-menu{direction:rtl!important}
  .lux-header-43108 .lux-main-nav.open{display:flex!important}
  .lux-header-43108 .lux-main-nav a{padding:10px 12px!important}
 }
+
+/* v4.18.38 — compact, ordered LuxDot shell */
+body.lux-shell-page{font-size:14px!important;padding-top:58px!important}
+.lux-header-43108 .lux-header-inner{width:min(1240px,calc(100% - 16px))!important;min-height:46px!important;margin:6px auto 0!important;gap:4px!important}
+.lux-header-43108 .lux-header-brand{font-size:14px!important;padding:7px 10px!important}
+.lux-header-43108 .lux-main-nav{gap:3px!important}
+.lux-header-43108 .lux-main-nav a{font-size:9px!important;line-height:1.15!important;padding:6px 8px!important}
+.lux-header-43108 .lux-lang-btn{min-width:48px!important;width:48px!important;height:29px!important;padding:0 6px!important;font-size:9px!important}
+.lux-header-43108 .lux-lang-menu{top:34px!important;min-width:128px!important;padding:4px!important}
+.lux-header-43108 .lux-lang-menu button{font-size:10px!important;padding:7px 9px!important}
+.lux-header-43108 .lux-menu-toggle{font-size:17px!important;padding:4px 8px!important}
+.lux-header-43108 .lux-signal-strip-41832{height:32px!important;min-height:32px!important;max-height:32px!important;gap:1px!important;padding:0 2px!important;margin-inline:2px!important}
+.lux-header-43108 .lux-signal-strip-41832 .lux-sig32{flex-basis:27px!important;width:27px!important;min-width:27px!important;max-width:27px!important;height:27px!important;min-height:27px!important;max-height:27px!important;border-radius:8px!important}
+.lux-header-43108 .lux-signal-strip-41832 .lux-sig32 img,.lux-header-43108 .lux-signal-strip-41832 .lux-sig32 svg{width:22px!important;min-width:22px!important;max-width:22px!important;height:22px!important;min-height:22px!important;max-height:22px!important}
+.lux-header-43108 .lux-signal-strip-41832 .lux-sig32 .sig32-char{width:22px!important;height:22px!important;font-size:16px!important;line-height:22px!important}
+.lux-header-43108 .lux-sig32.active{background:rgba(125,255,174,.12)!important;box-shadow:inset 0 0 0 1px rgba(125,255,174,.35)!important}
+body.lux-shell-page main h1{font-size:clamp(1.7rem,4vw,3.4rem)!important}
+body.lux-shell-page main h2{font-size:clamp(1.15rem,2.2vw,1.8rem)}
+body.lux-shell-page main h3{font-size:clamp(1rem,1.7vw,1.35rem)}
+body.lux-shell-page :is(.card,.node,.cartouche,.panel,.research-card,.memory-card){border-radius:14px!important;padding:clamp(12px,1.7vw,18px)!important}
+body.lux-shell-page :is(.tag,.chip,.pill,.badge,.status,.tags span){font-size:.67rem!important;padding:4px 7px!important}
+body.lux-shell-page :is(p,li){line-height:1.65}
+@media(max-width:1100px){.lux-header-43108 .lux-main-nav{top:43px!important;left:8px!important;right:8px!important;border-radius:12px!important;padding:5px!important}.lux-header-43108 .lux-main-nav a{padding:7px 9px!important}.lux-header-43108 .lux-menu-toggle{display:block!important}}
+@media(max-width:560px){body.lux-shell-page{padding-top:52px!important}.lux-header-43108 .lux-header-inner{width:calc(100% - 10px)!important}.lux-header-43108 .lux-header-brand{font-size:12px!important;padding:6px 8px!important}.lux-header-43108 .lux-signal-strip-41832 .lux-sig32:nth-child(5),.lux-header-43108 .lux-signal-strip-41832 .lux-sig32:nth-child(6){display:none!important}}
