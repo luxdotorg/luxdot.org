@@ -1,60 +1,15 @@
 {
   "product": "LuxDot",
-  "version": "4.18.28",
-  "build_time": "2026-08-25T14:10:00+02:00",
+  "version": "4.18.30",
+  "build_time": "2026-08-26T12:20:00+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
-  "release_type": "FULL_REPLACE",
+  "release_type": "LIVE_PATCH",
   "features": [
-    "Farah Halab — Mawlid visual takeover inside Nuqtat Noor TV with embedded live/recent audiovisual sources",
-    "Site-wide Cosmic Matrix visual system matching the approved LuxDot Radio concept",
-    "Unified compact pill header with LuxDot Pulse placed inline immediately after Projects",
-    "Consistent neon-green/gold cards, controls, panels and responsive RTL/LTR treatment across the site",
-    "Symbol Genealogy SG-002: 4×4 wafq with mathematical/historical evidence separation",
-    "Symbol Genealogy SG-003: 28 Arabic letters × 28 lunar mansions investigation matrix",
-    "Letter · Number · Symbol research galaxy with five evidence-separated clusters",
-    "Buduh 3×3 Symbol Genealogy SG-001 separating mathematics, abjad, manuscripts and later folklore",
-    "Special collection gateway from Library to occult/letter-number manuscript research",
-    "Brabant Sacred Memory Atlas: nine narrative-transformation trees comparing documented layers with later folklore",
-    "Landing language selector redesigned as a dedicated dropdown distinct from Receive the Signal",
-    "Build metadata synchronized with release number so the live version badge no longer remains on 4.18.19b",
-    "Global cache-bust for live-development.js references",
-    "Arabic surface policy: نقطة نور across Arabic UI, original personal names retained beside Arabic when useful",
-    "Updated نبض نقطة نور daily pulse methodology",
-    "Deepened 23 August slave-trade remembrance node",
-    "Four-hour Aug 23 Christian radio cycle repeating six times",
-    "Separate filterable World Calendar for major religious/global/astronomical events",
-    "Research Sky ESC clear + hover preview interaction",
-    "LuxDot Knowledge Experience v4.15",
-    "Research Node Standard PREVIEW dock on research nodes",
-    "Evidence Engine with source inventory and non-binding source-class suggestions",
-    "Timestamped Executive Report generator with SHA-256 fingerprint",
-    "Structured Challenge Research export/copy workflow",
-    "Knowledge Graph generated from actual internal links",
-    "Related Nodes generated from graph",
-    "10-second Home start-path gateway",
-    "Central typography scale with display/standard/knowledge density modes",
-    "Research cluster organizer + project launch-sequence navigator + removed Ismaili floating review button",
-    "Standalone What does LuxDot stand for? public gateway page",
-    "LuxDot Research Standard v0.1 theoretical-preview schema and non-enforcing laboratory",
-    "LuxDot Philosophy + Research Method + 12-principle Charter gateway",
-    "Floating cartouche-only header; search last; Humanity & Meaning first",
-    "Dynamic global version badge; legacy Kufi/i18n repair; GitHub Pages no-Jekyll marker",
-    "Deployment-aware live version detection and cache-busting",
-    "Alawi/Nusayri history, doctrine and source-audit research node",
-    "Ismaili Qāʾim/Mahdi text-level source dossier",
-    "Living 365 calendar: current year generated at runtime",
-    "Live development manifest and GitHub commit status",
-    "Research Executive Report fingerprints",
-    "Live Research header/cartouche naming parity",
-    "Global compact typography and UI scale",
-    "Research lenses directly above the visualization",
-    "Pointer-adjacent Google-Maps-style research node hover cards",
-    "Realistic Milky Way research sky",
-    "JWST-style deep-universe research lens",
-    "Human-neural-network research lens",
-    "Motherboard/circuit research lens",
-    "GitHub Pages CNAME preserved in every FULL REPLACE"
+    "Global Calendar monthly planner with event cartridges, category colors, symbols and UN flag",
+    "Signal-first utility header: Pulse, Calendar, Search, Inquiry/Challenge and Help as icon-only controls",
+    "Primary navigation retained as textual cartouches",
+    "Global Convergence Watch with FACT / TRADITION / CONVERGENCE / HYPOTHESIS / OUTCOME"
   ],
   "counts": {
     "files": 1124,
@@ -64,192 +19,25 @@
   },
   "latest_changes": [
     {
-      "date": "2026-08-25",
-      "title_ar": "إضافة دورة فرح حلب للمولد النبوي داخل نقطة نور المرئية مع بث مرئي مباشر ومواد حديثة مضمّنة من المصدر",
-      "title_en": "Added Farah Halab Mawlid takeover to Nuqtat Noor TV with live/recent source-embedded audiovisual streams"
+      "date": "2026-08-26",
+      "title_ar": "تحويل الرزنامة العالمية إلى مخطط شهري بخراطيش ملوّنة ورموز لكل تقليد أو جهة",
+      "title_en": "Converted Global Calendar into a monthly planner with colored event cartridges and category symbols"
     },
     {
-      "date": "2026-08-25",
-      "title_ar": "تطبيق هوية Cosmic Matrix على الموقع وتثبيت نبض نقطة نور داخل الهيدر بعد المشاريع",
-      "title_en": "Applied Cosmic Matrix visual system site-wide and fixed LuxDot Pulse inline after Projects"
+      "date": "2026-08-26",
+      "title_ar": "فصل خراطيش التنقل الأساسية عن أدوات الإشارة: النبض والرزنامة والبحث والاستعلام والمساعدة",
+      "title_en": "Separated textual primary navigation from icon-only Pulse, Calendar, Search, Inquiry and Help signal tools"
     },
     {
-      "date": "2026-08-25",
-      "title_ar": "إضافة SG-002 للوفق 4×4 وSG-003 لمصفوفة 28 حرفًا × 28 منزلة قمرية",
-      "title_en": "Added SG-002 4×4 wafq genealogy and SG-003 28 letters × 28 lunar mansions investigation matrix"
-    },
-    {
-      "date": "2026-08-25",
-      "title_ar": "إضافة مجرة علوم الحرف والعدد والرمز وأول شجرة نَسَب للرمز: بدوح 3×3",
-      "title_en": "Added Letter · Number · Symbol galaxy and first Symbol Genealogy: Buduh 3×3"
-    },
-    {
-      "date": "2026-08-24",
-      "title_ar": "إضافة تسع أشجار لتحول الرواية في أطلس الذاكرة المقدسة، تحويل اختيار اللغة إلى قائمة منسدلة، وإصلاح رقم الإصدار الحي",
-      "title_en": "Added nine narrative-transformation trees to the Sacred Memory Atlas, redesigned landing language selection as a dropdown, and fixed live version metadata"
-    },
-    {
-      "date": "2026-08-22",
-      "title_ar": "تعزيز تدقيق السطح العربي وتثبيت اسم نقطة نور",
-      "title_en": "Strengthened Arabic-surface normalization and audit"
-    },
-    {
-      "date": "2026-08-22",
-      "title_ar": "توحيد الاسم العربي إلى نقطة نور، تحديث النبض والراديو والرزنامة، وإصلاح تفاعل سماء الأبحاث",
-      "title_en": "Arabic naming, Pulse/Radio/Calendar refresh and Research Sky interaction repair"
-    },
-    {
-      "date": "2026-08-22",
-      "title_ar": "إطلاق تجربة المعرفة v4.15: معيار العقدة، الأدلة، التقرير، الاعتراض، والخريطة المعرفية",
-      "title_en": "Knowledge Experience v4.15: node standard, evidence, report, challenge and knowledge graph"
-    },
-    {
-      "date": "2026-08-22",
-      "title_ar": "توحيد أحجام الخطوط وتقليل كثافة العناوين في صفحات المعرفة",
-      "title_en": "Central typography pass with denser knowledge pages"
-    },
-    {
-      "date": "2026-08-22",
-      "title_ar": "تنظيم الأبحاث بعناقيد وإضافة تسلسل إطلاق للمشاريع وإزالة زر مراجعة الإسماعيلية العائم",
-      "title_en": "Clustered research discovery, project launch sequence view, removed floating Ismaili review button"
-    },
-    {
-      "date": "2026-08-22",
-      "title_ar": "إضافة صفحة تعريف مستقلة: ما هي LuxDot وماذا تمثل وماذا تفعل؟",
-      "title_en": "Added standalone What does LuxDot stand for? public gateway"
-    },
-    {
-      "date": "2026-08-22",
-      "title_ar": "بناء معيار LuxDot للبحث كبنية تقنية نظرية غير مفعلة على العقد",
-      "title_en": "Built LuxDot Research Standard as a technical theoretical preview without enforcing it on research nodes"
-    },
-    {
-      "date": "2026-08-22",
-      "title_ar": "إضافة فلسفة LuxDot ومنهج البحث الحي والميثاق كبوابة فوق المكتبة",
-      "title_en": "Added LuxDot Philosophy, Living Research Method and Charter gateway"
-    },
-    {
-      "date": "2026-08-22",
-      "title_ar": "هيدر خراطيش مستقل ونقل الإنسان والمعنى للأعلى",
-      "title_en": "Floating cartouche header and Humanity & Meaning promoted"
-    },
-    {
-      "date": "2026-08-22",
-      "title_ar": "إزالة رقم الإصدار الثابت وإصلاح Kufi/i18n للصفحات البحثية القديمة",
-      "title_en": "Removed stale hard-coded version and repaired legacy Kufi/i18n coverage"
-    },
-    {
-      "date": "2026-08-22",
-      "title_ar": "إصلاح كشف الإصدار الحي ومقارنة الإنتاج مع main ومنع كاش ملفات الحالة",
-      "title_en": "Fixed live version detection, production/main mismatch reporting, and critical status caching"
-    },
-    {
-      "date": "2026-08-22",
-      "title_ar": "إضافة ملف بحث علوي/نُصيري بمراجعة النصوص والمصادر والهوية المعاصرة",
-      "title_en": "Added Alawi/Nusayri source-audit and modern-identity research node"
-    },
-    {
-      "date": "2026-08-22",
-      "title_ar": "توسيع ملف الإسماعيلية إلى مستوى النصوص والتحقيقات",
-      "title_en": "Ismaili dossier deepened to text/edition level"
-    },
-    {
-      "date": "2026-08-22",
-      "title_ar": "تحويل LuxDot 365 إلى رزنامة حية غير مربوطة بسنة 2026",
-      "title_en": "LuxDot 365 made year-independent and live"
-    },
-    {
-      "date": "2026-08-22",
-      "title_ar": "إضافة حالة تطوير حيّة تربط النسخة المنشورة بآخر commit عام",
-      "title_en": "Added live deployment/build status"
+      "date": "2026-08-26",
+      "title_ar": "إضافة مرصد التقاطعات العالمي ونافذة سبتمبر مع بروتوكول النتيجة",
+      "title_en": "Added Global Convergence Watch and September outcome protocol"
     }
   ],
-  "radio_engine": "Living Broadcast Engine v1",
-  "tv_engine": "Living TV v2.1 — Mawlid audiovisual takeover",
-  "research_expansion": "biology + universal signals + psychoactive evidence lab",
-  "header_media": "Radio + TV persistent nav",
-  "focus": "Farah Halab Mawlid visual takeover inside Nuqtat Noor TV",
-  "challenge_layer": "universal claim correction + troubleshooting",
-  "open_knowledge": "covenant v1",
-  "linguistics": "major galaxy",
-  "media_stability": "radio backoff + audio unlock + TV scene hold",
-  "calendar": "Aug 24/25/28 contextual layers",
-  "hotfix": "radio local fallback + remove CORS + cache bust + TV 60s minimum",
-  "media_cache_key": "41828",
-  "ui": "Cosmic Matrix site-wide visual system; compact pill navigation; neon green + gold",
-  "symbol_ui": "multilingual hover labels + aria labels",
-  "claim_actions": "correct + challenge + report",
-  "pulse": "inline header pill immediately after projects; no detached oversized floating control",
-  "radio_scheduler": "daypart-first; weekday faith identity no longer hijacks playlist",
-  "radio_free_music": "muwashshah + Andalusian Commons tracks",
-  "licensed_slots": "auto-detect Fairuz/Umm Kulthum/Qudud local licensed files",
-  "science_update": "deep ketamine dossier + pioneers/transformers atlas + 7 rich profile cartridges",
-  "transformers_count": 200,
-  "transformer_domains": 15,
-  "atlas": "civilization-transformers-atlas.html",
-  "living_transformer_dossiers": 243,
-  "philosophy_path": "sufi-scholar-philosophy-path.html",
-  "philosophers": 58,
-  "prophet_story_cards": 25,
-  "prophet_method": "common-ground first; tradition-attributed differences",
-  "additional_prophetic_figures": 26,
-  "total_active_prophetic_story_pages": 51,
-  "prophetic_atlas": "prophetic-traditions-atlas.html",
-  "prophet_graphs": [
-    "genealogy",
-    "relations",
-    "timeline"
-  ],
-  "prophet_graph_page": "prophets-genealogy-timeline.html",
-  "research": "shin-sin-sacred-boundary.html",
-  "research_pairs": 11,
-  "wasim_cluster": "wasim-name-mark-identity.html",
-  "wasim_deep_trace": true,
-  "semitic_sibilants_model": "s1/s2/s3",
-  "wasim_cluster_status": "W-S-M, Š-M, and R-S-M/R-Š-M kept distinct pending evidence",
-  "cleanup_baseline": true,
-  "prophet_nested_assets_fixed": true,
-  "radio_time_signal": "Gong Ageng",
-  "radio_ident_ar": "هنا الشام. الساعة الآن [HH:MM] بتوقيت الشام. أنتم تستمعون إلى البث المباشر لإذاعة لوكسدوت — نقطة نور، من الشام.",
-  "tv_min_scene_seconds": 90,
-  "html_pages_audited": 523,
-  "supported_languages": [
-    "ar",
-    "en",
-    "nl",
-    "he",
-    "jv",
-    "id",
-    "fr",
-    "es",
-    "de",
-    "tr"
-  ],
-  "prophet_pages_cleaned": 51,
-  "structural_language_issues_remaining": 0,
-  "arabic_static_ui_pages_repaired": 265,
-  "final_arabic_kicker_repairs": 4,
-  "typography": {
-    "latin": "IBM Plex Sans",
-    "arabic": "IBM Plex Sans Arabic",
-    "hebrew": "IBM Plex Sans Hebrew",
-    "delivery": "Fontsource packages via jsDelivr",
-    "pages_injected": 523
-  },
-  "radio": {
-    "wall_clock_live_schedule": true,
-    "resume_state_seconds": 30,
-    "all_html_pages_have_radio_runtime": true,
-    "spoken_andalusian_clip_in_rotation": false,
-    "source_failure_skip": true
-  },
-  "persistent_radio_shell": true,
-  "rebuilt_from": "4.18.22",
-  "human_library": {
-    "foundational_books": 100,
-    "symbolic_eleven_preserved": true,
-    "empty_book_11_preserved": true,
-    "reading_paths": 4,
-    "page": "human-library.html"
-  }
+  "calendar": "monthly planner + agenda + convergence highlighting",
+  "convergence_watch": "FACT / TRADITION / CONVERGENCE / HYPOTHESIS / OUTCOME",
+  "symbol_ui": "primary navigation text; utility controls icon-only with hover/focus labels",
+  "pulse": "icon-only header signal",
+  "media_cache_key": "41830",
+  "rebuilt_from": "4.18.28"
 }

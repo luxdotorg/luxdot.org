@@ -1,13 +1,11 @@
-LIVE PATCH — LuxDot v4.18.30
-Built on current main commit: f4896ccfb16ed17d16a35b1ebf5798fb5e9105f5
+VERSION HOTFIX — v4.18.30
 
-REPLACE at repository root:
-- luxdot-symbol-ui.js
-- luxdot-symbol-ui.css
-- world-calendar.html
+Root cause:
+The live badge reads /build-meta.json. Main already contains the v4.18.30 code,
+but build-meta.json was still declaring 4.18.28.
 
-ADD:
-- CHANGELOG_v4_18_30.md
+Replace ONLY:
+- build-meta.json
 
-Do not replace or delete any other files.
-After deploy, hard-refresh once if Cloudflare/browser still serves cached symbol-ui assets.
+After push/deploy the existing live-development.js fetches build-meta.json with cache:no-store,
+so the badge should update to LuxDot · v4.18.30 automatically.
