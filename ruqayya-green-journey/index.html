@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>رحلة رقية — Rokaya Alhajji | أينما حلّت أزهرت</title>
+  <meta name="description" content="خريطة تفاعلية لرحلة رقية محمد الحجي — Rokaya Alhajji، بنت فطوم تيت.">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#f4edda;color:#263c29}body{font-family:"IBM Plex Sans Arabic","Noto Kufi Arabic",Tahoma,Arial,sans-serif}.page{min-height:100vh;padding:24px;background:radial-gradient(circle at 12% 8%,#fffaf0 0,transparent 28%),linear-gradient(145deg,#f6f0df,#e8efdc)}header{max-width:1080px;margin:0 auto 16px;text-align:center}.name{margin:0 0 7px;color:#7a5e3f;font-size:14px}.name-en{direction:ltr;unicode-bidi:isolate}h1{margin:0;color:#244d31;font-size:clamp(36px,6vw,70px);line-height:1.2}.sub{margin:8px auto 0;color:#5c6658;font-size:clamp(14px,2vw,18px)}.map-shell{position:relative;max-width:1180px;height:min(74vh,850px);min-height:590px;margin:auto;overflow:hidden;border:1px solid rgba(96,83,54,.32);border-radius:28px;background:#dbe8dc;box-shadow:0 22px 60px rgba(49,63,43,.18)}#map{width:100%;height:100%;direction:ltr}.actions{position:absolute;z-index:1000;top:16px;left:16px;display:flex;gap:8px;direction:rtl}.actions button{cursor:pointer;border:1px solid rgba(52,79,51,.25);border-radius:999px;padding:9px 14px;color:#24452e;background:rgba(255,252,241,.95);box-shadow:0 4px 12px rgba(34,50,31,.12);font:inherit}.legend{position:absolute;z-index:800;right:16px;bottom:22px;display:flex;flex-wrap:wrap;gap:12px;max-width:calc(100% - 32px);padding:9px 14px;border-radius:999px;background:rgba(255,252,241,.91);color:#3f553f;font-size:12px;box-shadow:0 4px 14px rgba(34,50,31,.1)}.myth{max-width:900px;margin:16px auto 0;text-align:center;color:#536450;font-size:14px;line-height:2}.place-marker{background:transparent!important;border:0!important}.place-dot{position:absolute;left:-7px;top:-7px;width:14px;height:14px;border:3px solid #fffaf0;border-radius:50%;background:#2d5937;box-shadow:0 1px 5px rgba(20,43,27,.4)}.place-label{position:absolute;left:9px;top:-24px;width:max-content;min-width:74px;padding:6px 9px;border:1px solid rgba(58,86,55,.2);border-radius:10px;text-align:center;line-height:1.15;background:rgba(255,252,241,.94);box-shadow:0 3px 10px rgba(33,50,31,.15);color:#29472f}.place-label strong,.place-label span{display:block;white-space:nowrap}.place-label strong{font-size:13px}.place-label span{margin-top:3px;color:#6a705f;font:11px/1.1 Arial,sans-serif}.plant-marker{display:grid!important;place-items:center;background:transparent!important;border:0!important;font-size:18px;filter:drop-shadow(0 1px 1px rgba(255,255,255,.9))}.popup{min-width:120px;text-align:center}.clean{padding:0;background:#eef1df}.clean header,.clean .myth{display:none}.clean .map-shell{width:100vw;max-width:none;height:100vh;min-height:100vh;border:0;border-radius:0;box-shadow:none}@media(max-width:700px){.page{padding:10px}.map-shell{height:76vh;min-height:540px;border-radius:18px}.actions{top:10px;left:10px;flex-direction:column;align-items:flex-start}.legend{right:10px;bottom:10px;border-radius:16px;gap:8px}.place-label strong{font-size:12px}}
+  </style>
+</head>
+<body>
+  <main class="page" id="page">
+    <header>
+      <p class="name">رقية محمد الحجي، بنت فطوم تيت · <span class="name-en">Rokaya Alhajji</span></p>
+      <h1>أينما حلّت… أزهرت</h1>
+      <p class="sub">خريطة رحلة أمّي، من بيانون إلى البيوت التي صنعت فيها جنّتها الخاصة</p>
+    </header>
+    <section class="map-shell" aria-label="خريطة رحلة رقية محمد الحجي">
+      <div id="map"></div>
+      <div class="actions"><button id="reset">إظهار الرحلة كاملة</button><button id="clean">وضع لقطة الشاشة</button></div>
+      <div class="legend"><span>🌿 المسار</span><span>🌸 أثرها المزهر</span><span>● مدينة عاشت فيها</span></div>
+    </section>
+    <p class="myth">في ميثولوجيتنا العائلية، حملت رقية سرّ الزهرة عبر خطّ الأمهات؛ فكانت الأرض تزهر تحت يديها أينما حلّت.</p>
+  </main>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const places={baynoun:{ar:"بيانون — شمال حلب",en:"Baynoun — North Aleppo",lat:36.36,lng:37.03},aleppo:{ar:"حلب",en:"Aleppo",lat:36.20,lng:37.16},homs:{ar:"حمص",en:"Homs",lat:34.73,lng:36.72},damascus:{ar:"دمشق — الشام",en:"Damascus",lat:33.51,lng:36.28},sidon:{ar:"صيدا",en:"Sidon",lat:33.56,lng:35.37},riyadh:{ar:"الرياض",en:"Riyadh",lat:24.71,lng:46.68},medina:{ar:"المدينة المنوّرة",en:"Medina",lat:24.47,lng:39.61},mecca:{ar:"مكة المكرّمة",en:"Mecca",lat:21.42,lng:39.83},gaziantep:{ar:"غازي عنتاب",en:"Gaziantep",lat:37.07,lng:37.38},osnabruck:{ar:"أوسنابروك",en:"Osnabrück",lat:52.28,lng:8.05},chaam:{ar:"شام",en:"Chaam",lat:51.50,lng:4.86}};
+    const south=["baynoun","aleppo","homs","damascus","sidon","riyadh","medina","mecca"],north=["baynoun","gaziantep","osnabruck","chaam"];
+    const map=L.map("map",{zoomControl:true,attributionControl:true,preferCanvas:true});
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:18,attribution:"© OpenStreetMap contributors"}).addTo(map);
+    const ll=keys=>keys.map(k=>[places[k].lat,places[k].lng]),style={color:"#285d3b",weight:5,opacity:.9,lineCap:"round",lineJoin:"round"};
+    L.polyline(ll(south),style).addTo(map);L.polyline(ll(north),style).addTo(map);
+    function flowers(keys){let n=0;keys.slice(0,-1).forEach((k,j)=>{const a=places[k],b=places[keys[j+1]],dist=Math.hypot(b.lat-a.lat,b.lng-a.lng),steps=Math.max(2,Math.min(13,Math.ceil(dist/2.4)));for(let i=1;i<steps;i++){const t=i/steps,icon=(n++ + j)%4===0?"🌸":"🌿";L.marker([a.lat+(b.lat-a.lat)*t,a.lng+(b.lng-a.lng)*t],{interactive:false,icon:L.divIcon({className:"plant-marker",html:`<span>${icon}</span>`,iconSize:[24,24],iconAnchor:[12,12]})}).addTo(map)}})}
+    flowers(south);flowers(north);
+    Object.values(places).forEach(p=>{const html=`<span class="place-dot"></span><div class="place-label" dir="rtl"><strong>${p.ar}</strong><span dir="ltr">${p.en}</span></div>`;L.marker([p.lat,p.lng],{icon:L.divIcon({className:"place-marker",html,iconSize:[1,1],iconAnchor:[0,0]})}).addTo(map).bindPopup(`<div class="popup" dir="rtl"><b>${p.ar}</b><br><span dir="ltr">${p.en}</span><br><small>${p.lat.toFixed(2)}, ${p.lng.toFixed(2)}</small></div>`) });
+    const bounds=Object.values(places).map(p=>[p.lat,p.lng]);function fit(){map.fitBounds(bounds,{padding:[45,45]})}fit();
+    document.getElementById("reset").onclick=fit;document.getElementById("clean").onclick=()=>{const page=document.getElementById("page"),button=document.getElementById("clean");page.classList.toggle("clean");button.textContent=page.classList.contains("clean")?"إظهار العنوان":"وضع لقطة الشاشة";setTimeout(()=>{map.invalidateSize();fit()},100)};
+  </script>
+</body>
+</html>
