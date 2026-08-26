@@ -1,43 +1,27 @@
 {
   "product": "LuxDot",
-  "version": "4.18.30",
-  "build_time": "2026-08-26T12:20:00+02:00",
+  "version": "4.18.33",
+  "build_time": "2026-08-26T14:40:00+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
-  "release_type": "LIVE_PATCH",
+  "release_type": "FULL_REPLACE",
   "features": [
-    "Global Calendar monthly planner with event cartridges, category colors, symbols and UN flag",
-    "Signal-first utility header: Pulse, Calendar, Search, Inquiry/Challenge and Help as icon-only controls",
-    "Primary navigation retained as textual cartouches",
-    "Global Convergence Watch with FACT / TRADITION / CONVERGENCE / HYPOTHESIS / OUTCOME"
+    "Iframe-safe bounded signal header on Home",
+    "Pulse, Calendar, Search, Inquiry and Help are icon-only utility signals",
+    "Primary navigation restored to textual cartouches",
+    "Global Calendar monthly planner retained",
+    "Independent LuxDot Hypotheses section",
+    "Philadelphia Experiment failure-and-document-manipulation hypothesis"
   ],
-  "counts": {
-    "files": 1124,
-    "html": 531,
-    "js": 75,
-    "css": 50
-  },
   "latest_changes": [
     {
       "date": "2026-08-26",
-      "title_ar": "تحويل الرزنامة العالمية إلى مخطط شهري بخراطيش ملوّنة ورموز لكل تقليد أو جهة",
-      "title_en": "Converted Global Calendar into a monthly planner with colored event cartridges and category symbols"
-    },
-    {
-      "date": "2026-08-26",
-      "title_ar": "فصل خراطيش التنقل الأساسية عن أدوات الإشارة: النبض والرزنامة والبحث والاستعلام والمساعدة",
-      "title_en": "Separated textual primary navigation from icon-only Pulse, Calendar, Search, Inquiry and Help signal tools"
-    },
-    {
-      "date": "2026-08-26",
-      "title_ar": "إضافة مرصد التقاطعات العالمي ونافذة سبتمبر مع بروتوكول النتيجة",
-      "title_en": "Added Global Convergence Watch and September outcome protocol"
+      "title_ar": "إصلاح آمن لهيدر الصفحة الرئيسية داخل player-shell مع حدود صارمة لأحجام الرموز",
+      "title_en": "Iframe-safe homepage signal header with hard icon size bounds"
     }
   ],
-  "calendar": "monthly planner + agenda + convergence highlighting",
-  "convergence_watch": "FACT / TRADITION / CONVERGENCE / HYPOTHESIS / OUTCOME",
-  "symbol_ui": "primary navigation text; utility controls icon-only with hover/focus labels",
-  "pulse": "icon-only header signal",
-  "media_cache_key": "41830",
-  "rebuilt_from": "4.18.28"
+  "calendar": "monthly planner + safe calendar header signal",
+  "pulse": "icon-only bounded header signal",
+  "media_cache_key": "41832",
+  "rebuilt_from": "4.18.32"
 }

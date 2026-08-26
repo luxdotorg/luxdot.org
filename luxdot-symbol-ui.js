@@ -3,129 +3,89 @@
 'use strict';
 const BASE='assets/icons/luxdot-symbols/';
 const I={
+ home:'home.svg',
+ library:'library.svg',
+ faith:'traditions.svg',
+ memory:'memory.svg',
+ research:'research.svg',
+ signal:'signal.svg',
+ radio:'radio.svg',
+ tv:'tv.svg',
+ media:'signal.svg',
+ projects:'projects.svg',
+ engineering:'engineering.svg',
+ language:'language-switch.svg',
+ info:'info.svg',
+ correct:'correct.svg',
+ challenge:'challenge.svg',
+ report:'report.svg',
+ certificate:'living-book.svg',
+ atlas:'atlas.svg',
+ knowledge:'knowledge.svg',
+ investigation:'investigation.svg',
  calendar:'calendar.svg',
- search:'investigation.svg',
- inquiry:'challenge.svg',
- info:'info.svg'
+ livingBook:'living-book.svg',
+ creativity:'creativity.svg'
 };
 const A={
  ar:{
-  calendar:['الرزنامة العالمية','افتح الرزنامة الشهرية والتقاطعات'],
-  search:['البحث','ابحث في كل LuxDot'],
-  inquiry:['استعلام / اعتراض','اسأل أو اعترض على استنتاج أو مصدر'],
-  info:['مساعدة / تعريف','ما هي LuxDot وكيف تستخدمها'],
-  pulse:['نبض نقطة نور','الشفافية والقياس الحي']
+  home:['الرئيسية','العودة إلى الصفحة الرئيسية'],library:['المكتبة','المكتبة والكتب'],
+  faith:['التقاليد والأديان','التقاليد والأديان والمعتقدات'],memory:['الذاكرة','الذاكرة الحية'],
+  research:['الأبحاث الحية','البحث العلمي وسماء المعرفة'],signal:['الإشارة','المرصد والإشارة'],
+  radio:['إذاعة نقطة نور','البث الصوتي من الشام'],tv:['نقطة نور المرئية','البث المرئي'],
+  media:['الإشارة','المرصد والإشارة والوسائط'],projects:['المشاريع','مشاريع LuxDot والبناء'],
+  engineering:['الهندسة','المشاريع والهندسة'],language:['اللغة','تغيير اللغة'],
+  info:['التعريف','تعريف LuxDot'],correct:['تصحيح','تصحيح معلومة أو مصدر'],
+  challenge:['اعتراض','اعتراض منهجي على استنتاج أو فرضية'],report:['تبليغ','إبلاغ عن خلل أو رابط أو مشكلة'],
+  certificate:['الشهادة','الشهادة أو التقرير'],atlas:['الأطلس','الخرائط والأطالس'],
+  knowledge:['شبكة المعرفة','العلاقات بين العقد'],investigation:['البحث والتقصي','فحص الأدلة والمصادر'],
+  calendar:['الرزنامة','هوية اليوم والوقت'],livingBook:['الكتاب الحي','الكتاب الحي'],
+  creativity:['الإبداع','الأفكار والابتكار']
  },
  en:{
-  calendar:['Global Calendar','Open the monthly calendar and convergence watch'],
-  search:['Search','Search all LuxDot'],
-  inquiry:['Inquiry / Challenge','Ask or challenge a claim or source'],
-  info:['Help / About','What LuxDot is and how to use it'],
-  pulse:['LuxDot Pulse','Live transparency and measurement']
+  home:['Home','Home'],library:['Library','Library and books'],faith:['Traditions & Faiths','Faiths and traditions'],
+  memory:['Memory','Living memory'],research:['Live Research','Science and research observatory'],signal:['Signal','Observatory and signal'],
+  radio:['LuxDot Radio','Live audio from Chaam'],tv:['LuxDot TV','Visual channel'],media:['Signal','Signal and media'],
+  projects:['Projects','LuxDot projects'],engineering:['Engineering','Engineering projects'],language:['Language','Change language'],
+  info:['About','About LuxDot'],correct:['Correct','Correct a claim or source'],challenge:['Challenge','Challenge an inference'],
+  report:['Report','Report a bug or broken link'],certificate:['Certificate','Certificate or report'],atlas:['Atlas','Maps and atlases'],
+  knowledge:['Knowledge Network','Connected knowledge'],investigation:['Research','Evidence investigation'],
+  calendar:['Calendar','Today and time'],livingBook:['Living Book','The Living Book'],creativity:['Creativity','Ideas and innovation']
  }
 };
-function lang(){return (new URLSearchParams(location.search).get('lang')||localStorage.getItem('luxdot.lang')||document.documentElement.lang||'ar').toLowerCase()}
-function tx(k){return (A[lang()]||A.en)[k]||A.en[k]}
-function depth(){return Math.max(0,location.pathname.split('/').filter(Boolean).length-1)}
-function root(){return '../'.repeat(depth())}
-function withLang(file){const u=new URL(root()+file,location.href);u.searchParams.set('lang',lang());return u.pathname+u.search+u.hash}
-function icon(key,label,desc){
- const src=root()+BASE+I[key];
+function lang(){return (new URLSearchParams(location.search).get('lang')||document.documentElement.lang||'ar').toLowerCase()}
+function tx(k){return (A[lang()]||A.en)[k]||(A.en[k]||[k,k])}
+function keyFromHref(href){
+ const p=(href||'').split('?')[0].split('#')[0],f=p.split('/').pop();
+ const m={'index.html':'home','home.html':'home','library.html':'library','faith.html':'faith','memory.html':'memory',
+ 'research.html':'research','radio.html':'radio','tv.html':'tv','media.html':'media','projects.html':'projects',
+ 'calendar.html':'calendar','world-calendar.html':'calendar','knowledge-graph.html':'knowledge','visual-library.html':'atlas',
+ 'what-is-luxdot.html':'info'};
+ return m[f]||null;
+}
+function iconHTML(key,label,desc){
+ const src=BASE+(I[key]||I.info);
  return `<img class="lux-color-icon" src="${src}" alt="" aria-hidden="true"><span class="lux-symbol-tooltip" role="tooltip"><b>${label}</b><small>${desc}</small></span>`;
 }
-function setupButton(el,key){
- if(!el)return;
- const [label,desc]=tx(key);
- el.classList.add('lux-symbol-nav','lux-color-nav','lux-signal-action');
- el.setAttribute('aria-label',label);el.setAttribute('title',label);
- if(key==='pulse'){
-   const img=el.querySelector('img');
-   el.querySelectorAll('.lux-pulse-label').forEach(x=>x.remove());
-   if(!el.querySelector('.lux-symbol-tooltip')){
-     el.insertAdjacentHTML('beforeend',`<span class="lux-symbol-tooltip" role="tooltip"><b>${label}</b><small>${desc}</small></span>`);
-   } else {
-     const b=el.querySelector('.lux-symbol-tooltip b'),s=el.querySelector('.lux-symbol-tooltip small');
-     if(b)b.textContent=label;if(s)s.textContent=desc;
-   }
- }else{
-   el.innerHTML=icon(key,label,desc);
- }
-}
-function boot(){
- const header=document.querySelector('.lux-header-43108,header.top,header.site-header');
- if(!header)return;
- const inner=header.querySelector('.lux-header-inner,.topin,.wrap')||header;
-
- // IMPORTANT: primary navigation stays textual/cartouche-based.
- header.querySelectorAll('.lux-main-nav a').forEach(a=>{
-   a.classList.remove('lux-symbol-nav','lux-color-nav','lux-signal-action');
-   if(a.dataset.luxOriginalLabel) a.textContent=a.dataset.luxOriginalLabel;
+function decorateHeader(){
+ document.querySelectorAll('.lux-main-nav a, header nav a, .site-header nav a').forEach(a=>{
+  const key=keyFromHref(a.getAttribute('href'));if(!key)return;
+  const [label,desc]=tx(key);a.classList.add('lux-symbol-nav','lux-color-nav');
+  a.setAttribute('aria-label',label);a.setAttribute('title',label);a.innerHTML=iconHTML(key,label,desc);
  });
-
- let strip=header.querySelector('.lux-signal-strip');
- if(!strip){
-   strip=document.createElement('div');
-   strip.className='lux-signal-strip';
-   strip.setAttribute('aria-label',lang()==='ar'?'أدوات الإشارة':'Signal tools');
-   const language=header.querySelector('.lux-language');
-   if(language)inner.insertBefore(strip,language); else inner.appendChild(strip);
- }
-
- // Calendar icon
- if(!strip.querySelector('[data-lux-signal="calendar"]')){
-   const [label,desc]=tx('calendar');
-   const a=document.createElement('a');
-   a.dataset.luxSignal='calendar';a.href=withLang('world-calendar.html');
-   a.className='lux-symbol-nav lux-color-nav lux-signal-action';
-   a.setAttribute('aria-label',label);a.setAttribute('title',label);
-   a.innerHTML=icon('calendar',label,desc);
-   strip.appendChild(a);
- }
-
- // Move/decorate global search into the signal strip.
- const search=header.querySelector('.lux-search-open');
- if(search){
-   search.dataset.luxSignal='search';
-   setupButton(search,'search');
-   strip.appendChild(search);
-   const wrap=header.querySelector('.lux-global-search');
-   if(wrap && !wrap.children.length)wrap.remove();
- }
-
- // Inquiry / challenge signal
- if(!strip.querySelector('[data-lux-signal="inquiry"]')){
-   const [label,desc]=tx('inquiry');
-   const a=document.createElement('a');
-   a.dataset.luxSignal='inquiry';a.href=withLang('corrections.html#challenge');
-   a.className='lux-symbol-nav lux-color-nav lux-signal-action';
-   a.setAttribute('aria-label',label);a.setAttribute('title',label);
-   a.innerHTML=icon('inquiry',label,desc);
-   strip.appendChild(a);
- }
-
- // Help / question signal
- if(!strip.querySelector('[data-lux-signal="info"]')){
-   const [label,desc]=tx('info');
-   const a=document.createElement('a');
-   a.dataset.luxSignal='info';a.href=withLang('what-is-luxdot.html');
-   a.className='lux-symbol-nav lux-color-nav lux-signal-action';
-   a.setAttribute('aria-label',label);a.setAttribute('title',label);
-   a.innerHTML=icon('info',label,desc);
-   strip.appendChild(a);
- }
-
- function movePulse(){
-   const pulse=document.getElementById('luxTimelineInfo');
-   if(!pulse)return false;
-   pulse.dataset.luxSignal='pulse';setupButton(pulse,'pulse');strip.insertBefore(pulse,strip.firstChild);
-   return true;
- }
- if(!movePulse()){
-   let tries=0;
-   const timer=setInterval(()=>{tries++;if(movePulse()||tries>20)clearInterval(timer)},100);
- }
-
- header.classList.add('lux-signal-header-v41830');
+ document.querySelectorAll('[data-lang-switch],.language-switcher,.lang-switcher,button[aria-label*="language" i]').forEach(b=>{
+  const [label,desc]=tx('language');b.classList.add('lux-symbol-nav','lux-color-nav','lux-symbol-control');
+  b.setAttribute('aria-label',label);b.setAttribute('title',label);b.innerHTML=iconHTML('language',label,desc);
+ });
 }
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot();
+function addUtilityStrip(){
+ if(document.querySelector('.lux-symbol-utility-strip'))return;
+ const host=document.querySelector('header,.lux-header,.site-header')||document.body;
+ const strip=document.createElement('div');strip.className='lux-symbol-utility-strip';
+ const items=[['info','what-is-luxdot.html'],['challenge','corrections.html#challenge'],['correct','corrections.html#correct'],['report','corrections.html#report']];
+ strip.innerHTML=items.map(([k,href])=>{const [label,desc]=tx(k);return `<a class="lux-symbol-nav lux-color-nav" href="${href}" aria-label="${label}" title="${label}">${iconHTML(k,label,desc)}</a>`}).join('');
+ host.appendChild(strip);
+}
+function boot(){decorateHeader();addUtilityStrip()}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();

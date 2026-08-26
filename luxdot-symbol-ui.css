@@ -1,48 +1,24 @@
 
-/* LuxDot v4.18.30 — signal tools vs textual navigation */
-.lux-header-43108,.lux-header-inner,.lux-main-nav,.lux-signal-strip{overflow:visible!important}
-.lux-signal-strip{
- display:flex;align-items:center;gap:3px;flex:0 0 auto;
- padding:2px 5px;margin-inline-start:4px;
- border-inline-start:1px solid rgba(125,255,174,.13)
-}
-.lux-symbol-nav.lux-color-nav{
- position:relative!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;
- width:42px!important;min-width:42px!important;height:42px!important;padding:2px!important;margin:0!important;
- border:0!important;border-radius:13px!important;background:transparent!important;text-decoration:none!important;
- overflow:visible!important;color:inherit!important
-}
-.lux-signal-strip .lux-color-icon,.lux-pulse-nav .lux-color-icon{
- display:block!important;width:37px!important;height:37px!important;object-fit:contain!important;
- filter:drop-shadow(0 4px 7px rgba(0,0,0,.34));transition:transform .15s ease,filter .15s ease
-}
-.lux-symbol-nav:hover .lux-color-icon,.lux-symbol-nav:focus-visible .lux-color-icon{
- transform:translateY(-2px) scale(1.08);filter:drop-shadow(0 7px 12px rgba(90,220,145,.24))
-}
+/* LuxDot v4.18.3 — large color symbol system */
+.lux-main-nav,.lux-symbol-utility-strip{overflow:visible!important}
+.lux-symbol-nav.lux-color-nav{position:relative!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;
+ min-width:52px!important;width:52px!important;height:52px!important;padding:2px!important;border:0!important;border-radius:15px!important;
+ background:transparent!important;text-decoration:none!important;overflow:visible!important}
+.lux-color-icon{display:block;width:48px;height:48px;object-fit:contain;filter:drop-shadow(0 5px 8px rgba(0,0,0,.35));transition:transform .15s ease,filter .15s ease}
+.lux-symbol-nav:hover .lux-color-icon,.lux-symbol-nav:focus-visible .lux-color-icon{transform:translateY(-2px) scale(1.09);filter:drop-shadow(0 7px 13px rgba(55,210,130,.25))}
 .lux-symbol-nav:focus-visible{outline:2px solid #d9c36c!important;outline-offset:2px!important}
-.lux-symbol-tooltip{
- position:absolute;z-index:10040;left:50%;top:calc(100% + 7px);transform:translateX(-50%) translateY(-3px);
- opacity:0;pointer-events:none;min-width:150px;max-width:230px;padding:8px 10px;border:1px solid #36543f;border-radius:11px;
- background:#041008f4;color:#edf6ef;text-align:center;box-shadow:0 10px 34px #0009;transition:.14s ease
-}
-.lux-symbol-tooltip b{display:block;font:700 .75rem/1.5 "Noto Kufi Arabic","Segoe UI",sans-serif;color:#e2cc74}
-.lux-symbol-tooltip small{display:block;font:.65rem/1.5 "Noto Kufi Arabic","Segoe UI",sans-serif;color:#a8b9ad;margin-top:2px}
+.lux-symbol-tooltip{position:absolute;z-index:10040;left:50%;top:calc(100% + 7px);transform:translateX(-50%) translateY(-3px);
+ opacity:0;pointer-events:none;min-width:155px;max-width:230px;padding:8px 10px;border:1px solid #36543f;border-radius:11px;
+ background:#041008f4;color:#edf6ef;text-align:center;box-shadow:0 10px 34px #0009;transition:.14s ease}
+.lux-symbol-tooltip b{display:block;font:700 .76rem/1.5 "Noto Kufi Arabic","Segoe UI",sans-serif;color:#e2cc74}
+.lux-symbol-tooltip small{display:block;font:.66rem/1.5 "Noto Kufi Arabic","Segoe UI",sans-serif;color:#a8b9ad;margin-top:2px}
 .lux-symbol-nav:hover .lux-symbol-tooltip,.lux-symbol-nav:focus-visible .lux-symbol-tooltip{opacity:1;transform:translateX(-50%) translateY(0)}
-.lux-pulse-label{display:none!important}
-
-/* Primary sections remain text/cartouches, never signal icons. */
-.lux-main-nav>a:not(.lux-symbol-nav){
- width:auto!important;min-width:0!important;height:auto!important;
- padding:8px 10px!important;border-radius:999px!important
+.lux-symbol-utility-strip{display:flex;gap:4px;align-items:center;justify-content:center;padding:2px 7px}
+.lux-symbol-utility-strip .lux-symbol-nav.lux-color-nav{width:40px!important;min-width:40px!important;height:40px!important}
+.lux-symbol-utility-strip .lux-color-icon{width:37px;height:37px}
+@media(max-width:900px){
+ .lux-symbol-nav.lux-color-nav{width:44px!important;min-width:44px!important;height:44px!important}
+ .lux-color-icon{width:41px;height:41px}
 }
-
-@media(max-width:980px){
- .lux-signal-strip{order:3;border-inline-start:0;padding-inline:2px}
- .lux-symbol-nav.lux-color-nav{width:39px!important;min-width:39px!important;height:39px!important}
- .lux-signal-strip .lux-color-icon,.lux-pulse-nav .lux-color-icon{width:34px!important;height:34px!important}
-}
-@media(max-width:760px){
- .lux-symbol-tooltip{display:none!important}
- .lux-signal-strip{gap:1px}
-}
-@media print{.lux-signal-strip{display:none!important}}
+@media(max-width:760px){.lux-symbol-tooltip{display:none!important}}
+@media print{.lux-symbol-utility-strip{display:none!important}}

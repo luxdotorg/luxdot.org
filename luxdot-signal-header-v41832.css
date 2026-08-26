@@ -1,0 +1,50 @@
+
+/* v4.18.32 SAFE signal strip — hard bounded, iframe-safe */
+.lux-header-43108 .lux-signal-strip-41832{
+  display:flex!important;align-items:center!important;gap:4px!important;flex:0 0 auto!important;
+  width:auto!important;height:42px!important;min-height:42px!important;max-height:42px!important;
+  padding:0 4px!important;margin-inline:4px!important;overflow:visible!important;
+}
+.lux-header-43108 .lux-signal-strip-41832 .lux-sig32{
+  position:relative!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;
+  flex:0 0 38px!important;width:38px!important;min-width:38px!important;max-width:38px!important;
+  height:38px!important;min-height:38px!important;max-height:38px!important;
+  padding:0!important;margin:0!important;border:0!important;border-radius:11px!important;
+  background:transparent!important;overflow:visible!important;text-decoration:none!important;color:#dfffea!important;
+  box-sizing:border-box!important;
+}
+.lux-header-43108 .lux-signal-strip-41832 .lux-sig32 img,
+.lux-header-43108 .lux-signal-strip-41832 .lux-sig32 svg{
+  display:block!important;position:static!important;
+  width:30px!important;min-width:30px!important;max-width:30px!important;
+  height:30px!important;min-height:30px!important;max-height:30px!important;
+  object-fit:contain!important;transform:none!important;margin:0!important;padding:0!important;
+}
+.lux-header-43108 .lux-signal-strip-41832 .lux-sig32 .sig32-char{
+  display:grid!important;place-items:center!important;width:30px!important;height:30px!important;
+  font:700 22px/30px Arial,sans-serif!important;color:#d8bd67!important;
+}
+.lux-header-43108 .lux-signal-strip-41832 .lux-sig32:hover img,
+.lux-header-43108 .lux-signal-strip-41832 .lux-sig32:focus-visible img{transform:scale(1.08)!important}
+.lux-header-43108 .lux-sig32-tip{
+  position:absolute!important;z-index:20000!important;left:50%!important;top:calc(100% + 7px)!important;
+  transform:translateX(-50%)!important;opacity:0!important;pointer-events:none!important;
+  width:max-content!important;max-width:220px!important;padding:6px 9px!important;border:1px solid #36543f!important;
+  border-radius:9px!important;background:#041008f2!important;color:#e8f3ea!important;
+  font:700 11px/1.45 "IBM Plex Sans Arabic","Segoe UI",sans-serif!important;white-space:nowrap!important;
+}
+.lux-header-43108 .lux-sig32:hover .lux-sig32-tip,
+.lux-header-43108 .lux-sig32:focus-visible .lux-sig32-tip{opacity:1!important}
+.lux-header-43108 .lux-main-nav>a:not(.lux-sig32){
+  width:auto!important;min-width:0!important;max-width:none!important;height:auto!important;min-height:0!important;
+  padding:8px 10px!important;border-radius:999px!important;
+}
+.lux-header-43108 .lux-main-nav>a:not(.lux-sig32)>img,
+.lux-header-43108 .lux-main-nav>a:not(.lux-sig32)>.lux-symbol-tooltip{display:none!important}
+#luxTimelineInfo .lux-pulse-label{display:none!important}
+@media(max-width:760px){
+  .lux-header-43108 .lux-signal-strip-41832{height:38px!important}
+  .lux-header-43108 .lux-signal-strip-41832 .lux-sig32{width:34px!important;min-width:34px!important;max-width:34px!important;height:34px!important;min-height:34px!important;max-height:34px!important;flex-basis:34px!important}
+  .lux-header-43108 .lux-signal-strip-41832 .lux-sig32 img{width:27px!important;min-width:27px!important;max-width:27px!important;height:27px!important;min-height:27px!important;max-height:27px!important}
+  .lux-header-43108 .lux-sig32-tip{display:none!important}
+}

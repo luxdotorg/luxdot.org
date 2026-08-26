@@ -1,11 +1,14 @@
-VERSION HOTFIX — v4.18.30
+LuxDot v4.18.32 — SAFE HOME SIGNAL FIX
 
-Root cause:
-The live badge reads /build-meta.json. Main already contains the v4.18.30 code,
-but build-meta.json was still declaring 4.18.28.
+Base: latest main after Revert 41831.
 
-Replace ONLY:
+REPLACE:
+- home.html
 - build-meta.json
 
-After push/deploy the existing live-development.js fetches build-meta.json with cache:no-store,
-so the badge should update to LuxDot · v4.18.30 automatically.
+ADD:
+- luxdot-signal-header-v41832.css
+- luxdot-signal-header-v41832.js
+
+This does NOT replace site-shell.js or player-shell.html.
+The new layer is deliberately bounded to 38px controls and repeatedly normalizes the header after legacy/deferred scripts run.
