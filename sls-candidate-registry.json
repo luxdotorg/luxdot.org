@@ -1,0 +1,49 @@
+{
+  "status": "pre-SLS educational registry; not activated in SLS",
+  "promotion_rule": [
+    "international/standards-backed",
+    "cross-cultural clarity",
+    "safety relevance",
+    "low ambiguity",
+    "child-teachable",
+    "reviewed counterexamples"
+  ],
+  "systems": [
+    {
+      "id": "morse",
+      "standard": "ITU-R M.1677",
+      "scope": "international",
+      "sls_status": "candidate"
+    },
+    {
+      "id": "braille",
+      "standard": "Unicode U+2800-U+28FF; mappings context-dependent",
+      "scope": "geometry universal / semantics local",
+      "sls_status": "partial-candidate"
+    },
+    {
+      "id": "icao-spelling",
+      "standard": "ICAO radiotelephony spelling alphabet",
+      "scope": "international aviation/radio",
+      "sls_status": "candidate"
+    },
+    {
+      "id": "iso7010",
+      "standard": "ISO 7010",
+      "scope": "safety signs",
+      "sls_status": "high-priority-candidate"
+    },
+    {
+      "id": "sign-languages",
+      "standard": "multiple natural languages",
+      "scope": "regional/community",
+      "sls_status": "not-universal"
+    },
+    {
+      "id": "road-signs",
+      "standard": "international families + local law",
+      "scope": "jurisdictional",
+      "sls_status": "review-required"
+    }
+  ]
+}

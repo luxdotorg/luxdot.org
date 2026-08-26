@@ -1,0 +1,94 @@
+/* LuxDot v4.18.27 — Cosmic Matrix site-wide visual system */
+:root{
+  --ld-bg:#020704;--ld-bg2:#06100a;--ld-panel:rgba(5,16,9,.78);--ld-panel2:rgba(6,19,11,.66);
+  --ld-green:#63ff9b;--ld-green-soft:#a8e9ba;--ld-gold:#d8bd68;--ld-text:#edf7f0;--ld-muted:#8fa397;
+  --ld-line:rgba(99,255,155,.18);--ld-line-strong:rgba(99,255,155,.34);--ld-gold-line:rgba(216,189,104,.30);
+  --ld-radius:18px;--ld-pill:999px;--ld-shadow:0 18px 55px rgba(0,0,0,.34);
+}
+html{background:var(--ld-bg)!important}
+body{
+  background:
+    radial-gradient(circle at 52% 18%,rgba(25,92,49,.12),transparent 34%),
+    radial-gradient(circle at 88% 76%,rgba(216,189,104,.045),transparent 26%),
+    linear-gradient(180deg,#010503 0%,#030a06 52%,#020704 100%)!important;
+  color:var(--ld-text);
+}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.15;background-image:linear-gradient(rgba(70,255,128,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(70,255,128,.025) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,transparent 0,#000 15%,#000 80%,transparent 100%)}
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.18;background:radial-gradient(circle at 20% 30%,rgba(57,222,112,.13) 0 1px,transparent 1.6px),radial-gradient(circle at 68% 55%,rgba(57,222,112,.11) 0 1px,transparent 1.7px);background-size:31px 47px,37px 53px;animation:ldMatrixDrift 24s linear infinite}
+@keyframes ldMatrixDrift{to{background-position:0 240px,0 330px}}
+
+/* Unified floating header */
+header.top.lux-header-43108{background:rgba(1,6,3,.86)!important;border-bottom:1px solid rgba(216,189,104,.17)!important;box-shadow:0 10px 35px rgba(0,0,0,.28)!important;backdrop-filter:blur(18px)!important;-webkit-backdrop-filter:blur(18px)!important;pointer-events:auto!important;padding:0!important}
+.lux-header-43108 .lux-header-inner{width:min(1500px,calc(100% - 34px))!important;max-width:none!important;min-height:72px!important;margin:0 auto!important;padding:0 8px!important;gap:10px!important;pointer-events:auto!important}
+.lux-header-43108 .lux-header-brand{flex:0 0 auto!important;border:1px solid rgba(99,255,155,.34)!important;border-radius:10px!important;background:rgba(4,18,9,.68)!important;color:#75ffad!important;padding:6px 10px!important;font-size:18px!important;box-shadow:0 0 18px rgba(99,255,155,.12)!important;text-shadow:0 0 12px rgba(99,255,155,.28)!important}
+.lux-header-43108 .lux-main-nav{display:flex!important;flex:1 1 auto!important;min-width:0!important;justify-content:center!important;align-items:center!important;gap:7px!important;flex-wrap:nowrap!important;overflow:visible!important}
+.lux-header-43108 .lux-main-nav a,.lux-header-43108 .lux-main-nav button.lux-pulse-nav{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;min-height:38px!important;padding:7px 13px!important;border:1px solid rgba(99,255,155,.22)!important;border-radius:var(--ld-pill)!important;background:rgba(3,13,7,.66)!important;color:#dfece3!important;font:650 11.5px/1.2 "IBM Plex Sans Arabic","IBM Plex Sans",Arial,sans-serif!important;text-decoration:none!important;white-space:nowrap!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.012),0 5px 16px rgba(0,0,0,.14)!important;opacity:.94!important;cursor:pointer!important}
+.lux-header-43108 .lux-main-nav a:hover,.lux-header-43108 .lux-main-nav a.active,.lux-header-43108 .lux-main-nav button.lux-pulse-nav:hover{border-color:rgba(99,255,155,.50)!important;background:rgba(6,31,16,.80)!important;color:#f4fff7!important;transform:translateY(-1px)}
+.lux-header-43108 .lux-main-nav a.active::after{display:none!important}
+.lux-header-43108 .lux-main-nav a[href*="radio.html"]{color:#bff9cf!important;border-color:rgba(99,255,155,.38)!important}
+.lux-header-43108 .lux-main-nav a[href*="tv.html"]{color:#ead88f!important;border-color:rgba(216,189,104,.34)!important}
+.lux-header-43108 .lux-main-nav button.lux-pulse-nav{color:#79f9a6!important;border-color:rgba(99,255,155,.42)!important;background:rgba(5,26,13,.78)!important}
+.lux-pulse-nav .lux-color-icon{width:19px!important;height:19px!important;display:block!important;object-fit:contain!important;filter:drop-shadow(0 0 7px rgba(99,255,155,.42))!important}
+.lux-pulse-nav .lux-pulse-label{display:inline!important;font:700 11.5px/1 "IBM Plex Sans Arabic","IBM Plex Sans",sans-serif!important}
+.lux-pulse-nav .lux-symbol-tooltip{display:none!important}
+.lux-header-43108 .lux-lang-btn{height:38px!important;min-width:72px!important;border:1px solid rgba(216,189,104,.32)!important;border-radius:var(--ld-pill)!important;background:rgba(5,14,8,.76)!important;color:#e6cc76!important;box-shadow:none!important}
+.lux-header-43108 .lux-search-open{width:39px!important;height:39px!important;border:1px solid rgba(99,255,155,.24)!important;background:rgba(4,14,8,.74)!important;color:#b9d6c1!important;box-shadow:none!important}
+.lux-lang-menu{border-radius:14px!important;background:rgba(3,10,6,.98)!important;border-color:var(--ld-line)!important;overflow:hidden!important}
+
+/* Universal panels and cards */
+.card,.r-card,.rg-system-card,.case,.source-row,.e-card,.node-panel,.research-card,.faith-tradition,.library-card,.book-card,.map-card,.time-row,.p,.panel,.drawer,.node-drawer,.comparison-shell,.evidence-strip,.r-note{
+  border-color:var(--ld-line)!important;background:linear-gradient(145deg,rgba(5,18,10,.82),rgba(2,9,5,.70))!important;box-shadow:0 14px 38px rgba(0,0,0,.18)!important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)
+}
+.card,.r-card,.rg-system-card,.case,.source-row,.e-card,.research-card,.faith-tradition,.library-card,.book-card,.map-card,.p,.panel{border-radius:var(--ld-radius)!important}
+.card:hover,.r-card:hover,.rg-system-card:hover,.research-card:hover,.faith-tradition:hover,.library-card:hover{border-color:var(--ld-line-strong)!important;box-shadow:0 18px 45px rgba(0,0,0,.28),0 0 24px rgba(99,255,155,.035)!important}
+
+/* Hero language */
+.hero,.r-hero{position:relative}
+.hero h1,.r-hero h1,h1{color:#f2f8f4;text-shadow:0 4px 22px rgba(0,0,0,.25)}
+.hero .eyebrow,.r-kicker,.kicker,.eyebrow{color:var(--ld-gold)!important;letter-spacing:.04em}
+h2,h3{color:#e9f4ec}p,.lead,.r-intro{color:#b8cbbd}
+a{transition:color .16s ease,border-color .16s ease,background .16s ease,transform .16s ease}
+
+/* Buttons / tabs / controls */
+button,.gold-btn,.r-tabs button,.tree-toolbar button,.btn,.chip,.tag,.fixed-name-chip{border-radius:var(--ld-pill)!important}
+.gold-btn,.btn,.r-tabs button,.tree-toolbar button{border:1px solid var(--ld-line)!important;background:rgba(4,16,9,.72)!important;color:#dcebe0!important}
+.gold-btn:hover,.btn:hover,.r-tabs button:hover,.r-tabs button.active,.tree-toolbar button:hover,.tree-toolbar button.on{border-color:rgba(216,189,104,.46)!important;color:#f1d983!important;background:rgba(23,20,8,.55)!important}
+input,select,textarea{border:1px solid var(--ld-line)!important;border-radius:13px!important;background:rgba(3,12,7,.82)!important;color:#e8f5ec!important}
+
+/* Tables and timelines */
+table{border-collapse:separate!important;border-spacing:0!important;overflow:hidden;border-radius:14px}
+th{background:rgba(17,38,23,.78)!important;color:#e7cf7c!important;border-color:var(--ld-line)!important}
+td{background:rgba(3,12,7,.52)!important;border-color:rgba(99,255,155,.10)!important;color:#c8d8cd!important}
+.timeline .event,.timeline-item{border-color:rgba(99,255,155,.20)!important}
+time{color:var(--ld-gold)!important}
+
+/* Pulse drawer aligned with header */
+#luxTimelinePeek{top:82px!important;border:1px solid var(--ld-line-strong)!important;background:rgba(2,10,5,.97)!important;border-radius:20px!important;box-shadow:var(--ld-shadow)!important}
+
+/* Radio visual refinement */
+body:has(.radio),body:has(#radioApp),body.radio-page{background-color:#020704!important}
+.radio-hero,.radio-shell,.radio-card,.radio-panel,.radio-now,.broadcast-card{border-color:var(--ld-line)!important;background:rgba(4,16,9,.72)!important;border-radius:20px!important}
+
+/* Better global spacing under fixed header */
+body.lux-shell-page{padding-top:88px!important}
+main.wrap,.r-hero,.r-view,.evidence-strip{scroll-margin-top:100px}
+
+@media(max-width:1280px){
+ .lux-header-43108 .lux-main-nav{gap:5px!important}
+ .lux-header-43108 .lux-main-nav a,.lux-header-43108 .lux-main-nav button.lux-pulse-nav{padding:7px 9px!important;font-size:10.5px!important}
+ .lux-pulse-nav .lux-pulse-label{font-size:10.5px!important}
+}
+@media(max-width:1100px){
+ .lux-header-43108 .lux-menu-toggle{display:block!important;border:1px solid var(--ld-line)!important;border-radius:999px!important;background:rgba(4,16,9,.82)!important;width:40px;height:40px;color:#dcebe0!important}
+ .lux-header-43108 .lux-main-nav{display:none!important;top:66px!important;left:14px!important;right:14px!important;padding:10px!important;background:rgba(2,10,5,.97)!important;border:1px solid var(--ld-line)!important;border-radius:18px!important;box-shadow:var(--ld-shadow)!important}
+ .lux-header-43108 .lux-main-nav.open{display:flex!important}
+ .lux-header-43108 .lux-main-nav a,.lux-header-43108 .lux-main-nav button.lux-pulse-nav{width:100%!important;justify-content:flex-start!important;min-height:42px!important;padding:10px 13px!important}
+}
+@media(max-width:640px){
+ .lux-header-43108 .lux-header-inner{width:calc(100% - 14px)!important;min-height:64px!important;gap:7px!important}
+ .lux-header-43108 .lux-header-brand{font-size:15px!important;padding:6px 8px!important}
+ .lux-header-43108 .lux-lang-btn{min-width:58px!important;height:36px!important}
+ .lux-header-43108 .lux-search-open{width:36px!important;height:36px!important}
+ body.lux-shell-page{padding-top:78px!important}
+}
+@media(prefers-reduced-motion:reduce){body::after{animation:none}}
