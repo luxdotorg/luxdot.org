@@ -1,11 +1,12 @@
-VERSION HOTFIX — v4.18.30
+LuxDot v4.18.31 — Homepage Signal Header Hotfix
 
-Root cause:
-The live badge reads /build-meta.json. Main already contains the v4.18.30 code,
-but build-meta.json was still declaring 4.18.28.
-
-Replace ONLY:
+REPLACE:
+- home.html
 - build-meta.json
 
-After push/deploy the existing live-development.js fetches build-meta.json with cache:no-store,
-so the badge should update to LuxDot · v4.18.30 automatically.
+No other files need replacement.
+
+Reason:
+site-shell.js still loads the old symbol UI with the old cache key.
+home.html now explicitly loads luxdot-symbol-ui.js?v=41831 AFTER site-shell.js,
+so the Calendar icon and icon-only Pulse state are applied on the homepage immediately.
