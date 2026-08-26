@@ -3,15 +3,17 @@
 'use strict';
 const labels={
  ar:{calendar:'الرزنامة العالمية',search:'البحث',inquiry:'استعلام / اعتراض',help:'مساعدة / تعريف',pulse:'نبض نقطة نور'},
- en:{calendar:'Global Calendar',search:'Search',inquiry:'Inquiry / Challenge',help:'Help / About',pulse:'LuxDot Pulse'}
+ en:{calendar:'Global Calendar',search:'Search',inquiry:'Inquiry / Challenge',help:'Help / About',pulse:'LuxDot Pulse'},
+ nl:{calendar:'Wereldkalender',search:'Zoeken',inquiry:'Vraag / bezwaar',help:'Hulp / uitleg',pulse:'LuxDot Pulse'},
+ he:{calendar:'לוח שנה עולמי',search:'חיפוש',inquiry:'בירור / השגה',help:'עזרה / אודות',pulse:'LuxDot Pulse'}
 };
-const lang=()=>{const q=new URLSearchParams(location.search).get('lang')||localStorage.getItem('luxdot.lang')||document.documentElement.lang||'ar';return q.startsWith('ar')?'ar':'en'};
+const lang=()=>{const q=(new URLSearchParams(location.search).get('lang')||localStorage.getItem('luxdot.lang')||document.documentElement.lang||'en').slice(0,2);return labels[q]?q:'en'};
 const L=()=>labels[lang()];
-const depth=()=>Math.max(0,location.pathname.split('/').filter(Boolean).length-1);
-const root=()=> '../'.repeat(depth());
-const withLang=(f)=>{const u=new URL(root()+f,location.href);u.searchParams.set('lang',lang());return u.pathname+u.search+u.hash};
+const SCRIPT_URL=(()=>{const s=document.currentScript;return new URL(s&&s.src?s.src:'luxdot-signal-header-v41832.js',location.href)})();
+const root=()=>new URL('./',SCRIPT_URL).href;
+const withLang=(f)=>{const u=new URL(f,root());u.searchParams.set('lang',lang());return u.href};
 function tip(t){return `<span class="lux-sig32-tip">${t}</span>`}
-function img(file){return `<img src="${root()}assets/icons/luxdot-symbols/${file}" alt="" aria-hidden="true">`}
+function img(file){return `<img src="${new URL('assets/icons/luxdot-symbols/'+file,root()).href}" alt="" aria-hidden="true">`}
 function restoreTextNav(header){
  header.querySelectorAll('.lux-main-nav>a').forEach(a=>{
    if(a.classList.contains('lux-sig32'))return;

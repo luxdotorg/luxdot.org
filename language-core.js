@@ -1,8 +1,9 @@
 (()=>{'use strict';
+const CORE_URL=(()=>{const s=document.currentScript;return new URL(s&&s.src?s.src:'language-core.js',location.href)})();
 const SUP=['ar','en','nl','he','jv','id','fr','es','de','tr'];
 const DIR={ar:'rtl',en:'ltr',nl:'ltr',he:'rtl',jv:'ltr',id:'ltr',fr:'ltr',es:'ltr',de:'ltr',tr:'ltr'};
 const NAME={ar:'العربية',en:'English',nl:'Nederlands',he:'עברית',jv:'Basa Jawa',id:'Bahasa Indonesia',fr:'Français',es:'Español',de:'Deutsch',tr:'Türkçe'};
-function rootPrefix(){const p=location.pathname.split('/').filter(Boolean);return p.length>1?'../'.repeat(p.length-1):''}
+function rootPrefix(){return new URL('./',CORE_URL).href}
 const BRAND={ar:'LuxDot',en:'LuxDot',nl:'LuxDot',he:'LuxDot',jv:'LuxDot',id:'LuxDot',fr:'LuxDot',es:'LuxDot',de:'LuxDot',tr:'LuxDot'};
 const NAV={
 ar:{home:'الرئيسية',library:'المكتبة',faith:'الإيمان والحكمة',nusantara:'نوسانتارا',memory:'الذاكرة',research:'الأبحاث الحيّة',media:'ميديا / أخبار',projects:'المشاريع'},

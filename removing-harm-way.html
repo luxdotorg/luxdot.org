@@ -42,4 +42,4 @@ nl:{back:'Projecten',kicker:'LUXDOT · VELDPROJECT · CHAAM 001',title:'Schade e
 function setLang(l){l=T[l]?l:'en';document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';document.querySelectorAll('[data-k]').forEach(e=>{const v=T[l][e.dataset.k];if(v)e.textContent=v});document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));localStorage.setItem('luxdot.lang',l)}
 document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>setLang(b.dataset.lang));setLang(new URLSearchParams(location.search).get('lang')||localStorage.getItem('luxdot.lang')||'ar');
 </script>
-</body></html>
+<script src="site-shell.js?v=41837"></script></body></html>

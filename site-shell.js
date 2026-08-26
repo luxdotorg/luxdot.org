@@ -2,19 +2,19 @@
 /* LuxDot v4.3.113 — unified ten-language header + Media/News */
 (function(){
 'use strict';
+const SCRIPT_URL=(()=>{const s=document.currentScript;return new URL(s&&s.src?s.src:'site-shell.js',location.href)})();
+const SITE_ROOT=new URL('./',SCRIPT_URL);
 const d=document, FILE=()=>location.pathname.split('/').pop().toLowerCase()||'index.html';
-const DEPTH=()=>Math.max(0,location.pathname.split('/').filter(Boolean).length-1);
-const ROOT=()=> '../'.repeat(DEPTH());
-const rootHref=(file)=>ROOT()+file;
-if(FILE()==='index.html') return;
+const rootHref=(file)=>new URL(file,SITE_ROOT).href;
+if(FILE()==='index.html'||FILE()==='player-shell.html') return;
 const SUP=['ar','en','nl','he','jv','id','fr','es','de','tr'];
 const NAMES={ar:'AR',en:'EN',nl:'NL',he:'HE',jv:'JV',id:'ID',fr:'FR',es:'ES',de:'DE',tr:'TR'};
 const FULL={ar:'العربية',en:'English',nl:'Nederlands',he:'עברית',jv:'Basa Jawa',id:'Bahasa Indonesia',fr:'Français',es:'Español',de:'Deutsch',tr:'Türkçe'};
 const T={
- ar:{home:'الرئيسية',library:'المكتبة',faith:'الإيمان والحكمة',memory:'الذاكرة',research:'الأبحاث الحيّة',media:'الإشارة',projects:'المشاريع'},
- en:{home:'Home',library:'Library',faith:'Faith & Wisdom',memory:'Memory',research:'Live Research',media:'Signal',projects:'Projects'},
- nl:{home:'Home',library:'Bibliotheek',faith:'Geloof & wijsheid',memory:'Geheugen',research:'Onderzoek',media:'Media / Nieuws',projects:'Projecten'},
- he:{home:'ראשי',library:'ספרייה',faith:'אמונה וחכמה',memory:'זיכרון',research:'מחקר',media:'מדיה / חדשות',projects:'פרויקטים'},
+ ar:{home:'الرئيسية',library:'المكتبة',faith:'الإيمان والحكمة',memory:'الذاكرة',research:'الأبحاث الحيّة',media:'الإشارة',projects:'المشاريع',hypotheses:'فرضيات لوكسدوت',calendar:'الرزنامة العالمية',inquiry:'استعلام / اعتراض',help:'مساعدة / تعريف'},
+ en:{home:'Home',library:'Library',faith:'Faith & Wisdom',memory:'Memory',research:'Live Research',media:'Signal',projects:'Projects',hypotheses:'LuxDot Hypotheses',calendar:'Global Calendar',inquiry:'Inquiry / Challenge',help:'Help / About'},
+ nl:{home:'Home',library:'Bibliotheek',faith:'Geloof & wijsheid',memory:'Geheugen',research:'Onderzoek',media:'Media / Nieuws',projects:'Projecten',hypotheses:'LuxDot-hypothesen',calendar:'Wereldkalender',inquiry:'Vraag / bezwaar',help:'Hulp / uitleg'},
+ he:{home:'ראשי',library:'ספרייה',faith:'אמונה וחכמה',memory:'זיכרון',research:'מחקר',media:'מדיה / חדשות',projects:'פרויקטים',hypotheses:'השערות LuxDot',calendar:'לוח שנה עולמי',inquiry:'בירור / השגה',help:'עזרה / אודות'},
  jv:{home:'Ngarep',library:'Pustaka',faith:'Iman & Kawicaksanan',memory:'Pangeling',research:'Panaliten',media:'Media / Pawarta',projects:'Proyèk'},
  id:{home:'Beranda',library:'Perpustakaan',faith:'Iman & Kebijaksanaan',memory:'Memori',research:'Riset',media:'Media / Berita',projects:'Proyek'},
  fr:{home:'Accueil',library:'Bibliothèque',faith:'Foi & sagesse',memory:'Mémoire',research:'Recherches',media:'Médias / Actualités',projects:'Projets'},
@@ -24,7 +24,7 @@ const T={
 };
 const lang=()=>{const q=new URLSearchParams(location.search).get('lang'),s=localStorage.getItem('luxdot.lang');return SUP.includes(q)?q:SUP.includes(s)?s:'en'};
 const withLang=(href,l=lang())=>{let u=new URL(rootHref(href),location.href);u.searchParams.set('lang',l);return u.pathname+u.search+u.hash};
-function ensureStyle(){if(!d.getElementById('lux43113-header-style')){let l=d.createElement('link');l.id='lux43113-header-style';l.rel='stylesheet';l.href=rootHref('luxdot-header-v43108.css?v=41827');d.head.appendChild(l)}if(!d.getElementById('lux41827-cosmic-style')){let c=d.createElement('link');c.id='lux41827-cosmic-style';c.rel='stylesheet';c.href=rootHref('luxdot-cosmic-site-v41827.css?v=41827');d.head.appendChild(c)}}
+function ensureStyle(){if(!d.getElementById('lux43113-header-style')){let l=d.createElement('link');l.id='lux43113-header-style';l.rel='stylesheet';l.href=rootHref('luxdot-header-v43108.css?v=41837');d.head.appendChild(l)}if(!d.getElementById('lux41832-signal-style')){let l=d.createElement('link');l.id='lux41832-signal-style';l.rel='stylesheet';l.href=rootHref('luxdot-signal-header-v41832.css?v=41837');d.head.appendChild(l)}if(!d.getElementById('lux41827-cosmic-style')){let c=d.createElement('link');c.id='lux41827-cosmic-style';c.rel='stylesheet';c.href=rootHref('luxdot-cosmic-site-v41827.css?v=41827');d.head.appendChild(c)}}
 function go(l){if(!SUP.includes(l))l='en';localStorage.setItem('luxdot.lang',l);let u=new URL(location.href);u.searchParams.set('lang',l);location.assign(u.pathname+u.search+u.hash)}
 function build(){if(!d.body)return;ensureStyle();d.querySelectorAll('.luxdot-history-arrows,.luxdot-page-actions,.luxdot-breadcrumb').forEach(x=>x.remove());d.querySelectorAll('header.top,header.site-header,.global-header,.legacy-header,.topbar').forEach(x=>x.remove());
 d.querySelectorAll('body > .langbar,body > .language-bar,body > .lang-switcher').forEach(x=>x.remove());
@@ -33,7 +33,10 @@ d.querySelectorAll('body > .langbar,body > .language-bar,body > .lang-switcher')
  tx=Object.assign({},tx,{
    radio:({ar:'📻 إذاعة نقطة نور',en:'📻 LuxDot Radio',nl:'📻 LuxDot Radio',he:'📻 רדיו LuxDot',jv:'📻 Radio LuxDot',id:'📻 Radio LuxDot',fr:'📻 Radio LuxDot',es:'📻 Radio LuxDot',de:'📻 LuxDot Radio',tr:'📻 LuxDot Radyo'}[lang()]||'📻 LuxDot Radio'),
    tv:({ar:'● نقطة نور المرئية',en:'● LuxDot TV',nl:'● LuxDot TV',he:'● LuxDot TV',jv:'● LuxDot TV',id:'● LuxDot TV',fr:'● LuxDot TV',es:'● LuxDot TV',de:'● LuxDot TV',tr:'● LuxDot TV'}[lang()]||'● LuxDot TV')
- });[['home.html','home'],['library.html','library'],['faith.html','faith'],['memory.html','memory'],['research.html','research'],['radio.html','radio'],['tv.html','tv'],['media.html','media'],['projects.html','projects']].forEach(([href,k])=>{let a=d.createElement('a');a.href=withLang(href);a.textContent=tx[k];if(FILE()===href)a.classList.add('active');nav.appendChild(a)});
+ });[['home.html','home'],['library.html','library'],['faith.html','faith'],['memory.html','memory'],['research.html','research'],['radio.html','radio'],['tv.html','tv'],['media.html','media'],['projects.html','projects'],['luxdot-hypotheses.html','hypotheses']].forEach(([href,k])=>{let a=d.createElement('a');a.href=withLang(href);a.textContent=tx[k]||T.en[k];if(FILE()===href)a.classList.add('active');nav.appendChild(a)});
+ let strip=d.createElement('div');strip.className='lux-signal-strip-41832';
+ [['world-calendar.html','calendar','calendar.svg'],['corrections.html#challenge','inquiry',null],['what-is-luxdot.html','help',null]].forEach(([href,k,icon])=>{let a=d.createElement('a');a.className='lux-sig32';a.href=withLang(href);a.title=tx[k]||T.en[k];a.setAttribute('aria-label',a.title);a.innerHTML=icon?'<img src="'+rootHref('assets/icons/luxdot-symbols/'+icon)+'" alt=""><span class="lux-sig32-tip">'+a.title+'</span>':'<span class="sig32-char">'+(k==='inquiry'?'?':'i')+'</span><span class="lux-sig32-tip">'+a.title+'</span>';strip.appendChild(a)});
+ h.querySelector('.lux-language').before(strip);
  let menu=h.querySelector('.lux-lang-menu');SUP.forEach(l=>{let b=d.createElement('button');b.type='button';b.dataset.lang=l;b.textContent=FULL[l];if(l===lang())b.classList.add('active');b.onclick=()=>go(l);menu.appendChild(b)});
  let lb=h.querySelector('.lux-lang-btn');lb.onclick=e=>{e.stopPropagation();let on=menu.classList.toggle('open');lb.setAttribute('aria-expanded',String(on))};
  let mb=h.querySelector('.lux-menu-toggle');mb.onclick=()=>{let on=nav.classList.toggle('open');mb.setAttribute('aria-expanded',String(on))};

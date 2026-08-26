@@ -17,6 +17,8 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050706}
 (()=>{
  const frame=document.getElementById('luxdot-site-frame');
  const qs=new URLSearchParams(location.search);
+ const supported=['ar','en','nl','he','jv','id','fr','es','de','tr'];
+ const shellLang=()=>{const l=qs.get('lang')||localStorage.getItem('luxdot.lang')||'en';return supported.includes(l)?l:'en'};
  const safePage=(raw)=>{
    try{
      const u=new URL(raw||'index.html',location.href);
@@ -28,6 +30,7 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050706}
  const embedded=(raw)=>{
    const u=new URL(safePage(raw),location.href);
    u.searchParams.set('luxembed','1');
+   if(!u.searchParams.has('lang'))u.searchParams.set('lang',shellLang());
    return u.pathname.replace(/^\//,'')+u.search+u.hash;
  };
  let current=safePage(qs.get('page')||'index.html');
@@ -40,6 +43,8 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050706}
    current=next;
    const u=new URL(location.href);
    u.searchParams.set('page',next);
+   const innerLang=new URL(next,location.href).searchParams.get('lang');
+   if(supported.includes(innerLang)){u.searchParams.set('lang',innerLang);localStorage.setItem('luxdot.lang',innerLang)}
    history.pushState({page:next},'',u.pathname+u.search);
  });
  addEventListener('popstate',()=>{

@@ -1,6 +1,7 @@
 (()=>{'use strict';
+const CORE_URL=(()=>{const s=document.currentScript;return new URL(s&&s.src?s.src:'content-language-core.js',location.href)})();
 const TARGETS=['ar','en','nl','he','jv','id','fr','es','de','tr'];
-function rootPrefix(){const p=location.pathname.split('/').filter(Boolean);return p.length>1?'../'.repeat(p.length-1):''}
+function rootPrefix(){return new URL('./',CORE_URL).href}
 const FIXED=['LuxDot','Rafy Alhajji','Rafi Alhaji','رافي الحجي','رافي الحاجي'];
 const page=()=>location.pathname.split('/').pop()||'index.html';
 const pagePath=()=>location.pathname.replace(/^\/+/, '');
