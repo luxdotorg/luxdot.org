@@ -33,9 +33,9 @@ d.querySelectorAll('body > .langbar,body > .language-bar,body > .lang-switcher')
  tx=Object.assign({},tx,{
    radio:({ar:'📻 إذاعة نقطة نور',en:'📻 LuxDot Radio',nl:'📻 LuxDot Radio',he:'📻 רדיו LuxDot',jv:'📻 Radio LuxDot',id:'📻 Radio LuxDot',fr:'📻 Radio LuxDot',es:'📻 Radio LuxDot',de:'📻 LuxDot Radio',tr:'📻 LuxDot Radyo'}[lang()]||'📻 LuxDot Radio'),
    tv:({ar:'● نقطة نور المرئية',en:'● LuxDot TV',nl:'● LuxDot TV',he:'● LuxDot TV',jv:'● LuxDot TV',id:'● LuxDot TV',fr:'● LuxDot TV',es:'● LuxDot TV',de:'● LuxDot TV',tr:'● LuxDot TV'}[lang()]||'● LuxDot TV')
- });[['home.html','home'],['library.html','library'],['faith.html','faith'],['memory.html','memory'],['research.html','research'],['luxdot-hypotheses.html','hypotheses'],['projects.html','projects']].forEach(([href,k])=>{let a=d.createElement('a');a.href=withLang(href);a.textContent=tx[k]||T.en[k];if(FILE()===href)a.classList.add('active');nav.appendChild(a)});
+ });[['home.html','home'],['library.html','library'],['faith.html','faith'],['memory.html','memory'],['research.html','research'],['luxdot-hypotheses.html','hypotheses'],['projects.html','projects']].forEach(([href,k])=>{let a=d.createElement('a');a.href=withLang(href);a.textContent=tx[k]||T.en[k];if(k==='hypotheses')a.dataset.luxHypotheses='1';if(FILE()===href)a.classList.add('active');nav.appendChild(a)});
  let strip=d.createElement('div');strip.className='lux-signal-strip-41832';
- [['media.html','media','signal.svg'],['radio.html','radio','radio.svg'],['tv.html','tv','tv.svg'],['world-calendar.html','calendar','calendar.svg'],['corrections.html#challenge','inquiry',null],['what-is-luxdot.html','help',null]].forEach(([href,k,icon])=>{let a=d.createElement('a');a.className='lux-sig32';a.href=withLang(href);a.title=tx[k]||T.en[k];a.setAttribute('aria-label',a.title);if(FILE()===href)a.classList.add('active');a.innerHTML=icon?'<img src="'+rootHref('assets/icons/luxdot-symbols/'+icon)+'" alt=""><span class="lux-sig32-tip">'+a.title+'</span>':'<span class="sig32-char">'+(k==='inquiry'?'?':'i')+'</span><span class="lux-sig32-tip">'+a.title+'</span>';strip.appendChild(a)});
+ [['media.html','media','signal.svg'],['radio.html','radio','radio.svg'],['tv.html','tv','tv.svg'],['world-calendar.html','calendar','calendar.svg'],['corrections.html#challenge','inquiry',null],['what-is-luxdot.html','help',null]].forEach(([href,k,icon])=>{let a=d.createElement('a');a.className='lux-sig32';a.href=withLang(href);a.title=tx[k]||T.en[k];a.setAttribute('aria-label',a.title);a.dataset.sig32=k;if(FILE()===href)a.classList.add('active');a.innerHTML=icon?'<img src="'+rootHref('assets/icons/luxdot-symbols/'+icon)+'" alt=""><span class="lux-sig32-tip">'+a.title+'</span>':'<span class="sig32-char">'+(k==='inquiry'?'?':'i')+'</span><span class="lux-sig32-tip">'+a.title+'</span>';strip.appendChild(a)});
  h.querySelector('.lux-language').before(strip);
  let menu=h.querySelector('.lux-lang-menu');SUP.forEach(l=>{let b=d.createElement('button');b.type='button';b.dataset.lang=l;b.textContent=FULL[l];if(l===lang())b.classList.add('active');b.onclick=()=>go(l);menu.appendChild(b)});
  let lb=h.querySelector('.lux-lang-btn');lb.onclick=e=>{e.stopPropagation();let on=menu.classList.toggle('open');lb.setAttribute('aria-expanded',String(on))};
@@ -68,32 +68,33 @@ window.addEventListener('resize',()=>{let h=d.querySelector('.lux-header-43108')
   const host=document.querySelector(".lux-header-43108 .lux-main-nav")||document.querySelector("header .topin,header .wrap,.topin,.top");
   if(!host)return;
 
-  const q=new URLSearchParams(location.search),lang=q.get("lang")||"ar";
+  const q=new URLSearchParams(location.search),lang=q.get("lang")||localStorage.getItem('luxdot.lang')||document.documentElement.lang||"en";
+  const pulseText=lang==='ar'?{title:'نبض نقطة نور',sub:'الاستعلام والشفافية الحية',loading:'تحميل البيانات المجمعة…',m15:'آخر 15 دقيقة',m24:'آخر 24 ساعة',m7:'آخر 7 أيام',visit:'زيارة',top:'الأكثر زيارة · 24h',changes:'آخر التغييرات',privacy:'بيانات مجمعة فقط · لا IP · لا أسماء · لا تتبع فردي',calendar:'الرزنامة',method:'كيف نقيس؟'}:{title:'LuxDot Pulse',sub:'Live inquiry and transparency',loading:'Loading aggregated data…',m15:'Last 15 minutes',m24:'Last 24 hours',m7:'Last 7 days',visit:'visits',top:'Most visited · 24h',changes:'Latest changes',privacy:'Aggregated only · no IP · no names · no individual tracking',calendar:'Timeline',method:'How do we measure?'};
   const a=document.createElement("button");
-  a.id="luxTimelineInfo";a.type="button";a.className="lux-symbol-nav lux-color-nav lux-pulse-nav";a.setAttribute("aria-label","نبض نقطة نور / LuxDot Pulse");a.title="نبض نقطة نور · LuxDot Pulse";const assetRoot='../'.repeat(Math.max(0,location.pathname.split('/').filter(Boolean).length-1));const pulseLabel=({ar:'نبض نقطة نور',en:'LuxDot Pulse',nl:'LuxDot Pulse',he:'LuxDot Pulse',jv:'LuxDot Pulse',id:'LuxDot Pulse',fr:'LuxDot Pulse',es:'LuxDot Pulse',de:'LuxDot Pulse',tr:'LuxDot Pulse'}[lang]||'LuxDot Pulse');a.innerHTML='<img class="lux-color-icon" src="'+assetRoot+'assets/icons/luxdot-symbols/pulse.svg" alt=""><span class="lux-pulse-label">'+pulseLabel+'</span><span class="lux-symbol-tooltip"><b>نبض نقطة نور</b><small>الاستعلام والشفافية الحية</small></span>';
+  a.id="luxTimelineInfo";a.type="button";a.className="lux-symbol-nav lux-color-nav lux-pulse-nav";a.setAttribute("aria-label",pulseText.title);a.title=pulseText.title;const assetRoot='../'.repeat(Math.max(0,location.pathname.split('/').filter(Boolean).length-1));a.innerHTML='<img class="lux-color-icon" src="'+assetRoot+'assets/icons/luxdot-symbols/pulse.svg" alt=""><span class="lux-pulse-label">'+pulseText.title+'</span><span class="lux-symbol-tooltip"><b>'+pulseText.title+'</b><small>'+pulseText.sub+'</small></span>';
   const projects=host.querySelector('a[href*="projects.html"]');if(projects)projects.insertAdjacentElement('afterend',a);else host.appendChild(a);
 
   const panel=document.createElement("aside");panel.id="luxTimelinePeek";panel.setAttribute("aria-hidden","true");
   panel.innerHTML=`
     <button type="button" class="lt-close" aria-label="Close">×</button>
     <div class="lt-k"><span class="lp-dot"></span>LUXDOT PULSE · LIVE TRANSPARENCY</div>
-    <div class="lp-head"><h3>نبض نقطة نور</h3><span id="lpVersion">v4.3.126</span></div>
-    <div id="lpStatus" class="lp-status">تحميل البيانات المجمعة…</div>
+    <div class="lp-head"><h3>${pulseText.title}</h3><span id="lpVersion">v4.18.39</span></div>
+    <div id="lpStatus" class="lp-status">${pulseText.loading}</div>
     <div class="lp-metrics">
-      <div><small>آخر 15 دقيقة</small><b id="lp15">—</b><em>زيارة</em></div>
-      <div><small>آخر 24 ساعة</small><b id="lp24">—</b><em>زيارة</em></div>
-      <div><small>آخر 7 أيام</small><b id="lp7">—</b><em>زيارة</em></div>
+      <div><small>${pulseText.m15}</small><b id="lp15">—</b><em>${pulseText.visit}</em></div>
+      <div><small>${pulseText.m24}</small><b id="lp24">—</b><em>${pulseText.visit}</em></div>
+      <div><small>${pulseText.m7}</small><b id="lp7">—</b><em>${pulseText.visit}</em></div>
     </div>
     <div id="lpSpark"></div>
-    <div class="lp-section"><b>الأكثر زيارة · 24h</b><div id="lpPages" class="lp-pages"><span>—</span></div></div>
-    <div class="lp-section"><b>آخر التغييرات</b><div id="lpChanges" class="lp-changes"></div></div>
+    <div class="lp-section"><b>${pulseText.top}</b><div id="lpPages" class="lp-pages"><span>—</span></div></div>
+    <div class="lp-section"><b>${pulseText.changes}</b><div id="lpChanges" class="lp-changes"></div></div>
     <div class="lp-section"><b>NOW / NEXT</b><div class="lt-line">
       <div><b>21.08</b><span>ذاكرة الغوطة · تم</span></div>
       <div><b>03.09</b><span>ثورة الدقّة · PILOT</span></div>
       <div><b>07.12</b><span>عصر الدقّة · KICK-OFF</span></div>
     </div></div>
-    <div class="lp-privacy">Aggregated only · لا IP · لا أسماء · لا تتبع فردي</div>
-    <div class="lp-hubs"><a href="witness.html">WITNESS · الشاهد</a><a href="witness-stream.html">WITNESS STREAM · مرصد الشهادات</a><a href="calendar.html">365 · هوية اليوم</a><a href="values.html">VALUES · القيم</a><a href="research.html">LIVE RESEARCH · الأبحاث الحيّة</a><a href="media.html">SIGNAL · الإشارة</a></div><div class="lp-links"><a href="timeline.html?lang=${encodeURIComponent(lang)}">الرزنامة</a><a href="pulse-methodology.html?lang=${encodeURIComponent(lang)}">كيف نقيس؟</a></div>`;
+    <div class="lp-privacy">${pulseText.privacy}</div>
+    <div class="lp-hubs"><a href="witness.html">WITNESS</a><a href="witness-stream.html">WITNESS STREAM</a><a href="calendar.html">365</a><a href="values.html">VALUES</a><a href="research.html">LIVE RESEARCH</a><a href="media.html">SIGNAL</a></div><div class="lp-links"><a href="timeline.html?lang=${encodeURIComponent(lang)}">${pulseText.calendar}</a><a href="pulse-methodology.html?lang=${encodeURIComponent(lang)}">${pulseText.method}</a></div>`;
   document.body.appendChild(panel);
 
   a.addEventListener("click",()=>{const open=panel.classList.toggle("open");panel.setAttribute("aria-hidden",open?"false":"true");if(open)loadPulse()});
@@ -106,7 +107,7 @@ window.addEventListener('resize',()=>{let h=d.querySelector('.lux-header-43108')
     try{
       const r=await fetch("/api/transparency",{headers:{"accept":"application/json"}});
       const d=await r.json();
-      panel.querySelector("#lpVersion").textContent="v"+(d.release?.version||"4.3.126");
+      panel.querySelector("#lpVersion").textContent="v"+(d.release?.version||"4.18.39");
       const changes=d.release?.recentChanges||[];
       panel.querySelector("#lpChanges").innerHTML=changes.slice(0,4).map(x=>`<div><strong>${x.title}</strong><span>${x.detail}</span></div>`).join("")||"<span>—</span>";
       const an=d.analytics||{};

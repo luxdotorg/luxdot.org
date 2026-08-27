@@ -39,5 +39,5 @@
     const bounds=Object.values(places).map(p=>[p.lat,p.lng]);function fit(){map.fitBounds(bounds,{padding:[45,45]})}fit();
     document.getElementById("reset").onclick=fit;document.getElementById("clean").onclick=()=>{const page=document.getElementById("page"),button=document.getElementById("clean");page.classList.toggle("clean");button.textContent=page.classList.contains("clean")?"إظهار العنوان":"وضع لقطة الشاشة";setTimeout(()=>{map.invalidateSize();fit()},100)};
   </script>
-<script src="../site-shell.js?v=41838"></script></body>
+<script src="../site-shell.js?v=41839"></script></body>
 </html>
