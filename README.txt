@@ -1,9 +1,11 @@
-LuxDot licensed audio drop-in slots
+نقطة نور — الأصل العربي v2.9.1
 
-Place only audio you own or have permission to broadcast:
-- fairuz-sham.mp3
-- umm-kulthum-night.mp3
-- qudud-halabi.mp3
+ارفع محتويات هذا المجلد إلى جذر الاستضافة/GitHub Pages كما هي.
+نقطة الدخول: index.html ثم home.html.
 
-The radio auto-detects these files and activates the corresponding programme slots.
-Do not add copyrighted audio without permission.
+هذه النسخة هي الأصل المعتمد لتنقيح اللغات اللاحقة. راجع ARABIC_MASTER_v2_9_1.md لقواعد التأليف والتصميم.
+
+ملاحظات تشغيل:
+- خط Noto Kufi Arabic يُحمّل كخط ويب؛ عند انقطاع الشبكة يستخدم المتصفح البدائل النظامية.
+- خريطة أطلس الذاكرة تعتمد Leaflet/OpenStreetMap وتحتاج اتصالاً بالإنترنت لطبقات الخريطة، بينما تبقى الشجرة والقائمة تعملان دونها.
+- لا توجد ملفات خطوط مضمنة في الحزمة.

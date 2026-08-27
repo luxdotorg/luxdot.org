@@ -1,43 +1,56 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex,nofollow,noarchive">
-  <title>رحلة رقية — Rokaya Alhajji | أينما حلّت أزهرت</title>
-  <meta name="description" content="خريطة تفاعلية لرحلة رقية محمد الحجي — Rokaya Alhajji، بنت فطوم تيت.">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <style>
-    *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#f4edda;color:#263c29}body{font-family:"IBM Plex Sans Arabic","Noto Kufi Arabic",Tahoma,Arial,sans-serif}.page{min-height:100vh;padding:24px;background:radial-gradient(circle at 12% 8%,#fffaf0 0,transparent 28%),linear-gradient(145deg,#f6f0df,#e8efdc)}header{max-width:1080px;margin:0 auto 16px;text-align:center}.name{margin:0 0 7px;color:#7a5e3f;font-size:14px}.name-en{direction:ltr;unicode-bidi:isolate}h1{margin:0;color:#244d31;font-size:clamp(36px,6vw,70px);line-height:1.2}.sub{margin:8px auto 0;color:#5c6658;font-size:clamp(14px,2vw,18px)}.map-shell{position:relative;max-width:1180px;height:min(74vh,850px);min-height:590px;margin:auto;overflow:hidden;border:1px solid rgba(96,83,54,.32);border-radius:28px;background:#dbe8dc;box-shadow:0 22px 60px rgba(49,63,43,.18)}#map{width:100%;height:100%;direction:ltr}.actions{position:absolute;z-index:1000;top:16px;left:16px;display:flex;gap:8px;direction:rtl}.actions button{cursor:pointer;border:1px solid rgba(52,79,51,.25);border-radius:999px;padding:9px 14px;color:#24452e;background:rgba(255,252,241,.95);box-shadow:0 4px 12px rgba(34,50,31,.12);font:inherit}.legend{position:absolute;z-index:800;right:16px;bottom:22px;display:flex;flex-wrap:wrap;gap:12px;max-width:calc(100% - 32px);padding:9px 14px;border-radius:999px;background:rgba(255,252,241,.91);color:#3f553f;font-size:12px;box-shadow:0 4px 14px rgba(34,50,31,.1)}.myth{max-width:900px;margin:16px auto 0;text-align:center;color:#536450;font-size:14px;line-height:2}.place-marker{background:transparent!important;border:0!important}.place-dot{position:absolute;left:-7px;top:-7px;width:14px;height:14px;border:3px solid #fffaf0;border-radius:50%;background:#2d5937;box-shadow:0 1px 5px rgba(20,43,27,.4)}.place-label{position:absolute;left:9px;top:-24px;width:max-content;min-width:74px;padding:6px 9px;border:1px solid rgba(58,86,55,.2);border-radius:10px;text-align:center;line-height:1.15;background:rgba(255,252,241,.94);box-shadow:0 3px 10px rgba(33,50,31,.15);color:#29472f}.place-label strong,.place-label span{display:block;white-space:nowrap}.place-label strong{font-size:13px}.place-label span{margin-top:3px;color:#6a705f;font:11px/1.1 Arial,sans-serif}.plant-marker{display:grid!important;place-items:center;background:transparent!important;border:0!important;font-size:18px;filter:drop-shadow(0 1px 1px rgba(255,255,255,.9))}.popup{min-width:120px;text-align:center}.clean{padding:0;background:#eef1df}.clean header,.clean .myth{display:none}.clean .map-shell{width:100vw;max-width:none;height:100vh;min-height:100vh;border:0;border-radius:0;box-shadow:none}@media(max-width:700px){.page{padding:10px}.map-shell{height:76vh;min-height:540px;border-radius:18px}.actions{top:10px;left:10px;flex-direction:column;align-items:flex-start}.legend{right:10px;bottom:10px;border-radius:16px;gap:8px}.place-label strong{font-size:12px}}
-  </style>
+<script>
+(()=>{try{
+ const u=new URL(location.href);
+ if(window.top===window.self && u.searchParams.get('luxembed')!=='1' && !u.pathname.endsWith('/player-shell.html')){
+   const here=u.pathname.replace(/^\//,'')+u.search+u.hash;
+   location.replace('/player-shell.html?page='+encodeURIComponent(here));
+   return;
+ }
+ if(window.top!==window.self){
+   const send=()=>{
+     try{
+       const u=new URL(location.href);
+       u.searchParams.delete('luxembed');
+       parent.postMessage({type:'luxdot:navigate',url:u.pathname.replace(/^\//,'')+u.search+u.hash},location.origin);
+     }catch(e){}
+   };
+   addEventListener('load',send,{once:true});
+ }
+}catch(e){}})();
+</script><script src="language-core.js?v=41837"></script>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="#000000" name="theme-color"/><title>LUXDOT — Signal</title>
+<link href="intro.css?v=4385" rel="stylesheet"/>
+<style id="luxdot-fallback">html,body{margin:0;min-height:100%;background:#020403;color:#eef8f1}body{font-family:Arial,Helvetica,sans-serif}a{color:inherit}#matrix{position:fixed;inset:0;width:100%;height:100%;background:#000}.top{background:#050806;color:#eef8f1}</style><link rel="stylesheet" href="styles.css?v=4344"><link rel="stylesheet" href="luxdot-ui-lock.css?v=4385"><style>.pilot-note{margin-top:14px;max-width:620px;text-align:center;font-size:12px;line-height:1.6;letter-spacing:.035em;color:rgba(230,245,235,.72);border:1px solid rgba(150,220,175,.18);background:rgba(2,12,7,.38);border-radius:999px;padding:8px 14px;backdrop-filter:blur(8px)}@media(max-width:620px){.pilot-note{border-radius:18px;margin-inline:16px}}</style><link rel="stylesheet" href="luxdot-global-language.css?v=4399"><link rel="stylesheet" href="luxdot-radio.css?v=41819b"><style id="lux-language-dropdown-layout">
+.langpick{width:min(340px,88vw)!important;max-width:340px!important;margin:18px auto 12px!important;position:relative!important}
+.langpick::before{content:"LANGUAGE / اللغة";display:block;margin-bottom:7px;font:700 9px/1.2 Arial,sans-serif;letter-spacing:.18em;color:rgba(196,236,207,.62);text-align:center;direction:ltr}
+.lang-select{appearance:none;-webkit-appearance:none;width:100%;min-height:46px;border:1px solid rgba(130,225,160,.35);border-radius:14px;background:linear-gradient(180deg,rgba(7,20,12,.92),rgba(2,8,5,.92));color:#eaf8ee;padding:0 44px 0 16px;font:700 13px/1.2 Arial,sans-serif;letter-spacing:.035em;outline:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.015);cursor:pointer}
+.langpick::after{content:"⌄";position:absolute;right:15px;bottom:13px;color:#9beeb5;font-size:18px;pointer-events:none}
+html[dir="rtl"] .lang-select{padding:0 16px 0 44px;text-align:right}html[dir="rtl"] .langpick::after{right:auto;left:15px}
+.lang-select:focus{border-color:rgba(145,245,178,.75);box-shadow:0 0 0 3px rgba(102,221,145,.08)}
+.lang-select option{background:#07100a;color:#eef8f1}
+@media(max-width:600px){.langpick{width:min(300px,86vw)!important}.lang-select{min-height:44px;font-size:13px}}
+</style><link rel="stylesheet" href="luxdot-typography-v41416.css?v=41416">
+<link rel="stylesheet" href="luxdot-ibm-plex-v41817.css?v=41817"><link rel="stylesheet" href="luxdot-cosmic-site-v41827.css?v=41827">
 </head>
-<body>
-  <main class="page" id="page">
-    <header>
-      <p class="name">رقية محمد الحجي، بنت فطوم تيت · <span class="name-en">Rokaya Alhajji</span></p>
-      <h1>أينما حلّت… أزهرت</h1>
-      <p class="sub">خريطة رحلة أمّي، من بيانون إلى البيوت التي صنعت فيها جنّتها الخاصة</p>
-    </header>
-    <section class="map-shell" aria-label="خريطة رحلة رقية محمد الحجي">
-      <div id="map"></div>
-      <div class="actions"><button id="reset">إظهار الرحلة كاملة</button><button id="clean">وضع لقطة الشاشة</button></div>
-      <div class="legend"><span>🌿 المسار</span><span>🌸 أثرها المزهر</span><span>● مدينة عاشت فيها</span></div>
-    </section>
-    <p class="myth">في ميثولوجيتنا العائلية، حملت رقية سرّ الزهرة عبر خطّ الأمهات؛ فكانت الأرض تزهر تحت يديها أينما حلّت.</p>
-  </main>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script>
-    const places={baynoun:{ar:"بيانون — شمال حلب",en:"Baynoun — North Aleppo",lat:36.36,lng:37.03},aleppo:{ar:"حلب",en:"Aleppo",lat:36.20,lng:37.16},homs:{ar:"حمص",en:"Homs",lat:34.73,lng:36.72},damascus:{ar:"دمشق — الشام",en:"Damascus",lat:33.51,lng:36.28},sidon:{ar:"صيدا",en:"Sidon",lat:33.56,lng:35.37},riyadh:{ar:"الرياض",en:"Riyadh",lat:24.71,lng:46.68},medina:{ar:"المدينة المنوّرة",en:"Medina",lat:24.47,lng:39.61},mecca:{ar:"مكة المكرّمة",en:"Mecca",lat:21.42,lng:39.83},gaziantep:{ar:"غازي عنتاب",en:"Gaziantep",lat:37.07,lng:37.38},osnabruck:{ar:"أوسنابروك",en:"Osnabrück",lat:52.28,lng:8.05},chaam:{ar:"شام",en:"Chaam",lat:51.50,lng:4.86}};
-    const south=["baynoun","aleppo","homs","damascus","sidon","riyadh","medina","mecca"],north=["baynoun","gaziantep","osnabruck","chaam"];
-    const map=L.map("map",{zoomControl:true,attributionControl:true,preferCanvas:true});
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:18,attribution:"© OpenStreetMap contributors"}).addTo(map);
-    const ll=keys=>keys.map(k=>[places[k].lat,places[k].lng]),style={color:"#285d3b",weight:5,opacity:.9,lineCap:"round",lineJoin:"round"};
-    L.polyline(ll(south),style).addTo(map);L.polyline(ll(north),style).addTo(map);
-    function flowers(keys){let n=0;keys.slice(0,-1).forEach((k,j)=>{const a=places[k],b=places[keys[j+1]],dist=Math.hypot(b.lat-a.lat,b.lng-a.lng),steps=Math.max(2,Math.min(13,Math.ceil(dist/2.4)));for(let i=1;i<steps;i++){const t=i/steps,icon=(n++ + j)%4===0?"🌸":"🌿";L.marker([a.lat+(b.lat-a.lat)*t,a.lng+(b.lng-a.lng)*t],{interactive:false,icon:L.divIcon({className:"plant-marker",html:`<span>${icon}</span>`,iconSize:[24,24],iconAnchor:[12,12]})}).addTo(map)}})}
-    flowers(south);flowers(north);
-    Object.values(places).forEach(p=>{const html=`<span class="place-dot"></span><div class="place-label" dir="rtl"><strong>${p.ar}</strong><span dir="ltr">${p.en}</span></div>`;L.marker([p.lat,p.lng],{icon:L.divIcon({className:"place-marker",html,iconSize:[1,1],iconAnchor:[0,0]})}).addTo(map).bindPopup(`<div class="popup" dir="rtl"><b>${p.ar}</b><br><span dir="ltr">${p.en}</span><br><small>${p.lat.toFixed(2)}, ${p.lng.toFixed(2)}</small></div>`) });
-    const bounds=Object.values(places).map(p=>[p.lat,p.lng]);function fit(){map.fitBounds(bounds,{padding:[45,45]})}fit();
-    document.getElementById("reset").onclick=fit;document.getElementById("clean").onclick=()=>{const page=document.getElementById("page"),button=document.getElementById("clean");page.classList.toggle("clean");button.textContent=page.classList.contains("clean")?"إظهار العنوان":"وضع لقطة الشاشة";setTimeout(()=>{map.invalidateSize();fit()},100)};
-  </script>
-<script src="../site-shell.js?v=41840"></script></body>
-</html>
+<body data-lux-i18n-complete="global-content-core"><noscript><div style="position:fixed;inset:0;display:grid;place-items:center;background:#000;color:#dfffea;font:14px Arial;z-index:9999">LUXDOT requires JavaScript to receive the signal</div></noscript>
+<canvas aria-hidden="true" id="matrix"></canvas>
+<div aria-hidden="true" class="noise"></div><div aria-hidden="true" class="scan"></div><div aria-hidden="true" class="vignette"></div>
+<div aria-hidden="true" class="belief-stars" id="beliefStars"></div><div aria-hidden="true" class="signals" id="signals"></div>
+<div aria-hidden="true" class="sig-status"><span id="statusA"></span><span id="statusB"></span></div>
+<main class="gate" id="gate">
+<div class="mark"><span></span></div>
+<div class="eyebrow" id="eyebrow"></div>
+<h1>LUX<span>•</span>DOT</h1>
+<p id="sub"></p>
+<div aria-label="Language" class="langpick" id="langpick"><select class="lang-select" id="languageSelect" aria-label="Language"><option value="ar">العربية</option><option value="en">English</option><option value="nl">Nederlands</option><option value="he">עברית</option><option value="jv">Basa Jawa</option><option value="id">Bahasa Indonesia</option><option value="fr">Français</option><option value="es">Español</option><option value="de">Deutsch</option><option value="tr">Türkçe</option></select></div>
+<button class="enter" id="enter" type="button"></button>
+<div class="micro" id="micro"></div><div class="pilot-note" id="pilotNote" aria-live="polite"></div><div aria-hidden="true" class="burst" id="burst"></div>
+</main>
+<button aria-label="Toggle ambient signal" class="sound" id="sound" title="Toggle ambient signal">◉</button>
+<script src="intro.js?v=43112"></script><script defer src="luxdot-radio.js?v=41819b"></script><script defer src="content-language-core.js?v=41837"></script><div id="luxdotVersionBadge" style="position:fixed;right:12px;bottom:12px;z-index:9998;padding:6px 9px;border:1px solid rgba(105,240,164,.22);border-radius:999px;background:rgba(2,8,5,.78);color:#9fb7a8;font:700 10px/1 Arial,sans-serif;letter-spacing:.05em;backdrop-filter:blur(7px)">LuxDot · live</div><script src="live-development.js?v=41823"></script><script defer src="daily-identity.js?v=450"></script><script src="luxdot-typography-density.js?v=41416"></script>
+<script src="arabic-surface-v4160.js?v=4160"></script><script src="luxdot-language-polish.js?v=41815"></script></body></html>
