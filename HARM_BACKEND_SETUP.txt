@@ -1,0 +1,17 @@
+LuxDot v4.18.44 — Removing Harm backend setup
+
+1. Create a Supabase project.
+2. Open SQL Editor and run harm-supabase-setup.sql.
+3. In Supabase Authentication, create an admin user (email/password).
+4. Copy that user's UUID and run:
+   insert into public.harm_admins(user_id) values ('YOUR_AUTH_USER_UUID');
+5. Open Project Settings → API and copy only Project URL + anon/public key into supabase-config.js.
+6. NEVER put the service_role key in this website.
+7. Deploy the full site.
+
+Public workflow:
+removing-harm-way.html → submit report/photos → private database/storage.
+Admin workflow:
+harm-dashboard.html → review → status → publish approved image copies → fixed/closed.
+Public result:
+harm-map.html → only published reports/images, including before/after.

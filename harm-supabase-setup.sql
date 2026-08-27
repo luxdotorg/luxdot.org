@@ -1,0 +1,106 @@
+-- LuxDot · Removing Harm from the Way · Supabase setup v4.18.44
+-- Run once in Supabase SQL Editor.
+
+create extension if not exists pgcrypto;
+
+create table if not exists public.harm_reports (
+  id uuid primary key default gen_random_uuid(),
+  public_code text unique not null,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  status text not null default 'NEW' check (status in ('NEW','VERIFIED','SENT_TO_MUNICIPALITY','IN_PROGRESS','FIXED','CLOSED','REJECTED')),
+  title text not null,
+  description text not null,
+  categories text[] not null default '{}',
+  risk_level text not null default 'normal' check (risk_level in ('low','normal','high','urgent')),
+  latitude double precision,
+  longitude double precision,
+  location_text text,
+  reporter_name text,
+  reporter_email text,
+  reporter_phone text,
+  reporter_consent boolean not null default false,
+  published boolean not null default false,
+  public_summary text,
+  resolution_summary text,
+  fixed_at timestamptz
+);
+
+create table if not exists public.harm_report_images (
+  id uuid primary key default gen_random_uuid(),
+  report_id uuid not null references public.harm_reports(id) on delete cascade,
+  created_at timestamptz not null default now(),
+  phase text not null default 'before' check (phase in ('before','after')),
+  private_path text,
+  public_path text,
+  caption text,
+  published boolean not null default false
+);
+
+create table if not exists public.harm_report_events (
+  id bigint generated always as identity primary key,
+  report_id uuid not null references public.harm_reports(id) on delete cascade,
+  created_at timestamptz not null default now(),
+  event_type text not null,
+  note text,
+  actor uuid default auth.uid()
+);
+
+create table if not exists public.harm_admins (
+  user_id uuid primary key references auth.users(id) on delete cascade,
+  created_at timestamptz not null default now()
+);
+
+create or replace function public.is_harm_admin()
+returns boolean language sql stable security definer set search_path=public as $$
+  select exists(select 1 from public.harm_admins where user_id=auth.uid());
+$$;
+
+alter table public.harm_reports enable row level security;
+alter table public.harm_report_images enable row level security;
+alter table public.harm_report_events enable row level security;
+alter table public.harm_admins enable row level security;
+
+-- public can submit, but cannot read private reports
+create policy "harm reports public insert" on public.harm_reports for insert to anon, authenticated with check (reporter_consent = true);
+create policy "harm reports public published read" on public.harm_reports for select to anon, authenticated using (published = true);
+create policy "harm reports admin read" on public.harm_reports for select to authenticated using (public.is_harm_admin());
+create policy "harm reports admin update" on public.harm_reports for update to authenticated using (public.is_harm_admin()) with check (public.is_harm_admin());
+create policy "harm reports admin delete" on public.harm_reports for delete to authenticated using (public.is_harm_admin());
+
+create policy "harm images public insert" on public.harm_report_images for insert to anon, authenticated with check (true);
+create policy "harm images public approved read" on public.harm_report_images for select to anon, authenticated using (published = true);
+create policy "harm images admin read" on public.harm_report_images for select to authenticated using (public.is_harm_admin());
+create policy "harm images admin update" on public.harm_report_images for update to authenticated using (public.is_harm_admin()) with check (public.is_harm_admin());
+create policy "harm images admin delete" on public.harm_report_images for delete to authenticated using (public.is_harm_admin());
+
+create policy "harm events admin all" on public.harm_report_events for all to authenticated using (public.is_harm_admin()) with check (public.is_harm_admin());
+create policy "harm admins self read" on public.harm_admins for select to authenticated using (user_id=auth.uid());
+
+-- Buckets: harm-private is never public; harm-public contains only administrator-approved publication copies.
+insert into storage.buckets (id,name,public,file_size_limit,allowed_mime_types)
+values ('harm-private','harm-private',false,10485760,array['image/jpeg','image/png','image/webp'])
+on conflict (id) do update set public=false,file_size_limit=10485760,allowed_mime_types=array['image/jpeg','image/png','image/webp'];
+
+insert into storage.buckets (id,name,public,file_size_limit,allowed_mime_types)
+values ('harm-public','harm-public',true,10485760,array['image/jpeg','image/png','image/webp'])
+on conflict (id) do update set public=true,file_size_limit=10485760,allowed_mime_types=array['image/jpeg','image/png','image/webp'];
+
+-- Allow submissions only under incoming/<uuid>/... in private bucket.
+create policy "harm private anon upload" on storage.objects for insert to anon, authenticated
+with check (bucket_id='harm-private' and (storage.foldername(name))[1]='incoming');
+create policy "harm private admin read" on storage.objects for select to authenticated
+using (bucket_id='harm-private' and public.is_harm_admin());
+create policy "harm private admin delete" on storage.objects for delete to authenticated
+using (bucket_id='harm-private' and public.is_harm_admin());
+
+-- Admin can publish approved copies.
+create policy "harm public admin insert" on storage.objects for insert to authenticated
+with check (bucket_id='harm-public' and public.is_harm_admin());
+create policy "harm public admin update" on storage.objects for update to authenticated
+using (bucket_id='harm-public' and public.is_harm_admin()) with check (bucket_id='harm-public' and public.is_harm_admin());
+create policy "harm public admin delete" on storage.objects for delete to authenticated
+using (bucket_id='harm-public' and public.is_harm_admin());
+
+-- After creating your Supabase Auth user, make that user an admin with:
+-- insert into public.harm_admins(user_id) values ('YOUR_AUTH_USER_UUID');
