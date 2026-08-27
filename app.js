@@ -33,6 +33,7 @@ const LANG_META={
  he:{dir:"rtl",voice:"he-IL"}, jv:{dir:"ltr",voice:"jv-ID"}, id:{dir:"ltr",voice:"id-ID"},
  fr:{dir:"ltr",voice:"fr-FR"}, es:{dir:"ltr",voice:"es-ES"}, de:{dir:"ltr",voice:"de-DE"}, tr:{dir:"ltr",voice:"tr-TR"}
 };
+window.LuxDotTranslations=TX;
 const CORE_LANGS=["ar","en","nl","he","jv","id","fr","es","de","tr"];
 let LANG=(window.LuxLang&&window.LuxLang.get())||"en";
 if(!CORE_LANGS.includes(LANG))LANG="en";

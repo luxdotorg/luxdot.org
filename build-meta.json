@@ -1,7 +1,7 @@
 {
   "product": "LuxDot",
-  "version": "4.18.39",
-  "build_time": "2026-08-27T06:15:00+02:00",
+  "version": "4.18.40",
+  "build_time": "2026-08-27T07:25:00+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
   "release_type": "FULL_REPLACE",
@@ -24,6 +24,6 @@
   ],
   "calendar": "monthly planner + safe calendar header signal",
   "pulse": "icon-only bounded header signal",
-  "media_cache_key": "41839",
-  "rebuilt_from": "4.18.38"
+  "media_cache_key": "41840",
+  "rebuilt_from": "4.18.39"
 }
