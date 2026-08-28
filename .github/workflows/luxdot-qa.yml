@@ -112,10 +112,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          # First deployment establishes a complete baseline without blocking on
-          # historical debt. The report still exposes broken links, duplicate IDs,
-          # malformed document structure, metadata and accessibility signals.
-          python tools/site_health.py --fail-on none | tee site-health-report.txt
+          # Phase A established a zero-error / zero-warning baseline.
+          # From now on any new warning or error blocks the PR.
+          python tools/site_health.py --fail-on warning | tee site-health-report.txt
 
       - name: Upload site health report
         if: always()
