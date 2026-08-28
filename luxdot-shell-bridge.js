@@ -8,7 +8,13 @@ const DIRECT_NATIVE=new Set([
   '/home.html',
   '/research.html',
   '/projects.html',
-  '/memory.html'
+  '/memory.html',
+  '/library.html',
+  '/faith.html',
+  '/humanity.html',
+  '/media.html',
+  '/audiovisual.html',
+  '/praxis.html'
 ]);
 
 const normalizedPath=()=>{
@@ -29,7 +35,7 @@ try{
   const u=new URL(location.href);
   if(u.pathname.endsWith(SHELL_PATH)) return;
 
-  // Phase B: the four primary navigation pages are now top-level documents.
+  // Phase B: migrated navigation surfaces are native top-level documents.
   // If one is ever loaded inside the compatibility shell, escape cleanly.
   if(isDirectNative()){
     if(u.searchParams.has(EMBED_PARAM)){

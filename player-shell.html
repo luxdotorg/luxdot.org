@@ -24,7 +24,7 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050706}
  const root=new URL('/',location.origin);
  const initialShellUrl=new URL(location.href);
  const initialQs=initialShellUrl.searchParams;
- const directNative=new Set(['home.html','research.html','projects.html','memory.html']);
+ const directNative=new Set(['home.html','research.html','projects.html','memory.html','library.html','faith.html','humanity.html','media.html','audiovisual.html','praxis.html']);
 
  const shellLang=()=>{
    const l=initialQs.get('lang')||localStorage.getItem('luxdot.lang')||'en';
@@ -81,7 +81,7 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050706}
 
  let current=safePage(initialQs.get('page')||'index.html');
 
- // Phase B: primary navigation surfaces no longer run inside the iframe shell.
+ // Phase B: migrated navigation surfaces no longer run inside the iframe shell.
  if(isDirectNative(current)){
    exitToDirect(current);
    return;
