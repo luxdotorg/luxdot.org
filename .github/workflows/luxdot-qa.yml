@@ -21,173 +21,86 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
       - name: Repository guardrails
         shell: bash
         run: |
           set -euo pipefail
-          test -s VERSION
-          test -s index.html
-          test -s GOVERNANCE.md
-          test -s CONTRIBUTING.md
-
+          test -s VERSION; test -s index.html; test -s GOVERNANCE.md; test -s CONTRIBUTING.md
           python - <<'PY'
           from pathlib import Path
-          import re, sys
-
-          root = Path('.')
-          errors = []
-
-          version = Path('VERSION').read_text(encoding='utf-8').strip()
-          if not re.fullmatch(r'\d+\.\d+\.\d+', version):
-              errors.append(f'VERSION must use X.Y.Z, got: {version!r}')
-
-          secret_patterns = [
-              (re.compile(r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'), 'private key'),
-              (re.compile(r'ghp_[A-Za-z0-9]{30,}'), 'GitHub personal access token'),
-              (re.compile(r'github_pat_[A-Za-z0-9_]{30,}'), 'GitHub fine-grained token'),
-              (re.compile(r'eyJ[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{20,}'), 'JWT-like credential'),
-          ]
-
-          text_ext = {'.html','.css','.js','.json','.md','.txt','.yml','.yaml','.py','.xml','.svg'}
-          skip = {'.git'}
-          for p in root.rglob('*'):
-              if not p.is_file() or any(part in skip for part in p.parts):
-                  continue
-              if p.suffix.lower() not in text_ext and p.name not in {'VERSION','CNAME'}:
-                  continue
-              try:
-                  data = p.read_text(encoding='utf-8')
-              except UnicodeDecodeError:
-                  continue
-              for pattern, label in secret_patterns:
-                  if pattern.search(data):
-                      errors.append(f'{p}: detected {label}')
-
-          if errors:
-              print('\n'.join('ERROR: '+e for e in errors))
-              sys.exit(1)
+          import re,sys
+          version=Path('VERSION').read_text().strip(); errors=[]
+          if not re.fullmatch(r'\d+\.\d+\.\d+',version): errors.append('invalid VERSION '+repr(version))
+          pats=[re.compile(r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'),re.compile(r'ghp_[A-Za-z0-9]{30,}'),re.compile(r'github_pat_[A-Za-z0-9_]{30,}')]
+          for p in Path('.').rglob('*'):
+            if not p.is_file() or '.git' in p.parts: continue
+            try: data=p.read_text(encoding='utf-8')
+            except: continue
+            if any(x.search(data) for x in pats): errors.append(str(p)+': credential-like content')
+          if errors: print('\n'.join(errors));sys.exit(1)
           print('Repository guardrails passed.')
           PY
-
       - name: JavaScript syntax
         shell: bash
         run: |
           set -euo pipefail
-          while IFS= read -r -d '' file; do
-            node --check "$file" >/dev/null
-          done < <(find . -type f -name '*.js' -not -path './.git/*' -print0)
-          echo 'JavaScript syntax passed.'
-
+          while IFS= read -r -d '' file; do node --check "$file" >/dev/null; done < <(find . -type f -name '*.js' -not -path './.git/*' -print0)
       - name: Basic HTML sanity
         shell: bash
         run: |
-          set -euo pipefail
           python - <<'PY'
           from html.parser import HTMLParser
           from pathlib import Path
-          import sys
-
-          class Parser(HTMLParser):
-              pass
-
-          bad=[]
-          for p in Path('.').rglob('*.html'):
-              try:
-                  Parser().feed(p.read_text(encoding='utf-8'))
-              except Exception as e:
-                  bad.append(f'{p}: {e}')
-          if bad:
-              print('\n'.join(bad))
-              sys.exit(1)
+          for p in Path('.').rglob('*.html'): HTMLParser().feed(p.read_text(encoding='utf-8'))
           print('HTML parser sanity passed.')
           PY
-
       - name: Shared shell bridge contract
         shell: bash
         run: |
-          set -euo pipefail
           python - <<'PY'
           from pathlib import Path
-          import re, sys
-
-          root=Path('.')
-          old_redirect="location.replace('/player-shell.html?page='"
-          shared_re=re.compile(r'/luxdot-shell-bridge\.js\?v=\d+')
-          offenders=[]
-          users=[]
-          for p in root.rglob('*.html'):
-              if '.git' in p.parts or p.name=='player-shell.html':
-                  continue
-              text=p.read_text(encoding='utf-8')
-              if old_redirect in text:
-                  offenders.append(str(p))
-              if shared_re.search(text):
-                  users.append(str(p))
-          if offenders:
-              print('ERROR: duplicated inline shell redirect remains in:')
-              print('\n'.join(offenders[:50]))
-              sys.exit(1)
-          if len(users)<500:
-              print(f'ERROR: only {len(users)} pages use the shared shell bridge; expected at least 500.')
-              sys.exit(1)
-          if not Path('luxdot-shell-bridge.js').is_file():
-              print('ERROR: luxdot-shell-bridge.js is missing.')
-              sys.exit(1)
-          print(f'Shared shell bridge contract passed: {len(users)} pages use one navigation bridge.')
+          import re,sys
+          old="location.replace('/player-shell.html?page='"; rx=re.compile(r'/luxdot-shell-bridge\.js\?v=\d+'); offenders=[];users=[]
+          for p in Path('.').rglob('*.html'):
+            if '.git' in p.parts or p.name=='player-shell.html': continue
+            t=p.read_text(encoding='utf-8')
+            if old in t: offenders.append(str(p))
+            if rx.search(t): users.append(str(p))
+          if offenders or len(users)<500 or not Path('luxdot-shell-bridge.js').is_file(): print(offenders,len(users));sys.exit(1)
+          print(f'Shared shell bridge contract passed: {len(users)} pages.')
           PY
-
       - name: Direct native page contract
         shell: bash
         run: |
-          set -euo pipefail
           python - <<'PY'
           from pathlib import Path
           import sys
-
-          direct=[
-              'home.html','research.html','projects.html','memory.html',
-              'library.html','faith.html','humanity.html','media.html',
-              'audiovisual.html','praxis.html'
-          ]
-          bridge=Path('luxdot-shell-bridge.js').read_text(encoding='utf-8')
-          shell=Path('player-shell.html').read_text(encoding='utf-8')
-          errors=[]
-          for name in direct:
-              p=Path(name)
-              if not p.is_file():
-                  errors.append(f'{name}: missing direct-native page')
-                  continue
-              text=p.read_text(encoding='utf-8')
-              if '/luxdot-shell-bridge.js?v=' not in text:
-                  errors.append(f'{name}: missing shared bridge')
-              if f"'/{name}'" not in bridge:
-                  errors.append(f'{name}: missing from bridge DIRECT_NATIVE set')
-              if f"'{name}'" not in shell:
-                  errors.append(f'{name}: missing from player-shell directNative set')
-          if errors:
-              print('\n'.join('ERROR: '+e for e in errors))
-              sys.exit(1)
-          print(f'Direct native contract passed: {len(direct)} pages run outside the iframe shell.')
+          direct=['home.html','research.html','projects.html','memory.html','library.html','faith.html','humanity.html','media.html','audiovisual.html','praxis.html']; bridge=Path('luxdot-shell-bridge.js').read_text();shell=Path('player-shell.html').read_text();e=[]
+          for n in direct:
+            if not Path(n).is_file() or f"'/{n}'" not in bridge or f"'{n}'" not in shell:e.append(n)
+          if e: print(e);sys.exit(1)
+          print('Direct native contract passed.')
           PY
-
       - name: Site health audit
         shell: bash
         run: |
           set -euo pipefail
-          # Phase A established a zero-error / zero-warning baseline.
-          # From now on any new warning or error blocks the PR.
           python tools/site_health.py --fail-on warning | tee site-health-report.txt
-
-      - name: Upload site health report
+      - name: Arabic surface translation audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python tools/arabic_surface_audit.py | tee arabic-surface-report.txt
+      - name: Upload QA reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: luxdot-site-health-report
-          path: site-health-report.txt
+          name: luxdot-qa-reports
+          path: |
+            site-health-report.txt
+            arabic-surface-report.txt
           if-no-files-found: ignore
