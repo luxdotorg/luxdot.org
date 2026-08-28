@@ -1,0 +1,4 @@
+LuxDot governance end-to-end test
+Date: 2026-08-28
+Purpose: verify branch -> PR -> required QA -> squash merge -> main deployment pipeline.
+This file may remain as a minimal governance audit marker.
