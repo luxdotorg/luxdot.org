@@ -10,3 +10,13 @@
 
 /calendar*
   Cache-Control: no-cache, must-revalidate, max-age=0
+
+# LuxDot v4.18.46 — allow the Removing Harm frontend to reach this project's Supabase API/storage.
+/removing-harm-way.html
+  Content-Security-Policy: connect-src 'self' https://zcjzhiyogexmbcsgbcwk.supabase.co
+
+/harm-dashboard.html
+  Content-Security-Policy: connect-src 'self' https://zcjzhiyogexmbcsgbcwk.supabase.co
+
+/harm-map.html
+  Content-Security-Policy: connect-src 'self' https://zcjzhiyogexmbcsgbcwk.supabase.co
