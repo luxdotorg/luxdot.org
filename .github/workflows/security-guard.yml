@@ -1,0 +1,41 @@
+name: LuxDot Credential Guard
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  credential-guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan common private credential forms
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import re, sys
+          patterns = [
+              (re.compile(r'-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----'), 'private key'),
+              (re.compile(r'ghp_[A-Za-z0-9]{30,}'), 'GitHub classic PAT'),
+              (re.compile(r'github_pat_[A-Za-z0-9_]{30,}'), 'GitHub fine-grained PAT'),
+              (re.compile(r'eyJ[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{20,}\.[A-Za-z0-9_-]{20,}'), 'JWT-like credential'),
+          ]
+          allowed = {'.html','.css','.js','.json','.md','.txt','.yml','.yaml','.py','.xml','.svg'}
+          findings=[]
+          for p in Path('.').rglob('*'):
+              if not p.is_file() or '.git' in p.parts or p.suffix.lower() not in allowed:
+                  continue
+              try: data=p.read_text(encoding='utf-8')
+              except UnicodeDecodeError: continue
+              for rx,label in patterns:
+                  if rx.search(data): findings.append(f'{p}: {label}')
+          if findings:
+              print('\n'.join('ERROR: '+x for x in findings)); sys.exit(1)
+          print('Credential guard passed.')
+          PY
