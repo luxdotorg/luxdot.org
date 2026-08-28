@@ -1,0 +1,46 @@
+name: LuxDot Static QA
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  static-sanity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Required files and version
+        run: |
+          test -s index.html
+          test -s VERSION
+          test -s GOVERNANCE.md
+          test -s CONTRIBUTING.md
+          python - <<'PY'
+          import re
+          from pathlib import Path
+          v=Path('VERSION').read_text(encoding='utf-8').strip()
+          assert re.fullmatch(r'\d+\.\d+\.\d+',v), f'Invalid VERSION: {v!r}'
+          print('Version:',v)
+          PY
+      - name: JavaScript syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' file; do node --check "$file" >/dev/null; done < <(find . -type f -name '*.js' -not -path './.git/*' -print0)
+      - name: HTML parser sanity
+        run: |
+          python - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          class P(HTMLParser): pass
+          for f in Path('.').rglob('*.html'):
+              P().feed(f.read_text(encoding='utf-8'))
+          print('HTML parser sanity passed.')
+          PY
