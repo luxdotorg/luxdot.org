@@ -3,61 +3,19 @@
 const L={
  ar:{
   'LUXDOT · PROPHETS · SHARED-CORE STORY':'لوكسدوت · الأنبياء · القصة المشتركة',
-  'LUXDOT · PROPHETIC TRADITIONS':'لوكسدوت · التقاليد النبوية',
-  'LUXDOT · PROPHETIC TRADITIONS ATLAS':'لوكسدوت · أطلس التقاليد النبوية',
-  'LUXDOT · PROPHET RELATIONS':'لوكسدوت · علاقات الأنبياء',
-  'LUXDOT · ACTIVE STORIES':'لوكسدوت · قصص مفعّلة',
-  'EXPANDED ATLAS':'الأطلس الموسّع','INTERACTIVE GRAPH':'جراف تفاعلي',
-  'ACTIVE STORY':'قصة مفعّلة','OPEN SHORT STORY →':'افتح القصة المختصرة ←',
-  'COMMON GROUND FIRST':'المشترك أولًا','SHARED-CORE STORY':'القصة المشتركة',
-  'LIVE RESEARCH':'أبحاث حيّة','RESEARCH':'بحث','SCIENCE':'علوم','MEMORY':'ذاكرة',
-  'PROJECTS':'مشاريع','MEDIA':'وسائط','NEWS':'أخبار','LIBRARY':'المكتبة',
-  'ABOUT':'عن لوكسدوت','HOME':'الرئيسية','BACK':'رجوع','NEXT':'التالي','PREVIOUS':'السابق',
-  'READ MORE':'اقرأ المزيد','OPEN':'افتح','SOURCE':'المصدر','SOURCES':'المصادر',
-  'STATUS':'الحالة','TIMELINE':'الخط الزمني','ATLAS':'الأطلس','MAP':'الخريطة',
-  'REPORT':'تبليغ','CORRECT':'تصحيح','CHALLENGE':'اعتراض'
+  'LUXDOT · PROPHETIC TRADITIONS':'لوكسدوت · التقاليد النبوية','LUXDOT · PROPHETIC TRADITIONS ATLAS':'لوكسدوت · أطلس التقاليد النبوية','LUXDOT · PROPHET RELATIONS':'لوكسدوت · علاقات الأنبياء','LUXDOT · ACTIVE STORIES':'لوكسدوت · قصص مفعّلة',
+  'EXPANDED ATLAS':'الأطلس الموسّع','INTERACTIVE GRAPH':'الرسم التفاعلي','ACTIVE STORY':'قصة مفعّلة','OPEN SHORT STORY →':'افتح القصة المختصرة ←','COMMON GROUND FIRST':'المشترك أولًا','SHARED-CORE STORY':'القصة المشتركة',
+  'LIVE RESEARCH':'أبحاث حيّة','RESEARCH':'بحث','SCIENCE':'علوم','MEMORY':'ذاكرة','PROJECTS':'مشاريع','MEDIA':'وسائط','NEWS':'أخبار','MEDIA / NEWS':'وسائط / أخبار','LIBRARY':'المكتبة','ABOUT':'عن لوكسدوت','HOME':'الرئيسية','BACK':'رجوع','NEXT':'التالي','PREVIOUS':'السابق','READ MORE':'اقرأ المزيد','OPEN':'افتح','SOURCE':'المصدر','SOURCES':'المصادر','STATUS':'الحالة','TIMELINE':'الخط الزمني','ATLAS':'الأطلس','MAP':'الخريطة','REPORT':'تبليغ','CORRECT':'تصحيح','CHALLENGE':'اعتراض',
+  'START':'ابدأ','UNDERSTAND':'افهم','READ':'اقرأ','REMEMBER':'تذكّر','GRAPH':'الخريطة','NEW · IDENTITY LAYER':'جديد · طبقة الهوية','HUMANITY & MEANING':'الإنسان والمعنى','PROPHETS · SAINTS · MARTYRS · EVERYDAY GOOD · SCIENTISTS · SAGES':'الأنبياء · القديسون · الشهداء · فاعلو الخير · العلماء · الحكماء','WHAT DOES LUXDOT STAND FOR?':'ما الذي تمثله لوكسدوت؟','CURRENT VIDEOS, POSTS AND REPORTING MAPPED TO LUXDOT RESEARCH':'فيديوهات ومنشورات وتقارير معاصرة مرتبطة بأبحاث لوكسدوت','EXPANDED':'موسّع','HUMAN PRACTICE LAB':'مختبر الممارسات الإنسانية','LIVING AXIOLOGY':'القيم الحيّة','LIVING VALUES':'القيم الحيّة','AUDIOVISUAL COMMONS':'المشاع السمعي البصري','SENSES OF KNOWLEDGE':'حواس المعرفة',
+  'KNOWLEDGE GRAPH':'الخريطة المعرفية','RESEARCH STANDARD · PREVIEW':'معيار البحث · معاينة','INTERACTIVE RESEARCH COSMOS':'كون الأبحاث التفاعلي','RESEARCH GALAXIES':'مجرات البحث','NEW GALAXIES':'مجرات جديدة','IDENTITY TAGS':'وسوم الهوية','RESEARCH WORLDS':'عوالم البحث','RESEARCH ORGANIZER':'منظّم الأبحاث',
+  'OPEN / LIVE ATLAS':'افتح / أطلس حي','VISUAL':'مرئي','AUDIO':'صوتي','COMMONS':'المشاع','SACRED AUDIO LOCK':'قفل الصوت المقدّس','EDITORIAL LIBRARY':'المكتبة التحريرية','STATION IDENTITY':'هوية المحطة','LIVE INPUT':'بث مباشر','VISUAL CHANNEL':'القناة المرئية','VISUAL SACRED LOCK':'قفل المرئيات المقدّسة','AUDIO–VISUAL HARMONY':'التناغم السمعي البصري','EVENT DETAIL':'تفاصيل الحدث','GLOBAL CALENDAR · MONTH PLANNER':'التقويم العالمي · مخطط الشهر','PARCEL EVIDENCE LAB':'مختبر أدلة القطعة','TEXTUAL HISTORY':'التاريخ النصي','EVIDENCE':'الدليل','SOURCE → CLAIM':'المصدر ← الادعاء','EVIDENCE → LIMITS':'الدليل ← الحدود','CLAIM LAB':'مختبر الادعاءات','NO NEW EVIDENCE':'لا دليل جديد','NEW INDEPENDENT CONVERGENCE':'تقاطع مستقل جديد','WITNESS STREAM · VERIFIED PUBLIC LAYER':'تيار الشهادة · الطبقة العامة المتحققة','FIELD MEMORY · COINCIDENCE ARCHIVE':'ذاكرة ميدانية · أرشيف المصادفات','LIVING VALUES / AXIOLOGY':'القيم الحيّة / علم القيم',
+  'LUXDOT HYPOTHESES · فرضيات لوكسدوت':'فرضيات لوكسدوت','HYPOTHESIS 02 · ACTIVE':'الفرضية 02 · نشطة','HYPOTHESIS 01 · DEVELOPING':'الفرضية 01 · قيد التطوير','INACTIVE':'غير مفعّلة','INACTIVE · MATHEMATICAL DRAFT':'غير مفعّلة · مسودة رياضية','LUXDOT / WORLD STAGE / RESEARCH 015':'لوكسدوت / مسرح العالم / البحث 015','CORE SOURCES':'المصادر الأساسية','WHAT IS GENUINELY STRIKING?':'ما اللافت فعلًا؟','OPEN QUESTIONS FOR THE NEXT ROUND':'أسئلة مفتوحة للجولة القادمة'
  },
- en:{'الرئيسية':'Home','المكتبة':'Library','الأبحاث الحيّة':'Live Research','المشاريع':'Projects'},
- nl:{'Home':'Home','Library':'Bibliotheek','Live Research':'Levend onderzoek','Projects':'Projecten'},
- he:{'Home':'ראשי','Library':'ספרייה','Live Research':'מחקר חי','Projects':'פרויקטים'},
- jv:{'Home':'Ngarep','Library':'Pustaka','Live Research':'Panaliten Urip','Projects':'Proyèk'},
- id:{'Home':'Beranda','Library':'Perpustakaan','Live Research':'Riset Hidup','Projects':'Proyek'},
- fr:{'Home':'Accueil','Library':'Bibliothèque','Live Research':'Recherche vivante','Projects':'Projets'},
- es:{'Home':'Inicio','Library':'Biblioteca','Live Research':'Investigación viva','Projects':'Proyectos'},
- de:{'Home':'Start','Library':'Bibliothek','Live Research':'Live-Forschung','Projects':'Projekte'},
- tr:{'Home':'Ana sayfa','Library':'Kütüphane','Live Research':'Canlı Araştırma','Projects':'Projeler'}
+ en:{'الرئيسية':'Home','المكتبة':'Library','الأبحاث الحيّة':'Live Research','المشاريع':'Projects'},nl:{'Home':'Home','Library':'Bibliotheek','Live Research':'Levend onderzoek','Projects':'Projecten'},he:{'Home':'ראשי','Library':'ספרייה','Live Research':'מחקר חי','Projects':'פרויקטים'},jv:{'Home':'Ngarep','Library':'Pustaka','Live Research':'Panaliten Urip','Projects':'Proyèk'},id:{'Home':'Beranda','Library':'Perpustakaan','Live Research':'Riset Hidup','Projects':'Proyek'},fr:{'Home':'Accueil','Library':'Bibliothèque','Live Research':'Recherche vivante','Projects':'Projets'},es:{'Home':'Inicio','Library':'Biblioteca','Live Research':'Investigación viva','Projects':'Proyectos'},de:{'Home':'Start','Library':'Bibliothek','Live Research':'Live-Forschung','Projects':'Projekte'},tr:{'Home':'Ana sayfa','Library':'Kütüphane','Live Research':'Canlı Araştırma','Projects':'Projeler'}
 };
 const lang=()=>new URLSearchParams(location.search).get('lang')||document.documentElement.lang||'en';
-const preserve=e=>e.closest('code,pre,kbd,samp,[translate="no"],.notranslate,.native,.original-script,.transliteration,.formula') ||
-  /^(https?:|www\.|[\w.+-]+@)/i.test((e.nodeValue||'').trim());
-function translateExact(text,l){
- const d=L[l]||{}; const t=text.trim();
- if(d[t]) return text.replace(t,d[t]);
- // Versioned kickers: strip vN then translate base.
- const m=t.match(/^(.*?)(?:\s*·\s*v[\d.]+)$/i);
- if(m && d[m[1]]) return text.replace(t,d[m[1]]);
- return text;
-}
-function polish(){
- const l=lang();document.documentElement.lang=l;document.documentElement.dir=(l==='ar'||l==='he')?'rtl':'ltr';
- if(document.body)document.body.dir=document.documentElement.dir;
- const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;
- while(n=w.nextNode()){
-  if(!n.nodeValue.trim()||preserve(n))continue;
-  const x=translateExact(n.nodeValue,l);if(x!==n.nodeValue)n.nodeValue=x;
- }
- // Arabic page: make mandatory non-Arabic scientific/original labels bilingual when a data-ar-label exists.
- if(l==='ar')document.querySelectorAll('[data-ar-label]').forEach(e=>{
-   const a=e.dataset.arLabel;if(a&&!e.textContent.includes(a))e.textContent=a+' — '+e.textContent.trim();
- });
- // Normalize controls in current language.
- document.querySelectorAll('button,a,[role="button"]').forEach(e=>{
-   const ar=e.getAttribute('aria-label'),title=e.getAttribute('title');
-   if(ar){const x=translateExact(ar,l);if(x!==ar)e.setAttribute('aria-label',x)}
-   if(title){const x=translateExact(title,l);if(x!==title)e.setAttribute('title',x)}
- });
- document.documentElement.dataset.luxLanguagePolished='1';
-}
-if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(polish,0));else setTimeout(polish,0);
-document.addEventListener('luxlang',()=>setTimeout(polish,30));
+const preserve=e=>e.closest('code,pre,kbd,samp,[translate="no"],.notranslate,.native,.original-script,.transliteration,.formula') || /^(https?:|www\.|[\w.+-]+@)/i.test((e.nodeValue||'').trim());
+function translateExact(text,l){const d=L[l]||{},t=text.trim(),u=t.toUpperCase();if(d[t])return text.replace(t,d[t]);if(d[u])return text.replace(t,d[u]);const m=t.match(/^(.*?)(?:\s*·\s*v[\d.]+)$/i);if(m){const k=m[1],ku=k.toUpperCase();if(d[k]||d[ku])return text.replace(t,d[k]||d[ku])}return text}
+function polish(){const l=lang();document.documentElement.lang=l;document.documentElement.dir=(l==='ar'||l==='he')?'rtl':'ltr';if(document.body)document.body.dir=document.documentElement.dir;const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;while(n=w.nextNode()){if(!n.nodeValue.trim()||preserve(n))continue;const x=translateExact(n.nodeValue,l);if(x!==n.nodeValue)n.nodeValue=x}if(l==='ar')document.querySelectorAll('[data-ar-label]').forEach(e=>{const a=e.dataset.arLabel;if(a&&!e.textContent.includes(a))e.textContent=a+' — '+e.textContent.trim()});document.querySelectorAll('button,a,[role="button"],input,select,textarea').forEach(e=>{for(const k of ['aria-label','title','placeholder']){const v=e.getAttribute(k);if(v){const x=translateExact(v,l);if(x!==v)e.setAttribute(k,x)}}});document.documentElement.dataset.luxLanguagePolished='1'}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(polish,0));else setTimeout(polish,0);document.addEventListener('luxlang',()=>setTimeout(polish,30));
 })();
