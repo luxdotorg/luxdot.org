@@ -5,8 +5,8 @@ Phase B continues the navigation architecture cleanup without removing the persi
 ## Changes
 
 - Added `luxdot-shell-bridge.js` as the single shared page-to-shell navigation bridge.
-- Replaced duplicated inline redirect/postMessage bridge code in **522 HTML pages** with one root-absolute shared script reference.
-- Removed roughly 10,440 duplicated lines of shell-navigation code from individual pages.
+- Replaced duplicated inline redirect/postMessage bridge code in **528 HTML pages** with one root-absolute shared script reference: 522 standard bridge blocks plus 6 older compact redirect variants found by the blocking QA pass.
+- Removed more than 10,440 duplicated lines of shell-navigation code from individual pages.
 - Kept clean public URL synchronization and the existing persistent radio/player behavior.
 - Added an idempotent repository migration utility at `tools/migrate_shell_bridge.py` for auditing or future controlled migrations.
 - Removed the one-shot migration workflow after it completed; no write-enabled migration workflow is retained on main.
