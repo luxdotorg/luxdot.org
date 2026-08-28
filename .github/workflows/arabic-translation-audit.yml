@@ -1,0 +1,25 @@
+name: Arabic Translation Leak Audit
+
+on:
+  push:
+    branches:
+      - 'luxdot/arabic-translation-audit'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Scan Arabic surfaces for untranslated English
+        run: python tools/audit_arabic_translation_leaks.py | tee arabic-translation-audit.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: arabic-translation-audit
+          path: arabic-translation-audit.txt
