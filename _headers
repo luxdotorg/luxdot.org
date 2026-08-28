@@ -11,12 +11,22 @@
 /calendar*
   Cache-Control: no-cache, must-revalidate, max-age=0
 
+
+# LuxDot v4.18.47 — the Removing Harm page is loaded inside player-shell.html.
+# Allow the shell document to reach the same Supabase project as its embedded harm workflow.
+/player-shell.html
+  Content-Security-Policy: connect-src 'self' https://zcjzhiyogexmbcsgbcwk.supabase.co
+  Cache-Control: no-cache, must-revalidate, max-age=0
+
 # LuxDot v4.18.46 — allow the Removing Harm frontend to reach this project's Supabase API/storage.
 /removing-harm-way.html
   Content-Security-Policy: connect-src 'self' https://zcjzhiyogexmbcsgbcwk.supabase.co
+  Cache-Control: no-cache, must-revalidate, max-age=0
 
 /harm-dashboard.html
   Content-Security-Policy: connect-src 'self' https://zcjzhiyogexmbcsgbcwk.supabase.co
+  Cache-Control: no-cache, must-revalidate, max-age=0
 
 /harm-map.html
   Content-Security-Policy: connect-src 'self' https://zcjzhiyogexmbcsgbcwk.supabase.co
+  Cache-Control: no-cache, must-revalidate, max-age=0
