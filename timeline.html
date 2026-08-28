@@ -1,25 +1,6 @@
 <!doctype html><html lang="ar" dir="rtl"><head>
 <meta name="description" content="رزنامة حيّة لما فعلناه، ما نفعله الآن، وما نخطط له. نفصل فيها بين الوقائع والتواريخ وبين الرمزية الداخلية للمشروع.">
-<script>
-(()=>{try{
- const u=new URL(location.href);
- if(window.top===window.self && u.searchParams.get('luxembed')!=='1' && !u.pathname.endsWith('/player-shell.html')){
-   const here=u.pathname.replace(/^\//,'')+u.search+u.hash;
-   location.replace('/player-shell.html?page='+encodeURIComponent(here));
-   return;
- }
- if(window.top!==window.self){
-   const send=()=>{
-     try{
-       const u=new URL(location.href);
-       u.searchParams.delete('luxembed');
-       parent.postMessage({type:'luxdot:navigate',url:u.pathname.replace(/^\//,'')+u.search+u.hash},location.origin);
-     }catch(e){}
-   };
-   addEventListener('load',send,{once:true});
- }
-}catch(e){}})();
-</script><script src="language-core.js?v=41837"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="/luxdot-shell-bridge.js?v=41850"></script><script src="language-core.js?v=41837"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>LuxDot · الخط الزمني</title><link href="styles.css?v=430" rel="stylesheet"><link rel="stylesheet" href="luxdot-ui-lock.css?v=4385"><link rel="stylesheet" href="luxdot-radio.css?v=41819b">
 <style>
 body{margin:0;background:#020503;color:#edf7ef;font-family:"Noto Kufi Arabic",Arial,sans-serif}.tl{max-width:920px;margin:auto;padding:32px 20px 110px}.k{color:#d2b15b;letter-spacing:.12em;font-size:11px}.tl h1{font-size:clamp(30px,6vw,58px);margin:.2em 0}.intro{color:#afc2b5;line-height:1.9}.line{position:relative;margin-top:35px;padding-inline-start:42px}.line:before{content:"";position:absolute;inset-inline-start:12px;top:0;bottom:0;width:1px;background:linear-gradient(#63ff9b,#d2b15b,#274333)}.event{position:relative;margin-bottom:24px;padding:20px;border:1px solid #203c29;border-radius:20px;background:#06100a}.event:before{content:"";position:absolute;inset-inline-start:-36px;top:27px;width:13px;height:13px;border-radius:50%;background:#63ff9b;box-shadow:0 0 14px rgba(99,255,155,.5)}.event.planned:before{background:#d2b15b}.date{font:800 12px Arial;color:#8fa397;letter-spacing:.08em}.tag{display:inline-block;margin-top:7px;padding:5px 8px;border:1px solid #31543a;border-radius:999px;color:#8efab1;font-size:10px}.event h2{margin:.5em 0 .2em;color:#f3f8f4}.event p{line-height:1.9;color:#cbdad0}.symbol{padding:12px 14px;border-inline-start:2px solid #d2b15b;background:#0a140d;color:#b8c8bd;font-size:12px;line-height:1.8}.future{color:#d2b15b}.today{font-size:11px;color:#789184;margin-top:24px}

@@ -2,26 +2,7 @@
 
 <html dir="ltr" lang="en"><head>
 <meta name="description" content="Erasmus — a LuxDot living research, memory and knowledge page.">
-<script>
-(()=>{try{
- const u=new URL(location.href);
- if(window.top===window.self && u.searchParams.get('luxembed')!=='1' && !u.pathname.endsWith('/player-shell.html')){
-   const here=u.pathname.replace(/^\//,'')+u.search+u.hash;
-   location.replace('/player-shell.html?page='+encodeURIComponent(here));
-   return;
- }
- if(window.top!==window.self){
-   const send=()=>{
-     try{
-       const u=new URL(location.href);
-       u.searchParams.delete('luxembed');
-       parent.postMessage({type:'luxdot:navigate',url:u.pathname.replace(/^\//,'')+u.search+u.hash},location.origin);
-     }catch(e){}
-   };
-   addEventListener('load',send,{once:true});
- }
-}catch(e){}})();
-</script><script src="language-core.js?v=41837"></script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<script src="/luxdot-shell-bridge.js?v=41850"></script><script src="language-core.js?v=41837"></script><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <title>Erasmus · LuxDot</title>
 <link href="styles.css?v=430" rel="stylesheet"/><link href="erasmus.css?v=430" rel="stylesheet"/><script defer="" src="app.js?v=43111"></script><style id="luxdot-fallback">html,body{margin:0;min-height:100%;background:#020403;color:#eef8f1}body{font-family:Arial,Helvetica,sans-serif}a{color:inherit}#matrix{position:fixed;inset:0;width:100%;height:100%;background:#000}.top{background:#050806;color:#eef8f1}</style><script src="analytics-config.js?v=430"></script><script defer="" src="analytics.js?v=430"></script><link href="arabic-polish.css?v=430" rel="stylesheet"/><link href="luxdot-arabic-ui.css?v=430" rel="stylesheet"/><script defer="" src="luxdot-arabic-ui.js?v=4328"></script><link href="compat.css?v=430" rel="stylesheet"/><link href="platform-v43.css?v=4328" rel="stylesheet"/><link rel="stylesheet" href="research-media.css">
 <link rel="stylesheet" href="luxdot-ui-lock.css?v=4385"><link rel="stylesheet" href="luxdot-global-language.css?v=4399"><link rel="stylesheet" href="luxdot-radio.css?v=41819b"><link rel="stylesheet" href="luxdot-typography-v41416.css?v=41416">

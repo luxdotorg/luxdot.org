@@ -1,25 +1,6 @@
 <!doctype html><html lang="ar" dir="rtl"><head>
 <meta name="description" content="هذه الصفحة لا تعتمد على رقم إصدار مكتوب يدوياً داخل النص. تقرأ build-meta.json من النسخة المنشورة، وتحاول أيضاً قراءة آخر commit عام من مستودع LuxDot.">
-<script>
-(()=>{try{
- const u=new URL(location.href);
- if(window.top===window.self && u.searchParams.get('luxembed')!=='1' && !u.pathname.endsWith('/player-shell.html')){
-   const here=u.pathname.replace(/^\//,'')+u.search+u.hash;
-   location.replace('/player-shell.html?page='+encodeURIComponent(here));
-   return;
- }
- if(window.top!==window.self){
-   const send=()=>{
-     try{
-       const u=new URL(location.href);
-       u.searchParams.delete('luxembed');
-       parent.postMessage({type:'luxdot:navigate',url:u.pathname.replace(/^\//,'')+u.search+u.hash},location.origin);
-     }catch(e){}
-   };
-   addEventListener('load',send,{once:true});
- }
-}catch(e){}})();
-</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="/luxdot-shell-bridge.js?v=41850"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <script src="language-core.js?v=41837"></script><link href="styles.css?v=450" rel="stylesheet"><link rel="stylesheet" href="luxdot-global-language.css?v=4147">
 <title>LuxDot · حالة التطوير الحية</title><style>
 main{max-width:1050px;margin:auto;padding:45px 22px}.card{border:1px solid #294b33;border-radius:20px;padding:22px;margin:15px 0;background:#06100a}h1,h2{color:#e2c66e}code{direction:ltr;display:inline-block}html[lang=ar] body{font-family:'Noto Kufi Arabic',Arial,sans-serif!important}</style><link rel="stylesheet" href="luxdot-typography-v41416.css?v=41416">

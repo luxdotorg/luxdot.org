@@ -1,25 +1,6 @@
 <!doctype html><html lang="en"><head>
 <meta name="description" content="Generated from actual internal links between LuxDot pages. A line means a direct navigational relationship exists; it does not by itself prove a…">
-<script>
-(()=>{try{
- const u=new URL(location.href);
- if(window.top===window.self && u.searchParams.get('luxembed')!=='1' && !u.pathname.endsWith('/player-shell.html')){
-   const here=u.pathname.replace(/^\//,'')+u.search+u.hash;
-   location.replace('/player-shell.html?page='+encodeURIComponent(here));
-   return;
- }
- if(window.top!==window.self){
-   const send=()=>{
-     try{
-       const u=new URL(location.href);
-       u.searchParams.delete('luxembed');
-       parent.postMessage({type:'luxdot:navigate',url:u.pathname.replace(/^\//,'')+u.search+u.hash},location.origin);
-     }catch(e){}
-   };
-   addEventListener('load',send,{once:true});
- }
-}catch(e){}})();
-</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="/luxdot-shell-bridge.js?v=41850"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>LuxDot Knowledge Graph</title><script src="language-core.js?v=41837"></script><link href="styles.css?v=450" rel="stylesheet"><link rel="stylesheet" href="luxdot-global-language.css?v=4399"><link rel="stylesheet" href="luxdot-typography-v41416.css?v=41416">
 <style>
 body{margin:0;background:#020403;color:#eef7f0}main{max-width:1300px;margin:auto;padding:28px 18px 80px}.kg-head{display:flex;gap:12px;justify-content:space-between;align-items:end;flex-wrap:wrap}.kg-note{max-width:780px;opacity:.75}

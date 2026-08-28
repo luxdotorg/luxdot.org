@@ -1,25 +1,6 @@
 <!doctype html><html lang="en"><head>
 <meta name="description" content="LuxDot · Witness — a LuxDot living research, memory and knowledge page.">
-<script>
-(()=>{try{
- const u=new URL(location.href);
- if(window.top===window.self && u.searchParams.get('luxembed')!=='1' && !u.pathname.endsWith('/player-shell.html')){
-   const here=u.pathname.replace(/^\//,'')+u.search+u.hash;
-   location.replace('/player-shell.html?page='+encodeURIComponent(here));
-   return;
- }
- if(window.top!==window.self){
-   const send=()=>{
-     try{
-       const u=new URL(location.href);
-       u.searchParams.delete('luxembed');
-       parent.postMessage({type:'luxdot:navigate',url:u.pathname.replace(/^\//,'')+u.search+u.hash},location.origin);
-     }catch(e){}
-   };
-   addEventListener('load',send,{once:true});
- }
-}catch(e){}})();
-</script><script src="language-core.js?v=41837"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="/luxdot-shell-bridge.js?v=41850"></script><script src="language-core.js?v=41837"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>LuxDot · Witness</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700&display=swap" rel="stylesheet">

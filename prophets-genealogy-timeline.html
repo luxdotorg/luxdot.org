@@ -1,25 +1,6 @@
 <!doctype html><html lang="ar" dir="rtl"><head>
 <meta name="description" content="ثلاث عدسات لنفس المادة: النسب ، العلاقات الرسالية/التاريخية ، و الزمن . عند المرور فوق العقدة يظهر تعريفها وإطارها الزمني، والنقر يفتح قصتها.">
-<script>
-(()=>{try{
- const u=new URL(location.href);
- if(window.top===window.self && u.searchParams.get('luxembed')!=='1' && !u.pathname.endsWith('/player-shell.html')){
-   const here=u.pathname.replace(/^\//,'')+u.search+u.hash;
-   location.replace('/player-shell.html?page='+encodeURIComponent(here));
-   return;
- }
- if(window.top!==window.self){
-   const send=()=>{
-     try{
-       const u=new URL(location.href);
-       u.searchParams.delete('luxembed');
-       parent.postMessage({type:'luxdot:navigate',url:u.pathname.replace(/^\//,'')+u.search+u.hash},location.origin);
-     }catch(e){}
-   };
-   addEventListener('load',send,{once:true});
- }
-}catch(e){}})();
-</script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="/luxdot-shell-bridge.js?v=41850"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>جرافات الأنبياء: النسب والزمن والارتباطات · LuxDot</title>
 <link rel="stylesheet" href="styles.css?v=41810"><link rel="stylesheet" href="humanity.css?v=41810"><link rel="stylesheet" href="luxdot-global-language.css?v=41810">
 <style>
