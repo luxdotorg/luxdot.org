@@ -45,19 +45,4 @@ jobs:
           print('HTML parser sanity passed.')
           PY
       - name: Shell navigation contract
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          shell=Path('player-shell.html').read_text(encoding='utf-8')
-          required=[
-              "history.replaceState({luxdotShell:true,page:current},'',publicUrl(current))",
-              "history.pushState({luxdotShell:true,page:current},'',publicUrl(current))",
-              "e.origin!==location.origin",
-              "u.searchParams.delete('luxembed')",
-              "frame.src=embedded(current)",
-          ]
-          missing=[needle for needle in required if needle not in shell]
-          assert not missing, 'Shell navigation contract missing: '+', '.join(missing)
-          assert "page='+encodeURIComponent" not in shell, 'Shell must not expose nested player-shell URLs after startup.'
-          print('Shell navigation contract passed.')
-          PY
+        run: python tools/check_shell_contract.py
