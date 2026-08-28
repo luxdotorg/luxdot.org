@@ -3,26 +3,7 @@
 <head>
 <meta name="description" content="ملف LuxDot مفتوح للمراجعة من الباحثين والعلويين أنفسهم. هدفه فصل التاريخ الوسيط للنُصيرية عن الهوية العلوية المعاصرة، وفصل النص الداخلي عن الرواية…">
 <title>العلوية / النُصيرية — ملف تاريخ العقيدة والنصوص للمراجعة · LuxDot</title>
-<script>
-(()=>{try{
- const u=new URL(location.href);
- if(window.top===window.self && u.searchParams.get('luxembed')!=='1' && !u.pathname.endsWith('/player-shell.html')){
-   const here=u.pathname.replace(/^\//,'')+u.search+u.hash;
-   location.replace('/player-shell.html?page='+encodeURIComponent(here));
-   return;
- }
- if(window.top!==window.self){
-   const send=()=>{
-     try{
-       const u=new URL(location.href);
-       u.searchParams.delete('luxembed');
-       parent.postMessage({type:'luxdot:navigate',url:u.pathname.replace(/^\//,'')+u.search+u.hash},location.origin);
-     }catch(e){}
-   };
-   addEventListener('load',send,{once:true});
- }
-}catch(e){}})();
-</script>
+<script src="/luxdot-shell-bridge.js?v=41850"></script>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <script src="language-core.js?v=41837"></script>
 <link href="styles.css?v=450" rel="stylesheet"><link rel="stylesheet" href="luxdot-global-language.css?v=4147">

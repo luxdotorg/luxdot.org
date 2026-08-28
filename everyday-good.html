@@ -1,25 +1,6 @@
 <!doctype html><html lang="en" dir="ltr"><head>
 <meta name="description" content="مساحة لحفظ أثر أشخاص عاديين صنعوا فرقاً بالرعاية أو الخدمة أو اللطف اليومي. لا تمنح هذه العقدة لقب «قديس» ولا تدّعي صلاحاً دينياً؛ بل تحفظ المعروف…">
-<script>
-(()=>{try{
- const u=new URL(location.href);
- if(window.top===window.self && u.searchParams.get('luxembed')!=='1' && !u.pathname.endsWith('/player-shell.html')){
-   const here=u.pathname.replace(/^\//,'')+u.search+u.hash;
-   location.replace('/player-shell.html?page='+encodeURIComponent(here));
-   return;
- }
- if(window.top!==window.self){
-   const send=()=>{
-     try{
-       const u=new URL(location.href);
-       u.searchParams.delete('luxembed');
-       parent.postMessage({type:'luxdot:navigate',url:u.pathname.replace(/^\//,'')+u.search+u.hash},location.origin);
-     }catch(e){}
-   };
-   addEventListener('load',send,{once:true});
- }
-}catch(e){}})();
-</script><script src="language-core.js?v=41837"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Everyday Good · LuxDot</title><link rel="stylesheet" href="styles.css?v=430"><link rel="stylesheet" href="luxdot-arabic-ui.css?v=430"><link rel="stylesheet" href="luxdot-ui-lock.css?v=4385"><link rel="stylesheet" href="luxdot-global-language.css?v=4399"><style>
+<script src="/luxdot-shell-bridge.js?v=41850"></script><script src="language-core.js?v=41837"></script><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Everyday Good · LuxDot</title><link rel="stylesheet" href="styles.css?v=430"><link rel="stylesheet" href="luxdot-arabic-ui.css?v=430"><link rel="stylesheet" href="luxdot-ui-lock.css?v=4385"><link rel="stylesheet" href="luxdot-global-language.css?v=4399"><style>
 :root{--g:#63ff9b;--bg:#050907;--card:#0b1510;--mut:#a8b8ae}body{background:var(--bg);color:#eef7f1}.eg{max-width:1050px;margin:auto;padding:80px 22px}.hero{border:1px solid #244832;border-radius:28px;padding:34px;background:radial-gradient(circle at 50% 0,#12321f 0,#09110d 58%)}.k{letter-spacing:.16em;color:var(--g);font-size:.78rem}.hero h1{font-size:clamp(2.2rem,6vw,5rem);margin:.2em 0}.lead{font-size:1.15rem;line-height:1.9;color:#d8e8de}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:22px 0}.card{background:var(--card);border:1px solid #1e3829;border-radius:22px;padding:22px}.card h2,.card h3{color:#f6fff9}.tag{display:inline-block;border:1px solid #315a40;border-radius:99px;padding:5px 10px;margin:3px;color:#bfffd3;font-size:.78rem}.rule{border-left:3px solid var(--g);padding:12px 16px;background:#0b1710;border-radius:8px;margin:18px 0}.timeline{border-left:1px solid #315a40;margin:20px 8px;padding-left:24px}.ev{position:relative;margin:0 0 22px}.ev:before{content:"";position:absolute;left:-30px;top:.35em;width:11px;height:11px;border-radius:50%;background:var(--g);box-shadow:0 0 14px var(--g)}small,.muted{color:var(--mut)}a{color:#8effb1}.future{border-style:dashed}.smile{font-size:1.35rem}.source-list a{display:block;margin:8px 0;word-break:break-word}[dir=rtl] .rule{border-left:0;border-right:3px solid var(--g)}[dir=rtl] .timeline{border-left:0;border-right:1px solid #315a40;padding-left:0;padding-right:24px}[dir=rtl] .ev:before{left:auto;right:-30px}
 </style><link rel="stylesheet" href="luxdot-radio.css?v=41819b"><link rel="stylesheet" href="luxdot-typography-v41416.css?v=41416">
 <link rel="stylesheet" href="luxdot-ibm-plex-v41817.css?v=41817"></head><body data-lux-i18n-complete="global-content-core"><main class="eg">
