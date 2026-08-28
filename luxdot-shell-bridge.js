@@ -4,6 +4,20 @@
 const SHELL_PATH='/player-shell.html';
 const EMBED_PARAM='luxembed';
 const MESSAGE_TYPE='luxdot:navigate';
+const DIRECT_NATIVE=new Set([
+  '/home.html',
+  '/research.html',
+  '/projects.html',
+  '/memory.html'
+]);
+
+const normalizedPath=()=>{
+  let p=location.pathname||'/';
+  if(p==='/'||p==='') p='/index.html';
+  return p;
+};
+
+const isDirectNative=()=>DIRECT_NATIVE.has(normalizedPath());
 
 const publicLocation=()=>{
   const u=new URL(location.href);
@@ -14,6 +28,23 @@ const publicLocation=()=>{
 try{
   const u=new URL(location.href);
   if(u.pathname.endsWith(SHELL_PATH)) return;
+
+  // Phase B: the four primary navigation pages are now top-level documents.
+  // If one is ever loaded inside the compatibility shell, escape cleanly.
+  if(isDirectNative()){
+    if(u.searchParams.has(EMBED_PARAM)){
+      u.searchParams.delete(EMBED_PARAM);
+    }
+    const clean=u.pathname+u.search+u.hash;
+    if(window.top!==window.self){
+      window.top.location.replace(clean);
+      return;
+    }
+    if(location.href!==new URL(clean,location.origin).href){
+      history.replaceState(history.state,'',clean);
+    }
+    return;
+  }
 
   if(window.top===window.self){
     if(u.searchParams.get(EMBED_PARAM)==='1'){

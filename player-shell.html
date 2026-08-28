@@ -24,6 +24,7 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050706}
  const root=new URL('/',location.origin);
  const initialShellUrl=new URL(location.href);
  const initialQs=initialShellUrl.searchParams;
+ const directNative=new Set(['home.html','research.html','projects.html','memory.html']);
 
  const shellLang=()=>{
    const l=initialQs.get('lang')||localStorage.getItem('luxdot.lang')||'en';
@@ -41,6 +42,12 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050706}
    }catch(e){return 'index.html'}
  };
 
+ const pagePath=(raw)=>{
+   try{return new URL('/'+safePage(raw),root).pathname.replace(/^\//,'')}catch(e){return 'index.html'}
+ };
+
+ const isDirectNative=(raw)=>directNative.has(pagePath(raw));
+
  const publicUrl=(raw)=>{
    const u=new URL('/'+safePage(raw),root);
    u.searchParams.delete('luxembed');
@@ -52,6 +59,10 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050706}
    u.searchParams.set('luxembed','1');
    if(!u.searchParams.has('lang'))u.searchParams.set('lang',shellLang());
    return u.pathname+u.search+u.hash;
+ };
+
+ const exitToDirect=(raw)=>{
+   location.replace(publicUrl(raw));
  };
 
  const syncDocumentMeta=()=>{
@@ -69,10 +80,17 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050706}
  };
 
  let current=safePage(initialQs.get('page')||'index.html');
+
+ // Phase B: primary navigation surfaces no longer run inside the iframe shell.
+ if(isDirectNative(current)){
+   exitToDirect(current);
+   return;
+ }
+
  frame.src=embedded(current);
 
- // The shell remains the running document, but the address bar always exposes
- // the actual LuxDot page. Shared/copied URLs therefore stay clean and stable.
+ // The compatibility shell remains the running document for pages not yet
+ // migrated, while the address bar exposes the actual LuxDot page.
  history.replaceState({luxdotShell:true,page:current},'',publicUrl(current));
 
  frame.addEventListener('load',syncDocumentMeta);
@@ -82,6 +100,10 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050706}
    const next=safePage(e.data.url);
    const innerLang=new URL('/'+next,root).searchParams.get('lang');
    if(supported.includes(innerLang))localStorage.setItem('luxdot.lang',innerLang);
+   if(isDirectNative(next)){
+     exitToDirect(next);
+     return;
+   }
    if(next===current){syncDocumentMeta();return;}
    current=next;
    history.pushState({luxdotShell:true,page:current},'',publicUrl(current));
@@ -92,6 +114,10 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050706}
    const next=e.state&&e.state.luxdotShell&&e.state.page
      ? safePage(e.state.page)
      : safePage(location.pathname+location.search+location.hash);
+   if(isDirectNative(next)){
+     exitToDirect(next);
+     return;
+   }
    if(next===current)return;
    current=next;
    frame.src=embedded(current);
