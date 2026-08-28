@@ -114,11 +114,11 @@ jobs:
           set -euo pipefail
           python - <<'PY'
           from pathlib import Path
-          import sys
+          import re, sys
 
           root=Path('.')
           old_redirect="location.replace('/player-shell.html?page='"
-          shared='/luxdot-shell-bridge.js?v=41850'
+          shared_re=re.compile(r'/luxdot-shell-bridge\.js\?v=\d+')
           offenders=[]
           users=[]
           for p in root.rglob('*.html'):
@@ -127,7 +127,7 @@ jobs:
               text=p.read_text(encoding='utf-8')
               if old_redirect in text:
                   offenders.append(str(p))
-              if shared in text:
+              if shared_re.search(text):
                   users.append(str(p))
           if offenders:
               print('ERROR: duplicated inline shell redirect remains in:')
@@ -140,6 +140,40 @@ jobs:
               print('ERROR: luxdot-shell-bridge.js is missing.')
               sys.exit(1)
           print(f'Shared shell bridge contract passed: {len(users)} pages use one navigation bridge.')
+          PY
+
+      - name: Direct native page contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import sys
+
+          direct=[
+              'home.html','research.html','projects.html','memory.html',
+              'library.html','faith.html','humanity.html','media.html',
+              'audiovisual.html','praxis.html'
+          ]
+          bridge=Path('luxdot-shell-bridge.js').read_text(encoding='utf-8')
+          shell=Path('player-shell.html').read_text(encoding='utf-8')
+          errors=[]
+          for name in direct:
+              p=Path(name)
+              if not p.is_file():
+                  errors.append(f'{name}: missing direct-native page')
+                  continue
+              text=p.read_text(encoding='utf-8')
+              if '/luxdot-shell-bridge.js?v=' not in text:
+                  errors.append(f'{name}: missing shared bridge')
+              if f"'/{name}'" not in bridge:
+                  errors.append(f'{name}: missing from bridge DIRECT_NATIVE set')
+              if f"'{name}'" not in shell:
+                  errors.append(f'{name}: missing from player-shell directNative set')
+          if errors:
+              print('\n'.join('ERROR: '+e for e in errors))
+              sys.exit(1)
+          print(f'Direct native contract passed: {len(direct)} pages run outside the iframe shell.')
           PY
 
       - name: Site health audit
