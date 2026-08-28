@@ -44,3 +44,5 @@ jobs:
               P().feed(f.read_text(encoding='utf-8'))
           print('HTML parser sanity passed.')
           PY
+      - name: Shell navigation contract
+        run: python tools/check_shell_contract.py
