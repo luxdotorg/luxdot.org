@@ -1,25 +1,26 @@
-# سياسة الأصل العربي في LuxDot
+# LuxDot Arabic Master Policy
 
-## اللغة التحريرية الأصلية
+## Canonical editorial language
 
-العربية هي **المصدر التحريري الأصلي** لصفحات LuxDot. المعنى، والبنية، والتحفظات، وتصنيفات الأدلة، والأسئلة، والدعوات إلى الفعل تُكتب وتُراجع أولاً بالعربية. أما الإنجليزية والهولندية وبقية اللغات فهي ترجمات لذلك الأصل، وليست مصادر موازية تتنافس معه.
+Arabic is the canonical editorial source for LuxDot pages. The meaning, structure, caveats, evidence labels and calls to action are authored and maintained first in Arabic. Other language surfaces are translations of that Arabic master.
 
-ينطبق هذا على المحتوى التحريري الثابت. تبقى الأسماء الأصلية، وعناوين المصادر، والنقوش التاريخية، والاقتباسات التي يجب حفظ لغتها، ومعرفات البرمجة، والمواد الخارجية المرخصة بلغتها الأصلية عندما يكون ذلك ضرورياً.
+This policy applies to editorial/static content. Proper names, source titles, quotations that must remain in an original language, archival inscriptions, code identifiers and externally licensed text may remain in their original language where appropriate.
 
-## قواعد الصفحات بعد ترحيلها
+## Rules for migrated pages
 
-1. يجب أن تمتلك الصفحة أصلاً عربياً كاملاً؛ لا يجوز أن يعتمد `?lang=ar` على ترجمة نص إنجليزي ثابت أثناء التشغيل.
-2. الإنجليزية والهولندية وبقية اللغات تُعرض من قواميس أو طبقات ترجمة مرتبطة ببنية الأصل العربي.
-3. إذا غابت ترجمة لغة ما، يكون الرجوع الافتراضي إلى العربية، لا الإنجليزية.
-4. اتجاه الصفحة يتبع اللغة النشطة؛ العربية RTL وتستخدم قواعد الطباعة العربية في LuxDot.
-5. الترجمة يجب أن تحفظ درجات اليقين، والتمييز بين المصدر والتفسير، والدليل المضاد والتحفظات المنهجية، ولا يجوز أن تقوّي الادعاء أثناء الترجمة.
-6. لا تُنشأ صفحات تحريرية جديدة يكون أصلها إنجليزياً.
-7. الترحيل لا يعني الاختصار: يجب الحفاظ على مضمون الصفحة القائم كاملاً وعدم استبداله بنسخة أبسط فقط من أجل تعدد اللغات.
+1. A page must have a complete Arabic master surface; `?lang=ar` must never depend on translating hard-coded English prose at runtime.
+2. English, Dutch and other locales may be rendered from locale dictionaries/overlays, but they must map to the Arabic master structure rather than silently becoming the canonical source.
+3. A missing translation falls back to Arabic, not English.
+4. RTL/LTR direction follows the active locale. Arabic uses LuxDot's Arabic typography rules.
+5. Translation must preserve uncertainty labels, source distinctions, counter-evidence and methodological caveats; localization must not strengthen claims.
+6. New editorial pages should not be introduced as English-origin pages.
+7. Migration must preserve existing content. Do not shorten or replace a substantive page merely to make it bilingual.
+8. Child-facing editorial surfaces, including `kids-galaxy.html`, follow the same Arabic-master rule while keeping language simple, age-appropriate and free of mixed-language UI except for proper names or intentionally bilingual branding.
 
-## ترتيب الترحيل
+## Migration order
 
-نبدأ بصفحات الهوية والمنهج والمداخل العامة، ثم مراكز البحث والذاكرة والمكتبة، ثم الملفات الفردية. يقوم `tools/arabic_master_audit.py` بجرد صفحات HTML وتصنيف الصفحات التي ما يزال نصها الثابت ذا أصل لاتيني أو إنجليزي.
+Priority is given to public-facing identity, method and navigation hubs, then research/memory/library hubs, then individual dossiers. `tools/arabic_master_audit.py` inventories static HTML and identifies pages whose visible source text is still Latin/English dominant.
 
-## متى نعتبر الصفحة مكتملة؟
+## Definition of done for a page
 
-تُعد الصفحة مكتملة عندما يكون أصلها العربي كاملاً، والعربية هي لغة الرجوع الافتراضي، وتحترم جميع الأزرار والروابط الداخلية اللغة النشطة، وتكون النسخ غير العربية ترجمات صريحة، وتنجح الصفحة في فحوص LuxDot الثابتة وفحص صحة الموقع.
+A migrated page has a complete Arabic master, Arabic is the fallback locale, all visible controls and internal links respect the active locale, non-Arabic versions are explicit translations, and the page passes LuxDot static QA/site-health checks.
