@@ -1,0 +1,14 @@
+{
+  "version":"2.1.0",
+  "updated":"2026-08-29T12:31:00+02:00",
+  "items":[
+    {"id":"radio-v2-live","time":"2026-08-29T12:31:00+02:00","range":"now","type":"now","circle":"radio","level":"تحديث LuxDot","title":"إذاعة نقطة نور انتقلت إلى البرنامج اليومي الديناميكي","summary":"الواجهة تعرض البرنامج الحالي وفق وقت شام/Chaam ومواقيت اليوم بدلاً من النصوص القديمة الثابتة.","url":"radio.html"},
+    {"id":"nabd-21","time":"2026-08-29T12:31:00+02:00","range":"now","type":"now","circle":"human","level":"موثّق","title":"نبض نقطة نور 2.1","summary":"واجهة مستقلة تربط الآن بين الوقت الحي، الإذاعة، البحث، الذاكرة والعالم، وتعرض حالة البرنامج الإذاعي الحالية.","url":"nabd.html"},
+    {"id":"kids-galaxy","time":"2026-08-29T04:58:07+02:00","range":"today","type":"research","circle":"learning","level":"تحديث LuxDot","title":"مجرة الأطفال ضمن البنية الأساسية","summary":"مساحة تعليمية مبسطة مرتبطة بنظام اللغة العربي الأساسي.","url":"kids-galaxy.html"},
+    {"id":"arabic-master","time":"2026-08-29T04:58:07+02:00","range":"today","type":"research","circle":"research","level":"تحديث تقني","title":"العربية مصدر أساسي في نظام اللغة","summary":"تحديث بنية الترجمة والتدقيق لتقليل تداخل اللغات تدريجياً.","url":"what-is-luxdot.html"},
+    {"id":"hypotheses","time":"2026-08-28T12:00:00+02:00","range":"week","type":"hypothesis","circle":"research","level":"فرضية — غير مثبتة","title":"مساحة فرضيات LuxDot","summary":"الفرضيات تُعرض كنماذج قابلة للنقد والتفنيد، ولا تُعامل كوقائع موثقة.","url":"luxdot-hypotheses.html"},
+    {"id":"memory","time":"2026-08-28T10:00:00+02:00","range":"week","type":"memory","circle":"memory","level":"ذاكرة موثقة","title":"الذاكرة الحية","summary":"مواد الذاكرة المحلية والإنسانية تبقى مساراً مستقلاً عن الفرضيات والتفسير الرمزي.","url":"memory.html"},
+    {"id":"calendar","time":"2026-08-29T00:00:00+02:00","range":"today","type":"world","circle":"world","level":"تقويم","title":"الرزنامة العالمية","summary":"نافذة للأحداث والمناسبات الزمنية المرتبطة بمسارات LuxDot.","url":"world-calendar.html"},
+    {"id":"safety-foundation","time":"2026-08-29T05:30:00+02:00","range":"today","type":"safety","circle":"learning","level":"قيد التطوير","title":"مهارات الحياة والسلامة","summary":"مسار تعليمي للسلامة والإسعافات والإشارات والنظافة والطبيعة والحيوانات، مع اعتماد مصادر رسمية عند المحتوى الطبي.","url":"praxis.html"}
+  ]
+}
