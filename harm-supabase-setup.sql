@@ -15,6 +15,8 @@ create table if not exists public.harm_reports (
   risk_level text not null default 'normal' check (risk_level in ('low','normal','high','urgent')),
   latitude double precision,
   longitude double precision,
+  location_accuracy_m double precision check (location_accuracy_m > 0 and location_accuracy_m <= 10000),
+  location_captured_at timestamptz,
   location_text text,
   reporter_name text,
   reporter_email text,
@@ -53,6 +55,34 @@ create table if not exists public.harm_admins (
 
 create schema if not exists private;
 
+-- The production database stores the official PDOK/Kadaster boundary for
+-- Alphen-Chaam (GM1723) in this private PostGIS table. Keep boundary data out
+-- of public schemas so anonymous clients can only ask the boolean predicate.
+create extension if not exists postgis with schema extensions;
+create table if not exists private.harm_service_areas (
+  code text primary key,
+  name text not null,
+  source text not null,
+  source_updated date,
+  geom extensions.geometry(MultiPolygon, 4326) not null
+);
+create index if not exists harm_service_areas_geom_gix
+  on private.harm_service_areas using gist (geom);
+
+create or replace function private.is_in_harm_service_area(lat double precision, lon double precision)
+returns boolean language sql stable security definer
+set search_path=pg_catalog,private,extensions as $$
+  select exists (
+    select 1 from private.harm_service_areas
+    where code = 'GM1723'
+      and extensions.st_covers(geom, extensions.st_setsrid(extensions.st_point(lon,lat),4326))
+  );
+$$;
+
+revoke all on function private.is_in_harm_service_area(double precision,double precision) from public;
+grant usage on schema private to anon, authenticated;
+grant execute on function private.is_in_harm_service_area(double precision,double precision) to anon, authenticated;
+
 create or replace function private.is_harm_admin()
 returns boolean language sql stable security definer set search_path=public as $$
   select exists(select 1 from public.harm_admins where user_id=auth.uid());
@@ -76,6 +106,12 @@ create policy "harm reports public insert" on public.harm_reports for insert to 
   and public_summary is null
   and resolution_summary is null
   and fixed_at is null
+  and latitude is not null
+  and longitude is not null
+  and location_accuracy_m > 0
+  and location_accuracy_m <= 500
+  and location_captured_at between now() - interval '5 minutes' and now() + interval '1 minute'
+  and private.is_in_harm_service_area(latitude, longitude)
 );
 create policy "harm reports public published read" on public.harm_reports for select to anon, authenticated using (published = true);
 create policy "harm reports admin read" on public.harm_reports for select to authenticated using (private.is_harm_admin());
