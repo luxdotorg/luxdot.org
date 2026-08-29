@@ -1,7 +1,7 @@
 # LuxDot v4.18.55
 
-- Establishes Arabic as the canonical editorial source policy for LuxDot.
-- Adds a repository-wide audit that inventories HTML pages by dominant static source language.
-- Adds an isolated CI workflow that publishes the Arabic-master migration report without rewriting existing QA workflows.
-- Converts `what-is-luxdot.html` into a complete Arabic-first surface while preserving translated English access.
-- Sets Arabic as the required fallback direction for subsequent editorial-page migrations.
+- اعتماد العربية مصدراً تحريرياً أصلياً لمحتوى LuxDot، وبقية اللغات ترجمات عنه.
+- إضافة فحص شامل للمستودع يصنّف صفحات HTML بحسب اللغة الغالبة في النص الثابت المرئي.
+- إضافة مسار CI مستقل ينشر تقرير الترحيل إلى الأصل العربي من دون إعادة كتابة مسارات QA الحالية.
+- تحويل `what-is-luxdot.html` إلى صفحة أصلها العربي كامل، مع إبقاء النسخة الإنجليزية ترجمة صريحة.
+- جعل العربية لغة الرجوع الافتراضي عندما لا تتوفر ترجمة مكتملة للغة أخرى.
