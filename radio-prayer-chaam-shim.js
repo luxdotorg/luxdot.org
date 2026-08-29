@@ -21,8 +21,8 @@ function LuxDotAudio(src){
   let s=src;
   try{
     const x=String(src||'');
-    if(x.includes('Beautiful%20adhan.ogg')||x.includes('Beautiful adhan.ogg')){
-      s='https://commons.wikimedia.org/wiki/Special:Redirect/file/Azan.ogg';
+    if(x.includes('Beautiful%20adhan.ogg')||x.includes('Beautiful adhan.ogg')||x.includes('Azan.ogg')){
+      s='https://commons.wikimedia.org/wiki/Special:Redirect/file/Adhan.ogg';
     }
   }catch(e){}
   return new NativeAudio(s);
@@ -30,5 +30,5 @@ function LuxDotAudio(src){
 LuxDotAudio.prototype=NativeAudio.prototype;
 try{Object.setPrototypeOf(LuxDotAudio,NativeAudio)}catch(e){}
 window.Audio=LuxDotAudio;
-window.LUXDOT_CHAAM_PRAYER={...CHAAM,label:'Chaam / شام · Noord-Brabant'};
+window.LUXDOT_CHAAM_PRAYER={...CHAAM,label:'Chaam / شام · Noord-Brabant',adhanFallback:'Adhan.ogg',adhanLicense:'CC0 1.0'};
 })();
