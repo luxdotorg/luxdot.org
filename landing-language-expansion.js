@@ -1,0 +1,17 @@
+(()=>{'use strict';
+const COPY={
+uk:{dir:'ltr',sub:'Перша точка світла · Там, де починається розуміння',eye:'МЕНШЕ ШУМУ · БІЛЬШЕ СИГНАЛУ',enter:'ПРИЙНЯТИ СИГНАЛ',micro:'ВІД ШУМУ ДО ПАМ’ЯТІ',a:'СИГНАЛ / ПРИХОВАНИЙ',b:'ШУМ → ЯСНІСТЬ',pilot:'Сайт активно розвивається · Пілотний запуск: 3 вересня 2026'},
+pl:{dir:'ltr',sub:'Pierwszy punkt światła · Tam, gdzie zaczyna się zrozumienie',eye:'MNIEJ SZUMU · WIĘCEJ SYGNAŁU',enter:'ODBIERZ SYGNAŁ',micro:'OD SZUMU DO PAMIĘCI',a:'SYGNAŁ / UTAJONY',b:'SZUM → JASNOŚĆ',pilot:'Strona jest aktywnie rozwijana · Start pilotażowy: 3 września 2026'},
+fa:{dir:'rtl',sub:'نخستین نقطهٔ نور · جایی که فهم آغاز می‌شود',eye:'کاهش نویز · افزایش سیگنال',enter:'دریافت سیگنال',micro:'از نویز به حافظه',a:'سیگنال / نهفته',b:'نویز ← وضوح',pilot:'سایت در حال توسعه است · راه‌اندازی آزمایشی: ۳ سپتامبر ۲۰۲۶ · ترجمه بتا'},
+hi:{dir:'ltr',sub:'पहला प्रकाश-बिंदु · जहाँ समझ की शुरुआत होती है',eye:'शोर कम करें · संकेत बढ़ाएँ',enter:'संकेत प्राप्त करें',micro:'शोर से स्मृति तक',a:'संकेत / सुप्त',b:'शोर → स्पष्टता',pilot:'साइट सक्रिय विकास में है · पायलट लॉन्च: 3 सितंबर 2026 · बीटा अनुवाद'},
+zh:{dir:'ltr',sub:'第一束光 · 理解从这里开始',eye:'减少噪声 · 增强信号',enter:'接收信号',micro:'从噪声到记忆',a:'信号 / 潜伏',b:'噪声 → 清晰',pilot:'网站正在持续开发 · 试运行：2026年9月3日 · 测试版翻译'},
+pt:{dir:'ltr',sub:'O primeiro ponto de luz · Onde começa a compreensão',eye:'REDUZIR O RUÍDO · AUMENTAR O SINAL',enter:'RECEBER O SINAL',micro:'DO RUÍDO À MEMÓRIA',a:'SINAL / LATENTE',b:'RUÍDO → CLAREZA',pilot:'Site em desenvolvimento ativo · Lançamento piloto: 3 de setembro de 2026 · Tradução beta'},
+sw:{dir:'ltr',sub:'Nukta ya kwanza ya nuru · Ambapo uelewa huanza',eye:'PUNGUZA KELELE · ONGEZA ISHARA',enter:'POKEA ISHARA',micro:'KUTOKA KELELE HADI KUMBUKUMBU',a:'ISHARA / ILIYOFICHIKA',b:'KELELE → UWAZI',pilot:'Tovuti inaendelezwa · Uzinduzi wa majaribio: 3 Septemba 2026 · Tafsiri ya beta'},
+ku:{dir:'ltr',sub:'Xala ronahiyê ya yekem · Cihê ku têgihiştin dest pê dike',eye:'DENGÊ KÊM BIKE · NÎŞANÊ ZÊDE BIKE',enter:'NÎŞANÊ WERBIGIRE',micro:'JI DENGÊ BER BI BÎRANÎNÊ',a:'NÎŞAN / VEŞARTÎ',b:'DENG → RONAHÎ',pilot:'Malper di pêşveçûnê de ye · Destpêka ceribandinê: 3 Îlon 2026 · Wergera beta'},
+jv:{dir:'ltr',sub:'Titik cahya kapisan · Papan pangerten diwiwiti',eye:'NYUDA GANGGUAN · NGUWATAKE TANDHA',enter:'TAMPA TANDHA',micro:'SAKA GANGGUAN DADI PANGELING',a:'TANDHA / LATEN',b:'GANGGUAN → CETHA',pilot:'Situs lagi dikembangaké · Peluncuran uji coba: 3 September 2026 · Terjemahan beta'}
+};
+function selected(){const q=new URLSearchParams(location.search).get('lang');try{return q||localStorage.getItem('luxdot.lang')||'ar'}catch(_){return q||'ar'}}
+function apply(l){const c=COPY[l];if(!c)return;document.documentElement.lang=l;document.documentElement.dir=c.dir;const map={sub:'sub',eye:'eyebrow',enter:'enter',micro:'micro',a:'statusA',b:'statusB',pilot:'pilotNote'};Object.entries(map).forEach(([k,id])=>{const el=document.getElementById(id);if(el)el.textContent=c[k]});const sel=document.getElementById('languageSelect');if(sel&&sel.value!==l)sel.value=l}
+function init(){apply(selected());document.getElementById('languageSelect')?.addEventListener('change',e=>setTimeout(()=>apply(e.target.value),0))}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
