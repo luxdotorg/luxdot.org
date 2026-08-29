@@ -1,11 +1,12 @@
 (()=>{'use strict';
 const CORE_URL=(()=>{const s=document.currentScript;return new URL(s&&s.src?s.src:'content-language-core.js',location.href)})();
 const TARGETS=['ar','en','nl','he','jv','id','fr','es','de','tr'];
+const MASTER='ar';
 function rootPrefix(){return new URL('./',CORE_URL).href}
 const FIXED=['LuxDot','Rafy Alhajji','Rafi Alhaji','رافي الحجي','رافي الحاجي'];
 const page=()=>location.pathname.split('/').pop()||'index.html';
 const pagePath=()=>location.pathname.replace(/^\/+/, '');
-const lang=()=>{const q=new URLSearchParams(location.search).get('lang');return q||(window.LuxLang&&LuxLang.get&&LuxLang.get())||localStorage.getItem('luxdot.lang')||'en'};
+const lang=()=>{const q=new URLSearchParams(location.search).get('lang');return TARGETS.includes(q)?q:((window.LuxLang&&LuxLang.get&&LuxLang.get())||localStorage.getItem('luxdot.lang')||MASTER)};
 function protect(){
  document.querySelectorAll('header,.lux-header-43108,[data-lux-brand],[translate="no"],code,pre,kbd,samp').forEach(e=>{e.setAttribute('translate','no');e.classList.add('notranslate')});
  const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;
@@ -14,23 +15,7 @@ function protect(){
    if(FIXED.some(x=>n.nodeValue.includes(x))){const p=n.parentElement;if(p.childNodes.length===1){p.setAttribute('translate','no');p.classList.add('notranslate')}}
  }
 }
-function visibleText(){
- const clone=document.body.cloneNode(true);clone.querySelectorAll('script,style,header,.lux-header-43108,.notranslate,[translate="no"]').forEach(x=>x.remove());return (clone.innerText||clone.textContent||'').slice(0,80000)
-}
-function guessSource(text){
- const s=' '+text.toLowerCase()+' ';const ar=(text.match(/[\u0600-\u06ff]/g)||[]).length,he=(text.match(/[\u0590-\u05ff]/g)||[]).length,lat=(text.match(/[A-Za-zÀ-ž]/g)||[]).length;
- if(ar>Math.max(120,lat*.22))return'ar'; if(he>Math.max(80,lat*.18))return'he';
- const score=(words)=>words.reduce((n,w)=>n+(s.includes(' '+w+' ')?1:0),0);
- if(score(['yang','dan','dengan','untuk','adalah','dalam','tidak','dari'])>=3)return'id';
- if(score(['lan','ing','kanggo','iki','saka','ora','kanthi','wong'])>=3)return'jv';
- if(score(['het','een','van','voor','niet','met','onderzoek','wereld'])>=3)return'nl';
- if(score(['und','der','die','das','für','nicht','mit','forschung'])>=3)return'de';
- if(score(['et','les','des','pour','avec','pas','recherche','monde'])>=3)return'fr';
- if(score(['los','las','para','con','una','del','investigación','mundo'])>=3)return'es';
- if(score(['ve','bir','için','ile','değil','araştırma','dünya'])>=3)return'tr';
- return'en'
-}
-async function coverage(){try{const r=await fetch(rootPrefix()+'data/i18n-coverage.json?v=41815',{cache:'no-store'});return await r.json()}catch(_){return{}}}
+async function coverage(){try{const r=await fetch(rootPrefix()+'data/i18n-coverage.json?v=41855',{cache:'no-store'});return await r.json()}catch(_){return{}}}
 function cleanGoogleChrome(){
  const st=document.createElement('style');st.textContent='.goog-te-banner-frame,.goog-te-balloon-frame,#goog-gt-tt,.goog-te-spinner-pos{display:none!important}body{top:0!important}.skiptranslate:not(#lux-google-translate){font-size:0!important}#lux-google-translate{position:fixed;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden}';document.head.appendChild(st);
  setInterval(()=>{document.querySelectorAll('iframe.goog-te-banner-frame,.goog-te-balloon-frame').forEach(x=>x.remove());document.body.style.top='0px'},900)
@@ -43,12 +28,12 @@ function loadGoogle(target,source){return new Promise((resolve,reject)=>{
  })}
 async function run(){
  const target=lang();protect();if(!TARGETS.includes(target))return;
- const cov=await coverage(),entry=cov[pagePath()]||cov[page()]||{},native=entry.native||[];
+ const cov=await coverage(),entry=cov[pagePath()]||cov[page()]||{},native=Array.isArray(entry.native)?entry.native:[];
+ // Explicit human-authored locale blocks always win. Otherwise Arabic is the canonical master.
  if(native.includes(target)){document.documentElement.dataset.luxTranslationMode='native';return}
- await new Promise(r=>setTimeout(r,1200));protect();const text=visibleText(),source=guessSource(text);
- if(source===target){document.documentElement.dataset.luxTranslationMode='native-detected';return}
- document.documentElement.dataset.luxTranslationMode='auto';
- try{await loadGoogle(target,source)}catch(e){document.documentElement.dataset.luxTranslationMode='fallback-failed';console.warn('LuxDot translation fallback failed',e)}
+ if(target===MASTER){document.documentElement.dataset.luxTranslationMode='arabic-master';return}
+ document.documentElement.dataset.luxTranslationMode='auto-from-ar';
+ try{await loadGoogle(target,MASTER)}catch(e){document.documentElement.dataset.luxTranslationMode='fallback-arabic';console.warn('LuxDot translation fallback failed; preserving Arabic master',e)}
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();
 })();

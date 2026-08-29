@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -20,17 +20,15 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050706}
  'use strict';
  const frame=document.getElementById('luxdot-site-frame');
  const supported=['ar','en','nl','he','jv','id','fr','es','de','tr'];
+ const DEFAULT='ar';
  const rtl=new Set(['ar','he']);
  const root=new URL('/',location.origin);
  const initialShellUrl=new URL(location.href);
  const initialQs=initialShellUrl.searchParams;
- const directNative=new Set(['home.html','research.html','projects.html','memory.html','library.html','faith.html','humanity.html','media.html','audiovisual.html','praxis.html']);
-
- const shellLang=()=>{
-   const l=initialQs.get('lang')||localStorage.getItem('luxdot.lang')||'en';
-   return supported.includes(l)?l:'en';
- };
-
+ const directNative=new Set(['home.html','research.html','projects.html','memory.html','library.html','faith.html','humanity.html','media.html','audiovisual.html','praxis.html','kids-galaxy.html']);
+ const validLang=l=>supported.includes(l)?l:null;
+ const langFromRaw=raw=>{try{return validLang(new URL('/'+safePage(raw),root).searchParams.get('lang'))}catch(e){return null}};
+ const shellLang=raw=>langFromRaw(raw)||validLang(initialQs.get('lang'))||validLang(localStorage.getItem('luxdot.lang'))||DEFAULT;
  const safePage=(raw)=>{
    try{
      const u=new URL(raw||'index.html',root);
@@ -41,86 +39,41 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050706}
      return p+(u.search||'')+(u.hash||'');
    }catch(e){return 'index.html'}
  };
-
- const pagePath=(raw)=>{
-   try{return new URL('/'+safePage(raw),root).pathname.replace(/^\//,'')}catch(e){return 'index.html'}
- };
-
+ const pagePath=(raw)=>{try{return new URL('/'+safePage(raw),root).pathname.replace(/^\//,'')}catch(e){return 'index.html'}};
  const isDirectNative=(raw)=>directNative.has(pagePath(raw));
-
  const publicUrl=(raw)=>{
-   const u=new URL('/'+safePage(raw),root);
-   u.searchParams.delete('luxembed');
+   const u=new URL('/'+safePage(raw),root);u.searchParams.delete('luxembed');
+   if(!u.searchParams.has('lang'))u.searchParams.set('lang',shellLang(raw));
    return u.pathname+u.search+u.hash;
  };
-
  const embedded=(raw)=>{
-   const u=new URL('/'+safePage(raw),root);
-   u.searchParams.set('luxembed','1');
-   if(!u.searchParams.has('lang'))u.searchParams.set('lang',shellLang());
+   const u=new URL('/'+safePage(raw),root);u.searchParams.set('luxembed','1');
+   if(!u.searchParams.has('lang'))u.searchParams.set('lang',shellLang(raw));
    return u.pathname+u.search+u.hash;
  };
-
- const exitToDirect=(raw)=>{
-   location.replace(publicUrl(raw));
- };
-
+ const exitToDirect=(raw)=>location.replace(publicUrl(raw));
  const syncDocumentMeta=()=>{
    try{
-     const doc=frame.contentDocument;
-     if(!doc)return;
-     if(doc.title)document.title=doc.title;
-     const lang=(doc.documentElement.lang||shellLang()).toLowerCase();
-     if(supported.includes(lang)){
-       document.documentElement.lang=lang;
-       document.documentElement.dir=doc.documentElement.dir|| (rtl.has(lang)?'rtl':'ltr');
-       localStorage.setItem('luxdot.lang',lang);
-     }
+     const doc=frame.contentDocument;if(!doc)return;if(doc.title)document.title=doc.title;
+     const l=validLang((doc.documentElement.lang||'').toLowerCase())||shellLang(current);
+     document.documentElement.lang=l;document.documentElement.dir=doc.documentElement.dir||(rtl.has(l)?'rtl':'ltr');localStorage.setItem('luxdot.lang',l);
    }catch(e){}
  };
-
  let current=safePage(initialQs.get('page')||'index.html');
-
- // Phase B: migrated navigation surfaces no longer run inside the iframe shell.
- if(isDirectNative(current)){
-   exitToDirect(current);
-   return;
- }
-
+ const initialLang=shellLang(current);localStorage.setItem('luxdot.lang',initialLang);document.documentElement.lang=initialLang;document.documentElement.dir=rtl.has(initialLang)?'rtl':'ltr';
+ if(isDirectNative(current)){exitToDirect(current);return;}
  frame.src=embedded(current);
-
- // The compatibility shell remains the running document for pages not yet
- // migrated, while the address bar exposes the actual LuxDot page.
  history.replaceState({luxdotShell:true,page:current},'',publicUrl(current));
-
  frame.addEventListener('load',syncDocumentMeta);
-
  addEventListener('message',e=>{
    if(e.origin!==location.origin||e.source!==frame.contentWindow||!e.data||e.data.type!=='luxdot:navigate')return;
-   const next=safePage(e.data.url);
-   const innerLang=new URL('/'+next,root).searchParams.get('lang');
-   if(supported.includes(innerLang))localStorage.setItem('luxdot.lang',innerLang);
-   if(isDirectNative(next)){
-     exitToDirect(next);
-     return;
-   }
-   if(next===current){syncDocumentMeta();return;}
-   current=next;
-   history.pushState({luxdotShell:true,page:current},'',publicUrl(current));
-   syncDocumentMeta();
+   const next=safePage(e.data.url);const innerLang=langFromRaw(next);if(innerLang)localStorage.setItem('luxdot.lang',innerLang);
+   if(isDirectNative(next)){exitToDirect(next);return;}
+   if(next===current){syncDocumentMeta();return;}current=next;history.pushState({luxdotShell:true,page:current},'',publicUrl(current));syncDocumentMeta();
  });
-
  addEventListener('popstate',e=>{
-   const next=e.state&&e.state.luxdotShell&&e.state.page
-     ? safePage(e.state.page)
-     : safePage(location.pathname+location.search+location.hash);
-   if(isDirectNative(next)){
-     exitToDirect(next);
-     return;
-   }
-   if(next===current)return;
-   current=next;
-   frame.src=embedded(current);
+   const next=e.state&&e.state.luxdotShell&&e.state.page?safePage(e.state.page):safePage(location.pathname+location.search+location.hash);
+   if(isDirectNative(next)){exitToDirect(next);return;}if(next===current)return;current=next;frame.src=embedded(current);
  });
 })();
 </script>

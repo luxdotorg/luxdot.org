@@ -27,7 +27,24 @@
   function cmp(a,b){const A=nums(a),B=nums(b);for(let i=0;i<Math.max(A.length,B.length);i++){const d=(A[i]||0)-(B[i]||0);if(d)return d}return 0}
   function fmt(d){try{return new Intl.DateTimeFormat((document.documentElement.lang||"ar")==="ar"?"ar":"en",{dateStyle:"medium",timeStyle:"short",timeZone:"Europe/Amsterdam"}).format(new Date(d))}catch(e){return d}}
 
+  function addKidsGalaxyHomeCard(){
+    const p=(location.pathname||'').replace(/\/+$/,'');
+    if(!(p==='/home.html'||p==='/home'||p===''))return;
+    if(document.getElementById('luxdotKidsGalaxyCard'))return;
+    const cards=document.querySelector('main .cards');
+    if(!cards)return;
+    const a=document.createElement('a');
+    a.id='luxdotKidsGalaxyCard';
+    a.className='card lux-home-native';
+    a.href='kids-galaxy.html';
+    a.setAttribute('aria-label','مجرة الأطفال · Kids Galaxy');
+    a.style.cssText='position:relative;overflow:hidden;border:1px solid rgba(255,216,120,.55);background:linear-gradient(135deg,rgba(255,232,244,.96),rgba(225,245,255,.96) 52%,rgba(238,230,255,.96));color:#21313e;box-shadow:0 14px 34px rgba(46,73,95,.12)';
+    a.innerHTML='<span aria-hidden="true" style="position:absolute;inset:auto -22px -28px auto;width:110px;height:110px;border-radius:50%;background:rgba(180,245,171,.55)"></span><small style="position:relative;color:#7a4db5;letter-spacing:.1em;font-weight:800">NEW · KIDS GALAXY 🌟</small><h2 style="position:relative;margin:.38em 0;color:#263746">مجرة الأطفال · Kids Galaxy</h2><p style="position:relative;color:#526673">🎵 أغاني · 🎬 كرتون · 🌱 أخلاق ومشاعر · 🌍 اكتشاف · 📚 قصص</p>';
+    cards.prepend(a);
+  }
+
   async function run(){
+    addKidsGalaxyHomeCard();
     const [local,repo,head]=await Promise.all([localMeta(),repoMeta(),githubHead()]);
     const mismatch=!!(local&&repo&&cmp(local.version,repo.version)!==0);
     const newest=!local?repo:(!repo?local:(cmp(repo.version,local.version)>=0?repo:local));
