@@ -1,0 +1,13 @@
+{
+  "version":"2.0.0",
+  "updated":"2026-08-29T06:00:00+02:00",
+  "items":[
+    {"id":"nabd-2-launch","time":"2026-08-29T06:00:00+02:00","range":"today","type":"now","circle":"human","level":"موثّق","title":"إطلاق نبض نقطة نور 2.0","summary":"واجهة مستقلة لما يحدث الآن في LuxDot، مع فصل واضح بين المواد الموثقة والبحث والفرضيات والقراءات الرمزية.","url":"nabd.html"},
+    {"id":"kids-galaxy","time":"2026-08-29T04:58:07+02:00","range":"today","type":"learning","circle":"learning","level":"تحديث LuxDot","title":"مجرة الأطفال أصبحت جزءاً من البنية الأساسية","summary":"مساحة تعليمية مبسطة مرتبطة بنظام اللغة العربي الأساسي.","url":"kids-galaxy.html"},
+    {"id":"arabic-master","time":"2026-08-29T04:58:07+02:00","range":"today","type":"research","circle":"research","level":"تحديث تقني","title":"العربية مصدر أساسي في نظام اللغة","summary":"تحديث بنية الترجمة والتدقيق لتقليل تداخل اللغات تدريجياً.","url":"what-is-luxdot.html"},
+    {"id":"hypotheses","time":"2026-08-28T12:00:00+02:00","range":"week","type":"hypothesis","circle":"research","level":"فرضية — غير مثبتة","title":"مساحة فرضيات LuxDot","summary":"الفرضيات تُعرض كنماذج قابلة للنقد والتفنيد، ولا تُعامل كوقائع موثقة.","url":"luxdot-hypotheses.html"},
+    {"id":"memory","time":"2026-08-28T10:00:00+02:00","range":"week","type":"memory","circle":"memory","level":"ذاكرة موثقة","title":"الذاكرة الحية","summary":"مواد الذاكرة المحلية والإنسانية تبقى مساراً مستقلاً عن الفرضيات والتفسير الرمزي.","url":"memory.html"},
+    {"id":"calendar","time":"2026-08-29T00:00:00+02:00","range":"today","type":"world","circle":"world","level":"تقويم","title":"الرزنامة العالمية","summary":"نافذة للأحداث والمناسبات الزمنية المرتبطة بمسارات LuxDot.","url":"world-calendar.html"},
+    {"id":"safety-foundation","time":"2026-08-29T05:30:00+02:00","range":"today","type":"safety","circle":"learning","level":"قيد التطوير","title":"مهارات الحياة والسلامة","summary":"مسار تعليمي للسلامة والإسعافات والإشارات والنظافة والطبيعة والحيوانات، مع اعتماد مصادر رسمية عند المحتوى الطبي.","url":"praxis.html"}
+  ]
+}
