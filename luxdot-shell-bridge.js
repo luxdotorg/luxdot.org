@@ -14,7 +14,8 @@ const DIRECT_NATIVE=new Set([
   '/humanity.html',
   '/media.html',
   '/audiovisual.html',
-  '/praxis.html'
+  '/praxis.html',
+  '/kids-galaxy.html'
 ]);
 
 const normalizedPath=()=>{
@@ -35,8 +36,6 @@ try{
   const u=new URL(location.href);
   if(u.pathname.endsWith(SHELL_PATH)) return;
 
-  // Phase B: migrated navigation surfaces are native top-level documents.
-  // If one is ever loaded inside the compatibility shell, escape cleanly.
   if(isDirectNative()){
     if(u.searchParams.has(EMBED_PARAM)){
       u.searchParams.delete(EMBED_PARAM);
