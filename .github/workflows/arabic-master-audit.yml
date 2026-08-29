@@ -1,0 +1,36 @@
+name: LuxDot Arabic Master Audit
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  arabic-master-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Audit canonical editorial language
+        run: python tools/arabic_master_audit.py
+      - name: Show priority migration list
+        run: |
+          echo '--- English/Latin-origin pages ---'
+          python - <<'PY'
+          import csv
+          with open('artifacts/arabic-master-audit.csv', encoding='utf-8') as f:
+              rows=list(csv.DictReader(f))
+          for r in rows:
+              if r['classification'] in {'english/latin-origin','arabic-declared-but-latin-heavy','mixed'}:
+                  print(f"{r['classification']:32} {r['page']}")
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: arabic-master-audit
+          path: |
+            artifacts/arabic-master-audit.md
+            artifacts/arabic-master-audit.csv
