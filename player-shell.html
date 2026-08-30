@@ -25,7 +25,7 @@ html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050706}
  const root=new URL('/',location.origin);
  const initialShellUrl=new URL(location.href);
  const initialQs=initialShellUrl.searchParams;
- const directNative=new Set(['home.html','research.html','projects.html','memory.html','library.html','faith.html','humanity.html','media.html','audiovisual.html','praxis.html','kids-galaxy.html']);
+ const directNative=new Set(['home.html','research.html','projects.html','memory.html','library.html','faith.html','humanity.html','media.html','radio.html','audiovisual.html','praxis.html','kids-galaxy.html']);
  const validLang=l=>supported.includes(l)?l:null;
  const langFromRaw=raw=>{try{return validLang(new URL('/'+safePage(raw),root).searchParams.get('lang'))}catch(e){return null}};
  const shellLang=raw=>langFromRaw(raw)||validLang(initialQs.get('lang'))||validLang(localStorage.getItem('luxdot.lang'))||DEFAULT;
