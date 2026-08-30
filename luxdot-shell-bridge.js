@@ -13,6 +13,7 @@ const DIRECT_NATIVE=new Set([
   '/faith.html',
   '/humanity.html',
   '/media.html',
+  '/radio.html',
   '/audiovisual.html',
   '/praxis.html',
   '/kids-galaxy.html'
