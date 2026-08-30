@@ -10,7 +10,10 @@ const failed=new Set(JSON.parse(sessionStorage.getItem(FAIL_KEY)||'[]'));
 const commonsFile=n=>'https://commons.wikimedia.org/wiki/Special:Redirect/file/'+encodeURIComponent(n).replace(/%2F/g,'/');
 const TZ='Asia/Damascus';
 const audio=new Audio(); audio.preload='auto'; audio.muted=false; audio.volume=1; audio.removeAttribute('crossorigin');
-let userOn=localStorage.getItem('luxdot.radio.on')==='1', current=null, sacredLock=false, identBusy=false, prayerBusy=false;
+// Every page starts silent. A previous choice to listen must never become
+// autoplay on the next visit or navigation.
+let userOn=false, current=null, sacredLock=false, identBusy=false, prayerBusy=false;
+localStorage.setItem('luxdot.radio.on','0');
 let consecutiveErrors=0,lastErrorAt=0,loadToken=0,sourceTimer=null;
 let prayerTimes=null, prayerDate='', lastPrayerKey='', lastIdentKey='';
 
@@ -334,6 +337,7 @@ async function playPrayer(pr,fromQueue=false){
 }
 function tick(){
  fetchPrayers();
+ if(!userOn){emit();return}
  const pr=prayerDue();if(pr)playPrayer(pr);
  const p=parts();if(p.minute==='00'&&Number(p.second)<18)hourlyIdent(false);
  if(!sacredLock&&!prayerBusy&&!identBusy)syncToAir(false);
