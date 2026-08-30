@@ -69,7 +69,8 @@ const DAYPARTS=[
  ['06:00','06:35','افتتاح الصباح','Dawn Opening',['quran-selected']],
  ['06:35','08:30','صباح الشام','Morning of Chaam',['arab-quiet','oud','instrumental']],
  ['08:30','11:30','صباح الشام · فيروز حين تتوفر المكتبة المرخّصة','Morning of Chaam',['fairuz-licensed','sham','arab-quiet','oud','arab-classic']],
- ['11:30','16:30','نهار نقطة نور','Point of Light Day',['world-window','short-story','children','memory']],
+ ['11:30','14:00','نهار نقطة نور','Point of Light Day',['world-window','short-story','memory']],
+ ['14:00','16:30','مختارات رافي · الأغاني المختارة','Rafi Curated Selection',['rafi-selected','memory','children','sham']],
  ['16:30','19:30','مساء الشرق','Eastern Evening',['persian','symphonic','world-window']],
  ['19:30','22:00','ليلة أندلسية · موشحات','Andalusian & Muwashshah Night',['andalusian-night','andalusian','muwashshah','muwashah-classic','oud']],
  ['22:00','01:30','حلب تسهر · قدود وموشحات','Aleppo Stays Awake',['qudud','qudud-halabi','halab-night','muwashshah','muwashah-classic','oud']],
@@ -129,7 +130,11 @@ function candidates(dp){
  // Keep the editorial identity, but add a few compatible "breathers" so long blocks do not loop three files.
  const broad=CATALOG.filter(t=>t.broadcast!==false&&!failed.has(t.id)&&t.kind!=='sacred'&&t.kind!=='spoken');
  if(dp.nameEn==='Morning of Chaam') real.push(...broad.filter(t=>t.tags.includes('quiet-world')||t.tags.includes('instrumental')));
- if(dp.nameEn==='Point of Light Day') real.push(...broad.filter(t=>t.tags.includes('world-window')||t.tags.includes('memory')));
+ if(dp.nameEn==='Point of Light Day') real.push(...broad.filter(t=>t.tags.includes('world-window')));
+ if(dp.nameEn==='Rafi Curated Selection'){
+   const selected=['memory-julia','heartbeat','memory-not-alone','sarkha','memory-heal-world','memory-one-day'];
+   real=selected.map(id=>CATALOG.find(t=>t.id===id)).filter(Boolean).filter(t=>!failed.has(t.id));
+ }
  if(dp.nameEn==='Eastern Evening') real.push(...broad.filter(t=>t.tags.includes('maqam')||t.tags.includes('quiet-world')||t.tags.includes('symphonic')));
  if(dp.nameEn==='Andalusian & Muwashshah Night') real.push(...broad.filter(t=>t.tags.includes('maqam')||t.tags.includes('samaai')||t.tags.includes('oud')));
  if(dp.nameEn==='Aleppo Stays Awake') real.push(...broad.filter(t=>t.tags.includes('halab-night')||t.tags.includes('maqam')||t.tags.includes('oud')));
@@ -156,7 +161,7 @@ function scheduled(dp,d=new Date()){
  if(pool.length===1)return {track:pool[0],offset:elapsedInDaypart(dp,d)%Math.max(20,pool[0].duration||180)};
  let remain=elapsedInDaypart(dp,d),cycle=0;
  while(cycle<200){
-   const order=shuffleStable(pool,hash32(`${dateKey(d)}|${dp.start}|${cycle}`));
+   const order=dp.nameEn==='Rafi Curated Selection'?pool:shuffleStable(pool,hash32(`${dateKey(d)}|${dp.start}|${cycle}`));
    // Avoid beginning a cycle with the same title that ended the previous one.
    const cycleDur=order.reduce((z,t)=>z+Math.max(20,Number(t.duration)||180),0);
    if(remain<cycleDur){
