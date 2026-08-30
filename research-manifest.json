@@ -1,4 +1,24 @@
 {
+  "gothic-architecture.html": {
+    "id": "gothic-architecture.html",
+    "title": "القوطية — عمارة الضوء والحجر · LuxDot",
+    "standard": "LuxDot Research Standard v0.2 PREVIEW",
+    "review_status": "not-reviewed",
+    "confidence": "B",
+    "external_sources": 5,
+    "source_class_suggestions": {
+      "A? · possible primary/official": 4,
+      "B? · scholarly educational": 1
+    },
+    "internal_connections": 6,
+    "related": [
+      {"id": "research.html", "title": "LuxDot · الأبحاث الحيّة · Live Research"},
+      {"id": "shaam-brabant-network.html", "title": "شبكة شام–برابانت"},
+      {"id": "grote-kerk-north-transept.html", "title": "الجناح الشمالي للكنيسة الكبرى"},
+      {"id": "urania-nassau.html", "title": "أورانيا × ناسو"},
+      {"id": "templars-master.html", "title": "فرسان الهيكل"}
+    ]
+  },
   "knowledge-laws-galaxy.html": {
     "id": "knowledge-laws-galaxy.html",
     "title": "مجرة المعرفة والقرار · LuxDot",
