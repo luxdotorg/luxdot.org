@@ -1,26 +1,27 @@
 {
   "product": "LuxDot",
-  "version": "4.18.47",
-  "build_time": "2026-08-28T11:57:00+02:00",
+  "version": "4.18.56",
+  "build_time": "2026-08-30T11:30:00+02:00",
   "timezone": "Europe/Amsterdam",
   "repository": "luxdotorg/luxdot.org",
-  "release_type": "FULL_REPLACE",
+  "release_type": "CHANGED_FILES",
   "features": [
     "Iframe-safe bounded signal header on Home",
     "Pulse, Calendar, Search, Inquiry and Help are icon-only utility signals",
     "Primary navigation restored to textual cartouches",
     "Global Calendar monthly planner retained",
     "Independent LuxDot Hypotheses section",
-    "Philadelphia Experiment failure-and-document-manipulation hypothesis",
-    "Inactive hypothesis seeds: Matrix, Unity of Being and Logos",
-    "Inactive mathematical draft: LuxDot Theory of Everything",
     "Structured Coincidence Archive with fact / symbolic / hypothesis layers",
     "Removing Harm report database workflow",
-    "Private public-submission image storage + approved publication copies",
-    "Harm admin dashboard with statuses and before/after workflow",
-    "Public harm map/list showing approved repairs only"
+    "Douma Four memory cluster with abducted/missing/fate-unknown status",
+    "Samira al-Khalil dedicated memory dossier with documented/public and first-hand-memory layers"
   ],
   "latest_changes": [
+    {
+      "date": "2026-08-30",
+      "title_ar": "إضافة ملف مخطوفي دوما الأربعة وخراطيش رزان زيتونة وسميرة الخليل ووائل حمادة وناظم حمادي، مع ملف مستقل لسميرة يفصل السيرة الموثقة عن الذاكرة الشخصية",
+      "title_en": "Added the Douma Four memory cluster and individual nodes for Razan Zaitouneh, Samira al-Khalil, Wael Hamada and Nazem Hammadi, plus a dedicated Samira dossier separating documented biography from first-hand memory"
+    },
     {
       "date": "2026-08-28",
       "title_ar": "إصلاح سياسة أمان المحتوى للسماح باتصال مشروع إماطة الأذى بواجهة Supabase وقاعدة البيانات والتخزين",
@@ -28,35 +29,14 @@
     },
     {
       "date": "2026-08-27",
-      "title_ar": "بناء نظام إماطة الأذى: بلاغات وصور خاصة، قاعدة بيانات، لوحة معالجة، ونشر قبل/بعد بعد الاعتماد",
-      "title_en": "Built Removing Harm workflow: private reports/images, database, admin processing, and approved before/after publication"
-    },
-    {
-      "date": "2026-08-27",
       "title_ar": "إضافة أرشيف المصادفات وربطه بالذاكرة والأبحاث والرزنامة ومرصد التقاطعات",
       "title_en": "Added Coincidence Archive linked from Memory, Research, Calendar and Convergence Watch"
-    },
-    {
-      "date": "2026-08-27",
-      "title_ar": "مزامنة الرزنامة اللايف: العرض الشهري + مرصد التقاطعات + Jain + أحداث الأمم المتحدة 21–29 سبتمبر",
-      "title_en": "Live calendar sync: monthly planner + Convergence Watch + Jain + UN Sep 21–29"
-    },
-    {
-      "date": "2026-08-27",
-      "title_ar": "إضافة 28 سبتمبر: ديربان 25 وتقاطع سكوت × الأمم / الكرامة الإنسانية",
-      "title_en": "Added 28 Sep Durban 25 and separate Sukkot × Nations/Human Dignity convergence"
-    },
-    {
-      "date": "2026-08-26",
-      "title_ar": "إصلاح آمن لهيدر الصفحة الرئيسية داخل player-shell مع حدود صارمة لأحجام الرموز",
-      "title_en": "Iframe-safe homepage signal header with hard icon size bounds"
     }
   ],
   "calendar": "real monthly planner + agenda + colored event cartridges + convergence highlighting",
   "pulse": "icon-only bounded header signal",
-  "media_cache_key": "41846",
-  "rebuilt_from": "4.18.43",
-  "convergence_watch": "FACT / TRADITION / CONVERGENCE / HYPOTHESIS / OUTCOME",
-  "csp_hotfix": "Removing Harm routes allow connect-src to the configured Supabase project origin",
-  "csp_hotfix_v41847": "player-shell.html now explicitly allows connect-src to the configured Supabase project; harm routes are no-cache for validation."
+  "media_cache_key": "41856",
+  "rebuilt_from": "4.18.55",
+  "memory_method": "FACT / SOURCE / WITNESS / OPEN QUESTION",
+  "douma_four_status_rule": "ABDUCTED / MISSING / FATE UNKNOWN — no death status without verified evidence"
 }
