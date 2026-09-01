@@ -28,7 +28,7 @@ jobs:
               if r['classification'] in {'english/latin-origin','arabic-declared-but-latin-heavy','mixed'}:
                   print(f"{r['classification']:32} {r['page']}")
           PY
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: arabic-master-audit
           path: |
